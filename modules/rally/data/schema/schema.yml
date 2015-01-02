@@ -1,0 +1,162 @@
+options:
+  type: MyISAM
+  collate: utf8_general_ci
+  charset: utf8
+Rally:
+  tableName: rally_rally
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    name:
+      type: string(255)
+    slug:
+      type: string(255)
+    date:
+      type: timestamp
+    active:
+      type: boolean
+      default: 1
+Surface:
+  tableName: rally_surface
+  actAs: 
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    rally_id:
+      type: integer(4)
+    surface:
+      type: varchar(255)
+    percentage:
+      type: float(4,2)
+  relations:
+    Rally:
+      local: rally_id
+      foreign: id
+      foreignType: many
+      type: one
+      alias: Rally
+      foreignAlias: Surfaces
+Crew:
+  tableName: rally_crew
+  actAs: 
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    rally_id:
+      type: integer(4)
+    team_id:
+      type: integer(4)
+    driver_id:
+      type: integer(4)
+    pilot_id:
+      type: integer(4)
+    car_id:
+      type: integer(4)
+    risk:
+      type: string(255)
+    in_race:
+      type: boolean
+      default: 1
+  relations:
+    Rally:
+      local: rally_id
+      foreign: id
+      foreignType: many
+      type: one
+      alias: Rally
+      foreignAlias: Crews
+Stage:
+  tableName: rally_stage
+  actAs: 
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    rally_id:
+      type: integer(4)
+    name:
+      type: string(255)
+    length:
+      type: decimal(18)
+    date:
+      type: timestamp
+    min_time:
+      type: time
+  relations:
+    Rally:
+      local: rally_id
+      foreign: id
+      foreignType: many
+      type: one 
+      alias: Rally
+      foreignAlias: Stages
+StageResult:
+  tableName: rally_stage_result
+  actAs: 
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    stage_id:
+      type: integer(4)
+    crew_id:
+      type: string(255)
+    base_time:
+      type: time
+    random_factor:
+      type: decimal(4)
+    accident_id:
+      type: integer(4)
+      default: null
+    accident_random_factor:
+      type: decimal(4)
+    out_of_race:
+      type: boolean
+      default: 0
+  relations:
+    Stage:
+      local: stage_id
+      foreign: id
+      foreignType: many
+      foreignAlias: Results
+      alias: Stage
+    Crew:
+      local: crew_id
+      foreign: id
+      foreignType: many
+      type: one
+      alias: Crew
+      foreignAlias: StageResults
+    Accident:
+      local: accident_id
+      foreign: id
+      foreignType: one
+      alias: Accident
+Accident:
+  tableName: rally_accident
+  actAs: 
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    name:
+      type: string(255)
+    damage:
+      type: decimal(18)

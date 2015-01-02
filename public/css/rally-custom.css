@@ -1,0 +1,42 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2014-12-27, 18:02:01
+    Author     : Tomasz Kardas <kardi31@tlen.pl>
+*/
+
+label{
+    margin-right:5px;
+}
+
+select{
+    min-width: 30%;
+}
+
+/* showRally */
+
+.sign-up-rally label{
+    width:100px;
+}
+
+/* myDrivers */
+
+.myDrivers strong{
+    font-size:2em;
+}
+
+.myDrivers > fieldset{
+    border: 1px solid #000;
+    padding:10px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius:6px;
+}
+
+.myDrivers hr{
+    border-style:dotted;
+    border-width: 3px;
+}

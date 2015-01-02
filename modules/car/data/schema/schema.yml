@@ -1,0 +1,58 @@
+options:
+  type: MyISAM
+  collate: utf8_general_ci
+  charset: utf8
+CarModels:
+  tableName: car_car_models
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    name:
+      type: string(255)
+    capacity:
+      type: integer(11)
+    horsepower:
+      type: integer(11)
+    max_speed:
+      type: integer(11)
+    acceleration:
+      type: float(2,5)
+    wheel_drive:
+      type: enum
+      length: 11
+      values: ['front','rear', '4x4']
+    league:
+      type: integer(11)
+Car:
+  tableName: car_car
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    model_id:
+      type: integer(11)
+    mileage:
+      type: integer(11)
+    name:
+      type: string(255)
+    value:
+      type: integer(11)
+    upkeep:
+      type: integer(11)
+    last_name_change:
+      type: timestamp
+  relations:
+    CarModels:
+      local: model_id
+      foreign: id
+      foreignType: one
+      alias: Model

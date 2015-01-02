@@ -1,0 +1,57 @@
+<script>
+    $(document).ready(function(){
+	$('#btnChangeCarNameButton1').click(function(){
+	    if($('#changeCarName1').is(":visible")){
+	       $('#changeCarName1').hide(); 
+	    }
+	    else{
+	       $('#changeCarName1').show(); 
+		
+	    }
+	});
+    });
+</script>
+<?php $team = $authenticatedUser['Team']; ?>
+<h3>My cars</h3>
+<div class="myDrivers">
+
+<fieldset>
+    <h5>Car 1</h5>
+    <?php $car1 = $team['Car1']; ?> 
+    Car name: <?php echo $car1['name']; ?> <a href="javascript:void(0)" id="btnChangeCarNameButton1">change name</a><br />
+    <div class="changeCarName" id="changeCarName1">
+	<?php echo $formCar1->renderForm(); ?>
+    </div>
+    Marka: <?php echo $car1['Model']['name']; ?><br />
+    Przebieg: <?php echo $car1['mileage']; ?><br />
+    Wartość: <?php echo $car1['value']; ?><br />
+    Koszty utrzymania: <?php echo $car1['upkeep']; ?><br />
+    Skills: <br />
+    <fieldset>
+        <table>
+            <tr>
+                <td>Pojemność silnika</td>
+                <td><?php echo $car1['Model']['capacity'];?></td>
+            </tr>
+            <tr>
+                <td>Moc</td>
+                <td><?php echo $car1['Model']['horsepower'];?></td>
+            </tr>
+            <tr>
+                <td>V max</td>
+                <td><?php echo $car1['Model']['max_speed'];?></td>
+            </tr>
+            <tr>
+                <td>Przyspieszenie</td>
+                <td><?php echo $car1['Model']['acceleration'];?></td>
+            </tr>
+            <tr>
+                <td>Napęd</td>
+		<td><?php echo $car1['Model']['wheel_drive'];?></td>
+            </tr>
+            
+        </table>
+    </fieldset>
+   
+</fieldset>
+</div>

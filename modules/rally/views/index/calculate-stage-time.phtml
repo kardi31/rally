@@ -1,0 +1,48 @@
+<a href="/rally/list-rally">Powrót do listy rajdów</a>
+<h2><?php echo $rally['name']; ?></h2><br /><br />
+   
+    <h4>Wyniki etapu <?php echo $stage['name']; ?></h4>
+    <table>
+	<tr>
+	    <th>Załoga</th>
+	    <th>Samochód</th>
+	    <th>Nazwa zespołu</th>
+	    <th>Czas</th>
+	    <th>Accident</th>
+	    <th>Position</th>
+	</tr>
+<?php foreach($stage['Results'] as $key => $stageResult): ?>
+	<tr>
+	    <td>
+		<?php echo $stageResult['Crew']['Driver']['last_name']." ".$stageResult['Crew']['Driver']['first_name']; ?> - 
+		<?php echo $stageResult['Crew']['Pilot']['last_name']." ".$stageResult['Crew']['Pilot']['first_name']; ?>
+	    </td>
+	    <td>
+		<?php echo $stageResult['Crew']['Car']['name']; ?>
+	    </td>
+	    <td>
+		<?php echo $stageResult['Crew']['Team']['name']; ?>
+	    </td>
+	    <td>
+		<?php echo $stageResult['base_time']; ?>
+	    </td>
+	    <td>
+		<?php 
+		if(strlen($stageResult['Accident']['name'])){
+		    
+		    
+		    
+		}
+		
+		echo $stageResult['Accident']['name']; 
+		
+		?>
+	    </td>
+	    <td>
+		<?php echo $key+1; ?>
+	    </td>
+	</tr>
+<?php endforeach; ?>
+    
+    </table>
+</div>

@@ -1,0 +1,187 @@
+<?php $team = $authenticatedUser['Team']; ?>
+<h3>My people</h3>
+<div class="myDrivers">
+<fieldset>
+    <h5>Team 1</h5>
+    <?php $driver1 = $team['Driver1']; ?>
+    <strong><?php echo $driver1['last_name']." ".$driver1['first_name']; ?></strong><br />
+    Job: driver<br />
+    Age: <?php echo $driver1['age']; ?><br />
+    Skills: <br />
+    <fieldset>
+        <table class="col-md-8">
+            <tr>
+                <td>Composure</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver1['composure']);?></td>
+            </tr>
+            <tr>
+                <td>Speed</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver1['speed']);?></td>
+            </tr>
+            <tr>
+                <td>Regularity</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver1['regularity']);?></td>
+            </tr>
+            <tr>
+                <td>Reflex</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver1['reflex']);?></td>
+            </tr>
+            <tr>
+                <td>Driving on gravel</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver1['on_gravel']);?></td>
+            </tr>
+            <tr>
+                <td>Driving on tarmac</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver1['on_tarmac']);?></td>
+            </tr>
+            <tr>
+                <td>Driving on snow</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver1['on_snow']);?></td>
+            </tr>
+            <tr>
+                <td>Driving in rain</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver1['in_rain']);?></td>
+            </tr>
+            <tr>
+                <td>Talent</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver1['talent']);?></td>
+            </tr>
+            <tr>
+                <td>Form</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver1['form']);?></td>
+            </tr>
+        </table>
+    </fieldset>
+    <hr />
+    <?php $pilot1 = $team['Pilot1']; ?>
+    <strong><?php echo $pilot1['last_name']." ".$pilot1['first_name']; ?></strong><br />
+    Job: pilot<br />
+    Age: <?php echo $pilot1['age']; ?><br />
+    Skills: <br />
+    <fieldset>
+        <table class="col-md-8">
+            <tr>
+                <td>Composure</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$pilot1['composure']);?></td>
+            </tr>
+            <tr>
+                <td>Dictate rhytm</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$pilot1['dictate_rhytm']);?></td>
+            </tr>
+            <tr>
+                <td>Diction</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$pilot1['diction']);?></td>
+            </tr>
+            <tr>
+                <td>Route description</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$pilot1['route_description']);?></td>
+            </tr>
+           
+            <tr>
+                <td>Talent</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$pilot1['talent']);?></td>
+            </tr>
+            <tr>
+                <td>Form</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$pilot1['form']);?></td>
+            </tr>
+        </table>
+    </fieldset>
+    
+</fieldset>
+
+<fieldset>
+    <h5>Team 2</h5>
+    <?php if(strlen($team['driver2_id'])): ?>
+    <h6>Driver</h6>
+    <?php $driver2 = $team['Driver2']; ?>
+    Name: <?php echo $driver2['last_name']." ".$driver2['first_name']; ?><br />
+    Age: <?php echo $driver2['age']; ?><br />
+    Skills: <br />
+    <fieldset>
+        <table>
+            <tr>
+                <td>Composure</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver2['composure']);?></td>
+            </tr>
+            <tr>
+                <td>Speed</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver2['speed']);?></td>
+            </tr>
+            <tr>
+                <td>Regularity</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver2['regularity']);?></td>
+            </tr>
+            <tr>
+                <td>Reflex</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver2['reflex']);?></td>
+            </tr>
+            <tr>
+                <td>Driving on gravel</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver2['on_gravel']);?></td>
+            </tr>
+            <tr>
+                <td>Driving on tarmac</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver2['on_tarmac']);?></td>
+            </tr>
+            <tr>
+                <td>Driving on snow</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver2['on_snow']);?></td>
+            </tr>
+            <tr>
+                <td>Driving in rain</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver2['in_rain']);?></td>
+            </tr>
+            <tr>
+                <td>Talent</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver2['talent']);?></td>
+            </tr>
+            <tr>
+                <td>Form</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver2['form']);?></td>
+            </tr>
+        </table>
+    </fieldset>
+    <?php else: 
+        echo "No driver";
+    endif; ?>
+    <h6>Pilot</h6> 
+    <?php if(strlen($team['pilot2_id'])): ?>
+    <?php $pilot2 = $team['Pilot2']; ?>
+    Name: <?php echo $pilot2['last_name']." ".$pilot2['first_name']; ?><br />
+    Age: <?php echo $pilot2['age']; ?><br />
+    Skills: <br />
+    <fieldset>
+        <table>
+            <tr>
+                <td>Composure</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$pilot2['composure']);?></td>
+            </tr>
+            <tr>
+                <td>Dictate rhytm</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$pilot2['dictate_rhytm']);?></td>
+            </tr>
+            <tr>
+                <td>Diction</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$pilot2['diction']);?></td>
+            </tr>
+            <tr>
+                <td>Route description</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$pilot2['route_description']);?></td>
+            </tr>
+           
+            <tr>
+                <td>Talent</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$pilot2['talent']);?></td>
+            </tr>
+            <tr>
+                <td>Form</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$pilot2['form']);?></td>
+            </tr>
+        </table>
+    </fieldset>
+    <?php else: 
+        echo "No pilot";
+    endif; ?>
+</fieldset>
+</div>

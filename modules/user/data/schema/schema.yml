@@ -1,0 +1,33 @@
+options:
+  type: MyISAM
+  collate: utf8_general_ci
+  charset: utf8
+User:
+  tableName: user_user
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    first_name:
+      type: string(255)
+    last_name:
+      type: string(255)
+    email:
+      type: string(255)
+    username:
+      type: string(255)
+    salt:
+      type: string(255)
+    password:
+      type: string(255)
+    role:
+      type: string(255)
+    token:
+      type: string(255)
+    active:
+      type: boolean
+      default: 1

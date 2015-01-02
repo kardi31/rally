@@ -1,0 +1,17 @@
+<h3>Lista rajdów</h3>
+<table>
+    <tr>
+	<th>Nazwa rajdu</th>
+	<th>Data</th>
+    </tr>
+<?php foreach($rallies as $rally): ?>
+    <tr>
+	<td>
+	    <a href="/rally/show-rally/name/<?php echo $rally['slug']; ?>"><?php echo $rally['name'];?></a>
+	</td>
+	<td>
+	    <?php echo TK_Text::timeFormat($rally['date'],'d-m-Y H:i'); ?>
+	</td>
+    </tr>
+<?php endforeach; ?>
+</table>

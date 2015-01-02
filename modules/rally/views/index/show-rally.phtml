@@ -1,0 +1,38 @@
+<a href="/rally/list-rally">Powrót do listy rajdów</a>
+<div class="row">
+<div class="container">
+    
+<div class="col-md-8">
+    
+<h2><?php echo $rally['name']; ?></h2><br /><br />
+    <h4>Zapisane załogi</h4>
+    <table>
+	<tr>
+	    <th>Załoga</th>
+	    <th>Samochód</th>
+	    <th>Nazwa zespołu</th>
+	</tr>
+<?php foreach($rally['Crews'] as $crew): ?>
+	<tr>
+	    <td>
+		<?php echo $crew['Driver']['last_name']." ".$crew['Driver']['first_name']; ?> - 
+		<?php echo $crew['Pilot']['last_name']." ".$crew['Pilot']['first_name']; ?>
+	    </td>
+	    <td>
+		<?php echo $crew['Car']['name']; ?>
+	    </td>
+	    <td>
+		<?php echo $crew['Team']['name']; ?>
+	    </td>
+	</tr>
+<?php endforeach; ?>
+    
+    </table>
+</div>
+    <div class="col-md-4 sign-up-rally">
+	<h3>Zapisz się do rajdu</h3>
+	<?php echo $form->renderForm(); ?>
+    </div>
+</div>
+
+</div>

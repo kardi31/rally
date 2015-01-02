@@ -1,0 +1,37 @@
+options:
+  type: MyISAM
+  collate: utf8_general_ci
+  charset: utf8
+League:
+  tableName: league_league
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    league_name:
+      type: float(10,2)
+      primary: true
+    league_level:
+      type: integer(11)
+Season:
+  tableName: league_season
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    league_name:
+      type: float(10,2)
+    team_id:
+      type: integer(11)
+    points:
+      type: integer(11)
+  relations:
+    League:
+      local: league_name
+      foreign: league_name
+      foreignType: one
+      alias: League

@@ -1,0 +1,50 @@
+options:
+  type: MyISAM
+  collate: utf8_general_ci
+  charset: utf8
+People:
+  tableName: people_people
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    first_name:
+      type: string(255)
+    last_name:
+      type: string(255)
+    job:
+      type: string(255)
+    age:
+      type: integer(11)
+    composure:
+      type: integer(11)
+    speed:
+      type: integer(11)
+    regularity:
+      type: integer(11)
+    reflex:
+      type: integer(11)
+    on_gravel:
+      type: integer(11)
+    on_tarmac:
+      type: integer(11)
+    on_snow:
+      type: integer(11)
+    in_rain:
+      type: integer(11)
+    form:
+      type: integer(11)
+    dictate_rhytm:
+      type: integer(11)
+    diction:
+      type: integer(11)
+    route_description:
+      type: integer(11)
+    intelligence:
+      type: integer(11)
+    talent:
+      type: integer(11)

@@ -1,0 +1,32 @@
+options:
+  type: MyISAM
+  collate: utf8_general_ci
+  charset: utf8
+Team:
+  tableName: team_team
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    user_id:
+      type: integer(4)
+    name:
+      type: string(255)
+    driver1_id:
+      type: integer(4)
+    driver2_id:
+      type: integer(4)
+    pilot1_id:
+      type: integer(4)
+    pilot2_id:
+      type: integer(4)
+    car1_id:
+      type: integer(4)
+    car2_id:
+      type: integer(4)
+    league_name:
+      type: float(10,2)
