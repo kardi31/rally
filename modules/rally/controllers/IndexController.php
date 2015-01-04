@@ -27,14 +27,14 @@ class Rally_Index extends Controller{
 	$freeCars = $carService->getFreeCars($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
 	$form = new Form();
 	
-	$form->addMultiOptions('driver_id', $freeDrivers);
-	$form->addMultiOptions('car_id', $freeCars);
-	$form->addMultiOptions('pilot_id', $freePilots);
-	$form->addMultiOptions('risk', Rally_Model_Doctrine_Rally::getFormRisks());
-        $form->createElement('select','driver_id',array(),'Kierowca');
-        $form->createElement('select','pilot_id',array(),'Pilot');
-        $form->createElement('select','car_id',array(),'Auto');
-        $form->createElement('select','risk',array('selected' => 'Normal risk'),'Ryzyko');
+        $driver_id = $form->createElement('select','driver_id',array(),'Kierowca');
+	$driver_id->addMultiOptions($freeDrivers,true);
+        $pilot_id = $form->createElement('select','pilot_id',array(),'Pilot');
+	$pilot_id->addMultiOptions($freePilots,true);
+        $car_id = $form->createElement('select','car_id',array(),'Auto');
+	$car_id->addMultiOptions($freeCars,true);
+        $risk = $form->createElement('select','risk',array('selected' => 'Normal risk'),'Ryzyko');
+	$risk->addMultiOptions(Rally_Model_Doctrine_Rally::getFormRisks(),true);
         $form->createElement('submit','submit');
 	
 	if($form->isSubmit()){

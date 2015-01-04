@@ -6,10 +6,10 @@
                 dataTable: {   
                 "aoColumns": [
                         { sWidth: '5%' },
-                        { sWidth: '5%' },
                         { sWidth: '15%' },
-                        { sWidth: '10%' },
-                        { sWidth: '10%' },
+                        { sWidth: '20%' },
+                        { sWidth: '20%' },
+                        { sWidth: '20%' },
                         { "bSortable": false, sWidth: '15%' }
                     ],
                     "aLengthMenu": [
@@ -18,8 +18,8 @@
                     ],
                     "iDisplayLength": 20, // default record count per page
                     "bServerSide": true, // server side processing
-                    "sAjaxSource": "/admin/rally/list-rally-data", // ajax source
-                    "aaSorting": [[ 3, "desc" ]] // set first column as a default sort by asc
+                    "sAjaxSource": "/admin/rally/show-rally-stages-data/id/<?php echo $rally['id']; ?>", // ajax source
+                    "aaSorting": [[ 1, "desc" ]] // set first column as a default sort by asc
                 }
             });
                grid.getDataTable().yadcf([
@@ -29,20 +29,11 @@
                     },
                     {
                       column_number: 2,
+                      filter_type: "text"
                     },
                     {
                       column_number: 3,
-                      filter_type: "range_date"
-                    },
-                    {
-                        column_number: 4,
-                        data: [{
-                            value: '1',
-                            label: 'Active'
-                        }, {
-                            value: '0',
-                            label: 'Inactive'
-                        }],
+                      filter_type: "text"
                     }
         
         ]);
@@ -56,13 +47,14 @@
 					<div class="portlet">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-shopping-cart"></i>Rally list
+								<i class="fa fa-shopping-cart"></i>Stage list <?php echo $rally['name']; ?>
 							</div>
 							<div class="actions">
-								<a href="/admin/rally/add-rally" class="btn default yellow-stripe">
+								<a href="/admin/rally/add-stage/rally-id/<?php echo $rally['id']; ?>" class="btn default yellow-stripe">
 								<i class="fa fa-plus"></i>
 								<span class="hidden-480">
-								Add rally </span>
+								Add stage 
+								</span>
 								</a>
 								<div class="btn-group">
 									<a class="btn default yellow-stripe" href="#" data-toggle="dropdown">
@@ -118,13 +110,13 @@
 										 Record&nbsp;#
 									</th>
 									<th>
-										 Email
+										 Name
 									</th>
 									<th>
-										 Role
+										 Length
 									</th>
 									<th>
-										 Active
+										 Min time
 									</th>
 									<th>
 										 Options
@@ -139,7 +131,7 @@
 									</th>
 									<th>
 									</th>
-									<th rowspan="1" colspan="1">
+									<th>
 										
 									</th>
 									<th>

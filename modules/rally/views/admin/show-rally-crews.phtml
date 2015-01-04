@@ -5,12 +5,16 @@
                 src: $("#datatable_ajax"),
                 dataTable: {   
                 "aoColumns": [
-                        { sWidth: '5%' },
-                        { sWidth: '5%' },
+                        { sWidth: '2%' },
+                        { sWidth: '2%' },
                         { sWidth: '15%' },
                         { sWidth: '10%' },
                         { sWidth: '10%' },
-                        { "bSortable": false, sWidth: '15%' }
+                        { sWidth: '10%' },
+                        { sWidth: '13%' },
+                        { sWidth: '10%' },
+                        { sWidth: '2%' },
+                        { "bSortable": false, sWidth: '10%' }
                     ],
                     "aLengthMenu": [
                         [20, 50, 100, 150, -1],
@@ -18,8 +22,8 @@
                     ],
                     "iDisplayLength": 20, // default record count per page
                     "bServerSide": true, // server side processing
-                    "sAjaxSource": "/admin/rally/list-rally-data", // ajax source
-                    "aaSorting": [[ 3, "desc" ]] // set first column as a default sort by asc
+                    "sAjaxSource": "/admin/rally/show-rally-crews-data", // ajax source
+                    "aaSorting": [[ 1, "desc" ]] // set first column as a default sort by asc
                 }
             });
                grid.getDataTable().yadcf([
@@ -29,13 +33,26 @@
                     },
                     {
                       column_number: 2,
+                      filter_type: "text"
+                    },
+		    {
+                      column_number: 3,
+                      filter_type: "text"
+                    },
+		    {
+                      column_number: 4,
+                      filter_type: "text"
+                    },
+		    {
+                      column_number: 5,
+                      filter_type: "text"
                     },
                     {
-                      column_number: 3,
+                      column_number: 6,
                       filter_type: "range_date"
                     },
                     {
-                        column_number: 4,
+                        column_number: 7,
                         data: [{
                             value: '1',
                             label: 'Active'
@@ -43,6 +60,9 @@
                             value: '0',
                             label: 'Inactive'
                         }],
+                    },
+		    {
+                      column_number: 8
                     }
         
         ]);
@@ -56,14 +76,10 @@
 					<div class="portlet">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-shopping-cart"></i>Rally list
+								<i class="fa fa-shopping-cart"></i>Lista załóg
 							</div>
 							<div class="actions">
-								<a href="/admin/rally/add-rally" class="btn default yellow-stripe">
-								<i class="fa fa-plus"></i>
-								<span class="hidden-480">
-								Add rally </span>
-								</a>
+								
 								<div class="btn-group">
 									<a class="btn default yellow-stripe" href="#" data-toggle="dropdown">
 									<i class="fa fa-share"></i>
@@ -118,13 +134,25 @@
 										 Record&nbsp;#
 									</th>
 									<th>
-										 Email
+										 Team
 									</th>
 									<th>
-										 Role
+										 Driver
 									</th>
 									<th>
-										 Active
+										 Pilot
+									</th>
+									<th>
+										Car
+									</th>
+									<th>
+										 Sign up date
+									</th>
+									<th>
+										 In race
+									</th>
+									<th>
+										 Risk
 									</th>
 									<th>
 										 Options
@@ -139,8 +167,15 @@
 									</th>
 									<th>
 									</th>
-									<th rowspan="1" colspan="1">
-										
+									<th>	
+									</th>
+									<th>	
+									</th>
+									<th>	
+									</th>
+									<th>	
+									</th>
+									<th>	
 									</th>
 									<th>
                                                                             <div class="margin-bottom-5">

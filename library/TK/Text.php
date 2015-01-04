@@ -23,6 +23,27 @@ class TK_Text{
             return $dateTime->format($outputFormat);
     }
     
+    public static function createUniqueTableSlug($table, $string, $id = 0, $toLower = true, $space = '-') {
+        $slug = self::createSlug($string, $toLower, $space);
+        $q = Doctrine_Query::create()
+                ->select('x.id')
+                ->from($table . ' x')
+                ->where('x.id != ? AND (x.slug = ?)')
+                ;
+
+        if($q->count(array((int) $id, $slug)) == 0) {
+            return $slug;
+        }
+        
+        $counter = 1;
+        $tmpSlug = $slug;
+        do {
+            $tmpSlug = ($counter > 0) ? $slug . '-' . $counter : $slug;
+            $counter++;
+        } while(($q->count(array((int) $id, $tmpSlug)) > 0));
+        return $tmpSlug;
+    }
+    
     public static function createSlug($string, $toLower = true, $space = '-') {
 		$chars=array(
 		chr(195).chr(128) => 'A', chr(195).chr(129) => 'A',

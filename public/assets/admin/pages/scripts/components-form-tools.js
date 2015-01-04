@@ -382,7 +382,7 @@ var ComponentsFormTools = function () {
         $("#mask_phone").inputmask("mask", {
             "mask": "(999) 999-9999"
         }); //specifying fn & options
-        $("#mask_tin").inputmask({
+        $(".timePicker").inputmask({
             "mask": "99-9999999"
         }); //specifying options only
         $("#mask_number").inputmask({
@@ -566,19 +566,19 @@ var ComponentsFormTools = function () {
     return {
         //main function to initiate the module
         init: function () {
-            handleTwitterTypeahead();
-            handleTwitterTypeaheadModal();
-
-            handleBootstrapSwitch();
-            handleBootstrapTouchSpin();
-            handleBootstrapMaxlength();
-            handleSpinners();
-            handleTagsInput();
+//            handleTwitterTypeahead();
+//            handleTwitterTypeaheadModal();
+//
+//            handleBootstrapSwitch();
+//            handleBootstrapTouchSpin();
+//            handleBootstrapMaxlength();
+//            handleSpinners();
+//            handleTagsInput();
             handleInputMasks();
-            handleIPAddressInput();
-            handlePasswordStrengthChecker();
-            handleUsernameAvailabilityChecker1();
-            handleUsernameAvailabilityChecker2();
+//            handleIPAddressInput();
+//            handlePasswordStrengthChecker();
+//            handleUsernameAvailabilityChecker1();
+//            handleUsernameAvailabilityChecker2();
         }
     };
 

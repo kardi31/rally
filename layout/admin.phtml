@@ -49,7 +49,15 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <link rel="stylesheet" type="text/css" href="/assets/global/plugins/select2/select2.css"/>
 <link rel="stylesheet" href="/assets/global/plugins/data-tables/DT_bootstrap.css"/>
-<link rel="stylesheet" type="text/css" href="/assets/global/plugins/bootstrap-datepicker/css/datepicker.css"/>
+<!--<link rel="stylesheet" type="text/css" href="/assets/global/plugins/bootstrap-datepicker/css/datepicker.css"/>-->
+
+
+<link rel="stylesheet" type="text/css" href="/assets/global/plugins/clockface/css/clockface.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/global/plugins/bootstrap-datepicker/css/datepicker3.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/global/plugins/bootstrap-datetimepicker/css/datetimepicker.css"/>
 
 <!-- END PAGE STYLES -->
 <!-- BEGIN THEME STYLES -->
@@ -530,10 +538,10 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
 				<li class="start active ">
-					<a href="index.html">
-					<i class="fa fa-home"></i>
+					<a href="/admin/rally/list-rally">
+					<i class="fa fa-list"></i>
 					<span class="title">
-					Dashboard </span>
+					Rally list </span>
 					<span class="selected">
 					</span>
 					</a>
@@ -550,7 +558,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						<li>
 							<a href="ecommerce_index.html">
 							<i class="fa fa-bullhorn"></i>
-							Dashboard </a>
+							t2Dashboard </a>
 						</li>
 						<li>
 							<a href="ecommerce_orders.html">
@@ -589,7 +597,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						</li>
 						<li>
 							<a href="index_horizontal_menu.html">
-							Dashboard & Mega Menu </a>
+							t3Dashboard & Mega Menu </a>
 						</li>
 						<li>
 							<a href="layout_horizontal_menu1.html">
@@ -1279,7 +1287,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				<div class="col-md-12">
 					<!-- BEGIN PAGE TITLE & BREADCRUMB-->
 					<h3 class="page-title">
-					Dashboard <small>statistics and more</small>
+					t4 Dashboard <small>statistics and more</small>
 					</h3>
 					<ul class="page-breadcrumb breadcrumb">
 						<li>
@@ -1290,7 +1298,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						</li>
 						<li>
 							<a href="#">
-							Dashboard </a>
+							t5 Dashboard </a>
 						</li>
 						<li class="pull-right">
 							<div id="dashboard-report-range" class="pull-right dashboard-date-range tooltips" data-placement="top" data-original-title="Change dashboard date range">
@@ -1344,19 +1352,42 @@ License: You must have a valid license purchased only from themeforest(the above
 <script type="text/javascript" src="/assets/global/plugins/data-tables/jquery.dataTables.js"></script>
 <script type="text/javascript" src="/assets/global/plugins/data-tables/DT_bootstrap.js"></script>
 <script type="text/javascript" src="/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+
+<script type="text/javascript" src="/assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+<script type="text/javascript" src="/assets/global/plugins/clockface/js/clockface.js"></script>
+<script type="text/javascript" src="/assets/global/plugins/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="/assets/global/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
 <!-- END PAGE LEVEL PLUGINS -->
+
+
+<script type="text/javascript" src="/assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
+
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="/assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="/assets/global/scripts/datatable.js"></script>
 <script src="/assets/admin/pages/scripts/table-ajax.js"></script>
 <script src="/js/admin.js"></script>
+<script src="/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="/assets/admin/pages/scripts/components-pickers.js"></script>
+<script src="/assets/admin/pages/scripts/components-form-tools.js"></script>
+<script type="text/javascript" src="/assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
 
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
         jQuery(document).ready(function() {    
            Metronic.init(); // init metronic core components
 Layout.init(); // init current layout
+
+           ComponentsPickers.init();
         });
     </script>
 <!-- END JAVASCRIPTS -->

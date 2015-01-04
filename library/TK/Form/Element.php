@@ -13,16 +13,20 @@ class Element{
 	 protected $name;
 	 protected $type;
 	 protected $options;
+	 protected $classes;
+	 protected $params;
 
 
     public function __construct($type,$name,$options,$label = false){
 	$this->type = $type;
 	$this->name = $name;
 	$this->label = $label;
+	$this->params = array();
 	$this->options = $options;
+	$this->classes = array('label' => array(),'element' => array(),'wrapper' => array(),'elementWrapper' => array(),'overElementWrapper' => array());
     } 
         
-    function renderElement($submitElem) {
+    function renderElement($submitElem = 'submit') {
         if(!$this->label){
             $this->label = $this->name;
         }
@@ -36,9 +40,8 @@ class Element{
             $this->elementDisplay .= "<input value=".$this->label." name='".$this->name."' id='".$this->name."' type='".$this->type."' />";
             $this->elementDisplay .= "</div>";
 	elseif($this->type=="select"):
-            $this->elementDisplay .= "<div class='formElemWrapper'><label for='".$this->name."' id='".$this->name."Label' type='".$this->type."' >".$this->label."</label>";
-	    $this->elementDisplay .= "<select name='".$this->name."' id='".$this->name."'>";
-	    if(key_exists($this->name, $this->multiOptions)):
+            $this->elementDisplay .= "<select ".$this->renderParams()."  class='".$this->renderClasses()."'  name='".$this->name."' id='".$this->name."'>";
+	    if(count($this->multiOptions)>0&&key_exists($this->name, $this->multiOptions)):
 		foreach($this->multiOptions[$this->name] as $key => $value):
 		    $this->elementDisplay .= "<option ".( $this->getMethodVariable($this->name)==$key ? ("selected") : '')." "
 		    . "".( (key_exists('selected', $this->options)&&$this->options['selected']==$key) ? ("selected") : '')." "
@@ -46,11 +49,18 @@ class Element{
 		endforeach;
 	    endif; 
 	    $this->elementDisplay .= "</select>";
-            $this->elementDisplay .= "<div class='formError'>".$this->validateElement($this->name,$this->options['validators'])."</div></div>";
-        else:
-            $this->elementDisplay .= "<div class='formElemWrapper'><label for='".$this->name."' id='".$this->name."Label' type='".$this->type."' >".$this->label."</label>";
-            $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' name='".$this->name."' id='".$this->name."' type='".$this->type."' />";
-            $this->elementDisplay .= "<div class='formError'>".$this->validateElement($this->name,$this->options['validators'])."</div></div>";
+            $this->elementDisplay .= "<div class='formError'>".$this->validateElement($this->name,$this->options['validators'])."</div>";
+        elseif($this->type=="checkbox"):
+            $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."1' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
+            $this->elementDisplay .= "<div class='formError'>".$this->validateElement($this->name,$this->options['validators'])."</div>";
+        elseif($this->type=="captcha"):
+	    $this->elementDisplay .= "<div class='formElemWrapper'><label for='captcha' id='captcha'>Przepisz kod z obrazka</label>";
+	    $this->elementDisplay .= "<img src='/captcha' />";
+	    $this->elementDisplay .= "<input name='captcha' id='captcha' type='text' />";
+	    $this->elementDisplay .= "<div class='formError'>".$this->validateElement('captcha','captcha')."</div></div>";
+	else:
+            $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
+            $this->elementDisplay .= "<div class='formError'>".$this->validateElement($this->name,$this->options['validators'])."</div>";
         endif;
 	
 	return $this->elementDisplay;
@@ -60,7 +70,7 @@ class Element{
         $this->method = $method;
     }
     
-    public function addMultiOptions($options){
+    public function addMultiOptions($options,$emptyOption = false){
 	
 	if(count($options)==0)
 	    return ;
@@ -69,6 +79,8 @@ class Element{
 	reset($options);
 	$first_value = current($options);
 	
+	if($emptyOption)
+	    $this->multiOptions[$this->name][] = '';
 	// if as a value we get an array then first col is a key and second is a value
 	if(is_array($first_value)):
 	    
@@ -201,4 +213,37 @@ class Element{
     public function setError($message){
         $this->error = $message;
     }
+    
+    public function renderClasses($element = 'element'){
+	$classes = $this->classes[$element];
+	$classList = implode(' ',$classes);
+	
+	return $classList;
+    }
+    
+    public function addAdminDefaultClasses(){
+	$this->classes['wrapper'] = array('form-group');
+	$this->classes['label'] = array('control-label','col-md-3');
+	$this->classes['overElementWrapper'] = array('col-md-4');
+	$this->classes['element'] = array('form-control');
+    }
+    
+    public function addClass($class,$type='element'){
+	$this->classes[$type][] = $class;
+    }
+    
+    public function renderParams(){
+	if(empty($this->params))
+	    return '';
+	$result = "";
+	foreach($this->params as $attribute => $value):
+	    $result .= $attribute."='".$value."' ";
+	endforeach;
+	return $result;
+    }
+    
+    public function addParam($attribute,$value){
+	$this->params[$attribute] = $value;
+    }
+    
 }

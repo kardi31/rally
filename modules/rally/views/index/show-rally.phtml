@@ -31,7 +31,28 @@
 </div>
     <div class="col-md-4 sign-up-rally">
 	<h3>Zapisz się do rajdu</h3>
-	<?php echo $form->renderForm(); ?>
+	<form method="POST">
+	    <div class='formElemWrapper'>
+		<label for='driver_id' type='text'>Kierowca</label>
+		<?php echo $form->getElement('driver_id')->renderElement(); ?>
+	    </div>
+	    <div class='formElemWrapper'>
+		<label for='pilot_id' type='text'>Pilot</label>
+		<?php echo $form->getElement('pilot_id')->renderElement(); ?>
+	    </div>     
+	    <div class='formElemWrapper'>
+		<label for='car_id' type='text'>Samochód</label>
+		<?php echo $form->getElement('car_id')->renderElement(); ?>
+	    </div>
+	    <div class='formElemWrapper'>
+		<label for='risk' type='text'>Ryzyko</label>
+		<?php echo $form->getElement('risk')->renderElement(); ?>
+	    </div>
+	    <div class='formSubmitWrapper'>
+		<?php echo $form->getElement('submit')->renderElement(); ?>
+	    </div>
+
+	</form>
     </div>
 </div>
 

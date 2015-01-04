@@ -103,6 +103,7 @@ class Validator{
     }
     
     public static function validateCaptcha($var,$method) {
+
         // zmienna do której porównujemy
         if($method=="POST"):
             $checkVar = $_POST['captcha'];
@@ -113,15 +114,14 @@ class Validator{
             $response['errorMessage'] = "Formularz błędnie napisany. Skontaktuj się z administracją";
             return $response;
         endif;
-        
-        if($_SESSION['originalkey'] == $checkVar):
+        if($_SESSION['originalkey'] == $checkVar&&strlen($checkVar)):
             $response['result'] = true;
         else:
             $response['result'] = false;
             $response['errorMessage'] = "Niepoprawny tekst";
             
         endif;
-        
+	
         return $response;
     }
     

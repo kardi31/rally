@@ -23,3 +23,11 @@ function customDataTableFunctions(){
         }
     });
 }
+
+$.extend($.inputmask.defaults, {
+            'autounmask': true
+        });
+
+$(".timePicker").inputmask({
+    "mask": "00:99:99"
+});

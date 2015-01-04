@@ -5,11 +5,13 @@ class RallyService extends Service{
     protected $rallyTable;
     protected $crewTable;
     protected $stageTable;
+    protected $surfaceTable;
     protected $accidentTable;
     
     
     public function __construct(){
         $this->rallyTable = parent::getTable('rally','rally');
+        $this->surfaceTable = parent::getTable('rally','surface');
         $this->crewTable = parent::getTable('rally','crew');
         $this->stageTable = parent::getTable('rally','stage');
         $this->accidentTable = parent::getTable('rally','accident');
@@ -32,6 +34,15 @@ class RallyService extends Service{
 	$q->addWhere('r.date > NOW()');
 	$q->orderBy('r.date');
 	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getAllSurfaces($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $surface = array(
+		'gravel' => 'Gravel',
+		'tarmac' => 'Tarmac',
+		'rain' => 'Rain',
+		'snow' => 'Snow');
+ 	return $surface;
     }
     
     public function getStageWithResults($id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
@@ -72,6 +83,49 @@ class RallyService extends Service{
 	$record->save();
 	
 	return $record;
+    }
+    
+    public function saveRally($values){
+        $rally = $this->rallyTable->getRecord();
+	
+	$values['slug'] = TK_Text::createUniqueTableSlug('Rally_Model_Doctrine_Rally',$values['name']);
+	$rally->fromArray($values);
+	
+	$rally->save();
+	$rally['Surfaces']->delete();
+	for($i=1;$i<4;$i++):
+	    if(!strlen($values['surface'.$i])||$values['percent'.$i]==0){
+		break;
+	    }
+		    
+	    $data = array();
+	    $data['surface'] = $values['surface'.$i];
+	    $data['percentage'] = $values['percent'.$i];
+	    $data['rally_id'] = $rally['id'];
+	    $this->saveSurface($data);
+	    
+	endfor;
+	$rally->save();
+	    
+	return $rally;
+    }
+    
+    
+    public function saveStage($values){
+        $stage = $this->stageTable->getRecord();
+	
+	$stage->fromArray($values);
+	$stage->save();
+	
+	return $stage;
+    }
+    
+    public function saveSurface($values){
+	$surface = $this->surfaceTable->getRecord();
+	$surface->fromArray($values);
+	$surface->save();
+	
+	return $surface;
     }
     
     public function checkAccident($accidentProbability){

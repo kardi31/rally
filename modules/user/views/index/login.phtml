@@ -1,1 +1,14 @@
-<?php echo $form->renderForm(); ?>
+<form method="POST">
+    <div class='formElemWrapper'>
+	<label for='email' type='text'>Email</label>
+	<?php echo $form->getElement('email')->renderElement(); ?>
+    </div>
+    <div class='formElemWrapper'>
+	<label for='password' type='text'>Hasło</label>
+	<?php echo $form->getElement('password')->renderElement(); ?>
+    </div>     
+    <div class='formSubmitWrapper'>
+	<?php echo $form->getElement('submit')->renderElement(); ?>
+    </div>
+	
+</form>

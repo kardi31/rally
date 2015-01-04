@@ -12,10 +12,12 @@ class Form extends Element{
          protected $multiOptions;
          protected $submitElem = "submit";
 	 protected $elements;
+	 protected $classes;
          
     public function __construct(){
 	$this->multiOptions = array();
 	$this->elements = array();
+	$this->classes = array();
     }
     
     
@@ -26,10 +28,12 @@ class Form extends Element{
     
     function createElement($type,$name,$options = array(),$label = null) {
 	$element = new Element($type,$name,$options,$label);
-	$this->fields[$name] = $element;
+	$this->elements[$name] = $element;
 	
 	if($type == "submit")
 	    $this->submitElem = $name;
+	
+	return $element;
     }
     
     function getElement($name){
@@ -53,7 +57,7 @@ class Form extends Element{
         elseif($this->method=="GET"):
             $var = $_GET[$name];
         endif;
-        var_dump($validators);exit;
+	
         $response = "";
         // dla kilku validatorow
         if(is_array($validators)):
@@ -95,11 +99,11 @@ class Form extends Element{
     }
     
     public function renderForm(){
-        $prefix = "<form class='TK_Form' method='".$this->method."' action='".$this->action."' enctype='multipart/form-data'>";
+        $prefix = "<form class='TK_Form' method='".$this->method."' action='".$this->action."' class='".$this->renderClasses()."' enctype='multipart/form-data'>";
         if($this->error!==false)
             $prefix .= "<div class='formError'>".$this->error."</div>";
         $suffix = "</form>";
-	foreach($this->fields as $element):
+	foreach($this->elements as $element):
 	    $this->form .= $element->renderElement($this->submitElem);
 	endforeach;
         $form = $prefix.$this->form.$suffix;
@@ -145,16 +149,19 @@ class Form extends Element{
         return $response;
     }
     
-    public function createCaptcha(){
+    public function renderCaptcha(){
        
-        $this->form .= "<div class='formElemWrapper'><label for='captcha' id='captcha'>Przepisz kod z obrazka</label>";
-        $this->form .= "<img src='/captcha' />";
-        $this->form .= "<input name='captcha' id='captcha' type='text' />";
-        $this->form .= "<div class='formError'>".$this->validateElement('captcha','captcha')."</div></div>";
+	$captcha = '';
+        $captcha .= "<div class='formElemWrapper'><label for='captcha' id='captcha'>Przepisz kod z obrazka</label>";
+        $captcha .= "<img src='/captcha' />";
+        $captcha .= "<input name='captcha' id='captcha' type='text' />";
+        $captcha .= "<div class='formError'>".$this->validateElement('captcha','captcha')."</div></div>";
+	
+	return $captcha;
     }
     
     public function isValid(){
-        foreach($this->fields as $element):
+        foreach($this->elements as $element):
 	    if(!$element->getValid())
 		return false;
 	endforeach;
@@ -165,4 +172,16 @@ class Form extends Element{
     public function setError($message){
         $this->error = $message;
     }
+    
+    public function addClass($class){
+	$this->classes[] = $class;
+    }
+    
+    public function renderClasses(){
+	$classes = array_keys($this->classes);
+	$classList = implode(' ',$classes);
+	
+	return $classList;
+    }
+    
 }

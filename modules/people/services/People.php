@@ -200,12 +200,11 @@ class PeopleService extends Service{
 	$rallyService = new RallyService();
 	// count the number of previous stages
 	$lastStageCounter = count($rally['Crews'][0]['StageResults']);
-	
-	
 	foreach($rally['Crews'] as $key => $crew):
 	    $late = array();
-	    if($crew['StageResults'][$lastStageCounter-1]['base_time']!=null)
+	    if(isset($crew['StageResults'][$lastStageCounter])&&$crew['StageResults'][$lastStageCounter]['base_time']!=null)
 		continue;
+	    
 	    $late['Driver'][$key] = $this->getDriverLate($crew['Driver']);
 	    $late['Pilot'][$key] = $this->getPilotLate($crew['Pilot']);
 	    $late['Car'][$key] = CarService::getCarLate($crew['Car']);
@@ -238,7 +237,7 @@ class PeopleService extends Service{
 	    $crew['StageResults'][$lastStageCounter]['stage_id'] = $stage['id'];
 	    $crew['StageResults'][$lastStageCounter]['base_time'] = $base_time;
 	    $crew->save();
-	    
+	    echo 'k';
 	endforeach;
     }
     

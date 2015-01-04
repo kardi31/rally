@@ -1,0 +1,122 @@
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+?>
+
+<div class="row">
+	<div class="col-md-12">
+		<!-- BEGIN VALIDATION STATES-->
+		<div class="portlet box purple">
+			<div class="portlet-title">
+				<div class="caption">
+					<i class="fa fa-gift"></i>Add rally
+				</div>
+				<div class="tools">
+					<a href="javascript:;" class="collapse" data-original-title="" title="">
+					</a>
+					<a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title="">
+					</a>
+					<a href="javascript:;" class="reload" data-original-title="" title="">
+					</a>
+					<a href="javascript:;" class="remove" data-original-title="" title="">
+					</a>
+				</div>
+			</div>
+			<div class="portlet-body form">
+				<!-- BEGIN FORM-->
+				<form action="" id="form_sample_1" class="form-horizontal" method="POST">
+					<div class="form-body">
+					    <div class="formElemWrapper form-group">
+						<label class="control-label col-md-3" for="name" id="nameLabel">Nazwa</label>
+						<div class="col-md-4">
+						    <?php echo $form->getElement('name')->renderElement(); ?>
+						</div>
+					    </div>
+					    <div class="formElemWrapper form-group">
+						<label class="control-label col-md-3" for="date" id="dateLabel">Data</label>
+						<div class="col-md-4">
+						    <div class="input-group date form_datetime">
+							<?php echo $form->getElement('date')->renderElement(); ?>
+							<span class="input-group-btn">
+							    <button class="btn default date-set" type="button">
+								<i class="fa fa-calendar"></i>
+							    </button>
+							</span>
+						    </div>
+						</div>
+					    </div>
+					    <div class="formElemWrapper form-group">
+						<label class="control-label col-md-3" for="min_time" id="min_timeLabel">Minimalny czas</label>
+						<div class="col-md-4">
+						    <?php echo $form->getElement('min_time')->renderElement(); ?>
+						</div>
+					    </div>
+					    <div class="form-group">
+								 <label class="control-label col-md-3" for="surface1">Nawierzchnia 1</label>
+								 <div class="col-md-2">
+								     <?php echo $form->getElement('surface1')->renderElement(); ?>
+								 </div>
+								 <div class="col-md-4">
+								     <?php echo $form->getElement('percent1')->renderElement(); ?>
+								 </div>
+						    
+					    </div>
+					    <div class="form-group">
+								 <label class="control-label col-md-3" for="surface2">Nawierzchnia 2</label>
+								 <div class="col-md-2">
+								     <?php echo $form->getElement('surface2')->renderElement(); ?>
+								 </div>
+								 <div class="col-md-4">
+								     <?php echo $form->getElement('percent2')->renderElement(); ?>
+								 </div>
+						    
+					    </div>
+					    <div class="form-group">
+								 <label class="control-label col-md-3" for="surface3">Nawierzchnia 3</label>
+								 <div class="col-md-2">
+								     <?php echo $form->getElement('surface3')->renderElement(); ?>
+								 </div>
+								 <div class="col-md-4">
+								     <?php echo $form->getElement('percent3')->renderElement(); ?>
+								 </div>
+						    
+					    </div>
+					    <div class="form-group">
+								 <label class="control-label col-md-3" for="active">Aktywny</label>
+								 
+								 <div class="col-md-4">
+								     <div class="checkbox-list">
+									 <label class="checkbox-inline">
+											<?php echo $form->getElement('active')->renderElement(); ?>
+
+
+
+									 </label>
+								     </div>
+								 </div>
+						    
+					    </div>
+						<input type="hidden" name="form_send" value="1" />
+					</div>
+					<div class="form-actions">
+						<div class="row">
+							<div class="col-md-offset-3 col-md-9">
+								<button type="submit" name="submit" class="btn green">Submit</button>
+								<button type="submit" name="saveAndAddNew" class="btn blue"><i class="fa fa-plus"></i> Save and add new </button>
+								<button type="submit" name="saveAndStay" class="btn purple"><i class="fa fa-edit"></i> Save and stay</button>
+								<button type="button" class="btn default">Cancel</button>
+							</div>
+						</div>
+					</div>
+				</form>
+				<!-- END FORM-->
+			</div>
+		</div>
+		<!-- END VALIDATION STATES-->
+	</div>
+</div>

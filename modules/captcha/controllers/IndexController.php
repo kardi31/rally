@@ -12,7 +12,9 @@ class Captcha_Index extends Controller{
     }
     
     public function index(){
-       
+       $view = $this->view;
+         $view->setNoRender();
+	 include(BASE_PATH.'/library/TK/Form/captcha/captcha.php');
     }
     
     

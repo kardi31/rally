@@ -25,7 +25,7 @@ class User_Index extends Controller{
         $form->createElement('password','password',array('validators' => array('stringLength' => array('min' => 4,'max' => 12))),'Hasło');
         $form->createElement('password','password2',array('validators' => array('match' => array('elem' => 'password'))),'Powtórz hasło');
         $form->createElement('text','email',array('validators' => 'email'),'Adres email');
-        $form->createCaptcha();
+        $form->createElement('captcha','captcha',array());
         $form->createElement('submit','submit');
         if($form->isSubmit()){
             if($form->isValid()){
@@ -44,7 +44,10 @@ class User_Index extends Controller{
                     $userService->saveUserFromArray($values,false);
                     
                     $mailService->sendMail($values['email'],'Rejestracja w Tomek CMS przebiegła pomyślnie',$mailService::prepareRegistrationMail($values['token']));
-                }
+                
+		    TK_Helper::redirect('/user/register-complete');
+		
+		}
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
         }
@@ -59,10 +62,10 @@ class User_Index extends Controller{
         $mailService = parent::getService('user','mail');
         
         if(!$user = $userService->getUser($GLOBALS['urlParams']['token'],'token')){
-            echo "brak użytkownika";
+            $message = "brak użytkownika";
         }
         elseif($user->get('active')){
-            echo "Użytkownik już aktywowany";
+            $message = "Użytkownik już aktywowany";
         }
         else{
             
@@ -92,9 +95,10 @@ class User_Index extends Controller{
             $user->save();
             $mailService->sendMail($user['email'],'Konto w Tomek CMS zostało aktywowane',$mailService::prepareConfirmActivationMail());
                 
-            echo "Użytkownik pomyślnie aktywowany";
+            $message = "Użytkownik pomyślnie aktywowany";
         }
         
+	$this->view->assign('message',$message);
     }
     
     public function login(){
@@ -139,6 +143,9 @@ class User_Index extends Controller{
                 
     }
     
+    public function registerComplete(){
+	
+    }
     
     
 }

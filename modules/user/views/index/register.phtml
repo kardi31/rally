@@ -1,1 +1,23 @@
-<?php echo $form->renderForm(); ?>
+<form method="POST">
+    <div class='formElemWrapper'>
+	<label for='login' type='text'>Login</label>
+	<?php echo $form->getElement('login')->renderElement(); ?>
+    </div>
+    <div class='formElemWrapper'>
+	<label for='password' type='text'>Hasło</label>
+	<?php echo $form->getElement('password')->renderElement(); ?>
+    </div>     
+    <div class='formElemWrapper'>
+	<label for='password2' type='text'>Powtórz hasło</label>
+	<?php echo $form->getElement('password2')->renderElement(); ?>
+    </div>
+    <div class='formElemWrapper'>
+	<label for='email' type='text'>Email</label>
+	<?php echo $form->getElement('email')->renderElement(); ?>
+    </div>
+	<?php echo $form->getElement('captcha')->renderElement(); ?>
+    <div class='formSubmitWrapper'>
+	<?php echo $form->getElement('submit')->renderElement(); ?>
+    </div>
+	
+</form>
