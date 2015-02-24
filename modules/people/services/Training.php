@@ -1,17 +1,33 @@
 <?php
 
-class PeopleService extends Service{
+class TrainingService extends Service{
     
-    protected $peopleTable;
+    protected $trainingTable;
     
     protected $driverSkills = array(
         'composure', 'speed','regularity','reflex','on_gravel' ,'on_tarmac','on_snow','in_rain','form','talent'
     );
        
-    protected $driverSkillsWages = array(
-        3,5,4,4,6,6,6,6,8,0
+    // dla wspolczynnika 1
+    protected $trainingLevels = array(
+        2 => 100,
+        3 => 130,
+        4 => 175,
+        5 => 245,
+        6 => 355,
+        7 => 532,
+        8 => 824,
+        9 => 1318,
+        10 => 2174
     );
      
+    /*
+     * kalkulator dla wsp 0.5
+     * 1/0.5 = x2
+     * dla wsp 2
+     * 1/2 = /2
+     */
+    
     protected $pilotSkills = array(
         'composure', 'dictate_rhytm','diction','route_description','form','talent'
     );
@@ -21,15 +37,15 @@ class PeopleService extends Service{
     );
     
     public function __construct(){
-        $this->peopleTable = parent::getTable('people','people');
+//        $this->trainingTable = parent::getTable('training','training');
     }
     
     public function getAllDrivers(){
-        return $this->peopleTable->findAll();
+        return $this->trainingTable->findAll();
     }
     
     public function getFreeDrivers(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
-	$q = $this->peopleTable->createQuery('p');
+	$q = $this->trainingTable->createQuery('p');
 	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name');
 	$q->leftJoin('p.Driver1Team d1t');
 	$q->leftJoin('p.Driver2Team d2t');
@@ -41,7 +57,7 @@ class PeopleService extends Service{
     }
     
     public function getFreePilots(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
-	$q = $this->peopleTable->createQuery('p');
+	$q = $this->trainingTable->createQuery('p');
 	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name');
 	$q->leftJoin('p.Pilot1Team p1t');
 	$q->leftJoin('p.Pilot2Team p2t');
@@ -58,12 +74,12 @@ class PeopleService extends Service{
         $skillsValues = $this->uniqueRandomNumbersWithinRangeDriver($league);
         $driverSkills = array_combine($this->driverSkills, $skillsValues);
         $driverSkills['age'] = rand(18,21);
-        $driverSkills['first_name'] = $this->generateRandomPeopleFirstName();
-        $driverSkills['last_name'] = $this->generateRandomPeopleLastName();
+        $driverSkills['first_name'] = $this->generateRandomTrainingFirstName();
+        $driverSkills['last_name'] = $this->generateRandomTrainingLastName();
         $driverSkills['form'] = 3;
         $driverSkills['job'] = 'driver';
         
-        $record = $this->peopleTable->getRecord();
+        $record = $this->trainingTable->getRecord();
         $record->fromArray($driverSkills);
         $record->save();
         
@@ -74,12 +90,12 @@ class PeopleService extends Service{
         $skillsValues = $this->uniqueRandomNumbersWithinRangePilot($league);
         $driverSkills = array_combine($this->pilotSkills, $skillsValues);
         $driverSkills['age'] = rand(18,21);
-        $driverSkills['first_name'] = $this->generateRandomPeopleFirstName();
-        $driverSkills['last_name'] = $this->generateRandomPeopleLastName();
+        $driverSkills['first_name'] = $this->generateRandomTrainingFirstName();
+        $driverSkills['last_name'] = $this->generateRandomTrainingLastName();
         $driverSkills['form'] = 3;
         $driverSkills['job'] = 'pilot';
         
-        $record = $this->peopleTable->getRecord();
+        $record = $this->trainingTable->getRecord();
         $record->fromArray($driverSkills);
         $record->save();
         
@@ -246,12 +262,12 @@ class PeopleService extends Service{
    
     
     public function getDriverLate($driver){
-	// get from people object 
+	// get from training object 
 	// only the elements which contains 
 	// driver skills
 	$driverSkills = array_intersect_key($driver->toArray(), array_flip($this->driverSkills));
 	
-	// get the difference between max skill(10) and people skills. Then get % of it and multiply by skill wage
+	// get the difference between max skill(10) and training skills. Then get % of it and multiply by skill wage
 	$props = array_map(function($skills,$wages){ return ((10-$skills)/10)*$wages; }, $driverSkills,$this->driverSkillsWages);
 	
 	// calculate weighted average
@@ -265,11 +281,11 @@ class PeopleService extends Service{
     }
     
     public function getPilotLate($pilot){
-	// get from people object 
+	// get from training object 
 	// only the elements which contains 
 	// driver skills
 	$driverSkills = array_intersect_key($pilot->toArray(), array_flip($this->pilotSkills));
-	// get the difference between max skill(10) and people skills. Then get % of it and multiply by skill wage
+	// get the difference between max skill(10) and training skills. Then get % of it and multiply by skill wage
 	$props = array_map(function($skills,$wages){ return ((10-$skills)/10)*$wages; }, $driverSkills,$this->pilotSkillsWages);
 	
 	// calculate weighted average

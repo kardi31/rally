@@ -48,3 +48,104 @@ People:
       type: integer(11)
     talent:
       type: integer(11)
+    experience:
+      type: integer(11)
+    active_training_skill:
+      type: string(255)
+Training:
+  tableName: people_training
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    people_id:
+      type: integer(4)
+    skill_name:
+      type: string(255)
+    current_skill_level:
+      type: integer(11)
+    training_factor:
+      type: decimal(10,2)
+    total_training_level:
+      type: decimal(10,2)
+    today_training_level:
+      type: integer(11)
+    skill_promotion:
+      type: boolean
+      default: 0
+    training_date:
+      type: datetime
+    People:
+      local: people_id
+      foreign: id
+      foreignType: one
+      type: many
+      alias: TrainingReports
+TrainingFactor:
+  tableName: people_training_factor
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    people_id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    composure:
+      type: decimal(10,2)
+    speed:
+      type: decimal(10,2)
+    regularity:
+      type: decimal(10,2)
+    reflex:
+      type: decimal(10,2)
+    on_gravel:
+      type: decimal(10,2)
+    on_tarmac:
+      type: decimal(10,2)
+    on_snow:
+      type: decimal(10,2)
+    in_rain:
+      type: decimal(10,2)
+    dictate_rhytm:
+      type: decimal(10,2)
+    diction:
+      type: decimal(10,2)
+    route_description:
+      type: decimal(10,2)
+    intelligence:
+      type: decimal(10,2)
+    composure_max:
+      type: integer(11)
+    speed_max:
+      type: integer(11)
+    regularity_max:
+      type: integer(11)
+    reflex_max:
+      type: integer(11)
+    on_gravel_max:
+      type: integer(11)
+    on_tarmac_max:
+      type: integer(11)
+    on_snow_max:
+      type: integer(11)
+    in_rain_max:
+      type: integer(11)
+    dictate_rhytm_max:
+      type: integer(11)
+    diction_max:
+      type: integer(11)
+    route_description_max:
+      type: integer(11)
+    intelligence_max:
+      type: integer(11)
+  relations:
+    People:
+      local: people_id
+      foreign: id
+      foreignType: one
+      type: one

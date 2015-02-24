@@ -22,6 +22,8 @@ class Rally_Admin extends Controller{
      }
      
      public function listRallyData(){
+         
+//        header('Content-Type', 'application/json', true);
          $view = $this->view;
          $view->setNoRender();
          $view->requireDTFactory();
@@ -40,7 +42,7 @@ class Rally_Admin extends Controller{
          $rows = array();
          foreach($results as $result):
              $row = array();
-             $row[] = '<input type="checkbox" name="id[]" value="'.$result['id'].'">';
+             $row[] = '<input type="checkbox" name="id[]" value="'.$result['id'].'" />';
              $row[] = $result['id'];
              $row[] = $result['name'];
              $row[] = TK_Text::timeFormat($result['date'],'d/m/Y H:i');
@@ -60,18 +62,28 @@ class Rally_Admin extends Controller{
          
    // $iDisplayStart = intval($_REQUEST['iDisplayStart']);
   
+         if(isset($_REQUEST['iDisplayLength'])){
 	  $iDisplayLength = intval($_REQUEST['iDisplayLength']);
 	  $iDisplayLength = $iDisplayLength < 0 ? $iTotalRecords : $iDisplayLength; 
-	  $sEcho = intval($_REQUEST['sEcho']);
+         }
+         else{
+             $iDisplayLength = $iTotalRecords;
+         }
          
+         if(isset($_REQUEST['sEcho'])){
+	  $sEcho = intval($_REQUEST['sEcho']);
+         }
+         else{
+             $sEcho = 0;
+         }
          $response = array(
             "aaData" => $rows,
             "sEcho" => $sEcho,
             "iTotalRecords" => $iTotalRecords,
             "iTotalDisplayRecords" => $iTotalRecords,
         );
-       
-        echo json_encode($response);
+//       var_dump(phpversion());exit;
+        echo json_encode($response,JSON_UNESCAPED_SLASHES);
      }
      
      public function showRallyCrews(){
@@ -437,13 +449,16 @@ class Rally_Admin extends Controller{
 	// get array with id of crews which's time hasn't been calculated yet
 	$crewsWithResults = $rallyService->getCrewsWithoutResults($stage['id'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
 	$surfaces = $rallyService->getRallySurfaces($GLOBALS['urlParams']['rally-id'],Doctrine_Core::HYDRATE_ARRAY);
+        
+        $carService = parent::getService('car','car');
+        $trainingService = parent::getService('people','training');
         $peopleService = parent::getService('people','people');
-	$peopleService->getCrewLate($stage,$crews,$crewsWithResults,$surfaces);
+	$peopleService->runStageForCrew($stage,$crews,$crewsWithResults,$surfaces);
 	
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
-	
-	TK_Helper::redirect('/admin/rally/show-stage-result/id/'.$stage['id']);
+	echo "done";exit;
+//	TK_Helper::redirect('/admin/rally/show-stage-result/id/'.$stage['id']);
     }
      
 }
