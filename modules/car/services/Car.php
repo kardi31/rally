@@ -64,7 +64,7 @@ class CarService extends Service{
 	return $record;
     }
     
-    public static function getCarLate(Car_Model_Doctrine_Car $car){
+    public static function getCarLate($car){
 	// get from people object 
 	// only the elements which contains 
 	// driver skills

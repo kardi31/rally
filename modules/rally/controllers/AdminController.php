@@ -130,6 +130,144 @@ class Rally_Admin extends Controller{
         echo json_encode($response);
      }
      
+     public function showStageResult(){
+	 
+	$stage_id = $GLOBALS['urlParams']['id'];
+        $rallyService = parent::getService('rally','rally');
+	$stage = $rallyService->getStageWithRally($stage_id,'id',Doctrine_Core::HYDRATE_ARRAY);
+        
+	$this->view->assign('stage',$stage);
+     }
+     
+     public function showStageResultData(){
+         $view = $this->view;
+         $view->setNoRender();
+         $view->requireDTFactory();
+         Service::loadModels('rally', 'rally');
+         Service::loadModels('people', 'people');
+         Service::loadModels('team', 'team');
+         Service::loadModels('car', 'car');
+         
+         $results = $dataTables = Index_DataTables_Factory::factory(array(
+            'table' => 'Rally_Model_Doctrine_StageResult', 
+            'class' => 'Rally_DataTables_StageResult', 
+            'fields' => array('sr.id','t.name','sr.base_time','a.name','cr.risk','c.name','d.last_name','p.last_name','c.name','sr.out_of_race'),
+        ));
+	 
+         $iTotalRecords = count($results);
+         $rows = array();
+         foreach($results as $result):
+             $row = array();
+             $row[] = '<input type="checkbox" name="id[]" value="'.$result['id'].'">';
+             $row[] = $result['id'];
+             $row[] = $result['Crew']['Team']['name'];
+             $row[] = $result['base_time'];
+	     if(isset($result['Accident'])){
+             $row[] = $result['Accident']['name'];
+		 
+	     }
+	 else {
+	     $row[] = '';
+	 }
+             $row[] = $result['Crew']['risk'];
+             $row[] = $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name'];
+             $row[] = $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name'];
+             $row[] = $result['Crew']['Car']['name'];
+             if(!$result['out_of_race'])
+                 $row[] = '<span class="label label-sm label-success">W wyścigu</span>';
+             else
+                 $row[] = '<span class="label label-sm label-danger">Poza trasą</span>';
+	     
+             $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
+            
+	     $row[] = $options;
+	     
+	     $rows[] = $row;
+         endforeach;
+         
+	  $iDisplayLength = intval($_REQUEST['iDisplayLength']);
+	  $iDisplayLength = $iDisplayLength < 0 ? $iTotalRecords : $iDisplayLength; 
+	  $sEcho = intval($_REQUEST['sEcho']);
+         
+         $response = array(
+            "aaData" => $rows,
+            "sEcho" => $sEcho,
+            "iTotalRecords" => $iTotalRecords,
+            "iTotalDisplayRecords" => $iTotalRecords,
+        );
+       
+        echo json_encode($response);
+     }
+     
+     public function showRallyResult(){
+	 
+	$rally_id = $GLOBALS['urlParams']['id'];
+        $rallyService = parent::getService('rally','rally');
+	$rally = $rallyService->getRally($rally_id,'id',Doctrine_Core::HYDRATE_ARRAY);
+        
+	$this->view->assign('rally',$rally);
+     }
+     
+     public function showRallyResultData(){
+         $view = $this->view;
+         $view->setNoRender();
+         $view->requireDTFactory();
+         Service::loadModels('rally', 'rally');
+         Service::loadModels('people', 'people');
+         Service::loadModels('team', 'team');
+         Service::loadModels('car', 'car');
+         
+         $results = $dataTables = Index_DataTables_Factory::factory(array(
+            'table' => 'Rally_Model_Doctrine_StageResult', 
+            'class' => 'Rally_DataTables_RallyResult', 
+            'fields' => array('sr.id','t.name','rally_time','a.name','cr.risk','c.name','d.last_name','p.last_name','c.name','sr.out_of_race'),
+        ));
+	 
+         $iTotalRecords = count($results);
+         $rows = array();
+         foreach($results as $result):
+             $row = array();
+             $row[] = '<input type="checkbox" name="id[]" value="'.$result['id'].'">';
+             $row[] = $result['id'];
+             $row[] = $result['Crew']['Team']['name'];
+             $row[] = $result['rally_time'];
+	     if(isset($result['Accident'])){
+             $row[] = $result['Accident']['name'];
+		 
+	     }
+	 else {
+	     $row[] = '';
+	 }
+             $row[] = $result['Crew']['risk'];
+             $row[] = $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name'];
+             $row[] = $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name'];
+             $row[] = $result['Crew']['Car']['name'];
+             if(!$result['out_of_race'])
+                 $row[] = '<span class="label label-sm label-success">W wyścigu</span>';
+             else
+                 $row[] = '<span class="label label-sm label-danger">Poza trasą</span>';
+	     
+             $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
+            
+	     $row[] = $options;
+	     
+	     $rows[] = $row;
+         endforeach;
+         
+	  $iDisplayLength = intval($_REQUEST['iDisplayLength']);
+	  $iDisplayLength = $iDisplayLength < 0 ? $iTotalRecords : $iDisplayLength; 
+	  $sEcho = intval($_REQUEST['sEcho']);
+         
+         $response = array(
+            "aaData" => $rows,
+            "sEcho" => $sEcho,
+            "iTotalRecords" => $iTotalRecords,
+            "iTotalDisplayRecords" => $iTotalRecords,
+        );
+       
+        echo json_encode($response);
+     }
+     
      public function showRallyStages(){
 	 
         $rallyService = parent::getService('rally','rally');
@@ -286,22 +424,26 @@ class Rally_Admin extends Controller{
      }
      
      public function calculateStageTime(){
+	 
+         $view = $this->view;
+         $view->setNoRender();
+	 
         Service::loadModels('team', 'team');
         Service::loadModels('people', 'people');
         Service::loadModels('car', 'car');
         $rallyService = parent::getService('rally','rally');
-        $rally = $rallyService->getRallyWithCrews($GLOBALS['urlParams']['rally-id'],'id');
-        $stage = $rallyService->getStageWithResults($GLOBALS['urlParams']['stage-id'],Doctrine_Core::HYDRATE_ARRAY);
-
+        $crews = $rallyService->getRallyCrews($GLOBALS['urlParams']['rally-id'],'rally_id',Doctrine_Core::HYDRATE_RECORD);
+	$stage = $rallyService->getStageShort($GLOBALS['urlParams']['stage-id'],'id',Doctrine_Core::HYDRATE_ARRAY);
+	// get array with id of crews which's time hasn't been calculated yet
+	$crewsWithResults = $rallyService->getCrewsWithoutResults($stage['id'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+	$surfaces = $rallyService->getRallySurfaces($GLOBALS['urlParams']['rally-id'],Doctrine_Core::HYDRATE_ARRAY);
         $peopleService = parent::getService('people','people');
-        $carService = parent::getService('car','car');
-	$peopleService->getCrewLate($stage,$rally);
+	$peopleService->getCrewLate($stage,$crews,$crewsWithResults,$surfaces);
 	
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
 	
-	$this->view->assign('rally',$rally);
-	$this->view->assign('stage',$stage);
+	TK_Helper::redirect('/admin/rally/show-stage-result/id/'.$stage['id']);
     }
      
 }

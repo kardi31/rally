@@ -4,6 +4,7 @@ class RallyService extends Service{
     
     protected $rallyTable;
     protected $crewTable;
+    protected $resultTable;
     protected $stageTable;
     protected $surfaceTable;
     protected $accidentTable;
@@ -14,6 +15,7 @@ class RallyService extends Service{
         $this->surfaceTable = parent::getTable('rally','surface');
         $this->crewTable = parent::getTable('rally','crew');
         $this->stageTable = parent::getTable('rally','stage');
+        $this->resultTable = parent::getTable('rally','stageResult');
         $this->accidentTable = parent::getTable('rally','accident');
     }
     
@@ -60,6 +62,38 @@ class RallyService extends Service{
 	return $q->fetchOne(array(),$hydrationMode);
     }
     
+    public function getStageShort($id,$field,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->stageTable->createQuery('s');
+	$q->addWhere('s.'.$field.' = ?',$id);
+	$q->addSelect('s.*');
+	return $q->fetchOne(array(),$hydrationMode);
+    }
+    
+    
+     public function getStageWithRally($id,$field,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->stageTable->createQuery('s');
+	$q->leftJoin('s.Rally r');
+	$q->addWhere('s.'.$field.' = ?',$id);
+	$q->addSelect('s.*,r.*');
+	return $q->fetchOne(array(),$hydrationMode);
+    }
+    
+    public function getCrewsWithoutResults($stage_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->resultTable->createQuery('sr');
+	$q->select('sr.crew_id');
+	$q->addWhere('sr.stage_id = ?',$stage_id);
+	$q->addWhere('sr.base_time IS NOT NULL');
+	$q->addWhere('sr.out_of_race = 0');
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getRallySurfaces($rally_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->surfaceTable->createQuery('su');
+	$q->select('su.*');
+	$q->addWhere('su.rally_id = ?',$rally_id);
+	return $q->execute(array(),$hydrationMode);
+    }
+    
     public function getRallyWithCrews($id,$field,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->rallyTable->createQuery('r');
 	$q->leftJoin('r.Crews c');
@@ -68,6 +102,18 @@ class RallyService extends Service{
 	$q->addWhere('c.in_race = 1');
 	$q->orderBy('r.date');
 	return $q->fetchOne(array(),$hydrationMode);
+    }
+    
+    public function getRallyCrews($id,$field,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->crewTable->createQuery('cr');
+	$q->leftJoin('cr.Pilot p');
+	$q->leftJoin('cr.Driver d');
+	$q->leftJoin('cr.Car c');
+	$q->leftJoin('c.Model cm');
+	$q->addWhere('cr.'.$field." = ".$id);
+	$q->addWhere('cr.in_race = 1');
+	$q->addSelect('cr.*,p.*,d.*,c.*,cm.*');
+	return $q->execute(array(),$hydrationMode);
     }
     
     public function saveRallyCrew($values,$rally,$team){
@@ -118,6 +164,15 @@ class RallyService extends Service{
 	$stage->save();
 	
 	return $stage;
+    }
+    
+    public function saveStageResult($values){
+        $stageResult = $this->resultTable->getRecord();
+	
+	$stageResult->fromArray($values);
+	$stageResult->save();
+	
+	return $stageResult;
     }
     
     public function saveSurface($values){

@@ -193,22 +193,23 @@ class PeopleService extends Service{
     }
     
     
-    public function getCrewLate($stage, Rally_Model_Doctrine_Rally $rally,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+    public function getCrewLate($stage, $crews, $crewsWithResults,$surfaces,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	$minTime = TK_Text::timeFormat($stage['min_time'], 'i:s','H:i:s');
 	$timeElems = explode(':',$minTime);
 	$minTimeSeconds = $timeElems[0]*60+$timeElems[1];
 	$rallyService = new RallyService();
 	// count the number of previous stages
-	$lastStageCounter = count($rally['Crews'][0]['StageResults']);
-	foreach($rally['Crews'] as $key => $crew):
+	
+	foreach($crews as $key => $crew):
+	    $stageResults = array();
 	    $late = array();
-	    if(isset($crew['StageResults'][$lastStageCounter])&&$crew['StageResults'][$lastStageCounter]['base_time']!=null)
+	    if(in_array($crew['id'],$crewsWithResults))
 		continue;
 	    
 	    $late['Driver'][$key] = $this->getDriverLate($crew['Driver']);
 	    $late['Pilot'][$key] = $this->getPilotLate($crew['Pilot']);
 	    $late['Car'][$key] = CarService::getCarLate($crew['Car']);
-	    $accidentProbability = $this->calculateAccidentProbability($crew['Driver'],$crew['Pilot'],$crew['Car'],$rally);
+	    $accidentProbability = $this->calculateAccidentProbability($crew['Driver'],$crew['Pilot'],$crew['Car'],$surfaces);
 	    
 	    $accidentProbability *= Rally_Model_Doctrine_Rally::getAccidentRisk($crew['risk']);
 	    
@@ -221,11 +222,11 @@ class PeopleService extends Service{
 	    $accident = $rallyService->checkAccident($accidentProbability);
 	    
 	    if ($accident) {
-		$crew['StageResults'][$lastStageCounter]->link('Accident',$accident['id']);
+		$stageResults['Accident'] = $accident['id'];
 		
 		if ($accident['damage']==100){
 		    $crew['in_race'] = false;
-		    $crew['StageResults'][$lastStageCounter]['out_of_race'] = 1;
+		    $stageResults['out_of_race'] = 1;
 		}
 		else{
 		    $crewSeconds = ($accident['damage'] + 100) * $crewSeconds / 100;
@@ -234,16 +235,17 @@ class PeopleService extends Service{
 	    // convert seconds to proper time
 	    $base_time = gmdate("H:i:s", $crewSeconds);
 	    
-	    $crew['StageResults'][$lastStageCounter]['stage_id'] = $stage['id'];
-	    $crew['StageResults'][$lastStageCounter]['base_time'] = $base_time;
+	    $stageResults['stage_id'] = $stage['id'];
+	    $stageResults['crew_id'] = $crew['id'];
+	    $stageResults['base_time'] = $base_time;
+	    $rallyService->saveStageResult($stageResults);
 	    $crew->save();
-	    echo 'k';
 	endforeach;
     }
     
    
     
-    public function getDriverLate(People_Model_Doctrine_People $driver){
+    public function getDriverLate($driver){
 	// get from people object 
 	// only the elements which contains 
 	// driver skills
@@ -262,7 +264,7 @@ class PeopleService extends Service{
 	return $result;
     }
     
-    public function getPilotLate(People_Model_Doctrine_People $pilot){
+    public function getPilotLate($pilot){
 	// get from people object 
 	// only the elements which contains 
 	// driver skills
@@ -279,14 +281,14 @@ class PeopleService extends Service{
 	return $result;
     }
     
-    public function calculateAccidentProbability(People_Model_Doctrine_People $driver, People_Model_Doctrine_People $pilot, Car_Model_Doctrine_Car $car, Rally_Model_Doctrine_Rally $rally){
+    public function calculateAccidentProbability($driver, $pilot, $car, $surfaces){
 	$accidentProbability = 0;
 	
 	// driver accident skills
 	if($driver['reflex']<4)
 	    $accidentProbability += 0.5;
 	
-	foreach($rally['Surfaces'] as $surface):
+	foreach($surfaces as $surface):
 	    if($surface['surface']=="rain")
 		$skill = $driver['in_'.$surface['surface']];
 	    else
