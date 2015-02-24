@@ -21,7 +21,13 @@
  * @property integer $form
  * @property integer $dictate_rhytm
  * @property integer $diction
+ * @property integer $route_description
+ * @property integer $intelligence
  * @property integer $talent
+ * @property integer $experience
+ * @property string $active_training_skill
+ * @property People_Model_Doctrine_Training $Training
+ * @property People_Model_Doctrine_TrainingFactor $TrainingFactor
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -99,17 +105,25 @@ abstract class People_Model_Doctrine_BasePeople extends Doctrine_Record
              'type' => 'integer',
              'length' => '11',
              ));
-         $this->hasColumn('route_description', 'integer', 11, array(
+        $this->hasColumn('route_description', 'integer', 11, array(
              'type' => 'integer',
              'length' => '11',
              ));
-          $this->hasColumn('intelligence', 'integer', 11, array(
+        $this->hasColumn('intelligence', 'integer', 11, array(
              'type' => 'integer',
              'length' => '11',
              ));
         $this->hasColumn('talent', 'integer', 11, array(
              'type' => 'integer',
              'length' => '11',
+             ));
+        $this->hasColumn('experience', 'integer', 11, array(
+             'type' => 'integer',
+             'length' => '11',
+             ));
+        $this->hasColumn('active_training_skill', 'string', 255, array(
+             'type' => 'string',
+             'length' => '255',
              ));
 
         $this->option('type', 'MyISAM');
@@ -120,6 +134,14 @@ abstract class People_Model_Doctrine_BasePeople extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
+        $this->hasOne('People_Model_Doctrine_Training as Training', array(
+             'local' => 'id',
+             'foreign' => 'people_id'));
+
+        $this->hasOne('People_Model_Doctrine_TrainingFactor as TrainingFactor', array(
+             'local' => 'id',
+             'foreign' => 'people_id'));
+
         $timestampable0 = new Doctrine_Template_Timestampable();
         $softdelete0 = new Doctrine_Template_SoftDelete();
         $this->actAs($timestampable0);

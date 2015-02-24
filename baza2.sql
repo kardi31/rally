@@ -3,7 +3,7 @@
 -- Server version:               5.5.40-0ubuntu0.12.04.1 - (Ubuntu)
 -- Server OS:                    debian-linux-gnu
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2015-02-24 08:10:18
+-- Date/time:                    2015-02-24 18:56:21
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -136,6 +136,7 @@ CREATE TABLE IF NOT EXISTS `people_people` (
   `route_description` bigint(20) DEFAULT NULL,
   `intelligence` bigint(20) DEFAULT NULL,
   `talent` bigint(20) DEFAULT NULL,
+  `active_training_skill` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   `deleted_at` datetime DEFAULT NULL,
@@ -145,57 +146,121 @@ CREATE TABLE IF NOT EXISTS `people_people` (
 -- Dumping data for table ral.people_people: 49 rows
 DELETE FROM `people_people`;
 /*!40000 ALTER TABLE `people_people` DISABLE KEYS */;
-INSERT INTO `people_people` (`id`, `first_name`, `last_name`, `job`, `age`, `composure`, `speed`, `regularity`, `reflex`, `on_gravel`, `on_tarmac`, `on_snow`, `in_rain`, `form`, `dictate_rhytm`, `diction`, `route_description`, `intelligence`, `talent`, `created_at`, `updated_at`, `deleted_at`) VALUES
-	(1, 'PPryKP', 'JTeZ', 'driver', 18, 4, 7, 2, 5, 4, 5, 4, 4, 3, NULL, NULL, NULL, NULL, 7, '2014-09-19 12:45:33', '2014-09-19 12:45:33', NULL),
-	(2, 'HwTij', 'ZgCgsDJAOg', 'driver', 20, 4, 4, 4, 8, 6, 7, 4, 4, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 12:52:15', '2014-09-19 12:52:15', NULL),
-	(3, 'phctgx', 'crWW', 'driver', 18, 4, 5, 8, 4, 4, 5, 4, 7, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 13:18:27', '2014-09-19 13:18:27', NULL),
-	(4, 'LEaqaD', 'jgneTbuEfW', 'driver', 18, 8, 5, 4, 4, 7, 5, 4, 4, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 13:18:54', '2014-09-19 13:18:54', NULL),
-	(5, 'urhIK', 'AeGoZ', 'driver', 21, 4, 4, 4, 8, 4, 5, 6, 6, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
-	(6, 'ghSbcwUOG', 'NHlBXTHtlx', 'driver', 20, 4, 5, 5, 6, 4, 4, 6, 7, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
-	(7, 'lCQZ', 'BQRgvrJOyx', 'driver', 21, 5, 4, 4, 5, 4, 5, 4, 4, 3, NULL, NULL, NULL, NULL, 7, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
-	(8, 'cNLbaiWFk', 'PQYgHBoycX', 'driver', 20, 5, 4, 4, 8, 4, 4, 4, 4, 3, NULL, NULL, NULL, NULL, 5, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
-	(9, 'nbNQa', 'rFwWCJS', 'driver', 18, 4, 4, 4, 5, 5, 4, 4, 9, 3, NULL, NULL, NULL, NULL, 6, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
-	(10, 'LgEtn', 'UALlmQkoX', 'driver', 19, 4, 4, 5, 4, 7, 6, 5, 4, 3, NULL, NULL, NULL, NULL, 6, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
-	(11, 'sXcfi', 'mHLoGIB', 'driver', 21, 4, 7, 6, 4, 5, 4, 4, 4, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
-	(12, 'hYyS', 'tSZxktD', 'driver', 20, 5, 4, 4, 4, 4, 5, 8, 4, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
-	(13, 'aaSbliraB', 'ZEeLiFGgm', 'driver', 20, 4, 4, 4, 9, 5, 4, 4, 4, 3, NULL, NULL, NULL, NULL, 7, '2014-09-19 14:32:11', '2014-09-19 14:32:11', NULL),
-	(14, 'veJDZxWcDp', 'wJRtNjXy', 'driver', 18, 4, 8, 4, 4, 8, 4, 5, 4, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 14:32:11', '2014-09-19 14:32:11', NULL),
-	(15, 'OFswT', 'OLLEyXX', 'driver', 21, 6, 4, 4, 6, 4, 5, 5, 4, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 14:32:11', '2014-09-19 14:32:11', NULL),
-	(16, 'iMDzXISX', 'ZCJDcUVmRT', 'driver', 20, 6, 4, 6, 4, 4, 4, 5, 5, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 14:32:11', '2014-09-19 14:32:11', NULL),
-	(17, 'yVVvQg', 'WzUYpCBe', 'driver', 20, 7, 4, 7, 4, 4, 5, 4, 4, 3, NULL, NULL, NULL, NULL, 6, '2014-09-19 14:32:51', '2014-09-19 14:32:51', NULL),
-	(18, 'gSTiIqO', 'mrRDLaBbJ', 'driver', 19, 7, 7, 4, 4, 4, 4, 6, 5, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 14:32:51', '2014-09-19 14:32:51', NULL),
-	(19, 'OnEEgpP', 'IQEJHI', 'driver', 19, 4, 4, 4, 6, 4, 4, 5, 4, 3, NULL, NULL, NULL, NULL, 7, '2014-09-19 14:32:51', '2014-09-19 14:32:51', NULL),
-	(20, 'cPOgR', 'BIVxYAVds', 'driver', 18, 4, 7, 4, 4, 6, 4, 5, 4, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 14:32:51', '2014-09-19 14:32:51', NULL),
-	(21, 'JbWPDLAgQl', 'Rgyfg', 'driver', 21, 7, 4, 4, 7, 4, 4, 7, 4, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 14:33:33', '2014-09-19 14:33:33', NULL),
-	(22, 'oHXHs', 'hHdhlfZJC', 'driver', 19, 6, 4, 7, 7, 4, 5, 4, 4, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 14:33:33', '2014-09-19 14:33:33', NULL),
-	(23, 'YCgFAOYqV', 'tcRzbBbP', 'pilot', 19, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 6, 6, 5, NULL, 6, '2014-09-19 14:33:33', '2014-09-19 14:33:33', NULL),
-	(24, 'dgrp', 'DUJxGu', 'driver', 18, 4, 4, 4, 5, 6, 4, 7, 6, 3, NULL, NULL, NULL, NULL, 5, '2014-09-19 14:33:50', '2014-09-19 14:33:50', NULL),
-	(25, 'ttpOzwkM', 'yogxjrSiH', 'driver', 21, 6, 6, 6, 4, 5, 5, 4, 5, 3, NULL, NULL, NULL, NULL, 4, '2014-09-19 14:33:50', '2014-09-19 14:33:50', NULL),
-	(26, 'PLIay', 'yNGWXYP', 'pilot', 18, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 7, 7, 5, 4, 7, '2014-09-19 14:33:50', '2014-09-19 14:33:50', NULL),
-	(27, 'jzRvpDdp', 'DNPj', 'pilot', 19, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 6, 6, 5, 7, 4, '2014-09-19 14:33:50', '2014-09-19 14:33:50', NULL),
-	(28, 'adRWo', 'bSFXx', 'driver', 19, 2, 4, 2, 5, 4, 2, 5, 7, 3, NULL, NULL, NULL, NULL, 2, '2014-09-19 14:42:50', '2014-09-19 14:42:50', NULL),
-	(29, 'zAvvOHx', 'nudMTCFT', 'driver', 19, 2, 4, 2, 2, 7, 3, 2, 4, 3, NULL, NULL, NULL, NULL, 7, '2014-09-19 14:42:50', '2014-09-19 14:42:50', NULL),
-	(30, 'aRENFoVSv', 'FbNNwBty', 'pilot', 21, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 2, 2, 6, 6, 4, '2014-09-19 14:42:50', '2014-09-19 14:42:50', NULL),
-	(31, 'uHObnQ', 'amquLTNpk', 'pilot', 21, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 2, 5, 3, 8, 3, '2014-09-19 14:42:50', '2014-09-19 14:42:50', NULL),
-	(32, 'aJZwfJggM', 'OXKaHQU', 'driver', 21, 3, 2, 4, 7, 2, 3, 5, 5, 3, NULL, NULL, NULL, NULL, 2, '2014-09-19 14:42:51', '2014-09-19 14:42:51', NULL),
-	(33, 'FnwvhB', 'bdxELhTVFg', 'driver', 18, 5, 4, 6, 2, 2, 2, 4, 2, 3, NULL, NULL, NULL, NULL, 6, '2014-09-19 14:42:51', '2014-09-19 14:42:51', NULL),
-	(34, 'qFULMwF', 'zcskkmgQt', 'pilot', 19, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 2, 5, 4, NULL, 2, '2014-09-19 14:42:51', '2014-09-19 14:42:51', NULL),
-	(35, 'aHPvdiXChx', 'oJeUl', 'pilot', 20, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 5, 4, 2, NULL, 4, '2014-09-19 14:42:51', '2014-09-19 14:42:51', NULL),
-	(36, 'BrAkiVf', 'lHfnRcUirL', 'driver', 20, 5, 3, 6, 2, 2, 2, 2, 6, 3, NULL, NULL, NULL, NULL, 5, '2014-12-18 07:34:51', '2014-12-18 07:34:51', NULL),
-	(37, 'WzgbMXe', 'gwsyGIwo', 'pilot', 19, 8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, 9, 6, 8, 5, 2, '2014-12-18 07:34:51', '2014-12-18 07:34:51', NULL),
-	(38, 'hbOYVgz', 'PWnSO', 'driver', 19, 0, 0, 0, 0, 0, 0, 0, 0, 3, NULL, NULL, NULL, NULL, 0, '2014-12-18 19:31:05', '2014-12-18 19:31:05', NULL),
-	(39, 'CBwReDT', 'CPYcXNYlG', 'pilot', 19, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 0, 0, 0, 5, 0, '2014-12-18 19:31:05', '2014-12-18 19:31:05', NULL),
-	(40, 'PmJmpsvVi', 'CpHHSINhcA', 'driver', 21, 6, 6, 4, 4, 6, 4, 6, 4, 3, NULL, NULL, NULL, NULL, 5, '2014-12-18 19:40:50', '2014-12-18 19:40:50', NULL),
-	(41, 'sIVapNJd', 'MDTzfYNDPt', 'pilot', 18, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 8, 4, 8, 5, 4, '2014-12-18 19:40:50', '2014-12-18 19:40:50', NULL),
-	(42, 'IdulvPRrf', 'PjOqmZ', 'driver', 18, 4, 4, 5, 4, 5, 6, 7, 4, 3, NULL, NULL, NULL, NULL, 6, '2014-12-18 19:42:44', '2014-12-18 19:42:44', NULL),
-	(43, 'tOQjGh', 'XXyLo', 'pilot', 20, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 7, 4, 8, 9, 4, '2014-12-18 19:42:44', '2014-12-18 19:42:44', NULL),
-	(44, 'Marc', 'Nowak', 'driver', 20, 4, 7, 6, 4, 6, 4, 6, 4, 3, NULL, NULL, NULL, NULL, 4, '2014-12-20 20:45:45', '2014-12-20 20:45:45', NULL),
-	(45, 'Jan', 'Smith', 'pilot', 19, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 8, 6, 9, 8, 4, '2014-12-20 20:45:45', '2014-12-20 20:45:45', NULL),
-	(46, 'Jean', 'Ripper', 'driver', 21, 8, 6, 7, 6, 4, 8, 4, 4, 3, NULL, NULL, NULL, NULL, 4, '2014-12-31 16:33:33', '2014-12-31 16:33:33', NULL),
-	(47, 'John', 'Simpson', 'pilot', 19, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 8, 5, 4, NULL, 7, '2014-12-31 16:33:33', '2014-12-31 16:33:33', NULL),
-	(48, 'Antoine', 'Exum', 'driver', 19, 5, 4, 8, 6, 4, 6, 7, 4, 3, NULL, NULL, NULL, NULL, 4, '2015-01-04 10:07:53', '2015-01-04 10:07:53', NULL),
-	(49, 'Kevin', 'Exum', 'pilot', 20, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 4, 8, 8, NULL, 7, '2015-01-04 10:07:53', '2015-01-04 10:07:53', NULL);
+INSERT INTO `people_people` (`id`, `first_name`, `last_name`, `job`, `age`, `composure`, `speed`, `regularity`, `reflex`, `on_gravel`, `on_tarmac`, `on_snow`, `in_rain`, `form`, `dictate_rhytm`, `diction`, `route_description`, `intelligence`, `talent`, `active_training_skill`, `created_at`, `updated_at`, `deleted_at`) VALUES
+	(1, 'PPryKP', 'JTeZ', 'driver', 18, 4, 7, 2, 5, 4, 5, 4, 4, 3, NULL, NULL, NULL, NULL, 7, NULL, '2014-09-19 12:45:33', '2014-09-19 12:45:33', NULL),
+	(2, 'HwTij', 'ZgCgsDJAOg', 'driver', 20, 4, 4, 4, 8, 6, 7, 4, 4, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 12:52:15', '2014-09-19 12:52:15', NULL),
+	(3, 'phctgx', 'crWW', 'driver', 18, 4, 5, 8, 4, 4, 5, 4, 7, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 13:18:27', '2014-09-19 13:18:27', NULL),
+	(4, 'LEaqaD', 'jgneTbuEfW', 'driver', 18, 8, 5, 4, 4, 7, 5, 4, 4, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 13:18:54', '2014-09-19 13:18:54', NULL),
+	(5, 'urhIK', 'AeGoZ', 'driver', 21, 4, 4, 4, 8, 4, 5, 6, 6, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
+	(6, 'ghSbcwUOG', 'NHlBXTHtlx', 'driver', 20, 4, 5, 5, 6, 4, 4, 6, 7, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
+	(7, 'lCQZ', 'BQRgvrJOyx', 'driver', 21, 5, 4, 4, 5, 4, 5, 4, 4, 3, NULL, NULL, NULL, NULL, 7, NULL, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
+	(8, 'cNLbaiWFk', 'PQYgHBoycX', 'driver', 20, 5, 4, 4, 8, 4, 4, 4, 4, 3, NULL, NULL, NULL, NULL, 5, NULL, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
+	(9, 'nbNQa', 'rFwWCJS', 'driver', 18, 4, 4, 4, 5, 5, 4, 4, 9, 3, NULL, NULL, NULL, NULL, 6, NULL, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
+	(10, 'LgEtn', 'UALlmQkoX', 'driver', 19, 4, 4, 5, 4, 7, 6, 5, 4, 3, NULL, NULL, NULL, NULL, 6, NULL, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
+	(11, 'sXcfi', 'mHLoGIB', 'driver', 21, 4, 7, 6, 4, 5, 4, 4, 4, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
+	(12, 'hYyS', 'tSZxktD', 'driver', 20, 5, 4, 4, 4, 4, 5, 8, 4, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 14:32:10', '2014-09-19 14:32:10', NULL),
+	(13, 'aaSbliraB', 'ZEeLiFGgm', 'driver', 20, 4, 4, 4, 9, 5, 4, 4, 4, 3, NULL, NULL, NULL, NULL, 7, NULL, '2014-09-19 14:32:11', '2014-09-19 14:32:11', NULL),
+	(14, 'veJDZxWcDp', 'wJRtNjXy', 'driver', 18, 4, 8, 4, 4, 8, 4, 5, 4, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 14:32:11', '2014-09-19 14:32:11', NULL),
+	(15, 'OFswT', 'OLLEyXX', 'driver', 21, 6, 4, 4, 6, 4, 5, 5, 4, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 14:32:11', '2014-09-19 14:32:11', NULL),
+	(16, 'iMDzXISX', 'ZCJDcUVmRT', 'driver', 20, 6, 4, 6, 4, 4, 4, 5, 5, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 14:32:11', '2014-09-19 14:32:11', NULL),
+	(17, 'yVVvQg', 'WzUYpCBe', 'driver', 20, 7, 4, 7, 4, 4, 5, 4, 4, 3, NULL, NULL, NULL, NULL, 6, NULL, '2014-09-19 14:32:51', '2014-09-19 14:32:51', NULL),
+	(18, 'gSTiIqO', 'mrRDLaBbJ', 'driver', 19, 7, 7, 4, 4, 4, 4, 6, 5, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 14:32:51', '2014-09-19 14:32:51', NULL),
+	(19, 'OnEEgpP', 'IQEJHI', 'driver', 19, 4, 4, 4, 6, 4, 4, 5, 4, 3, NULL, NULL, NULL, NULL, 7, NULL, '2014-09-19 14:32:51', '2014-09-19 14:32:51', NULL),
+	(20, 'cPOgR', 'BIVxYAVds', 'driver', 18, 4, 7, 4, 4, 6, 4, 5, 4, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 14:32:51', '2014-09-19 14:32:51', NULL),
+	(21, 'JbWPDLAgQl', 'Rgyfg', 'driver', 21, 7, 4, 4, 7, 4, 4, 7, 4, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 14:33:33', '2014-09-19 14:33:33', NULL),
+	(22, 'oHXHs', 'hHdhlfZJC', 'driver', 19, 6, 4, 7, 7, 4, 5, 4, 4, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 14:33:33', '2014-09-19 14:33:33', NULL),
+	(23, 'YCgFAOYqV', 'tcRzbBbP', 'pilot', 19, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 6, 6, 5, NULL, 6, NULL, '2014-09-19 14:33:33', '2014-09-19 14:33:33', NULL),
+	(24, 'dgrp', 'DUJxGu', 'driver', 18, 4, 4, 4, 5, 6, 4, 7, 6, 3, NULL, NULL, NULL, NULL, 5, NULL, '2014-09-19 14:33:50', '2014-09-19 14:33:50', NULL),
+	(25, 'ttpOzwkM', 'yogxjrSiH', 'driver', 21, 6, 6, 6, 4, 5, 5, 4, 5, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-09-19 14:33:50', '2014-09-19 14:33:50', NULL),
+	(26, 'PLIay', 'yNGWXYP', 'pilot', 18, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 7, 7, 5, 4, 7, NULL, '2014-09-19 14:33:50', '2014-09-19 14:33:50', NULL),
+	(27, 'jzRvpDdp', 'DNPj', 'pilot', 19, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 6, 6, 5, 7, 4, NULL, '2014-09-19 14:33:50', '2014-09-19 14:33:50', NULL),
+	(28, 'adRWo', 'bSFXx', 'driver', 19, 2, 4, 2, 5, 4, 2, 5, 7, 3, NULL, NULL, NULL, NULL, 2, NULL, '2014-09-19 14:42:50', '2014-09-19 14:42:50', NULL),
+	(29, 'zAvvOHx', 'nudMTCFT', 'driver', 19, 2, 4, 2, 2, 7, 3, 2, 4, 3, NULL, NULL, NULL, NULL, 7, NULL, '2014-09-19 14:42:50', '2014-09-19 14:42:50', NULL),
+	(30, 'aRENFoVSv', 'FbNNwBty', 'pilot', 21, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 2, 2, 6, 6, 4, NULL, '2014-09-19 14:42:50', '2014-09-19 14:42:50', NULL),
+	(31, 'uHObnQ', 'amquLTNpk', 'pilot', 21, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 2, 5, 3, 8, 3, NULL, '2014-09-19 14:42:50', '2014-09-19 14:42:50', NULL),
+	(32, 'aJZwfJggM', 'OXKaHQU', 'driver', 21, 3, 2, 4, 7, 2, 3, 5, 5, 3, NULL, NULL, NULL, NULL, 2, NULL, '2014-09-19 14:42:51', '2014-09-19 14:42:51', NULL),
+	(33, 'FnwvhB', 'bdxELhTVFg', 'driver', 18, 5, 4, 6, 2, 2, 2, 4, 2, 3, NULL, NULL, NULL, NULL, 6, NULL, '2014-09-19 14:42:51', '2014-09-19 14:42:51', NULL),
+	(34, 'qFULMwF', 'zcskkmgQt', 'pilot', 19, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 2, 5, 4, NULL, 2, NULL, '2014-09-19 14:42:51', '2014-09-19 14:42:51', NULL),
+	(35, 'aHPvdiXChx', 'oJeUl', 'pilot', 20, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 5, 4, 2, NULL, 4, NULL, '2014-09-19 14:42:51', '2014-09-19 14:42:51', NULL),
+	(36, 'BrAkiVf', 'lHfnRcUirL', 'driver', 20, 5, 3, 6, 2, 2, 2, 2, 6, 3, NULL, NULL, NULL, NULL, 5, NULL, '2014-12-18 07:34:51', '2014-12-18 07:34:51', NULL),
+	(37, 'WzgbMXe', 'gwsyGIwo', 'pilot', 19, 8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, 9, 6, 8, 5, 2, NULL, '2014-12-18 07:34:51', '2014-12-18 07:34:51', NULL),
+	(38, 'hbOYVgz', 'PWnSO', 'driver', 19, 0, 0, 0, 0, 0, 0, 0, 0, 3, NULL, NULL, NULL, NULL, 0, NULL, '2014-12-18 19:31:05', '2014-12-18 19:31:05', NULL),
+	(39, 'CBwReDT', 'CPYcXNYlG', 'pilot', 19, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 0, 0, 0, 5, 0, NULL, '2014-12-18 19:31:05', '2014-12-18 19:31:05', NULL),
+	(40, 'PmJmpsvVi', 'CpHHSINhcA', 'driver', 21, 6, 6, 4, 4, 6, 4, 6, 4, 3, NULL, NULL, NULL, NULL, 5, NULL, '2014-12-18 19:40:50', '2014-12-18 19:40:50', NULL),
+	(41, 'sIVapNJd', 'MDTzfYNDPt', 'pilot', 18, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 8, 4, 8, 5, 4, NULL, '2014-12-18 19:40:50', '2014-12-18 19:40:50', NULL),
+	(42, 'IdulvPRrf', 'PjOqmZ', 'driver', 18, 4, 4, 5, 4, 5, 6, 7, 4, 3, NULL, NULL, NULL, NULL, 6, NULL, '2014-12-18 19:42:44', '2014-12-18 19:42:44', NULL),
+	(43, 'tOQjGh', 'XXyLo', 'pilot', 20, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 7, 4, 8, 9, 4, NULL, '2014-12-18 19:42:44', '2014-12-18 19:42:44', NULL),
+	(44, 'Marc', 'Nowak', 'driver', 20, 4, 7, 6, 4, 6, 4, 6, 4, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-12-20 20:45:45', '2014-12-20 20:45:45', NULL),
+	(45, 'Jan', 'Smith', 'pilot', 19, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 8, 6, 9, 8, 4, NULL, '2014-12-20 20:45:45', '2014-12-20 20:45:45', NULL),
+	(46, 'Jean', 'Ripper', 'driver', 21, 8, 6, 7, 6, 4, 8, 4, 4, 3, NULL, NULL, NULL, NULL, 4, NULL, '2014-12-31 16:33:33', '2014-12-31 16:33:33', NULL),
+	(47, 'John', 'Simpson', 'pilot', 19, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 8, 5, 4, NULL, 7, NULL, '2014-12-31 16:33:33', '2014-12-31 16:33:33', NULL),
+	(48, 'Antoine', 'Exum', 'driver', 19, 5, 4, 8, 6, 4, 6, 7, 4, 3, NULL, NULL, NULL, NULL, 4, NULL, '2015-01-04 10:07:53', '2015-01-04 10:07:53', NULL),
+	(49, 'Kevin', 'Exum', 'pilot', 20, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 4, 8, 8, NULL, 7, NULL, '2015-01-04 10:07:53', '2015-01-04 10:07:53', NULL);
 /*!40000 ALTER TABLE `people_people` ENABLE KEYS */;
+
+
+-- Dumping structure for table ral.people_training
+DROP TABLE IF EXISTS `people_training`;
+CREATE TABLE IF NOT EXISTS `people_training` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `people_id` int(11) DEFAULT NULL,
+  `skill_name` varchar(255) DEFAULT NULL,
+  `current_skill_level` bigint(20) DEFAULT NULL,
+  `training_factor` decimal(10,2) DEFAULT NULL,
+  `total_training_level` decimal(10,2) DEFAULT NULL,
+  `today_training_level` bigint(20) DEFAULT NULL,
+  `skill_promotion` tinyint(1) DEFAULT '0',
+  `training_date` datetime DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- Dumping data for table ral.people_training: 0 rows
+DELETE FROM `people_training`;
+/*!40000 ALTER TABLE `people_training` DISABLE KEYS */;
+/*!40000 ALTER TABLE `people_training` ENABLE KEYS */;
+
+
+-- Dumping structure for table ral.people_training_factor
+DROP TABLE IF EXISTS `people_training_factor`;
+CREATE TABLE IF NOT EXISTS `people_training_factor` (
+  `people_id` int(11) NOT NULL AUTO_INCREMENT,
+  `composure` decimal(10,2) DEFAULT NULL,
+  `speed` decimal(10,2) DEFAULT NULL,
+  `regularity` decimal(10,2) DEFAULT NULL,
+  `reflex` decimal(10,2) DEFAULT NULL,
+  `on_gravel` decimal(10,2) DEFAULT NULL,
+  `on_tarmac` decimal(10,2) DEFAULT NULL,
+  `on_snow` decimal(10,2) DEFAULT NULL,
+  `in_rain` decimal(10,2) DEFAULT NULL,
+  `dictate_rhytm` decimal(10,2) DEFAULT NULL,
+  `diction` decimal(10,2) DEFAULT NULL,
+  `route_description` decimal(10,2) DEFAULT NULL,
+  `intelligence` decimal(10,2) DEFAULT NULL,
+  `composure_max` bigint(20) DEFAULT NULL,
+  `speed_max` bigint(20) DEFAULT NULL,
+  `regularity_max` bigint(20) DEFAULT NULL,
+  `reflex_max` bigint(20) DEFAULT NULL,
+  `on_gravel_max` bigint(20) DEFAULT NULL,
+  `on_tarmac_max` bigint(20) DEFAULT NULL,
+  `on_snow_max` bigint(20) DEFAULT NULL,
+  `in_rain_max` bigint(20) DEFAULT NULL,
+  `dictate_rhytm_max` bigint(20) DEFAULT NULL,
+  `diction_max` bigint(20) DEFAULT NULL,
+  `route_description_max` bigint(20) DEFAULT NULL,
+  `intelligence_max` bigint(20) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`people_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- Dumping data for table ral.people_training_factor: 0 rows
+DELETE FROM `people_training_factor`;
+/*!40000 ALTER TABLE `people_training_factor` DISABLE KEYS */;
+/*!40000 ALTER TABLE `people_training_factor` ENABLE KEYS */;
 
 
 -- Dumping structure for table ral.rally_accident

@@ -79,6 +79,7 @@ Training:
       default: 0
     training_date:
       type: datetime
+  relations:
     People:
       local: people_id
       foreign: id

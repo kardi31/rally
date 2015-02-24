@@ -60,6 +60,7 @@ $connection["library"] =
        Doctrine_Core::loadModels("/var/www/ral/modules/team/models");
        Doctrine_Core::loadModels("/var/www/ral/modules/people/models");
        Doctrine_Core::loadModels("/var/www/ral/modules/car/models");
+       Doctrine_Core::loadModels("/var/www/ral/modules/rally/models");
        }
    endforeach;
    
