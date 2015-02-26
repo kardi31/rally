@@ -54,7 +54,6 @@ class View{
     
     public function requireDTFactory(){
         require_once(BASE_PATH.'/modules/index/library/DataTables/Factory.php');
-        require_once(BASE_PATH.'/library/Zend/Json/JsonHelper.php');
     }
  
 }

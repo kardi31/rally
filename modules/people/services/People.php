@@ -199,7 +199,9 @@ class PeopleService extends Service{
 	$minTimeSeconds = $timeElems[0]*60+$timeElems[1];
 	$rallyService = new RallyService();
 	
-//        var_dump($crews);exit;
+        // for training
+        $stageLength = $stage['length'];
+        
 	foreach($crews as $key => $crew):
 	    $stageResults = array();
 	    $late = array();
@@ -210,15 +212,22 @@ class PeopleService extends Service{
 	    $late['Pilot'][$key] = $this->getPilotLate($crew['Pilot']);
 	    $late['Car'][$key] = CarService::getCarLate($crew['Car']);
 	    $accidentProbability = $this->calculateAccidentProbability($crew['Driver'],$crew['Pilot'],$crew['Car'],$surfaces);
+            
+            $crewAccidentRisk = Rally_Model_Doctrine_Rally::getAccidentRisk($crew['risk']);
+            if($accidentProbability < $crewAccidentRisk){
+                $accidentProbability = $crewAccidentRisk*0.5;
+            }
+            else{
+                $accidentProbability *= $crewAccidentRisk;
+            }
 	    
-	    $accidentProbability *= Rally_Model_Doctrine_Rally::getAccidentRisk($crew['risk']);
 	    
 	    // divide by 2 because it would be too much
 	    $totalLate[$key] = ($late['Car'][$key] + $late['Driver'][$key] + $late['Pilot'][$key])/1.5;
 	    // multiply late by minimum stage time
 	    // to get the stage result in seconds
 	    $crewSeconds = ceil($totalLate[$key] * $minTimeSeconds * Rally_Model_Doctrine_Rally::getTimeRisk($crew['risk']));
-	    
+	 
 	    $accident = $rallyService->checkAccident($accidentProbability);
 	    
 	    if ($accident) {
@@ -227,11 +236,33 @@ class PeopleService extends Service{
 		if ($accident['damage']==100){
 		    $crew['in_race'] = false;
 		    $stageResults['out_of_race'] = 1;
+                    
+                    //calculate random km of accident
+                    $quarterStageLength = $stageLength / 8;
+                    // calculate km between 1/8 of length and 7/8 of length
+                    $accidentKm = round(rand($quarterStageLength,$quarterStageLength*7),2);
+                    
+                     // for training
+                    
+                    
+                    $prevKmPassed = $crew->get('km_passed');
+                    $newKmPassed = $prevKmPassed+$accidentKm;
+                    $crew->set('km_passed',$newKmPassed);
 		}
 		else{
 		    $crewSeconds = ($accident['damage'] + 100) * $crewSeconds / 100;
+                    
+                    // for training
+                    $prevKmPassed = $crew->get('km_passed');
+                    $newKmPassed = $stageLength+$prevKmPassed;
+                    $crew->set('km_passed',$newKmPassed);
 		}
 	    }
+            else{
+                $prevKmPassed = $crew->get('km_passed');
+                $newKmPassed = $stageLength+$prevKmPassed;
+                $crew->set('km_passed',$newKmPassed);
+            }
 	    // convert seconds to proper time
 	    $base_time = gmdate("H:i:s", $crewSeconds);
 	    
@@ -326,6 +357,7 @@ class PeopleService extends Service{
 	}else{
 	    $accidentProbability += 10;
 	}
+        
 	
 	return $accidentProbability;
     }

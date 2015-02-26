@@ -68,6 +68,11 @@ Crew:
     in_race:
       type: boolean
       default: 1
+    training_done:
+      type: boolean
+      default: 0
+    km_passed:
+      type: float(10,2)
   relations:
     Rally:
       local: rally_id

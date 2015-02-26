@@ -60,7 +60,15 @@ abstract class Rally_Model_Doctrine_BaseCrew extends Doctrine_Record
              'type' => 'boolean',
              'default' => 1,
              ));
-
+        $this->hasColumn('in_race', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
+             ));
+        $this->hasColumn('km_passed', 'float', 4, array(
+             'type' => 'float',
+             'length' => '4',
+             'scale' => '2',
+             ));
         $this->option('type', 'MyISAM');
         $this->option('collate', 'utf8_general_ci');
         $this->option('charset', 'utf8');

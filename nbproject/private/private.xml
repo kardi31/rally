@@ -3,37 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/ral/modules/rally/views/admin/show-rally-stages.phtml</file>
-            <file>file:/var/www/ral/modules/rally/controllers/AdminController.php</file>
-            <file>file:/var/www/ral/modules/rally/controllers/IndexController.php</file>
-            <file>file:/var/www/ral/modules/rally/views/admin/add-stage.phtml</file>
-            <file>file:/var/www/ral/library/TK/Form/Form.php</file>
-            <file>file:/var/www/ral/library/TK/Form/Element.php</file>
-            <file>file:/var/www/ral/modules/rally/services/Rally.php</file>
-            <file>file:/var/www/ral/modules/user/views/index/register.phtml</file>
-            <file>file:/var/www/ral/modules/user/controllers/IndexController.php</file>
-            <file>file:/var/www/ral/modules/captcha/controllers/IndexController.php</file>
-            <file>file:/var/www/ral/modules/captcha/views/index/index.phtml</file>
-            <file>file:/var/www/ral/library/TK/Form/captcha/captcha.php</file>
-            <file>file:/var/www/ral/modules/user/views/index/register-complete.phtml</file>
-            <file>file:/var/www/ral/library/TK/Form/Validator.php</file>
-            <file>file:/var/www/ral/modules/user/views/index/activate.phtml</file>
-            <file>file:/var/www/ral/layout/layout.phtml</file>
-            <file>file:/var/www/ral/views/_header.phtml</file>
-            <file>file:/var/www/ral/modules/index/controllers/IndexController.php</file>
-            <file>file:/var/www/ral/modules/index/views/index/index.phtml</file>
-            <file>file:/var/www/ral/modules/user/views/index/login.phtml</file>
-            <file>file:/var/www/ral/modules/rally/views/index/show-rally.phtml</file>
-            <file>file:/var/www/ral/modules/people/services/People.php</file>
-            <file>file:/var/www/ral/modules/rally/views/admin/calculate-stage-time.phtml</file>
-            <file>file:/var/www/ral/modules/car/services/Car.php</file>
-            <file>file:/var/www/ral/modules/rally/library/DataTables/StageResult.php</file>
-            <file>file:/var/www/ral/modules/rally/views/admin/show-stage-result.phtml</file>
-            <file>file:/var/www/ral/modules/rally/models/BaseCrew.php</file>
-            <file>file:/var/www/ral/modules/rally/models/StageResult.php</file>
-            <file>file:/var/www/ral/modules/rally/models/BaseStageResult.php</file>
-            <file>file:/var/www/ral/modules/rally/library/DataTables/RallyResult.php</file>
-            <file>file:/var/www/ral/modules/rally/views/admin/show-rally-result.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/controllers/AdminController.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/library/TK/Controller.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/library/TK/View.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/public/adminindex.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/views/admin/list-rally.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/people/services/People.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/people/services/Training.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/people/data/schema/schema.yml</file>
+            <file>file:/C:/xampp2/htdocs/ral/doctrine-module.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/league/data/schema/schema.yml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/services/Rally.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/data/schema/schema.yml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/BaseCrew.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/Surface.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/BaseSurface.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/Rally.php</file>
         </group>
     </open-files>
 </project-private>

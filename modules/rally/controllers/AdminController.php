@@ -460,6 +460,20 @@ class Rally_Admin extends Controller{
 	echo "done";exit;
 //	TK_Helper::redirect('/admin/rally/show-stage-result/id/'.$stage['id']);
     }
+    
+    public function calculateTraining(){
+        $view = $this->view;
+        $view->setNoRender();
+        
+        
+        Service::loadModels('people', 'people');
+        $trainingService = parent::getService('people','training');
+        $rallyService = parent::getService('rally','rally');
+        
+        $crews = $rallyService->getCrewsWithNotCompletedTrainingToday();
+        $trainingService->calculateTraining($crews);
+        
+    }
      
 }
 
