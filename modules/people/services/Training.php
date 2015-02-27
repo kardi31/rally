@@ -3,9 +3,15 @@
 class TrainingService extends Service{
     
     protected $trainingTable;
+    protected $trainingFactorTable;
+    protected $rallyService;
     
     protected $driverSkills = array(
         'composure', 'speed','regularity','reflex','on_gravel' ,'on_tarmac','on_snow','in_rain','form','talent'
+    );
+    
+    protected $dependentSkills = array(
+       'on_gravel' ,'on_tarmac','on_snow','in_rain'
     );
        
     // dla wspolczynnika 1
@@ -37,315 +43,143 @@ class TrainingService extends Service{
     );
     
     public function __construct(){
-//        $this->trainingTable = parent::getTable('training','training');
-    }
-    
-    public function getAllDrivers(){
-        return $this->trainingTable->findAll();
-    }
-    
-    public function getFreeDrivers(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
-	$q = $this->trainingTable->createQuery('p');
-	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name');
-	$q->leftJoin('p.Driver1Team d1t');
-	$q->leftJoin('p.Driver2Team d2t');
-	$q->leftJoin('p.DriverRallies dr');
-	$q->leftJoin('dr.Rally r');
-	$q->addWhere('d1t.id = ? or d2t.id = ?',array($team['id'],$team['id']));
-	$q->addWhere('r.date NOT like ? or r.date IS NULL',substr($date,0,10)."%");
-	return $q->execute(array(),$hydrationMode);
-    }
-    
-    public function getFreePilots(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
-	$q = $this->trainingTable->createQuery('p');
-	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name');
-	$q->leftJoin('p.Pilot1Team p1t');
-	$q->leftJoin('p.Pilot2Team p2t');
-	$q->leftJoin('p.PilotRallies dr');
-	$q->leftJoin('dr.Rally r');
-	$q->addWhere('p1t.id = ? or p2t.id = ?',array($team['id'],$team['id']));
-	$q->addWhere('r.date NOT like ? or r.date IS NULL',substr($date,0,10)."%");
-	return $q->execute(array(),$hydrationMode);
+        $this->trainingTable = parent::getTable('people','training');
+        $this->trainingFactorTable = parent::getTable('people','trainingFactor');
     }
     
     
     
-    public function createRandomDriver($league){
-        $skillsValues = $this->uniqueRandomNumbersWithinRangeDriver($league);
-        $driverSkills = array_combine($this->driverSkills, $skillsValues);
-        $driverSkills['age'] = rand(18,21);
-        $driverSkills['first_name'] = $this->generateRandomTrainingFirstName();
-        $driverSkills['last_name'] = $this->generateRandomTrainingLastName();
-        $driverSkills['form'] = 3;
-        $driverSkills['job'] = 'driver';
+    public function getPerson($id){
+        $q = $this->trainingFactorTable->createQuery('tf');
+        $q->leftJoin('tf.People');
+        $q->addWhere('tf.people_id = ?',$id);
+        return $q->fetchOne(array(),Doctrine_Core::HYDRATE_RECORD);
+    }
+    
+    public function getMyTrainingResults($team_id,$date = null){
+        $q = $this->trainingTable->createQuery('t');
+        $q->leftJoin('t.People p');
+        $q->addSelect('t.*,p.*');
+        $q->orderBy('km_passed_today/max_available_km_passed_today');
+        $q->addWhere('p.team_id = ?',$team_id);
+        if($date){
+            $q->addWhere('DATE(t.training_date) = ?',$date);
+        }
+        else{
+            $q->addWhere('DATE(t.training_date) = CURDATE()');
+        }
+        return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
+    }
+    
+    public function checkTodayTrainingForPerson($skill,$people_id){
+        $q = $this->trainingTable->createQuery('t');
+        $q->addWhere('t.people_id = ?',$people_id);
+        $q->addWhere('t.skill_name = ?',$skill);
+        $q->addWhere('DATE(t.training_date) = CURDATE()');
+        return $q->fetchOne(array(),Doctrine_Core::HYDRATE_ARRAY);
+    }
+    
+    public function getLastSkillTrainingForPerson($skill,$people_id){
+        $q = $this->trainingTable->createQuery('t');
+        $q->addWhere('t.people_id = ?',$people_id);
+        $q->addWhere('t.skill_name = ?',$skill);
+        $q->orderBy('t.training_date DESC');
+        $q->limit(1);
+        return $q->fetchOne(array(),Doctrine_Core::HYDRATE_ARRAY);
+    }
+    
+    public function calculateTraining($crews,$rallyService){
+        $this->rallyService = $rallyService;
+        foreach($crews as $crew){
+            // driver training
+            $driver = $this->getPerson($crew['driver_id']);
+            $this->calculateTrainingForPerson($driver['People'],$crew['km_passed'],$crew['rally_id']);
+            
+            $pilot = $this->getPerson($crew['pilot_id']);
+            $this->calculateTrainingForPerson($pilot['People'],$crew['km_passed'],$crew['rally_id']);
+            
+            $crewRecord = $rallyService->getCrew($crew['id']);
+            $crewRecord->set('training_done',1);
+            $crewRecord->save();
+        }
+    }
+    
+    public function calculateTrainingForPerson(People_Model_Doctrine_People $person,$km_passed,$rally_id){
+        $trainingSkill = $person->active_training_skill;
         
-        $record = $this->trainingTable->getRecord();
-        $record->fromArray($driverSkills);
-        $record->save();
+        if($this->checkTodayTrainingForPerson($trainingSkill,$person['id'])){
+            return false;
+        }
         
-        return $record;
-    }
-    
-    public function createRandomPilot($league){
-        $skillsValues = $this->uniqueRandomNumbersWithinRangePilot($league);
-        $driverSkills = array_combine($this->pilotSkills, $skillsValues);
-        $driverSkills['age'] = rand(18,21);
-        $driverSkills['first_name'] = $this->generateRandomTrainingFirstName();
-        $driverSkills['last_name'] = $this->generateRandomTrainingLastName();
-        $driverSkills['form'] = 3;
-        $driverSkills['job'] = 'pilot';
+        $skillValue = $person[$trainingSkill];
+        if($skillValue>=$person['TrainingFactor'][$trainingSkill."_max"]){
+            return false;
+        }
         
-        $record = $this->trainingTable->getRecord();
-        $record->fromArray($driverSkills);
-        $record->save();
+        $trainingResult = array();
+        $trainingResult['people_id'] = $person['id'];
+        $trainingResult['skill_name'] = $trainingSkill;
+        $trainingResult['current_skill_level'] = $skillValue;
+        $trainingResult['training_date'] = date('Y-m-d H:i:s');
         
-        return $record;
-    }
-    
-    public function uniqueRandomNumbersWithinRangePilot($league) {
-        $groups = count($this->pilotSkills);
-        switch($league):
-            case 1:
-                $max = 9;
-                $min = 4;
-                $tot = 35;
-                break;
-            case 2:
-                $max = 8;
-                $min = 4;
-                $tot = 31;
-                break;
-            case 3:
-                $max = 7;
-                $min = 4;
-                $tot = 27;
-                break;
-            case 4:
-                $max = 7;
-                $min = 3;
-                $tot = 23;
-                break;
-            case 5:
-                $max = 7;
-                $min = 2;
-                $tot = 19;
-                break;
-        endswitch;
+        // max available km passed today means
+        // the number of km which you would get for doing equal amount of km
+        // on 100% surface with training skill factor 2
+        $trainingResult['max_available_km_passed_today'] = $km_passed * 2;
         
-        
-        $numbers = array();
-        for($i=0;$i<$groups;$i++):
-            $numbers[] = rand($min,$max);
-        endfor;
-        while(array_sum($numbers)!=$tot):
-            if($tot>array_sum($numbers)){
-                $column = rand(0,$groups-1);
-                if($numbers[$column] < $max):
-                    $numbers[$column]++;
-                endif;
-            }
-            else{
-                $column = rand(0,$groups-1);
-                if($numbers[$column] > $min):
-                    $numbers[$column]--;
-                endif;
-            }
-        endwhile;
-        shuffle($numbers);
-        return $numbers;
-    }
-    
-    public function uniqueRandomNumbersWithinRangeDriver($league) {
-        $groups = count($this->driverSkills);
-        switch($league):
-            case 1:
-                $max = 9;
-                $min = 4;
-                $tot = 55;
-                break;
-            case 2:
-                $max = 8;
-                $min = 4;
-                $tot = 48;
-                break;
-            case 3:
-                $max = 7;
-                $min = 4;
-                $tot = 41;
-                break;
-            case 4:
-                $max = 7;
-                $min = 3;
-                $tot = 34;
-                break;
-            case 5:
-                $max = 7;
-                $min = 2;
-                $tot = 27;
-                break;
-        endswitch;
+        // if training is set on surface training then 
+        // multiply the km passed by % of trained surface skill 
+        // to get the real value of km passed on trained surface
+        if(in_array($trainingSkill,$this->dependentSkills)){
+            
+            $surfaceExplode = explode('_',$trainingSkill);
+            $surface = $surfaceExplode[1];
+            
+            $surfacePercentage = $this->rallyService->getRallySurfacePercentage($surface,$rally_id);
+            
+            $km_passed = $km_passed * ($surfacePercentage / 100);
+        }
         
         
-        $numbers = array();
-        for($i=0;$i<$groups;$i++):
-            $numbers[] = rand($min,$max);
-        endfor;
-        while(array_sum($numbers)!=$tot):
-            if($tot>array_sum($numbers)){
-                $column = rand(0,$groups-1);
-                if($numbers[$column] < $max):
-                    $numbers[$column]++;
-                endif;
-            }
-            else{
-                $column = rand(0,$groups-1);
-                if($numbers[$column] > $min):
-                    $numbers[$column]--;
-                endif;
-            }
-        endwhile;
-        shuffle($numbers);
-        return $numbers;
+        
+        // get factor of active training skill
+        $training_factor = $person['TrainingFactor'][$trainingSkill];
+        
+        $km_passed = $training_factor*$km_passed;
+        
+        $lastTraining = $this->getLastSkillTrainingForPerson($trainingSkill,$person['id']);
+        if($lastTraining){
+            $kmForNextStar = (float)$lastTraining['km_for_next_star'];
+            $newKmForNextStar = $kmForNextStar + $km_passed;
+        }
+        else{
+            $newKmForNextStar = $km_passed;
+        }
+        
+        // check how much km are required for next star
+        $kmRequiredForNextStar = $this->trainingLevels[$skillValue+1];
+        $returnValue = "";
+        
+        // promotion to new level of skill
+        if($newKmForNextStar >= $kmRequiredForNextStar){
+            $trainingResult['skill_promotion'] = 1;
+            $trainingResult['km_for_next_star'] = $newKmForNextStar - $kmRequiredForNextStar;
+            $person->set($trainingSkill,$skillValue+1);
+            $person->save();
+        }
+        else{
+            $trainingResult['skill_promotion'] = 0;
+            $trainingResult['km_for_next_star'] = $newKmForNextStar;
+        }
+        
+        $trainingResult['km_passed_today'] = $km_passed;
+        
+        $trainingResultRow = $this->trainingTable->getRecord();
+        $trainingResultRow->fromArray($trainingResult);
+        
+        $trainingResultRow->save();
+        
+        return true;
     }
-    
-    
-    public function runStageForCrew($stage, $crews, $crewsWithResults,$surfaces){
-	$minTime = TK_Text::timeFormat($stage['min_time'], 'i:s','H:i:s');
-	$timeElems = explode(':',$minTime);
-	$minTimeSeconds = $timeElems[0]*60+$timeElems[1];
-	$rallyService = new RallyService();
-	
-//        var_dump($crews);exit;
-	foreach($crews as $key => $crew):
-	    $stageResults = array();
-	    $late = array();
-	    if(in_array($crew['id'],$crewsWithResults))
-		continue;
-	    
-	    $late['Driver'][$key] = $this->getDriverLate($crew['Driver']);
-	    $late['Pilot'][$key] = $this->getPilotLate($crew['Pilot']);
-	    $late['Car'][$key] = CarService::getCarLate($crew['Car']);
-	    $accidentProbability = $this->calculateAccidentProbability($crew['Driver'],$crew['Pilot'],$crew['Car'],$surfaces);
-	    
-	    $accidentProbability *= Rally_Model_Doctrine_Rally::getAccidentRisk($crew['risk']);
-	    
-	    // divide by 2 because it would be too much
-	    $totalLate[$key] = ($late['Car'][$key] + $late['Driver'][$key] + $late['Pilot'][$key])/1.5;
-	    // multiply late by minimum stage time
-	    // to get the stage result in seconds
-	    $crewSeconds = ceil($totalLate[$key] * $minTimeSeconds * Rally_Model_Doctrine_Rally::getTimeRisk($crew['risk']));
-	    
-	    $accident = $rallyService->checkAccident($accidentProbability);
-	    
-	    if ($accident) {
-		$stageResults['Accident'] = $accident['id'];
-		
-		if ($accident['damage']==100){
-		    $crew['in_race'] = false;
-		    $stageResults['out_of_race'] = 1;
-		}
-		else{
-		    $crewSeconds = ($accident['damage'] + 100) * $crewSeconds / 100;
-		}
-	    }
-	    // convert seconds to proper time
-	    $base_time = gmdate("H:i:s", $crewSeconds);
-	    
-	    $stageResults['stage_id'] = $stage['id'];
-	    $stageResults['crew_id'] = $crew['id'];
-	    $stageResults['base_time'] = $base_time;
-	    $rallyService->saveStageResult($stageResults);
-	    $crew->save();
-	endforeach;
-    }
-    
-   
-    
-    public function getDriverLate($driver){
-	// get from training object 
-	// only the elements which contains 
-	// driver skills
-	$driverSkills = array_intersect_key($driver->toArray(), array_flip($this->driverSkills));
-	
-	// get the difference between max skill(10) and training skills. Then get % of it and multiply by skill wage
-	$props = array_map(function($skills,$wages){ return ((10-$skills)/10)*$wages; }, $driverSkills,$this->driverSkillsWages);
-	
-	// calculate weighted average
-	$weightedAverage = array_sum($props)/array_sum($this->driverSkillsWages);
-	
-	// add random factor(+10%/-10% of time)
-	$random = TK_Text::float_rand(0.9, 1.1);
-	$result = $weightedAverage*$random;
-	
-	return $result;
-    }
-    
-    public function getPilotLate($pilot){
-	// get from training object 
-	// only the elements which contains 
-	// driver skills
-	$driverSkills = array_intersect_key($pilot->toArray(), array_flip($this->pilotSkills));
-	// get the difference between max skill(10) and training skills. Then get % of it and multiply by skill wage
-	$props = array_map(function($skills,$wages){ return ((10-$skills)/10)*$wages; }, $driverSkills,$this->pilotSkillsWages);
-	
-	// calculate weighted average
-	$weightedAverage = array_sum($props)/array_sum($this->pilotSkillsWages);
-	// add random factor(+10%/-10% of time)
-	$random = TK_Text::float_rand(0.9, 1.1);
-	$result = $weightedAverage*$random;
-	
-	return $result;
-    }
-    
-    public function calculateAccidentProbability($driver, $pilot, $car, $surfaces){
-	$accidentProbability = 0;
-	
-	// driver accident skills
-	if($driver['reflex']<4)
-	    $accidentProbability += 0.5;
-	
-	foreach($surfaces as $surface):
-	    if($surface['surface']=="rain")
-		$skill = $driver['in_'.$surface['surface']];
-	    else
-		$skill = $driver['on_'.$surface['surface']];
-	
-	    if($skill<4){
-		// probability rise with 3 if skill is less than 4
-		// get % of surface and multiply it by probability to get the result
-		$accidentProbability += 3*($surface['percentage']/100);
-	    }
-	endforeach;
-	
-	// pilot accident skills
-	if($pilot['dictate_rhytm']<4)
-	    $accidentProbability += 0.5;
-	
-	
-	if($pilot['route_description']<4)
-	    $accidentProbability += 0.5;
-	
-	
-	// car accident skills
-	
-	$mileage = $car['mileage'];
-	if($mileage<50000){
-	    $accidentProbability += 0;
-	}elseif($mileage<70000){
-	    $accidentProbability += 1;
-	}elseif($mileage<100000){
-	    $accidentProbability += 2;
-	}elseif($mileage<120000){
-	    $accidentProbability += 4;
-	}elseif($mileage<150000){
-	    $accidentProbability += 6;
-	}else{
-	    $accidentProbability += 10;
-	}
-	
-	return $accidentProbability;
-    }
-    
-    
 }
 ?>

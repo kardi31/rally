@@ -49,14 +49,20 @@ abstract class People_Model_Doctrine_BaseTraining extends Doctrine_Record
              'length' => '10',
              'scale' => '2',
              ));
-        $this->hasColumn('total_training_level', 'decimal', 10, array(
+        $this->hasColumn('max_available_km_passed_today', 'decimal', 10, array(
              'type' => 'decimal',
              'length' => '10',
              'scale' => '2',
              ));
-        $this->hasColumn('today_training_level', 'integer', 11, array(
-             'type' => 'integer',
-             'length' => '11',
+        $this->hasColumn('km_passed_today', 'decimal', 10, array(
+             'type' => 'decimal',
+             'length' => '10',
+             'scale' => '2',
+             ));
+        $this->hasColumn('km_for_next_star', 'decimal', 10, array(
+             'type' => 'decimal',
+             'length' => '10',
+             'scale' => '2',
              ));
         $this->hasColumn('skill_promotion', 'boolean', null, array(
              'type' => 'boolean',
@@ -74,7 +80,7 @@ abstract class People_Model_Doctrine_BaseTraining extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('People_Model_Doctrine_People as TrainingReports', array(
+        $this->hasOne('People_Model_Doctrine_People as People', array(
              'local' => 'people_id',
              'foreign' => 'id'));
 

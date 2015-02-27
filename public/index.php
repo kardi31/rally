@@ -1,6 +1,6 @@
 <?php
 session_start();
-DEFINE(BASE_PATH,realpath(__DIR__)."/../");
+DEFINE('BASE_PATH',realpath(__DIR__)."/../");
 include(BASE_PATH.'/library/TK/Router.php'); 
 require_once '../library/Doctrine/Core.php';
 spl_autoload_register(array('Doctrine_Core', 'autoload'));

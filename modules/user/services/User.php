@@ -26,6 +26,7 @@ class UserService extends Service{
         
     }
     
+    
     public function getAuthenticatedUser(){
         if(!isset($_SESSION['user'])):
             return false;

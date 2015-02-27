@@ -457,8 +457,8 @@ class Rally_Admin extends Controller{
 	
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
-	echo "done";exit;
-//	TK_Helper::redirect('/admin/rally/show-stage-result/id/'.$stage['id']);
+        
+	TK_Helper::redirect('/admin/rally/show-stage-result/id/'.$stage['id']);
     }
     
     public function calculateTraining(){
@@ -466,15 +466,79 @@ class Rally_Admin extends Controller{
         $view->setNoRender();
         
         
+        Service::loadModels('team', 'team');
         Service::loadModels('people', 'people');
-        $trainingService = parent::getService('people','training');
+        Service::loadModels('car', 'car');
         $rallyService = parent::getService('rally','rally');
+        $trainingService = parent::getService('people','training');
         
-        $crews = $rallyService->getCrewsWithNotCompletedTrainingToday();
-        $trainingService->calculateTraining($crews);
+        $crews = $rallyService->getCrewsWithNotCompletedTrainingToday(Doctrine_Core::HYDRATE_ARRAY);
+        $trainingService->calculateTraining($crews,$rallyService);
         
+	TK_Helper::redirect('/admin/rally/show-training-results/');
     }
      
+    public function showTrainingResults(){
+        
+//        Service::loadModels('people', 'people');
+//        $trainingService = parent::getService('people','training');
+//        
+//        $trainingResults = $trainingService->getAllTodayTrainingResults();
+//        $this->view->assign('trainingResults',$trainingResults);
+    }
+    
+    public function showTrainingResultsData(){
+        $view = $this->view;
+         $view->setNoRender();
+         $view->requireDTFactory();
+        Service::loadModels('rally', 'rally');
+        Service::loadModels('team', 'team');
+        Service::loadModels('people', 'people');
+         
+         $results = $dataTables = Index_DataTables_Factory::factory(array(
+            'table' => 'People_Model_Doctrine_Training', 
+            'class' => 'People_DataTables_Training', 
+            'fields' => array('p.id','p.last_name','te.name'),
+        ));
+	 
+         $iTotalRecords = count($results);
+         $rows = array();
+         foreach($results as $result):
+             $row = array();
+             $row[] = '<input type="checkbox" name="id[]" value="'.$result['people_id'].'">';
+             $row[] = $result['people_id'];
+             $row[] = $result['People']['last_name']." ".$result['People']['first_name'];
+             $row[] = $result['People']['Team']['name'];
+             $row[] = $result['skill_name'];
+             $row[] = $result['current_skill_level'];
+             
+             if($result['skill_promotion'])
+                 $row[] = '<span class="label label-sm label-success">Nowa gwiazdka</span>';
+             else
+                 $row[] = '';
+             
+             $row[] = round($result['km_passed_today']/$result['max_available_km_passed_today'],2);
+//             $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
+//            $options .= '<a href="/admin/rally/calculate-stage-time/rally-id/'.$result['rally_id'].'/stage-id/'.$result['id'].'" class="btn btn-xs blue"><i class="fa fa-users"></i> Calculate</a>';
+//            
+//	     $row[] = $options;
+	     
+	     $rows[] = $row;
+         endforeach;
+         
+	  $iDisplayLength = intval($_REQUEST['iDisplayLength']);
+	  $iDisplayLength = $iDisplayLength < 0 ? $iTotalRecords : $iDisplayLength; 
+	  $sEcho = intval($_REQUEST['sEcho']);
+         
+         $response = array(
+            "aaData" => $rows,
+            "sEcho" => $sEcho,
+            "iTotalRecords" => $iTotalRecords,
+            "iTotalDisplayRecords" => $iTotalRecords,
+        );
+       
+        echo json_encode($response,JSON_UNESCAPED_SLASHES);
+    }
 }
 
 

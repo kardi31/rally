@@ -1,0 +1,30 @@
+
+<h3>My training report from <?php echo date('d-m-Y'); ?></h3>
+<div class="myDrivers">
+<?php if(is_array($results)){ ?>
+<fieldset>
+    
+    <fieldset>
+        <table>
+            <?php foreach($results as $result): ?>
+                <tr>
+                    <td><?php echo $result['People']['last_name']." ".$result['People']['first_name']; ?></td>
+                    <td><?php echo $result['skill_name'];?></td>
+                    <td><?php echo $result['current_skill_level'];?></td>
+                    <td><?php echo round($result['max_available_km_passed_today']/$result['km_passed_today'],2);?>%</td>
+                    <td><?php if($result['skill_promotion']){
+                        echo "Nowa gwiazdka";
+                    };?></td>
+                </tr>
+            <?php endforeach; ?>
+            
+        </table>
+    </fieldset>
+   
+</fieldset>
+<?php }else{ ?>
+    brak wynikow
+   
+<?php 
+} ?>
+</div>

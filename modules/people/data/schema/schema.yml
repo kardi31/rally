@@ -20,6 +20,8 @@ People:
       type: string(255)
     age:
       type: integer(11)
+    team_id:
+      type: integer(11)
     composure:
       type: integer(11)
     speed:
@@ -70,10 +72,12 @@ Training:
       type: integer(11)
     training_factor:
       type: decimal(10,2)
-    total_training_level:
+    max_available_km_passed_today:
       type: decimal(10,2)
-    today_training_level:
-      type: integer(11)
+    km_passed_today:
+      type: decimal(10,2)
+    km_for_next_star:
+      type: decimal(10,2)
     skill_promotion:
       type: boolean
       default: 0

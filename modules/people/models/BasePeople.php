@@ -61,6 +61,10 @@ abstract class People_Model_Doctrine_BasePeople extends Doctrine_Record
              'type' => 'integer',
              'length' => '11',
              ));
+         $this->hasColumn('team_id', 'integer', 11, array(
+             'type' => 'integer',
+             'length' => '11',
+             ));
         $this->hasColumn('composure', 'integer', 11, array(
              'type' => 'integer',
              'length' => '11',
@@ -134,7 +138,7 @@ abstract class People_Model_Doctrine_BasePeople extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('People_Model_Doctrine_Training as Training', array(
+        $this->hasMany('People_Model_Doctrine_Training as TrainingReports', array(
              'local' => 'id',
              'foreign' => 'people_id'));
 

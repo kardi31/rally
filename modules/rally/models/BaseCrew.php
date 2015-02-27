@@ -60,7 +60,7 @@ abstract class Rally_Model_Doctrine_BaseCrew extends Doctrine_Record
              'type' => 'boolean',
              'default' => 1,
              ));
-        $this->hasColumn('in_race', 'boolean', null, array(
+        $this->hasColumn('training_done', 'boolean', null, array(
              'type' => 'boolean',
              'default' => 0,
              ));

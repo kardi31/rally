@@ -30,11 +30,16 @@ class People_Model_Doctrine_People extends People_Model_Doctrine_BasePeople
 	$this->hasOne('Team_Model_Doctrine_Team as Pilot2Team', array(
              'local' => 'id',
              'foreign' => 'pilot2_id'));
+        
+        $this->hasOne('Team_Model_Doctrine_Team as Team', array(
+             'local' => 'team_id',
+             'foreign' => 'id'));
 	
 	$this->hasMany('Rally_Model_Doctrine_Crew as PilotRallies', array(
              'local' => 'id',
              'foreign' => 'pilot_id'));
 	
+        
 	$this->hasMany('Rally_Model_Doctrine_Crew as DriverRallies', array(
              'local' => 'id',
              'foreign' => 'driver_id'));

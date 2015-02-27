@@ -15,10 +15,10 @@ $keys = array_keys($_GET);
         endfor;
         $GLOBALS['urlParams'] = $urlParams; 
 }
-        if(!strlen($module))
+        if(!isset($module))
             $module = "index";
 
-        if(!strlen($action))
+        if(!isset($action))
             $action = "index";
         
       

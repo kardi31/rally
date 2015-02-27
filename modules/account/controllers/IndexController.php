@@ -35,6 +35,21 @@ class Account_Index extends Controller{
         $this->view->assign('team',$user['Team']);
     }
     
+    public function myTrainingReport(){
+        Service::loadModels('team', 'team');
+        Service::loadModels('car', 'car');
+        Service::loadModels('people', 'people');
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        $trainingService = parent::getService('people','training');
+        $results = $trainingService->getMyTrainingResults($user['Team']['id']);
+        $this->view->assign('results',$results);
+    }
+    
     public function myDrivers(){
         Service::loadModels('team', 'team');
         Service::loadModels('people', 'people');

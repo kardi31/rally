@@ -27,6 +27,10 @@ class RallyService extends Service{
         return $this->rallyTable->findOneBy($field,$id,$hydrationMode);
     }
     
+    public function getCrew($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        return $this->crewTable->findOneBy($field,$id,$hydrationMode);
+    }
+    
     public function getStage($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         return $this->stageTable->findOneBy($field,$id,$hydrationMode);
     }
@@ -202,6 +206,26 @@ class RallyService extends Service{
 	    return false;
 	}
 	
+    }
+    
+    public function getCrewsWithNotCompletedTrainingToday($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->crewTable->createQuery('c');
+        $q->leftJoin('c.Rally r');
+        $q->leftJoin('c.Driver d');
+        $q->leftJoin('c.Pilot p');
+//        $q->leftJoin('r.Surfaces sf');
+        $q->addWhere('DATE(date) = CURDATE()');
+        $q->addWhere('c.training_done = 0');
+        $q->addSelect('c.*,r.id');
+        return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getRallySurfacePercentage($surface,$rally_id){
+        $q = $this->surfaceTable->createQuery('sf');
+        $q->addWhere('sf.surface = ?',$surface);
+        $q->addWhere('sf.rally_id = ?',$rally_id);
+        $q->select('sf.percentage');
+        return $q->fetchOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
     }
     
 }
