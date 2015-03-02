@@ -3,6 +3,15 @@ require BASE_PATH.'/library/PHPMailer/PHPMailerAutoload.php';
 
 class MailService extends Service{
         
+    private static $instance = NULL;
+
+    static public function getInstance()
+    {
+       if (self::$instance === NULL)
+          self::$instance = new MailService();
+       return self::$instance;
+    }
+    
     public function __construct(){
     }
     

@@ -4,7 +4,14 @@ class UserService extends Service{
     
     protected $userTable;
     
-    
+     private static $instance = NULL;
+
+    static public function getInstance()
+    {
+       if (self::$instance === NULL)
+          self::$instance = new UserService();
+       return self::$instance;
+    }
     
     public function __construct(){
         $this->userTable = parent::getTable('user','user');

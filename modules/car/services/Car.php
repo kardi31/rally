@@ -3,6 +3,14 @@
 class CarService extends Service{
     
     protected $carTable;
+    private static $instance = NULL;
+
+    static public function getInstance()
+    {
+       if (self::$instance === NULL)
+          self::$instance = new CarService();
+       return self::$instance;
+    }
     
     protected static $carModelSkills = array(
         'capacity', 'horsepower','max_speed','acceleration'

@@ -2,7 +2,18 @@
 
 class PeopleService extends Service{
     
+    private static $instance = NULL;
+
+    static public function getInstance()
+    {
+       if (self::$instance === NULL)
+          self::$instance = new PeopleService();
+       return self::$instance;
+    }
+    
     protected $peopleTable;
+    
+    /* skills settings */
     
     protected $driverSkills = array(
         'composure', 'speed','regularity','reflex','on_gravel' ,'on_tarmac','on_snow','in_rain','form','talent'
@@ -19,6 +30,8 @@ class PeopleService extends Service{
     protected $pilotSkillsWages = array(
         3,4,3,5,8,0
     );
+    
+    
     
     public function __construct(){
         $this->peopleTable = parent::getTable('people','people');
@@ -52,26 +65,28 @@ class PeopleService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
-    
+    /* create people section */
     
     public function createRandomDriver($league){
-        $skillsValues = $this->uniqueRandomNumbersWithinRangeDriver($league);
+        $skillsValues = $this->uniqueRandomNumbersWithinRangeDriver((int)$league);
         $driverSkills = array_combine($this->driverSkills, $skillsValues);
         $driverSkills['age'] = rand(18,21);
         $driverSkills['first_name'] = $this->generateRandomPeopleFirstName();
         $driverSkills['last_name'] = $this->generateRandomPeopleLastName();
         $driverSkills['form'] = 3;
         $driverSkills['job'] = 'driver';
+       
         
         $record = $this->peopleTable->getRecord();
         $record->fromArray($driverSkills);
         $record->save();
-        
+        $trainingService = TrainingService::getInstance();
+        $driverTraining = $trainingService->createRandomTrainingForDriver($record);
         return $record;
     }
     
     public function createRandomPilot($league){
-        $skillsValues = $this->uniqueRandomNumbersWithinRangePilot($league);
+        $skillsValues = $this->uniqueRandomNumbersWithinRangePilot((int)$league);
         $driverSkills = array_combine($this->pilotSkills, $skillsValues);
         $driverSkills['age'] = rand(18,21);
         $driverSkills['first_name'] = $this->generateRandomPeopleFirstName();
@@ -85,6 +100,8 @@ class PeopleService extends Service{
         
         return $record;
     }
+    
+    
     
     public function uniqueRandomNumbersWithinRangePilot($league) {
         $groups = count($this->pilotSkills);
@@ -191,7 +208,9 @@ class PeopleService extends Service{
         shuffle($numbers);
         return $numbers;
     }
+      
     
+    /* stage section */
     
     public function runStageForCrew($stage, $crews, $crewsWithResults,$surfaces){
 	$minTime = TK_Text::timeFormat($stage['min_time'], 'i:s','H:i:s');

@@ -1,6 +1,6 @@
 <?php
 
-class League_Index extends Controller{
+class Test_Index extends Controller{
  
     public function __construct(){
         parent::__construct();
@@ -10,24 +10,21 @@ class League_Index extends Controller{
         parent::_render($this, $viewName);
     }
     
-    public function index(){
+    public function redirect($param){
+        return null;
     }
     
-    public function createRandomCar(){
-        Service::loadModels('team', 'team');
-        Service::loadModels('people', 'people');
-	
-        $carService = parent::getService('car','car');
-        $userService = parent::getService('user','user');
-        $user = $userService->getAuthenticatedUser();
-	
-	$carModel = $carService->getRandomLeagueCar($user['Team']['league_id']);
-	$car = $carService->createNewTeamCar($carModel);
-	
-	$user['Team']['Car1'] = $car;
-	$user->save();
-	
-        TK_Helper::redirect('/index/index');
+    public function index(){
+        require_once(BASE_PATH."/modules/user/controllers/TestController.php");
+        $trainingService = parent::getService('people','training');
+        $userContr = new User_Test();
+        $randomNumber = rand(10000,12000);
+        $_POST['password'] = "portal";
+        $_POST['email'] = "test_".$randomNumber."@kardimobile.pl";
+        $user = $userContr->register();
+        $GLOBALS['urlParams']['token'] = $user['token'];
+        $userContr->activate();
+        echo "good";exit;
     }
     
     

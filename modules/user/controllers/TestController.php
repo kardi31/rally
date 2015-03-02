@@ -5,7 +5,7 @@
  * 
  */
 
-class User_Index extends Controller{
+class User_Test extends Controller{
  
     public function __construct(){
         parent::__construct();
@@ -27,8 +27,8 @@ class User_Index extends Controller{
         $form->createElement('text','email',array('validators' => 'email'),'Adres email');
         $form->createElement('captcha','captcha',array());
         $form->createElement('submit','submit');
-        if($form->isSubmit()){
-            if($form->isValid()){
+//        if($form->isSubmit()){
+//            if($form->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
@@ -41,18 +41,18 @@ class User_Index extends Controller{
                     $values['password'] = TK_Text::encode($values['password'], $values['salt']);
                     $values['role'] = "user";
                     
-                    $userService->saveUserFromArray($values,false);
+                    $user = $userService->saveUserFromArray($values,false);
                     
-                    $mailService->sendMail($values['email'],'Rejestracja w Tomek CMS przebiegła pomyślnie',$mailService::prepareRegistrationMail($values['token']));
-                
-		    TK_Helper::redirect('/user/register-complete');
+//                    $mailService->sendMail($values['email'],'Rejestracja w Tomek CMS przebiegła pomyślnie',$mailService::prepareRegistrationMail($values['token']));
+//                
+//		    TK_Helper::redirect('/user/register-complete');
 		
 		}
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
-            }
-        }
-        
-        $this->view->assign('form',$form);
+//            }
+//        }
+        return $user;
+//        $this->view->assign('form',$form);
     }
     
     public function activate(){
@@ -60,7 +60,6 @@ class User_Index extends Controller{
                
         $userService = parent::getService('user','user');
         $mailService = parent::getService('user','mail');
-        
         if(!$user = $userService->getUser($GLOBALS['urlParams']['token'],'token')){
             $message = "brak użytkownika";
         }
@@ -78,22 +77,22 @@ class User_Index extends Controller{
             $data['user_id'] = $user['id'];
 	    
             $team = $teamService->createRandomTeam($data,$user['id']);
-	    
 	    $league = $leagueService->appendTeamToLeague($team['id']);
-	    
 	    $league_level = $league['League']['league_level'];
-	    
 	    $carModel = $carService->getRandomLeagueCar($league_level);
 	    $team['Car1'] = $carService->createNewTeamCar($carModel);
             $team['Driver1'] = $peopleService->createRandomDriver($league_level);
             $team['Pilot1'] = $peopleService->createRandomPilot($league_level);
 	    $team->set('league_name',$league['league_name']);
 	    $team->save();
-	    
+            
+            $team->get('Pilot1')->set('team_id',$team['id']);
+            $team->get('Driver1')->set('team_id',$team['id']);
+            $team->save();
             
             $user->set('active',1);
             $user->save();
-            $mailService->sendMail($user['email'],'Konto w Tomek CMS zostało aktywowane',$mailService::prepareConfirmActivationMail());
+//            $mailService->sendMail($user['email'],'Konto w Tomek CMS zostało aktywowane',$mailService::prepareConfirmActivationMail());
                 
             $message = "Użytkownik pomyślnie aktywowany";
         }

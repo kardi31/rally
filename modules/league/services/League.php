@@ -8,7 +8,14 @@ class LeagueService extends Service{
     protected $maxTeamsInLeague = 12;
     protected $season = 1;
     
-    
+    private static $instance = NULL;
+
+    static public function getInstance()
+    {
+       if (self::$instance === NULL)
+          self::$instance = new LeagueService();
+       return self::$instance;
+    }
     
     public function __construct(){
         $this->leagueTable = parent::getTable('league','league');
@@ -35,6 +42,7 @@ class LeagueService extends Service{
 	else{
 	    $league = $result;
 	}
+        
 	// save team to league
 	$newTeamData = array(
 	  'team_id' => $team_id,
@@ -51,10 +59,21 @@ class LeagueService extends Service{
     public function getNextEmptyLeague($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->seasonTable->createQuery('s');
 	$q->select('s.league_name');
+        $q->groupBy('s.league_name');
 	$full_league_list = $q->execute(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
-	
-	$league_query = $this->seasonTable->createQuery('l');
-	$league_query->addWhere('l.league_name NOT IN ?',$full_league_list);
+        
+        // if there's just one league
+        if(!is_array($full_league_list)){
+            $league_id = $full_league_list;
+            $full_league_list = array();
+            $full_league_list[] = $league_id;
+        }
+        
+        $full_league_list_query = join(',',$full_league_list);
+        
+	$league_query = $this->leagueTable->createQuery('l');
+        $league_query->select('*');
+	$league_query->addWhere("l.league_name NOT IN ($full_league_list_query)");
 	$league_query->orderBy('l.league_name');
 	return $league_query->fetchOne(array(),$hydrationMode);
     }

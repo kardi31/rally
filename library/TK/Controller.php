@@ -49,9 +49,13 @@ class Controller{
     }
     
     public function getService($module,$service) {
-        require BASE_PATH."/modules/".$module."/services/".ucfirst($service).".php";
         $className = ucfirst($service)."Service";
-        return new $className();
+        if(class_exists($className)){
+            return $className::getInstance();
+        }
+        require BASE_PATH."/modules/".$module."/services/".ucfirst($service).".php";
+        
+        return $className::getInstance();
     }
     
     public function actionStack($controller,$function){

@@ -19,10 +19,10 @@ abstract class League_Model_Doctrine_BaseLeague extends Doctrine_Record
     public function setTableDefinition()
     {
         $this->setTableName('league_league');
-        $this->hasColumn('league_name', 'float', 10, array(
-             'type' => 'float',
+        $this->hasColumn('league_name', 'string', 255, array(
+             'type' => 'string',
              'primary' => true,
-             'length' => '10',
+             'length' => '255',
              'scale' => '2',
              ));
         $this->hasColumn('league_level', 'integer', 11, array(

@@ -58,6 +58,7 @@ class User_Index extends Controller{
     public function activate(){
         
                
+        $trainingService = parent::getService('people','training');
         $userService = parent::getService('user','user');
         $mailService = parent::getService('user','mail');
         
@@ -90,6 +91,9 @@ class User_Index extends Controller{
 	    $team->set('league_name',$league['league_name']);
 	    $team->save();
 	    
+            $team->get('Pilot1')->set('team_id',$team['id']);
+            $team->get('Driver1')->set('team_id',$team['id']);
+            $team->save();
             
             $user->set('active',1);
             $user->save();

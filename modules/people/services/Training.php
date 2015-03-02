@@ -6,8 +6,21 @@ class TrainingService extends Service{
     protected $trainingFactorTable;
     protected $rallyService;
     
+    private static $instance = NULL;
+
+    static public function getInstance()
+    {
+       if (self::$instance === NULL)
+          self::$instance = new TrainingService();
+       return self::$instance;
+    }
+    
     protected $driverSkills = array(
         'composure', 'speed','regularity','reflex','on_gravel' ,'on_tarmac','on_snow','in_rain','form','talent'
+    );
+    
+    protected $driverTrainableSkills = array(
+        'composure', 'speed','regularity','reflex','on_gravel' ,'on_tarmac','on_snow','in_rain'
     );
     
     protected $dependentSkills = array(
@@ -180,6 +193,28 @@ class TrainingService extends Service{
         $trainingResultRow->save();
         
         return true;
+    }
+    
+    /*
+     * Blokady treningu 
+     * 1 - 2 na 7, reszta na 6
+     * 2 - 4 na 7, reszta na 6
+     * 
+     */
+    
+    public function createRandomTrainingForDriver(People_Model_Doctrine_People $driver){
+        $driverArray  = array();
+        $record = $this->trainingFactorTable->getRecord();
+        
+        $driverTrainableSkills = $this->driverTrainableSkills;
+        
+        $driverArray['people_id'] = $driver['id'];
+       
+        // helper to calculate training factor
+        include(BASE_PATH.'modules/people/services/helper/TrainingFactorHelper.php');
+        
+        $record->fromArray($driverArray);
+        $record->save();
     }
 }
 ?>

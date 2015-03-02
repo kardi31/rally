@@ -9,7 +9,7 @@ League:
     SoftDelete: ~
   columns:
     league_name:
-      type: float(10,2)
+      type: varchar(255)
       primary: true
     league_level:
       type: integer(11)
@@ -24,7 +24,7 @@ Season:
       autoincrement: true
       type: integer(4)
     league_name:
-      type: float(10,2)
+      type: varchar(255)
     team_id:
       type: integer(11)
     points:

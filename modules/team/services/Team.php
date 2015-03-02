@@ -3,6 +3,14 @@
 class TeamService extends Service{
     
     protected $teamTable;
+    private static $instance = NULL;
+
+    static public function getInstance()
+    {
+       if (self::$instance === NULL)
+          self::$instance = new TeamService();
+       return self::$instance;
+    }
     
     protected $driverSkills = array(
         'composure', 'speed','regularity','reflex','on_gravel' ,'on_tarmac','on_snow','in_rain','talent'

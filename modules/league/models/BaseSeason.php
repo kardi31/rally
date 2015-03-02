@@ -27,10 +27,9 @@ abstract class League_Model_Doctrine_BaseSeason extends Doctrine_Record
              'type' => 'integer',
              'length' => '4',
              ));
-        $this->hasColumn('league_name', 'float', 10, array(
-             'type' => 'float',
-             'length' => '10',
-             'scale' => '2',
+        $this->hasColumn('league_name', 'string', 255, array(
+             'type' => 'string',
+             'length' => '255',
              ));
         $this->hasColumn('team_id', 'integer', 11, array(
              'type' => 'integer',
