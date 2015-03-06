@@ -13,8 +13,11 @@
  * @property integer $car_id
  * @property string $risk
  * @property boolean $in_race
+ * @property boolean $training_done
+ * @property float $km_passed
  * @property Rally_Model_Doctrine_Rally $Rally
  * @property Doctrine_Collection $StageResults
+ * @property Doctrine_Collection $RallyResults
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -64,11 +67,12 @@ abstract class Rally_Model_Doctrine_BaseCrew extends Doctrine_Record
              'type' => 'boolean',
              'default' => 0,
              ));
-        $this->hasColumn('km_passed', 'float', 4, array(
+        $this->hasColumn('km_passed', 'float', 10, array(
              'type' => 'float',
-             'length' => '4',
+             'length' => '10',
              'scale' => '2',
              ));
+
         $this->option('type', 'MyISAM');
         $this->option('collate', 'utf8_general_ci');
         $this->option('charset', 'utf8');
@@ -82,6 +86,10 @@ abstract class Rally_Model_Doctrine_BaseCrew extends Doctrine_Record
              'foreign' => 'id'));
 
         $this->hasMany('Rally_Model_Doctrine_StageResult as StageResults', array(
+             'local' => 'id',
+             'foreign' => 'crew_id'));
+
+        $this->hasMany('Rally_Model_Doctrine_Result as RallyResults', array(
              'local' => 'id',
              'foreign' => 'crew_id'));
 

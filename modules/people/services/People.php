@@ -81,7 +81,7 @@ class PeopleService extends Service{
         $record->fromArray($driverSkills);
         $record->save();
         $trainingService = TrainingService::getInstance();
-        $driverTraining = $trainingService->createRandomTrainingForDriver($record);
+        $trainingService->createRandomTrainingForDriver($record);
         return $record;
     }
     
@@ -97,6 +97,9 @@ class PeopleService extends Service{
         $record = $this->peopleTable->getRecord();
         $record->fromArray($driverSkills);
         $record->save();
+        
+        $trainingService = TrainingService::getInstance();
+        $trainingService->createRandomTrainingForPilot($record);
         
         return $record;
     }

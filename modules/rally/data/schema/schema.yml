@@ -21,6 +21,9 @@ Rally:
     active:
       type: boolean
       default: 1
+    league:
+      type: integer(4)
+      default: 5
 Surface:
   tableName: rally_surface
   actAs: 
@@ -165,3 +168,41 @@ Accident:
       type: string(255)
     damage:
       type: decimal(18)
+Result:
+  tableName: rally_result
+  actAs: 
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    rally_id:
+      type: integer(4)
+    crew_id:
+      type: integer(4)
+    total_time:
+      type: time
+    out_of_race:
+      type: boolean
+      default: 0
+    stage_out_id:
+      type: integer(4)
+    stage_out_number:
+      type: integer(4)
+    position:
+      type: integer(4)
+  relations:
+    Rally:
+      local: rally_id
+      foreign: id
+      foreignType: many
+      foreignAlias: Results
+      alias: Rally
+    Crew:
+      local: crew_id
+      foreign: id
+      foreignType: many
+      type: one
+      alias: Crew
+      foreignAlias: RallyResults

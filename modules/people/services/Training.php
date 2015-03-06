@@ -51,6 +51,10 @@ class TrainingService extends Service{
         'composure', 'dictate_rhytm','diction','route_description','form','talent'
     );
     
+    protected $pilotTrainableSkills = array(
+        'composure', 'dictate_rhytm','diction','route_description'
+    );
+    
     protected $pilotSkillsWages = array(
         3,4,3,5,8,0
     );
@@ -195,12 +199,7 @@ class TrainingService extends Service{
         return true;
     }
     
-    /*
-     * Blokady treningu 
-     * 1 - 2 na 7, reszta na 6
-     * 2 - 4 na 7, reszta na 6
-     * 
-     */
+   
     
     public function createRandomTrainingForDriver(People_Model_Doctrine_People $driver){
         $driverArray  = array();
@@ -210,10 +209,39 @@ class TrainingService extends Service{
         
         $driverArray['people_id'] = $driver['id'];
        
+        // helper to calculate training blocks
+        include(BASE_PATH.'modules/people/services/helper/TrainingBlockDriverHelper.php');
+        
+        $driverTrainableSkills = $this->driverTrainableSkills;
+        
         // helper to calculate training factor
-        include(BASE_PATH.'modules/people/services/helper/TrainingFactorHelper.php');
+        include(BASE_PATH.'modules/people/services/helper/TrainingFactorDriverHelper.php');
+        
         
         $record->fromArray($driverArray);
+        $record->save();
+    }
+    
+    public function createRandomTrainingForPilot(People_Model_Doctrine_People $pilot){
+        $pilotArray  = array();
+        $record = $this->trainingFactorTable->getRecord();
+        
+        $pilotTrainableSkills = $this->pilotTrainableSkills;
+        
+        $pilotArray['people_id'] = $pilot['id'];
+       
+        // helper to calculate training blocks
+        include(BASE_PATH.'modules/people/services/helper/TrainingBlockPilotHelper.php');
+        
+        
+        $pilotTrainableSkills = $this->pilotTrainableSkills;
+        
+        // helper to calculate training factor
+        include(BASE_PATH.'modules/people/services/helper/TrainingFactorPilotHelper.php');
+        
+        
+        
+        $record->fromArray($pilotArray);
         $record->save();
     }
 }

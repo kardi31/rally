@@ -1,0 +1,58 @@
+<style>
+    table tr td,table tr th{
+        padding:3px 15px;
+        min-width:300px;
+        text-align:center;
+    }
+    table tr td:first-of-type,table tr th:first-of-type{
+        padding:3px 15px;
+        min-width:50px;
+        text-align:center;
+    }
+</style>
+
+<a href="/rally/list-rally">Powrót do listy rajdów</a>
+<div class="row">
+<div class="container">
+    
+<div class="col-md-8">
+    
+<h2><?php echo $rally['name']; ?></h2><br /><br />
+    <h4>Wyniki rajdu</h4>
+    <table>
+	<tr>
+	    <th>Pozycja</th>
+	    <th>Nazwa zespolu</th>
+	    <th>Załoga</th>
+	    <th>Czas</th>
+	</tr>
+<?php foreach($rallyResults as $result): ?>
+	<tr>
+            <td>
+                <?php if($result['out_of_race']==0){
+                    echo $result['position'];
+                }
+                ?>
+            </td>
+	    <td>
+		<?php echo $result['Crew']['Team']['name']; ?>
+	    </td>
+	    <td>
+		<?php echo $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name']; ?> - 
+		<?php echo $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name']; ?>
+	    </td>
+	    <td>
+		 <?php if($result['out_of_race']==0){
+                    echo $result['total_time'];
+                }
+                else{
+                    echo "Accident on stage no ".$result['stage_out_number'];
+                }
+                ?>
+	    </td>
+	</tr>
+<?php endforeach; ?>
+    
+    </table>
+
+</div>
