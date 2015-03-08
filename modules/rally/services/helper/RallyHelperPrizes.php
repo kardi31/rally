@@ -75,6 +75,32 @@
         return $prizes;
     }
     
+    public function calculatePrizeForPlace($place,$league,$participants){
+	
+	if($place > 8){
+	    return 0;
+	}
+	
+        $prizePool = $this->leaguePrizePool[$league];
+        $prizePerParticipant = $this->leaguePerParticipantPool[$league];
+        $totalPrizePerParticipant = $prizePerParticipant * $participants;
+        
+        $prizePool += $totalPrizePerParticipant;
+        
+        if($participants>=10){
+            $cash = round($this->prizesOver10[$place] * $prizePool);
+        }
+        else{
+	    if($place > 3){
+		return 0;
+	    }
+            $cash = round($this->prizesUnder10[$place] * $prizePool);
+        }
+        
+        
+        return $cash;
+    }
+    
     public function getPrizePool($league,$participants = 0){
         $prizePool = $this->leaguePrizePool[$league];
         $prizePerParticipant = $this->leaguePerParticipantPool[$league];

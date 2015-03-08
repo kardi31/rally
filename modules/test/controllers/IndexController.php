@@ -58,26 +58,27 @@ class Test_Index extends Controller{
         require_once(BASE_PATH."/modules/rally/controllers/TestController.php");
         require_once(BASE_PATH."/modules/rally/controllers/IndexController.php");
 //        
-        $GLOBALS['urlParams']['rally'] = "rally_6848297";
-        $rallyController = new Rally_Index();
-        $this->actionStack($rallyController,'rallyResult');
-        echo "d";exit;
+//        $GLOBALS['urlParams']['rally'] = "rally_6848297";
+//        $rallyController = new Rally_Index();
+//        $this->actionStack($rallyController,'rallyResult');
+//        echo "d";exit;
         $testObj = new Rally_Test();
-        $testObj->showRallyResult(30);
-        echo "ok";exit;
+//        $testObj->showRallyResult(30);
+//        echo "ok";exit;
         $rallyService = parent::getService('rally','rally');
+        $teamService = parent::getService('team','team');
+	
+//        Zend_Debug::dump($rallyResults);exit;
         
-        $rallyResults = $rallyService->calculateRallyResult(30);
-        Zend_Debug::dump($rallyResults);exit;
-        
-//        
+        $rally = $rallyService->getRally($GLOBALS['urlParams']['slug'],'slug');
         $rallyStages = $rallyService->getRallyStages($GLOBALS['urlParams']['slug'],'slug',Doctrine_Core::HYDRATE_ARRAY);
         
         foreach($rallyStages as $stage):
             $testObj->calculateStageTime($stage['Rally']['id'],$stage['id']);
         endforeach;
         
-        $rallyService->calculateRallyResult($stage['Rally']['id']);
+	
+        $rallyService->calculateRallyResult($rally);
         
         var_dump($rallyStages);exit;
         

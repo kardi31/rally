@@ -29,6 +29,10 @@ class TeamService extends Service{
         return $this->teamTable->findAll();
     }
     
+    public function getTeam($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        return $this->teamTable->findOneBy($field,$id,$hydrationMode);
+    }
+    
     public function createRandomTeam($values,$user_id = null){
         if($user_id)
             $values['name'] = "Team_".$user_id;
@@ -50,6 +54,19 @@ class TeamService extends Service{
         $q->orderBy('RAND()');
         $q->limit($quantity);
 	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function addTeamMoney($team_id,$quantity,$moneyType){
+	if($quantity==0||empty($quantity)){
+	    return ;
+	}
+	
+        $team = $this->getTeam($team_id);
+	
+	$newCash = (int)$team['cash'] + $quantity;
+	
+	$team->set('cash',$newCash);
+	$team->save();
     }
     
 }

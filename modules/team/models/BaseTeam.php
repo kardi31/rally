@@ -15,6 +15,7 @@
  * @property integer $car1_id
  * @property integer $car2_id
  * @property float $league_name
+ * @property integer $cash
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -68,6 +69,11 @@ abstract class Team_Model_Doctrine_BaseTeam extends Doctrine_Record
              'type' => 'float',
              'length' => '10',
              'scale' => '2',
+             ));
+        $this->hasColumn('cash', 'integer', 11, array(
+             'type' => 'integer',
+             'unsigned' => true,
+             'length' => '11',
              ));
 
         $this->option('type', 'MyISAM');

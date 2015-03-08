@@ -314,14 +314,22 @@ class RallyService extends Service{
         return $q->execute(array(),$hydrationMode);
     }
     
-    public function calculateRallyResult($id){
+    public function calculateRallyResult(Rally_Model_Doctrine_Rally $rally){
+	$teamService = TeamService::getInstance();
+	
+	$id = $rally['id'];
+	$participants = count($rally['Crews']);
+		
+		
         $q = $this->stageResultTable->createQuery('sr');
         $q->leftJoin('sr.Stage s');
+	$q->leftJoin('sr.Crew cr');
         $q->select('SEC_TO_TIME(SUM(TIME_TO_SEC(sr.base_time))) as total_time');
         $q->addSelect('count(sr.id) as number_of_stages');
         $q->addSelect('SUM(sr.out_of_race) as out_of_race');
         $q->addSelect('sr.crew_id');
         $q->addSelect('stage_id');
+	$q->addSelect('cr.team_id');
         $q->groupBy('crew_id');
         $q->addWhere('s.rally_id = ?',$id);
         $q->orderBy('out_of_race ASC,number_of_stages DESC,total_time ASC');
@@ -341,6 +349,9 @@ class RallyService extends Service{
             
             $rallyResultRecord->fromArray($result);
             $rallyResultRecord->save();
+	    
+	    $cashEarned = $this->prizesHelper->calculatePrizeForPlace($result['position'],$rally['league'],$participants);
+	    $teamService->addTeamMoney($result['Crew']['team_id'],$cashEarned,1);
         endforeach;
     }
     

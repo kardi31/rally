@@ -30,3 +30,6 @@ Team:
       type: integer(4)
     league_name:
       type: float(10,2)
+    cash:
+      type: integer(11)
+      unsigned: true
