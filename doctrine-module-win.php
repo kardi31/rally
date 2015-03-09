@@ -58,6 +58,7 @@ $connection["library"] =
        Doctrine_Core::loadModels("C:/xampp2/htdocs/ral/modules/people/models");
        Doctrine_Core::loadModels("C:/xampp2/htdocs/ral/modules/car/models");
        Doctrine_Core::loadModels("C:/xampp2/htdocs/ral/modules/rally/models");
+       Doctrine_Core::loadModels("C:/xampp2/htdocs/ral/modules/user/models");
        }
    endforeach;
    

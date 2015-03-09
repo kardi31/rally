@@ -343,15 +343,18 @@ class RallyService extends Service{
                 $result['stage_out_id'] = $result['stage_id'];
             }
             
+            $alreadyCalculated = true;
             if(!$rallyResultRecord = $this->getCrewResult($id,$result['crew_id'])){
+                $alreadyCalculated = false;
                 $rallyResultRecord = $this->resultTable->getRecord();
             }
             
             $rallyResultRecord->fromArray($result);
             $rallyResultRecord->save();
-	    
-	    $cashEarned = $this->prizesHelper->calculatePrizeForPlace($result['position'],$rally['league'],$participants);
-	    $teamService->addTeamMoney($result['Crew']['team_id'],$cashEarned,1);
+//	    if(!$alreadyCalculated){
+                $cashEarned = $this->prizesHelper->calculatePrizeForPlace($result['position'],$rally['league'],$participants);
+                $teamService->addTeamMoney($result['Crew']['team_id'],$cashEarned,1,'Za zajęcie '.$result['position'].' w rajdzie '.$rally['name']);
+//            }
         endforeach;
     }
     

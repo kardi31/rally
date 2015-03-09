@@ -16,6 +16,7 @@
  * @property integer $car2_id
  * @property float $league_name
  * @property integer $cash
+ * @property Doctrine_Collection $Team
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -72,7 +73,6 @@ abstract class Team_Model_Doctrine_BaseTeam extends Doctrine_Record
              ));
         $this->hasColumn('cash', 'integer', 11, array(
              'type' => 'integer',
-             'unsigned' => true,
              'length' => '11',
              ));
 
@@ -84,6 +84,10 @@ abstract class Team_Model_Doctrine_BaseTeam extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
+        $this->hasMany('Team_Model_Doctrine_Finance as Team', array(
+             'local' => 'id',
+             'foreign' => 'team_id'));
+
         $timestampable0 = new Doctrine_Template_Timestampable();
         $softdelete0 = new Doctrine_Template_SoftDelete();
         $this->actAs($timestampable0);

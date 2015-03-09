@@ -50,6 +50,24 @@ class Account_Index extends Controller{
         $this->view->assign('results',$results);
     }
     
+    public function myFinances(){
+        Service::loadModels('team', 'team');
+        Service::loadModels('car', 'car');
+        Service::loadModels('people', 'people');
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        $teamService = parent::getService('team','team');
+//        $financialReportSimple = $teamService->getSimpleReport($user['Team']['id']);
+        $financialReportAdvanced = $teamService->getAdvancedReport($user['Team']['id']);
+        $financialReportAdvancedLastWeek = $teamService->getAdvancedReport($user['Team']['id'],1);
+        $this->view->assign('team',$user['Team']);
+        $this->view->assign('financialReportAdvanced',$financialReportAdvanced);
+    }
+    
     public function myDrivers(){
         Service::loadModels('team', 'team');
         Service::loadModels('people', 'people');

@@ -32,4 +32,34 @@ Team:
       type: float(10,2)
     cash:
       type: integer(11)
-      unsigned: true
+Finance:
+  tableName: team_finance
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    team_id:
+      type: integer(4)
+    amount:
+      type: integer(4)
+    description:
+      type: string(255)
+    save_date:
+      type: datetime
+    income:
+      type: boolean
+      default: 0
+    detailed_type:
+      type: integer(4)
+  relations:
+    Team:
+      local: team_id
+      foreign: id
+      foreignType: many
+      type: one
+      alias: Finances
+      foreignAlias: Team
