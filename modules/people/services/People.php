@@ -31,7 +31,7 @@ class PeopleService extends Service{
         3,4,3,5,8,0
     );
     
-    
+    protected $basicPersonValue = 800000;
     
     public function __construct(){
         $this->peopleTable = parent::getTable('people','people');
@@ -384,6 +384,50 @@ class PeopleService extends Service{
 	return $accidentProbability;
     }
     
+    public function getAllActivePlayersNotCalculated($season,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->peopleTable->createQuery('p');
+        $q->leftJoin('p.TrainingFactor tf');
+        $q->addWhere('tf.last_season_value_id < ?',$season);
+        return $q->execute();
+    }
+    
+    public function calculateNewValuesForAllPlayers($season){
+        $people = $this->getAllActivePlayersNotCalculated($season);
+        foreach($people as $person):
+            $this->calculatePersonValue($person);
+        endforeach;
+        echo "good";exit;
+    }
+    
+    public function calculatePersonValue($person){
+	// get from people object 
+	// only the elements which contains 
+	// people skills
+        
+        if($person['job']=='driver'){
+            $skillsArray = array_flip($this->driverSkills);
+            $wagesArray = array_flip($this->driverSkillsWages);
+        }
+        else{
+            $skillsArray = array_flip($this->pilotSkills);
+            $wagesArray = array_flip($this->pilotSkillsWages);
+        }
+	$personSkills = array_intersect_key($person->toArray(), $skillsArray);
+	// get the difference between max skill(10) and people skills. Then get % of it and multiply by skill wage
+	$props = array_map(function($skills,$wages){ return ((10-$skills)/10)*$wages; }, $personSkills,$wagesArray);
+	// calculate weighted average
+	$weightedAverage = array_sum($props)/array_sum($wagesArray);
+	// add random factor(+10%/-10% of time)
+	$random = TK_Text::float_rand(0.9, 1.1);
+	$result = $weightedAverage*$random;
+        
+        $value = round($this->basicPersonValue*$result);
+        $salary = round($value*0.0151);
+        var_dump($salary);exit;
+        $person->set('value',$value);
+        $person->set('salary',$salary);
+        $person->save();
+    }
     
 }
 ?>

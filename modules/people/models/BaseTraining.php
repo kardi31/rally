@@ -10,8 +10,9 @@
  * @property string $skill_name
  * @property integer $current_skill_level
  * @property decimal $training_factor
- * @property decimal $total_training_level
- * @property integer $today_training_level
+ * @property decimal $max_available_km_passed_today
+ * @property decimal $km_passed_today
+ * @property decimal $km_for_next_star
  * @property boolean $skill_promotion
  * @property datetime $training_date
  * @property Doctrine_Collection $TrainingReports
@@ -80,7 +81,7 @@ abstract class People_Model_Doctrine_BaseTraining extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('People_Model_Doctrine_People as People', array(
+        $this->hasMany('People_Model_Doctrine_People as TrainingReports', array(
              'local' => 'people_id',
              'foreign' => 'id'));
 

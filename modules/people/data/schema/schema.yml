@@ -148,6 +148,9 @@ TrainingFactor:
       type: integer(11)
     intelligence_max:
       type: integer(11)
+    last_season_value_id:
+      type: integer(11)
+      default: 0
   relations:
     People:
       local: people_id

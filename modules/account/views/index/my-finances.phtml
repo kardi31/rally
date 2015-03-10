@@ -1,23 +1,78 @@
+<style>
+    .advancedReportIncome,.advancedReportExpense{
+        display:block;
+        width:40%;
+        border:2px solid red;
+        margin:10px 0px;
+    }
+    .advancedReportIncome{
+        float:left;
+        clear:left;
+    }
+    .advancedReportExpense{
+        float:right;
+        clear:right;
+    }
+</style>
+<?php $financeTypes = TeamService::getInstance()->getFinanceTypes(); ?>
 Stan konta : <?php echo $team['cash'];?>$ 
 <br /><br /><br />
 
 <h3>Raport finansowy</h3>
 <hr />
 <h2>Simple report</h2>
-
+<h5>This week</h5>
 <div class="col-md-6">
     <h4>Wpływy</h4>
-    <?php foreach($financialReportAdvanced as $advancedReport): 
-        endforeach; ?>
+    <?php 
+    foreach($financialReportSimple['income'] as $simpleReport): 
+        echo $financeTypes[$simpleReport['detailed_type']]." - ".$simpleReport['amount']; ?>$<br />
+    
+    <?php endforeach; ?>
 </div>
 <div class="col-md-6">
     <h4>Wydatki</h4>
+    <?php 
+    foreach($financialReportSimple['expense'] as $simpleReport2): 
+        echo $financeTypes[$simpleReport2['detailed_type']]." - ".$simpleReport2['amount']; ?>$<br />
+    <?php endforeach; ?>
 </div>
-
+<hr />
+<div class="clearfix"></div>
+<h5>Last week</h5>
+<div class="col-md-6">
+    <h4>Wpływy</h4>
+    <?php 
+    foreach($financialReportSimpleLastWeek['income'] as $simpleReport): 
+        echo $financeTypes[$simpleReport['detailed_type']]." - ".$simpleReport['amount']; ?>$<br />
+    
+    <?php endforeach; ?>
+</div>
+<div class="col-md-6">
+    <h4>Wydatki</h4>
+    <?php 
+    foreach($financialReportSimpleLastWeek['expense'] as $simpleReport2): 
+        echo $financeTypes[$simpleReport2['detailed_type']]." - ".$simpleReport2['amount']; ?>$<br />
+    <?php endforeach; ?>
+</div>
+<hr />
+<div class="clearfix"></div>
 <h2>Advanced report </h2>
 <div class="col-md-6">
     <h4>Wpływy</h4>
 </div>
 <div class="col-md-6">
     <h4>Wydatki</h4>
+</div>
+<div>
+    <?php foreach($financialReportAdvanced as $advancedReport): ?>
+    <div class="<?php echo ($advancedReport['income'])?'advancedReportIncome':'advancedReportExpense';?>">
+        <?php
+        echo "Amount: ".$advancedReport['amount']."<br />";
+        echo "Type:".$financeTypes[$advancedReport['detailed_type']]."<br />";
+        echo $advancedReport['description']."<br />";
+        ?>
+    </div>
+    <div class="clearfix"></div>
+    <?php endforeach; ?>
 </div>

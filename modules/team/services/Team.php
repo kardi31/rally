@@ -100,7 +100,7 @@ class TeamService extends Service{
         return $record;
     }
     
-    public function getAdvancedReport($team_id,$prevWeek = false){
+    public function getSimpleReport($team_id,$prevWeek = false){
         if(!$prevWeek){
            $dateFrom = date('Y-m-d H:i:s', strtotime('this week monday'));
            $dateTo = date('Y-m-d H:i:s',strtotime('next week monday'));
@@ -116,8 +116,50 @@ class TeamService extends Service{
         $q->addWhere('save_date > ?',$dateFrom);
         $q->addWhere('team_id = ?',$team_id);
         $q->groupBy('detailed_type');
-        $q->orderBy('income');
-        $q->select('sum(amount) as amount');
+        $q->orderBy('income,detailed_type');
+        $q->select('sum(amount) as amount,detailed_type,income');
+        $result = $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
+        $sortedResult = $this->sortSimpleReport($result);
+        return $sortedResult;
+    }
+    
+    public function sortSimpleReport($results){
+        $sortedResult = array('income' => array(),'expense' => array());
+        foreach($results as $result):
+            if($result['income']){
+                $sortedResult['income'][] = $result;
+            }
+            else{
+                $sortedResult['expense'][] = $result;
+            }
+        endforeach;
+        
+        return $sortedResult;
+    }
+    
+    
+    
+    public function getFinanceTypes(){
+        return $this->financeTypes;
+    }
+    
+    public function getAdvancedReport($team_id,$prevWeek = false){
+        if(!$prevWeek){
+           $dateFrom = date('Y-m-d H:i:s', strtotime('this week monday'));
+           $dateTo = date('Y-m-d H:i:s',strtotime('next week monday'));
+        }
+        else{
+           $dateFrom = date('Y-m-d H:i:s', strtotime('this week monday - '.$prevWeek.' week'));
+           $dateTo = date('Y-m-d H:i:s',strtotime('next week monday - '.$prevWeek.' week'));
+        }
+        
+        
+        $q = $this->financeTable->createQuery('f');
+        $q->addWhere('save_date < ?',$dateTo);
+        $q->addWhere('save_date > ?',$dateFrom);
+        $q->addWhere('team_id = ?',$team_id);
+        $q->orderBy('save_date DESC');
+        $q->select('amount,DATE(save_date) as save_date,detailed_type,income,description');
         return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
     }
 }

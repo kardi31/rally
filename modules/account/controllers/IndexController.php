@@ -62,9 +62,12 @@ class Account_Index extends Controller{
         
         $teamService = parent::getService('team','team');
 //        $financialReportSimple = $teamService->getSimpleReport($user['Team']['id']);
+        $financialReportSimple = $teamService->getSimpleReport($user['Team']['id']);
+        $financialReportSimpleLastWeek = $teamService->getSimpleReport($user['Team']['id'],1);
         $financialReportAdvanced = $teamService->getAdvancedReport($user['Team']['id']);
-        $financialReportAdvancedLastWeek = $teamService->getAdvancedReport($user['Team']['id'],1);
         $this->view->assign('team',$user['Team']);
+        $this->view->assign('financialReportSimple',$financialReportSimple);
+        $this->view->assign('financialReportSimpleLastWeek',$financialReportSimpleLastWeek);
         $this->view->assign('financialReportAdvanced',$financialReportAdvanced);
     }
     

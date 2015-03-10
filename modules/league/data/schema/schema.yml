@@ -29,6 +29,8 @@ Season:
       type: integer(11)
     points:
       type: integer(11)
+    season:
+      type: integer(11)
   relations:
     League:
       local: league_name

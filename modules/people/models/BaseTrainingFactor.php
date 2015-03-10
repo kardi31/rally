@@ -30,6 +30,7 @@
  * @property integer $diction_max
  * @property integer $route_description_max
  * @property integer $intelligence_max
+ * @property integer $last_season_value_id
  * @property People_Model_Doctrine_People $People
  * 
  * @package    ##PACKAGE##
@@ -154,6 +155,11 @@ abstract class People_Model_Doctrine_BaseTrainingFactor extends Doctrine_Record
              ));
         $this->hasColumn('intelligence_max', 'integer', 11, array(
              'type' => 'integer',
+             'length' => '11',
+             ));
+        $this->hasColumn('last_season_value_id', 'integer', 11, array(
+             'type' => 'integer',
+             'default' => 0,
              'length' => '11',
              ));
 
