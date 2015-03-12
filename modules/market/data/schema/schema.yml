@@ -1,0 +1,48 @@
+options:
+  type: MyISAM
+  collate: utf8_general_ci
+  charset: utf8
+Offer:
+  tableName: market_offer
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    people_id:
+      type: integer(4)
+    start_date:
+      type: datetime
+    finish_date:
+      type: datetime
+    asking_price:
+      type: integer(11)
+    highest_bid:
+      type: integer(11)
+      default: null
+Bid:
+  tableName: market_bid
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    offer_id:
+      type: integer(4)
+    value:
+      type: integer(11)
+    team_id:
+      type: integer(11)
+  relations:
+    Offer:
+      local: market_id
+      foreign: id
+      foreignType: one
+      type: many
+      alias: Bids

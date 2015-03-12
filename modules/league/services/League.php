@@ -97,6 +97,10 @@ class LeagueService extends Service{
 	return $record;
     }
     
+    public function getCurrentSeason(){
+        return $this->season;
+    }
+    
     
 }
 ?>

@@ -9,6 +9,7 @@ class Validator{
     
     
     public static function validateInt($var) {
+        echo "d";exit;
         if(is_int($var)):
             $response['result'] = true;
         else:

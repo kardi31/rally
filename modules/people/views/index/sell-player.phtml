@@ -1,0 +1,11 @@
+<form method="POST">
+<label for="asking_price">Asking price</label>
+    <?php echo $form->getElement('asking_price')->renderElement(); ?>
+
+<label for="asking_price">Days on the market</label>
+    <?php echo $form->getElement('days')->renderElement(); ?>
+<label for="selling_fee">Selling fee</label>
+    <?php echo $form->getElement('selling_fee')->renderElement(); ?>
+
+    <?php echo $form->getElement('submit')->renderElement(); ?>
+</form>

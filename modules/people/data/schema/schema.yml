@@ -20,6 +20,10 @@ People:
       type: string(255)
     age:
       type: integer(11)
+    value:
+      type: integer(11)
+    salary:
+      type: integer(11)
     team_id:
       type: integer(11)
     composure:

@@ -7,6 +7,8 @@
     <strong><?php echo $driver1['last_name']." ".$driver1['first_name']; ?></strong><br />
     Job: driver<br />
     Age: <?php echo $driver1['age']; ?><br />
+     Value: <?php echo $driver1['value']; ?><br />
+     Salary: <?php echo $driver1['salary']; ?><br />
     Skills: <br />
     <fieldset>
         <table class="col-md-8">
@@ -51,6 +53,7 @@
                 <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver1['form']);?></td>
             </tr>
         </table>
+        <a href="/people/sell-player/id/<?php echo $driver1['id']; ?>">Sprzedaj zawodnika</a>
     </fieldset>
     <hr />
     <?php $pilot1 = $team['Pilot1']; ?>
@@ -86,6 +89,7 @@
                 <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$pilot1['form']);?></td>
             </tr>
         </table>
+        <a href="/people/sell-player/id/<?php echo $pilot1['id']; ?>">Sprzedaj zawodnika</a>
     </fieldset>
     
 </fieldset>

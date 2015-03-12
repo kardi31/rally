@@ -10,6 +10,8 @@
  * @property string $last_name
  * @property string $job
  * @property integer $age
+ * @property integer $value
+ * @property integer $salary
  * @property integer $team_id
  * @property integer $composure
  * @property integer $speed
@@ -59,6 +61,14 @@ abstract class People_Model_Doctrine_BasePeople extends Doctrine_Record
              'length' => '255',
              ));
         $this->hasColumn('age', 'integer', 11, array(
+             'type' => 'integer',
+             'length' => '11',
+             ));
+        $this->hasColumn('value', 'integer', 11, array(
+             'type' => 'integer',
+             'length' => '11',
+             ));
+        $this->hasColumn('salary', 'integer', 11, array(
              'type' => 'integer',
              'length' => '11',
              ));

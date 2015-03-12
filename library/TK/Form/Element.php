@@ -83,23 +83,25 @@ class Element{
 	    $this->multiOptions[$this->name][] = '';
 	// if as a value we get an array then first col is a key and second is a value
 	if(is_array($first_value)):
-	    
 	    $keys = array_keys($first_value);
 	    foreach($options as $key => $value):
 		$this->multiOptions[$this->name][$value[$keys[0]]] = $value[$keys[1]];
 	    endforeach;
 	else:
 	    foreach($options as $key => $value):
-		$this->multiOptions[$this->name][$key] = $value;
+		$this->multiOptions[$this->name][$value] = $value;
 	    endforeach;
 	endif;    
 	
     }
     
-    public function validateElement($name,$validators = null){
+    public function validateElement($name = '',$validators = null){
         if(!$this->isSubmit())
             return "";
-        
+        $name = $this->name;
+        if(!isset($this->options['validators'])||!isset($this->options))
+            return "";
+        $validators = $this->options['validators'];
         if($this->method=="POST"):
             $var = $_POST[$name];
         elseif($this->method=="GET"):
@@ -136,6 +138,7 @@ class Element{
     }
     
     public function getValid(){
+        $this->validateElement();
 	return $this->valid;
     }
     
