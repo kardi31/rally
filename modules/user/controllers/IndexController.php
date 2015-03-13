@@ -113,7 +113,7 @@ class User_Index extends Controller{
             TK_Helper::redirect('/user/my-account');
         
         $form = new Form();
-        $form->createElement('text','email',array('validators' => array('stringLength' => array('min' => 4,'max' => 20)),'Email'));
+        $form->createElement('text','email',array('validators' => array('stringLength' => array('min' => 4,'max' => 30)),'Email'));
         $form->createElement('password','password',array('validators' => array('stringLength' => array('min' => 4,'max' => 12))),'Hasło');
         $form->createElement('submit','submit');
         if($form->isSubmit()){

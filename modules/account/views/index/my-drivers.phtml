@@ -53,7 +53,11 @@
                 <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$driver1['form']);?></td>
             </tr>
         </table>
-        <a href="/people/sell-player/id/<?php echo $driver1['id']; ?>">Sprzedaj zawodnika</a>
+        <?php if(!$driver1['on_market']): ?>
+            <a href="/people/sell-player/id/<?php echo $driver1['id']; ?>">Sprzedaj zawodnika</a>
+        <?php else: ?>
+            Player is on the market
+        <?php endif; ?>
     </fieldset>
     <hr />
     <?php $pilot1 = $team['Pilot1']; ?>
@@ -89,7 +93,11 @@
                 <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$pilot1['form']);?></td>
             </tr>
         </table>
-        <a href="/people/sell-player/id/<?php echo $pilot1['id']; ?>">Sprzedaj zawodnika</a>
+        <?php if(!$pilot1['on_market']): ?>
+            <a href="/people/sell-player/id/<?php echo $pilot1['id']; ?>">Sprzedaj zawodnika</a>
+        <?php else: ?>
+            Player is on the market
+        <?php endif; ?>
     </fieldset>
     
 </fieldset>

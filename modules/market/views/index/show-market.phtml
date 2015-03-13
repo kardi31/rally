@@ -1,0 +1,80 @@
+<h2>Market</h2>
+<hr />
+<?php foreach($marketOffers as $offer):?>
+<div class="col-md-8">
+    <?php $player = $offer['Player']; ?>
+    Name: <?php echo $player['last_name']." ".$player['first_name']; ?><br />
+    Team: <?php echo $player['Team']['name']; ?><br />
+    Age: <?php echo $player['age']; ?><br />
+    Skills: <br />
+    <fieldset>
+        <table>
+            <tr>
+                <td>Composure</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['composure']);?></td>
+            </tr>
+            <tr>
+                <td>Speed</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['speed']);?></td>
+            </tr>
+            <tr>
+                <td>Regularity</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['regularity']);?></td>
+            </tr>
+            <tr>
+                <td>Reflex</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['reflex']);?></td>
+            </tr>
+            <tr>
+                <td>Driving on gravel</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['on_gravel']);?></td>
+            </tr>
+            <tr>
+                <td>Driving on tarmac</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['on_tarmac']);?></td>
+            </tr>
+            <tr>
+                <td>Driving on snow</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['on_snow']);?></td>
+            </tr>
+            <tr>
+                <td>Driving in rain</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['in_rain']);?></td>
+            </tr>
+            <tr>
+                <td>Talent</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['talent']);?></td>
+            </tr>
+            <tr>
+                <td>Form</td>
+                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['form']);?></td>
+            </tr>
+        </table>
+    </fieldset>
+</div>
+<div class="col-md-4">
+    <h3>Oferty</h3>
+    Najwyższa oferta 
+    <strong><?php
+    if(isset($offer['Bids'][0]))
+        echo (int)$offer['Bids'][0]['value']."$ - ".$offer['Bids'][0]['Team']['name']."<br />"; 
+    else
+        echo "brak ofert";
+    ?></strong>
+    <span>Koniec aukcji - <?php echo TK_Text::timeFormat($offer['finish_date'],'d/m/Y H:i:s'); ?></span>
+    <br /><br />
+    Pozostałe oferty<br />
+    <?php foreach($offer['Bids'] as $key => $bid):
+        if($key==0)
+            continue;
+        if($key>5)
+            break;
+        
+        echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 
+    endforeach; ?>
+    <br />
+    <a href="/market/bid-player/id/<?php echo $offer['id']; ?>">Zalicytuj</a>
+</div>
+<div class='clearfix'></div>
+<hr />
+<?php endforeach; ?>

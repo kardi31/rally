@@ -12,5 +12,12 @@
  */
 class Market_Model_Doctrine_Bid extends Market_Model_Doctrine_BaseBid
 {
+    public function setUp()
+    {
+        parent::setUp();
+        $this->hasOne('Team_Model_Doctrine_Team as Team', array(
+             'local' => 'team_id',
+             'foreign' => 'id'));
 
+    }
 }

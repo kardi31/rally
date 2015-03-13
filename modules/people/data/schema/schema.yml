@@ -58,6 +58,9 @@ People:
       type: integer(11)
     active_training_skill:
       type: string(255)
+    on_market:
+      type: boolean
+      default: 0
 Training:
   tableName: people_training
   actAs: 

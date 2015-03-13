@@ -12,5 +12,12 @@
  */
 class Market_Model_Doctrine_Offer extends Market_Model_Doctrine_BaseOffer
 {
+    public function setUp()
+    {
+        parent::setUp();
+        $this->hasOne('People_Model_Doctrine_People as Player', array(
+             'local' => 'people_id',
+             'foreign' => 'id'));
 
+    }
 }

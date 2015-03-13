@@ -40,3 +40,8 @@ select{
     border-style:dotted;
     border-width: 3px;
 }
+
+hr{
+    border-style:dotted;
+    border-width:3px;
+}

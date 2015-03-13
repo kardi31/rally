@@ -28,50 +28,45 @@ class People_Index extends Controller{
     }
     
     public function sellPlayer(){
+        Service::loadModels('market', 'market');
+        Service::loadModels('rally', 'crew');
         
+        $marketService = parent::getService('market','market');
         $peopleService = parent::getService('people','people');
+        $teamService = parent::getService('team','team');
         
         $id = $GLOBALS['urlParams']['id'];
-        $person = $peopleService->getPerson($id,'id',Doctrine_Core::HYDRATE_ARRAY);
+        $player = $peopleService->getPerson($id,'id',Doctrine_Core::HYDRATE_RECORD);
         
         $form = new Form();
         $form->createElement('text','asking_price',array('validators' => array('int')),'Cena');
         $form->createElement('text','selling_fee',array('validators' => array('int')),'Cena');
-        $form->getElement('selling_fee')->addParam('disabled','disabled');
+        $form->getElement('selling_fee')->addParam('readonly','readonly');
+        $form->getElement('asking_price')->addParam('autocomplete','off');
         $days = $form->createElement('select','days',array(),'Test');
         $days->addMultiOptions(array(1,2,3));
         $form->createElement('submit','submit');
         
         if($form->isSubmit()){
             if($form->isValid()){
-                echo "zle";exit;
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
-                if($userService->getUser($values['email'],'email')!==false){
-                    $form->setError('Ten adres email jest już zarejestrowany');
-                }
-                else{
-                    $values['salt'] = TK_Text::createUniqueToken();
-                    $values['token'] = TK_Text::createUniqueToken();
-                    $values['password'] = TK_Text::encode($values['password'], $values['salt']);
-                    $values['role'] = "user";
-                    
-                    $userService->saveUserFromArray($values,false);
-                    
-                    $mailService->sendMail($values['email'],'Rejestracja w Tomek CMS przebiegła pomyślnie',$mailService::prepareRegistrationMail($values['token']));
                 
-		    TK_Helper::redirect('/user/register-complete');
-		
-		}
+                $result = $marketService->addPlayerOnMarket($values,$player);
+                
+                if($result!== false)
+                    TK_Helper::redirect('/account/my-drivers');
+                else{
+                    $this->view->assign('message','Player already on market');
+                }
+                
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
-            }
-            else{
-                var_dump('good');exit;
             }
         }
         
         $this->view->assign('form',$form);
+        $this->view->assign('player',$player);
     }
     
     

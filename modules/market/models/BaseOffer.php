@@ -11,7 +11,7 @@
  * @property datetime $finish_date
  * @property integer $asking_price
  * @property integer $highest_bid
- * @property Market_Model_Doctrine_Bid $Bid
+ * @property Doctrine_Collection $Bids
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -56,9 +56,9 @@ abstract class Market_Model_Doctrine_BaseOffer extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Market_Model_Doctrine_Bid as Bid', array(
+        $this->hasMany('Market_Model_Doctrine_Bid as Bids', array(
              'local' => 'id',
-             'foreign' => 'market_id'));
+             'foreign' => 'offer_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $softdelete0 = new Doctrine_Template_SoftDelete();

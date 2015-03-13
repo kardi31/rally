@@ -15,6 +15,7 @@ class Element{
 	 protected $options;
 	 protected $classes;
 	 protected $params;
+	 protected $validators;
 
 
     public function __construct($type,$name,$options,$label = false){
@@ -23,6 +24,7 @@ class Element{
 	$this->label = $label;
 	$this->params = array();
 	$this->options = $options;
+	$this->validators = isset($options['validators'])?$options['validators']:null;
 	$this->classes = array('label' => array(),'element' => array(),'wrapper' => array(),'elementWrapper' => array(),'overElementWrapper' => array());
     } 
         
@@ -49,18 +51,18 @@ class Element{
 		endforeach;
 	    endif; 
 	    $this->elementDisplay .= "</select>";
-            $this->elementDisplay .= "<div class='formError'>".$this->validateElement($this->name,$this->options['validators'])."</div>";
+            $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
         elseif($this->type=="checkbox"):
             $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."1' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
-            $this->elementDisplay .= "<div class='formError'>".$this->validateElement($this->name,$this->options['validators'])."</div>";
+            $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
         elseif($this->type=="captcha"):
 	    $this->elementDisplay .= "<div class='formElemWrapper'><label for='captcha' id='captcha'>Przepisz kod z obrazka</label>";
 	    $this->elementDisplay .= "<img src='/captcha' />";
 	    $this->elementDisplay .= "<input name='captcha' id='captcha' type='text' />";
-	    $this->elementDisplay .= "<div class='formError'>".$this->validateElement('captcha','captcha')."</div></div>";
+	    $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div></div>";
 	else:
             $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
-            $this->elementDisplay .= "<div class='formError'>".$this->validateElement($this->name,$this->options['validators'])."</div>";
+            $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
         endif;
 	
 	return $this->elementDisplay;
@@ -95,22 +97,23 @@ class Element{
 	
     }
     
-    public function validateElement($name = '',$validators = null){
+    public function validateElement(){
         if(!$this->isSubmit())
             return "";
-        $name = $this->name;
-        if(!isset($this->options['validators'])||!isset($this->options))
+        
+        if(!isset($this->validators)||empty($this->validators))
             return "";
-        $validators = $this->options['validators'];
+        
         if($this->method=="POST"):
-            $var = $_POST[$name];
+            $var = $_POST[$this->name];
         elseif($this->method=="GET"):
-            $var = $_GET[$name];
+            $var = $_GET[$this->name];
         endif;
         $response = "";
         // dla kilku validatorow
-        if(is_array($validators)):
-            foreach($validators as $key => $validator):
+        if(is_array($this->validators)):
+            foreach($this->validators as $key => $validator):
+            $options = null;
             // gdy validator ma jakies opcje to klucz jest nazwa validatora a wartosc to opcje
             if(is_array($validator)):
                 $options = $validator;
@@ -125,7 +128,7 @@ class Element{
             endforeach; 
         else:
             // dla pojedynczego validatora
-                $response = $this->callValidator($validators,$var);
+                $response = $this->callValidator($this->validators,$var);
         endif; 
         
         // zwracamy wartość formularza

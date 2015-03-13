@@ -9,7 +9,7 @@
  * @property integer $offer_id
  * @property integer $value
  * @property integer $team_id
- * @property Doctrine_Collection $Bids
+ * @property Market_Model_Doctrine_Offer $Offer
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -48,8 +48,8 @@ abstract class Market_Model_Doctrine_BaseBid extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('Market_Model_Doctrine_Offer as Bids', array(
-             'local' => 'market_id',
+        $this->hasOne('Market_Model_Doctrine_Offer as Offer', array(
+             'local' => 'offer_id',
              'foreign' => 'id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();

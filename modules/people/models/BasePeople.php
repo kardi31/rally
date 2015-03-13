@@ -29,6 +29,7 @@
  * @property integer $talent
  * @property integer $experience
  * @property string $active_training_skill
+ * @property boolean $on_market
  * @property People_Model_Doctrine_Training $Training
  * @property People_Model_Doctrine_TrainingFactor $TrainingFactor
  * 
@@ -139,6 +140,10 @@ abstract class People_Model_Doctrine_BasePeople extends Doctrine_Record
         $this->hasColumn('active_training_skill', 'string', 255, array(
              'type' => 'string',
              'length' => '255',
+             ));
+        $this->hasColumn('on_market', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
              ));
 
         $this->option('type', 'MyISAM');

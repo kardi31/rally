@@ -41,8 +41,8 @@ Bid:
       type: integer(11)
   relations:
     Offer:
-      local: market_id
+      local: offer_id
       foreign: id
-      foreignType: one
-      type: many
-      alias: Bids
+      foreignType: many
+      type: one
+      foreignAlias: Bids
