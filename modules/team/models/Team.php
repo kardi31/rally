@@ -43,6 +43,11 @@ class Team_Model_Doctrine_Team extends Team_Model_Doctrine_BaseTeam
              'local' => 'user_id',
              'foreign' => 'id'));
 	
+        
+	$this->hasMany('League_Model_Doctrine_Season as Seasons', array(
+             'local' => 'id',
+             'foreign' => 'team_id'));
+        
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);
     }

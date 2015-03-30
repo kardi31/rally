@@ -56,6 +56,17 @@ class LeagueService extends Service{
         return $save_query;
     }
     
+    public function getRandomLeague(){
+        $q = $this->seasonTable->createQuery('s');
+	$q->select('s.league_name');
+        $q->groupBy('s.league_name');
+        // get leagues with teams in it
+        $q->leftJoin('s.Team t');
+        $q->addWhere('t.driver1_id IS NOT NULL');
+        $q->orderBy('rand()');
+	return $q->fetchOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+    }
+    
     public function getNextEmptyLeague($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->seasonTable->createQuery('s');
 	$q->select('s.league_name');
@@ -101,6 +112,52 @@ class LeagueService extends Service{
         return $this->season;
     }
     
+    public function getTeamLeague($team_id,$current_season = true,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        // get league from current season by default
+        // otherwise use season that is passed as a param
+	if($current_season)
+            $season = $this->season;
+        else
+            $season = (int)$current_season;
+        $q = $this->seasonTable->createQuery('s');
+        $q->leftJoin('s.League l');
+	$q->where('s.team_id = ?',$team_id);
+        $q->addWhere('s.season = ?',$season);
+	return $q->fetchOne(array(),$hydrationMode);
+    }
     
+    public function getLeagueTable($league_name,$current_season = true,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        // get league from current season by default
+        // otherwise use season that is passed as a param
+	if($current_season)
+            $season = $this->season;
+        else
+            $season = (int)$current_season;
+        $q = $this->seasonTable->createQuery('s');
+        $q->leftJoin('s.League l');
+        $q->leftJoin('s.Team t');
+	$q->where('s.league_name = ?',$league_name);
+        $q->addWhere('s.season = ?',$season);
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function selectLeagueFullTeams($league_name,$current_season = true,$hydrationMode = Doctrine_Core::HYDRATE_RECORD,$limit = false){
+        // get league from current season by default
+        // otherwise use season that is passed as a param
+	if($current_season)
+            $season = $this->season;
+        else
+            $season = (int)$current_season;
+        $q = $this->seasonTable->createQuery('s');
+        $q->leftJoin('s.League l');
+        $q->leftJoin('s.Team t');
+        $q->select('s.league_name');
+        $q->addSelect('t.*');
+	$q->where('s.league_name = ?',$league_name);
+        $q->addWhere('s.season = ?',$season);
+        if($limit)
+            $q->limit($limit);
+	return $q->execute(array(),$hydrationMode);
+    }
 }
 ?>

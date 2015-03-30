@@ -12,5 +12,11 @@
  */
 class League_Model_Doctrine_Season extends League_Model_Doctrine_BaseSeason
 {
-
+    public function setUp()
+    {
+        parent::setUp();
+        $this->hasOne('Team_Model_Doctrine_Team as Team', array(
+             'local' => 'team_id',
+             'foreign' => 'id'));
+    }
 }

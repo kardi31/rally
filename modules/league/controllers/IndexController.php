@@ -13,21 +13,20 @@ class League_Index extends Controller{
     public function index(){
     }
     
-    public function createRandomCar(){
+    public function showTable(){
         Service::loadModels('team', 'team');
         Service::loadModels('people', 'people');
+        Service::loadModels('league', 'league');
+        Service::loadModels('car', 'car');
 	
-        $carService = parent::getService('car','car');
+        $leagueService = parent::getService('league','league');
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
-	
-	$carModel = $carService->getRandomLeagueCar($user['Team']['league_id']);
-	$car = $carService->createNewTeamCar($carModel);
-	
-	$user['Team']['Car1'] = $car;
-	$user->save();
-	
-        TK_Helper::redirect('/index/index');
+	$league = $leagueService->getTeamLeague($user['Team']['id']);
+        
+        $leagueTable = $leagueService->getLeagueTable($league['league_name']);
+	$this->view->assign('leagueTable',$leagueTable);
+	$this->view->assign('league',$league);
     }
     
     

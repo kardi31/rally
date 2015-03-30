@@ -86,6 +86,43 @@ class Test_Index extends Controller{
         echo "good";exit;
     }
     
+    public function createRandomMultipleRallies(){
+        
+        $rallyService = parent::getService('rally','rally');
+        for($i=0;$i<15;$i++){
+        $randomRally = $rallyService->createRandomRally();
+        }
+    }
     
+    public function rallyLeagueTest(){
+        require_once(BASE_PATH."/modules/rally/controllers/TestController.php");
+        $trainingService = parent::getService('people','training');
+//        $rallyContr = new Rally_Test();
+//        $rallyContr->showRally();
+        
+        Service::loadModels('team', 'team');
+        Service::loadModels('car', 'car');
+        
+        Service::loadModels('user', 'user');
+        $teamService = parent::getService('team','team');
+        $rallyService = parent::getService('rally','rally');
+        $leagueService = parent::getService('league','league');
+        
+        $risks = Rally_Model_Doctrine_Rally::getFormRisks();
+               
+        $randomLeague = $leagueService->getRandomLeague();
+        $randomTeams = $teamService->selectLeagueFullTeams($randomLeague,true,Doctrine_Core::HYDRATE_ARRAY,5);
+        $randomRally = $rallyService->createRandomRally($randomLeague);
+        foreach($randomTeams as $randomTeam):
+            $values=array();
+            $values['car_id'] = $randomTeam['car1_id'];
+            $values['driver_id'] = $randomTeam['driver1_id'];
+            $values['pilot_id'] = $randomTeam['pilot1_id'];
+            $values['risk'] = $risks[array_rand($risks)];
+            $rallyService->saveRallyCrew($values,$randomRally,$randomTeam);
+        endforeach;
+        Zend_Debug::dump($randomTeams);exit;
+        
+    }
 }
 ?>

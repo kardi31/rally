@@ -22,6 +22,19 @@
         8 => 0.04
     );
 
+    protected $points = array(
+        1 => 20,
+        2 => 14,
+        3 => 10,
+        4 => 7,
+        5 => 6,
+        6 => 5,
+        7 => 4,
+        8 => 3,
+        9 => 2,
+        10 => 1
+    );
+    
     /*
      * prizes percentage for rallies with less than 10 participants
      */
@@ -76,6 +89,32 @@
     }
     
     public function calculatePrizeForPlace($place,$league,$participants){
+	
+	if($place > 8){
+	    return 0;
+	}
+	
+        $prizePool = $this->leaguePrizePool[$league];
+        $prizePerParticipant = $this->leaguePerParticipantPool[$league];
+        $totalPrizePerParticipant = $prizePerParticipant * $participants;
+        
+        $prizePool += $totalPrizePerParticipant;
+        
+        if($participants>=10){
+            $cash = round($this->prizesOver10[$place] * $prizePool);
+        }
+        else{
+	    if($place > 3){
+		return 0;
+	    }
+            $cash = round($this->prizesUnder10[$place] * $prizePool);
+        }
+        
+        
+        return $cash;
+    }
+    
+    public function calculatePointsForPlace($place,$league,$participants){
 	
 	if($place > 8){
 	    return 0;

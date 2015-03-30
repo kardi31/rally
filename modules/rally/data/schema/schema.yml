@@ -21,8 +21,11 @@ Rally:
     active:
       type: boolean
       default: 1
+    league_rally:
+      type: boolean
+      default: 0
     league:
-      type: integer(4)
+      type: float(10,2)
       default: 5
 Surface:
   tableName: rally_surface

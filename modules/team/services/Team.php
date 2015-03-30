@@ -177,5 +177,22 @@ class TeamService extends Service{
         $q->select('amount,DATE(save_date) as save_date,detailed_type,income,description');
         return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
     }
+    
+    public function selectLeagueFullTeams($league_name,$current_season = true,$hydrationMode = Doctrine_Core::HYDRATE_RECORD,$limit = false){
+        // get league from current season by default
+        // otherwise use season that is passed as a param
+	if($current_season)
+            $season = LeagueService::getInstance()->getCurrentSeason();
+        else
+            $season = (int)$current_season;
+        $q = $this->teamTable->createQuery('t');
+        $q->leftJoin('t.Seasons s');
+        $q->addSelect('t.*');
+	$q->where('s.league_name = ?',$league_name);
+        $q->addWhere('s.season = ?',$season);
+        if($limit)
+            $q->limit($limit);
+	return $q->execute(array(),$hydrationMode);
+    }
 }
 ?>

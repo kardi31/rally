@@ -10,7 +10,8 @@
  * @property string $slug
  * @property timestamp $date
  * @property boolean $active
- * @property integer $league
+ * @property boolean $league_rally
+ * @property float $league
  * @property Doctrine_Collection $Surfaces
  * @property Doctrine_Collection $Crews
  * @property Doctrine_Collection $Stages
@@ -47,10 +48,15 @@ abstract class Rally_Model_Doctrine_BaseRally extends Doctrine_Record
              'type' => 'boolean',
              'default' => 1,
              ));
-        $this->hasColumn('league', 'integer', 4, array(
-             'type' => 'integer',
+        $this->hasColumn('league_rally', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
+             ));
+        $this->hasColumn('league', 'float', 10, array(
+             'type' => 'float',
              'default' => 5,
-             'length' => '4',
+             'length' => '10',
+             'scale' => '2',
              ));
 
         $this->option('type', 'MyISAM');

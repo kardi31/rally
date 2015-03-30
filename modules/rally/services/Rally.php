@@ -248,17 +248,17 @@ class RallyService extends Service{
         return $q->fetchOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
     }
     
-    public function createRandomRally(){
+    public function createRandomRally($league = false){
         
        $randomNumber = rand(1000000,10000000);
         
         $rallyArray = array();
         
         $rallyArray['name'] = "Rally_".$randomNumber;
-        $rallyArray['slug'] = TK_Text::createUniqueTableSlug('Rally_Model_Doctrine_Rally',$rallyArray['name']);        
-        $rallyArray['date'] = date('Y-m-d H:i:s');
+        $rallyArray['slug'] = TK_Text::createUniqueTableSlug('Rally_Model_Doctrine_Rally',$rallyArray['name']);       
+        $randDate = rand(1,100);
+        $rallyArray['date'] = date('Y-m-d H:i:s',strtotime('+'.$randDate.' days'));
         $rallyArray['active'] = 1;
-        $rallyArray['league'] = rand(1,5);
         
         $randomSurfaces = array_rand($this->surfaces,2);
         $randomSurfacePercentage = TK_Text::float_rand(10,90,2);
@@ -271,6 +271,14 @@ class RallyService extends Service{
                 $rallyArray['Surfaces'][$key]['percentage'] = $randomSurfacePercentage;
             }
         endforeach;
+        
+        if($league){
+            $rallyArray['league_rally'] = 1;
+            $rallyArray['league'] = $league;
+        }
+        else{
+            $rallyArray['league'] = rand(1,5);
+        }
         
         $rally = $this->rallyTable->getRecord();
         $rally->fromArray($rallyArray);
@@ -354,6 +362,7 @@ class RallyService extends Service{
 //	    if(!$alreadyCalculated){
                 $cashEarned = $this->prizesHelper->calculatePrizeForPlace($result['position'],$rally['league'],$participants);
                 $teamService->addTeamMoney($result['Crew']['team_id'],$cashEarned,1,'Za zajęcie '.$result['position'].' w rajdzie '.$rally['name']);
+                $teamService->addTeamPoints($result['Crew']['team_id'],$cashEarned,1,'Za zajęcie '.$result['position'].' w rajdzie '.$rally['name']);
 //            }
         endforeach;
     }
