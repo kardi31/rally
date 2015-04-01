@@ -34,7 +34,6 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/people/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/league/services/League.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/league/models/BaseLeague.php</file>
-            <file>file:/C:/xampp2/htdocs/ral/modules/league/models/BaseSeason.php</file>
             <file>file:/C:/xampp2/htdocs/ral/library/Doctrine/Query.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/cron/controllers/AdminController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/league/controllers/IndexController.php</file>
@@ -60,6 +59,15 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/bid-player.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/show-offer.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/services/Rally.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/league/models/League.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/league/models/Season.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/league/models/BaseSeason.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/league/views/index/show-table.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/cron/controllers/IndexController.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/team/models/Team.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/README.md</file>
+            <file>file:/C:/xampp2/htdocs/ral/notes.txt</file>
+            <file>file:/C:/xampp2/htdocs/ral/library/TK/Text.php</file>
         </group>
     </open-files>
 </project-private>

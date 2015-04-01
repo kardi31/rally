@@ -79,6 +79,8 @@ class TeamService extends Service{
 	$team->save();
         
         $this->saveTeamFinance($team_id,$amount,$moneyType,true,$description);
+        
+        return $team;
     }
     
     public function removeTeamMoney($team_id,$amount,$moneyType,$description = false){
@@ -95,6 +97,7 @@ class TeamService extends Service{
         
         $this->saveTeamFinance($team_id,$amount,$moneyType,false,$description);
     }
+    
     
     public function saveTeamFinance($team_id,$amount,$detailed_type,$income = false,$description = null){
         $financeArray = array();

@@ -67,6 +67,7 @@ class Test_Index extends Controller{
 //        echo "ok";exit;
         $rallyService = parent::getService('rally','rally');
         $teamService = parent::getService('team','team');
+        $leagueService = parent::getService('league','league');
 	
 //        Zend_Debug::dump($rallyResults);exit;
         
@@ -122,7 +123,19 @@ class Test_Index extends Controller{
             $rallyService->saveRallyCrew($values,$randomRally,$randomTeam);
         endforeach;
         Zend_Debug::dump($randomTeams);exit;
+    }
+    
+    public function createRalliesForAllLeagues(){
         
+        $leagueService = parent::getService('league','league');
+        $rallyService = parent::getService('rally','rally');
+        
+        $leagues = $leagueService->getAllActiveLeagues();
+        foreach($leagues as $league):
+            $league_name = floatval($league['league_name']);
+            $rallyService->createRalliesForLeague($league_name);
+            exit;
+        endforeach;
     }
 }
 ?>

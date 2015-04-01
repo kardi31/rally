@@ -68,6 +68,60 @@ class Element{
 	return $this->elementDisplay;
     }
     
+    function renderAdminElement($nostyle=false,$submitElem = 'submit') {
+        if(!$this->label){
+            $this->label = $this->name;
+        }
+        
+        if(!array_key_exists('validators',$this->options))
+            $this->options['validators'] = array();
+        
+        
+        if($this->type=="submit"):
+            $this->elementDisplay .= "<div class='formSubmitWrapper'>";
+            $this->elementDisplay .= "<input value=".$this->label." name='".$this->name."' id='".$this->name."' type='".$this->type."' />";
+            $this->elementDisplay .= "</div>";
+	elseif($this->type=="select"):
+            $this->elementDisplay .= "<select ".$this->renderParams()."  class='".$this->renderClasses()."'  name='".$this->name."' id='".$this->name."'>";
+	    if(count($this->multiOptions)>0&&key_exists($this->name, $this->multiOptions)):
+		foreach($this->multiOptions[$this->name] as $key => $value):
+		    $this->elementDisplay .= "<option ".( $this->getMethodVariable($this->name)==$key ? ("selected") : '')." "
+		    . "".( (key_exists('selected', $this->options)&&$this->options['selected']==$key) ? ("selected") : '')." "
+		    . "value='".$key."' id='option_".$key."' >".$value."</option>";
+		endforeach;
+	    endif; 
+	    $this->elementDisplay .= "</select>";
+            $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
+        elseif($this->type=="checkbox"):
+            $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."1' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
+            $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
+        elseif($this->type=="captcha"):
+	    $this->elementDisplay .= "<div class='formElemWrapper'><label for='captcha' id='captcha'>Przepisz kod z obrazka</label>";
+	    $this->elementDisplay .= "<img src='/captcha' />";
+	    $this->elementDisplay .= "<input name='captcha' id='captcha' type='text' />";
+	    $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div></div>";
+	else:
+            $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
+            $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
+        endif;
+	
+        if(!$nostyle){
+            $this->elementDisplay = '<div class="form-group">'
+                    . '<label class="col-md-3 control-label">'.$this->label
+                    . '</label>'
+                    . '<div class="col-md-4">'
+                    . ''.$this->elementDisplay.''
+                    . '</div>'
+                    . '</div>';
+        }
+        
+	return $this->elementDisplay;
+    }
+    
+    public function getLabel(){
+        return $this->label;
+    }
+    
     public function setMethod($method){
         $this->method = $method;
     }

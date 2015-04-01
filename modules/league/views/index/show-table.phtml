@@ -1,10 +1,23 @@
-<h2><?php echo $league['league_name']; ?></h2>
+<style>
+    table td, table th{
+        width: 250px;
+        text-align:center;
+    }
+</style>
+    
+<h2>Liga <?php echo $league['league_name']; ?></h2>
 
 <table>
+    <tr>
+        <th>Position</th>
+        <th>Team</th>
+        <th>Points</th>
+    </tr>
 <?php foreach($leagueTable as $key => $team): ?>
     <tr>
         <td><?php echo $key+1; ?></td>
         <td><?php echo $team['Team']['name']; ?></td>
+        <td><?php echo $team['points']; ?></td>
     </tr>
 
 

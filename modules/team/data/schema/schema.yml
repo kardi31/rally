@@ -63,3 +63,32 @@ Finance:
       type: one
       alias: Finances
       foreignAlias: Team
+SponsorList:
+  tableName: team_sponsor_list
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    name:
+      type: string(255)
+    slug:
+      type: string(255)
+    description:
+      type: text
+    active:
+      type: boolean
+      default: 0
+    logo:
+      type: string(255)
+  relations:
+    Team:
+      local: id
+      foreign: sponsor_id
+      foreignType: one
+      type: many
+      alias: SponsoredTeams
+      foreignAlias: Sponsor

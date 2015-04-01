@@ -1,5 +1,16 @@
-// add in team service - add rally points (called in team service)
+// dodawanie sponsorów przez cms
 
-// show league table ordered by points
+// foldery do dodawania zdjec
+
+// wyswietlanie loga sponsora na samochodzie
+
+// sponsors
 
 // create market for new cars and used cars
+
+
+
+
+Zasady
+1. Nie ukonczysz rajdu - nie dostaniesz ani kasy ani punktow
+2. 

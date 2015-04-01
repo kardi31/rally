@@ -67,6 +67,16 @@ class LeagueService extends Service{
 	return $q->fetchOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
     }
     
+    public function getAllActiveLeagues(){
+        $season = $this->getCurrentSeason();
+        
+        $q = $this->seasonTable->createQuery('s');
+	$q->select('s.league_name');
+        $q->groupBy('s.league_name');
+        $q->addWhere('s.season = ?',$season);
+	return $q->fetchArray();
+    }
+    
     public function getNextEmptyLeague($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->seasonTable->createQuery('s');
 	$q->select('s.league_name');
@@ -138,6 +148,7 @@ class LeagueService extends Service{
         $q->leftJoin('s.Team t');
 	$q->where('s.league_name = ?',$league_name);
         $q->addWhere('s.season = ?',$season);
+        $q->orderBy('s.points DESC,t.name');
 	return $q->execute(array(),$hydrationMode);
     }
     
@@ -158,6 +169,24 @@ class LeagueService extends Service{
         if($limit)
             $q->limit($limit);
 	return $q->execute(array(),$hydrationMode);
+    }
+    
+    
+    public function addTeamPoints($team_id,$position){
+        $rallyService = RallyService::getInstance();
+        $season = $this->getCurrentSeason();
+        
+        $points = $rallyService->getPrizesHelper()->calculatePointsForPlace($position);
+        
+	$q = $this->seasonTable->createQuery('s');
+        $q->addWhere('s.season = ?',$season);
+        $q->addWhere('s.team_id = ?',$team_id);
+        $teamSeasonTable = $q->fetchOne(array());
+        
+        $currentPoints = $teamSeasonTable->get('points');
+        $newPoints = $currentPoints + $points;
+        $teamSeasonTable->set('points',$newPoints);
+        $teamSeasonTable->save();
     }
 }
 ?>

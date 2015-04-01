@@ -17,6 +17,7 @@
  * @property float $league_name
  * @property integer $cash
  * @property Doctrine_Collection $Team
+ * @property Team_Model_Doctrine_SponsorList $Sponsor
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -87,6 +88,10 @@ abstract class Team_Model_Doctrine_BaseTeam extends Doctrine_Record
         $this->hasMany('Team_Model_Doctrine_Finance as Team', array(
              'local' => 'id',
              'foreign' => 'team_id'));
+
+        $this->hasOne('Team_Model_Doctrine_SponsorList as Sponsor', array(
+             'local' => 'sponsor_id',
+             'foreign' => 'id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $softdelete0 = new Doctrine_Template_SoftDelete();

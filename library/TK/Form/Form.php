@@ -37,7 +37,7 @@ class Form extends Element{
     }
     
     function getElement($name){
-	if (array_key_exists($name, $this->elements)) {
+	if (is_array($this->elements)&&array_key_exists($name, $this->elements)) {
             return $this->elements[$name];
         }
         return null;

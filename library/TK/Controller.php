@@ -58,6 +58,13 @@ class Controller{
         return $className::getInstance();
     }
     
+    public function getForm($module,$form) {
+        $className = ucfirst($form);
+        require BASE_PATH."/modules/".$module."/form/".ucfirst($form).".php";
+        
+        return new $className();
+    }
+    
     public function actionStack($controller,$function){
 	$controller->$function();
     }

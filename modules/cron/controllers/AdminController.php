@@ -24,6 +24,20 @@ class Cron_Admin extends Controller{
         echo "good";
     }
     
+    public function createRalliesForAllLeagues(){
+        $view= $this->view;
+        $view->setNoRender();
+        $leagueService = parent::getService('league','league');
+        $rallyService = parent::getService('rally','rally');
+        
+        $leagues = $leagueService->getAllActiveLeagues();
+        foreach($leagues as $league):
+            $league_name = floatval($league['league_name']);
+            $rallyService->createRalliesForLeague($league_name);
+        endforeach;
+        echo "create rallies for league good";
+    }
+    
     // do this every season - end
     
     // do this every day - start
