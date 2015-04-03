@@ -95,24 +95,39 @@ class Element{
         elseif($this->type=="checkbox"):
             $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."1' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
             $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
+        elseif($this->type=="textarea"):
+            $this->elementDisplay .= "<textarea ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."'>".$this->getMethodVariable($this->name)."</textarea>";
+            $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
         elseif($this->type=="captcha"):
 	    $this->elementDisplay .= "<div class='formElemWrapper'><label for='captcha' id='captcha'>Przepisz kod z obrazka</label>";
 	    $this->elementDisplay .= "<img src='/captcha' />";
 	    $this->elementDisplay .= "<input name='captcha' id='captcha' type='text' />";
 	    $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div></div>";
-	else:
+        elseif($this->type=="hidden"):
+	    $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
+        else:
             $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
             $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
         endif;
 	
-        if(!$nostyle){
-            $this->elementDisplay = '<div class="form-group">'
-                    . '<label class="col-md-3 control-label">'.$this->label
-                    . '</label>'
-                    . '<div class="col-md-4">'
-                    . ''.$this->elementDisplay.''
-                    . '</div>'
-                    . '</div>';
+        if(!$nostyle&&$this->type!="hidden"){
+            if($this->type!="textarea"):
+                $this->elementDisplay = '<div class="form-group">'
+                        . '<label class="col-md-3 control-label">'.$this->label
+                        . '</label>'
+                        . '<div class="col-md-4">'
+                        . ''.$this->elementDisplay.''
+                        . '</div>'
+                        . '</div>';
+            else:
+                $this->elementDisplay = '<div class="form-group">'
+                        . '<label class="col-md-3 control-label">'.$this->label
+                        . '</label>'
+                        . '<div class="col-md-8">'
+                        . ''.$this->elementDisplay.''
+                        . '</div>'
+                        . '</div>';
+            endif;
         }
         
 	return $this->elementDisplay;

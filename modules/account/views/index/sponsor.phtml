@@ -1,0 +1,13 @@
+<h3>Sponsors</h3>
+<hr />
+<div class="sponsorList">
+    <?php foreach($sponsors as $sponsor): ?>
+
+        <div class="sponsor">
+            <h4><?php echo $sponsor['name']; ?></h4>
+            <img src="/media/sponsor/<?php echo $sponsor['logo']; ?>" alt="<?php echo $sponsor['name']; ?>" title="<?php echo $sponsor['name']; ?>" />
+            <span><?php echo $sponsor['description']; ?></span>
+        </div>
+
+    <?php endforeach; ?>
+</div>

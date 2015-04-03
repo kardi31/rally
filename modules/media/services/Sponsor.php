@@ -17,7 +17,7 @@ class SponsorService extends Service{
         $this->sponsorTable = parent::getTable('team','sponsorList');
     }
     
-    public function getAllSponsors(){
+    public function getAllTeams(){
         return $this->sponsorTable->findAll();
     }
     
@@ -26,11 +26,9 @@ class SponsorService extends Service{
     }
     
     public function saveSponsor($values){
-        if(!$sponsor = $this->getSponsor($values['id'])){
+        if(!$sponsor = $this->getSponsor($values['id'])}{
             $sponsor = $this->sponsorTable->getRecord();
         }
-        
-        $values['slug'] = TK_Text::createSlug($values['name']);
         
         $sponsor->fromArray($values);
         $sponsor->save();

@@ -1,4 +1,5 @@
 <?php
+
 if(count($_GET)>0){
 $keys = array_keys($_GET);
         $params = explode('/',$keys[0]);

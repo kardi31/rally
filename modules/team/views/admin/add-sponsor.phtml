@@ -14,7 +14,7 @@
 		<div class="portlet box purple">
 			<div class="portlet-title">
 				<div class="caption">
-					<i class="fa fa-gift"></i>Add stage
+					<i class="fa fa-gift"></i>Add sponsor
 				</div>
 				<div class="tools">
 					<a href="javascript:;" class="collapse" data-original-title="" title="">
@@ -29,11 +29,34 @@
 			</div>
 			<div class="portlet-body form">
 				<!-- BEGIN FORM-->
-				<form action="" id="form_sample_1" class="form-horizontal" method="POST">
+				<form action="" id="form_sample_1" class="form-horizontal" method="POST" enctype="multipart/form-data">
 					<div class="form-body">
+                                                <?php echo $form->getElement('id')->renderAdminElement(); ?>
                                                 <?php echo $form->getElement('name')->renderAdminElement(); ?>
-						<?php echo $form->getElement('surface1')->renderAdminElement(); ?>
-						<input type="hidden" name="form_send" value="1" />
+						<?php echo $form->getElement('description')->renderAdminElement(); ?>
+						<?php echo $form->getElement('active')->renderAdminElement(); ?>
+                                                <input type="hidden" name="form_send" value="1" />
+					
+                                                <div class="form-group">
+                                                        <label class="control-label col-md-3">Logo</label>
+                                                        <div class="col-md-3">
+                                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                                                        </div>
+                                                                        <div>
+                                                                                <span class="btn default btn-file">
+                                                                                <span class="fileinput-new">
+                                                                                Select image </span>
+                                                                                <span class="fileinput-exists">
+                                                                                Change </span>
+                                                                                <input type="file" name="logo">
+                                                                                </span>
+                                                                                <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput">
+                                                                                Remove </a>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
 					</div>
                                     
 					<div class="form-actions">

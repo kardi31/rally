@@ -71,6 +71,17 @@ class Account_Index extends Controller{
         $this->view->assign('financialReportAdvanced',$financialReportAdvanced);
     }
     
+    public function sponsor(){
+        
+        Service::loadModels('team', 'team');
+        
+        $sponsorService = parent::getService('team','sponsor');
+        
+        $sponsors = $sponsorService->getAllSponsors();
+        
+        $this->view->assign('sponsors',$sponsors);
+    }
+    
     public function myDrivers(){
         Service::loadModels('team', 'team');
         Service::loadModels('people', 'people');

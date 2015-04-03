@@ -10,7 +10,7 @@ class Team_DataTables_SponsorList{
         
         $q = $table->createQuery('s');
         $q->addSelect('s.*');
-        $q->addSelect('count(s.id) as teams_count');
+        $q->addSelect('count(st.id) as teams_count');
 	$q->leftJoin('s.SponsoredTeams st');
         $q->groupBy('s.id');
         return $q;

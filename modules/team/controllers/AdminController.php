@@ -29,7 +29,7 @@ class Team_Admin extends Controller{
          $results = $dataTables = Index_DataTables_Factory::factory(array(
             'table' => 'Team_Model_Doctrine_SponsorList', 
             'class' => 'Team_DataTables_SponsorList', 
-            'fields' => array('s.id','s.name','st.id','s.active'),
+            'fields' => array('s.id','s.logo','s.name','st.id','s.active'),
         ));
          
          $iTotalRecords = count($results);
@@ -38,6 +38,7 @@ class Team_Admin extends Controller{
              $row = array();
              $row[] = '<input type="checkbox" name="id[]" value="'.$result['id'].'" />';
              $row[] = $result['id'];
+             $row[] = '<img src="/media/sponsor/'.$result['logo'].'" style=width:50px;height:50px; />';
              $row[] = $result['name'];
              $row[] = $result['teams_count'];
              if($result['active'])
@@ -80,6 +81,7 @@ class Team_Admin extends Controller{
 	 
         Service::loadModels('team', 'team');
         $sponsorService = parent::getService('team','sponsor');
+        $mediaService = parent::getService('media','media');
        
 	$form = $this->getForm('team','sponsor');
 	
@@ -87,18 +89,18 @@ class Team_Admin extends Controller{
 		Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
-		
-		$values['rally_id'] = $rally['id'];
-		$stage = $rallyService->saveStage($values);
+                $values['logo'] = $mediaService->uploadPhoto('logo','sponsor');
+                
+		$stage = $sponsorService->saveSponsor($values);
 		
 		if(isset($_POST['submit']))
-		    TK_Helper::redirect('/admin/rally/show-rally-stages/id/'.$rally['id']);
+		    TK_Helper::redirect('/admin/team/list-sponsor');
 		
 		if(isset($_POST['save_and_add_new']))
-		    TK_Helper::redirect('/admin/rally/add-stage/id/'.$rally['id']);
+		    TK_Helper::redirect('/admin/team/add-sponsor/');
 		
 		if(isset($_POST['save_and_stay']))
-		    TK_Helper::redirect('/admin/rally/edit-stage/id/'.$rally['id'].'/stage-id/'.$stage['id']);
+		    TK_Helper::redirect('/admin/team/edit-sponsor/id/'.$stage['id']);
 		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
 	    
