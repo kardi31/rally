@@ -1,13 +1,49 @@
+<style>
+    .sponsor{
+	border:1px solid black;
+	/*margin-bottom:5px;*/
+	position:relative;
+	cursor: pointer;
+	height:200px;
+    }
+    
+    .sponsor.active{
+	border:2px solid red;
+    }
+</style>
+<script>
+    $(document).ready(function(){
+	var counter = $('.sponsor').length;
+	$(document).on('click','.sponsor',function(){
+	    $('.sponsor').removeClass('active');
+	    var t = $(this);
+	    var before = $(this).prevAll().length;
+	    var top = (before)*200;
+	    
+//	    
+	    $(this).prevAll().animate({top: '200px'}, {duration:700,queue:false});
+	    t.animate({top: '-' + top + 'px'},{duration:700,queue:false,complete:function(){
+		    t.insertBefore('.sponsor:first-of-type');
+                    $('.sponsor').css('top', '0px');
+		    t.addClass('active');
+	    }})
+	});
+    });
+</script>
 <h3>Sponsors</h3>
 <hr />
 <div class="sponsorList">
+    <form>
     <?php foreach($sponsors as $sponsor): ?>
 
-        <div class="sponsor">
+        <div class="sponsor" data-rel='<?php echo $sponsor['id']; ?>'>
             <h4><?php echo $sponsor['name']; ?></h4>
             <img src="/media/sponsor/<?php echo $sponsor['logo']; ?>" alt="<?php echo $sponsor['name']; ?>" title="<?php echo $sponsor['name']; ?>" />
             <span><?php echo $sponsor['description']; ?></span>
         </div>
 
     <?php endforeach; ?>
+	    <input type="hidden" name="sponsor_id" id='sponsor_id' />
+	<input type="submit" value="submit" name="submit" />
+    </form>
 </div>

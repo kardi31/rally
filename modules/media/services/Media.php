@@ -44,7 +44,7 @@ class MediaService extends Service{
             }
         }
         
-        return $slug.".".$filename;
+        return $slug.".".$extension;
         
     }
 }

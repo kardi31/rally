@@ -21,7 +21,7 @@ CarModels:
     max_speed:
       type: integer(11)
     acceleration:
-      type: float(2,5)
+      type: float(5,2)
     wheel_drive:
       type: enum
       length: 11

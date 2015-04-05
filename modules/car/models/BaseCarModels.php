@@ -47,10 +47,10 @@ abstract class Car_Model_Doctrine_BaseCarModels extends Doctrine_Record
              'type' => 'integer',
              'length' => '11',
              ));
-        $this->hasColumn('acceleration', 'float', 2, array(
+        $this->hasColumn('acceleration', 'float', 5, array(
              'type' => 'float',
-             'length' => '2',
-             'scale' => '5',
+             'length' => '5',
+             'scale' => '2',
              ));
         $this->hasColumn('wheel_drive', 'enum', 11, array(
              'type' => 'enum',

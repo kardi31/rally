@@ -57,7 +57,9 @@ $connection["library"] =
    $modelDir = scandir($dir . '/modules/');
    foreach($modelDir as $module):
        if(strlen($module)>2){
+       Doctrine_Core::loadModels("/var/www/ral/modules/user/models");
        Doctrine_Core::loadModels("/var/www/ral/modules/team/models");
+       Doctrine_Core::loadModels("/var/www/ral/modules/league/models");
        Doctrine_Core::loadModels("/var/www/ral/modules/people/models");
        Doctrine_Core::loadModels("/var/www/ral/modules/car/models");
        Doctrine_Core::loadModels("/var/www/ral/modules/rally/models");

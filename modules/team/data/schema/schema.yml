@@ -28,6 +28,8 @@ Team:
       type: integer(4)
     car2_id:
       type: integer(4)
+    sponsor_id:
+      type: integer(4)
     league_name:
       type: float(10,2)
     cash:

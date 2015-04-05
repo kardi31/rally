@@ -14,6 +14,7 @@
  * @property integer $pilot2_id
  * @property integer $car1_id
  * @property integer $car2_id
+ * @property integer $sponsor_id
  * @property float $league_name
  * @property integer $cash
  * @property Doctrine_Collection $Team
@@ -64,6 +65,10 @@ abstract class Team_Model_Doctrine_BaseTeam extends Doctrine_Record
              'length' => '4',
              ));
         $this->hasColumn('car2_id', 'integer', 4, array(
+             'type' => 'integer',
+             'length' => '4',
+             ));
+        $this->hasColumn('sponsor_id', 'integer', 4, array(
              'type' => 'integer',
              'length' => '4',
              ));
