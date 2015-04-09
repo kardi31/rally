@@ -27,7 +27,8 @@ class TeamService extends Service{
         3 => 'Player transfer income',
         4 => 'Player salaries',
         5 => 'Car costs',
-        6 => 'Player transfer expense'
+        6 => 'Player transfer expense',
+        7 => 'Car purchase'
     );
     
     public function __construct(){
@@ -196,6 +197,17 @@ class TeamService extends Service{
         if($limit)
             $q->limit($limit);
 	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function canAfford($team,$price){
+        // team must be an instance of Team_Model_Doctrine_Team
+        if(is_integer($team)){
+            $team = $this->getTeam($team,'id');
+        }
+        if($team->cash>=$price)
+            return true;
+        else
+            return false;
     }
 }
 ?>

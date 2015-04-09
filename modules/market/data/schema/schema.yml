@@ -23,6 +23,20 @@ Offer:
     highest_bid:
       type: integer(11)
       default: null
+CarDealer:
+  tableName: market_car_dealer
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    team_id:
+      type: integer(4)
+    car_id:
+      type: integer(4)
 Bid:
   tableName: market_bid
   actAs: 

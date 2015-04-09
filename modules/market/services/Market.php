@@ -74,11 +74,9 @@ class MarketService extends Service{
         $data['finish_date'] = date('Y-m-d H:i:s', strtotime('+ '.$values['days'].' days'));
         $data['asking_price'] = $values['asking_price'];
         $data['highest_bid'] = 0;
-        
-        if($this->checkIfPlayerOnMarket($player['id'])==0){
+        if($this->checkIfPlayerOnMarket($player['id'])!=0){
             return false;
         }
-        
         
         $record = $this->offerTable->getRecord();
         $record->fromArray($data);

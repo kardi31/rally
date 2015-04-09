@@ -73,7 +73,9 @@
         echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 
     endforeach; ?>
     <br />
+    <?php if($player['Team']['id']!=$user['Team']['id']): ?>
     <a href="/market/bid-player/id/<?php echo $offer['id']; ?>">Zalicytuj</a>
+    <?php endif; ?>
 </div>
 <div class='clearfix'></div>
 <hr />

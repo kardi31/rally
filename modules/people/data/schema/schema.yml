@@ -96,7 +96,8 @@ Training:
       foreign: id
       foreignType: one
       type: many
-      alias: TrainingReports
+      foreignAlias: TrainingReports
+      alias: People
 TrainingFactor:
   tableName: people_training_factor
   actAs: 

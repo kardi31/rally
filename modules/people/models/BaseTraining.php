@@ -15,7 +15,7 @@
  * @property decimal $km_for_next_star
  * @property boolean $skill_promotion
  * @property datetime $training_date
- * @property Doctrine_Collection $TrainingReports
+ * @property Doctrine_Collection $People
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -81,7 +81,7 @@ abstract class People_Model_Doctrine_BaseTraining extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('People_Model_Doctrine_People as TrainingReports', array(
+        $this->hasMany('People_Model_Doctrine_People as People', array(
              'local' => 'people_id',
              'foreign' => 'id'));
 

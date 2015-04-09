@@ -7,6 +7,7 @@
  * 
  * @property integer $id
  * @property integer $model_id
+ * @property integer $team_id
  * @property integer $mileage
  * @property string $name
  * @property integer $value
@@ -31,6 +32,10 @@ abstract class Car_Model_Doctrine_BaseCar extends Doctrine_Record
              'length' => '4',
              ));
         $this->hasColumn('model_id', 'integer', 11, array(
+             'type' => 'integer',
+             'length' => '11',
+             ));
+        $this->hasColumn('team_id', 'integer', 11, array(
              'type' => 'integer',
              'length' => '11',
              ));

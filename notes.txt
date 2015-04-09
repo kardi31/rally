@@ -1,6 +1,7 @@
-// dodawanie sponsorów przez cms
 
-// foldery do dodawania zdjec
+// redirect after car was bought
+
+// sprzedawanie aut przez zawodnikow nawzajem
 
 // wyswietlanie loga sponsora na samochodzie
 

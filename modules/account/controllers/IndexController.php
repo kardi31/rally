@@ -149,5 +149,7 @@ class Account_Index extends Controller{
 	$this->view->assign('formCar1',$formCar1);
     }
     
+    
+    
 }
 ?>

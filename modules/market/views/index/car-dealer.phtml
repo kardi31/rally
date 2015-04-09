@@ -1,0 +1,27 @@
+<style>
+    .carPhoto img{
+        max-width:200px;
+    }
+</style>
+<h2>Car dealer</h2>
+<hr />
+<?php foreach($carsForSale as $car):?>
+<div class="col-md-8">
+    Name: <?php echo $car['name']; ?><br />
+    Capacity: <?php echo $car['capacity']; ?><br />
+    Horsepower: <?php echo $car['horsepower']; ?><br />
+    Max speed: <?php echo $car['max_speed']; ?><br />
+    Acceleration: <?php echo $car['acceleration']; ?><br />
+    Price: <strong><?php echo $car['price']; ?></strong><br />
+</div>
+<div class="col-md-4">
+    <div class="carPhoto">
+        <img src="/media/cars/<?php echo $car['photo']; ?>" alt="<?php echo $car['name']; ?>" title="<?php echo $car['name']; ?>" />
+    </div>
+    <?php // if($player['Team']['id']!=$user['Team']['id']): ?>
+    <a href="/market/buy-car/id/<?php echo $car['id']; ?>">Kup</a>
+    <?php // endif; ?>
+</div>
+<div class='clearfix'></div>
+<hr />
+<?php endforeach; ?>

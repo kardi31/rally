@@ -28,6 +28,13 @@ CarModels:
       values: ['front','rear', '4x4']
     league:
       type: integer(11)
+    price:
+        type: integer(11)
+    on_market:
+        type: boolean
+        default: 0
+    photo:
+        type: string(255)
 Car:
   tableName: car_car
   actAs: 
@@ -39,6 +46,8 @@ Car:
       autoincrement: true
       type: integer(4)
     model_id:
+      type: integer(11)
+    team_id:
       type: integer(11)
     mileage:
       type: integer(11)

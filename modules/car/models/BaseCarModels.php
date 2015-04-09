@@ -13,6 +13,9 @@
  * @property float $acceleration
  * @property enum $wheel_drive
  * @property integer $league
+ * @property integer $price
+ * @property boolean $on_market
+ * @property string $photo
  * @property Car_Model_Doctrine_Car $Car
  * 
  * @package    ##PACKAGE##
@@ -65,6 +68,18 @@ abstract class Car_Model_Doctrine_BaseCarModels extends Doctrine_Record
         $this->hasColumn('league', 'integer', 11, array(
              'type' => 'integer',
              'length' => '11',
+             ));
+        $this->hasColumn('price', 'integer', 11, array(
+             'type' => 'integer',
+             'length' => '11',
+             ));
+        $this->hasColumn('on_market', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
+             ));
+        $this->hasColumn('photo', 'string', 255, array(
+             'type' => 'string',
+             'length' => '255',
              ));
 
         $this->option('type', 'MyISAM');

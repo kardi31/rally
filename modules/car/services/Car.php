@@ -3,6 +3,7 @@
 class CarService extends Service{
     
     protected $carTable;
+    protected $carModelTable;
     private static $instance = NULL;
 
     static public function getInstance()
@@ -31,6 +32,14 @@ class CarService extends Service{
         $this->carModelTable = parent::getTable('car','carModels');
     }
     
+    public function getCar($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        return $this->carTable->findOneBy($field,$id,$hydrationMode);
+    }
+    
+    public function getCarModel($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        return $this->carModelTable->findOneBy($field,$id,$hydrationMode);
+    }
+    
     public function getAllDrivers(){
         return $this->carTable->findAll();
     }
@@ -55,15 +64,19 @@ class CarService extends Service{
         return $q->fetchOne(array(),$hydrationMode);
     }
     
-    public function createNewTeamCar($model_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+    public function createNewTeamCar($model,$team_id){
+        
+        $upkeep = 0.15 * $model['price'];
+        
         $record = $this->carTable->getRecord();
 	
 	$data = array(
-	  'model_id' => $model_id,
-	  'value' => '100000',
-	  'upkeep' => '1000',
+	  'model_id' => $model['id'],
+	  'value' => $model['price'],
+          'team_id' => $team_id,
+	  'upkeep' => $upkeep,
 	  'mileage' => 0,
-	  'name' => 'Samochod '.rand()
+	  'name' => $model['name']." #".rand(1000,25000)
 	);
 	
 	$record->fromArray($data);
@@ -121,6 +134,14 @@ class CarService extends Service{
 	}else{
 	    return 30;
 	}
+    }
+    
+    public function getCarsForSale($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->carModelTable->createQuery('cm');
+	$q->select('cm.*');
+	$q->addWhere('cm.on_market = 1');
+	$q->addWhere('cm.price > 0');
+	return $q->execute(array(),$hydrationMode);
     }
 }
 ?>
