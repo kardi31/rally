@@ -96,6 +96,30 @@ class Market_Index extends Controller{
         $this->view->assign('offer',$offer);
     }
     
+    public function myPlayerOffers(){
+        $userService = parent::getService('user','user');
+        
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        Service::loadModels('people', 'people');
+        $marketService = parent::getService('market','market');
+        $teamService = parent::getService('team','team');
+        $data = array();
+        $marketOffers = $marketService->getAllActiveMyPlayerOffers($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
+        
+        $this->view->assign('user',$user);
+        $this->view->assign('marketOffers',$marketOffers);
+    }
+    
+    /*
+     * End of player part
+     * 
+     * 
+     * Start of car part
+     */
+    
     public function carDealer(){
         
         Service::loadModels('car', 'car');
@@ -125,11 +149,113 @@ class Market_Index extends Controller{
         if($teamService->canAfford($user['Team'],$carModel['price'])){
             $carService->createNewTeamCar($carModel,$user['Team']['id']);
             $teamService->saveTeamFinance($user['Team']['id'],$carModel['price'],7,false,'Car '.$carModel['name'].' was bought');
-            echo "car was bought";exit;
+            $this->view->assign('message','car was bought');
+            
+            TK_Helper::redirect('/account/my-cars');
+        }
+        else{
+            
+            $this->view->assign('message','car was bought');
+            TK_Helper::redirect('/market/car-dealer');
         }
         
-        echo "not bought";exit;
     }
     
+    public function showCarMarket(){
+        $userService = parent::getService('user','user');
+        
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        Service::loadModels('car', 'car');
+        Service::loadModels('team', 'team');
+        $marketService = parent::getService('market','market');
+        $carService = parent::getService('car','car');
+        $data = array();
+        $marketOffers = $marketService->getAllActiveCarOffers(Doctrine_Core::HYDRATE_ARRAY);
+        
+        $this->view->assign('user',$user);
+        $this->view->assign('marketOffers',$marketOffers);
+    }
+    
+    public function bidCar(){
+        
+        Service::loadModels('team', 'team');
+        Service::loadModels('car', 'car');
+        $marketService = parent::getService('market','market');
+        
+        $id = $GLOBALS['urlParams']['id'];
+        $offer = $marketService->getCarOffer($id,'id',Doctrine_Core::HYDRATE_RECORD);
+        
+        $userService = parent::getService('user','user');
+        
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        
+        $form = $this->getForm('market','bid');
+        if($form->isSubmit()){
+            if($form->isValid()){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                
+                $values = $_POST;
+                
+                $team_id = $user['Team']['id'];
+                
+                $result = $marketService->bidCarOffer($values,$offer,$team_id);
+                if($result!== false)
+                    TK_Helper::redirect('/market/show-car-offer/id/'.$offer['id']);
+                else{
+                    $this->view->assign('message','Licytacja się skończyła już');
+                }
+                
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+            }
+        }
+        $marketOffers = $marketService->getAllActiveCarOffers(Doctrine_Core::HYDRATE_ARRAY);
+        
+        $this->view->assign('marketOffers',$marketOffers);
+        $this->view->assign('form',$form);
+    }
+    
+    public function showCarOffer(){
+        
+        Service::loadModels('team', 'team');
+        Service::loadModels('car', 'car');
+        $marketService = parent::getService('market','market');
+        
+        $id = $GLOBALS['urlParams']['id'];
+        $offer = $marketService->getFullCarOffer($id,'id',Doctrine_Core::HYDRATE_RECORD);
+        
+        $userService = parent::getService('user','user');
+        
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        
+        $this->view->assign('offer',$offer);
+        $this->view->assign('user',$user);
+    }
+    
+    public function myCarOffers(){
+        $userService = parent::getService('user','user');
+        
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        Service::loadModels('car', 'car');
+        Service::loadModels('team', 'team');
+        $marketService = parent::getService('market','market');
+        $carService = parent::getService('car','car');
+        $data = array();
+        $marketOffers = $marketService->getAllActiveMyCarOffers($user['Team']['id']);
+        
+        $this->view->assign('user',$user);
+        $this->view->assign('marketOffers',$marketOffers);
+    }
 }
 ?>

@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/car-dealer.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/my-cars.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/bid-player.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/car/controllers/IndexController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/controllers/TestController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/services/Sponsor.php</file>
@@ -16,12 +18,12 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/league/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/index/views/index/index.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/views/index/rally-result.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/car/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/cron/controllers/AdminController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/models/Offer.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/my-drivers.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/my-finances.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/public/css/rally-custom.css</file>
-            <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/edit-car.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/models/BaseOffer.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/models/BaseSponsorList.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/controllers/AdminController.php</file>
@@ -38,6 +40,7 @@
             <file>file:/C:/xampp2/htdocs/ral/library/Doctrine/Core.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/league/models/BaseLeague.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/services/Market.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/car/services/Car.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/league/views/index/show-table.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/people/views/index/sell-player.phtml</file>

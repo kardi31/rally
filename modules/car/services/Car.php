@@ -44,6 +44,14 @@ class CarService extends Service{
         return $this->carTable->findAll();
     }
     
+    public function getTeamCars($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+	$q = $this->carTable->createQuery('c');
+	$q->select('*');
+	$q->leftJoin('c.Model cm');
+	$q->addWhere('c.team_id = ?',$team_id);
+	return $q->execute(array(),$hydrationMode);
+    }
+    
     public function getFreeCars(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	$q = $this->carTable->createQuery('c');
 	$q->select('c.id,c.name');

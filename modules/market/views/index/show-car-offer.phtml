@@ -1,29 +1,11 @@
-<script>
-    $(document).ready(function(){
-	$('#btnChangeCarNameButton1').click(function(){
-	    if($('#changeCarName1').is(":visible")){
-	       $('#changeCarName1').hide(); 
-	    }
-	    else{
-	       $('#changeCarName1').show(); 
-		
-	    }
-	});
-    });
-</script>
-<?php if(isset($message))
-    echo $message; ?>
-<?php $team = $authenticatedUser['Team']; ?>
-<h3>My cars</h3>
-<div class="myDrivers">
-<?php foreach($cars as $key => $car): ?>
-<fieldset>
-    
-   <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
+<h2>Offer</h2>
+<hr />
+  <?php 
+  $car = $offer['Car'];
+  if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
         <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" style="width:300px;float:right;margin-right:100px;" />
    <?php } ?>
-    <h5>Car <?php echo $key+1; ?></h5>
-    Car name: <?php echo $car['name']; ?> <a href="javascript:void(0)" id="btnChangeCarNameButton1">change name</a><br />
+Car name: <?php echo $car['name']; ?> <br />
     <div class="changeCarName" id="changeCarName1">
 	<?php // echo $formCar1->renderForm(); ?>
     </div>
@@ -31,7 +13,6 @@
     Przebieg: <?php echo $car['mileage']; ?><br />
     Wartość: <?php echo $car['value']; ?><br />
     Koszty utrzymania: <?php echo $car['upkeep']; ?><br />
-    Skills: <br />
     <fieldset>
         <table>
             <tr>
@@ -57,12 +38,31 @@
             
         </table>
     </fieldset>
-</fieldset>
-    
-        <?php if(!$car['on_market']): ?>
-            <a href="/car/sell-car/id/<?php echo $car['id']; ?>">Sprzedaj samochód</a>
-        <?php else: ?>
-            Car is on the market
-        <?php endif; ?>
-    <?php endforeach; ?>
 </div>
+<div class="col-md-4">
+    <h3>Oferty</h3>
+    Najwyższa oferta 
+    <strong><?php
+    if(isset($offer['Bids'][0]))
+        echo (int)$offer['Bids'][0]['value']."$ - ".$offer['Bids'][0]['Team']['name']."<br />"; 
+    else
+        echo "brak ofert";
+    ?></strong>
+    <span>Koniec aukcji - <?php echo TK_Text::timeFormat($offer['finish_date'],'d/m/Y H:i:s'); ?></span>
+    <br /><br />
+    Pozostałe oferty<br />
+    <?php foreach($offer['Bids'] as $key => $bid):
+        if($key==0)
+            continue;
+        if($key>5)
+            break;
+        
+        echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 
+    endforeach; ?>
+    <br />
+    <?php if($car['Team']['id']!=$user['Team']['id']): ?>
+    <a href="/market/bid-car/id/<?php echo $offer['id']; ?>">Zalicytuj</a>
+    <?php endif; ?>
+</div>
+<div class='clearfix'></div>
+<hr />

@@ -13,6 +13,7 @@
  * @property integer $value
  * @property integer $upkeep
  * @property timestamp $last_name_change
+ * @property boolean $on_market
  * @property Car_Model_Doctrine_CarModels $Model
  * 
  * @package    ##PACKAGE##
@@ -57,6 +58,10 @@ abstract class Car_Model_Doctrine_BaseCar extends Doctrine_Record
              ));
         $this->hasColumn('last_name_change', 'timestamp', null, array(
              'type' => 'timestamp',
+             ));
+        $this->hasColumn('on_market', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
              ));
 
         $this->option('type', 'MyISAM');

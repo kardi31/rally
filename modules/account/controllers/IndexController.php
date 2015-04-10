@@ -91,10 +91,13 @@ class Account_Index extends Controller{
         Service::loadModels('team', 'team');
         Service::loadModels('car', 'car');
 	
-	
+        $carService = parent::getService('car','car');
+        
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
 	
+        $cars = $carService->getTeamCars($user['Team']['id']);
+        
 	$formCar1 = new Form();
 	
         $formCar1->createElement('text','car1_name',array('validators' => 'alnum'),'Nowa nazwa(dozwolona 1 zmiana na miesiąc)');
@@ -138,14 +141,12 @@ class Account_Index extends Controller{
 		
 		
 		$user->save();
-//		$rallyService->saveRallyCrew($values,$rally,$user['Team']);
-//		
-//		TK_Helper::redirect('/rally/show-rally/name/'.$rally['slug']);
 //		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
         }
 	
+	$this->view->assign('cars',$cars);
 	$this->view->assign('formCar1',$formCar1);
     }
     

@@ -27,5 +27,8 @@ class Car_Model_Doctrine_Car extends Car_Model_Doctrine_BaseCar
              'local' => 'id',
              'foreign' => 'car_id'));
 	
+        $this->hasOne('Team_Model_Doctrine_Team as Team', array(
+             'local' => 'team_id',
+             'foreign' => 'id'));
     }
 }

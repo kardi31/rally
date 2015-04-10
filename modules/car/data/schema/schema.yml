@@ -59,6 +59,9 @@ Car:
       type: integer(11)
     last_name_change:
       type: timestamp
+    on_market:
+      type: boolean
+      default: 0
   relations:
     CarModels:
       local: model_id
