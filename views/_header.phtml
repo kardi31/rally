@@ -2,12 +2,16 @@
 
 <?php 
 if(isset($authenticatedUser)&&$authenticatedUser){ ?>
-
+<div class="col-md-3">
+    Premium : <?php echo (int)$authenticatedUser['premium']; ?>
+</div>
+<div class="clearfix"></div>
 <div class="companyAccountMenu">
     <a href="/account/my-account">My account</a>
 
     <a href="/rally/list-rally">Rallies</a>
     <a href="/account/my-drivers">Moi ludzie</a>
+    <a href="/account/premium">Premium</a>
     <a href="/market/car-dealer">Salon samochodowy</a>
     
     <a href="/account/my-cars">Moje auta</a>
@@ -43,3 +47,4 @@ else{
 	    </div>
 
 <?php } ?>
+<div class="clearfix"></div>

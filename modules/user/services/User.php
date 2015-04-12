@@ -58,5 +58,13 @@ class UserService extends Service{
         return true;
     }
     
+    public function addPremium($user,$premium){
+	$currentPremium = $user->get('premium');
+	$newPremium = (int)$currentPremium+(int)$premium;
+	$user->set('premium',$newPremium);
+	$user->save();
+	return $user;
+    }
+    
 }
 ?>

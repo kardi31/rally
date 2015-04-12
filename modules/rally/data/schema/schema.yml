@@ -27,6 +27,9 @@ Rally:
     league:
       type: float(10,2)
       default: 5
+    big_awards:
+      type: boolean
+      default: 0
 Surface:
   tableName: rally_surface
   actAs: 
@@ -209,3 +212,21 @@ Result:
       type: one
       alias: Crew
       foreignAlias: RallyResults
+BigAwards:
+  tableName: rally_big_awards
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    rally_id:
+      type: integer(4)
+    award_type:
+      type: string(255)
+    car_model_id:
+      type: integer(4)
+    premium:
+      type: integer(11)

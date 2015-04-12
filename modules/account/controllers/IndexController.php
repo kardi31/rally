@@ -150,6 +150,35 @@ class Account_Index extends Controller{
 	$this->view->assign('formCar1',$formCar1);
     }
     
+    public function premium(){
+	$form = $this->getForm('user','premium');
+	
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+	
+	if($form->isSubmit()){
+            if($form->isValid()){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                
+                $values = $_POST;
+                
+                $result = $userService->addPremium($user,$values['premium']);
+                
+		$_SESSION['user'] = serialize($user);
+		
+                if($result!== false)
+                    TK_Helper::redirect('/account/premium');
+                else{
+                    $this->view->assign('message','Error');
+                }
+                
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+            }
+        }
+	
+	$this->view->assign('form',$form);
+    }
+    
     
     
 }

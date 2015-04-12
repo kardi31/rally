@@ -12,6 +12,7 @@
  * @property boolean $active
  * @property boolean $league_rally
  * @property float $league
+ * @property boolean $big_awards
  * @property Doctrine_Collection $Surfaces
  * @property Doctrine_Collection $Crews
  * @property Doctrine_Collection $Stages
@@ -57,6 +58,10 @@ abstract class Rally_Model_Doctrine_BaseRally extends Doctrine_Record
              'default' => 5,
              'length' => '10',
              'scale' => '2',
+             ));
+        $this->hasColumn('big_awards', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
              ));
 
         $this->option('type', 'MyISAM');

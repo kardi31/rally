@@ -1,0 +1,5 @@
+Ilość punktów premium: <?php echo (int)$authenticatedUser['premium']; ?><br /><br />
+<form class="form-horizontal" method="POST">
+    <?php echo $form->getElement('premium')->renderElement(); ?>
+    <?php echo $form->getElement('submit')->renderElement(); ?>
+</form>

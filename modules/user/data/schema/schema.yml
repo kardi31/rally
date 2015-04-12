@@ -31,3 +31,5 @@ User:
     active:
       type: boolean
       default: 1
+    premium:
+      type: integer(11)
