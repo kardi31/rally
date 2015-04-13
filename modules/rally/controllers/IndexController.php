@@ -21,9 +21,16 @@ class Rally_Index extends Controller{
         $userService = parent::getService('user','user');
         $carService = parent::getService('car','car');
         
-        $rallyPrizes = $rallyService->getPrizesHelper()->getPrizes($rally['league'],count($rally['Crews']));
-        $prizePool = $rallyService->getPrizesHelper()->getPrizePool($rally['league'],count($rally['Crews']));
+        $leagueInt = (int)$rally['league'];
         $crewCounter = count($rally['Crews']);
+        if($rally['big_awards']){
+            $rallyPrizes = $rallyService->getPrizesHelper()->getBigPrizes($rally,$crewCounter);
+        }
+        else{
+            $rallyPrizes = $rallyService->getPrizesHelper()->getPrizes($leagueInt,$crewCounter);
+            $prizePool = $rallyService->getPrizesHelper()->getPrizePool($leagueInt,$crewCounter);
+        }
+        
         
         $user = $userService->getAuthenticatedUser();
 	

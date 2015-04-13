@@ -88,6 +88,37 @@
         return $prizes;
     }
     
+    public function getBigPrizes($rally,$participants = 0){
+//        $prizePool = $this->leaguePrizePool[$league];
+//        $prizePerParticipant = $this->leaguePerParticipantPool[$league];
+//        $totalPrizePerParticipant = $prizePerParticipant * $participants;
+//        
+//        $prizePool += $totalPrizePerParticipant;
+        $prizes = array();
+        $key = 0;
+        foreach($rally['BigAwards'] as $bigAward):
+            if($bigAward['award_type']=="car"){
+                $prizes[$key]['value'] = $bigAward['Car']->toArray();
+            }
+            else{
+                $prizes[$key]['value'] = $bigAward['premium'];
+            }
+            
+            $prizes[$key]['type'] = $bigAward['award_type'];
+            $key++;
+        endforeach;
+        
+//        if($participants>=10){
+//            $prizes = array_map( function($val) use ($prizePool) { return $val * $prizePool; }, $this->prizesOver10);
+//        }
+//        else{
+//            $prizes = array_map( function($val) use ($prizePool) { return $val * $prizePool; }, $this->prizesUnder10);
+//        }
+        
+        
+        return $prizes;
+    }
+    
     public function calculatePrizeForPlace($place,$league,$participants){
 	
 	if($place > 8){
@@ -134,5 +165,12 @@
         
         
         return $prizePool;
+    }
+    
+    public function handleBigAwardForPlace($position,$team_id,$rally,$bigAwardsCount){
+        if($position<$bigAwardsCount)
+            return null;
+        
+        RallyService::getInstance()->
     }
 }

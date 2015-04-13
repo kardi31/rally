@@ -12,6 +12,7 @@ class RallyService extends Service{
     protected $surfaceTable;
     protected $accidentTable;
     protected $prizesHelper;
+    protected $bigAwardsTable;
     protected $surfaces = array('tarmac','gravel','rain','snow');
     protected $minsArray = array('00','15','30','45');
     
@@ -33,6 +34,7 @@ class RallyService extends Service{
         $this->stageResultTable = parent::getTable('rally','stageResult');
         $this->resultTable = parent::getTable('rally','result');
         $this->accidentTable = parent::getTable('rally','accident');
+        $this->bigAwardsTable = parent::getTable('rally','bigAwards');
         $this->prizesHelper = Rally_Helper_Prizes::getInstance();
     }
     
@@ -344,6 +346,56 @@ class RallyService extends Service{
         
     }
     
+    public function createRandomBigRally($league = false){
+        
+       $randomNumber = rand(1000000,10000000);
+        
+        $rallyArray = array();
+        
+        $rallyArray['name'] = "Rally_".$randomNumber;
+        $rallyArray['slug'] = TK_Text::createUniqueTableSlug('Rally_Model_Doctrine_Rally',$rallyArray['name']);       
+        $randDate = rand(1,100);
+        $rallyArray['date'] = date('Y-m-d H:i:s',strtotime('+'.$randDate.' days'));
+        $rallyArray['active'] = 1;
+        
+        $randomSurfaces = array_rand($this->surfaces,2);
+        $randomSurfacePercentage = TK_Text::float_rand(10,90,2);
+        foreach($randomSurfaces as $key => $randomSurfaceId):
+            $rallyArray['Surfaces'][$key]['surface'] = $this->surfaces[$randomSurfaceId];
+            if($key == 0){
+                $rallyArray['Surfaces'][$key]['percentage'] = 100 - $randomSurfacePercentage;
+            }
+            else{
+                $rallyArray['Surfaces'][$key]['percentage'] = $randomSurfacePercentage;
+            }
+        endforeach;
+        
+        if($league){
+            $rallyArray['league_rally'] = 1;
+            $rallyArray['league'] = $league;
+        }
+        else{
+            $rallyArray['league'] = rand(1,5);
+        }
+        
+        $rallyArray['big_awards'] = 1;
+        
+        $rally = $this->rallyTable->getRecord();
+        $rally->fromArray($rallyArray);
+        
+        $rally->save();
+        for($i=0;$i<18;$i++){
+            $this->createRandomStage($rally['id'],'Etap '.$i);
+        }
+        
+        $this->createBigAward($rally['id'],'car','rand');
+        $this->createBigAward($rally['id'],'premium','rand');
+        $this->createBigAward($rally['id'],'premium','rand');
+        
+        return $rally;
+        
+    }
+    
     public function createRandomStage($rally_id,$stage_name){
         $stageArray = array();
         
@@ -366,6 +418,35 @@ class RallyService extends Service{
         
     }
     
+    public function createBigAward($rally_id,$type,$quantity_or_id){
+        $bigAward = $this->bigAwardsTable->getRecord();
+        $data = array();
+        if($quantity_or_id=="rand"){
+            if($type=="car"){
+                $data['car_model_id'] = CarService::getInstance()->getRandomCarModel();
+            }
+            else{
+                $data['premium'] = rand(300,5000);
+            }
+        }
+        else{
+            if($type=="car"){
+                $data['car_model_id'] = $quantity_or_id;
+            }
+            else{
+                $data['premium'] = $quantity_or_id;
+            }
+        }
+        
+        $data['award_type'] = $type;
+        $data['rally_id'] = $rally_id;
+        
+        $bigAward->fromArray($data);
+        $bigAward->save();
+        
+        return $bigAward;
+    }
+    
     public function getRallyStages($id,$field='id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->stageTable->createQuery('s');
         $q->leftJoin('s.Rally r');
@@ -380,7 +461,9 @@ class RallyService extends Service{
 	
 	$id = $rally['id'];
 	$participants = count($rally['Crews']);
-		
+        // I call it here to avoid multiple calling on foreach
+	$bigAwardsCount = count($rally['BigAwards']);	
+        
         $leagueLevel = (int)$rally['league'];
 		
         $q = $this->stageResultTable->createQuery('sr');
@@ -414,12 +497,17 @@ class RallyService extends Service{
             $rallyResultRecord->fromArray($result);
             $rallyResultRecord->save();
 	    if(!$alreadyCalculated){
-                $cashEarned = $this->prizesHelper->calculatePrizeForPlace($result['position'],$leagueLevel,$participants);
-                $teamService->addTeamMoney($result['Crew']['team_id'],$cashEarned,1,'Za zajęcie '.$result['position'].' w rajdzie '.$rally['name']);
-                if($rally['league_rally']){
-                    if($result['position']<=10){
-                        $leagueService->addTeamPoints($result['Crew']['team_id'],$result['position']);
+                if(!$rally['big_awards']){
+                    $cashEarned = $this->prizesHelper->calculatePrizeForPlace($result['position'],$leagueLevel,$participants);
+                    $teamService->addTeamMoney($result['Crew']['team_id'],$cashEarned,1,'Za zajęcie '.$result['position'].' w rajdzie '.$rally['name']);
+                    if($rally['league_rally']){
+                        if($result['position']<=10){
+                            $leagueService->addTeamPoints($result['Crew']['team_id'],$result['position']);
+                        }
                     }
+                }
+                else{
+                    $this->prizesHelper->handleBigAwardForPlace($result['position'],$result['Crew']['team_id'],$rally,);
                 }
             }
         endforeach;

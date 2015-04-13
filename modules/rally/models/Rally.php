@@ -62,4 +62,12 @@ class Rally_Model_Doctrine_Rally extends Rally_Model_Doctrine_BaseRally
     public static function getAccidentRisk($risk){
 	return self::$riskAccidentFactor[$risk];
     }
+    
+    public function setUp()
+    {
+        parent::setUp();
+        $this->hasMany('Rally_Model_Doctrine_BigAwards as BigAwards', array(
+             'local' => 'id',
+             'foreign' => 'rally_id'));
+    }
 }

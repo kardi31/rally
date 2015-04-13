@@ -30,13 +30,37 @@
     </table>
 </div>
     <div class="col-md-3">
-        Ilosc zalog : <?php echo $crewCounter; ?><br />
-        Pula nagród : <?php echo $prizePool."$"; ?><br />
-        <h3>Prizes</h3>
-        <?php foreach($rallyPrizes as $position => $rallyPrize): 
-            echo "Position ".$position." - ";
-            echo $rallyPrize."$ <br />";
-            endforeach; ?>
+        <?php if($rally['big_awards']): ?>
+            <img src="/images/b_letter.gif" />
+            <br />
+            Ilosc zalog : <?php echo $crewCounter; ?><br />
+            <h3>Prizes</h3>
+            <?php 
+            foreach($rallyPrizes as $key => $rallyPrize): 
+                $position = $key+1;
+                echo "Position ".$position." - ";
+                if($rallyPrize['type']=="car"):
+                    $car = $rallyPrize['value'];
+                    ?>
+                    <img src="/media/cars/<?php echo $car['photo']; ?>" alt="<?php echo $car['name']; ?>" />
+                    <?php 
+                else:
+                    echo $rallyPrize['value']." premium";
+                endif;
+                ?>
+                    <br />
+                    <?php
+            endforeach; 
+        else: ?>
+            Ilosc zalog : <?php echo $crewCounter; ?><br />
+            Pula nagród : <?php echo $prizePool."$"; ?><br />
+            <h3>Prizes</h3>
+            <?php 
+            foreach($rallyPrizes as $position => $rallyPrize): 
+                echo "Position ".$position." - ";
+                echo $rallyPrize."$ <br />";
+            endforeach; 
+        endif; ?>
     </div>
     <?php if(isset($form)): ?>
     <div class="col-md-3 sign-up-rally">

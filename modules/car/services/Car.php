@@ -64,6 +64,13 @@ class CarService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getRandomCarModel($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->carModelTable->createQuery('cm');
+        $q->orderBy('rand()');
+	$q->limit(1);
+        return $q->fetchOne(array(),$hydrationMode);
+    }
+    
     public function getRandomLeagueCar($league_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->carModelTable->createQuery('cm');
 	$q->addWhere('cm.league = ?',$league_id);

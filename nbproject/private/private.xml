@@ -5,14 +5,17 @@
         <group>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/car-dealer.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/my-cars.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/market/models/CarBid.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/bid-player.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/car/controllers/IndexController.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/market/form/Offer.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/controllers/TestController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/services/Sponsor.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/BaseRallyResult.php</file>
             <file>file:/C:/xampp2/htdocs/ral/library/TK/Text.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/library/DataTables/SponsorList.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/bid-car.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/league/models/BaseSeason.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/people/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/league/data/schema/schema.yml</file>
@@ -33,6 +36,8 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/people/services/People.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/test/controllers/IndexController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/public/index.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/car/models/Car.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/market/models/CarOffer.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/models/Bid.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/BaseRally.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/league/services/League.php</file>
@@ -49,6 +54,7 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/test/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/services/Rally.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/models/Team.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/show-car-market.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/people/controllers/IndexController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/sponsor.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/controllers/IndexController.php</file>
@@ -61,6 +67,7 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/index/controllers/IndexController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/controllers/AdminController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/Stage.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/car/views/index/sell-car.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/layout/admin.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/public/css/custom.css</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/controllers/AdminController.php</file>
@@ -77,6 +84,7 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/league/controllers/IndexController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/services/Team.php</file>
             <file>file:/C:/xampp2/htdocs/ral/README.md</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/show-car-offer.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/cron/controllers/IndexController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/show-offer.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/people/views/index/index.phtml</file>
@@ -85,6 +93,7 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/people/controllers/AdminController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/account/controllers/IndexController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/library/TK/Form/Validator.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/market/form/Bid.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/form/Sponsor.php</file>
             <file>file:/C:/xampp2/htdocs/ral/public/.htaccess</file>
             <file>file:/C:/xampp2/htdocs/ral/library/TK/Form/Form.php</file>

@@ -12,5 +12,11 @@
  */
 class Rally_Model_Doctrine_BigAwards extends Rally_Model_Doctrine_BaseBigAwards
 {
-
+    public function setUp()
+    {
+        parent::setUp();
+        $this->hasOne('Car_Model_Doctrine_CarModels as Car', array(
+             'local' => 'car_model_id',
+             'foreign' => 'id'));
+    }
 }
