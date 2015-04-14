@@ -33,3 +33,21 @@ User:
       default: 1
     premium:
       type: integer(11)
+PremiumLog:
+  tableName: user_premium_log
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    amount:
+      type: integer(11)
+    income:
+      type: boolean
+      default: 1
+    description:
+      type: string(255)
+      

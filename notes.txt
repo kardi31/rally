@@ -1,9 +1,6 @@
 // handling big awards after the race is over
 
 
-// redirect after car was bought
-
-// sprzedawanie aut przez zawodnikow nawzajem
 
 // wyswietlanie loga sponsora na samochodzie
 

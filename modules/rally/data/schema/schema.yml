@@ -30,6 +30,9 @@ Rally:
     big_awards:
       type: boolean
       default: 0
+    finished:
+      type: boolean
+      default: 0
 Surface:
   tableName: rally_surface
   actAs: 

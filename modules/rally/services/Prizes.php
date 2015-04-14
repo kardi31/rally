@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
- class Rally_Helper_Prizes{
+ class PrizesService extends Service{
      
     /*
      * prizes percentage for rallies with more than (or equal) 10 participants
@@ -61,6 +61,13 @@
         5 => 500
     );
             
+    
+    protected $bigAwardsTable;
+    
+     public function __construct(){
+        $this->bigAwardsTable = parent::getTable('rally','bigAwards');
+    }
+    
     private static $instance = NULL;
 
     static public function getInstance()
@@ -168,9 +175,48 @@
     }
     
     public function handleBigAwardForPlace($position,$team_id,$rally,$bigAwardsCount){
-        if($position<$bigAwardsCount)
+        if($position>$bigAwardsCount)
             return null;
         
-        RallyService::getInstance()->
+        $prize = $rally['BigAwards'][$position-1];
+        if($prize['award_type']=='car'){
+            CarService::getInstance()->createNewTeamCar($prize['car_model_id'],$team_id);
+        }
+        elseif($prize['award_type']=='premium'){
+            $team = TeamService::getInstance()->getTeam($team_id);
+            UserService::getInstance()->addPremium($team['user_id'],$prize['premium']);
+        }
+        
+    }
+    
+    
+    
+    public function createBigAward($rally_id,$type,$quantity_or_id){
+        $bigAward = $this->bigAwardsTable->getRecord();
+        $data = array();
+        if($quantity_or_id=="rand"){
+            if($type=="car"){
+                $data['car_model_id'] = CarService::getInstance()->getRandomCarModel();
+            }
+            else{
+                $data['premium'] = rand(300,5000);
+            }
+        }
+        else{
+            if($type=="car"){
+                $data['car_model_id'] = $quantity_or_id;
+            }
+            else{
+                $data['premium'] = $quantity_or_id;
+            }
+        }
+        
+        $data['award_type'] = $type;
+        $data['rally_id'] = $rally_id;
+        
+        $bigAward->fromArray($data);
+        $bigAward->save();
+        
+        return $bigAward;
     }
 }

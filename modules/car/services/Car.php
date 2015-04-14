@@ -81,6 +81,10 @@ class CarService extends Service{
     
     public function createNewTeamCar($model,$team_id){
         
+        if(!$model instanceof Car_Model_Doctrine_CarModel){
+            $model = $this->getCarModel($model);
+        }
+        
         $upkeep = 0.15 * $model['price'];
         
         $record = $this->carTable->getRecord();

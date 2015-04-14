@@ -1,94 +1,169 @@
+<style>
+    table img{
+        max-width:100px;
+    }
+    table img.sponsor{
+        float:left;
+        width:60px;
+    }
+    </style>
 <a href="/rally/list-rally">Powrót do listy rajdów</a>
 <div class="row">
 <div class="container">
-    
-<div class="col-md-6">
+<?php if(!$rally['finished']): ?>
+    <div class="col-md-6">
+
+    <h2><?php echo $rally['name']; ?></h2><br /><br />
+        <h4>Zapisane załogi</h4>
+        <table>
+            <tr>
+                <th>Załoga</th>
+                <th>Samochód</th>
+                <th>Nazwa zespołu</th>
+            </tr>
+    <?php foreach($rally['Crews'] as $crew): ?>
+            <tr>
+                <td>
+                    <?php echo $crew['Driver']['last_name']." ".$crew['Driver']['first_name']; ?> - 
+                    <?php echo $crew['Pilot']['last_name']." ".$crew['Pilot']['first_name']; ?>
+                </td>
+                <td>
+                    <?php echo $crew['Car']['name']; ?>
+                </td>
+                <td>
+                    <?php echo $crew['Team']['name']; ?>
+                </td>
+            </tr>
+    <?php endforeach; ?>
+
+        </table>
+    </div>
+        <div class="col-md-3">
+            <?php if($rally['big_awards']): ?>
+                <img src="/images/b_letter.gif" />
+                <br />
+                Ilosc zalog : <?php echo $crewCounter; ?><br />
+                <h3>Prizes</h3>
+                <?php 
+                foreach($rallyPrizes as $key => $rallyPrize): 
+                    $position = $key+1;
+                    echo "Position ".$position." - ";
+                    if($rallyPrize['type']=="car"):
+                        $car = $rallyPrize['value'];
+                        ?>
+                        <img src="/media/cars/<?php echo $car['photo']; ?>" alt="<?php echo $car['name']; ?>" />
+                        <?php 
+                    else:
+                        echo $rallyPrize['value']." premium";
+                    endif;
+                    ?>
+                        <br />
+                        <?php
+                endforeach; 
+            else: ?>
+                Ilosc zalog : <?php echo $crewCounter; ?><br />
+                Pula nagród : <?php echo $prizePool."$"; ?><br />
+                <h3>Prizes</h3>
+                <?php 
+                foreach($rallyPrizes as $position => $rallyPrize): 
+                    echo "Position ".$position." - ";
+                    echo $rallyPrize."$ <br />";
+                endforeach; 
+            endif; ?>
+        </div>
+        <?php if(isset($form)): ?>
+        <div class="col-md-3 sign-up-rally">
+            <h3>Zapisz się do rajdu</h3>
+            <form method="POST">
+                <div class='formElemWrapper'>
+                    <label for='driver_id' type='text'>Kierowca</label>
+                    <?php echo $form->getElement('driver_id')->renderElement(); ?>
+                </div>
+                <div class='formElemWrapper'>
+                    <label for='pilot_id' type='text'>Pilot</label>
+                    <?php echo $form->getElement('pilot_id')->renderElement(); ?>
+                </div>     
+                <div class='formElemWrapper'>
+                    <label for='car_id' type='text'>Samochód</label>
+                    <?php echo $form->getElement('car_id')->renderElement(); ?>
+                </div>
+                <div class='formElemWrapper'>
+                    <label for='risk' type='text'>Ryzyko</label>
+                    <?php echo $form->getElement('risk')->renderElement(); ?>
+                </div>
+                <div class='formSubmitWrapper'>
+                    <?php echo $form->getElement('submit')->renderElement(); ?>
+                </div>
+
+            </form>
+        </div>
+        <?php endif; ?>
+<?php else: ?>
+<div class="col-md-8">
     
 <h2><?php echo $rally['name']; ?></h2><br /><br />
-    <h4>Zapisane załogi</h4>
+    <h4>Wyniki rajdu</h4>
     <table>
 	<tr>
+	    <th>Pozycja</th>
+	    <th>Nazwa zespolu</th>
 	    <th>Załoga</th>
-	    <th>Samochód</th>
-	    <th>Nazwa zespołu</th>
+	    <th>Czas</th>
+            <th>Prize</th>
 	</tr>
-<?php foreach($rally['Crews'] as $crew): ?>
+<?php
+$resultKey = 0;
+foreach($rallyResults as $result): 
+    ?>
 	<tr>
+            <td>
+                <?php if($result['out_of_race']==0){
+                    echo $result['position'];
+                }
+                ?>
+            </td>
 	    <td>
-		<?php echo $crew['Driver']['last_name']." ".$crew['Driver']['first_name']; ?> - 
-		<?php echo $crew['Pilot']['last_name']." ".$crew['Pilot']['first_name']; ?>
+                <img src="/media/sponsor/<?php echo $result['Crew']['Team']['Sponsor']['logo']; ?>" class="sponsor" alt="<?php echo $result['Crew']['Team']['Sponsor']['name']; ?>" />
+		<?php echo $result['Crew']['Team']['name']; ?>
 	    </td>
 	    <td>
-		<?php echo $crew['Car']['name']; ?>
+		<?php echo $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name']; ?> - 
+		<?php echo $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name']; ?>
 	    </td>
 	    <td>
-		<?php echo $crew['Team']['name']; ?>
+		 <?php if($result['out_of_race']==0){
+                    echo $result['total_time'];
+                }
+                else{
+                    echo "Accident on stage no ".$result['stage_out_number'];
+                }
+                ?>
 	    </td>
+            <td>
+               <?php
+               if(isset($rallyPrizes[$resultKey])){
+                   $rallyPrize = $rallyPrizes[$resultKey];
+                   if($rallyPrize['type']=="car"):
+                        $car = $rallyPrize['value'];
+                        ?>
+                        <img src="/media/cars/<?php echo $car['photo']; ?>" alt="<?php echo $car['name']; ?>" />
+                        <?php 
+                    else:
+                        echo $rallyPrize['value']." premium";
+                    endif;
+               }
+               ?>
+            </td>
 	</tr>
-<?php endforeach; ?>
+<?php 
+$resultKey++;
+endforeach; ?>
     
     </table>
-</div>
-    <div class="col-md-3">
-        <?php if($rally['big_awards']): ?>
-            <img src="/images/b_letter.gif" />
-            <br />
-            Ilosc zalog : <?php echo $crewCounter; ?><br />
-            <h3>Prizes</h3>
-            <?php 
-            foreach($rallyPrizes as $key => $rallyPrize): 
-                $position = $key+1;
-                echo "Position ".$position." - ";
-                if($rallyPrize['type']=="car"):
-                    $car = $rallyPrize['value'];
-                    ?>
-                    <img src="/media/cars/<?php echo $car['photo']; ?>" alt="<?php echo $car['name']; ?>" />
-                    <?php 
-                else:
-                    echo $rallyPrize['value']." premium";
-                endif;
-                ?>
-                    <br />
-                    <?php
-            endforeach; 
-        else: ?>
-            Ilosc zalog : <?php echo $crewCounter; ?><br />
-            Pula nagród : <?php echo $prizePool."$"; ?><br />
-            <h3>Prizes</h3>
-            <?php 
-            foreach($rallyPrizes as $position => $rallyPrize): 
-                echo "Position ".$position." - ";
-                echo $rallyPrize."$ <br />";
-            endforeach; 
-        endif; ?>
-    </div>
-    <?php if(isset($form)): ?>
-    <div class="col-md-3 sign-up-rally">
-	<h3>Zapisz się do rajdu</h3>
-	<form method="POST">
-	    <div class='formElemWrapper'>
-		<label for='driver_id' type='text'>Kierowca</label>
-		<?php echo $form->getElement('driver_id')->renderElement(); ?>
-	    </div>
-	    <div class='formElemWrapper'>
-		<label for='pilot_id' type='text'>Pilot</label>
-		<?php echo $form->getElement('pilot_id')->renderElement(); ?>
-	    </div>     
-	    <div class='formElemWrapper'>
-		<label for='car_id' type='text'>Samochód</label>
-		<?php echo $form->getElement('car_id')->renderElement(); ?>
-	    </div>
-	    <div class='formElemWrapper'>
-		<label for='risk' type='text'>Ryzyko</label>
-		<?php echo $form->getElement('risk')->renderElement(); ?>
-	    </div>
-	    <div class='formSubmitWrapper'>
-		<?php echo $form->getElement('submit')->renderElement(); ?>
-	    </div>
 
-	</form>
-    </div>
-    <?php endif; ?>
+</div>
+    
+<?php endif; ?>
 </div>
 
 </div>

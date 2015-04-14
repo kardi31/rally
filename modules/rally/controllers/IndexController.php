@@ -31,6 +31,10 @@ class Rally_Index extends Controller{
             $prizePool = $rallyService->getPrizesHelper()->getPrizePool($leagueInt,$crewCounter);
         }
         
+        if($rally['finished']){
+            $rallyResults = $rallyService->getRallyResults($rally['id'],'rally_id');
+            $this->view->assign('rallyResults',$rallyResults);
+        }
         
         $user = $userService->getAuthenticatedUser();
 	

@@ -1,6 +1,6 @@
 <?php
 
-require_once(BASE_PATH."/modules/rally/services/helper/RallyHelperPrizes.php");
+
 
 class RallyService extends Service{
     
@@ -11,8 +11,6 @@ class RallyService extends Service{
     protected $stageTable;
     protected $surfaceTable;
     protected $accidentTable;
-    protected $prizesHelper;
-    protected $bigAwardsTable;
     protected $surfaces = array('tarmac','gravel','rain','snow');
     protected $minsArray = array('00','15','30','45');
     
@@ -34,12 +32,11 @@ class RallyService extends Service{
         $this->stageResultTable = parent::getTable('rally','stageResult');
         $this->resultTable = parent::getTable('rally','result');
         $this->accidentTable = parent::getTable('rally','accident');
-        $this->bigAwardsTable = parent::getTable('rally','bigAwards');
-        $this->prizesHelper = Rally_Helper_Prizes::getInstance();
     }
     
     public function getPrizesHelper(){
-        return $this->prizesHelper;
+        require_once(BASE_PATH."/modules/rally/services/Prizes.php");
+        return PrizesService::getInstance();
     }
     
     public function getAllRallies(){
@@ -388,9 +385,9 @@ class RallyService extends Service{
             $this->createRandomStage($rally['id'],'Etap '.$i);
         }
         
-        $this->createBigAward($rally['id'],'car','rand');
-        $this->createBigAward($rally['id'],'premium','rand');
-        $this->createBigAward($rally['id'],'premium','rand');
+        $this->getPrizesHelper()->createBigAward($rally['id'],'car','rand');
+        $this->getPrizesHelper()->createBigAward($rally['id'],'premium','rand');
+        $this->getPrizesHelper()->createBigAward($rally['id'],'premium','rand');
         
         return $rally;
         
@@ -418,34 +415,7 @@ class RallyService extends Service{
         
     }
     
-    public function createBigAward($rally_id,$type,$quantity_or_id){
-        $bigAward = $this->bigAwardsTable->getRecord();
-        $data = array();
-        if($quantity_or_id=="rand"){
-            if($type=="car"){
-                $data['car_model_id'] = CarService::getInstance()->getRandomCarModel();
-            }
-            else{
-                $data['premium'] = rand(300,5000);
-            }
-        }
-        else{
-            if($type=="car"){
-                $data['car_model_id'] = $quantity_or_id;
-            }
-            else{
-                $data['premium'] = $quantity_or_id;
-            }
-        }
-        
-        $data['award_type'] = $type;
-        $data['rally_id'] = $rally_id;
-        
-        $bigAward->fromArray($data);
-        $bigAward->save();
-        
-        return $bigAward;
-    }
+    
     
     public function getRallyStages($id,$field='id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->stageTable->createQuery('s');
@@ -458,7 +428,6 @@ class RallyService extends Service{
     public function calculateRallyResult(Rally_Model_Doctrine_Rally $rally){
 	$teamService = TeamService::getInstance();
 	$leagueService = LeagueService::getInstance();
-	
 	$id = $rally['id'];
 	$participants = count($rally['Crews']);
         // I call it here to avoid multiple calling on foreach
@@ -498,7 +467,7 @@ class RallyService extends Service{
             $rallyResultRecord->save();
 	    if(!$alreadyCalculated){
                 if(!$rally['big_awards']){
-                    $cashEarned = $this->prizesHelper->calculatePrizeForPlace($result['position'],$leagueLevel,$participants);
+                    $cashEarned = $this->getPrizesHelper()->calculatePrizeForPlace($result['position'],$leagueLevel,$participants);
                     $teamService->addTeamMoney($result['Crew']['team_id'],$cashEarned,1,'Za zajęcie '.$result['position'].' w rajdzie '.$rally['name']);
                     if($rally['league_rally']){
                         if($result['position']<=10){
@@ -507,10 +476,12 @@ class RallyService extends Service{
                     }
                 }
                 else{
-                    $this->prizesHelper->handleBigAwardForPlace($result['position'],$result['Crew']['team_id'],$rally,);
+                    $this->getPrizesHelper()->handleBigAwardForPlace($result['position'],$result['Crew']['team_id'],$rally,$bigAwardsCount);
                 }
             }
         endforeach;
+        $rally->set('finished',1);
+        $rally->save();
     }
     
     public function getCrewResult($rally_id,$crew_id){
@@ -527,10 +498,12 @@ class RallyService extends Service{
         $q->addSelect('d.*');
         $q->addSelect('p.*');
         $q->addSelect('t.*');
+        $q->addSelect('s.*');
         $q->leftJoin('re.Crew cr');
         $q->leftJoin('cr.Driver d');
         $q->leftJoin('cr.Pilot p');
         $q->leftJoin('cr.Team t');
+        $q->leftJoin('t.Sponsor s');
         $q->addWhere('re.'.$field.' = ?',$id);
         $q->orderBy('re.position');
         return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);

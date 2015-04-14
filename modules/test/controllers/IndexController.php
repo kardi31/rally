@@ -62,6 +62,7 @@ class Test_Index extends Controller{
         $rallyService = parent::getService('rally','rally');
         $teamService = parent::getService('team','team');
         $leagueService = parent::getService('league','league');
+        $userService = parent::getService('user','user');
 	
 //        Zend_Debug::dump($rallyResults);exit;
         

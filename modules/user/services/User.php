@@ -59,6 +59,9 @@ class UserService extends Service{
     }
     
     public function addPremium($user,$premium){
+        if(!$user instanceof User_Model_Doctrine_User){
+            $user = $this->getUser($user);
+        }
 	$currentPremium = $user->get('premium');
 	$newPremium = (int)$currentPremium+(int)$premium;
 	$user->set('premium',$newPremium);
