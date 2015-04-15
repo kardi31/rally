@@ -1,0 +1,72 @@
+options:
+  type: MyISAM
+  collate: utf8_general_ci
+  charset: utf8
+Category:
+  tableName: forum_category
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    name:
+      type: string(255)
+    description:
+      type: text
+    active:
+      type: boolean
+      default: 0
+  relations:
+    Thread:
+      local: id
+      foreign: category_id
+      foreignType: many
+      type: one
+      alias: Category
+      foreignAlias: Threads
+Thread:
+  tableName: forum_post
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    user_id:
+      type: integer(4)
+    title:
+      type: string(255)
+    content:
+      type: text
+    pinned:
+      type: boolean
+      default: 0
+    active:
+      type: boolean
+      default: 0
+Post:
+  tableName: forum_post
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    user_id:
+      type: integer(4)
+    title:
+      type: string(255)
+    content:
+      type: text
+    active:
+      type: boolean
+      default: 0
+    thread_id:
+      type: integer(4)

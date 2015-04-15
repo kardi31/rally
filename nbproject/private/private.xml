@@ -21,6 +21,7 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/media/services/Media.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/Crew.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/people/services/People.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/team/models/BaseTeam.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/models/Bid.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/BaseRally.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/league/services/League.php</file>
@@ -46,6 +47,7 @@
             <file>file:/C:/xampp2/htdocs/ral/notes.txt</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/services/Team.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/user/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/cron/controllers/IndexController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/show-offer.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/people/views/index/index.phtml</file>
@@ -78,6 +80,7 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/market/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/doctrine-module.php</file>
             <file>file:/C:/xampp2/htdocs/ral/library/Doctrine/Table/Repository.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/services/Prizes.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/BigAwards.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/models/Team.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/BaseBigAwards.php</file>
@@ -87,10 +90,10 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/index/controllers/IndexController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/controllers/AdminController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/Stage.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/user/services/User.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/my-team.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/views/index/index.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/user/controllers/IndexController.php</file>
-            <file>file:/C:/xampp2/htdocs/ral/modules/rally/services/helper/RallyHelperPrizes.php</file>
             <file>file:/C:/xampp2/htdocs/ral/library/TK/Router.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/views/admin/add-sponsor.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/library/TK/Form/Element.php</file>

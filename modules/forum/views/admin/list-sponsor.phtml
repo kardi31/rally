@@ -1,0 +1,167 @@
+<script>
+    $(document).ready(function(){
+        var grid = new Datatable();
+            grid.init({
+                src: $("#datatable_ajax"),
+                dataTable: {   
+                "aoColumns": [
+                        { sWidth: '5%' },
+                        { sWidth: '5%' },
+                        { sWidth: '5%' },
+                        { sWidth: '5%' },
+                        { sWidth: '10%' },
+                        { sWidth: '10%' },
+                        { "bSortable": false, sWidth: '15%' }
+                    ],
+                    "aLengthMenu": [
+                        [20, 50, 100, 150, -1],
+                        [20, 50, 100, 150, "All"] // change per page values here
+                    ],
+                    "iDisplayLength": 20, // default record count per page
+                    "bServerSide": true, // server side processing
+                    "sAjaxSource": "/admin/forum/list-sponsor-data", // ajax source
+                    "aaSorting": [[ 3, "desc" ]] // set first column as a default sort by asc
+                }
+            });
+//               grid.getDataTable().yadcf([
+//                    {
+//                      column_number: 1,
+//                      filter_type: "text"
+//                    },
+//                    {
+//                      column_number: 2,
+//                    },
+//                    {
+//                      column_number: 3,
+//                      filter_type: "range_date"
+//                    },
+//                    {
+//                        column_number: 4,
+//                        data: [{
+//                            value: '1',
+//                            label: 'Active'
+//                        }, {
+//                            value: '0',
+//                            label: 'Inactive'
+//                        }],
+//                    }
+//        
+//        ]);
+                
+        customDataTableFunctions();
+    });
+</script>
+<div class="row">
+				<div class="col-md-12">
+					<!-- Begin: life time stats -->
+					<div class="portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-shopping-cart"></i>Rally list
+							</div>
+							<div class="actions">
+								<a href="/admin/forum/add-sponsor" class="btn default yellow-stripe">
+								<i class="fa fa-plus"></i>
+								<span class="hidden-480">
+								Add sponsor </span>
+								</a>
+								<div class="btn-group">
+									<a class="btn default yellow-stripe" href="#" data-toggle="dropdown">
+									<i class="fa fa-share"></i>
+									<span class="hidden-480">
+									Tools </span>
+									<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="dropdown-menu pull-right">
+										<li>
+											<a href="#">
+											Export to Excel </a>
+										</li>
+										<li>
+											<a href="#">
+											Export to CSV </a>
+										</li>
+										<li>
+											<a href="#">
+											Export to XML </a>
+										</li>
+										<li class="divider">
+										</li>
+										<li>
+											<a href="#">
+											Print Invoices </a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="portlet-body">
+							<div class="table-container">
+								<div class="table-actions-wrapper">
+									<span>
+									</span>
+									<select class="table-group-action-input form-control input-inline input-small input-sm">
+										<option value="">Select...</option>
+										<option value="Cancel">Cancel</option>
+										<option value="Cancel">Hold</option>
+										<option value="Cancel">On Hold</option>
+										<option value="Close">Close</option>
+									</select>
+									<button class="btn btn-sm yellow table-group-action-submit"><i class="fa fa-check"></i> Submit</button>
+								</div>
+								<table class="table table-striped table-bordered table-hover" id="datatable_ajax">
+								<thead>
+								<tr role="row" class="heading">
+									<th>
+										<input type="checkbox" class="group-checkable">
+									</th>
+									<th>
+										 Record&nbsp;#
+									</th>
+									<th>
+										 Image
+									</th>
+									<th>
+										 Name
+									</th>
+									<th>
+										 Number of forums
+									</th>
+									<th>
+										 Active
+									</th>
+									<th>
+										 Options
+									</th>
+								</tr>
+                                                                <tr role="row" class="filter">
+									<th>
+									</th>
+									<th>
+									</th>
+									<th>
+									</th>
+									<th>
+									</th>
+									<th>
+									</th>
+									<th rowspan="1" colspan="1">
+										
+									</th>
+									<th>
+                                                                            <div class="margin-bottom-5">
+                                                                                    <button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> Search</button>
+                                                                            </div>
+                                                                            <button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Reset</button>
+									
+									</th>
+								</tr>
+								</thead>
+								<tbody>
+								</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
