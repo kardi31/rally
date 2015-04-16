@@ -25,15 +25,15 @@ Category:
     Thread:
       local: id
       foreign: category_id
-      foreignType: many
-      type: one
-      alias: Category
-      foreignAlias: Threads
+      foreignType: one
+      type: many
+      alias: Threads
+      foreignAlias: Category
     Post:
       local: id
       foreign: category_id
-      foreignType: many
-      type: one
+      foreignType: one
+      type: many
       alias: Category
       foreignAlias: Posts
 Thread:
@@ -87,7 +87,7 @@ Post:
     Thread:
       local: thread_id
       foreign: id
-      foreignType: one
-      type: many
+      foreignType: many
+      type: one
       alias: Thread
       foreignAlias: Posts

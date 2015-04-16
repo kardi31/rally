@@ -40,13 +40,9 @@ class Forum_Index extends Controller{
         
         
         $threads = $forumService->getAllCategoryThreads($category['id'],Doctrine_Core::HYDRATE_ARRAY);
-        var_dump($threads);exit;
-        foreach($categories as $key=>$category):
-            $categories[$key]['last_post'] = $forumService->getLastCategoryPost($category['id'],Doctrine_Core::HYDRATE_ARRAY);
-            $categories[$key]['thread_count'] = $forumService->countCategoryThreads($category['id']);
-            $categories[$key]['post_count'] = $forumService->countCategoryPosts($category['id']);
-        endforeach;
-	$this->view->assign('categories',$categories);
+       
+	$this->view->assign('category',$category);
+	$this->view->assign('threads',$threads);
     }
     
     

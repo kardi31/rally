@@ -12,8 +12,8 @@
  * @property text $content
  * @property boolean $pinned
  * @property boolean $active
- * @property Doctrine_Collection $Threads
- * @property Forum_Model_Doctrine_Post $Posts
+ * @property Forum_Model_Doctrine_Category $Category
+ * @property Doctrine_Collection $Posts
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -63,11 +63,11 @@ abstract class Forum_Model_Doctrine_BaseThread extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('Forum_Model_Doctrine_Category as Threads', array(
+        $this->hasOne('Forum_Model_Doctrine_Category as Category', array(
              'local' => 'category_id',
              'foreign' => 'id'));
 
-        $this->hasOne('Forum_Model_Doctrine_Post as Posts', array(
+        $this->hasMany('Forum_Model_Doctrine_Post as Posts', array(
              'local' => 'id',
              'foreign' => 'thread_id'));
 

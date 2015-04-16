@@ -10,7 +10,8 @@
  * @property string $slug
  * @property text $description
  * @property boolean $active
- * @property Forum_Model_Doctrine_Post $Category
+ * @property Doctrine_Collection $Threads
+ * @property Doctrine_Collection $Category
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -52,7 +53,11 @@ abstract class Forum_Model_Doctrine_BaseCategory extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Forum_Model_Doctrine_Post as Category', array(
+        $this->hasMany('Forum_Model_Doctrine_Thread as Threads', array(
+             'local' => 'id',
+             'foreign' => 'category_id'));
+
+        $this->hasMany('Forum_Model_Doctrine_Post as Category', array(
              'local' => 'id',
              'foreign' => 'category_id'));
 

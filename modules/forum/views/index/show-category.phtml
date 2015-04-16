@@ -1,0 +1,29 @@
+
+<h3>Forum</h3>
+<h5><?php echo $category['name']; ?></h5>
+<?php
+
+foreach($threads as $thread):
+    ?>
+    <h3><a href="/forum/show-thread/id/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a></h3>
+    Created by : <?php echo TK_Text::timeFormat($thread['created_at'],'d/m/Y H:i'); ?> <br />
+        <?php if(isset($thread['Posts'][0])&&!empty($thread['Posts'][0])):
+        ?>
+        Last post:
+        <?php 
+        echo TK_Text::timeFormat($thread['Posts'][0]['created_at'],'d/m/Y H:i');
+        ?>
+        by
+        '<?php echo $thread['Posts'][0]['User']['username']; ?>'
+        <br />
+
+        <?php
+
+    endif;
+    
+?>
+        
+<hr />
+<?php
+
+endforeach;

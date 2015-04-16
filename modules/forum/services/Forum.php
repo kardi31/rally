@@ -58,8 +58,10 @@ class ForumService extends Service{
     public function getAllCategoryThreads($category_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $limits = $this->getPageLimits(20);
         $q = $this->threadTable->createQuery('t');
-        $q->select('*');
         $q->leftJoin('t.Posts p');
+        $q->leftJoin('t.User u1');
+        $q->leftJoin('p.User u2');
+        $q->select('t.*,p.*,u1.username,u2.username');
         $q->orderBy('t.created_at DESC, p.created_at DESC');
         $q->addWhere('t.category_id = ?',$category_id);
         $q->addWhere('t.active = 1');
