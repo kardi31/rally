@@ -7,11 +7,13 @@
  * 
  * @property integer $id
  * @property integer $user_id
+ * @property integer $category_id
  * @property string $title
  * @property text $content
  * @property boolean $pinned
  * @property boolean $active
  * @property Doctrine_Collection $Threads
+ * @property Forum_Model_Doctrine_Post $Posts
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -22,7 +24,7 @@ abstract class Forum_Model_Doctrine_BaseThread extends Doctrine_Record
 {
     public function setTableDefinition()
     {
-        $this->setTableName('forum_post');
+        $this->setTableName('forum_thread');
         $this->hasColumn('id', 'integer', 4, array(
              'primary' => true,
              'autoincrement' => true,
@@ -30,6 +32,10 @@ abstract class Forum_Model_Doctrine_BaseThread extends Doctrine_Record
              'length' => '4',
              ));
         $this->hasColumn('user_id', 'integer', 4, array(
+             'type' => 'integer',
+             'length' => '4',
+             ));
+        $this->hasColumn('category_id', 'integer', 4, array(
              'type' => 'integer',
              'length' => '4',
              ));
@@ -60,6 +66,10 @@ abstract class Forum_Model_Doctrine_BaseThread extends Doctrine_Record
         $this->hasMany('Forum_Model_Doctrine_Category as Threads', array(
              'local' => 'category_id',
              'foreign' => 'id'));
+
+        $this->hasOne('Forum_Model_Doctrine_Post as Posts', array(
+             'local' => 'id',
+             'foreign' => 'thread_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $softdelete0 = new Doctrine_Template_SoftDelete();

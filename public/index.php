@@ -4,8 +4,8 @@ DEFINE('BASE_PATH',realpath(__DIR__)."/../");
 include(BASE_PATH.'/library/TK/Router.php'); 
 require_once '../library/Doctrine/Core.php';
 spl_autoload_register(array('Doctrine_Core', 'autoload'));
-$conn = Doctrine_Manager::connection('mysql://root:@localhost/ral', 'connection ');
-
+$conn = Doctrine_Manager::connection('mysql://root:@localhost/ral', 'connection');
+$conn->setCharset('utf8');
 if(is_dir("/var/www/ral/modules/'.$module.'/models/")){
     Doctrine_Core::setModelsDirectory("/var/www/ral/modules/'.$module.'/models/");
     Doctrine_Core::loadModels('/var/www/ral/modules/'.$module.'/models/');

@@ -60,4 +60,22 @@ class Service{
         $name = self::$last_names[$nameIndex];
         return $name;
     }
+    
+    function getPageLimits($elementsPerPage){
+        $result = array();
+        if(isset($GLOBALS['urlParams']['page'])){
+            $page = (int)$GLOBALS['urlParams']['page'];
+            $result['page'] = $page;
+            $result['offset'] = ($page-1)*$elementsPerPage;
+        }
+        else{
+            $page = 1;
+            $result['page'] = $page;
+            $result['offset'] = 0;
+        }
+        
+        $result['limit'] = $elementsPerPage;
+        
+        return $result;
+    }
 }

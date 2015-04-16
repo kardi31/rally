@@ -14,6 +14,8 @@ Category:
       type: integer(4)
     name:
       type: string(255)
+    slug:
+      type: string(255)
     description:
       type: text
     active:
@@ -27,8 +29,15 @@ Category:
       type: one
       alias: Category
       foreignAlias: Threads
+    Post:
+      local: id
+      foreign: category_id
+      foreignType: many
+      type: one
+      alias: Category
+      foreignAlias: Posts
 Thread:
-  tableName: forum_post
+  tableName: forum_thread
   actAs: 
     Timestampable: ~
     SoftDelete: ~
@@ -38,6 +47,8 @@ Thread:
       autoincrement: true
       type: integer(4)
     user_id:
+      type: integer(4)
+    category_id:
       type: integer(4)
     title:
       type: string(255)
@@ -59,6 +70,8 @@ Post:
       primary: true
       autoincrement: true
       type: integer(4)
+    category_id:
+      type: integer(4)
     user_id:
       type: integer(4)
     title:
@@ -70,3 +83,11 @@ Post:
       default: 0
     thread_id:
       type: integer(4)
+  relations:
+    Thread:
+      local: thread_id
+      foreign: id
+      foreignType: one
+      type: many
+      alias: Thread
+      foreignAlias: Posts

@@ -7,9 +7,10 @@
  * 
  * @property integer $id
  * @property string $name
+ * @property string $slug
  * @property text $description
  * @property boolean $active
- * @property Forum_Model_Doctrine_Thread $Category
+ * @property Forum_Model_Doctrine_Post $Category
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -31,6 +32,10 @@ abstract class Forum_Model_Doctrine_BaseCategory extends Doctrine_Record
              'type' => 'string',
              'length' => '255',
              ));
+        $this->hasColumn('slug', 'string', 255, array(
+             'type' => 'string',
+             'length' => '255',
+             ));
         $this->hasColumn('description', 'text', null, array(
              'type' => 'text',
              ));
@@ -47,7 +52,7 @@ abstract class Forum_Model_Doctrine_BaseCategory extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Forum_Model_Doctrine_Thread as Category', array(
+        $this->hasOne('Forum_Model_Doctrine_Post as Category', array(
              'local' => 'id',
              'foreign' => 'category_id'));
 

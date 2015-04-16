@@ -2,10 +2,24 @@
 
 foreach($categories as $category):
     ?>
-<h3><?php echo $category['name']; ?></h3>
+    <h3><a href="/forum/show-category/slug/<?php echo $category['slug']; ?>"><?php echo $category['name']; ?></a></h3>
+    <?php if(isset($category['last_post'])&&!empty($category['last_post'])):
+        ?>
+        Last post:
+        <?php 
+        echo date(TK_Text::timeFormat($category['last_post']['created_at'],'d/m/Y H:i'));
+        ?>
+        by
+        '<?php echo $category['last_post']['User']['username']; ?>'
+        <br />
 
+        <?php
 
-
+    endif;
+    
+?>
+        Number of posts: <?php echo $category['post_count']; ?><br />
+        Number of threads: <?php echo $category['thread_count']; ?><br />
 <hr />
 <?php
 

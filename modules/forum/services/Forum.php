@@ -4,7 +4,7 @@ class ForumService extends Service{
     
     protected $categoryTable;
     protected $postTable;
-    protected $topicTable;
+    protected $threadTable;
     private static $instance = NULL;
 
     static public function getInstance()
@@ -17,33 +17,55 @@ class ForumService extends Service{
     public function __construct(){
         $this->categoryTable = parent::getTable('forum','category');
         $this->postTable = parent::getTable('forum','post');
-        $this->topicTable = parent::getTable('forum','topic');
+        $this->threadTable = parent::getTable('forum','thread');
+    }
+    
+    public function getCategory($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        return $this->categoryTable->findOneBy($field,$id,$hydrationMode);
     }
     
     public function getAllCategories($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         return $this->categoryTable->findAll($hydrationMode);
     }
     
-    public function countCategortTopics($category_id){
-        $q = $this->topicTable->createQuery('t');
-        $q->select('count(t.*) as topic_count');
-        $q->addWhere('category_id = ?',$category_id);
-	return $q->findOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+    public function countCategoryThreads($category_id){
+        $q = $this->threadTable->createQuery('t');
+        $q->select('count(t.id) as thread_count');
+        $q->addWhere('t.category_id = ?',$category_id);
+        $q->addWhere('t.active = 1');
+	return $q->fetchOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
     }
     
     public function countCategoryPosts($category_id){
         $q = $this->postTable->createQuery('p');
-        $q->select('count(p.*) as post_count');
-        $q->addWhere('category_id = ?',$category_id);
-	return $q->findOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        $q->select('count(p.id) as post_count');
+        $q->addWhere('p.category_id = ?',$category_id);
+        $q->addWhere('p.active = 1');
+	return $q->fetchOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
     }
     
-    public function getLastCategoryPost($category_id){
+    public function getLastCategoryPost($category_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->postTable->createQuery('p');
+        $q->leftJoin('p.User u');
+        $q->addSelect('p.*,u.*');
         $q->addWhere('category_id = ?',$category_id);
         $q->orderBy('p.created_at DESC');
+        $q->addWhere('p.active = 1');
         $q->limit(1);
-	return $q->findOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+	return $q->fetchOne(array(),$hydrationMode);
+    }
+    
+    public function getAllCategoryThreads($category_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $limits = $this->getPageLimits(20);
+        $q = $this->threadTable->createQuery('t');
+        $q->select('*');
+        $q->leftJoin('t.Posts p');
+        $q->orderBy('t.created_at DESC, p.created_at DESC');
+        $q->addWhere('t.category_id = ?',$category_id);
+        $q->addWhere('t.active = 1');
+        $q->limit($limits['limit']);
+        $q->offset($limits['offset']);
+	return $q->execute(array(),$hydrationMode);
     }
     
     public function addForumMoney($forum_id,$amount,$moneyType,$description = false){
