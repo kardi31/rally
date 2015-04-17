@@ -20,7 +20,7 @@ Category:
       type: text
     active:
       type: boolean
-      default: 0
+      default: 1
   relations:
     Thread:
       local: id
@@ -59,7 +59,7 @@ Thread:
       default: 0
     active:
       type: boolean
-      default: 0
+      default: 1
 Post:
   tableName: forum_post
   actAs: 
@@ -80,7 +80,7 @@ Post:
       type: text
     active:
       type: boolean
-      default: 0
+      default: 1
     thread_id:
       type: integer(4)
   relations:

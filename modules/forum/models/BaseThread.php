@@ -52,7 +52,7 @@ abstract class Forum_Model_Doctrine_BaseThread extends Doctrine_Record
              ));
         $this->hasColumn('active', 'boolean', null, array(
              'type' => 'boolean',
-             'default' => 0,
+             'default' => 1,
              ));
 
         $this->option('type', 'MyISAM');

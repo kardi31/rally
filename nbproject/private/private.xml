@@ -5,13 +5,16 @@
         <group>
             <file>file:/C:/xampp2/htdocs/ral/modules/car/controllers/IndexController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/data/schema/schema.yml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/forum/models/BaseThread.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/services/Sponsor.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/BaseRallyResult.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/library/DataTables/SponsorList.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/forum/models/Post.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/league/models/BaseSeason.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/people/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/league/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/views/index/rally-result.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/forum/views/index/show-category.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/car/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/models/Offer.php</file>
             <file>file:/C:/xampp2/htdocs/ral/public/css/rally-custom.css</file>
@@ -26,6 +29,7 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/BaseRally.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/league/services/League.php</file>
             <file>file:/C:/xampp2/htdocs/ral/library/Doctrine/Core.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/forum/models/Thread.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/car/services/Car.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/league/views/index/show-table.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/people/views/index/sell-player.phtml</file>
@@ -46,6 +50,7 @@
             <file>file:/C:/xampp2/htdocs/ral/doctrine-module-win.php</file>
             <file>file:/C:/xampp2/htdocs/ral/notes.txt</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/data/schema/schema.yml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/forum/models/BasePost.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/services/Team.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/user/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/cron/controllers/IndexController.php</file>
@@ -69,6 +74,7 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/my-drivers.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/my-finances.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/views/index/list-rally.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/library/TK/Service.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/controllers/AdminController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/views/_header.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/forum/services/Forum.php</file>
@@ -96,7 +102,6 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/user/services/User.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/my-team.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/views/index/index.phtml</file>
-            <file>file:/C:/xampp2/htdocs/ral/library/Doctrine/Table.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/forum/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/user/controllers/IndexController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/forum/views/index/show-forum.phtml</file>

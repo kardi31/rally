@@ -60,7 +60,10 @@ class Element{
 	    $this->elementDisplay .= "<img src='/captcha' />";
 	    $this->elementDisplay .= "<input name='captcha' id='captcha' type='text' />";
 	    $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div></div>";
-	else:
+	elseif($this->type=="textarea"):
+            $this->elementDisplay .= "<textarea ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."'>".$this->getMethodVariable($this->name)."</textarea>";
+            $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
+        else:
             $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
             $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
         endif;

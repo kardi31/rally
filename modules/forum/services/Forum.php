@@ -24,8 +24,22 @@ class ForumService extends Service{
         return $this->categoryTable->findOneBy($field,$id,$hydrationMode);
     }
     
+    public function getThread($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        return $this->threadTable->findOneBy($field,$id,$hydrationMode);
+    }
+    
     public function getAllCategories($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         return $this->categoryTable->findAll($hydrationMode);
+    }
+    
+    public function getFullThread($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->threadTable->createQuery('t');
+        $q->leftJoin('t.User u');
+        $q->leftJoin('t.Category c');
+        $q->select('u.*,t.*,c.*');
+        $q->addWhere('t.'.$field.' = ?',$id);
+        $q->addWhere('t.active = 1');
+	return $q->fetchOne(array(),$hydrationMode);
     }
     
     public function countCategoryThreads($category_id){
@@ -70,79 +84,47 @@ class ForumService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
-    public function addForumMoney($forum_id,$amount,$moneyType,$description = false){
-	if($amount==0||empty($amount)){
-	    return ;
-	}
-	
-        $forum = $this->getForum($forum_id);
-	
-	$newCash = (int)$forum['cash'] + $amount;
-	
-	$forum->set('cash',$newCash);
-	$forum->save();
-        
-        $this->saveForumFinance($forum_id,$amount,$moneyType,true,$description);
-        
-        return $forum;
+    public function getAllThreadPosts($thread_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $limits = $this->getPageLimits(20);
+        $q = $this->postTable->createQuery('p');
+        $q->leftJoin('p.Thread t');
+        $q->leftJoin('t.User u1');
+        $q->leftJoin('p.User u2');
+        $q->select('t.*,p.*,u1.username,u2.username');
+        $q->orderBy('p.created_at ASC');
+        $q->addWhere('p.thread_id = ?',$thread_id);
+        $q->addWhere('p.active = 1');
+        $q->limit($limits['limit']);
+        $q->offset($limits['offset']);
+	return $q->execute(array(),$hydrationMode);
     }
     
-    public function removeForumMoney($forum_id,$amount,$moneyType,$description = false){
-	if($amount==0||empty($amount)){
-	    return ;
-	}
-	
-        $forum = $this->getForum($forum_id);
-	
-	$newCash = (int)$forum['cash'] - $amount;
-	
-	$forum->set('cash',$newCash);
-	$forum->save();
+    public function addPost($values,$thread,$user){
+                
+        $data = array();
+        $data['content'] = $values['content'];
+        $data['thread_id'] = $thread['id'];
+        $data['category_id'] = $thread['category_id'];
+        $data['user_id'] = $user['id'];
+        $post = $this->postTable->getRecord();
+        $post->fromArray($data);
+        $post->save();
         
-        $this->saveForumFinance($forum_id,$amount,$moneyType,false,$description);
+        return $post;
     }
     
-    
-    public function saveForumFinance($forum_id,$amount,$detailed_type,$income = false,$description = null){
-        $financeArray = array();
-        $financeArray['forum_id'] = $forum_id;
-        $financeArray['amount'] = $amount;
-        $financeArray['detailed_type'] = $detailed_type;
-        if(!empty($description)){
-            $financeArray['description'] = $description;
-        }
-        $financeArray['income'] = $income;
+    public function addThread($values,$category,$user){
+                
+        $data = array();
+        $data['title'] = $values['title'];
+        $data['content'] = $values['content'];
+        $data['category_id'] = $category['id'];
+        $data['user_id'] = $user['id'];
+        $post = $this->threadTable->getRecord();
+        $post->fromArray($data);
+        $post->save();
         
-        $financeArray['save_date'] = date('Y-m-d H:i:s'); 
-        
-        $record = $this->financeTable->getRecord();
-        $record->fromArray($financeArray);
-        $record->save();
-        
-        return $record;
-    }
-    
-    public function getSimpleReport($forum_id,$prevWeek = false){
-        if(!$prevWeek){
-           $dateFrom = date('Y-m-d H:i:s', strtotime('this week monday'));
-           $dateTo = date('Y-m-d H:i:s',strtotime('next week monday'));
-        }
-        else{
-           $dateFrom = date('Y-m-d H:i:s', strtotime('this week monday - '.$prevWeek.' week'));
-           $dateTo = date('Y-m-d H:i:s',strtotime('next week monday - '.$prevWeek.' week'));
-        }
-        
-        
-        $q = $this->financeTable->createQuery('f');
-        $q->addWhere('save_date < ?',$dateTo);
-        $q->addWhere('save_date > ?',$dateFrom);
-        $q->addWhere('forum_id = ?',$forum_id);
-        $q->groupBy('detailed_type');
-        $q->orderBy('income,detailed_type');
-        $q->select('sum(amount) as amount,detailed_type,income');
-        $result = $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
-        $sortedResult = $this->sortSimpleReport($result);
-        return $sortedResult;
+        return $post;
     }
     
     public function sortSimpleReport($results){

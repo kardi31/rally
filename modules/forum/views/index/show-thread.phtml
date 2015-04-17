@@ -21,24 +21,30 @@
 <h3>Forum</h3>
 <ul class="breadcrumbs">
     <li><a href="/forum/show-forum">Forum</a></li>
-    <li><?php echo $category['name']; ?></li>
+    <li><a href="/forum/show-category/slug/<?php echo $thread['Category']['slug']; ?>"><?php echo $thread['Category']['name']; ?></a></li>
+    <li><?php echo $thread['title']; ?></li>
 </ul>
-<h5><?php echo $category['name']; ?></h5>
+Created by : <?php echo TK_Text::timeFormat($thread['created_at'],'d/m/Y H:i'); ?> by
+        '<?php echo $thread['User']['username']; ?>'
+        <br />
+    
+<h5><?php echo $thread['title']; ?></h5>
+<div class="postContent"><?php echo $thread['content']; ?></div>
+<hr />
 <?php
 
-foreach($threads as $thread):
+foreach($posts as $post):
     ?>
-    <h3><a href="/forum/show-thread/id/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a></h3>
-    Created at : <?php echo TK_Text::timeFormat($thread['created_at'],'d/m/Y H:i'); ?> by
-        '<?php echo $thread['User']['username']; ?>' <br />
-        <?php if(isset($thread['Posts'][0])&&!empty($thread['Posts'][0])):
+        <?php if(isset($post)&&!empty($post)):
         ?>
-        Last post:
+<div class="postContent">
+    <?php echo $post['content']; ?>
+</div>
         <?php 
-        echo TK_Text::timeFormat($thread['Posts'][0]['created_at'],'d/m/Y H:i');
+        echo TK_Text::timeFormat($post['created_at'],'d/m/Y H:i');
         ?>
         by
-        '<?php echo $thread['Posts'][0]['User']['username']; ?>'
+        '<?php echo $post['User']['username']; ?>'
         <br />
 
         <?php
@@ -51,12 +57,9 @@ foreach($threads as $thread):
 <?php
 
 endforeach;
-
 ?>
-
-<h5>Add new thread</h5>
+<h5>Respond to this thread</h5>
 <form method="POST">
-    <?php echo $form->getElement('title')->renderElement(); ?>
     <?php echo $form->getElement('content')->renderElement(); ?>
     <?php // echo $form->getElement('active')->renderElement(); ?>
     <?php echo $form->getElement('submit')->renderElement(); ?>

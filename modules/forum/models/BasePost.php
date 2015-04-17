@@ -48,7 +48,7 @@ abstract class Forum_Model_Doctrine_BasePost extends Doctrine_Record
              ));
         $this->hasColumn('active', 'boolean', null, array(
              'type' => 'boolean',
-             'default' => 0,
+             'default' => 1,
              ));
         $this->hasColumn('thread_id', 'integer', 4, array(
              'type' => 'integer',
