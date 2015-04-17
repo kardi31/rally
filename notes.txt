@@ -1,7 +1,6 @@
 // premium logs
 
-// forum - show category topics
-// forum - add new threads
+// forum done
 
 // wyswietlanie loga sponsora na samochodzie
 
