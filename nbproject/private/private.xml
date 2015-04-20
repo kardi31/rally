@@ -55,7 +55,6 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/user/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/cron/controllers/IndexController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/show-offer.phtml</file>
-            <file>file:/C:/xampp2/htdocs/ral/modules/forum/controllers/AdminController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/people/views/index/index.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/models/SponsorList.php</file>
             <file>file:/C:/xampp2/htdocs/ral/library/TK/Form/Validator.php</file>
@@ -84,7 +83,9 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/market/models/CarOffer.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/people/models/BaseTraining.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/league/models/BaseLeague.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/forum/form/Post.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/services/Market.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/forum/views/index/show-thread.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/data/schema/schema.yml</file>
             <file>file:/C:/xampp2/htdocs/ral/doctrine-module.php</file>
             <file>file:/C:/xampp2/htdocs/ral/library/Doctrine/Table/Repository.php</file>
@@ -103,6 +104,7 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/my-team.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/views/index/index.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/forum/data/schema/schema.yml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/forum/form/Thread.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/user/controllers/IndexController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/forum/views/index/show-forum.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/library/TK/Router.php</file>

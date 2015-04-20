@@ -84,6 +84,23 @@ class Rally_Index extends Controller{
         $this->view->assign('rallies',$rallies);
     }
     
+    public function listFriendlyRally(){
+        
+        $rallyService = parent::getService('rally','rally');
+        $rallies = $rallyService->getAllFutureFriendlyRallies();
+        $this->view->assign('rallies',$rallies);
+    }
+    
+    public function createFriendlyRally(){
+        
+        $rallyService = parent::getService('rally','rally');
+        
+        $form = $this->getForm('rally','CreateFriendly');
+        
+        $this->view->assign('form',$form);
+        
+    }
+    
     public function calculateStageTime(){
         Service::loadModels('team', 'team');
         Service::loadModels('people', 'people');

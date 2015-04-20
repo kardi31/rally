@@ -27,7 +27,12 @@ class Form extends Element{
     }
     
     function createElement($type,$name,$options = array(),$label = null) {
-	$element = new Element($type,$name,$options,$label);
+        if($type == "radio"){
+            $element = new Radio($type,$name,$options,$label);
+        }
+        else{
+            $element = new Element($type,$name,$options,$label);
+        }
 	$this->elements[$name] = $element;
 	
 	if($type == "submit")

@@ -33,6 +33,9 @@ Rally:
     finished:
       type: boolean
       default: 0
+    friendly:
+      type: boolean
+      default: 0
 Surface:
   tableName: rally_surface
   actAs: 
@@ -233,3 +236,54 @@ BigAwards:
       type: integer(4)
     premium:
       type: integer(11)
+Friendly:
+  tableName: rally_friendly
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    rally_id:
+      type: integer(4)
+    invite_only:
+      type: boolean
+      default: 0
+    start_friendly_date:
+      type: datetime
+    description:
+      type: text
+  relations:
+    Rally:
+      local: rally_id
+      foreign: id
+      foreignType: one
+      type: one
+      foreignAlias: Friendly
+      alias: Rally
+FriendlyParticipants:
+  tableName: rally_friendly_participants
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    friendly_id:
+      type: integer(4)
+    crew_id:
+      type: integer(4)
+    team_id:
+      type: integer(4)
+  relations:
+    Friendly:
+      local: friendly_id
+      foreign: id
+      foreignType: one
+      type: many
+      foreignAlias: Paricipants
+      alias: Friendly

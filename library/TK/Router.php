@@ -12,6 +12,8 @@ $keys = array_keys($_GET);
           $params = array_values($params);
         $urlParams = array();
         for($i=0;$i<count($params);$i = $i+2):
+            if(empty($params[$i+1]))
+                continue;
             $urlParams[$params[$i]] = $params[$i+1];
         endfor;
         $GLOBALS['urlParams'] = $urlParams; 

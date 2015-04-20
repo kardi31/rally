@@ -14,10 +14,12 @@
  * @property float $league
  * @property boolean $big_awards
  * @property boolean $finished
+ * @property boolean $friendly
  * @property Doctrine_Collection $Surfaces
  * @property Doctrine_Collection $Crews
  * @property Doctrine_Collection $Stages
  * @property Doctrine_Collection $Results
+ * @property Rally_Model_Doctrine_Friendly $Friendly
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -68,6 +70,10 @@ abstract class Rally_Model_Doctrine_BaseRally extends Doctrine_Record
              'type' => 'boolean',
              'default' => 0,
              ));
+        $this->hasColumn('friendly', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
+             ));
 
         $this->option('type', 'MyISAM');
         $this->option('collate', 'utf8_general_ci');
@@ -90,6 +96,10 @@ abstract class Rally_Model_Doctrine_BaseRally extends Doctrine_Record
              'foreign' => 'rally_id'));
 
         $this->hasMany('Rally_Model_Doctrine_Result as Results', array(
+             'local' => 'id',
+             'foreign' => 'rally_id'));
+
+        $this->hasOne('Rally_Model_Doctrine_Friendly as Friendly', array(
              'local' => 'id',
              'foreign' => 'rally_id'));
 

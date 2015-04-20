@@ -55,6 +55,9 @@ class Element{
         elseif($this->type=="checkbox"):
             $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."1' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
             $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
+        elseif($this->type=="checkbox"):
+            $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."1' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
+            $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
         elseif($this->type=="captcha"):
 	    $this->elementDisplay .= "<div class='formElemWrapper'><label for='captcha' id='captcha'>Przepisz kod z obrazka</label>";
 	    $this->elementDisplay .= "<img src='/captcha' />";
@@ -152,7 +155,6 @@ class Element{
 	// set pointer to begining of array
 	reset($options);
 	$first_value = current($options);
-	
 	if($emptyOption)
 	    $this->multiOptions[$this->name][] = '';
 	// if as a value we get an array then first col is a key and second is a value
@@ -168,7 +170,7 @@ class Element{
 	endif;    
 	
     }
-    
+        
     public function validateElement(){
         if(!$this->isSubmit())
             return "";

@@ -62,6 +62,14 @@ class RallyService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getAllFutureFriendlyRallies($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->rallyTable->createQuery('r');
+	$q->addWhere('r.date > NOW()');
+	$q->addWhere('r.friendly = 1');
+	$q->orderBy('r.date');
+	return $q->execute(array(),$hydrationMode);
+    }
+    
     public function getAllSurfaces($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $surface = array(
 		'gravel' => 'Gravel',
