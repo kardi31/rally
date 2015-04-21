@@ -94,10 +94,45 @@ class Rally_Index extends Controller{
     public function createFriendlyRally(){
         
         $rallyService = parent::getService('rally','rally');
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
         
         $form = $this->getForm('rally','CreateFriendly');
         
+        if($form->isSubmit()){
+            if($form->isValid()){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                
+                $values = $_POST;
+
+                $rally = $rallyService->saveFriendlyRally($values,$user);
+
+                TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$rally['slug']);
+
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+            }
+        }
+        
+        
         $this->view->assign('form',$form);
+        
+    }
+    
+    public function showFriendlyRally(){
+        
+        $rallyService = parent::getService('rally','rally');
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        
+        if(!$friendly = $rallyService->getFriendlyRally($GLOBALS['urlParams']['slug'],'r.slug',Doctrine_Core::HYDRATE_ARRAY)){
+            echo "blad";exit;
+        }
+        
+        if($user['id']==$friendly['user_id']){
+            $form = $this->getForm('rally','InviteFriendly');
+            $this->view->assign('form',$form);
+        }
+        $this->view->assign('friendly',$friendly);
         
     }
     

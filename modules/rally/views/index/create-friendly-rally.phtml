@@ -9,10 +9,13 @@
     </style>
 <a href="/rally/list-friendly-rally">Powrót do listy rajdów</a>
 <div>
+    <form method="POST">
     <label for="name">Name</label>
     <?php echo $form->getElement('name')->renderElement(); ?>
     <label for="description">Description</label>
     <?php echo $form->getElement('description')->renderElement(); ?>
     <label for="invite_only">Invite only</label>
     <?php echo $form->getElement('invite_only')->renderElement(); ?>
+    <?php echo $form->getElement('submit')->renderElement(); ?>
+    </form>
 </div>

@@ -10,6 +10,7 @@ class RallyService extends Service{
     protected $resultTable;
     protected $stageTable;
     protected $surfaceTable;
+    protected $friendlyTable;
     protected $accidentTable;
     protected $surfaces = array('tarmac','gravel','rain','snow');
     protected $minsArray = array('00','15','30','45');
@@ -31,6 +32,7 @@ class RallyService extends Service{
         $this->stageTable = parent::getTable('rally','stage');
         $this->stageResultTable = parent::getTable('rally','stageResult');
         $this->resultTable = parent::getTable('rally','result');
+        $this->friendlyTable = parent::getTable('rally','friendly');
         $this->accidentTable = parent::getTable('rally','accident');
     }
     
@@ -109,6 +111,7 @@ class RallyService extends Service{
 	$q->addSelect('s.*,r.*');
 	return $q->fetchOne(array(),$hydrationMode);
     }
+    
     
     public function getCrewsWithoutResults($stage_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->stageResultTable->createQuery('sr');
@@ -401,6 +404,8 @@ class RallyService extends Service{
         
     }
     
+    
+    
     public function createRandomStage($rally_id,$stage_name){
         $stageArray = array();
         
@@ -515,6 +520,62 @@ class RallyService extends Service{
         $q->addWhere('re.'.$field.' = ?',$id);
         $q->orderBy('re.position');
         return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
+    }
+    
+    /*
+     * Friendly rally
+     * 
+     */
+    
+    public function getFriendlyRally($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->friendlyTable->createQuery('f');
+        $q->leftJoin('f.Rally r');
+        $q->leftJoin('f.Participants p');
+        $q->addWhere($field .' = ?',$id);
+        $q->select('r.*,f.*,p.*');
+        return $q->fetchOne(array(),$hydrationMode);
+    }
+    
+    public function saveFriendlyRally($values,$user_id){
+        $rally = $this->createRandomFriendlyRally($values);
+        $friendly = $this->friendlyTable->getRecord();
+        $friendly->fromArray($values);
+        $friendly->rally_id = $rally['id'];
+        $friendly->user_id = $user_id;
+        $friendly->save();
+        
+        return $rally;
+    }
+    
+    public function createRandomFriendlyRally($values){
+        $rallyArray = array();
+        
+        $rallyArray['name'] = $values['name'];
+        $rallyArray['slug'] = TK_Text::createUniqueTableSlug('Rally_Model_Doctrine_Rally',$values['name']);  
+        $rallyArray['active'] = 1;
+        
+        $randomSurfaces = array_rand($this->surfaces,2);
+        $randomSurfacePercentage = TK_Text::float_rand(10,90,2);
+        foreach($randomSurfaces as $key => $randomSurfaceId):
+            $rallyArray['Surfaces'][$key]['surface'] = $this->surfaces[$randomSurfaceId];
+            if($key == 0){
+                $rallyArray['Surfaces'][$key]['percentage'] = 100 - $randomSurfacePercentage;
+            }
+            else{
+                $rallyArray['Surfaces'][$key]['percentage'] = $randomSurfacePercentage;
+            }
+        endforeach;
+        
+        $rally = $this->rallyTable->getRecord();
+        $rally->fromArray($rallyArray);
+        
+        $rally->save();
+        for($i=0;$i<18;$i++){
+            $this->createRandomStage($rally['id'],'Stage '.$i);
+        }
+        
+        return $rally;
+        
     }
 }
 ?>

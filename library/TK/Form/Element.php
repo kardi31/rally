@@ -1,5 +1,7 @@
 <?php
 
+require_once(BASE_PATH."/library/TK/Form/Radio.php");
+
 class Element{
          protected $elementDisplay;
          protected $method  = "POST";
@@ -197,8 +199,9 @@ class Element{
                 $response = $this->callValidator($validator,$var,$options);
                 
                 // jeżeli już został wykryty błąd kończymy pętle
-                if(is_array($response)&&array_key_exists('result',$response))
+                if(is_array($response)&&array_key_exists('result',$response)&&!$response['result']){
                         break;
+                }
             endforeach; 
         else:
             // dla pojedynczego validatora
@@ -250,13 +253,15 @@ class Element{
     }
     
     public function callValidator($validator,$var,$options = null){
-   
         switch($validator):
             case "int":
                 $response = Validator::validateInt($var);
                 break;
             case "string":
                 $response = Validator::validateString($var);
+                break;
+            case "alnum":
+                $response = Validator::validateAlnum($var);
                 break;
             case "notEmpty":
                 $response = Validator::validateNotEmpty($var);
@@ -274,7 +279,6 @@ class Element{
                 $response = Validator::validateEmail($var);
                 break;
         endswitch;
-        
         return $response;
     }
     
@@ -322,8 +326,25 @@ class Element{
 	return $result;
     }
     
-    public function addParam($attribute,$value){
+    public function addParam($attribute,$value = false){
+        if(!$value)
+            $value = $attribute;
 	$this->params[$attribute] = $value;
     }
     
+    public function addValidator($name,$options = false){
+        if(is_array($this->validators)){
+            if(!$options)
+                array_push($this->validators,$name);
+            else
+                $this->validators[$name] = $options;
+        }
+        else{
+            if(!$options)
+                $this->validators = array($name);
+            else
+                $this->validators[$name] = $options;
+        }
+        
+    }
 }

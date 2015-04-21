@@ -1,0 +1,53 @@
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<h2><?php echo $friendly['Rally']['name']; ?></h2>
+<?php echo $friendly['description']; ?>
+<hr />
+<h3>Uczestnicy</h3>
+<?php foreach($friendly['Participants'] as $participant): 
+        echo $participant['Team']['User']['username'];
+    
+    endforeach; ?>
+<?php if(isset($form)){ ?>
+<h2>Invite your friend</h2>
+<form method="POST">
+    <label for="name">Friend's name</label>
+    <?php echo $form->getElement('name')->renderElement(); ?>
+    <?php echo $form->getElement('submit')->renderElement(); ?>
+</form>
+
+<?php } ?>
+
+ <script>
+  $(function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#name" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>

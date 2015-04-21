@@ -43,12 +43,14 @@ class Validator{
     
     public static function validateAlnum($var){
 	$pattern = '/^[A-Za-z0-9\s]+$/';
-	if(preg_match($pattern,$var)):
+	if(preg_match($pattern,$var)==1):
             $response['result'] = true;
         else:
             $response['result'] = false;
             $response['errorMessage'] = "Podana wartość może zawierać tylko litery, cyfry i spacje";
         endif;
+        
+        return $response;
     }
     
     public static function validateStringLength($var,$options) {

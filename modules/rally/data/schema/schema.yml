@@ -246,6 +246,8 @@ Friendly:
       primary: true
       autoincrement: true
       type: integer(4)
+    user_id:
+      type: integer(4)
     rally_id:
       type: integer(4)
     invite_only:
@@ -283,7 +285,29 @@ FriendlyParticipants:
     Friendly:
       local: friendly_id
       foreign: id
-      foreignType: one
-      type: many
-      foreignAlias: Paricipants
+      foreignType: many
+      type: one
+      foreignAlias: Participants
+      alias: Friendly
+FriendlyInvitations:
+  tableName: rally_friendly_invitations
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    friendly_id:
+      type: integer(4)
+    team_id:
+      type: integer(4)
+  relations:
+    Friendly:
+      local: friendly_id
+      foreign: id
+      foreignType: many
+      type: one
+      foreignAlias: Invitations
       alias: Friendly
