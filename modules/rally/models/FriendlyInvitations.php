@@ -12,5 +12,11 @@
  */
 class Rally_Model_Doctrine_FriendlyInvitations extends Rally_Model_Doctrine_BaseFriendlyInvitations
 {
-
+    public function setUp()
+    {
+        parent::setUp();
+        $this->hasOne('User_Model_Doctrine_User as User', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
+    }
 }

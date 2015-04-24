@@ -120,6 +120,7 @@ class Rally_Index extends Controller{
     
     public function showFriendlyRally(){
         
+        Service::loadModels('team', 'team');
         $rallyService = parent::getService('rally','rally');
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
@@ -128,10 +129,48 @@ class Rally_Index extends Controller{
             echo "blad";exit;
         }
         
+        
+        $invitedUsers = $rallyService->getFriendlyInvitedUsers($friendly,Doctrine_Core::HYDRATE_ARRAY);
+        $this->view->assign('invitedUsers',$invitedUsers);
+        
         if($user['id']==$friendly['user_id']){
             $form = $this->getForm('rally','InviteFriendly');
+            
+            
             $this->view->assign('form',$form);
+            
+            if($form->isSubmit()){
+                if($form->isValid()){
+                    Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+
+                    $values = $_POST;
+                    if(!$friendlyUser = $userService->getUser($values['name'],'username',Doctrine_Core::HYDRATE_ARRAY)){
+                        $this->view->assign('message','This user does not exists');
+                    }
+                    elseif($rallyService->getFriendlyInvitedUser($friendly['id'],$values['name'])){
+                        $this->view->assign('message','This user was already invited');
+                    }
+                    else{
+                        $rally = $rallyService->inviteUserToFriendlyRally($friendly,$friendlyUser);
+                        unset($_POST);
+                        
+                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$GLOBALS['urlParams']['slug']);
+                    }
+
+
+                    Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+                }
+            }
+            
+            
         }
+        elseif($this->getFriendlyInvitedUser($friendly['id'],$user['name'])){
+            
+        }
+        
+        
+        
+        
         $this->view->assign('friendly',$friendly);
         
     }

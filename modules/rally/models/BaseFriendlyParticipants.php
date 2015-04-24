@@ -8,7 +8,7 @@
  * @property integer $id
  * @property integer $friendly_id
  * @property integer $crew_id
- * @property integer $team_id
+ * @property integer $user_id
  * @property Rally_Model_Doctrine_Friendly $Friendly
  * 
  * @package    ##PACKAGE##
@@ -35,7 +35,7 @@ abstract class Rally_Model_Doctrine_BaseFriendlyParticipants extends Doctrine_Re
              'type' => 'integer',
              'length' => '4',
              ));
-        $this->hasColumn('team_id', 'integer', 4, array(
+        $this->hasColumn('user_id', 'integer', 4, array(
              'type' => 'integer',
              'length' => '4',
              ));

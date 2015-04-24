@@ -2,9 +2,26 @@
   
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <?php if(isset($message)){ ?>
+     <div class="alert alert-danger alert-dismissable">
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <?php 
+            echo $message; 
+            ?>
+     </div>
+  <?php } ?>
 <h2><?php echo $friendly['Rally']['name']; ?></h2>
 <?php echo $friendly['description']; ?>
 <hr />
+Zaproszeni: <br />
+<?php 
+if(isset($invitedUsers)){
+    foreach($invitedUsers as $invitedUser): 
+        echo $invitedUser['User']['username']."<br />";
+    endforeach; 
+}
+    
+    ?>
 <h3>Uczestnicy</h3>
 <?php foreach($friendly['Participants'] as $participant): 
         echo $participant['Team']['User']['username'];
@@ -22,32 +39,21 @@
 
  <script>
   $(function() {
-    var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
     $( "#name" ).autocomplete({
-      source: availableTags
+      source: function( request, response ) {
+        $.ajax({
+          url: "/user/find-user",
+          dataType: "json",
+          type: "get",
+          data: {
+            q: request.term
+          },
+          success: function( data ) {
+            response( data );
+          }
+        });
+      },
+      minLength: 3
     });
   });
   </script>

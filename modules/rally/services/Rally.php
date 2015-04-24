@@ -11,6 +11,7 @@ class RallyService extends Service{
     protected $stageTable;
     protected $surfaceTable;
     protected $friendlyTable;
+    protected $friendlyInvitationsTable;
     protected $accidentTable;
     protected $surfaces = array('tarmac','gravel','rain','snow');
     protected $minsArray = array('00','15','30','45');
@@ -33,6 +34,7 @@ class RallyService extends Service{
         $this->stageResultTable = parent::getTable('rally','stageResult');
         $this->resultTable = parent::getTable('rally','result');
         $this->friendlyTable = parent::getTable('rally','friendly');
+        $this->friendlyInvitationsTable = parent::getTable('rally','friendlyInvitations');
         $this->accidentTable = parent::getTable('rally','accident');
     }
     
@@ -64,13 +66,6 @@ class RallyService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
-    public function getAllFutureFriendlyRallies($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
-        $q = $this->rallyTable->createQuery('r');
-	$q->addWhere('r.date > NOW()');
-	$q->addWhere('r.friendly = 1');
-	$q->orderBy('r.date');
-	return $q->execute(array(),$hydrationMode);
-    }
     
     public function getAllSurfaces($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $surface = array(
@@ -527,6 +522,17 @@ class RallyService extends Service{
      * 
      */
     
+    
+    public function getAllFutureFriendlyRallies($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->rallyTable->createQuery('r');
+        $q->leftJoin('r.Friendly f');
+        $q->addSelect('r.*,f.*');
+//	$q->addWhere('r.date > NOW()');
+	$q->addWhere('r.friendly = 1');
+//	$q->orderBy('r.date');
+	return $q->execute(array(),$hydrationMode);
+    }
+    
     public function getFriendlyRally($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->friendlyTable->createQuery('f');
         $q->leftJoin('f.Rally r');
@@ -553,6 +559,7 @@ class RallyService extends Service{
         $rallyArray['name'] = $values['name'];
         $rallyArray['slug'] = TK_Text::createUniqueTableSlug('Rally_Model_Doctrine_Rally',$values['name']);  
         $rallyArray['active'] = 1;
+        $rallyArray['friendly'] = 1;
         
         $randomSurfaces = array_rand($this->surfaces,2);
         $randomSurfacePercentage = TK_Text::float_rand(10,90,2);
@@ -576,6 +583,31 @@ class RallyService extends Service{
         
         return $rally;
         
+    }
+    
+    public function getFriendlyInvitedUsers($friendly,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->friendlyInvitationsTable->createQuery('fi');
+        $q->leftJoin('fi.User u');
+        $q->select('u.username,fi.id');
+        $q->addWhere('fi.friendly_id = ?',$friendly['id']);
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getFriendlyInvitedUser($friendly_id,$username,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->friendlyInvitationsTable->createQuery('fi');
+        $q->leftJoin('fi.User u');
+        $q->select('u.username,fi.id');
+        $q->addWhere('fi.friendly_id = ?',$friendly_id);
+        $q->addWhere('u.username like ?',$username);
+	return $q->fetchOne(array(),$hydrationMode);
+    }
+    
+    public function inviteUserToFriendlyRally($friendly,$friendlyUser){
+        $invitation = $this->friendlyInvitationsTable->getRecord();
+        $invitation->user_id = $friendlyUser['id'];
+        $invitation->friendly_id = $friendly['id'];
+        $invitation->save();
+        return $invitation;
     }
 }
 ?>

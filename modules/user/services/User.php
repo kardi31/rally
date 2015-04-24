@@ -69,5 +69,13 @@ class UserService extends Service{
 	return $user;
     }
     
+    public function findUsers($query,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->userTable->createQuery('u');
+        $q->select('u.username');
+        $q->addWhere("u.username like ?",$query."%");
+        $q->limit(4);
+        return $q->execute(array(),$hydrationMode);
+    }
+    
 }
 ?>

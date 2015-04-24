@@ -1,6 +1,9 @@
 // premium logs
 
-// forum done
+// zaproszony uzytkownik zeby mogl sie zapisac do rajdu towarzyskiego
+// pobieranie premium po zapisaniu
+// uzytkownik tworzacy rajd zeby mogl go anulowac i wystartowac
+// start rajdu nastepnego dnia o godzinie 14.
 
 // wyswietlanie loga sponsora na samochodzie
 

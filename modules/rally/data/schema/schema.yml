@@ -279,7 +279,7 @@ FriendlyParticipants:
       type: integer(4)
     crew_id:
       type: integer(4)
-    team_id:
+    user_id:
       type: integer(4)
   relations:
     Friendly:
@@ -301,7 +301,7 @@ FriendlyInvitations:
       type: integer(4)
     friendly_id:
       type: integer(4)
-    team_id:
+    user_id:
       type: integer(4)
   relations:
     Friendly:
