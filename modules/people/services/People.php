@@ -69,6 +69,29 @@ class PeopleService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getFreeDriversFriendly(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+	$q = $this->peopleTable->createQuery('p');
+	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name');
+	$q->leftJoin('p.Team t');
+	$q->leftJoin('p.DriverRallies dr');
+	$q->leftJoin('dr.Rally r');
+	$q->addWhere('t.id = ?',$team['id']);
+	$q->addWhere('r.friendly != 1 OR (r.friendly = 1 and (r.date NOT like ? or r.date IS NULL))',substr($date,0,10)."%");
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getFreePilotsFriendly(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+	$q = $this->peopleTable->createQuery('p');
+	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name');
+	$q->leftJoin('p.Team t');
+	$q->leftJoin('p.PilotRallies dr');
+	$q->leftJoin('dr.Rally r');
+	$q->addWhere('t.id = ?',$team['id']);
+        $q->addWhere('r.friendly != 1 OR (r.friendly = 1 and (r.date NOT like ? or r.date IS NULL))',substr($date,0,10)."%");
+//	
+	return $q->execute(array(),$hydrationMode);
+    }
+    
     /* create people section */
     
     public function createRandomDriver($league){

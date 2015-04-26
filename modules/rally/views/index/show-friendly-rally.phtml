@@ -1,5 +1,5 @@
- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <?php if(isset($message)){ ?>
@@ -24,7 +24,7 @@ if(isset($invitedUsers)){
     ?>
 <h3>Uczestnicy</h3>
 <?php foreach($friendly['Participants'] as $participant): 
-        echo $participant['Team']['User']['username'];
+        echo $participant['User']['username'];
     
     endforeach; ?>
 <?php if(isset($form)){ ?>
@@ -33,6 +33,23 @@ if(isset($invitedUsers)){
     <label for="name">Friend's name</label>
     <?php echo $form->getElement('name')->renderElement(); ?>
     <?php echo $form->getElement('submit')->renderElement(); ?>
+</form>
+
+<?php } ?>
+
+<?php if(isset($joinForm)){ ?>
+<h2>Join friendly rally</h2>
+<span>You have been invited to this rally.</span>
+<form method="POST">
+    <label for="driver_id">Driver</label>
+    <?php echo $joinForm->getElement('driver_id')->renderElement(); ?>
+    <label for="pilot_id">Pilot</label>
+    <?php echo $joinForm->getElement('pilot_id')->renderElement(); ?>
+    <label for="car_id">Car</label>
+    <?php echo $joinForm->getElement('car_id')->renderElement(); ?>
+    <label for="risk">Risk</label>
+    <?php echo $joinForm->getElement('risk')->renderElement(); ?>
+    <?php echo $joinForm->getElement('submit')->renderElement(); ?>
 </form>
 
 <?php } ?>

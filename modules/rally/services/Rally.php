@@ -12,6 +12,7 @@ class RallyService extends Service{
     protected $surfaceTable;
     protected $friendlyTable;
     protected $friendlyInvitationsTable;
+    protected $friendlyParticipantsTable;
     protected $accidentTable;
     protected $surfaces = array('tarmac','gravel','rain','snow');
     protected $minsArray = array('00','15','30','45');
@@ -35,6 +36,7 @@ class RallyService extends Service{
         $this->resultTable = parent::getTable('rally','result');
         $this->friendlyTable = parent::getTable('rally','friendly');
         $this->friendlyInvitationsTable = parent::getTable('rally','friendlyInvitations');
+        $this->friendlyParicipantsTable = parent::getTable('rally','friendlyParticipants');
         $this->accidentTable = parent::getTable('rally','accident');
     }
     
@@ -537,8 +539,9 @@ class RallyService extends Service{
         $q = $this->friendlyTable->createQuery('f');
         $q->leftJoin('f.Rally r');
         $q->leftJoin('f.Participants p');
+        $q->leftJoin('p.User u');
         $q->addWhere($field .' = ?',$id);
-        $q->select('r.*,f.*,p.*');
+        $q->select('r.*,f.*,p.*,u.*');
         return $q->fetchOne(array(),$hydrationMode);
     }
     
@@ -556,6 +559,7 @@ class RallyService extends Service{
     public function createRandomFriendlyRally($values){
         $rallyArray = array();
         
+        $rallyArray['date'] = TK_Text::timeFormat($values['date']." 14:00",'Y-m-d H:i:s','d-m-Y H:i');
         $rallyArray['name'] = $values['name'];
         $rallyArray['slug'] = TK_Text::createUniqueTableSlug('Rally_Model_Doctrine_Rally',$values['name']);  
         $rallyArray['active'] = 1;
@@ -608,6 +612,20 @@ class RallyService extends Service{
         $invitation->friendly_id = $friendly['id'];
         $invitation->save();
         return $invitation;
+    }
+    
+    public function saveCrewToFriendlyRally($friendly_id,$crew_id,$user_id){
+        $invitation = $this->friendlyParicipantsTable->getRecord();
+        $invitation->user_id = $user_id;
+        $invitation->friendly_id = $friendly_id;
+        $invitation->crew_id = $crew_id;
+        $invitation->save();
+        return $invitation;
+    }
+    
+    public function removeFriendlyInvite($friendly_id,$username){
+        $invite = $this->getFriendlyInvitedUser($friendly_id,$username);
+        $invite->delete();
     }
 }
 ?>

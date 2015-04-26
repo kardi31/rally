@@ -64,6 +64,17 @@ class CarService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getFreeCarsFriendly(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+	$q = $this->carTable->createQuery('c');
+	$q->select('c.id,c.name');
+	$q->leftJoin('c.Team t');
+	$q->leftJoin('c.CarRallies cr');
+	$q->leftJoin('cr.Rally r');
+	$q->addWhere('t.id = ?',$team['id']);
+        $q->addWhere('r.friendly != 1 OR (r.friendly = 1 and (r.date NOT like ? or r.date IS NULL))',substr($date,0,10)."%");  
+	return $q->execute(array(),$hydrationMode);
+    }
+    
     public function getRandomCarModel($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->carModelTable->createQuery('cm');
         $q->orderBy('rand()');

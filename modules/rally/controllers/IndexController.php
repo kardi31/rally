@@ -164,8 +164,36 @@ class Rally_Index extends Controller{
             
             
         }
-        elseif($this->getFriendlyInvitedUser($friendly['id'],$user['name'])){
+        elseif($rallyService->getFriendlyInvitedUser($friendly['id'],$user['username'])){
+            $peopleService = parent::getService('people','people');
+            $carService = parent::getService('car','car');
+            $freeDrivers = $peopleService->getFreeDriversFriendly($user['Team'],$friendly['Rally']['date'],Doctrine_Core::HYDRATE_ARRAY);
+            $freePilots = $peopleService->getFreePilotsFriendly($user['Team'],$friendly['Rally']['date'],Doctrine_Core::HYDRATE_ARRAY);
+            $freeCars = $carService->getFreeCarsFriendly($user['Team'],$friendly['Rally']['date'],Doctrine_Core::HYDRATE_ARRAY);
             
+            $joinForm = $this->getForm('rally','JoinRally');
+            $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,true);
+            $joinForm->getElement('pilot_id')->addMultiOptions($freePilots,true);
+            $joinForm->getElement('car_id')->addMultiOptions($freeCars,true);
+            $this->view->assign('joinForm',$joinForm);
+            
+            if($joinForm->isSubmit()){
+                if($joinForm->isValid()){
+                    Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+
+                    $values = $_POST;
+                    
+                    $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
+                    $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
+                    $rallyService->removeFriendlyInvite($friendly['id'],$user['username']);
+                    unset($_POST);
+
+                    Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+                    
+                    TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$GLOBALS['urlParams']['slug']);
+
+                }
+            }
         }
         
         

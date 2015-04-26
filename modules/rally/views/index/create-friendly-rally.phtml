@@ -1,3 +1,18 @@
+<script>
+    $(document).ready(function(){
+        $(".form_advance_datetime").datetimepicker({
+            format: "dd-mm-yyyy",
+            autoclose: true,
+            startDate: '<?php echo date('Y-m-d',strtotime('+1 day')); ?>',
+            minView: 2,
+            pickerPosition: "bottom-right",
+            minuteStep: 15,
+            todayHighlight: true
+        });
+    });
+</script>
+  <script src="/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<link rel="stylesheet" href="/assets/global/plugins/bootstrap-datetimepicker/css/datetimepicker.css">
 <style>
     table img{
         max-width:100px;
@@ -16,6 +31,8 @@
     <?php echo $form->getElement('description')->renderElement(); ?>
     <label for="invite_only">Invite only</label>
     <?php echo $form->getElement('invite_only')->renderElement(); ?>
+    <label for="date">Invite only</label>
+    <?php echo $form->getElement('date')->renderElement(); ?>
     <?php echo $form->getElement('submit')->renderElement(); ?>
     </form>
 </div>

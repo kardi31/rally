@@ -11,6 +11,11 @@ class CreateFriendly extends Form{
         $description->addParam('rows',4);
         $description->addParam('cols',80);
         
+        $date = $this->createElement('text','date',array(),'Data');
+        $date->addParam('required');
+        $date->addParam('readonly');
+        $date->addParam('class','form_advance_datetime');
+        
         $invite_only = $this->createElement('radio','invite_only',array(),'Tylko dla przyjaciół');
         $invite_only->addMultiOption(1,'Tylko dla przyjaciół');
         $invite_only->addMultiOption(0,'Dla wszystkich');

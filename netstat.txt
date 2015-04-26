@@ -1,0 +1,158 @@
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State           PID
+  TCP    0.0.0.0:135            Tomek:0                LISTENING       724
+  TCP    0.0.0.0:445            Tomek:0                LISTENING       4
+  TCP    0.0.0.0:554            Tomek:0                LISTENING       360
+  TCP    0.0.0.0:2869           Tomek:0                LISTENING       4
+  TCP    0.0.0.0:5357           Tomek:0                LISTENING       4
+  TCP    0.0.0.0:10243          Tomek:0                LISTENING       4
+  TCP    0.0.0.0:27036          Tomek:0                LISTENING       3220
+  TCP    0.0.0.0:49152          Tomek:0                LISTENING       492
+  TCP    0.0.0.0:49153          Tomek:0                LISTENING       908
+  TCP    0.0.0.0:49154          Tomek:0                LISTENING       600
+  TCP    0.0.0.0:49155          Tomek:0                LISTENING       936
+  TCP    0.0.0.0:49156          Tomek:0                LISTENING       1184
+  TCP    0.0.0.0:49157          Tomek:0                LISTENING       592
+  TCP    0.0.0.0:49158          Tomek:0                LISTENING       1240
+  TCP    127.0.0.1:9990         Tomek:0                LISTENING       1576
+  TCP    127.0.0.1:23401        Tomek:0                LISTENING       2640
+  TCP    127.0.0.1:23401        ral:49530              TIME_WAIT       0
+  TCP    127.0.0.1:23401        ral:49531              TIME_WAIT       0
+  TCP    127.0.0.1:23401        ral:49532              TIME_WAIT       0
+  TCP    127.0.0.1:23401        ral:49533              TIME_WAIT       0
+  TCP    127.0.0.1:23401        ral:49534              TIME_WAIT       0
+  TCP    127.0.0.1:23401        ral:49535              TIME_WAIT       0
+  TCP    127.0.0.1:23401        ral:49538              TIME_WAIT       0
+  TCP    127.0.0.1:23401        ral:49540              TIME_WAIT       0
+  TCP    127.0.0.1:23401        ral:49541              TIME_WAIT       0
+  TCP    127.0.0.1:23401        ral:49542              TIME_WAIT       0
+  TCP    127.0.0.1:23401        ral:49543              TIME_WAIT       0
+  TCP    127.0.0.1:23401        ral:49544              TIME_WAIT       0
+  TCP    127.0.0.1:23401        ral:49545              TIME_WAIT       0
+  TCP    127.0.0.1:23401        ral:49547              TIME_WAIT       0
+  TCP    127.0.0.1:49610        ral:6853               SYN_SENT        3492
+  TCP    127.0.0.1:49611        ral:6853               SYN_SENT        3492
+  TCP    127.0.0.1:65000        Tomek:0                LISTENING       1656
+  TCP    192.168.0.2:139        Tomek:0                LISTENING       4
+  TCP    192.168.0.2:2869       SkyRouter:48354        TIME_WAIT       0
+  TCP    192.168.0.2:2869       SkyRouter:48355        TIME_WAIT       0
+  TCP    192.168.0.2:2869       SkyRouter:48356        TIME_WAIT       0
+  TCP    192.168.0.2:49218      157.55.236.139:https   ESTABLISHED     776
+  TCP    192.168.0.2:49266      64.233.167.188:5228    ESTABLISHED     3492
+  TCP    192.168.0.2:49267      host212-rangeB-google-ggc:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49273      lhr08s06-in-f13:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49275      lhr08s05-in-f14:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49276      lhr08s05-in-f10:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49278      lhr08s05-in-f10:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49279      lhr08s07-in-f14:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49280      lhr08s06-in-f13:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49281      lhr08s05-in-f14:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49282      host221-rangeB-google-ggc:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49283      lhr08s05-in-f14:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49284      host157-rangeA-google-ggc:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49287      host202-rangeA-akamai-aanp:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49288      host157-rangeA-google-ggc:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49289      lhr08s07-in-f1:https   ESTABLISHED     3492
+  TCP    192.168.0.2:49290      host187-rangeA-google-ggc:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49300      host212-rangeB-google-ggc:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49301      198.41.214.7:https     TIME_WAIT       0
+  TCP    192.168.0.2:49302      host202-rangeA-akamai-aanp:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49309      lhr08s06-in-f14:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49310      lhr14s27-in-f2:https   ESTABLISHED     3492
+  TCP    192.168.0.2:49316      lhr08s05-in-f1:https   ESTABLISHED     3492
+  TCP    192.168.0.2:49339      host200-rangeA-akamai-aanp:http  ESTABLISHED     3492
+  TCP    192.168.0.2:49340      host233-rangeA-akamai-aanp:http  ESTABLISHED     3492
+  TCP    192.168.0.2:49379      192.0.80.239:https     TIME_WAIT       0
+  TCP    192.168.0.2:49385      lhr14s23-in-f8:https   ESTABLISHED     3492
+  TCP    192.168.0.2:49465      SkyRouter:5431         TIME_WAIT       0
+  TCP    192.168.0.2:49467      SkyRouter:5431         TIME_WAIT       0
+  TCP    192.168.0.2:49468      SkyRouter:5431         TIME_WAIT       0
+  TCP    192.168.0.2:49470      SkyRouter:5431         TIME_WAIT       0
+  TCP    192.168.0.2:49489      lhr08s05-in-f14:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49490      host172-rangeA-google-ggc:https  ESTABLISHED     3492
+  TCP    192.168.0.2:49518      SkyRouter:5431         TIME_WAIT       0
+  TCP    192.168.0.2:49519      SkyRouter:5431         TIME_WAIT       0
+  TCP    192.168.0.2:49520      SkyRouter:5431         TIME_WAIT       0
+  TCP    192.168.0.2:49521      SkyRouter:5431         TIME_WAIT       0
+  TCP    192.168.0.2:49575      SkyRouter:5431         TIME_WAIT       0
+  TCP    192.168.0.2:49576      SkyRouter:5431         TIME_WAIT       0
+  TCP    192.168.0.2:49577      SkyRouter:5431         TIME_WAIT       0
+  TCP    192.168.0.2:49578      SkyRouter:5431         TIME_WAIT       0
+  TCP    [::]:135               Tomek:0                LISTENING       724
+  TCP    [::]:445               Tomek:0                LISTENING       4
+  TCP    [::]:554               Tomek:0                LISTENING       360
+  TCP    [::]:2869              Tomek:0                LISTENING       4
+  TCP    [::]:3587              Tomek:0                LISTENING       2296
+  TCP    [::]:5357              Tomek:0                LISTENING       4
+  TCP    [::]:10243             Tomek:0                LISTENING       4
+  TCP    [::]:49152             Tomek:0                LISTENING       492
+  TCP    [::]:49153             Tomek:0                LISTENING       908
+  TCP    [::]:49154             Tomek:0                LISTENING       600
+  TCP    [::]:49155             Tomek:0                LISTENING       936
+  TCP    [::]:49156             Tomek:0                LISTENING       1184
+  TCP    [::]:49157             Tomek:0                LISTENING       592
+  TCP    [::]:49158             Tomek:0                LISTENING       1240
+  TCP    [::1]:49194            Tomek:0                LISTENING       2308
+  UDP    0.0.0.0:500            *:*                                    936
+  UDP    0.0.0.0:3544           *:*                                    936
+  UDP    0.0.0.0:3702           *:*                                    1680
+  UDP    0.0.0.0:3702           *:*                                    1364
+  UDP    0.0.0.0:3702           *:*                                    1364
+  UDP    0.0.0.0:3702           *:*                                    996
+  UDP    0.0.0.0:3702           *:*                                    1680
+  UDP    0.0.0.0:3702           *:*                                    996
+  UDP    0.0.0.0:4500           *:*                                    936
+  UDP    0.0.0.0:5004           *:*                                    360
+  UDP    0.0.0.0:5005           *:*                                    360
+  UDP    0.0.0.0:5355           *:*                                    868
+  UDP    0.0.0.0:27036          *:*                                    3220
+  UDP    0.0.0.0:49341          *:*                                    1364
+  UDP    0.0.0.0:49805          *:*                                    3492
+  UDP    0.0.0.0:54369          *:*                                    3492
+  UDP    0.0.0.0:56953          *:*                                    3492
+  UDP    0.0.0.0:56954          *:*                                    3492
+  UDP    0.0.0.0:56955          *:*                                    3492
+  UDP    0.0.0.0:57261          *:*                                    3492
+  UDP    0.0.0.0:60439          *:*                                    3220
+  UDP    0.0.0.0:61543          *:*                                    3492
+  UDP    0.0.0.0:61846          *:*                                    3220
+  UDP    0.0.0.0:64143          *:*                                    3492
+  UDP    0.0.0.0:65478          *:*                                    1680
+  UDP    0.0.0.0:65480          *:*                                    996
+  UDP    127.0.0.1:1900         *:*                                    1680
+  UDP    127.0.0.1:48200        *:*                                    2640
+  UDP    127.0.0.1:48201        *:*                                    3704
+  UDP    127.0.0.1:62940        *:*                                    1680
+  UDP    127.0.0.1:62941        *:*                                    1656
+  UDP    127.0.0.1:64247        *:*                                    132
+  UDP    127.0.0.1:64248        *:*                                    132
+  UDP    127.0.0.1:64249        *:*                                    132
+  UDP    127.0.0.1:64859        *:*                                    2152
+  UDP    127.0.0.1:64860        *:*                                    2152
+  UDP    127.0.0.1:65000        *:*                                    1656
+  UDP    192.168.0.2:137        *:*                                    4
+  UDP    192.168.0.2:138        *:*                                    4
+  UDP    192.168.0.2:1900       *:*                                    1680
+  UDP    192.168.0.2:62939      *:*                                    1680
+  UDP    192.168.0.2:63272      *:*                                    936
+  UDP    [::]:500               *:*                                    936
+  UDP    [::]:3540              *:*                                    2296
+  UDP    [::]:3702              *:*                                    1364
+  UDP    [::]:3702              *:*                                    1680
+  UDP    [::]:3702              *:*                                    1364
+  UDP    [::]:3702              *:*                                    1680
+  UDP    [::]:3702              *:*                                    996
+  UDP    [::]:3702              *:*                                    996
+  UDP    [::]:4500              *:*                                    936
+  UDP    [::]:5004              *:*                                    360
+  UDP    [::]:5005              *:*                                    360
+  UDP    [::]:5355              *:*                                    868
+  UDP    [::]:49342             *:*                                    1364
+  UDP    [::]:65479             *:*                                    1680
+  UDP    [::]:65481             *:*                                    996
+  UDP    [::1]:1900             *:*                                    1680
+  UDP    [::1]:62938            *:*                                    1680
+  UDP    [fe80::cd35:acc4:f749:8e5a%4]:1900  *:*                                    1680
+  UDP    [fe80::cd35:acc4:f749:8e5a%4]:62937  *:*                                    1680
