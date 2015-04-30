@@ -10,25 +10,27 @@
             todayHighlight: true
         });
         
-        $('.checkJoin').on('change',function(){
-            var driver_id = $('#driver_id').val();
-            var pilot_id = $('#pilot_id').val();
-            var car_id = $('#car_id').val();
+        $('#date').on('change',function(){
             var date = $('#date').val();
            $.ajax({
                 url: '/rally/check-availability',
                 dataType: 'json',
                 data: {
-                   driver_id: driver_id, pilot_id: pilot_id, car_id: car_id, date: date
+                    date: date
                 },
 //                error: function() {
 //                   $('#info').html('<p>An error has occurred</p>');
 //                },
 //                dataType: 'jsonp',
                 success: function(data) {
-                    if(data.result=='no data'){
-                        alert('here');
+                    if(data.result.success=='true'){
+                        $('#driverWrapper').html(data.result.driver_id);
+                        $('#pilotWrapper').html(data.result.pilot_id);
+                        $('#carWrapper').html(data.result.car_id);
+                        $('#myMessage').html(data.result.message);
                     }
+                    
+                    
 //                   var $title = $('<h1>').text(data.talks[0].talk_title);
 //                   var $description = $('<p>').text(data.talks[0].talk_description);
 //                   $('#info')
@@ -64,16 +66,29 @@
     <?php echo $form->getElement('date')->renderElement(); ?>
     
     <hr />
+    <div id="myMessage" class='error'>
+        
+    </div>
+    <span>Please note: to create a friendly rally you need to have free driver,pilot and car. One crew is allowed to drive only one friendly rally/day. If you don't have free crew on that date, please choose another date of rally.</span>
     <div>My rally settings</div>
-    <label for="driver_id">Driver</label>
-    <?php echo $joinForm->getElement('driver_id')->renderElement(); ?>
-    <label for="pilot_id">Pilot</label>
-    <?php echo $joinForm->getElement('pilot_id')->renderElement(); ?>
-    <label for="car_id">Car</label>
-    <?php echo $joinForm->getElement('car_id')->renderElement(); ?>
-    <label for="risk">Risk</label>
-    <?php echo $joinForm->getElement('risk')->renderElement(); ?>
     
-    <?php echo $form->getElement('submit')->renderElement(); ?>
+    <div id='crewAddWrapper'>
+        <label for="driver_id">Driver</label>
+        <span id="driverWrapper">
+            <?php echo $joinForm->getElement('driver_id')->renderElement(); ?>
+        </span>
+        <label for="pilot_id">Pilot</label>
+        <span id="pilotWrapper">
+            <?php echo $joinForm->getElement('pilot_id')->renderElement(); ?>
+        </span>
+        <label for="car_id">Car</label>
+        <span id="carWrapper">
+            <?php echo $joinForm->getElement('car_id')->renderElement(); ?>
+        </span>
+        <label for="risk">Risk</label>
+        <?php echo $joinForm->getElement('risk')->renderElement(); ?>
+
+        <?php echo $form->getElement('submit')->renderElement(); ?>
+    </div>
     </form>
 </div>

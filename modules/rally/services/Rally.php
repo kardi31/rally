@@ -529,8 +529,9 @@ class RallyService extends Service{
         $q = $this->rallyTable->createQuery('r');
         $q->leftJoin('r.Friendly f');
         $q->addSelect('r.*,f.*');
-//	$q->addWhere('r.date > NOW()');
+	$q->addWhere('r.date > NOW()');
 	$q->addWhere('r.friendly = 1');
+        $q->addWhere('r.finished = 0');
 //	$q->orderBy('r.date');
 	return $q->execute(array(),$hydrationMode);
     }
@@ -553,10 +554,28 @@ class RallyService extends Service{
         $friendly->user_id = $user_id;
         $friendly->save();
         
-        return $rally;
+        return $friendly;
     }
     
-    public function createRandomFriendlyRally($values){
+    public function createRandomFriendly($user_id){
+        
+       $randomNumber = rand(1000000,10000000);
+       
+        $values = array();
+        $values['date'] = date('d-m-Y');
+        $values['name'] = "Friendly_".$randomNumber;
+        $rally = $this->createRandomFriendlyRally($values);
+        $friendly = $this->friendlyTable->getRecord();
+        $friendly->fromArray($values);
+        $friendly->rally_id = $rally['id'];
+        $friendly->user_id = $user_id;
+        $friendly->save();
+        
+        return $friendly;
+        
+    }
+    
+     public function createRandomFriendlyRally($values){
         $rallyArray = array();
         
         $rallyArray['date'] = TK_Text::timeFormat($values['date']." 14:00",'Y-m-d H:i:s','d-m-Y H:i');
@@ -588,7 +607,6 @@ class RallyService extends Service{
         return $rally;
         
     }
-    
     public function getFriendlyInvitedUsers($friendly,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->friendlyInvitationsTable->createQuery('fi');
         $q->leftJoin('fi.User u');
@@ -637,7 +655,8 @@ class RallyService extends Service{
     
     public function removeFriendlyInvite($friendly_id,$username){
         $invite = $this->getFriendlyInvitedUser($friendly_id,$username);
-        $invite->delete();
+        if($invite)
+            $invite->delete();
     }
 }
 ?>

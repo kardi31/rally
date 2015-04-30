@@ -72,7 +72,7 @@ class CarService extends Service{
 	$q->leftJoin('cr.Rally r');
 	$q->addWhere('t.id = ?',$team['id']);
         if(!is_null($date))
-            $q->addWhere('r.friendly != 1 OR (r.friendly = 1 and (r.date NOT like ? or r.date IS NULL))',substr($date,0,10)."%");  
+            $q->addWhere('r.id IS NULL or (r.friendly != 1 OR (r.friendly = 1 and (r.date NOT like ? or r.date IS NULL)))',substr($date,0,10)."%");
 	return $q->execute(array(),$hydrationMode);
     }
     
@@ -92,11 +92,9 @@ class CarService extends Service{
     }
     
     public function createNewTeamCar($model,$team_id){
-        
-        if(!$model instanceof Car_Model_Doctrine_CarModel){
+        if(!$model instanceof Car_Model_Doctrine_CarModels){
             $model = $this->getCarModel($model);
         }
-        
         $upkeep = 0.15 * $model['price'];
         
         $record = $this->carTable->getRecord();

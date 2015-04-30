@@ -18,6 +18,9 @@
 <div class="col-md-8">
     
 <h2><?php echo $rally['name']; ?></h2><br /><br />
+<?php if($rally['friendly']): ?>
+This is a friendly rally. Find out more about friendly rallies.
+<?php endif; ?>
     <h4>Wyniki rajdu</h4>
     <table>
 	<tr>

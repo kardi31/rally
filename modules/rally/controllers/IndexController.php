@@ -110,18 +110,22 @@ class Rally_Index extends Controller{
         $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,true);
         $joinForm->getElement('pilot_id')->addMultiOptions($freePilots,true);
         $joinForm->getElement('car_id')->addMultiOptions($freeCars,true);
+            $joinForm->getElement('driver_id')->addParam('disabled');
+            $joinForm->getElement('pilot_id')->addParam('disabled');
+            $joinForm->getElement('car_id')->addParam('disabled');
         $this->view->assign('joinForm',$joinForm);
         
         if($form->isSubmit()){
             if($form->isValid()){
-                var_dump($_POST);exit;
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
 
-                $rally = $rallyService->saveFriendlyRally($values,$user);
+                $friendly = $rallyService->saveFriendlyRally($values,$user);
+                $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
+                $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
 
-                TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$rally['slug']);
+                TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
 
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
@@ -147,7 +151,9 @@ class Rally_Index extends Controller{
         $invitedUsers = $rallyService->getFriendlyInvitedUsers($friendly,Doctrine_Core::HYDRATE_ARRAY);
         $this->view->assign('invitedUsers',$invitedUsers);
         
-        if($user['id']==$friendly['user_id']&&$friendly->invite_only){
+        $isParticipant = $rallyService->getFriendlyParticipant($friendly['id'],$user['username'],Doctrine_Core::HYDRATE_ARRAY);
+        
+        if($user['id']==$friendly['user_id']&&$friendly['invite_only']==1){
             $form = $this->getForm('rally','InviteFriendly');
             
             
@@ -178,7 +184,7 @@ class Rally_Index extends Controller{
             
             
         }
-        elseif($rallyService->getFriendlyInvitedUser($friendly['id'],$user['username'])||!$friendly->invite_only){
+        elseif($rallyService->getFriendlyInvitedUser($friendly['id'],$user['username'])||$friendly['invite_only']==0&&!$isParticipant){
             $peopleService = parent::getService('people','people');
             $carService = parent::getService('car','car');
             $freeDrivers = $peopleService->getFreeDriversFriendly($user['Team'],$friendly['Rally']['date'],Doctrine_Core::HYDRATE_ARRAY);
@@ -216,10 +222,61 @@ class Rally_Index extends Controller{
         
         
         
+        $this->view->assign('isParticipant',$isParticipant);
         $this->view->assign('friendly',$friendly);
         
     }
     
+    public function checkAvailability(){
+        Service::loadModels('team', 'team');
+        Service::loadModels('rally', 'rally');
+        $date = TK_Text::timeFormat($_POST['date'],'Y-m-d H:i:s','d-m-Y');
+        if(empty($date)){
+            $result['result'] = 'no data';
+            echo json_encode($result);
+            exit;
+        }
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        $peopleService = parent::getService('people','people');
+        $carService = parent::getService('car','car');
+        $freeDrivers = $peopleService->getFreeDriversFriendly($user['Team'],$date,Doctrine_Core::HYDRATE_ARRAY);
+        $freePilots = $peopleService->getFreePilotsFriendly($user['Team'],$date,Doctrine_Core::HYDRATE_ARRAY);
+        $freeCars = $carService->getFreeCarsFriendly($user['Team'],$date,Doctrine_Core::HYDRATE_ARRAY);
+        
+        $result['result']['message'] = '';
+        if(empty($freeDrivers)){
+            $result['result']['message'] .= 'No available drivers for this date<br />'; 
+        }
+        if(empty($freePilots)){
+            $result['result']['message'] .= 'No available pilots for this date<br />'; 
+        }
+        if(empty($freeCars)){
+            $result['result']['message'] .= 'No available cars for this date<br />'; 
+        }
+        if(strlen($result['result']['message'])){
+            $result['result']['message'] = '<div class="alert alert-danger alert-dismissable">
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            '.$result['result']['message'].'
+        </div>';
+            
+        }
+        
+        
+        $joinForm = $this->getForm('rally','JoinRally');
+        $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,true);
+        $joinForm->getElement('pilot_id')->addMultiOptions($freePilots,true);
+        $joinForm->getElement('car_id')->addMultiOptions($freeCars,true);
+        
+        $result['result']['driver_id'] = $joinForm->getElement('driver_id')->renderElement();
+        $result['result']['pilot_id'] = $joinForm->getElement('pilot_id')->renderElement();
+        $result['result']['car_id'] = $joinForm->getElement('car_id')->renderElement();
+        $result['result']['success'] = "true";
+        echo json_encode($result);
+        exit;
+//        var_dump('t');exit;
+    }
     
     public function removeFriendlyRallyParticipant(){
         
@@ -279,18 +336,7 @@ class Rally_Index extends Controller{
         $this->view->assign('rallyResults',$rallyResults);
     }
     
-    public function checkAvailability(){
-        $date = $_POST['date'];
-        $driver_id = $_POST['driver_id'];
-        $pilot_id = $_POST['pilot_id'];
-        $car_id = $_POST['car_id'];
-        if(empty($date)){
-            $result['result'] = 'no data';
-        }
-        echo json_encode($result);
-        exit;
-//        var_dump('t');exit;
-    }
+    
     
     
 }

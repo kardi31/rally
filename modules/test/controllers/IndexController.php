@@ -21,6 +21,7 @@ class Test_Index extends Controller{
         $randomNumber = rand(1000000,1200000);
         $_POST['password'] = "portal";
         $_POST['email'] = "test_".$randomNumber."@kardimobile.pl";
+        $_POST['username'] = "test_".$randomNumber."@kardimobile.pl";
         $user = $userContr->register();
         $GLOBALS['urlParams']['token'] = $user['token'];
         $userContr->activate();
@@ -49,6 +50,36 @@ class Test_Index extends Controller{
             $values['pilot_id'] = $randomTeam['pilot1_id'];
             $values['risk'] = $risks[array_rand($risks)];
             $rallyService->saveRallyCrew($values,$randomRally,$randomTeam);
+        endforeach;
+        Zend_Debug::dump($randomTeams);exit;
+        
+    }
+    
+    public function rallyFriendlyTest(){
+        Service::loadModels('user', 'user');
+        require_once(BASE_PATH."/modules/rally/controllers/TestController.php");
+        $trainingService = parent::getService('people','training');
+//        $rallyContr = new Rally_Test();
+//        $rallyContr->showRally();
+        
+        Service::loadModels('team', 'team');
+        Service::loadModels('car', 'car');
+        $teamService = parent::getService('team','team');
+        $rallyService = parent::getService('rally','rally');
+        
+        $risks = Rally_Model_Doctrine_Rally::getFormRisks();
+               
+        $randomTeams = $teamService->selectRandomTeams(15,Doctrine_Core::HYDRATE_ARRAY);
+        $friendly = $rallyService->createRandomFriendly($randomTeams[0]['user_id']);
+        foreach($randomTeams as $randomTeam):
+            $values=array();
+            $values['car_id'] = $randomTeam['car1_id'];
+            $values['driver_id'] = $randomTeam['driver1_id'];
+            $values['pilot_id'] = $randomTeam['pilot1_id'];
+            $values['risk'] = $risks[array_rand($risks)];
+            $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$randomTeam);
+            $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$randomTeam['user_id']);
+//            $rallyService->saveRallyCrew($values,$randomRally,$randomTeam);
         endforeach;
         Zend_Debug::dump($randomTeams);exit;
         

@@ -59,6 +59,7 @@ class TeamService extends Service{
     
     public function selectRandomTeams($quantity,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->teamTable->createQuery('t');
+        $q->innerJoin('t.User u');
         $q->where('t.driver1_id IS NOT NULL');
         $q->andWhere('t.pilot1_id IS NOT NULL');
         $q->andWhere('t.car1_id IS NOT NULL');

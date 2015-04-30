@@ -78,7 +78,7 @@ class PeopleService extends Service{
 	$q->addWhere('t.id = ?',$team['id']);
         $q->addWhere('p.job = "driver"');
         if(!is_null($date))
-            $q->addWhere('r.friendly != 1 OR (r.friendly = 1 and (r.date NOT like ? or r.date IS NULL))',substr($date,0,10)."%");
+            $q->addWhere('r.id IS NULL or (r.friendly != 1 OR (r.friendly = 1 and (r.date NOT like ? or r.date IS NULL)))',substr($date,0,10)."%");
 	return $q->execute(array(),$hydrationMode);
     }
     
@@ -91,7 +91,7 @@ class PeopleService extends Service{
         $q->addWhere('p.job = "pilot"');
 	$q->addWhere('t.id = ?',$team['id']);
         if(!is_null($date))
-            $q->addWhere('r.friendly != 1 OR (r.friendly = 1 and (r.date NOT like ? or r.date IS NULL))',substr($date,0,10)."%");
+            $q->addWhere('r.id IS NULL or (r.friendly != 1 OR (r.friendly = 1 and (r.date NOT like ? or r.date IS NULL)))',substr($date,0,10)."%");
 //	
 	return $q->execute(array(),$hydrationMode);
     }

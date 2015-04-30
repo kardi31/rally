@@ -80,12 +80,11 @@ class User_Test extends Controller{
 	    $league = $leagueService->appendTeamToLeague($team['id']);
 	    $league_level = $league['League']['league_level'];
 	    $carModel = $carService->getRandomLeagueCar($league_level);
-	    $team['Car1'] = $carService->createNewTeamCar($carModel);
+	    $team['Car1'] = $carService->createNewTeamCar($carModel,$team['id']);
             $team['Driver1'] = $peopleService->createRandomDriver($league_level);
             $team['Pilot1'] = $peopleService->createRandomPilot($league_level);
 	    $team->set('league_name',$league['league_name']);
 	    $team->save();
-            
             $team->get('Pilot1')->set('team_id',$team['id']);
             $team->get('Driver1')->set('team_id',$team['id']);
             $team->save();

@@ -13,6 +13,7 @@
 <h2><?php echo $friendly['Rally']['name']; ?></h2>
 <?php echo $friendly['description']; ?>
 <hr />
+<?php if($friendly['invite_only']){ ?>
 Zaproszeni: <br />
 <?php 
 if(isset($invitedUsers)){
@@ -20,16 +21,21 @@ if(isset($invitedUsers)){
         echo $invitedUser['User']['username']."<br />";
     endforeach; 
 }
-    
+   
+}
+else{
+    echo "Ten rajd jest ogólnodostępny do zapisów";
+}
     ?>
 <h3>Uczestnicy</h3>
 <?php foreach($friendly['Participants'] as $participant): 
-    if(!is_null($participant['deleted_at'])){
+    if(is_null($participant['deleted_at'])){
         echo $participant['User']['username']."<br />";
     }
     endforeach; 
-    
-    if(isset($participant)&&$participant){
+    // if rally has participants
+    // and current user is a participant
+    if(isset($participant)&&$participant&&$isParticipant){
         ?>
 <a href="/rally/remove-friendly-rally-participant/slug/<?php echo $friendly['Rally']['slug'];?>">Wyrejestruj sie</a>
 <?php
