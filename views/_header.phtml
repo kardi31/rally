@@ -3,7 +3,8 @@
 <?php 
 if(isset($authenticatedUser)&&$authenticatedUser){ ?>
 <div class="col-md-3">
-    Premium : <?php echo (int)$authenticatedUser['premium']; ?>
+    Premium : <?php echo (int)$authenticatedUser['premium']; ?><br />
+    User : <?php echo $authenticatedUser['username']; ?>
 </div>
 <div class="clearfix"></div>
 <div class="companyAccountMenu">

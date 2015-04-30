@@ -24,9 +24,18 @@ if(isset($invitedUsers)){
     ?>
 <h3>Uczestnicy</h3>
 <?php foreach($friendly['Participants'] as $participant): 
-        echo $participant['User']['username'];
+    if(!is_null($participant['deleted_at'])){
+        echo $participant['User']['username']."<br />";
+    }
+    endforeach; 
     
-    endforeach; ?>
+    if(isset($participant)&&$participant){
+        ?>
+<a href="/rally/remove-friendly-rally-participant/slug/<?php echo $friendly['Rally']['slug'];?>">Wyrejestruj sie</a>
+<?php
+    }
+    
+    ?>
 <?php if(isset($form)){ ?>
 <h2>Invite your friend</h2>
 <form method="POST">

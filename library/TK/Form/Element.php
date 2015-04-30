@@ -1,6 +1,7 @@
 <?php
 
 require_once(BASE_PATH."/library/TK/Form/Radio.php");
+require_once(BASE_PATH."/library/TK/Form/Select.php");
 
 class Element{
          protected $elementDisplay;
@@ -44,16 +45,7 @@ class Element{
             $this->elementDisplay .= "<input value=".$this->label." name='".$this->name."' id='".$this->name."' type='".$this->type."' />";
             $this->elementDisplay .= "</div>";
 	elseif($this->type=="select"):
-            $this->elementDisplay .= "<select ".$this->renderParams()."  class='".$this->renderClasses()."'  name='".$this->name."' id='".$this->name."'>";
-	    if(count($this->multiOptions)>0&&key_exists($this->name, $this->multiOptions)):
-		foreach($this->multiOptions[$this->name] as $key => $value):
-		    $this->elementDisplay .= "<option ".( $this->getMethodVariable($this->name)==$key ? ("selected") : '')." "
-		    . "".( (key_exists('selected', $this->options)&&$this->options['selected']==$key) ? ("selected") : '')." "
-		    . "value='".$key."' id='option_".$key."' >".$value."</option>";
-		endforeach;
-	    endif; 
-	    $this->elementDisplay .= "</select>";
-            $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
+            
         elseif($this->type=="checkbox"):
             $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."1' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
             $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
@@ -149,29 +141,7 @@ class Element{
         $this->method = $method;
     }
     
-    public function addMultiOptions($options,$emptyOption = false){
-	
-	if(count($options)==0)
-	    return ;
-	
-	// set pointer to begining of array
-	reset($options);
-	$first_value = current($options);
-	if($emptyOption)
-	    $this->multiOptions[$this->name][] = '';
-	// if as a value we get an array then first col is a key and second is a value
-	if(is_array($first_value)):
-	    $keys = array_keys($first_value);
-	    foreach($options as $key => $value):
-		$this->multiOptions[$this->name][$value[$keys[0]]] = $value[$keys[1]];
-	    endforeach;
-	else:
-	    foreach($options as $key => $value):
-		$this->multiOptions[$this->name][$value] = $value;
-	    endforeach;
-	endif;    
-	
-    }
+    
         
     public function validateElement(){
         if(!$this->isSubmit())

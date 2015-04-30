@@ -30,6 +30,9 @@ class Form extends Element{
         if($type == "radio"){
             $element = new Radio($type,$name,$options,$label);
         }
+        elseif($type == "select"){
+            $element = new Select($type,$name,$options,$label);
+        }
         else{
             $element = new Element($type,$name,$options,$label);
         }

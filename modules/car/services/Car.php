@@ -71,7 +71,8 @@ class CarService extends Service{
 	$q->leftJoin('c.CarRallies cr');
 	$q->leftJoin('cr.Rally r');
 	$q->addWhere('t.id = ?',$team['id']);
-        $q->addWhere('r.friendly != 1 OR (r.friendly = 1 and (r.date NOT like ? or r.date IS NULL))',substr($date,0,10)."%");  
+        if(!is_null($date))
+            $q->addWhere('r.friendly != 1 OR (r.friendly = 1 and (r.date NOT like ? or r.date IS NULL))',substr($date,0,10)."%");  
 	return $q->execute(array(),$hydrationMode);
     }
     

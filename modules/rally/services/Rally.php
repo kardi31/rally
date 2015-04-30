@@ -36,7 +36,7 @@ class RallyService extends Service{
         $this->resultTable = parent::getTable('rally','result');
         $this->friendlyTable = parent::getTable('rally','friendly');
         $this->friendlyInvitationsTable = parent::getTable('rally','friendlyInvitations');
-        $this->friendlyParicipantsTable = parent::getTable('rally','friendlyParticipants');
+        $this->friendlyParticipantsTable = parent::getTable('rally','friendlyParticipants');
         $this->accidentTable = parent::getTable('rally','accident');
     }
     
@@ -594,6 +594,7 @@ class RallyService extends Service{
         $q->leftJoin('fi.User u');
         $q->select('u.username,fi.id');
         $q->addWhere('fi.friendly_id = ?',$friendly['id']);
+        $q->addWhere('fi.deleted_at IS NULL');
 	return $q->execute(array(),$hydrationMode);
     }
     
@@ -603,6 +604,17 @@ class RallyService extends Service{
         $q->select('u.username,fi.id');
         $q->addWhere('fi.friendly_id = ?',$friendly_id);
         $q->addWhere('u.username like ?',$username);
+        $q->addWhere('fi.deleted_at IS NULL');
+	return $q->fetchOne(array(),$hydrationMode);
+    }
+    
+    public function getFriendlyParticipant($friendly_id,$username,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->friendlyParticipantsTable->createQuery('fp');
+        $q->leftJoin('fp.User u');
+        $q->select('u.username,fp.id');
+        $q->addWhere('fp.friendly_id = ?',$friendly_id);
+        $q->addWhere('u.username like ?',$username);
+        $q->addWhere('fp.deleted_at IS NULL');
 	return $q->fetchOne(array(),$hydrationMode);
     }
     
@@ -615,7 +627,7 @@ class RallyService extends Service{
     }
     
     public function saveCrewToFriendlyRally($friendly_id,$crew_id,$user_id){
-        $invitation = $this->friendlyParicipantsTable->getRecord();
+        $invitation = $this->friendlyParticipantsTable->getRecord();
         $invitation->user_id = $user_id;
         $invitation->friendly_id = $friendly_id;
         $invitation->crew_id = $crew_id;

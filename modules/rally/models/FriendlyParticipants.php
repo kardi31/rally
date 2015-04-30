@@ -18,5 +18,9 @@ class Rally_Model_Doctrine_FriendlyParticipants extends Rally_Model_Doctrine_Bas
         $this->hasOne('User_Model_Doctrine_User as User', array(
              'local' => 'user_id',
              'foreign' => 'id'));
+        
+        $this->hasOne('Rally_Model_Doctrine_Crew as Crew', array(
+             'local' => 'crew_id',
+             'foreign' => 'id'));
     }
 }
