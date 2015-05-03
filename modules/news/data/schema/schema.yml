@@ -1,0 +1,25 @@
+options:
+  type: MyISAM
+  collate: utf8_general_ci
+  charset: utf8
+News:
+  tableName: news_news
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    title:
+      type: string(255)
+    slug:
+      type: string(255)
+    content:
+      type: text
+    publish_date:
+      type: datetime
+    visible:
+      type: boolean
+      default: 1
