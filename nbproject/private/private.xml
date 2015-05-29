@@ -3,32 +3,35 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ral/public/assets/global/scripts/metronic.js</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/FriendlyInvitations.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/list-friendly-rally.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Rally.php</file>
-            <file>file:/C:/xampp/htdocs/ral/public/assets/admin/pages/scripts/components-pickers.js</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/FriendlyParticipants.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Form.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/FriendlyParticipantsTable.php</file>
-            <file>file:/C:/xampp/htdocs/ral/library/TK/Controller.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-friendly-rally.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/form/InviteFriendly.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Prizes.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/BaseFriendlyParticipants.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/form/CreateFriendly.php</file>
-            <file>file:/C:/xampp/htdocs/ral/views/_header.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/BaseFriendlyInvitations.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/form/JoinRally.php</file>
-            <file>file:/C:/xampp/htdocs/ral/doctrine-module-win.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/car/services/Car.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/people/data/schema/schema.yml</file>
-            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Element.php</file>
-            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Select.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/people/services/People.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/create-friendly-rally.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/data/schema/schema.yml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/views/index/show-friendly-rally.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/user/controllers/IndexController.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/controllers/AdminController.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/user/services/User.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/controllers/IndexController.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/services/Rally.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/data/schema/schema.yml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/BigAwards.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/FriendlyInvitations.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/form/InviteFriendly.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/views/index/list-friendly-rally.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/notes.txt</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/views/index/create-friendly-rally.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/people/services/People.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/car/services/Car.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/my-cars.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/car/controllers/IndexController.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/car/views/index/sell-car.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/index/views/admin/index.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/market/controllers/IndexController.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/bid-car.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/bid-player.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/people/controllers/IndexController.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/people/views/index/sell-player.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/test/controllers/IndexController.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/user/controllers/TestController.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/team/services/Team.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/controllers/TestController.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/views/index/rally-result.phtml</file>
         </group>
     </open-files>
 </project-private>

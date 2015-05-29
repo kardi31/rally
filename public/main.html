@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="/js/jquery-2.1.3.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<!--<link rel="stylesheet" type="text/css" media="all" href="/css/custom.css">-->
+<link rel="stylesheet" type="text/css" media="all" href="/css/bootstrap.css">
+    </head>
+    <body>
+        <style>
+           /*
+           0. Global elements
+           1. Main Page
+            1.1 Header
+            1.2 Content
+           
+           */
+           /*
+           0. Global elements
+           
+           */
+           
+    input.textInput{
+        background:#a1a1a1;
+        border:0px;
+        color:#000;
+        padding:2px;
+        font-size:18px;
+        text-align:center;
+        width:130px;
+    }
+               input[type="text"].textInput::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #000;
+}
+input[type="text"].textInput:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #000;
+   opacity:  1;
+}
+input[type="text"].textInput::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #000;
+   opacity:  1;
+}
+input[type="text"].textInput:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #000;
+}
+a{
+    color:#f3f3f3;
+}
+            /*
+            1.1 MAIN HEADER
+            */
+            html,body{
+                padding:0px;
+                margin:0px;
+            }
+            body{
+                font-family: 'Lato';
+    color:#f3f3f3;
+            }
+    header{
+         background: #333;
+        display:block;
+        height:110px;
+    }
+    .mainContainer{
+        width:1024px;
+        margin:0 auto;
+    }
+    .logo{
+        margin-top:28px;
+        margin-left:40px;
+    }
+    .topToolbar{
+        float:right;
+        margin-right:40px;
+        margin-top:28px;
+    }
+    .logIn{
+        background: #00a651;
+        border-radius:0px;
+        color:#fff;
+        font-size:18px;
+        width:120px;
+          padding: 0px 10px;
+  margin-top: -4px;
+    }
+
+#rememberMe{
+    margin-top: 0px;
+  vertical-align: middle;
+}
+label[for="rememberMe"],.topToolbarBottom a{
+    font-weight:normal;
+    font-size:12px;
+}
+.topToolbarBottom a{
+    margin-left:70px;
+    font-size:12px;
+}
+.flagSelect,.topToolbar button,.topToolbar input[type="text"]:not(:first-of-type){
+    margin-left:20px;
+}
+    
+.topToolbarBottom{
+    margin-top:8px;
+}
+
+/*
+1.2 MAIN PAGE CONTENT
+*/
+
+.mainContent{
+    background:url('/images/layout/car_background.jpg');
+    background-size:100% 100%;
+    display:block;
+    min-height:500px;
+    padding-bottom:50px;
+}
+.mainPageBox{
+    background:rgba(34, 33, 33, 0.85);
+    margin-top:22px;
+    padding:40px 42px;
+}
+.mainPageBox h2{
+    margin-top:0px;
+    text-align:center;
+    font-size:24px;
+    margin-bottom:40px;
+}
+.leftMainPageBox img{
+    width: 300px;
+  margin-top: 20px;
+  margin-bottom:20px;
+}
+.leftMainPageBox ul{
+    margin-top:15px;
+}
+.leftMainPageBox{
+    margin-left:40px;
+}
+.rightMainPageBox{
+    margin-right:40px;
+}
+.rightMainPageBox label{
+    display:block;
+}
+.rightMainPageBox input:not([type="checkbox"]){
+    display:block;
+    width:220px;
+    margin-bottom:20px;
+}
+.rightMainPageBox .acceptRules #acceptRules{
+    margin:0px;
+    vertical-align:middle;
+}
+.rightMainPageBox .acceptRules label{
+    display:inline;
+}
+.rightMainPageBox .acceptRules{
+    margin-bottom:20px;
+    display:block;
+}
+
+.rightMainPageBox button{
+    margin:0 auto;
+    display:block;
+}
+
+</style>
+<div class="mainContainer">
+    <header>
+            <img src="/images/layout/logo-fastrally.png" class="logo" />
+            <div class="topToolbar">
+                <div class='topToolbarTop'>
+                    <input type="text" name="login" class="textInput" placeholder='Login'/>
+                    <input type="text" name="passowrd" class="textInput" placeholder='Password' />
+                    <button type="button" class='logIn btn'>LOGIN</button>
+                    <span class='flagSelect'>
+                        <img src='/images/layout/gb.png' />
+                    </span>
+                </div>
+                <div class='topToolbarBottom'>
+                    <input type="checkbox" id='rememberMe'/> 
+                    <label for='rememberMe'>Remember me</label>
+                    <a href="#">Can't login?</a>
+                
+                </div>
+<!--                <select>
+                    <option value='gb'><img src='/images/layout/gb.png' /></option>
+                    <option value='gb'><img src='/images/layout/pl.png' /></option>
+                </select>-->
+            </div>
+    </header>
+    <div class="mainContent">
+        <div class="col-md-12">
+            <div class="col-md-6 mainPageBox leftMainPageBox">
+                <h2>ABOUT</h2>
+                The game Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus sagittis purus sit amet ultrices. In auctor, justo vitae rutrum convallis, arcu libero scelerisque ex, at lobortis metus ligula in tellus. In quis elit eros. Praesent semper dignissim ullamcorper. Phasellus ornare luctus porttitor. Fusce pharetra porta neque, quis tincidunt tellus vehicula ac. Quisque suscipit venenatis leo in vulputate:
+                <ul>
+                    <li>felis tellus mollis orci,</li>
+                    <li>sed rhoncus sapien,</li>
+                    <li>nunc eget odio.</li>
+                </ul>
+                Lorem ipsum dolor sit amet,
+                <img src="/images/layout/fotolia_78706818.jpg" />
+                <div class="clearfix"></div>
+                id posuere enim iaculis at. Vestibulum ante ipsum primis in faucibus leifend sapien, in viverra leo. 
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-4 mainPageBox rightMainPageBox">
+                <h2>REGISTRATION</h2>
+                    <label for="login">Login<sup>*</sup></label>
+                    <input type="text" name="login" class="textInput" />
+                    <label for="login">Password<sup>*</sup></label>
+                    <input type="text" name="passowrd" class="textInput"  />
+                    <label for="login">Repeat password<sup>*</sup></label>
+                    <input type="text" name="passowrd" class="textInput" />
+                    <label for="login">E-mail address<sup>*</sup></label>
+                    <input type="text" name="passowrd" class="textInput" />
+                    <span class="acceptRules">
+                        <input type="checkbox" id='acceptRules'/> 
+                        <label for='acceptRules'>I accept rules</label>
+                    </span>
+                    
+                    <button type="button" class='logIn btn'>REGISTER</button>
+            </div>
+        </div>
+    <div class="clearfix"></div>
+    </div>
+</div>
+        
+    </body>
+</html>
