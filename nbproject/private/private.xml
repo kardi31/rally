@@ -7,6 +7,7 @@
             <file>file:/C:/xampp/htdocs/ral/modules/rally/models/FriendlyInvitations.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/list-friendly-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Rally.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/news/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/public/assets/admin/pages/scripts/components-pickers.js</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/models/FriendlyParticipants.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
@@ -22,12 +23,16 @@
             <file>file:/C:/xampp/htdocs/ral/modules/rally/models/BaseFriendlyInvitations.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/form/JoinRally.php</file>
             <file>file:/C:/xampp/htdocs/ral/doctrine-module-win.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/news/data/schema/schema.yml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/car/services/Car.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/people/data/schema/schema.yml</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Element.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/form/Offer.php</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_head.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Select.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/people/services/People.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/create-friendly-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/layout/layout.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/data/schema/schema.yml</file>
         </group>
     </open-files>
