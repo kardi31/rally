@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/services/Rally.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/views/index/list-friendly-rally.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/people/controllers/IndexController.php</file>
@@ -37,6 +38,39 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/people/views/index/sell-player.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/views/_head.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/models/BigAwards.php</file>
+=======
+            <file>file:/C:/xampp/htdocs/ral/public/assets/global/scripts/metronic.js</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/FriendlyInvitations.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/list-friendly-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Rally.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/news/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/assets/admin/pages/scripts/components-pickers.js</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/FriendlyParticipants.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Form.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/FriendlyParticipantsTable.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Controller.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-friendly-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/form/InviteFriendly.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Prizes.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/BaseFriendlyParticipants.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/form/CreateFriendly.php</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_header.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/BaseFriendlyInvitations.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/form/JoinRally.php</file>
+            <file>file:/C:/xampp/htdocs/ral/doctrine-module-win.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/news/data/schema/schema.yml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/services/Car.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/people/data/schema/schema.yml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Element.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/form/Offer.php</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_head.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Select.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/people/services/People.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/create-friendly-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/layout/layout.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/data/schema/schema.yml</file>
+>>>>>>> 5d4ff6f304b7ac2a01078a0bd00caf8a84c18859
         </group>
     </open-files>
 </project-private>
