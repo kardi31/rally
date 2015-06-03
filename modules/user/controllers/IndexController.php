@@ -169,5 +169,22 @@ class User_Index extends Controller{
         echo json_encode($responseUsers);
     }
     
+    public function inviteFriend(){
+        $view = $this->view;
+        $view->setNoRender();
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        $friendsService = parent::getService('user','friends');
+        
+        $id = filter_var($_POST['id'],FILTER_VALIDATE_INT);
+        
+        $friendsService->inviteUser($id,$user['id']);
+        
+        TK_Helper::redirect($_SERVER['HTTP_REFERER']);
+    }
+    
 }
 ?>

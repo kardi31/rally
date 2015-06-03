@@ -6,6 +6,7 @@ class init{
          require(BASE_PATH.'/library/TK/View.php');
          require(BASE_PATH.'/library/TK/Service.php');
          require(BASE_PATH.'/library/TK/Helper.php');
+         require(BASE_PATH.'/library/TK/Paginator.php');
          require(BASE_PATH.'/library/TK/Form/Form.php');
          require(BASE_PATH.'/library/TK/Text.php');
          require(BASE_PATH.'/library/TK/Layout.php');

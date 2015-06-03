@@ -5,8 +5,17 @@ class Layout{
     protected $variables;
     public $content;
     public $layoutName;
+    public $responseSegment;
     public $view;
+    public $controller;
+    private static $instance = NULL;
     
+    static public function getInstance()
+    {
+       if (self::$instance === NULL)
+          self::$instance = new Layout();
+       return self::$instance;
+    }
     
     public function __construct() {
 	$this->layoutName = 'layout';
@@ -34,5 +43,13 @@ class Layout{
     public function showFile($fileName){
 	return $this->view->showFile($fileName);
     }
+    
+    public function checkResponseSegments(){
+        if($this->layoutName == 'layout'){
+            $this->controller->setResponseSegment('friends','index','index','show-friends'); 
+            $this->controller->setResponseSegment('forum','forum','index','show-favourite-forums'); 
+        }
+    }
+    
     
 }

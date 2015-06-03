@@ -14,7 +14,7 @@ $connection["library"] =
   );
   $connection["connection_string"]= "mysql://root:@localhost/ral";
   $connection["connection_name"]= "doctrine";
-  $connection["yaml_schema_path"]= 'C:/xampp/htdocs/ral/modules/'.$moduleName.'/data/schema';
+  $connection["yaml_schema_path"]= 'C:/xampp2/htdocs/ral/modules/'.$moduleName.'/data/schema';
   $connection["generate_models_options"]=
   array(
     "pearStyle"=> false,
@@ -54,16 +54,16 @@ $connection["library"] =
    $modelDir = scandir($dir . '/modules/');
    foreach($modelDir as $module):
        if(strlen($module)>2){
-       Doctrine_Core::loadModels("C:/xampp/htdocs/ral/modules/team/models");
-       Doctrine_Core::loadModels("C:/xampp/htdocs/ral/modules/people/models");
-       Doctrine_Core::loadModels("C:/xampp/htdocs/ral/modules/car/models");
-       Doctrine_Core::loadModels("C:/xampp/htdocs/ral/modules/rally/models");
-       Doctrine_Core::loadModels("C:/xampp/htdocs/ral/modules/league/models");
-       Doctrine_Core::loadModels("C:/xampp/htdocs/ral/modules/user/models");
+       Doctrine_Core::loadModels("C:/xampp2/htdocs/ral/modules/team/models");
+       Doctrine_Core::loadModels("C:/xampp2/htdocs/ral/modules/people/models");
+       Doctrine_Core::loadModels("C:/xampp2/htdocs/ral/modules/car/models");
+       Doctrine_Core::loadModels("C:/xampp2/htdocs/ral/modules/rally/models");
+       Doctrine_Core::loadModels("C:/xampp2/htdocs/ral/modules/league/models");
+       Doctrine_Core::loadModels("C:/xampp2/htdocs/ral/modules/user/models");
        }
    endforeach;
    
-  $connection["models_path"] = "C:/xampp/htdocs/ral/modules/".$moduleName."/models";
+  $connection["models_path"] = "C:/xampp2/htdocs/ral/modules/".$moduleName."/models";
 
   $cli = new Doctrine_Cli($connection); 
   

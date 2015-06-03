@@ -20,6 +20,14 @@ foreach($categories as $category):
 ?>
         Number of posts: <?php echo $category['post_count']; ?><br />
         Number of threads: <?php echo $category['thread_count']; ?><br />
+        <?php if(is_array($favouriteCategories)&&in_array($category['id'], $favouriteCategories)){ ?>
+            Ta kategoria jest już jako twoja ulubiona. <a href="/forum/remove-favourite-forum/id/<?php echo $category['id']; ?>/">Remove category from favourites</a>
+        <?php }
+        elseif(is_string($favouriteCategories)&&$favouriteCategories==$category['id']){ ?>
+            Ta kategoria jest już jako twoja ulubiona. <a href="/forum/remove-favourite-forum/id/<?php echo $category['id']; ?>/">Remove category from favourites</a>
+        <?php } else { ?>
+            <a href="/forum/add-favourite-forum/id/<?php echo $category['id']; ?>/">Add category to favourite</a>
+        <?php } ?>
 <hr />
 <?php
 

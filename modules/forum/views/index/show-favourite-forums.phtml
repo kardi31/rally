@@ -1,0 +1,23 @@
+
+<h3>Last forums posts</h3>
+<?php foreach($favouriteCategories as $favourite): ?>
+
+<strong><?php echo $favourite['Category']['name']; ?></strong>
+<?php $thread = $lastThreads[$favourite['category_id']];
+if(!$thread) continue;
+?>
+    <h3><a href="/forum/show-thread/id/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a></h3>
+    
+    <?php if(isset($thread['Posts'][0])&&!empty($thread['Posts'][0])): ?>
+        Last post: 
+        <?php echo TK_Text::timeFormat($thread['Posts'][0]['created_at'],'d/m/Y H:i'); ?>
+        by
+        '<?php echo $thread['Posts'][0]['User']['username']; ?>'
+        <br />
+    <?php else : ?>
+        Last post : <?php echo TK_Text::timeFormat($thread['created_at'],'d/m/Y H:i'); ?> by
+        '<?php echo $thread['User']['username']; ?>' <br />
+    <?php endif; ?>
+        
+<hr />
+<?php endforeach; ?>

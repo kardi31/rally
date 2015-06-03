@@ -163,6 +163,18 @@ class TK_Text{
 
 	return $randomfloat;
     }
+    
+    public static function convertViewToActionName($viewName){
+        $parts = explode('-',$viewName);
+        $actionName = "";
+        foreach($parts as $part):
+            $part = ucfirst($part);
+            $actionName .= $part;
+        endforeach;
+        $actionName = lcfirst($actionName);
+        
+        return $actionName;
+    }
 }
 
 /*

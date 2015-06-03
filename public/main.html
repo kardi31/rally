@@ -11,9 +11,11 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script src="/js/jquery-2.1.3.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 <!--<link rel="stylesheet" type="text/css" media="all" href="/css/custom.css">-->
 <link rel="stylesheet" type="text/css" media="all" href="/css/bootstrap.css">
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     </head>
     <body>
         <style>
@@ -22,13 +24,20 @@ and open the template in the editor.
            1. Main Page
             1.1 Header
             1.2 Content
-           
+            1.3 Footer
            */
            /*
            0. Global elements
            
            */
            
+           a:hover{
+               color:#f3f3f3;
+           }
+           .btn{
+               
+                font-family: 'Lato' !important;
+           }
     input.textInput{
         background:#a1a1a1;
         border:0px;
@@ -59,8 +68,10 @@ a{
             1.1 MAIN HEADER
             */
             html,body{
+    background:#333;
                 padding:0px;
                 margin:0px;
+                /*background:#333;*/
             }
             body{
                 font-family: 'Lato';
@@ -90,6 +101,7 @@ a{
         color:#fff;
         font-size:18px;
         width:120px;
+                /*font-family: 'Lato';*/
           padding: 0px 10px;
   margin-top: -4px;
     }
@@ -124,6 +136,7 @@ label[for="rememberMe"],.topToolbarBottom a{
     display:block;
     min-height:500px;
     padding-bottom:50px;
+    border-radius:20px;
 }
 .mainPageBox{
     background:rgba(34, 33, 33, 0.85);
@@ -173,6 +186,66 @@ label[for="rememberMe"],.topToolbarBottom a{
 .rightMainPageBox button{
     margin:0 auto;
     display:block;
+      width: auto;
+  padding: 5px 35px;
+}
+
+/* 
+1.3 Footer
+*/
+
+footer{
+    background:#333;
+    padding:23px 100px;
+    
+}
+.copyright{
+    color:#919090;
+    float:left;
+}
+.footerMenu{
+    float:right;
+}
+
+.footerMenu ul{
+    display:inline;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.footerMenu ul li{
+    display:inline-block;
+}
+
+.footerMenu ul li a{
+    display:block;
+    padding:0px 5px;
+}
+
+
+.footerMenu .social_icon_link{
+    width:19px;
+    height:19px;
+    text-align:center;
+    display: inline-block;
+    margin-top:-5px;
+}
+
+.footerMenu .social_icon_link i{
+    width:15px;
+    height:15px;
+    text-align:center;
+}
+
+.footerMenu a.fb{
+    background:#3b5998;
+    margin-right:7px;
+    margin-left:25px;
+}
+
+.footerMenu a.twitter{
+    background:#00aced;
 }
 
 </style>
@@ -236,6 +309,35 @@ label[for="rememberMe"],.topToolbarBottom a{
         </div>
     <div class="clearfix"></div>
     </div>
+    <footer>
+        <div class="copyright">Copyright &copy; 2015 by Kardi Mobile</div>
+        <div class="footerMenu">
+            <ul>
+                <li>
+                    <a href="#">Forum</a>
+                </li>
+                <li>
+                    <a href="#">How to play</a>
+                </li>
+                <li>
+                    <a href="#">Privacy policy</a>
+                </li>
+                <li>
+                    <a href="#">Rules</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+            <a href="#" class="fb social_icon_link">
+                <i class="fb fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="twitter social_icon_link">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="clearfix"></div>
+    </footer>
 </div>
         
     </body>

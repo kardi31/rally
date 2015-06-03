@@ -12,6 +12,7 @@
  * @property boolean $active
  * @property Doctrine_Collection $Threads
  * @property Doctrine_Collection $Category
+ * @property Doctrine_Collection $Favourites
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -58,6 +59,10 @@ abstract class Forum_Model_Doctrine_BaseCategory extends Doctrine_Record
              'foreign' => 'category_id'));
 
         $this->hasMany('Forum_Model_Doctrine_Post as Category', array(
+             'local' => 'id',
+             'foreign' => 'category_id'));
+
+        $this->hasMany('Forum_Model_Doctrine_Favourite as Favourites', array(
              'local' => 'id',
              'foreign' => 'category_id'));
 

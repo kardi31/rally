@@ -77,5 +77,17 @@ class UserService extends Service{
         return $q->execute(array(),$hydrationMode);
     }
     
+    
+    public function searchForUsers($username,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $username = strtolower($username);
+        $q = $this->userTable->createQuery('u');
+        $q->leftJoin('u.Team t');
+        $q->select('u.username,t.name');
+        $q->addWhere("u.username like ?",$username."%");
+        $q->orderBy('u.username ASC');
+        $q = TK_Paginator::paginate($q,10);
+        return $q->execute(array(),$hydrationMode);
+    }
+    
 }
 ?>

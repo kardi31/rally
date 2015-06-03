@@ -1,3 +1,5 @@
+<?php 
+if(isset($authenticatedUser)&&$authenticatedUser){ ?>
 <script type="text/javascript">
   $(document).ready(function(){
     // simple jMenu plugin called
@@ -14,15 +16,22 @@
     });
   });
 </script>
-<?php 
-if(isset($authenticatedUser)&&$authenticatedUser){ ?>
 <div class="col-md-3">
     Premium : <?php echo (int)$authenticatedUser['premium']; ?><br />
     User : <?php echo $authenticatedUser['username']; ?>
 </div>
 <div class="clearfix"></div>
-<div class="companyAccountMenu">
-    <ul id="jMenu">
+<!--<div class="companyAccountMenu">-->
+    
+
+    
+<!--    <a href="/account/premium">Premium</a>
+    <a href="/user/logout">Wyloguj</a>-->
+<!--    <a href="/people/create-random-player/type/pilot">Create random pilot</a>
+    <a href="/car/create-random-car">Create random car</a>
+    <a href="/people/create-random-player/type/driver">Create random driver</a>-->
+<!--</div>-->
+<ul id="jMenu">
         <li>
             <a href="#">Office</a>
             <ul>
@@ -136,15 +145,10 @@ if(isset($authenticatedUser)&&$authenticatedUser){ ?>
                 </li>
             </ul>
         </li>
+        <li>
+             <a href="/user/logout">Wyloguj</a>
+        </li>
     </ul>
-
-    
-    <a href="/account/premium">Premium</a>
-    <a href="/user/logout">Wyloguj</a>
-<!--    <a href="/people/create-random-player/type/pilot">Create random pilot</a>
-    <a href="/car/create-random-car">Create random car</a>
-    <a href="/people/create-random-player/type/driver">Create random driver</a>-->
-</div>
     <?php
 }
 else{

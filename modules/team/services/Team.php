@@ -44,6 +44,15 @@ class TeamService extends Service{
         return $this->teamTable->findOneBy($field,$id,$hydrationMode);
     }
     
+    public function getTeamWithLeague($id,$season,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->teamTable->createQuery('t');
+        $q->innerJoin('t.User u');
+        $q->innerJoin('t.Seasons s');
+        $q->where('t.id = ?',$id);
+        $q->andWhere('s.season = ?',$season);
+	return $q->fetchOne(array(),$hydrationMode);
+    }
+    
     public function createRandomTeam($values,$user_id = null){
         if($user_id)
             $values['name'] = "Team_".$user_id;

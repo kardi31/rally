@@ -5,11 +5,18 @@ class View{
     protected $variables;
     public $controller_instance;
     public $render = 1;
+    private static $instance = NULL;
     
     public function __construct() {
 	
     }
     
+    static public function getInstance()
+    {
+       if (self::$instance === NULL)
+          self::$instance = new View();
+       return self::$instance;
+    }
     
     function render($module,$viewName,$zone){
 	if(count($this->variables)>0):

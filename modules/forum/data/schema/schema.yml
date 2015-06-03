@@ -91,3 +91,24 @@ Post:
       type: one
       alias: Thread
       foreignAlias: Posts
+Favourite:
+  tableName: forum_favourite
+  actAs: 
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    user_id:
+      type: integer(11)
+    category_id:
+      type: integer(11)
+  relations:
+    Category:
+      foreign: id
+      local: category_id
+      foreignType: many
+      type: one
+      alias: Category
+      foreignAlias: Favourites

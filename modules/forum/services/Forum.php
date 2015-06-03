@@ -5,6 +5,7 @@ class ForumService extends Service{
     protected $categoryTable;
     protected $postTable;
     protected $threadTable;
+    protected $favouriteTable;
     private static $instance = NULL;
 
     static public function getInstance()
@@ -18,6 +19,7 @@ class ForumService extends Service{
         $this->categoryTable = parent::getTable('forum','category');
         $this->postTable = parent::getTable('forum','post');
         $this->threadTable = parent::getTable('forum','thread');
+        $this->favouriteTable = parent::getTable('forum','favourite');
     }
     
     public function getCategory($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
@@ -65,6 +67,17 @@ class ForumService extends Service{
         $q->addWhere('category_id = ?',$category_id);
         $q->orderBy('p.created_at DESC');
         $q->addWhere('p.active = 1');
+        $q->limit(1);
+	return $q->fetchOne(array(),$hydrationMode);
+    }
+    
+    public function getLastCategoryThread($category_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->threadTable->createQuery('t');
+        $q->leftJoin('t.User u');
+        $q->addSelect('t.*,u.*');
+        $q->addWhere('category_id = ?',$category_id);
+        $q->orderBy('t.created_at DESC');
+        $q->addWhere('t.active = 1');
         $q->limit(1);
 	return $q->fetchOne(array(),$hydrationMode);
     }
@@ -127,72 +140,46 @@ class ForumService extends Service{
         return $post;
     }
     
-    public function sortSimpleReport($results){
-        $sortedResult = array('income' => array(),'expense' => array());
-        foreach($results as $result):
-            if($result['income']){
-                $sortedResult['income'][] = $result;
-            }
-            else{
-                $sortedResult['expense'][] = $result;
-            }
-        endforeach;
+    public function addCategoryToFavourite($category,$user){
+                
+        $data = array();
+        $data['category_id'] = $category['id'];
+        $data['user_id'] = $user['id'];
+        $post = $this->favouriteTable->getRecord();
+        $post->fromArray($data);
+        $post->save();
         
-        return $sortedResult;
+        return $post;
     }
     
-    
-    
-    public function getFinanceTypes(){
-        return $this->financeTypes;
-    }
-    
-    public function getAdvancedReport($forum_id,$prevWeek = false){
-        if(!$prevWeek){
-           $dateFrom = date('Y-m-d H:i:s', strtotime('this week monday'));
-           $dateTo = date('Y-m-d H:i:s',strtotime('next week monday'));
+    public function getFavouriteCategories($user_id,$full = false,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->favouriteTable->createQuery('f');
+        if(!$full){
+            $q->select('f.category_id');
         }
         else{
-           $dateFrom = date('Y-m-d H:i:s', strtotime('this week monday - '.$prevWeek.' week'));
-           $dateTo = date('Y-m-d H:i:s',strtotime('next week monday - '.$prevWeek.' week'));
+            $q->select('f.*,u.*,c.*,t.*');
+            $q->leftJoin('f.User u');
+            $q->leftJoin('f.Category c');
+            $q->leftJoin('c.Threads t');
         }
-        
-        
-        $q = $this->financeTable->createQuery('f');
-        $q->addWhere('save_date < ?',$dateTo);
-        $q->addWhere('save_date > ?',$dateFrom);
-        $q->addWhere('forum_id = ?',$forum_id);
-        $q->orderBy('save_date DESC');
-        $q->select('amount,DATE(save_date) as save_date,detailed_type,income,description');
-        return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
-    }
-    
-    public function selectLeagueFullForums($league_name,$current_season = true,$hydrationMode = Doctrine_Core::HYDRATE_RECORD,$limit = false){
-        // get league from current season by default
-        // otherwise use season that is passed as a param
-	if($current_season)
-            $season = LeagueService::getInstance()->getCurrentSeason();
-        else
-            $season = (int)$current_season;
-        $q = $this->categoryTable->createQuery('t');
-        $q->leftJoin('t.Seasons s');
-        $q->addSelect('t.*');
-	$q->where('s.league_name = ?',$league_name);
-        $q->addWhere('s.season = ?',$season);
-        if($limit)
-            $q->limit($limit);
+        $q->addWhere('f.user_id = ?',$user_id);
 	return $q->execute(array(),$hydrationMode);
     }
     
-    public function canAfford($forum,$price){
-        // forum must be an instance of Forum_Model_Doctrine_Forum
-        if(is_integer($forum)){
-            $forum = $this->getForum($forum,'id');
-        }
-        if($forum->cash>=$price)
-            return true;
-        else
-            return false;
+    public function getFavouriteCategory($category_id,$user_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->favouriteTable->createQuery('f');
+        $q->select('f.id');
+        $q->addWhere('f.category_id = ?',$category_id);
+        $q->addWhere('f.user_id = ?',$user_id);
+	return $q->fetchOne(array(),$hydrationMode);
     }
+    
+    public function removeCategoryFromFavourite($category_id,$user_id){
+        $favourite = $this->getFavouriteCategory($category_id,$user_id);
+        $favourite->delete();
+    }
+    
 }
+    
 ?>

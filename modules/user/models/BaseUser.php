@@ -16,6 +16,7 @@
  * @property string $token
  * @property boolean $active
  * @property integer $premium
+ * @property timestamp $last_active
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -72,6 +73,9 @@ abstract class User_Model_Doctrine_BaseUser extends Doctrine_Record
         $this->hasColumn('premium', 'integer', 11, array(
              'type' => 'integer',
              'length' => '11',
+             ));
+        $this->hasColumn('last_active', 'timestamp', null, array(
+             'type' => 'timestamp',
              ));
 
         $this->option('type', 'MyISAM');
