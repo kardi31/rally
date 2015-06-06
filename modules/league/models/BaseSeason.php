@@ -9,7 +9,7 @@
  * @property varchar $league_name
  * @property integer $team_id
  * @property integer $points
- * @property integer $season_id
+ * @property integer $season
  * @property League_Model_Doctrine_League $League
  * 
  * @package    ##PACKAGE##

@@ -79,16 +79,34 @@ class Rally_Index extends Controller{
     
     public function listRally(){
         
+        Service::loadModels('team', 'team');
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        
         $rallyService = parent::getService('rally','rally');
         $rallies = $rallyService->getAllFutureRallies();
+        
+        $futureTeamRallies = $rallyService->getAllFutureTeamRallies($user['Team']['id'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+
         $this->view->assign('rallies',$rallies);
+        $this->view->assign('futureTeamRallies',$futureTeamRallies);
     }
     
     public function listFriendlyRally(){
         
+        Service::loadModels('team', 'team');
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        
         $rallyService = parent::getService('rally','rally');
         $rallies = $rallyService->getAllFutureFriendlyRallies();
+        
+        
+        $futureTeamRallies = $rallyService->getAllFutureTeamFriendlyRallies($user['Team']['id'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+
+        
         $this->view->assign('rallies',$rallies);
+        $this->view->assign('futureTeamRallies',$futureTeamRallies);
     }
     
     public function createFriendlyRally(){
@@ -110,9 +128,9 @@ class Rally_Index extends Controller{
         $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,true);
         $joinForm->getElement('pilot_id')->addMultiOptions($freePilots,true);
         $joinForm->getElement('car_id')->addMultiOptions($freeCars,true);
-            $joinForm->getElement('driver_id')->addParam('disabled');
-            $joinForm->getElement('pilot_id')->addParam('disabled');
-            $joinForm->getElement('car_id')->addParam('disabled');
+        $joinForm->getElement('driver_id')->addParam('disabled');
+        $joinForm->getElement('pilot_id')->addParam('disabled');
+        $joinForm->getElement('car_id')->addParam('disabled');
         $this->view->assign('joinForm',$joinForm);
         
         if($form->isSubmit()){
@@ -121,12 +139,16 @@ class Rally_Index extends Controller{
                 
                 $values = $_POST;
 
-                $friendly = $rallyService->saveFriendlyRally($values,$user);
-                $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
-                $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
+                if(!$userService->checkUserPremium($user['id'],10)){
+                    $this->view->assign('message','You do not have enough premium. Please buy more premium');
+                }
+                else{
+                    $friendly = $rallyService->saveFriendlyRally($values,$user);
+                    $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
+                    $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
 
-                TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
-
+                    TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
+                }
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
         }
