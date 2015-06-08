@@ -10,6 +10,9 @@
 <?php foreach($rallies as $rally): ?>
     <tr>
 	<td>
+            <?php if((is_array($futureTeamRallies)&&in_array($rally['id'],$futureTeamRallies))||$rally['id']==$futureTeamRallies){
+                echo "In rally "; 
+            } ?>
 	    <a href="/rally/show-friendly-rally/slug/<?php echo $rally['slug']; ?>"><?php echo $rally['name'];?></a>
             <?php if($rally['big_awards']==1): ?>
                 <img src="/images/b_letter.gif" alt="Big awards" />

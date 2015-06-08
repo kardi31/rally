@@ -53,8 +53,12 @@
         width:60px;
     }
     </style>
+    <?php if(isset($message)){
+        echo $message;
+    } ?>
 <a href="/rally/list-friendly-rally">Powrót do listy rajdów</a>
 <div>
+    Cost of this = 10 CC <br />
     <form method="POST">
     <label for="name">Name</label>
     <?php echo $form->getElement('name')->renderElement(); ?>

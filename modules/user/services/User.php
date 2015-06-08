@@ -114,5 +114,12 @@ class UserService extends Service{
         return $q->execute(array(),$hydrationMode);
     }
     
+    public function checkUserPremium($user_id,$amount){
+        $user = $this->getUser($user_id);
+        if($user['premium']>=$amount)
+            return true;
+        else
+            return false;
+    }
 }
 ?>

@@ -68,6 +68,15 @@ class RallyService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getAllFutureTeamRallies($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->rallyTable->createQuery('r');
+        $q->leftJoin('r.Crews c');
+	$q->addWhere('r.date > NOW()');
+	$q->orderBy('r.date');
+        $q->addWhere('c.team_id = ?',$team_id);
+        $q->select('r.id');
+	return $q->execute(array(),$hydrationMode);
+    }
     
     public function getAllSurfaces($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $surface = array(
@@ -532,7 +541,18 @@ class RallyService extends Service{
 	$q->addWhere('r.date > NOW()');
 	$q->addWhere('r.friendly = 1');
         $q->addWhere('r.finished = 0');
-//	$q->orderBy('r.date');
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getAllFutureTeamFriendlyRallies($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->rallyTable->createQuery('r');
+        $q->leftJoin('r.Friendly f');
+        $q->leftJoin('r.Crews c');
+        $q->select('r.id');
+	$q->addWhere('r.date > NOW()');
+	$q->addWhere('r.friendly = 1');
+        $q->addWhere('r.finished = 0');
+        $q->addWhere('c.team_id = ?',$team_id);
 	return $q->execute(array(),$hydrationMode);
     }
     
