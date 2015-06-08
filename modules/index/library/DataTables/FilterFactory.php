@@ -8,12 +8,26 @@
 class Index_DataTables_FilterFactory {
     
     public function filterQuery($q,$fields){
+        $result = array();
+        
         
         $q = $this->sortQuery($q, $fields);
         
         $q = $this->filterQ($q,$fields);
         
-        return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
+        $result['totalRecords'] = $q->count();
+        
+        if(strlen($_REQUEST['iDisplayStart'])){
+            $q->offset($_REQUEST['iDisplayStart']);
+        }
+        
+        if(strlen($_REQUEST['iDisplayLength'])){
+            $q->limit($_REQUEST['iDisplayLength']);
+        }
+        
+        $result['query'] = $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
+        
+        return $result;
     }
     
     function sortQuery($q,$fields){

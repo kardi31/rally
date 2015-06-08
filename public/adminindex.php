@@ -13,7 +13,6 @@ if(is_dir("/var/www/ral/modules/'.$module.'/models/")){
 require(BASE_PATH.'/library/TK/init.php');
 
 new init();
-
 error_reporting(E_ALL);
  ini_set('display_errors', 1);
  

@@ -43,24 +43,10 @@ class Index_DataTables_Factory {
         require_once(BASE_PATH.'/modules/index/library/DataTables/FilterFactory.php');
         
         $filterFactory = new Index_DataTables_FilterFactory();
-        
         $returnQuery = $filterFactory->filterQuery($baseQuery,$options['fields']);
         
         return $returnQuery;
         
-        /*
-        $class = $options['class'];
-        unset($options['class']);
-        $object = new $class();
-        $adapterClass = $object->getAdapterClass();
-        $adapter = new $adapterClass($options['request'], $options['table']);
-        if(isset($options['columns']))
-            $adapter->setColumns($options['columns']);
-        if(isset($options['searchFields'])) {
-            $adapter->setSearchFields($options['searchFields']);
-        }
-        $object->setAdapter($adapter);
-        return $object; */
     }
 }
 

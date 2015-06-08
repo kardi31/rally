@@ -23,7 +23,6 @@ class Rally_Admin extends Controller{
      
      public function listRallyData(){
          
-//        header('Content-Type', 'application/json', true);
          $view = $this->view;
          $view->setNoRender();
          $view->requireDTFactory();
@@ -32,15 +31,12 @@ class Rally_Admin extends Controller{
          $results = $dataTables = Index_DataTables_Factory::factory(array(
             'table' => 'Rally_Model_Doctrine_Rally', 
             'class' => 'Rally_DataTables_Rally', 
-            'fields' => array('r.id','r.name','r.date','r.active'),
+            'fields' => array('r.id','r.name','r.date','r.active','r.big_awards','r.league_rally','r.friendly','r.finished'),
         ));
-//         $columns = array('email','role','active');
-//         $q = $table->createQuery('u');
-//         $results = $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
          
-         $iTotalRecords = count($results);
+         $iTotalDisplayRecords = count($results['query']);
          $rows = array();
-         foreach($results as $result):
+         foreach($results['query'] as $result):
              $row = array();
              $row[] = '<input type="checkbox" name="id[]" value="'.$result['id'].'" />';
              $row[] = $result['id'];
@@ -51,38 +47,45 @@ class Rally_Admin extends Controller{
              else
                  $row[] = '<span class="label label-sm label-danger">Nieaktywny</span>';
 	     
+             if($result['big_awards'])
+                 $row[] = '<span class="label label-sm label-success">Tak</span>';
+             else
+                 $row[] = '<span class="label label-sm label-danger">Nie</span>';
+             
+             if($result['league_rally'])
+                 $row[] = '<span class="label label-sm label-success">Tak</span>';
+             else
+                 $row[] = '<span class="label label-sm label-danger">Nie</span>';
+             
+             if($result['friendly'])
+                 $row[] = '<span class="label label-sm label-success">Tak</span>';
+             else
+                 $row[] = '<span class="label label-sm label-danger">Nie</span>';
+             
+             if($result['finished'])
+                 $row[] = '<span class="label label-sm label-success">Tak</span>';
+             else
+                 $row[] = '<span class="label label-sm label-danger">Nie</span>';
+             
              $options = '<a href="/admin/rally/show-rally-crews/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
              $options .='<a href="/admin/rally/show-rally-stages/id/'.$result['id'].'" class="btn default btn-xs blue"><i class="fa fa-list"></i> Stages </a>';
-	     $options .='<a href="/admin/rally/edit-rally/id/'.$result['id'].'" class="btn default btn-xs purple"><i class="fa fa-edit"></i> Edit </a>';
+             if($result['finished']){
+                $options .='<a href="/admin/rally/show-rally-result/id/'.$result['id'].'" class="btn default btn-xs green"><i class="fa fa-list"></i> Results </a>';
+             }
+             $options .='<a href="/admin/rally/edit-rally/id/'.$result['id'].'" class="btn default btn-xs purple"><i class="fa fa-edit"></i> Edit </a>';
 	     
 	     $row[] = $options;
 	     
 	     $rows[] = $row;
          endforeach;
-         
-   // $iDisplayStart = intval($_REQUEST['iDisplayStart']);
   
-         if(isset($_REQUEST['iDisplayLength'])){
-	  $iDisplayLength = intval($_REQUEST['iDisplayLength']);
-	  $iDisplayLength = $iDisplayLength < 0 ? $iTotalRecords : $iDisplayLength; 
-         }
-         else{
-             $iDisplayLength = $iTotalRecords;
-         }
-         
-         if(isset($_REQUEST['sEcho'])){
-	  $sEcho = intval($_REQUEST['sEcho']);
-         }
-         else{
-             $sEcho = 0;
-         }
          $response = array(
             "aaData" => $rows,
-            "sEcho" => $sEcho,
-            "iTotalRecords" => $iTotalRecords,
-            "iTotalDisplayRecords" => $iTotalRecords,
+            "sEcho" => (int)$_REQUEST['sEcho'],
+            "iTotalRecords" => $results['totalRecords'],
+            "iTotalDisplayRecords" => $results['totalRecords']
         );
-//       var_dump(phpversion());exit;
+         
         echo json_encode($response,JSON_UNESCAPED_SLASHES);
      }
      
@@ -101,12 +104,12 @@ class Rally_Admin extends Controller{
          $results = $dataTables = Index_DataTables_Factory::factory(array(
             'table' => 'Rally_Model_Doctrine_Crew', 
             'class' => 'Rally_DataTables_Crew', 
-            'fields' => array('rc.id','t.name','d.last_name','p.last_name','cm.name','rc.created_at','rc.in_race'),
+            'fields' => array('rc.id','t.name','d.last_name','p.last_name','cm.name','rc.created_at','rc.in_race','rc.risk'),
         ));
 	 
-         $iTotalRecords = count($results);
+         $iTotalRecords = count($results['query']);
          $rows = array();
-         foreach($results as $result):
+         foreach($results['query'] as $result):
              $row = array();
              $row[] = '<input type="checkbox" name="id[]" value="'.$result['id'].'">';
              $row[] = $result['id'];
@@ -115,12 +118,6 @@ class Rally_Admin extends Controller{
              $row[] = $result['Pilot']['last_name']." ".$result['Pilot']['first_name'];
              $row[] = $result['Car']['Model']['name'];
              $row[] = TK_Text::timeFormat($result['created_at'],'d/m/Y H:i');
-             if($result['in_race'])
-                 $row[] = '<span class="label label-sm label-success">W wyścigu</span>';
-             else
-                 $row[] = '<span class="label label-sm label-danger">Poza trasą</span>';
-	     
-	     $row[] = $result['risk'];
              $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
             
 	     $row[] = $options;
@@ -128,15 +125,11 @@ class Rally_Admin extends Controller{
 	     $rows[] = $row;
          endforeach;
          
-	  $iDisplayLength = intval($_REQUEST['iDisplayLength']);
-	  $iDisplayLength = $iDisplayLength < 0 ? $iTotalRecords : $iDisplayLength; 
-	  $sEcho = intval($_REQUEST['sEcho']);
-         
-         $response = array(
+	  $response = array(
             "aaData" => $rows,
-            "sEcho" => $sEcho,
+            "sEcho" => (int)$_REQUEST['sEcho'],
             "iTotalRecords" => $iTotalRecords,
-            "iTotalDisplayRecords" => $iTotalRecords,
+            "iTotalDisplayRecords" => $results['totalRecords']
         );
        
         echo json_encode($response);
@@ -166,9 +159,9 @@ class Rally_Admin extends Controller{
             'fields' => array('sr.id','t.name','sr.base_time','a.name','cr.risk','c.name','d.last_name','p.last_name','c.name','sr.out_of_race'),
         ));
 	 
-         $iTotalRecords = count($results);
+         $iTotalRecords = count($results['query']);
          $rows = array();
-         foreach($results as $result):
+         foreach($results['query'] as $result):
              $row = array();
              $row[] = '<input type="checkbox" name="id[]" value="'.$result['id'].'">';
              $row[] = $result['id'];
@@ -215,7 +208,7 @@ class Rally_Admin extends Controller{
 	 
 	$rally_id = $GLOBALS['urlParams']['id'];
         $rallyService = parent::getService('rally','rally');
-	$rally = $rallyService->getRally($rally_id,'id',Doctrine_Core::HYDRATE_ARRAY);
+	$rally = $rallyService->getRally($rally_id,'id',Doctrine_Core::HYDRATE_RECORD);
         
 	$this->view->assign('rally',$rally);
      }
@@ -230,35 +223,28 @@ class Rally_Admin extends Controller{
          Service::loadModels('car', 'car');
          
          $results = $dataTables = Index_DataTables_Factory::factory(array(
-            'table' => 'Rally_Model_Doctrine_StageResult', 
+            'table' => 'Rally_Model_Doctrine_RallyResult', 
             'class' => 'Rally_DataTables_RallyResult', 
-            'fields' => array('sr.id','t.name','rally_time','a.name','cr.risk','c.name','d.last_name','p.last_name','c.name','sr.out_of_race'),
+            'fields' => array('r.id','t.name','r.total_time','r.out_of_race','r.stage_out_number'),
         ));
 	 
-         $iTotalRecords = count($results);
+         $iTotalRecords = count($results['query']);
          $rows = array();
-         foreach($results as $result):
+         foreach($results['query'] as $result):
              $row = array();
              $row[] = '<input type="checkbox" name="id[]" value="'.$result['id'].'">';
              $row[] = $result['id'];
              $row[] = $result['Crew']['Team']['name'];
-             $row[] = $result['rally_time'];
-	     if(isset($result['Accident'])){
-             $row[] = $result['Accident']['name'];
-		 
-	     }
-	 else {
-	     $row[] = '';
-	 }
-             $row[] = $result['Crew']['risk'];
-             $row[] = $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name'];
-             $row[] = $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name'];
-             $row[] = $result['Crew']['Car']['name'];
-             if(!$result['out_of_race'])
+             $row[] = $result['total_time'];
+             if(!$result['out_of_race']){
                  $row[] = '<span class="label label-sm label-success">W wyścigu</span>';
-             else
+                 $row[] = $result['stage_out_number'];
+             }
+             else{
                  $row[] = '<span class="label label-sm label-danger">Poza trasą</span>';
-	     
+                 $row[] = $result['stage_out_number'];
+             }
+             
              $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
             
 	     $row[] = $options;
@@ -266,15 +252,12 @@ class Rally_Admin extends Controller{
 	     $rows[] = $row;
          endforeach;
          
-	  $iDisplayLength = intval($_REQUEST['iDisplayLength']);
-	  $iDisplayLength = $iDisplayLength < 0 ? $iTotalRecords : $iDisplayLength; 
-	  $sEcho = intval($_REQUEST['sEcho']);
          
          $response = array(
             "aaData" => $rows,
-            "sEcho" => $sEcho,
-            "iTotalRecords" => $iTotalRecords,
-            "iTotalDisplayRecords" => $iTotalRecords,
+            "sEcho" => (int)$_REQUEST['sEcho'],
+            "iTotalRecords" => $results['totalRecords'],
+            "iTotalDisplayRecords" => $results['totalRecords']
         );
        
         echo json_encode($response);
@@ -300,9 +283,9 @@ class Rally_Admin extends Controller{
             'fields' => array('s.id','s.name','s.length','s.min_time'),
         ));
 	 
-         $iTotalRecords = count($results);
+         $iTotalRecords = count($results['query']);
          $rows = array();
-         foreach($results as $result):
+         foreach($results['query'] as $result):
              $row = array();
              $row[] = '<input type="checkbox" name="id[]" value="'.$result['id'].'">';
              $row[] = $result['id'];
@@ -317,15 +300,11 @@ class Rally_Admin extends Controller{
 	     $rows[] = $row;
          endforeach;
          
-	  $iDisplayLength = intval($_REQUEST['iDisplayLength']);
-	  $iDisplayLength = $iDisplayLength < 0 ? $iTotalRecords : $iDisplayLength; 
-	  $sEcho = intval($_REQUEST['sEcho']);
-         
-         $response = array(
+	  $response = array(
             "aaData" => $rows,
-            "sEcho" => $sEcho,
-            "iTotalRecords" => $iTotalRecords,
-            "iTotalDisplayRecords" => $iTotalRecords,
+            "sEcho" => (int)$_REQUEST['sEcho'],
+            "iTotalRecords" => $results['totalRecords'],
+            "iTotalDisplayRecords" => $results['totalRecords']
         );
        
         echo json_encode($response);

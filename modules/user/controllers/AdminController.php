@@ -31,42 +31,55 @@ class User_Admin extends Controller{
          $results = $dataTables = Index_DataTables_Factory::factory(array(
             'table' => 'User_Model_Doctrine_User', 
             'class' => 'User_DataTables_User', 
-            'fields' => array('u.id','u.email','u.role','u.active'),
+            'fields' => array('u.id','u.email','u.role','u.active','u.created_at','u.last_active'),
         ));
-//         $columns = array('email','role','active');
-//         $q = $table->createQuery('u');
-//         $results = $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
          
-         $iTotalRecords = count($results);
+         $iTotalDisplayRecords = count($results['query']);
          $rows = array();
-         foreach($results as $result):
+         foreach($results['query'] as $result):
              $row = array();
              $row[] = '<input type="checkbox" name="id[]" value="'.$result['id'].'">';
              $row[] = $result['id'];
              $row[] = $result['email'];
              $row[] = $result['role'];
              if($result['active'])
-                 $row[] = '<span class="label label-sm label-success">Aktywny</span>';
+                 $row[] = '<a href="/admin/user/set-active/id/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
              else
-                 $row[] = '<span class="label label-sm label-danger">Nieaktywny</span>';
-             $row[] = '<a href="javascript:;" class="btn btn-xs default"><i class="fa fa-search"></i> View</a>';
+                 $row[] = '<a href="/admin/user/set-active/id/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
+             $row[] = $result['created_at'];
+             $row[] = $result['last_active'];
+             $options = '<a href="javascript:;" class="btn btn-xs default"><i class="fa fa-search"></i> View</a>';
+//             $options .= '<a href="javascript:;" class="btn btn-xs default"><i class="fa fa-search"></i> View</a>';
+             $row[] = $options;
              $rows[] = $row;
          endforeach;
          
-   // $iDisplayStart = intval($_REQUEST['iDisplayStart']);
-  
-  $iDisplayLength = intval($_REQUEST['iDisplayLength']);
-  $iDisplayLength = $iDisplayLength < 0 ? $iTotalRecords : $iDisplayLength; 
-  $sEcho = intval($_REQUEST['sEcho']);
-         
          $response = array(
             "aaData" => $rows,
-            "sEcho" => $sEcho,
-            "iTotalRecords" => $iTotalRecords,
-            "iTotalDisplayRecords" => $iTotalRecords,
+            "sEcho" => (int)$_REQUEST['sEcho'],
+            "iTotalRecords" => $results['totalRecords'],
+            "iTotalDisplayRecords" => $results['totalRecords']
         );
        
-        echo json_encode($response);
+        echo json_encode($response,JSON_UNESCAPED_SLASHES);
+     }
+     
+     public function setActive(){
+         $userService = parent::getService('user','user');
+        
+        if(!$user = $userService->getUser($GLOBALS['urlParams']['id'],'id')){
+            echo "brak użytkownika";exit;
+        }
+        
+        if($user->get('active')){
+            $user->set('active',0);
+        }
+        else{
+            $user->set('active',1);
+        }
+        $user->save();
+        
+        TK_Helper::redirect('/admin/user/list-user');
      }
 }
 ?>
