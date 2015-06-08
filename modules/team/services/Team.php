@@ -44,6 +44,15 @@ class TeamService extends Service{
         return $this->teamTable->findOneBy($field,$id,$hydrationMode);
     }
     
+    public function saveTeamFromArray($values,$team_id=false){
+        if(!($team_id &&$team = $this->getTeam($team_id))){
+            $team = $this->teamTable->getRecord();
+        }
+        $team->fromArray($values);
+        $team->save();
+        return $team;
+    }
+    
     public function getTeamWithLeague($id,$season,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->teamTable->createQuery('t');
         $q->innerJoin('t.User u');

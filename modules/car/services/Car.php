@@ -52,6 +52,15 @@ class CarService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function prepareTeamCars($team_id){
+        $cars = $this->getTeamCars($team_id);
+        $result = array();
+        foreach($cars as $car):
+            $result[$car['id']] = $car['id']." ".$car['name']." - ".$car['Model']['name'];
+        endforeach;
+        return $result;
+    }
+    
     public function getFreeCars(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	$q = $this->carTable->createQuery('c');
 	$q->select('c.id,c.name');

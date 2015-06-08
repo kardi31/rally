@@ -16,6 +16,8 @@
  * @property string $token
  * @property boolean $active
  * @property integer $premium
+ * @property integer $referer
+ * @property boolean $referer_paid
  * @property timestamp $last_active
  * 
  * @package    ##PACKAGE##
@@ -73,6 +75,14 @@ abstract class User_Model_Doctrine_BaseUser extends Doctrine_Record
         $this->hasColumn('premium', 'integer', 11, array(
              'type' => 'integer',
              'length' => '11',
+             ));
+        $this->hasColumn('referer', 'integer', 11, array(
+             'type' => 'integer',
+             'length' => '11',
+             ));
+        $this->hasColumn('referer_paid', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
              ));
         $this->hasColumn('last_active', 'timestamp', null, array(
              'type' => 'timestamp',

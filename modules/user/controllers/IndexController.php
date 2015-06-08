@@ -20,11 +20,23 @@ class User_Index extends Controller{
         $userService = parent::getService('user','user');
         $mailService = parent::getService('user','mail');
         
+        if(isset($GLOBALS['urlParams']['ref'])){
+            $ref = true;
+            $inviteService = parent::getService('user','invite');
+            if(!$invite = $inviteService->getFullInvite($GLOBALS['urlParams']['ref'],Doctrine_Core::HYDRATE_ARRAY)){
+                $ref = false;
+            }
+        }
+        
         $form = new Form();
         $form->createElement('text','login',array('validators' => array('stringLength' => array('min' => 4,'max' => 12)),'Login'));
         $form->createElement('password','password',array('validators' => array('stringLength' => array('min' => 4,'max' => 12))),'Hasło');
         $form->createElement('password','password2',array('validators' => array('match' => array('elem' => 'password'))),'Powtórz hasło');
-        $form->createElement('text','email',array('validators' => 'email'),'Adres email');
+        $email = $form->createElement('text','email',array('validators' => 'email'),'Adres email');
+        if($ref){
+            $email->setValue($invite['email']);
+        }
+        
         $form->createElement('captcha','captcha',array());
         $form->createElement('submit','submit');
         if($form->isSubmit()){
@@ -40,11 +52,19 @@ class User_Index extends Controller{
                     $values['token'] = TK_Text::createUniqueToken();
                     $values['password'] = TK_Text::encode($values['password'], $values['salt']);
                     $values['role'] = "user";
+                    if($ref){
+                        $values['referer'] = $invite['user_id'];
+                        $values['referer_paid'] = 0;
+                        
+                        $inviteService->removeInvite($invite['id']);
+                    }
                     
                     $userService->saveUserFromArray($values,false);
-                    
+//                    
                     $mailService->sendMail($values['email'],'Rejestracja w Tomek CMS przebiegła pomyślnie',$mailService::prepareRegistrationMail($values['token']));
                 
+                    
+                    
 		    TK_Helper::redirect('/user/register-complete');
 		
 		}
@@ -74,6 +94,7 @@ class User_Index extends Controller{
             $teamService = parent::getService('team','team');
             $carService = parent::getService('car','car');
             $leagueService = parent::getService('league','league');
+            
 	    
             $data = array();
             $data['user_id'] = $user['id'];
@@ -186,5 +207,62 @@ class User_Index extends Controller{
         TK_Helper::redirect($_SERVER['HTTP_REFERER']);
     }
     
+    
+    public function inviteToGame(){
+        
+        $userService = parent::getService('user','user');
+        $inviteService = parent::getService('user','invite');
+        
+        $user = $userService->getAuthenticatedUser();
+	$form = $this->getForm('user','InviteToGame');
+        $this->view->assign('form',$form);
+        if($form->isSubmit()){
+            if($form->isValid()){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                
+                $email = $_POST['email'];
+                
+                if($inviteService->checkEmailInvited($email, $user['id'])){
+                    echo "this email was already invited by you";exit;
+                }
+                
+                if($userService->getUser($email,'email')){
+                    echo "this guy is already in the game";exit;
+                }
+                
+                if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+                  echo("$email is invalid email address"); exit;
+                }
+                $invite = $inviteService->saveInviteFromArray($email,$user['id']);
+                
+                echo "Hello, your friend ".$user['username']." has invited you to Fast Rally. To join, please click <a href='/user/register/ref/".$invite['id']."'> join fast rally</a>";
+                exit;
+                $user = $userService->getUser($values['email'], 'email');
+                if ($user && !$user->get('active')):
+                    $this->view->messages()->add($this->view->translate('User is not active'), 'error');
+                else:
+                    if($userService->authenticate($user,$values['password'])):
+                        TK_Helper::redirect('/account/my-account');
+                    endif;
+                endif;
+                
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+            }
+        }
+//            $to = 'kardi31@tlen.pl';
+//
+//    $subject = 'Website Change Request';
+//
+//    $headers = "From: tomekvarts@o2.pl \r\n";
+//    $headers .= "Reply-To: tomekvarts@o2.pl \r\n";
+//    $headers .= "MIME-Version: 1.0\r\n";
+//    $headers .= "Content-Type: text/html; charset=ISO-8859-2\r\n";
+//
+//    $message = '<html><body>';
+//    $message .= '<h1>Hello, World!</h1>';
+//    $message .= '</body></html>';
+//    mail($to, $subject, $message, $headers);
+//echo "ok";exit;
+    }
 }
 ?>

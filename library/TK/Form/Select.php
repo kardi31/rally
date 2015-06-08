@@ -7,8 +7,10 @@ class Select extends Element {
     protected $multiOptions = null;
     protected $elementDisplay;
     protected $defaultLayout = true;
+    protected $value;
     
     public function __construct($type, $name, $options, $label = false) {
+        $this->value = false;
         parent::__construct($type, $name, $options, $label);
     }
     
@@ -32,16 +34,17 @@ class Select extends Element {
 	    if(count($this->multiOptions)>0&&key_exists($this->name, $this->multiOptions)):
                 
 		foreach($this->multiOptions[$this->name] as $key => $value):
-                
-		    $this->elementDisplay .= "<option ".
+		    $this->elementDisplay .= "<option ";
                             // disabled
-                            (strlen($value)<1?'disabled ':' ').
-                            // selected on post
-                            ( $this->getMethodVariable($this->name)==$key ? ("selected") : '').
-                            " ".
+//                            (strlen($value)<1?'readonly ':' ');
                             // selected by default
-                            ( (key_exists('selected', $this->options)&&$this->options['selected']==$key) ? ("selected") : '').
-                            " ". 
+                            if(strlen($this->getMethodVariable($this->name))&&$this->getMethodVariable($this->name)==$key){
+                                $this->elementDisplay .= "selected";
+                            }
+                            elseif(isset($this->value)&&strlen($this->value)&&$this->value == $key){
+                                $this->elementDisplay .= "selected";
+                            }
+                   $this->elementDisplay .= " ". 
                             "value='".$key."' "
                             . "id='option_".$key."' >".
                                 $value.
@@ -73,9 +76,14 @@ class Select extends Element {
 	    endforeach;
 	else:
 	    foreach($options as $key => $value):
-		$this->multiOptions[$this->name][$value] = $value;
+		$this->multiOptions[$this->name][$key] = $value;
 	    endforeach;
 	endif;    
 	
     }
+    
+    public function setValue($value){
+        $this->value = $value;
+    }
 }
+

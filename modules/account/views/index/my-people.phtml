@@ -1,0 +1,138 @@
+<h3>My people</h3>
+<div class="myDrivers">
+    <?php foreach($teamPeople as $person): ?>
+        <fieldset>
+            <strong><?php echo $person['last_name']." ".$person['first_name']; ?></strong><br />
+            Job: <?php echo $person['job']; ?><br />
+            Age: <?php echo $person['age']; ?><br />
+             Value: <?php echo $person['value']; ?><br />
+             Salary: <?php echo $person['salary']; ?><br />
+            Skills: <br />
+            <fieldset>
+                <?php if($person['job'] == "driver"): ?>
+                <table class="col-md-8">
+                    <tr>
+                        <td>Composure</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'composure'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Speed</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'speed'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Regularity</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'regularity'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reflex</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'reflex'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Driving on gravel</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'on_gravel'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Driving on tarmac</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'on_tarmac'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Driving on snow</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'on_snow'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Driving in rain</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'in_rain'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Talent</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'talent'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Form</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'form'); ?>
+                        </td>
+                    </tr>
+                </table>
+                <?php else: ?>
+                <table class="col-md-8">
+                    <tr>
+                        <td>Composure</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'composure'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dictate rhytm</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'dictate_rhytm'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Diction</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'diction'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Route description</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'route_description'); ?>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Talent</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'talent'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Form</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($person, 'form'); ?>
+                        </td>
+                    </tr>
+                </table>
+                <?php endif; ?>
+                
+                
+                <?php if(!$person['on_market']): ?>
+                    <a href="/people/sell-player/id/<?php echo $person['id']; ?>">Sprzedaj zawodnika</a>
+                <?php else: ?>
+                    Player is on the market
+                <?php endif; ?>
+                    
+                    
+                    <?php if(!isset($person['Driver1Team']['id'])||!isset($person['Pilot1Team']['id'])){
+                        echo "In Team 1";
+                    }
+                    elseif(!isset($person['Driver2Team']['id'])||!isset($person['Pilot2Team']['id'])){
+                        echo "In Team 2";
+                    }
+                    ?>
+            </fieldset>
+            <hr />
+            
+
+        </fieldset>
+    <?php endforeach; ?>
+</div>

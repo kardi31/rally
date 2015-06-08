@@ -33,6 +33,11 @@ User:
       default: 1
     premium:
       type: integer(11)
+    referer:
+      type: integer(11)
+    referer_paid:
+      type: boolean
+      default: 0
     last_active:
       type: timestamp
 PremiumLog:
@@ -44,6 +49,8 @@ PremiumLog:
     id:
       primary: true
       autoincrement: true
+      type: integer(4)
+    user_id:
       type: integer(4)
     amount:
       type: integer(11)
@@ -68,4 +75,17 @@ Friends:
     accepted:
       type: boolean
       default: 0
+Invite:
+  tableName: user_invite
+  actAs: 
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    user_id:
+      type: integer(11)
+    email:
+      type: string(255)
       

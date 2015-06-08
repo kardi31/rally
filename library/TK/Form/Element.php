@@ -14,6 +14,7 @@ class Element{
 	 
 	 protected $label;
 	 protected $name;
+	 protected $value;
 	 protected $type;
 	 protected $options;
 	 protected $classes;
@@ -47,10 +48,10 @@ class Element{
 	elseif($this->type=="select"):
             
         elseif($this->type=="checkbox"):
-            $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."1' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
+            $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
             $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
         elseif($this->type=="checkbox"):
-            $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."1' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
+            $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
             $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
         elseif($this->type=="captcha"):
 	    $this->elementDisplay .= "<div class='formElemWrapper'><label for='captcha' id='captcha'>Przepisz kod z obrazka</label>";
@@ -61,7 +62,7 @@ class Element{
             $this->elementDisplay .= "<textarea ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."'>".$this->getMethodVariable($this->name)."</textarea>";
             $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
         else:
-            $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
+            $this->elementDisplay .= "<input value='".$this->prepareFieldValue($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
             $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
         endif;
 	
@@ -316,5 +317,21 @@ class Element{
                 $this->validators[$name] = $options;
         }
         
+    }
+    
+    public function setValue($value){
+        $this->value = $value;
+    }
+    
+    public function prepareFieldValue(){
+        if(strlen($this->getMethodVariable($this->name))){
+            return strlen($this->getMethodVariable($this->name));
+        }
+        elseif(isset($this->value)){
+            return $this->value;
+        }
+        else{
+            return '';
+        }
     }
 }

@@ -22,17 +22,60 @@ class Account_Index extends Controller{
         
     }
     
-    public function myTeam(){
+    public function tactics(){
         Service::loadModels('team', 'team');
         Service::loadModels('car', 'car');
         Service::loadModels('people', 'people');
         
+        $peopleService = parent::getService('people','people');
         $userService = parent::getService('user','user');
+        $carService = parent::getService('car','car');
+        $teamService = parent::getService('team','team');
+        
+        
         $user = $userService->getAuthenticatedUser();
         if(!$user)
             TK_Helper::redirect('/user/login');
         
-        $this->view->assign('team',$user['Team']);
+        $teamDrivers = $peopleService->prepareTeamDrivers($user['Team']['id']);
+        $teamPilots = $peopleService->prepareTeamPilots($user['Team']['id']);
+        $freeCars = $carService->prepareTeamCars($user['Team']['id']);
+        $form = $this->getForm('team','tactics');
+
+        $driver1_id = $form->getElement('driver1_id');
+        $driver1_id->addMultiOptions($teamDrivers,true);
+        $driver1_id->setValue($user['Team']['driver1_id']);
+        $driver2_id = $form->getElement('driver2_id');
+        $driver2_id->addMultiOptions($teamDrivers,true);
+        $driver2_id->setValue($user['Team']['driver2_id']);
+        $pilot1_id = $form->getElement('pilot1_id');
+        $pilot1_id->addMultiOptions($teamPilots,true);
+        $pilot1_id->setValue($user['Team']['pilot1_id']);
+        $pilot2_id = $form->getElement('pilot2_id');
+        $pilot2_id->addMultiOptions($teamPilots,true);
+        $pilot2_id->setValue($user['Team']['pilot2_id']);
+        $car1_id = $form->getElement('car1_id');
+        $car1_id->addMultiOptions($freeCars,true);
+        $car1_id->setValue($user['Team']['car1_id']);
+        $car2_id = $form->getElement('car2_id');
+        $car2_id->addMultiOptions($freeCars,true);
+        $car2_id->setValue($user['Team']['car2_id']);
+        $form->createElement('submit','submit');
+        
+        if($form->isSubmit()){
+            if($form->isValid()){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                
+                $values = $_POST;
+                
+                $teamService->saveTeamFromArray($values,$user['Team']['id']);
+                TK_Helper::redirect('/account/tactics');
+                
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+            }
+        }
+        
+        $this->view->assign('form',$form);
     }
     
     public function myTrainingReport(){
@@ -84,7 +127,18 @@ class Account_Index extends Controller{
     
     public function myDrivers(){
         Service::loadModels('team', 'team');
-        Service::loadModels('people', 'people');
+        Service::loadModels('people', 'people');   
+        
+        $peopleService = parent::getService('people','people');
+        $userService = parent::getService('user','user');
+        
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        $teamPeople = $peopleService->getTeamPeople($user['id'],Doctrine_Core::HYDRATE_ARRAY);
+        
+        $this->view->assign('teamPeople',$teamPeople);
     }
     
     public function myCars(){

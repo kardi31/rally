@@ -57,6 +57,64 @@ class PeopleService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getTeamPeople($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+	$q = $this->peopleTable->createQuery('p');
+	$q->select('p.*,CONCAT(p.last_name," ",p.first_name) as name');
+	$q->leftJoin('p.Team t');
+        // to display if the guy is in any team
+        $q->leftJoin('p.Driver1Team d1t');
+        $q->leftJoin('p.Driver2Team d2t');
+        $q->leftJoin('p.Pilot1Team p1t');
+        $q->leftJoin('p.Pilot2Team p2t');
+        $q->addSelect('d1t.id,d2t.id,p1t.id,p2t.id');
+	$q->addWhere('t.id = ?',$team_id);
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getTeamDrivers($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+	$q = $this->peopleTable->createQuery('p');
+	$q->select('p.*,CONCAT(p.last_name," ",p.first_name) as name');
+	$q->leftJoin('p.Team t');
+        // to display if the guy is in any team
+        $q->leftJoin('p.Driver1Team d1t');
+        $q->leftJoin('p.Driver2Team d2t');
+        $q->addSelect('d1t.id,d2t.id');
+        $q->addWhere('p.job = "driver"');
+	$q->addWhere('t.id = ?',$team_id);
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function prepareTeamDrivers($team_id){
+        $drivers = $this->getTeamDrivers($team_id,Doctrine_Core::HYDRATE_ARRAY);
+        $result = array();
+        foreach($drivers as $driver):
+            $result[$driver['id']] = $driver['id']." ".$driver['first_name']." ".$driver['last_name'];
+        endforeach;
+        return $result;
+    }
+    
+    public function getTeamPilots($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+	$q = $this->peopleTable->createQuery('p');
+	$q->select('p.*,CONCAT(p.last_name," ",p.first_name) as name');
+	$q->leftJoin('p.Team t');
+        // to display if the guy is in any team
+        $q->leftJoin('p.Pilot1Team p1t');
+        $q->leftJoin('p.Pilot2Team p2t');
+        $q->addSelect('p1t.id,p2t.id');
+        $q->addWhere('p.job = "pilot"');
+	$q->addWhere('t.id = ?',$team_id);
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function prepareTeamPilots($team_id){
+        $pilots = $this->getTeamPilots($team_id,Doctrine_Core::HYDRATE_ARRAY);
+        $result = array();
+        foreach($pilots as $pilot):
+            $result[$pilot['id']] = $pilot['id']." ".$pilot['first_name']." ".$pilot['last_name'];
+        endforeach;
+        return $result;
+    }
+    
     public function getFreePilots(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	$q = $this->peopleTable->createQuery('p');
 	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name');

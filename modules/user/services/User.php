@@ -3,6 +3,7 @@
 class UserService extends Service{
     
     protected $userTable;
+    protected $premiumLogTable;
     
      private static $instance = NULL;
 
@@ -15,6 +16,7 @@ class UserService extends Service{
     
     public function __construct(){
         $this->userTable = parent::getTable('user','user');
+        $this->premiumLogTable = parent::getTable('user','premiumLog');
     }
     
     public function getUser($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
@@ -58,7 +60,7 @@ class UserService extends Service{
         return true;
     }
     
-    public function addPremium($user,$premium){
+    public function addPremium($user,$premium,$logValues = false){
         if(!$user instanceof User_Model_Doctrine_User){
             $user = $this->getUser($user);
         }
@@ -66,7 +68,21 @@ class UserService extends Service{
 	$newPremium = (int)$currentPremium+(int)$premium;
 	$user->set('premium',$newPremium);
 	$user->save();
+        
+        if($logValues){
+            $this->addPremiumLog($user,$premium,$logValues);
+        }
+        
 	return $user;
+    }
+    
+    public function addPremiumLog($user,$amount,$values){
+        $premiumLog = $this->premiumLogTable->getRecord();
+        $premiumLog->amount = $amount;
+        $premiumLog->income = $values['income'];
+        $premiumLog->user_id = $user['id'];
+        $premiumLog->description = $values['description'];
+        $premiumLog->save();
     }
     
     public function findUsers($query,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
@@ -76,6 +92,15 @@ class UserService extends Service{
         $q->limit(4);
         return $q->execute(array(),$hydrationMode);
     }
+    
+    public function getUsersWithRefererNotPaid($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->userTable->createQuery('u');
+        $q->select('u.*');
+        $q->addWhere('u.referer IS NOT NULL');
+        $q->addWhere('u.referer_paid = 0');
+        return $q->execute(array(),$hydrationMode);
+    }
+    
     
     
     public function searchForUsers($username,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
