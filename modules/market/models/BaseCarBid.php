@@ -9,6 +9,8 @@
  * @property integer $offer_id
  * @property integer $value
  * @property integer $team_id
+ * @property string $user_ip
+ * @property boolean $active
  * @property Market_Model_Doctrine_CarOffer $CarOffer
  * 
  * @package    ##PACKAGE##
@@ -38,6 +40,14 @@ abstract class Market_Model_Doctrine_BaseCarBid extends Doctrine_Record
         $this->hasColumn('team_id', 'integer', 11, array(
              'type' => 'integer',
              'length' => '11',
+             ));
+        $this->hasColumn('user_ip', 'string', 255, array(
+             'type' => 'string',
+             'length' => '255',
+             ));
+        $this->hasColumn('active', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 1,
              ));
 
         $this->option('type', 'MyISAM');

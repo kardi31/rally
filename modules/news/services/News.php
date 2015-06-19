@@ -3,7 +3,6 @@
 class NewsService extends Service{
     
     protected $newsTable;
-    protected $newsModelTable;
     private static $instance = NULL;
 
     static public function getInstance()
@@ -13,23 +12,8 @@ class NewsService extends Service{
        return self::$instance;
     }
     
-    protected static $newsModelSkills = array(
-        'capacity', 'horsepower','max_speed','acceleration'
-    );
-       
-    protected static $newsModelSkillsWages = array(
-	3,5,4,6
-    );
-    
-    protected static $newsModelSkillsMax = array(
-	2000,320,200,2.3
-    );
-    
-    protected static $newsMileageWage = 4;
-    
     public function __construct(){
         $this->newsTable = parent::getTable('news','news');
-        $this->newsModelTable = parent::getTable('news','newsModels');
     }
     
     public function getNews($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
@@ -44,11 +28,11 @@ class NewsService extends Service{
         return $this->newsTable->findAll();
     }
     
-    public function getTeamNewss($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
-	$q = $this->newsTable->createQuery('c');
+    public function getLastNewses($limit = 3,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+	$q = $this->newsTable->createQuery('n');
 	$q->select('*');
-	$q->leftJoin('c.Model cm');
-	$q->addWhere('c.team_id = ?',$team_id);
+        $q->orderBy('publish_date DESC');
+        $q->limit($limit);
 	return $q->execute(array(),$hydrationMode);
     }
     

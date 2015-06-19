@@ -58,6 +58,44 @@ class Select extends Element {
         return $this->elementDisplay;
     }
     
+    public function renderAdminElement($nostyle=false,$submitElem = 'submit'){
+        $this->elementDisplay .= "<select ".$this->renderParams()."  class='".$this->renderClasses()." form-control'  name='".$this->name."' id='".$this->name."'>";
+	    if(count($this->multiOptions)>0&&key_exists($this->name, $this->multiOptions)):
+                
+		foreach($this->multiOptions[$this->name] as $key => $value):
+		    $this->elementDisplay .= "<option ";
+                            // disabled
+//                            (strlen($value)<1?'readonly ':' ');
+                            // selected by default
+                            if(strlen($this->getMethodVariable($this->name))&&$this->getMethodVariable($this->name)==$key){
+                                $this->elementDisplay .= "selected";
+                            }
+                            elseif(isset($this->value)&&strlen($this->value)&&$this->value == $key){
+                                $this->elementDisplay .= "selected";
+                            }
+                   $this->elementDisplay .= " ". 
+                            "value='".$key."' "
+                            . "id='option_".$key."' >".
+                                $value.
+                            "</option>";
+		endforeach;
+	    endif; 
+	    $this->elementDisplay .= "</select>";
+            $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
+            
+            if(!$nostyle){
+                $this->elementDisplay = '<div class="form-group">'
+                        . '<label class="">'.$this->label
+                        . '</label>'
+                        . '<div class="">'
+                        . ''.$this->elementDisplay.''
+                        . '</div>'
+                        . '</div>';
+            }
+            
+        return $this->elementDisplay;
+    }
+    
     public function addMultiOptions($options,$emptyOption = false){
 	
 	if(count($options)==0)

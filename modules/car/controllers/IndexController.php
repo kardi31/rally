@@ -40,23 +40,32 @@ class Car_Index extends Controller{
         $marketService = parent::getService('market','market');
         $carService = parent::getService('car','car');
         $teamService = parent::getService('team','team');
+        $userService = parent::getService('user','user');
         
         $id = $GLOBALS['urlParams']['id'];
         $car = $carService->getCar($id,'id',Doctrine_Core::HYDRATE_RECORD);
         
         
 	$form = $this->getForm('market','offer');
+        $user = $userService->getAuthenticatedUser();
         
         if($form->isSubmit()){
             if($form->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
+                $values['team_id'] = $user['Team']['id'];
                 
                 $result = $marketService->addCarOnMarket($values,$car);
                 
-                if($result!== false)
+                if($result!== false){
+                    if(isset($_COOKIE['car_seller'])){
+                        $car_seller = unserialize($_COOKIE['car_seller']);
+                    }
+                    $car_seller[$car['id']] = $user['id'];
+                    setcookie('car_seller',serialize($car_seller),time()+(86400 * 4),'/');
                     TK_Helper::redirect('/account/my-cars');
+                }
                 else{
                     $this->view->assign('message','Player already on market');
                 }

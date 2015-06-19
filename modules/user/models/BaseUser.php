@@ -15,6 +15,8 @@
  * @property string $role
  * @property string $token
  * @property boolean $active
+ * @property timestamp $gold_member_expire
+ * @property boolean $gold_member
  * @property integer $premium
  * @property integer $referer
  * @property boolean $referer_paid
@@ -71,6 +73,13 @@ abstract class User_Model_Doctrine_BaseUser extends Doctrine_Record
         $this->hasColumn('active', 'boolean', null, array(
              'type' => 'boolean',
              'default' => 1,
+             ));
+        $this->hasColumn('gold_member_expire', 'timestamp', null, array(
+             'type' => 'timestamp',
+             ));
+        $this->hasColumn('gold_member', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
              ));
         $this->hasColumn('premium', 'integer', 11, array(
              'type' => 'integer',

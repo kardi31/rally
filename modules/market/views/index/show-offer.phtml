@@ -2,53 +2,117 @@
 <hr />
 <div class="col-md-8">
     <?php $player = $offer['Player']; ?>
-    Name: <?php echo $player['last_name']." ".$player['first_name']; ?><br />
-    Team: <?php echo $player['Team']['name']; ?><br />
-    Age: <?php echo $player['age']; ?><br />
+   <strong><?php echo $player['last_name']." ".$player['first_name']; ?></strong><br />
+            Job: <?php echo $player['job']; ?><br />
+            Age: <?php echo $player['age']; ?><br />
+             Value: <?php echo $player['value']; ?><br />
+             Salary: <?php echo $player['salary']; ?><br />
     Skills: <br />
     <fieldset>
-        <table>
-            <tr>
-                <td>Composure</td>
-                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['composure']);?></td>
-            </tr>
-            <tr>
-                <td>Speed</td>
-                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['speed']);?></td>
-            </tr>
-            <tr>
-                <td>Regularity</td>
-                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['regularity']);?></td>
-            </tr>
-            <tr>
-                <td>Reflex</td>
-                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['reflex']);?></td>
-            </tr>
-            <tr>
-                <td>Driving on gravel</td>
-                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['on_gravel']);?></td>
-            </tr>
-            <tr>
-                <td>Driving on tarmac</td>
-                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['on_tarmac']);?></td>
-            </tr>
-            <tr>
-                <td>Driving on snow</td>
-                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['on_snow']);?></td>
-            </tr>
-            <tr>
-                <td>Driving in rain</td>
-                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['in_rain']);?></td>
-            </tr>
-            <tr>
-                <td>Talent</td>
-                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['talent']);?></td>
-            </tr>
-            <tr>
-                <td>Form</td>
-                <td><?php echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$player['form']);?></td>
-            </tr>
-        </table>
+        <?php if($player['job'] == "driver"): ?>
+                <table class="col-md-8">
+                    <tr>
+                        <td>Composure</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'composure'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Speed</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'speed'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Regularity</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'regularity'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reflex</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'reflex'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Driving on gravel</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'on_gravel'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Driving on tarmac</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'on_tarmac'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Driving on snow</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'on_snow'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Driving in rain</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'in_rain'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Talent</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'talent'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Form</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'form'); ?>
+                        </td>
+                    </tr>
+                </table>
+                <?php else: ?>
+                <table class="col-md-8">
+                    <tr>
+                        <td>Composure</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'composure'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dictate rhytm</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'dictate_rhytm'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Diction</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'diction'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Route description</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'route_description'); ?>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Talent</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'talent'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Form</td>
+                        <td>
+                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'form'); ?>
+                        </td>
+                    </tr>
+                </table>
+                <?php endif; ?>
     </fieldset>
 </div>
 <div class="col-md-4">

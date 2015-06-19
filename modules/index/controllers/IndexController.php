@@ -21,9 +21,8 @@ class Index_Index extends Controller{
     }
     
     public function index(){
-//        $this->callResponseSegment('friends',$this,'showFriends');
-        $this->view->assign('DD','wartosc');
-        $this->actionStack($this, 'layoutHelper');
+        $this->getLayout()->setLayout('main');
+        
     }
     
     public function showFriends(){
@@ -54,6 +53,14 @@ class Index_Index extends Controller{
         
         $users = $userService->searchForUsers($_POST['username'],Doctrine_Core::HYDRATE_ARRAY);
         $this->view->assign('users',$users);
+    }
+    
+    public function menu(){
+        
+    }
+    
+    public function showCalendar(){
+        
     }
     
     

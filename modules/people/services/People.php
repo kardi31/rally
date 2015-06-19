@@ -332,7 +332,6 @@ class PeopleService extends Service{
                 $accidentProbability *= $crewAccidentRisk;
             }
 	    
-	    
 	    // divide by 2 because it would be too much
 	    $totalLate[$key] = ($late['Car'][$key] + $late['Driver'][$key] + $late['Pilot'][$key])/1.5;
 	    // multiply late by minimum stage time
@@ -342,8 +341,6 @@ class PeopleService extends Service{
 	    $accident = $rallyService->checkAccident($accidentProbability);
 	    
 	    if ($accident) {
-		$stageResults['Accident'] = $accident['id'];
-		
 		if ($accident['damage']==100){
 		    $crew['in_race'] = false;
 		    $stageResults['out_of_race'] = 1;
@@ -380,7 +377,7 @@ class PeopleService extends Service{
 	    $stageResults['stage_id'] = $stage['id'];
 	    $stageResults['crew_id'] = $crew['id'];
 	    $stageResults['base_time'] = $base_time;
-	    $rallyService->saveStageResult($stageResults);
+	    $rallyService->saveStageResult($stageResults,$accident);
 	    $crew->save();
 	endforeach;
     }
@@ -516,6 +513,18 @@ class PeopleService extends Service{
         $person->set('value',$value);
         $person->set('salary',$salary);
         return $person;
+    }
+    
+    public function changePersonTeam($id,$team_id){
+        $person = $this->getPerson($id);
+        $person->set('team_id',$team_id);
+        $person->set('on_market',0);
+        $person->save();
+    }
+    public function setOffMarket($id){
+        $person = $this->getPerson($id);
+        $person->set('on_market',0);
+        $person->save();
     }
     
 }

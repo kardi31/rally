@@ -12,7 +12,13 @@ class Account_Index extends Controller{
    
     
     public function myAccount(){
+        Service::loadModels('team', 'team');
         $userService = parent::getService('user','user');
+        $newsService = parent::getService('news','news');
+        
+        $lastNewses = $newsService->getLastNewses(3);
+        
+        $this->view->assign('lastNewses',$lastNewses);
         
         $user = $userService->getAuthenticatedUser();
         if(!$user)
@@ -125,7 +131,7 @@ class Account_Index extends Controller{
         $this->view->assign('sponsors',$sponsors);
     }
     
-    public function myDrivers(){
+    public function myPeople(){
         Service::loadModels('team', 'team');
         Service::loadModels('people', 'people');   
         
@@ -136,8 +142,7 @@ class Account_Index extends Controller{
         if(!$user)
             TK_Helper::redirect('/user/login');
         
-        $teamPeople = $peopleService->getTeamPeople($user['id'],Doctrine_Core::HYDRATE_ARRAY);
-        
+        $teamPeople = $peopleService->getTeamPeople($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
         $this->view->assign('teamPeople',$teamPeople);
     }
     
@@ -151,7 +156,6 @@ class Account_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
 	
         $cars = $carService->getTeamCars($user['Team']['id']);
-        
 	$formCar1 = new Form();
 	
         $formCar1->createElement('text','car1_name',array('validators' => 'alnum'),'Nowa nazwa(dozwolona 1 zmiana na miesiąc)');

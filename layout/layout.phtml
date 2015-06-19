@@ -14,21 +14,30 @@
 	<?php echo $this->showFile('_head.phtml'); ?>
     </head>
     <body>
-	<header class="h10 sticky-enabled no-topbar">
-      
-	</header>
-	<section class="main">
+	<div class="mainContainer">
+                <header>
+                    <?php echo $this->showFile('_header.phtml'); ?>
+                </header>
+                <div class="mainContent mainUserContent">
+                    <?php echo $this->responseSegment['menu']; ?>
 	    
-	<?php echo $this->showFile('_header.phtml'); ?>
+	<?php // echo $this->showFile('_header.phtml'); ?>
             <div class='col-md-3'>
-                
+                <?php echo $this->responseSegment['calendar']; ?>
+                <?php echo $this->responseSegment['left-banner']; ?>
                 <?php echo $this->responseSegment['friends']; ?>
-                <?php echo $this->responseSegment['forum']; ?>
             </div>
-            <div class='col-md-9'>
+            <div class='col-md-6'>
                 <?php echo $this->content; ?>
             </div>
-	</section>
-	
+            <div class="col-md-3">
+                <?php echo $this->responseSegment['forum']; ?>
+                <?php echo $this->responseSegment['right-banner']; ?>
+                <?php echo $this->responseSegment['market']; ?>
+            </div>
+                    <div class="clearfix"></div>
+                </div>
+                <?php echo $this->showFile('_footer_main.phtml'); ?>
+        </div>
     </body>
 </html>

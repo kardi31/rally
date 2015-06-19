@@ -29,6 +29,7 @@ class Test_Index extends Controller{
     }
     
     public function rallyTest(){
+        Service::loadModels('user', 'user');
         require_once(BASE_PATH."/modules/rally/controllers/TestController.php");
         $trainingService = parent::getService('people','training');
 //        $rallyContr = new Rally_Test();
@@ -51,6 +52,7 @@ class Test_Index extends Controller{
             $values['risk'] = $risks[array_rand($risks)];
             $rallyService->saveRallyCrew($values,$randomRally,$randomTeam);
         endforeach;
+        var_dump($randomRally->toArray());
         Zend_Debug::dump($randomTeams);exit;
         
     }

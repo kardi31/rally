@@ -1,0 +1,25 @@
+<div class="mainUserBox boxCalendar">
+    <h4 class="boxHeader">Calendar</h4>
+    <?php if(!$user['gold_member']){ ?>
+        <div class="goldOverlay">
+            <a href="#">
+                <img src="/images/layout/gc_big.png" />
+            </a>
+        </div>
+    <?php }
+    else{ ?>
+        <input type="text" id="mydate" gldp-id="mydate" style="visibility:hidden;height:0px;position:absolute;" />
+        <div gldp-el="mydate" style="width:221px; min-height:200px;position:relative !important;top:0px !important; left:auto !important;padding-right:0px !important;margin:0 auto;">
+        </div>
+        <div class="clearfix"></div>
+        <script type="text/javascript">
+            $(window).load(function()
+            {
+                $('#mydate').glDatePicker({
+                    showAlways: true,
+                    cssName: 'darkneon',
+                });
+            });
+        </script>
+    <?php } ?>
+</div>

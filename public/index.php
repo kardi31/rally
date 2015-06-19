@@ -10,6 +10,7 @@ if(is_dir("/var/www/ral/modules/'.$module.'/models/")){
     Doctrine_Core::setModelsDirectory("/var/www/ral/modules/'.$module.'/models/");
     Doctrine_Core::loadModels('/var/www/ral/modules/'.$module.'/models/');
 }
+//Doctrine_Manager::getInstance()->getCurrentConnection()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, true);
 require(BASE_PATH.'/library/TK/init.php');
 
 new init();

@@ -12,6 +12,9 @@
  * @property text $content
  * @property boolean $active
  * @property integer $thread_id
+ * @property text $moderator_notes
+ * @property timestamp $moderator_date
+ * @property string $moderator_name
  * @property Forum_Model_Doctrine_Thread $Thread
  * @property Forum_Model_Doctrine_Category $Posts
  * 
@@ -53,6 +56,16 @@ abstract class Forum_Model_Doctrine_BasePost extends Doctrine_Record
         $this->hasColumn('thread_id', 'integer', 4, array(
              'type' => 'integer',
              'length' => '4',
+             ));
+        $this->hasColumn('moderator_notes', 'text', null, array(
+             'type' => 'text',
+             ));
+        $this->hasColumn('moderator_date', 'timestamp', null, array(
+             'type' => 'timestamp',
+             ));
+        $this->hasColumn('moderator_name', 'string', 255, array(
+             'type' => 'string',
+             'length' => '255',
              ));
 
         $this->option('type', 'MyISAM');

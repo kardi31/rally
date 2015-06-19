@@ -30,6 +30,10 @@ class ForumService extends Service{
         return $this->threadTable->findOneBy($field,$id,$hydrationMode);
     }
     
+    public function getPost($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        return $this->postTable->findOneBy($field,$id,$hydrationMode);
+    }
+    
     public function getAllCategories($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         return $this->categoryTable->findAll($hydrationMode);
     }
@@ -126,6 +130,16 @@ class ForumService extends Service{
         return $post;
     }
     
+    public function editPost($values){
+                
+        
+        $post = $this->getPost($values['id']);
+        $post->fromArray($values);
+        $post->save();
+        
+        return $post;
+    }
+    
     public function addThread($values,$category,$user){
                 
         $data = array();
@@ -138,6 +152,15 @@ class ForumService extends Service{
         $post->save();
         
         return $post;
+    }
+    
+    public function editThread($values){
+                
+        $thread = $this->getThread($values['id']);
+        $thread->fromArray($values);
+        $thread->save();
+        
+        return $thread;
     }
     
     public function addCategoryToFavourite($category,$user){

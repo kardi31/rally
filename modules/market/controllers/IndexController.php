@@ -1,7 +1,15 @@
 <?php
 
 class Market_Index extends Controller{
- 
+    
+    private static $instance = NULL;
+    
+    static public function getInstance()
+    {
+       if (self::$instance === NULL)
+          self::$instance = new Market_Index();
+       return self::$instance;
+    }
     public function __construct(){
         parent::__construct();
     }
@@ -17,7 +25,6 @@ class Market_Index extends Controller{
     
     public function showMarket(){
         $userService = parent::getService('user','user');
-        
         $user = $userService->getAuthenticatedUser();
         if(!$user)
             TK_Helper::redirect('/user/login');
@@ -33,10 +40,10 @@ class Market_Index extends Controller{
     }
     
     public function bidPlayer(){
-        
         Service::loadModels('team', 'team');
         Service::loadModels('people', 'people');
         $marketService = parent::getService('market','market');
+        $duplicateService = parent::getService('market','duplicate');
         
         $id = $GLOBALS['urlParams']['id'];
         $offer = $marketService->getOffer($id,'id',Doctrine_Core::HYDRATE_RECORD);
@@ -52,20 +59,25 @@ class Market_Index extends Controller{
         $form->createElement('text','bid',array('validators' => array('int')),'Cena');
         $form->getElement('bid')->addParam('autocomplete','off');
         $form->createElement('submit','submit');
-        
         if($form->isSubmit()){
             if($form->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
-                
                 $team_id = $user['Team']['id'];
-                
                 $result = $marketService->bidOffer($values,$offer,$team_id);
-                if($result!== false)
+                if($result['status']!== false){
+                    if(isset($_COOKIE['player_seller'])){
+                        $player_seller = unserialize($_COOKIE['player_seller']);
+                        if(isset($_COOKIE['player_seller'][$offer['id']])){
+                            $duplicateService->savePeopleDuplicate($offer['id'],$result['element']['id']);
+                        }
+                    }
+                    
                     TK_Helper::redirect('/market/show-offer/id/'.$offer['id']);
+                }
                 else{
-                    $this->view->assign('message','Licytacja się skończyła już');
+                    $this->view->assign('message',$result['message']);
                 }
                 
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
@@ -171,8 +183,6 @@ class Market_Index extends Controller{
         Service::loadModels('car', 'car');
         Service::loadModels('team', 'team');
         $marketService = parent::getService('market','market');
-        $carService = parent::getService('car','car');
-        $data = array();
         $marketOffers = $marketService->getAllActiveCarOffers(Doctrine_Core::HYDRATE_ARRAY);
         
         $this->view->assign('user',$user);
@@ -184,6 +194,7 @@ class Market_Index extends Controller{
         Service::loadModels('team', 'team');
         Service::loadModels('car', 'car');
         $marketService = parent::getService('market','market');
+        $duplicateService = parent::getService('market','duplicate');
         
         $id = $GLOBALS['urlParams']['id'];
         $offer = $marketService->getCarOffer($id,'id',Doctrine_Core::HYDRATE_RECORD);
@@ -205,10 +216,17 @@ class Market_Index extends Controller{
                 $team_id = $user['Team']['id'];
                 
                 $result = $marketService->bidCarOffer($values,$offer,$team_id);
-                if($result!== false)
+                if($result['status']!== false){
+                    if(isset($_COOKIE['car_seller'])){
+                        $car_seller = unserialize($_COOKIE['car_seller']);
+                        if(isset($_COOKIE['car_seller'][$offer['id']])){
+                            $duplicateService->saveCarDuplicate($offer['id'],$result['element']['id']);
+                        }
+                    }
                     TK_Helper::redirect('/market/show-car-offer/id/'.$offer['id']);
+                }
                 else{
-                    $this->view->assign('message','Licytacja się skończyła już');
+                    $this->view->assign('message',$result['message']);
                 }
                 
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
@@ -253,6 +271,23 @@ class Market_Index extends Controller{
         $carService = parent::getService('car','car');
         $data = array();
         $marketOffers = $marketService->getAllActiveMyCarOffers($user['Team']['id']);
+        
+        $this->view->assign('user',$user);
+        $this->view->assign('marketOffers',$marketOffers);
+    }
+    
+    public function showMyPlayerOffers(){
+        $userService = parent::getService('user','user');
+        
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        Service::loadModels('people', 'people');
+        $marketService = parent::getService('market','market');
+        $teamService = parent::getService('team','team');
+        $data = array();
+        $marketOffers = $marketService->getAllActiveMyOffers($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
         
         $this->view->assign('user',$user);
         $this->view->assign('marketOffers',$marketOffers);

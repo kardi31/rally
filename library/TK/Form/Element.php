@@ -2,6 +2,7 @@
 
 require_once(BASE_PATH."/library/TK/Form/Radio.php");
 require_once(BASE_PATH."/library/TK/Form/Select.php");
+require_once(BASE_PATH."/library/TK/Form/Checkbox.php");
 
 class Element{
          protected $elementDisplay;
@@ -107,16 +108,16 @@ class Element{
         elseif($this->type=="hidden"):
 	    $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
         else:
-            $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
+            $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()." form-control' type='".$this->type."' />";
             $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
         endif;
 	
         if(!$nostyle&&$this->type!="hidden"){
             if($this->type!="textarea"):
                 $this->elementDisplay = '<div class="form-group">'
-                        . '<label class="col-md-3 control-label">'.$this->label
+                        . '<label class="">'.$this->label
                         . '</label>'
-                        . '<div class="col-md-4">'
+                        . '<div class="">'
                         . ''.$this->elementDisplay.''
                         . '</div>'
                         . '</div>';
@@ -194,8 +195,12 @@ class Element{
     }
     
     public function getMethodVariable($variableName){
-        if(!$this->isSubmit())
+        if(!$this->isSubmit()){
+            if(isset($this->value)&&strlen($this->value)){
+                return $this->value;
+            }
             return "";
+        }
         if($this->method=="POST"):
             return $_POST[$variableName];
         elseif($this->method=="GET"):
@@ -325,7 +330,7 @@ class Element{
     
     public function prepareFieldValue(){
         if(strlen($this->getMethodVariable($this->name))){
-            return strlen($this->getMethodVariable($this->name));
+            return $this->getMethodVariable($this->name);
         }
         elseif(isset($this->value)){
             return $this->value;

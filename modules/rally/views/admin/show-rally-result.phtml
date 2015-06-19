@@ -122,83 +122,49 @@
         </div>
         <?php foreach($rally['Stages'] as $stage): ?>
             <script>
-        $(document).ready(function(){
-            var grid<?= $stage['id']; ?> = new Datatable();
-                grid<?= $stage['id']; ?>.init({
-                    src: $("#datatable_ajax<?= $stage['id']; ?>"),
-                    dataTable: {   
-                    "aoColumns": [
-                            { sWidth: '2%' },
-                            { sWidth: '2%' },
-                            { sWidth: '15%' },
-                            { sWidth: '10%' },
-                            { sWidth: '10%' },
-                            { sWidth: '10%' },
-                            { sWidth: '13%' },
-                            { sWidth: '10%' },
-                            { sWidth: '10%' },
-                            { sWidth: '2%' },
-                            { "bSortable": false, sWidth: '10%' }
-                        ],
-                        "aLengthMenu": [
-                            [20, 50, 100, 150, -1],
-                            [20, 50, 100, 150, "All"] // change per page values here
-                        ],
-                        "iDisplayLength": 20, // default record count per page
-                        "bServerSide": true, // server side processing
-                        "sAjaxSource": "/admin/rally/show-stage-result-data/stage-id/<?= $stage['id']; ?>", // ajax source
-                        "aaSorting": [[ 3, "asc" ]] // set first column as a default sort by asc
-                    }
+                $(document).ready(function(){
+                    var grid<?= $stage['id']; ?> = new Datatable();
+                        grid<?= $stage['id']; ?>.init({
+                            src: $("#datatable_ajax<?= $stage['id']; ?>"),
+                            dataTable: {   
+                            "aoColumns": [
+                                    { sWidth: '5%' },
+                                    { sWidth: '5%' },
+                                    { sWidth: '10%' },
+                                    { sWidth: '5%' },
+                                    { sWidth: '5%' },
+                                    { "bSortable": false, sWidth: '10%' }
+                                ],
+                                "aLengthMenu": [
+                                    [20, 50, 100, 150, -1],
+                                    [20, 50, 100, 150, "All"] // change per page values here
+                                ],
+                                "iDisplayLength": 20, // default record count per page
+                                "bServerSide": true, // server side processing
+                                "sAjaxSource": "/admin/rally/show-stage-result-data/stage-id/<?= $stage['id']; ?>", // ajax source
+                                "aaSorting": [[ 3, "asc" ]] // set first column as a default sort by asc
+                            }
+                        });
+                           grid<?= $stage['id']; ?>.getDataTable().yadcf([
+                                {
+                                  column_number: 1,
+                                  filter_type: "text"
+                                },
+                                {
+                                  column_number: 2,
+                                  filter_type: "text"
+                                },
+                                {
+                                  column_number: 3,
+                                  filter_type: "text"
+                                },
+                                {
+                                  column_number: 4,
+                                  filter_type: "text"
+                                }
+                    ]);
                 });
-                   grid<?= $stage['id']; ?>.getDataTable().yadcf([
-                        {
-                          column_number: 1,
-                          filter_type: "text"
-                        },
-                        {
-                          column_number: 2,
-                          filter_type: "text"
-                        },
-                        {
-                          column_number: 3,
-                          filter_type: "text"
-                        },
-                        {
-                          column_number: 4,
-                          filter_type: "text"
-                        },
-                        {
-                          column_number: 5
-                        },
-                        {
-                          column_number: 6,
-                          filter_type: "text"
-                        },
-                        {
-                          column_number: 7,
-                          filter_type: "text"
-                        },
-                        {
-                          column_number: 8,
-                          filter_type: "text"
-                        },
-                        {
-                            column_number: 9,
-                            data: [{
-                                value: '0',
-                                label: 'W wyścigu'
-                            },
-                            {
-                                value: '1',
-                                label: 'Poza wyścigiem'
-                            }]
-                        }
-
-            ]);
-
-//            customDataTableFunctions();
-        });
-    </script>
+            </script>
             <div class='col-md-6'>
         <div class="row">
             <div class="col-md-12">
@@ -220,30 +186,14 @@
                                             <th>Team</th>
                                             <th>Time</th>
                                             <th>Accident</th>
-                                            <th>Risk</th>
                                             <th>Options</th>
                                     </tr>
                                     <tr role="row" class="filter">
-                                            <th>
-                                            </th>
-                                            <th>
-                                            </th>
-                                            <th>
-                                            </th>
-                                            <th>
-                                            </th>
-                                            <th>	
-                                            </th>
-                                            <th>	
-                                            </th>
-                                            <th>	
-                                            </th>
-                                            <th>	
-                                            </th>
-                                            <th>	
-                                            </th>
-                                            <th>	
-                                            </th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
                                             <th>
                                                 <div class="margin-bottom-5">
                                                         <button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> Search</button>

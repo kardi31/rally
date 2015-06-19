@@ -2,6 +2,11 @@
  
 class TK_Text{
          
+    const LETTERS = 'letters';
+    const WORDS = 'words';
+    const PARAGRAPHS = 'paragraphs';
+    const BLOCK = 'block';
+    
     public function __construct(){
        
     }
@@ -22,6 +27,8 @@ class TK_Text{
         if($dateTime = DateTime::createFromFormat($inputFormat, $time))
             return $dateTime->format($outputFormat);
     }
+    
+    
     
     public static function createUniqueTableSlug($table, $string, $id = 0, $toLower = true, $space = '-') {
         $slug = self::createSlug($string, $toLower, $space);
@@ -174,6 +181,43 @@ class TK_Text{
         $actionName = lcfirst($actionName);
         
         return $actionName;
+    }
+    
+    public static function truncate($str, $limit = 60, $type = 'letters', $delim = '...', $force = true) {
+        $result = $str;
+        $tmp = trim(strip_tags($str));
+        $len = strlen($tmp);
+        if(strlen($tmp) > $limit) {
+            switch($type) {
+                case self::LETTERS:
+                    $result = (true ==$force) ? trim(substr($tmp, 0, $limit)) . $delim : trim(substr($tmp, 0, strrpos(substr($tmp, 0, $limit), ' '))) . $delim;
+                    break;
+                case self::WORDS:
+                    preg_match('/(.{' . $limit . '}.*?)\b/', $tmp, $matches);
+                    if(isset($matches[1])) {
+                        $result = trim($matches[1]) . $delim;
+                    }
+                    break;
+                case self::PARAGRAPHS:
+                    preg_match_all('/(<p(>|\s+[^>]*>).*?<\/p>)/i', $str, $match);
+                    if(count($match[0]) == 0) {
+                        return $str;
+                    }
+                    $paragraphs = array_slice($match[0], 0, $limit);
+                    return implode('', $paragraphs);
+                    break;
+                case self::BLOCK:
+                    preg_match_all('/(<(p|div|h1|h2|h3|h4|h5|h6)(>|\s+[^>]*>).*?<\/(p|div|h1|h2|h3|h4|h5|h6)>)/i', $str, $match);
+                    if(count($match[0]) == 0) {
+                        return $str;
+                    }
+                    $paragraphs = array_slice($match[0], 0, $limit);
+                    return implode('', $paragraphs);
+                    break;
+            }
+            
+        }
+        return $result;
     }
 }
 

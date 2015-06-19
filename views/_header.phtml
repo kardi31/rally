@@ -1,4 +1,33 @@
-<?php 
+<img src="/images/layout/logo-fastrally.png" class="logo" />
+<div class="topToolbar">
+<!--    <form method="POST" action="/user/login">
+        <div class='topToolbarTop'>
+            <input type="text" name="login" class="textInput" placeholder='Login'/>
+            <input type="password" name="password" class="textInput" placeholder='Password' />
+            <button type="submit" name="submit" class='logIn btn'>LOGIN</button>
+            
+        </div>
+        <div class='topToolbarBottom'>
+            <input type="checkbox" id='rememberMe'/> 
+            <label for='rememberMe'>Remember me</label>
+            <a href="#">Can't login?</a>
+
+        </div>
+    </form>-->
+    <div class="userLogin">
+        <img src="http://placehold.it/30x30" class="userImg" />
+        <?php echo $user['username']; ?>
+        <span class='flagSelect'>
+            <img src='/images/layout/gb.png' />
+        </span>
+    </div>
+<!--                <select>
+        <option value='gb'><img src='/images/layout/gb.png' /></option>
+        <option value='gb'><img src='/images/layout/pl.png' /></option>
+    </select>-->
+</div>
+<?php
+/*
 if(isset($authenticatedUser)&&$authenticatedUser){ ?>
 <script type="text/javascript">
   $(document).ready(function(){
@@ -157,16 +186,19 @@ if(isset($authenticatedUser)&&$authenticatedUser){ ?>
 else{
 ?>
 
-	    <div class="companyAccountMenu">
+<!--	    <div class="companyAccountMenu">
 		<a href="/user/register">Register</a>
 		<a href="/user/login">Login</a>
 		<a href="/account/my-account">My account</a>
 
 		<a href="/rally/list-rally">Rallies</a>
-<!--		<a href="/people/create-random-player/type/pilot">Create random pilot</a>
+		<a href="/people/create-random-player/type/pilot">Create random pilot</a>
 		<a href="/car/create-random-car">Create random car</a>
-		<a href="/people/create-random-player/type/driver">Create random driver</a>-->
-	    </div>
+		<a href="/people/create-random-player/type/driver">Create random driver</a>
+	    </div>-->
 
 <?php } ?>
 <div class="clearfix"></div>
+ * 
+ * 
+ */

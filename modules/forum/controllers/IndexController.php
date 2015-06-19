@@ -56,8 +56,7 @@ class Forum_Index extends Controller{
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
         
-        $threads = $forumService->getAllCategoryThreads($category['id'],Doctrine_Core::HYDRATE_ARRAY);
-       
+        $threads = $forumService->getAllCategoryThreads($category['id'],Doctrine_Core::HYDRATE_RECORD);
         $form = $this->getForm('forum','thread');
         
         if($form->isSubmit()){
@@ -109,9 +108,162 @@ class Forum_Index extends Controller{
             }
         }
         
+	$this->view->assign('user',$user);
 	$this->view->assign('form',$form);
 	$this->view->assign('posts',$posts);
 	$this->view->assign('thread',$thread);
+    }
+    
+    public function editThread(){
+        Service::loadModels('forum', 'forum');
+        Service::loadModels('user', 'user');
+        Service::loadModels('team', 'team');
+	
+        $forumService = parent::getService('forum','forum');
+        if(!$thread = $forumService->getThread($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_ARRAY)){
+            echo "error";exit;
+        }
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+       
+        $form = $this->getForm('forum','thread');
+        $form->populate($thread);
+        if($form->isSubmit()){
+            if($form->isValid()){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                $values = $_POST;
+                
+                if(in_array($user['role'],array('moderator','admin'))){
+                    $values['moderator_date'] = date('Y-m-d H:i:s');
+                    $values['moderator_name'] = $user['username'];
+                }
+		$values['id'] = $thread['id'];
+		$thread = $forumService->editThread($values);
+		
+		TK_Helper::redirect('/forum/show-thread/id/'.$thread['id']);
+		
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+            }
+        }
+        
+	$this->view->assign('form',$form);
+	$this->view->assign('user',$user);
+	$this->view->assign('thread',$thread);
+    }
+    
+    public function deleteThread(){
+        Service::loadModels('forum', 'forum');
+        Service::loadModels('user', 'user');
+        Service::loadModels('team', 'team');
+	
+        $forumService = parent::getService('forum','forum');
+        if(!$thread = $forumService->getThread($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_ARRAY)){
+            echo "error";exit;
+        }
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+       
+        $form = $this->getForm('forum','thread');
+        $form->populate($thread);
+        if($form->isSubmit()){
+            if($form->isValid()){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                $values = $_POST;
+                
+                if(in_array($user['role'],array('moderator','admin'))){
+                    $values['moderator_date'] = date('Y-m-d H:i:s');
+                    $values['moderator_name'] = $user['username'];
+                    $values['moderator_comment'] = $user['username'];
+                    $values['id'] = $thread['id'];
+                    $thread = $forumService->editThread($values);
+                    $thread->delete();
+                }
+		
+		TK_Helper::redirect('/forum/show-category/slug/'.$thread['Category']['slug']);
+		
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+            }
+        }
+        
+	$this->view->assign('form',$form);
+	$this->view->assign('user',$user);
+	$this->view->assign('thread',$thread);
+    }
+    
+    public function editPost(){
+        Service::loadModels('forum', 'forum');
+	
+        $forumService = parent::getService('forum','forum');
+        if(!$post = $forumService->getPost($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
+            echo "error";exit;
+        }
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        
+        $form = $this->getForm('forum','post');
+        $form->populate($post->toArray());
+        if($form->isSubmit()){
+            if($form->isValid()){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                
+                $values = $_POST;
+		
+                if(in_array($user['role'],array('moderator','admin'))){
+                    $values['moderator_date'] = date('Y-m-d H:i:s');
+                    $values['moderator_name'] = $user['username'];
+                }
+                $values['id'] = $post['id'];
+		$forumService->editPost($values);
+		
+		TK_Helper::redirect('/forum/show-thread/id/'.$post['Thread']['id']);
+		
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+            }
+        }
+        
+	$this->view->assign('user',$user);
+	$this->view->assign('form',$form);
+	$this->view->assign('post',$post);
+    }
+    
+    public function deletePost(){
+        Service::loadModels('forum', 'forum');
+	
+        $forumService = parent::getService('forum','forum');
+        if(!$post = $forumService->getPost($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
+            echo "error";exit;
+        }
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        
+        $form = $this->getForm('forum','post');
+        $form->populate($post->toArray());
+        if($form->isSubmit()){
+            if($form->isValid()){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                
+                $values = $_POST;
+		
+                if(in_array($user['role'],array('moderator','admin'))){
+                    $values['moderator_date'] = date('Y-m-d H:i:s');
+                    $values['moderator_name'] = $user['username'];
+                }
+                $values['id'] = $post['id'];
+		$post = $forumService->editPost($values);
+		$post->delete();
+		TK_Helper::redirect('/forum/show-thread/id/'.$post['Thread']['id']);
+		
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+            }
+        }
+        
+	$this->view->assign('user',$user);
+	$this->view->assign('form',$form);
+	$this->view->assign('post',$post);
     }
     
     public function addFavouriteForum(){

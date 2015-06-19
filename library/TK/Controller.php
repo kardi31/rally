@@ -105,4 +105,8 @@ class Controller{
             $user->save();
         }
     }
+    
+    public function getLayout(){
+        return $this->layout;
+    }
 }

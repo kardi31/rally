@@ -118,6 +118,28 @@ class TeamService extends Service{
         $this->saveTeamFinance($team_id,$amount,$moneyType,false,$description);
     }
     
+    public function removePreviousTeamMoney($team_id,$amount,$description){
+	
+        $team = $this->getTeam($team_id);
+	
+	$newCash = (int)$team['cash'] - $amount;
+	
+	$team->set('cash',$newCash);
+	$team->save();
+        
+        $this->removeTeamFinance($team_id,$amount,$description);
+    }
+    
+    public function removeTeamFinance($team_id,$amount,$description){        
+        $q = $this->financeTable->createQuery('f');
+        $q->addWhere('f.team_id = ?',$team_id);
+        $q->addWhere('f.amount = ?',$amount);
+        $q->addWhere('f.description = ?',$description);
+        $q->orderBy('id DESC');
+        $result = $q->fetchOne();
+        $result->delete();
+    }
+    
     
     public function saveTeamFinance($team_id,$amount,$detailed_type,$income = false,$description = null){
         $financeArray = array();

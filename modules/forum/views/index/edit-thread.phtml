@@ -1,0 +1,47 @@
+<style>
+    .postContent{
+        border:1px solid black;
+    }
+    
+    .breadcrumbs{
+        margin-left:0px;
+        padding-left:0px;
+    }
+    
+    .breadcrumbs li{
+        display:inline-block; 
+    }
+    
+    .breadcrumbs li:not(:last-of-type):after{
+        content: ">";
+        display:inline-block;
+        margin-left:5px;
+    }
+</style>
+<h3>Forum</h3>
+<ul class="breadcrumbs">
+    <li><a href="/forum/show-forum">Forum</a></li>
+    <li>Edit thread <?php echo $thread['title']; ?></li>
+</ul>
+
+
+<h5>Edit thread <?= $thread['title']; ?></h5>
+<form method="POST">
+    <?php echo $form->getElement('title')->renderElement(); ?>
+    <?php echo $form->getElement('content')->renderElement(); ?>
+    <?php 
+    if(in_array($user['role'],array('moderator','admin'))){
+        echo "Moderator notes: <br />";
+        echo $form->getElement('moderator_notes')->renderElement();
+        ?>
+            <label for='pinned'>Pinned</label>
+        <?php
+        echo $form->getElement('pinned')->renderElement();
+        ?>
+            <label for='active'>Active</label>
+        <?php
+        echo $form->getElement('active')->renderElement();
+    }
+    ?>
+    <?php echo $form->getElement('submit')->renderElement(); ?>
+</form>

@@ -1,1380 +1,490 @@
-.root{
-    margin:0 auto;
-}
+  /*
+    0. Global elements
+    1. Main Page
+     1.1 Header
+     1.2 Content
+     1.3 Footer
+   2. Main user page
+    2.1 Header
+    2.2 Menu
+    2.3 User box
+    2.4 Calendar box
+    2.5 Reklama 1 
+    2.6 Forum box
+    2.7 Last newses
+  
+*/
+/*
+0. Global elements
 
-.topWrapper{
-    width:966px;
-    margin:0 auto;
-    color:#69b0cc;
-}
-.login{
-    float:right;
-}
-.imgTop{
-    max-width:1000px;
-}
-.top{
-    width:966px;
-    margin:0 auto;
-}
-.sixthStep #driving_name{
-    display:none;
-}
+*/
 
-.eduform .control-group{display:none;}
-
-.showProfileWrapper table td, .showProfileWrapper table th{
-    padding:8px 3px;
+a:hover{
+    color:#f3f3f3;
 }
-div#secondStep.companyRegister div.control-group.attachedCompany{
-    width:300px;
+.btn{
+    font-family: 'Lato' !important;
 }
-div#secondStep .eduSpan br{
-    display:block;
-}
-.companyWebsite{
-    text-align:center;
-}
-.left{
-    float:left;
-    clear:left;
-}
-.attachedCompany .photo_button{
-    float:none;
-    max-width:200px;
-    margin:0 auto;
-}
-.mailWrapper .input-group-addon{
-    left: 187px;
-    padding: 4px 0;
-    position: absolute;
-    top: 15px;
-}
-.mailWrapper{
-    position:relative;
-    display:inline-block;
-}
-.offerFooter{
-    font-size:11px;
-}
-.sendApplication{
-    background:#55bfe6 !important;
-    margin:20px auto !important;
-    display:block !important;
-    float:none !important;
-    width:300px !important;
-    font-size:20px !important;
-}
-.sendApplicationWrapper{
-    text-align:center;
-}
-.mailWrapper input{
-    padding-left:45px;
-}
-.addAdvertisment .smallImportance .control-group{
-
-}
-.addAdvertisment .importance .control-group {
-    width: 60px !important;
-}
-.importance_message{
-    width:150px;
-    display:inline-block;
-    margin-top:12px;
-}
-.smallImportance{
-    margin-top:10px;
-}
-.mcaCollapse .showOfferWrapper{
-    margin-top:0px;
-}
-
-.favourite{
-   background:url('/images/gwiazdki.png'); 
-   background-position: 40px 0px;
-   display:block;
-   height:20px;
-   width:20px;
-}
-.favouriteWrapper{
-    float:right;
-}
-.searchRightWrap{
-    display: block;
-    float: left;
-    margin-right: 20px;
-    text-align: right;
-}
-.searchOfferPhoto{
-    float:left;
-    margin-right:20px;
-    width:72px;
-}
-.searchOfferPhoto img{
-    max-height:70px;
-}
-.logged-fav:hover{
-    background-position: -20px 0px;
-}
-.added-fav{
-    background-position: -20px 0px;
-}
-.searchSidebar label{
-    font-size:12px;
-}
-.searchSidebar .control-group{
-    margin-top:10px;
-}
-.right{
-    float:right;
-    margin-right:15px;
-    margin-top:-5px;
-}
-#secondStep .sex .control-group, .sex .control-group{
-    width:400px;
-}
-#secondStep .sex .control-group .radio,.sex .control-group .radio{
-    display:inline-block;
-    position: absolute;
-} 
-
-#secondStep .sex .controls label,.sex .controls label {
-    background-color:#E0E0E0;
-    color:#333333;
-    padding:4px 10px;
-    margin-right:1px;
-    text-align:center;
-} 
-#secondStep .sex .control-group .radio input,.sex .control-group .radio input{
-    visibility: hidden;
-} 
-.sex .controls label{
-    width:100px;
-    float:left;
-}
-div#secondStep div.make-switch div.switch-on label,div#secondStep div.make-switch div.switch-off label{
-    width:1px;
-}
-
-div#secondStep div.make-switch div.switch-off span.switch-right{
-    background:#428BCA;
-    color:#FFF;
-}
-div#secondStep div.make-switch div.switch-off span.switch-left{
-    background:#E0E0E0;
+input.textInput{
+    background:#a1a1a1;
+    border:0px;
     color:#000;
-}
-.welcome{
-    margin-right:15px !important;
-}
-.start radio{
-    display:inline-block;
-}
-.circleFormPopulated{
-    background:red !important;
-}
-.checker{
-    width:20px;
-    display:inline-block;
-}
-#secondStep .red{
-    margin-top:20px;
-    margin-left:30px;
-}
-ul.errors li{
-    color:red;
-    font-weight:bold;
-}
-.noformHeadline{
+    padding:2px;
+    font-size:18px;
     text-align:center;
+    width:130px;
 }
-div#secondStep .has-switch > div.switch-off {
-    left:0px !important;
-    margin-left:0px !important;
+input.textInput:focus::-webkit-input-placeholder 
+{
+    color: transparent;
+}
+input.textInput::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #000;
+}
+input.textInput:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #000;
+   opacity:  1;
+}
+input.textInput::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #000;
+   opacity:  1;
+}
+input.textInput:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #000;
 }
 a{
-    color:#69B0CC;
-}
-#sample_1_length > label{
-    color:#FFF;
-}
-.topSpace th,.topSpace td{
-    padding:5px;
-}
-.portlet.box .portlet-title .adsTopWrapper{
-    color:#000;
-}
-.tools-black{
-    background: #DD0000;
-}
-.subEducation,.subLocation{
-    display:none;
-}
-.fbWrapper{
-    min-width:90px;
-    display:inline-block;
-    top:10px;
-    position:relative;
-}
-.strzalkaTop{
-    position:absolute;
-    top:0px;
-    right:-45px;
-}
-.banerTopWrapper{
-    width:727px;
-    margin:0 auto;
-    margin-top:9px;
-}
-.subTopWrapper{
-    height:202px;
-    width:1038px;
-    margin:0 auto;
-    position:relative;
+    color:#f3f3f3;
 }
 
-.subTopWrapper img{
-    float:left;
+
+/*
+1.1 MAIN HEADER
+*/
+
+
+html,body{
+    background:#333;
+    padding:0px;
+    margin:0px;
+    /*background:#333;*/
 }
-.mainLogo {
-    display: block;
-    height: 200px;
-    margin:0 auto;
-    position: relative;
-    width: 413px;
-    z-index: 1;
-    
+body{
+    font-family: 'Lato';
+    color:#f3f3f3;
 }
-.premiumAds{
-    height:350px;
-}
-.register .errors li{
-    color: #FF0000;
-}
-.mainSearch{
-    width:1038px;
-    margin:0 auto;
-    background:url('/images/podklad.jpg');
-    height:215px;
+header{
+     background: #333;
     display:block;
-    padding: 0 50px;
-    z-index: 10;
+    height:110px;
 }
-
-/*a.button, button {  display:inline-block;
-    text-align:center;
-     background:#c8bb9b;
-     padding:10px;
-    color:#fff;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    border:none;
-    text-shadow:none;*/
-    /*min-width:150px;*/
-/*  }
-a.button:hover {display:inline-block;
-                               min-width:150px;
-    text-align:center;
-     background:#fff;
-     padding:10px;
-    color:#c8bb9b;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    border:none;
-    text-shadow:none;
-}*/
-.ui-multiselect-menu{
-    position: absolute;
-    display:none;
+.mainContainer{
+    width:1024px;
+    margin:0 auto;
 }
-.searchSidebar{
-    width:250px;
+.logo{
+    margin-top:28px;
+    margin-left:40px;
     float:left;
-    font-size:12px;
-    border:1px solid #CACACA;
-    margin-right:20px;
-    padding:10px;
-    /*border-right:1px solid black;*/
 }
-.searchSidebar .formHeadline{
-    margin-top:15px;
+.topToolbar{
+    float:right;
+    margin-right:40px;
+    margin-top:28px;
+}
+.logIn{
+    background: #00a651;
+    border-radius:0px;
+    color:#fff;
     font-size:18px;
-}
-.searchSend{
-    float:right;
-}
-.reverse .mainShort{
-    width:746px;
-    display:inline-block;
+    width:120px;
+    padding: 0px 10px;
+    margin-top: -4px;
 }
 
-.offerSearch{
-    min-height:75px;
-    padding-left:5px;
-    border-bottom:1px solid #4D90FE;
-    padding-top:10px;
-    /*border:1px solid black;*/
-}
-.offerSearch:first-of-type{
-    border-top:1px solid #4D90FE;
-    /*border:1px solid black;*/
-}
-.searchCreated{
-    font-size:11px;
-    display:block;
-}
-.searchPosition{
-    font-size:16px;
-    font-weight:bold;
-    color: #4D90FE;
-}
-.offerSearchDetails,.offerSearchHead,.offerSearchLogo{
-    float:left;
-    display:inline-block;
-}
-
-.bigSearchInput{
-    width:650px;
-}
-.typeahead{
-    /*width:692px;*/
-}
-.typeahead li{
-    margin:2px;
-    margin-left:5px;
-}
-.searchLocation{
-    font-size:0.85em;
-}
-.searchH2{
-
-    text-decoration: none;
-    margin:0px;
-    display:block;
-}
-.offerSearchDetails{
-    width:25%;
-}
-.offerSearchHead{
-   width:55%;
-}
-.searchOfferLink{
-    font-size:15px;
-}
-.searchH2 .searchCompany{
-    font-size:12px;
-    padding-left:5px;
-    margin-top:10px;
-}
-.searchSend .blue{
-    margin:0px;
-}
-.searchH2 span{
-    border-bottom: none;
-    display:block;
-    padding:0px;
-}
-.topCat, .topReg{
-    float:left;
-    display: inline-block;
-}
-.subSearch,.subSearch2{
-    float:left;
-}
-.subSearch{
-    width:705px;
-    position:relative;
-    color:#FFF;
-}
-.topCat span,.topReg span,.topEarningsFirst,.topEarningsSecond{
-    margin-left:12px;
-    margin-top:9px;
-    margin-bottom:8px;
-    display:block;
-}
-.topCat .ui-multiselect span,.topReg .ui-multiselect  span{ 
-    margin:0px;
-    display:inline-block;
-}
-.topCat button,.topReg button{ 
-    padding:5px 0px;
-}
-.submitTop{
-    border:0px;
-}
-.ui-widget-header .ui-icon{
-    display:inline-block;
-}
-.ui-widget-header li{
-    margin:5px 0px;
-}
-.ui-widget-header .ui-multiselect-close{
-    float:right;
-    margin-right:5px;
-}
-.ui-widget-header li{
-    margin:2px 0px;
-    padding:0px;
-    display:inline-block;
-}
-.ui-icon-triangle-2-n-s{
-    float:left;
-}
-.topEarningsFirst,.topEarningsSecond{
-    display:inline-block;
-    margin-top:23px;
-}
-.topEarningsSecond{
-    margin-left:3px;
-}
-.topEarnings select{
-   width:228px;
-}
-.advancedSearch{
-    color:#fff;
-    display:block;
-    text-decoration:underline;
-    text-align:center;
-    margin-top:5px;
-}
-
-.submitTop{
-    padding:0px;
-    background:none;
-    display:block;
-    margin:0 auto;
-}
-.submitTop:hover{
-    background:none;
-    border:none;
-    padding:0px;
-    display:block;
-}
-.main{
-    width:1038px;
-    margin:0 auto;
-    display:block;
-}
-
-.mainWrapper{
-    width:968px;
-    margin:0 auto;
-}
-.companyBanner #start_date{
-    width:160px;
-}
-.bannerLabel{
-    margin-top:50px;
-}
-.bannerAdd li{
-    margin-left:0px;
-    margin-top:0px;
-}
-.bannerAdd{
-    width:1200px !important;
-}
-.bannerShort{
-    width:260px;
-    margin:0 auto;
-}
-.bannerShort img{
-    width:260px;
-    height:185px;
-    cursor: pointer;
-}
-.bannerLong{
-    width:870px;
-    margin:0 auto;
-}
-.bannerLong img{
-    width:870px;
-    height:105px;
-    cursor: pointer;
-}
-footer{
-    margin-top:30px;
-}
-.codeMessage{
-    width:445px;
-    margin-top:10px;
-    padding:5px;
-    color:#fff;
-    display:block;
-    margin-left:25px;
-    height:0px;
-}
-.noBr br{
-    display:none;
-}
-.companyAccountMenu{
-    background: #2b6bb5;
-    color:#FFF;
-    width:1038px;
-    margin:0 auto;
-    height:30px;
-    line-height:30px;
-}
-.companyAccountMenu a{
-    float:left;
-    border-right:1px solid white;
-    background: #2b6bb5;
-    padding:0px 10px;
-    display:block;
-    color:#FFF;
-    position: relative;
-}
-.companyAccountMenu a:last-of-type{
-    border-right:none;
-}
-
-.startdate{
-    display:inline-block;
-    width:100%;
-}
-.startdate > span{
-    float:left;
-    font-size:14px;
-    line-height:50px;
-    display:block;
-    margin-right:45px;
-    margin-left:25px;
-    margin-top:25px;
-    color:#4a4a4a;
-}
-.start label{
-    margin-right:10px;
-}
-.subofferName a,.mcaLinks a{
-    color:#FFF;
-}
-.underh5,h5.formHeadline{
-    margin-left:10px;
-}
-
-.promoteAdvertisment .radio{
-    margin:5px 0px;
-    display:inline-block;
-}
-.showOfferWrapper{
-    margin:0 auto;
-    /*background: #ECECEC;*/
-    margin-top:-20px;
-    /*padding:20px;*/
-}
-.offerHeaderContent p{
-    margin:0px;
-}
-.offerHeaderContent{
-    margin-top:10px;
-    text-align:center;
-    display:block;
-}
-.offerHeaderContent span{
-    margin:0 auto;
-    font-weight: bold;
-}
-.offerNameHeader h3{
-    font-size:30px;
-    font-weight:bold;
-    text-transform:uppercase;
-    line-height: 30px;
-    text-align:center;
-    padding-bottom:0px;
-    margin-bottom:0px;
-    margin-top:0px;
-}
-.location {
-    text-align:center;
-}
-.location span h5{
-    display:inline-block;
-    margin:0px;
-    padding:0px;
-    color:#fff;
-    font-size:13px;
-}
-.offerNameHeader{
-    background:#55bfe6;
-    color:#fff;
-    padding-bottom:20px;
-    padding-top:20px;
-    margin-top:20px;
-}
-.h1OfferTop{
-    font-weight:bold;
-    font-size:20px;
-    margin-top:0px;
-    margin-bottom:0px;
-}
-.h2OfferTop{
+#rememberMe{
+    margin-top: 0px;
+    vertical-align: middle;
+}
+label[for="rememberMe"],.topToolbarBottom a{
     font-weight:normal;
-    font-size:18px;
-    margin-top:5px;
-    margin-bottom:0px;
-    margin-left:5px;
+    font-size:12px;
 }
-.showOfferSocial{
-    height:30px;
-    border-bottom: 1px solid #C3C3C3;
+.topToolbarBottom a{
+    margin-left:70px;
+    font-size:12px;
 }
-
-.sidebarOffer{
-    width:248px;
-    float:left;
-    display:inline-block;
-}
-
-.showOffer{
-    width:75%;
-    /*min-height:1500px;*/
-    display:inline-block;
-    /*padding:5px 10px;*/
-    border:1px solid #55bfe6;
-}
-
-.sidebarOfferTop .btn.blue{
-    text-align:center;
-    float:none;
-    font-weight:bold;
-    width:200px;
-    top:0px;
-    z-index:1;
-    position: relative;
-}
-.sidebarOfferTop i{
-    float:left;
-}
-.sidebarOfferTop{
-    min-height:450px;
-    padding:5px 2px;
-}
-.sidebarOfferBottom{
-    min-height:135px;
-    background:#FFF;
-    margin-left:-20px;
-    margin-bottom:-20px;
-    position:relative;
-}
-.sidebarOfferCompany{
-    padding-bottom:15px;
-    border-bottom:2px solid #55bfe6;
-    margin-bottom:15px;
-}
-.sidebarOfferTop ul{
-    list-style-type: disc;
-}
-.sidebarOfferTop li{
-    font-size:11px;
-}
-.sidebarListHeader{
-    color:#696969;
-    text-decoration: underline;
-}
-.sidebarListElement{
-  
-}
-.sidebarOfferBottom,.sidebarOfferTop,.showOffer{
-    /*border:1px solid black;*/
-    
-}
-.addAdvertisment label,.subEducation label{
-
-}
-.addAdvertisment .control-group label,.subEducation .control-group label{
-    width:175px;
-    max-width:175px;
-    margin-right:45px;
-}
-
-.addAdvertisment .control-group,.subEducation .control-group{
-    width:500px;
-    margin-top:10px;
-  
-}
-.addAdvertisment .controls,.subEducation .controls{
-    display:inline-block;
-    
-}
-.start .control-group{
-    width:250px;
-    margin-top:0px;
-}
-.addAdvertisment .importance,.subEducation .importance{
-    display:inline-block;
-    width:300px;
+.flagSelect,.topToolbar button,.topToolbar input[type="text"]:not(:first-of-type){
     margin-left:20px;
 }
-.sex br{
-    display:none;
+    
+.topToolbarBottom{
+    margin-top:8px;
 }
-.addAdvertisment div.startdate div.start_date div.input-group div.control-group{
-    width:200px;
+
+/*
+1.2 MAIN PAGE CONTENT
+*/
+
+.mainContent{
+    background:url('/images/layout/car_background.jpg');
+    background-size:100% 100%;
+    display:block;
+    min-height:500px;
+    padding-bottom:50px;
+    border-radius:20px;
+}
+.mainPageBox{
+    background:rgba(34, 33, 33, 0.85);
+    margin-top:22px;
+    padding:40px 42px;
+}
+.mainPageBox h2{
     margin-top:0px;
-}
-.addAdvertisment div.startdate div.start_date div.input-group div.control-group div.controls input#start_date.span8{
-    padding-bottom:7px;
-}
-.addAdvertisment .importance br,.subEducation .importance br{
-    display:none;
-}
-.addAdvertisment .importance label,.subEducation .importance label{
-    width:1px;
-    float:left;
-    margin:0px;
-    margin-top:12px;
-}
-.addAdvertisment .importance label:first-child,.subEducation .importance label:first-child{
-    width:1px;
-    float:left;
-}
-.addAdvertisment .importance label.import,.subEducation .importance label.import{
-    width:175px;
-    margin-left:25px;
-    float:left;
-    display:inline-block;
-    margin-top:10px;
-    margin-right:45px;
-}
-.addAdvertisment .importance div.control-group,.subEducation .importance div.control-group{
-    width:300px;
-    float:left;
-    margin-right:30px;
-    display:block;
-    margin-top:0px;
-}
-.addAdvertisment .importance div.radio,.subEducation .importance div.radio{
-    
-}
-.addAdvertisment .importance input,.subEducation .importance input{
-    visibility: hidden;
-}
-.addAdvertisment .importance div.radio span,.subEducation .importance div.radio span{
-  background-image:none;
-
-}
-
-.register #email{
-    width:auto;
-    margin-left:0px;
-    padding-left:15px;
-    max-width:none !important;
-}
-.companyRadio .control-group{
-    margin:0px;
-}
-.register .companyRadio .radio{
-    float:right;
-}
-.register .companyRadio label{
-    width:140px;
-    max-width:140px;
-    margin-left:25px;
-}
-.register label{
-    width:100px;
-}
-.addAdvertisment .populateDataSource .control-group, .addAdvertisment .populateDataSource .control-group {
-    width:auto !important;
-    max-width:none !important;
-}
-.importance label{
-    width:20px !important;
     text-align:center;
-}
-.searchSend .checker span { width:20px; height:20px; display:block;float:right;margin-right:20px;background:url(/images/gwiazdki.png); background-position:40px 0px; }
-.searchSend .checker span:hover,.searchSend .checker span.checked,.searchSend .checker:focus span.checked,.searchSend div.checker.hover span.checked,.searchSend div.checker.focus span.checked{ background-position: -20px 0px;}
-
-.addAdvertisment .populateDataSource .importance .control-group, .addAdvertisment .populateDataSource .importance .control-group {
-    width:60px !important;
-}
-.star { background:url(/images/gwiazdki.png); background-position:-40px 0px; }
-
-.starRed{
-    display:block;height:20px;width:20px;
-    background:url(/images/gwiazdki.png);background-position:20px 0px;
-}
-.starYellow{
-    display:block;height:20px;width:20px;
-    background:url(/images/gwiazdki.png);background-position:-20px 0px;
-}
-.starGreen{
-    display:block;height:20px;width:20px;
-    background:url(/images/gwiazdki.png);background-position:0px 0px;
-}
-.importance .controls label div.radio span { margin:0 auto;background:url(/images/gwiazdki.png); background-position:-40px 0px; width:20px; height:20px; display:block; }
-.importance .controls label:nth-of-type(1) div.radio:hover  span,.importance label:first-child div.radio:hover  span:after,.importance label:first-child div.radio:hover span:before,
-.importance .controls label:nth-of-type(1) div.radio span.checked,.importance label:first-child div.radio  span.checked:after,.importance label:first-child div.radio span.checked:before{
-    background-position:0px 0px;
-}
-.importance label:nth-of-type(2) div.radio:hover span,.importance label:nth-of-type(2) div.radio:hover  span:after,.importance label:nth-of-type(2) div.radio:hover span:before,
-.importance .controls label:nth-of-type(2) div.radio span.checked,.importance label:nth-of-type(2) div.radio  span.checked:after,.importance label:nth-of-type(2) div.radio span.checked:before{
-    background-position:-20px 0px;
-}
-.firstStep .startdate{
-    margin-left:25px;
-}
-ul.select2-choices{
-    max-width:150px;
-}
-.my-step{
-    margin-bottom:20px;
-}
-.responsibility .controls{
-    clear:both;
-}
-.langForm select{
-    max-width:100px !important;
-}
-.importance .controls label:nth-of-type(2) div.radio:hover  span.checked ~ .importance .controls label:nth-of-type(1) div.radio span.checked{
-       background-position:-20px 0px;
-}
-
-.importance label:nth-of-type(3) div.radio:hover span,.importance label:nth-of-type(3) div.radio:hover  span:after,.importance label:nth-of-type(3) div.radio:hover span:before,
-.importance .controls label:nth-of-type(3) div.radio span.checked,.importance label:nth-of-type(3) div.radio  span.checked:after,.importance label:nth-of-type(3) div.radio span.checked:before{
-    background-position:20px 0px;
-}
-.start label{
-     margin-right:10px !important;
-    width:100px !important;
-    max-width:100px !important;
-}
-.start .radio{
-    float:left;
-}
-.start label span{
-    width:25px;
-    display:inline-block;
-}
-.partners{
-    width: 695px;
-}
-.partnerImages{
-    margin-top:35px;
-    margin-bottom:54px;
-}
-.printPdfFooter{
-    text-align:center;
-}
-.showProfileAdd{
-    margin-right:5px;
-}
-.blue,#secondStep .green{
-    float:right;
-    margin-right:30px;
-    margin-top:20px;
-}
-#forw{
-    margin-left:30px;
-    margin-top:20px;
-}
-.rowLight{
-    background:#FFF;
-}
-.rowDark{
-    background:#F4F4F4;
-    
-}
-.rowLight td,.rowDark td{
-    text-align:center;
-}
-.rowLight .offerName,.rowDark .offerName{
-    text-align:left;
-}
-.control-switch .col-md-9{
-    width:auto;
-}
-.eduHeader{
-    padding:5px;
-    font-weight:bold;
-    margin:5px 0px;
-}
-.eduHeader span{
-    margin:5px;
-    font-weight:normal;
-}
-.partnerImages img{
-  
-}
-.rightMainTop{
-    width:272px;
-    float:right;
-}
-.reklama1{
-    display:block;
-    margin:0 auto;
-    margin-top:10px;
-    margin-bottom:20px;
-}
-
-.rightMainTopWrapper{
-    margin:0 auto;
-    width:220px;
-}
-.rightMainTopWrapper .underline{
-    margin-bottom:20px;
-}
-
-.leftMainTop{
-    width:695px;
-    float:left;
-}
-
-.red{
-    color:red;
-}
-.advertisment{
-    width: 166px;
-    height:240px;
-    float:left;
-    border:2px solid #d7d7d7;
-    text-align:center;
-    z-index:1;
-    
-}
-.advertisment:hover{
-    height:260px;
-    margin-top:-10px;
-    width:170px;
-    margin-right:-4px;
-    border-top:2px solid #6bc4f0;
-    background: #fdfdfd;
-    z-index:10;
-    box-shadow: 2px 2px 2px 2px #d7d7d7;
-}
-.adsWrapper .bx-wrapper:hover{
-    max-width:685px !important;
-    width:685px !important;
-}
-.bxslider{
-    margin-top:25px;
-}
-
-.bxslider li{
-    z-index:1;
-}
-.bxslider li:hover{
-    z-index:10;
-}
-.adPosition{
-    margin-top:10px;
-    font-weight:bold;
-    display: block;
-}
-.adCompany{
-    margin-top:10px;
-    display: block;
-}
-.adMoney{
-    margin-top:10px;
-    display: block;
-}
-.superOferta{
-    position:absolute;
-    top:-15px;
-    right:0;
-}
-
-
-.categoryList{
-    float:left;
-    width:200px;
-    
-}
-.categoryList ul{
-    list-style-type:none;
-}
-.categoryList li:before{
-    content: "• ";
-    color: #ff8100; /* or whatever color you prefer */
-}
-.categoryTop{
-    font-weight:bold;
-}
-.categories{
-    margin-top:60px;
-    margin-bottom:43px;
-    display:inline-block;
-}
-
-.categoryWrapper{
-    margin-top:25px;
-    min-height:300px;
-}
-.adsWrapper{
-    margin-top:30px;
-}
-.advertisment img{
-    margin:5px auto;
-    display:block;
-}
-
-.advertisment{
-    position:relative;
-}
-.topCat select,.topReg select{
-    width:365px;
-    height:25px;
-    background:#f6f6f6;
-}
-.topCat option,.topCat optgroup,.topReg option,.topReg optgroup{
-    display:none;
-}
-.topReg select{
-    width:305px;
-}
-.topCat{
-    margin-right:25px;
-}
-.subSearch2{
-    width:230px;
-    position:relative;
-}
-.subSearch2 h3{
-    color:#fff;
-    text-align:center;
-    margin-top:30px;
-    margin-bottom:33px;
-}
-
-.diplomaScan{
-    max-width:10px;
-}
-#secondStep input:not([type="file"]){
-    max-width:120px;
-}
-.banerBottom{
-    margin:0 auto;
-    margin-top:11px;
-    margin-bottom:11px;
-    display:block;
-}
-.register .control-group,#login .control-group,#registerComplete .control-group{
-    width:500px;
-    margin-bottom:15px;
-}
-#registerComplete .control-group{
-    float:none;
+    font-size:24px;
+    margin-bottom:40px;
+}
+.leftMainPageBox img{
+    width: 300px;
+  margin-top: 20px;
+  margin-bottom:20px;
+}
+.leftMainPageBox ul{
     margin-top:15px;
 }
-#registerComplete .control-label{
-    width:150px;
-    max-width:150px;
+.leftMainPageBox{
+    margin-left:40px;
 }
-.register span{
-    margin:5px 0px;
-    display:block;
-
-}
-.register .blue,#login .blue,#registerComplete .blue{
-    margin-top:0px;
-    float:none;
-    margin-left:25px;
-}
-.main{
-    min-height:500px;
-}
-.adsTopWrapper span{
-    float:right;
-    font-size:20px;
-    line-height:20px;
-    
-}
-.adsTopWrapper{
+.rightMainPageBox{
     margin-right:40px;
 }
-.myAds th{
-    border-style:none;
-}
-.myAds table{
-    margin-top:10px;
-}
-.myAds table th:first-child{
-    font-size:10px;
-}
-.myAds table th:first-child,.myAds table td:first-child{
-    max-width: 5px;
-}
-.locationOffer{
+.rightMainPageBox label{
     display:block;
-    font-size:10px;
-    
 }
-img.promoteLogo{
-    width:72px !important;
-    height:35px !important;
-}
-img.superOferta{
-    width:41px !important;
-    height:41px !important;
-}
-.bx-wrapper li{
-    margin:0;
-}
-.premiumAds .bx-viewport {
-    height:300px !important;
-}
-.partnerImages .bx-wrapper img{
-    width:160px;
-    height:95px;
-}
-.categoryWrapper .bx-wrapper li{
-    margin: 0.5em 0 0.5em 2em;
-}
-.bx-wrapper .bx-next{
-    left:720px !important;
-}
-.bx-wrapper .bx-prev{
-    left:-25px !important;
-}
-.popover{
-    position:absolute !important;
-    max-width:180px;
-    background:#4D90FE;
-    color:#FFF;
-}
-.searchSidebar br{
-    display:none;
-}
-.bx-wrapper .bx-controls-direction a{
-    top:135px !important;
-}
-.partnerImages .bx-viewport{
-    padding:10px 0px !important;
-}
-
-.promoteWrapper{
-    float:right;
-    margin-right:20px;
-}
-
-.promoteAd{
-    width:185px;
-    height:75px;
-    background: #e4e4e4;
-}
-.promoteAd img{
-    display: block;
-    float: left;
-    margin-left: 10px;
-    position: relative;
-    top: 20%;
-}
-.promoteAd a{
-    display: inline-block;
-    margin-top: 15px;
-    position: relative;
-    color:#000;
-}
-.promoteAd span{
-    display: block;
-    float: left;
-    position: relative;
-    text-align: center;
-    width: 130px;
-}
-.removeAd{
-    background:red;
-}
-#uniform-remember{
-    margin-left:75px;
-}
-.forgot_password{
-    margin-left:75px;
-    width:500px;
-    display: inline-block;
-    margin-bottom:15px;
-}
-#messageDiv {
-    position:fixed;
-    top: 50%;
-    left: 50%;
-    width:30em;
-    height:30px;
-    margin-top: -9em; /*set to a negative number 1/2 of your height*/
-    margin-left: -15em; /*set to a negative number 1/2 of your width*/
-    border: 1px solid #ccc;
-    z-index:2000;
-    background-color: green;
-    display: none;
-    color:#fff;
-    text-align:center;
-    font-size:16px;
-    line-height: 16px;
-    padding-top:10px;
-    font-weight:bold;
-}
-.skillsWrapper{
-    margin-top:40px;
-}
-.skillsWrapper .form-group{
-    margin:15px 0px;
-}
-.skillsWrapper .form-group input{
-    max-width:300px !important;
-    width:300px !important;
-}
-/* show offer */
-
-.showOfferUserHeader{
-    border-top:34px solid #63b2d9;
-}
-.showOfferReq p{
-    margin:0px !important;
-}
-
-/* show profile */
-
-.showProfile{
-    width:95%;
-    margin:0 auto;
-    border:6px solid #75d2ff;
-    border-top:38px solid #75d2ff;
-}
-
-.showProfileNoItem{
-    padding:10px 5px;
-    font-size:14px;
-}
-.profilePhoto{
-    position:relative;
-    height:150px;
-    float:left;
-}
-.profilePhoto img{
-    display: block;
-    position: absolute;
-    left: 110px;
-    max-width: 200px;
-    max-height: 200px;
-    border:2px solid #75d2ff;
-    top:-22px;
-}
-.showProfileItemWrapper{
-    padding:0px 50px;
-}
-
-.showProfileHeader{
-    
-    margin-left: 300px;
-    /*margin-top: 30px;*/
-}
-
-.showProfileHeaderItem{
-    margin:5px 0px;
-    font-size:14px;
-    /*font-weight:bold;*/
-}
-.showProfileHeaderItem span{
-    font-size:14px;
-    margin-right:5px;
-    font-weight:normal;
-}
-.showProfileUserName{
-    font-size:26px;
-    padding:15px 0px;
-    margin-top:0px;
-}
-.showProfileContentMain{
-    margin-top:-10px;
-     min-height:400px;
-    padding-top:0px;
-    background:#F8F8F8;
-    border-radius:6px !important;
-    -moz-border-radius:6px !important;
-    -webkit-border-radius:6px !important;
-}
-
-.showProfileExperienceDate{
-    float:left;
-    margin-right:20px;
-    margin-top:10px;
-}
-.showProfileExperiencePosition div{
-    margin:0px 10px;
-    display:inline-block;
-}
-.showProfileExperience{
-    float:left;
-    margin-top:1px;
-}
-.showProfileExperiencePosition{
-    font-weight:bold;
-}
-.showProfileExperienceDescription{
-    padding-left:20px;
-    margin:3px 0px;
-    margin-bottom:10px;
-}
-.showProfileExperienceDescription span{
+.rightMainPageBox input:not([type="checkbox"]){
     display:block;
-    padding:5px 0px;
-    margin-left:-20px;
-}
-
-.cvFooter{
-    margin:10px 0px;
-    font-size:12px;
-}
-.cvFooter a{
-    display:block;
-    font-size:14px;
-    color:#000;
-}
-
-/* show profile education */
-
-.showProfileEducation div,.showProfileEducation2 div{
-    display:inline-block;
-    margin:5px 10px;
-}
-
-.showProfileEducationDate{
-    font-weight:bold;
-    
-}
-.showProfileEducationGrade{
-    margin: 5px 10px;
-}
-.showProfileEducation{
-    margin-top:20px;
-}
-.showProfileEducationGrade{
+    width:220px;
     margin-bottom:20px;
 }
-.showProfileEducation3,.showProfileEducation2{
-    margin-left:92px;
+.rightMainPageBox .acceptRules #acceptRules{
+    margin:0px;
+    vertical-align:middle;
+}
+.rightMainPageBox .acceptRules label{
+    display:inline;
+}
+.rightMainPageBox .acceptRules{
+    margin-bottom:20px;
+    display:block;
 }
 
-/* show profile languages */
-
-.showProfileLanguage{
-    margin:15px 0px;
+.rightMainPageBox button{
+    margin:0 auto;
+    display:block;
+      width: auto;
+  padding: 5px 35px;
 }
-.showProfileLanguage div{
+
+/* 
+1.3 Footer
+*/
+
+footer{
+    background:#333;
+    padding:23px 100px;
+    
+}
+.copyright{
+    color:#919090;
+    float:left;
+}
+.footerMenu{
+    float:right;
+}
+
+.footerMenu ul{
+    display:inline;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.footerMenu ul li{
     display:inline-block;
 }
 
-/* show profile languages */
-
-.showProfileCourseOrganizer{
-    padding: 5px 10px;
-}
-
-/* show profile footer */
-
-.showProfileFooter{
-    font-size:10px;
-     padding:10px 50px;
-    background:#d9d9d9;
-    margin:30px 0px;
-}
-
-
-
-/* user step */
-.stepEdit{
-    margin:10px 0px;
+.footerMenu ul li a{
     display:block;
+    padding:0px 5px;
+}
+
+
+.footerMenu .social_icon_link{
+    width:19px;
+    height:19px;
+    text-align:center;
+    display: inline-block;
+    margin-top:-5px;
+}
+
+.footerMenu .social_icon_link i{
+    width:15px;
+    height:15px;
+    text-align:center;
+}
+
+.footerMenu a.fb{
+    background:#3b5998;
+    margin-right:7px;
+    margin-left:25px;
+}
+
+.footerMenu a.twitter{
+    background:#00aced;
+}
+
+/*  
+    2.1 Header
+*/
+
+.userLogin{
+    font-size:18px;
+}
+
+.userLogin img.userImg{
+    margin-right:10px;
+}
+
+.mainContent.mainUserContent{
+    border-radius:0px;
+    background:url('/images/layout/ground_background.jpg') no-repeat;
+    background-size:cover;
+}
+
+/* 
+    2.2 Menu
+*/
+
+.jMenu{display:table;margin:0;padding:0;list-style:none;}
+.jMenu li{display:table-cell;background-color:#322f32;margin:0;list-style:none;border-right:3px solid #242424;}
+.jMenu li a{
+    padding: 10px 28px;
+  display: block;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+.jMenu li a:hover{background-color:#3a3a3a}
+.jMenu li:hover>a{background-color:#3a3a3a}
+.jMenu li ul{display:none;position:absolute;z-index:9999;padding:0;margin:0;list-style:none;margin-top:10px;width:100% !important; 
+}
+/*.jMenu li:first-of-type ul{display:block !important;}*/
+.jMenu li ul li{background-color:#fff;display:block;border-bottom:1px solid #484548;padding:0px;list-style:none;position:relative;display:inline-block;vertical-align: top;}
+.jMenu li ul li a{font-size:11px;color:#322f32;text-transform:none;display:block;padding:7px 17px;border-top:1px solid transparent;border-bottom:1px solid transparent;font-size:14px;}
+.jMenu li ul li a.isParent{background-color:#3a3a3a}
+.jMenu li ul li a:hover{background-color:#514c52;border-top:1px solid #322f32;border-bottom:1px solid #322f32}
+#jMenu{
+    border-left:2px solid #8e8e8e;
+    box-shadow: 0px -10px 10px -8px #4f4f4f;
+    margin:0 auto;
+    border-bottom: 3px solid #0d0d0d;
+    border-right: 3px solid #0d0d0d;
+}
+#menu{
+    margin-bottom: 45px;
+}
+#menu:after{
+    clear:both;
+    display:block;
+    content: " ";
+}
+
+/*
+    2.3 User box 
+*/
+
+.mainUserBox{
+    background:#504f4f;
+    padding-left:0px;
+    padding-bottom:5px;
+    margin-bottom:25px;
+    position:relative;
+    
+}
+
+.boxFriends{
+    height:195px;
+}
+.subboxFriends{
+    height:120px;
+    overflow-y:scroll;
+
+}
+.boxFriends li{
+    margin-bottom:10px;
+}
+.boxFriends li img{
+    margin-left:20px;
+    margin-right:7px;
+}
+.boxFriends li.active i{
+    background: green;
+}
+.boxFriends ul{
+    list-style:none;
+    padding-left:0px;
+}
+.boxFriends li i{
+    color: #aeaeae;
+    margin-left:7px;
+}
+
+.mainUserBox h4{
+    background:#212121;
+    font-size:25px;
+    line-height:25px;
+    padding:15px 20px;
+    margin-top:0px;
+}
+
+/* 
+    2.4 Calendar box
+*/
+
+.boxCalendar{
+    position:relative;
+    /*height:200px;*/
+    background:none;
+}
+
+.boxCalendar h4{
+    margin-bottom:0px;
+}
+
+/*
+2.5 Reklama 1 
+*/
+
+.reklama1{
+    margin-bottom:25px;
+}
+
+/*
+2.6 Box forum
+*/
+
+.boxForum ul{
+    padding-left:0px;
+    list-style-type:none;
+}
+
+.boxForum li{
+    margin-left:10px;
+    margin-bottom:10px;
+}
+
+.boxForum li span{
+    margin-left:20px;
+    display:block;
+    line-height:22px;
+}
+
+.boxForum li span i{
+    margin-right:10px;
+}
+
+/*
+   2.7 Last newses
+*/
+
+.lastNewses{
+    background:#504f4f;
+}
+
+.newsItem{
+    padding:10px;
+    margin-bottom:20px;
+}
+
+.newsTitle{
+    margin-bottom:10px;
+    font-size:16px;
+}
+
+.newsDate{
+    font-size:12px;
+    line-height:16px;
+    float:right;
+}
+
+/* 
+    2.8 Transfer box 
+*/
+
+.boxTransfer{
+    background:#222;
+    padding-bottom:10px;
+}
+
+.boxTransfer h4{
+    margin-bottom:0px;
+}
+
+.boxTransfer i{
+    margin-right:10px;
+}
+
+.boxTransfer i.fa-clock-o{
+    margin-right:13px;
+}
+
+.transferTeam{
+    display:inline-block;
+    font-style:italic;
+}
+
+.boxTransfer a{
+    font-weight: bold;
+    display:block;
+    padding-left:25px;
+}
+
+.seeAllTransfer{
+    margin:0 auto;
+}
+
+.boxTransfer .item{
+    margin-bottom:15px;
+    background:#504f4f;
+    padding:5px;
+    padding-left:15px;
+}
+
+/*.boxTransfer .item:nth-of-type(3){
+    margin-bottom:10px;
+}*/
+
+/*
+    2.9 Gold overlay
+*/
+.goldOverlay{
+    position:absolute;
+    top:0px;
+    left:0px;
+    opacity:0.7;
+    width:100%;
+    height:100%;
+    background:#000;
+}
+
+.goldOverlay a{
+    float:right;
+    margin-right:10px;
+    margin-top:10px;
+}
+
+.goldOverlay a img{
+    height:40px;
+    opacity:1;
 }

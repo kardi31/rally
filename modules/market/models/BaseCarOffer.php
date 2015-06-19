@@ -7,10 +7,15 @@
  * 
  * @property integer $id
  * @property integer $car_id
+ * @property integer $team_id
  * @property datetime $start_date
  * @property datetime $finish_date
  * @property integer $asking_price
  * @property integer $highest_bid
+ * @property boolean $active
+ * @property boolean $car_moved
+ * @property boolean $canceled
+ * @property string $user_ip
  * @property Doctrine_Collection $Bids
  * 
  * @package    ##PACKAGE##
@@ -33,6 +38,10 @@ abstract class Market_Model_Doctrine_BaseCarOffer extends Doctrine_Record
              'type' => 'integer',
              'length' => '4',
              ));
+        $this->hasColumn('team_id', 'integer', 4, array(
+             'type' => 'integer',
+             'length' => '4',
+             ));
         $this->hasColumn('start_date', 'datetime', null, array(
              'type' => 'datetime',
              ));
@@ -46,6 +55,22 @@ abstract class Market_Model_Doctrine_BaseCarOffer extends Doctrine_Record
         $this->hasColumn('highest_bid', 'integer', 11, array(
              'type' => 'integer',
              'length' => '11',
+             ));
+        $this->hasColumn('active', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 1,
+             ));
+        $this->hasColumn('car_moved', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
+             ));
+        $this->hasColumn('canceled', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
+             ));
+        $this->hasColumn('user_ip', 'string', 255, array(
+             'type' => 'string',
+             'length' => '255',
              ));
 
         $this->option('type', 'MyISAM');

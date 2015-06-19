@@ -7,7 +7,7 @@
  * 
  * @property integer $id
  * @property string $title
- * @property integer $slug
+ * @property string $slug
  * @property text $content
  * @property datetime $publish_date
  * @property boolean $visible
@@ -32,9 +32,9 @@ abstract class News_Model_Doctrine_BaseNews extends Doctrine_Record
              'type' => 'string',
              'length' => '255',
              ));
-        $this->hasColumn('slug', 'integer', 11, array(
-             'type' => 'integer',
-             'length' => '11',
+        $this->hasColumn('slug', 'string', 255, array(
+             'type' => 'string',
+             'length' => '255',
              ));
         $this->hasColumn('content', 'text', null, array(
              'type' => 'text',

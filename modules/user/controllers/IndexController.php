@@ -134,16 +134,16 @@ class User_Index extends Controller{
             TK_Helper::redirect('/user/my-account');
         
         $form = new Form();
-        $form->createElement('text','email',array('validators' => array('stringLength' => array('min' => 4,'max' => 30)),'Email'));
-        $form->createElement('password','password',array('validators' => array('stringLength' => array('min' => 4,'max' => 12))),'Hasło');
+//        $form->createElement('text','email',array('validators' => array('stringLength' => array('min' => 4,'max' => 30)),'Email'));
+//        $form->createElement('password','password',array('validators' => array('stringLength' => array('min' => 4,'max' => 12))),'Hasło');
         $form->createElement('submit','submit');
         if($form->isSubmit()){
             if($form->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
-                
-                $user = $userService->getUser($values['email'], 'email');
+//                var_dump($values);exit;
+                $user = $userService->getUser($values['login'], 'username');
                 if ($user && !$user->get('active')):
                     $this->view->messages()->add($this->view->translate('User is not active'), 'error');
                 else:

@@ -1,0 +1,27 @@
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ * 
+ * @Author = Tomasz Kardas <kardi31@tlen.pl>
+ */
+?>
+
+<html>
+    <head>
+	<?php echo $this->showFile('_head_main.phtml'); ?>
+    </head>
+    <body>
+        <div class="mainContainer">
+                <header>
+                    <?php echo $this->showFile('_header_main.phtml'); ?>
+                </header>
+                <div class="mainContent">
+                    <?php echo $this->content; ?>
+                </div>
+                <?php echo $this->showFile('_footer_main.phtml'); ?>
+        </div>
+    </body>
+</html>

@@ -40,7 +40,14 @@ class UserService extends Service{
         if(!isset($_SESSION['user'])):
             return false;
         else:
-            return unserialize($_SESSION['user']);
+            $user = unserialize($_SESSION['user']);
+            if($user['gold_member']==1&&$user['gold_member_expire']<date('Y-m-d H:i:s')){
+                $user->set('gold_member',0);
+                $user->save();
+                $_SESSION['user'] = serialize($user);
+                $_SESSION['role'] = $user['role'];
+            }
+            return $user;
         endif;
     }
     

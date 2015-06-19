@@ -24,7 +24,7 @@
             TimeBeforeClosing: 100,
             animatedText:      true,
             paddingLeft:       7,
-            openClick:         false,
+            openClick:         true,
             effects: {
                 effectSpeedOpen:  150,
                 effectSpeedClose: 150,
@@ -99,9 +99,9 @@
                                 e.preventDefault();
                                 $.jMenu._show($ul);
                             },
-                            mouseleave:function(){
-                                $.jMenu._closeList($ul);
-                            }
+//                            mouseleave:function(){
+//                                $.jMenu._closeList($ul);
+//                            }
                         });
                 }
             });

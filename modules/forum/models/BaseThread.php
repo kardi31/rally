@@ -12,6 +12,9 @@
  * @property text $content
  * @property boolean $pinned
  * @property boolean $active
+ * @property text $moderator_notes
+ * @property timestamp $moderator_date
+ * @property string $moderator_name
  * @property Forum_Model_Doctrine_Category $Category
  * @property Doctrine_Collection $Posts
  * 
@@ -53,6 +56,16 @@ abstract class Forum_Model_Doctrine_BaseThread extends Doctrine_Record
         $this->hasColumn('active', 'boolean', null, array(
              'type' => 'boolean',
              'default' => 1,
+             ));
+        $this->hasColumn('moderator_notes', 'text', null, array(
+             'type' => 'text',
+             ));
+        $this->hasColumn('moderator_date', 'timestamp', null, array(
+             'type' => 'timestamp',
+             ));
+        $this->hasColumn('moderator_name', 'string', 255, array(
+             'type' => 'string',
+             'length' => '255',
              ));
 
         $this->option('type', 'MyISAM');

@@ -24,12 +24,34 @@
     <li><a href="/forum/show-category/slug/<?php echo $thread['Category']['slug']; ?>"><?php echo $thread['Category']['name']; ?></a></li>
     <li><?php echo $thread['title']; ?></li>
 </ul>
+<div>
+    <?php if($user['role']=="admin"||$user['role']=="moderator"||$user['id']==$thread['user_id']): ?>
+    <div style='float:right;margin-right:50px;'>
+        <a href="/forum/edit-thread/id/<?= $thread['id']; ?>">Edit</a>
+        <a href="/forum/delete-thread/id/<?= $thread['id']; ?>">Remove</a>
+    </div>
+    <?php endif; ?>
+<div>
 Created by : <?php echo TK_Text::timeFormat($thread['created_at'],'d/m/Y H:i'); ?> by
         '<?php echo $thread['User']['username']; ?>'
         <br />
-    
+</div>
+</div>
 <h5><?php echo $thread['title']; ?></h5>
 <div class="postContent"><?php echo $thread['content']; ?></div>
+<?php 
+    if(strlen($thread['moderator_notes'])){
+        echo "<span style='color:red'>".$thread['moderator_notes']."</span><br />";
+    }
+
+    if($thread['created_at']!=$thread['updated_at']): 
+        if(strlen($thread['moderator_name'])){
+            echo "<span style='color:red'>Last edited by ".$thread['moderator_name']." on ".TK_Text::timeFormat($thread['moderator_date'], 'd/m/Y H:i')."</span>";
+        }
+        else{
+            echo "Last edited by ".$thread['User']['username']." on ".TK_Text::timeFormat($thread['updated_at'], 'd/m/Y H:i');
+        }
+    endif; ?>
 <hr />
 <?php
 
@@ -40,6 +62,12 @@ foreach($posts as $post):
 <div class="postContent">
     <?php echo $post['content']; ?>
 </div>
+<?php if($user['role']=="admin"||$user['role']=="moderator"||$user['id']==$post['user_id']): ?>
+    <div style='float:right;margin-right:50px;'>
+        <a href="/forum/edit-post/id/<?= $post['id']; ?>">Edit</a>
+        <a href="/forum/delete-post/id/<?= $post['id']; ?>">Remove</a>
+    </div>
+    <?php endif; ?>
         <?php 
         echo TK_Text::timeFormat($post['created_at'],'d/m/Y H:i');
         ?>
@@ -52,7 +80,19 @@ foreach($posts as $post):
     endif;
     
 ?>
-        
+        <?php 
+    if(strlen($post['moderator_notes'])){
+        echo "<span style='color:red'>".$post['moderator_notes']."</span><br />";
+    }
+
+    if($post['created_at']!=$post['updated_at']): 
+        if(strlen($post['moderator_name'])){
+            echo "<span style='color:red'>Last edited by ".$post['moderator_name']." on ".TK_Text::timeFormat($post['moderator_date'], 'd/m/Y H:i')."</span>";
+        }
+        else{
+            echo "Last edited by ".$post['User']['username']." on ".TK_Text::timeFormat($post['updated_at'], 'd/m/Y H:i');
+        }
+    endif; ?>
 <hr />
 <?php
 

@@ -29,6 +29,7 @@
 foreach($threads as $thread):
     ?>
     <h3><a href="/forum/show-thread/id/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a></h3>
+    <div>
     Created at : <?php echo TK_Text::timeFormat($thread['created_at'],'d/m/Y H:i'); ?> by
         '<?php echo $thread['User']['username']; ?>' <br />
         <?php if(isset($thread['Posts'][0])&&!empty($thread['Posts'][0])):
@@ -40,9 +41,11 @@ foreach($threads as $thread):
         by
         '<?php echo $thread['Posts'][0]['User']['username']; ?>'
         <br />
-
-        <?php
-
+    </div>
+    
+        
+    <?php
+        
     endif;
     
 ?>

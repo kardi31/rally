@@ -31,6 +31,11 @@ User:
     active:
       type: boolean
       default: 1
+    gold_member_expire:
+      type: timestamp
+    gold_member:
+      type: boolean
+      default: 0
     premium:
       type: integer(11)
     referer:

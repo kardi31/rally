@@ -67,10 +67,12 @@ class Rally_Admin extends Controller{
              else
                  $row[] = '<span class="label label-sm label-danger">Nie</span>';
              
+             
              $options = '<a href="/admin/rally/show-rally-crews/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
              $options .='<a href="/admin/rally/show-rally-stages/id/'.$result['id'].'" class="btn default btn-xs blue"><i class="fa fa-list"></i> Stages </a>';
              if($result['finished']){
                 $options .='<a href="/admin/rally/show-rally-result/id/'.$result['id'].'" class="btn default btn-xs green"><i class="fa fa-list"></i> Results </a>';
+                $options .='<a href="/admin/rally/show-rally-detailed-result/id/'.$result['id'].'" class="btn default btn-xs red"><i class="fa fa-list"></i> Detailed results </a>';
              }
              $options .='<a href="/admin/rally/edit-rally/id/'.$result['id'].'" class="btn default btn-xs purple"><i class="fa fa-edit"></i> Edit </a>';
 	     
@@ -165,28 +167,28 @@ class Rally_Admin extends Controller{
              $row = array();
              $row[] = '<input type="checkbox" name="id[]" value="'.$result['id'].'">';
              $row[] = $result['id'];
-             $row[] = $result['Crew']['Team']['name'];
+             $row[] = $result['Crew']['Team']['name']."<br />Crew id #".$result['Crew']['id'];
              $row[] = $result['base_time'];
 	     if(isset($result['Accident'])){
-             $row[] = $result['Accident']['name'];
-		 
+                $row[] = $result['Accident']['name']."<br /> ".$result['Accident']['damage']; 
 	     }
-	 else {
-	     $row[] = '';
-	 }
-             $row[] = $result['Crew']['risk'];
-             $row[] = $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name'];
-             $row[] = $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name'];
-             $row[] = $result['Crew']['Car']['name'];
-             if(!$result['out_of_race'])
-                 $row[] = '<span class="label label-sm label-success">W wyścigu</span>';
-             else
-                 $row[] = '<span class="label label-sm label-danger">Poza trasą</span>';
+            else {
+                $row[] = '';
+            }
+            $row[] = '';
+//             $row[] = $result['Crew']['risk'];
+//             $row[] = $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name'];
+//             $row[] = $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name'];
+//             $row[] = $result['Crew']['Car']['name'];
+//             if(!$result['out_of_race'])
+//                 $row[] = '<span class="label label-sm label-success">W wyścigu</span>';
+//             else
+//                 $row[] = '<span class="label label-sm label-danger">Poza trasą</span>';
 	     
-             $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
-            
-	     $row[] = $options;
-	     
+//             $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
+//            
+//	     $row[] = $options;
+//	     
 	     $rows[] = $row;
          endforeach;
          
@@ -244,6 +246,97 @@ class Rally_Admin extends Controller{
                  $row[] = '<span class="label label-sm label-danger">Poza trasą</span>';
                  $row[] = $result['stage_out_number'];
              }
+             
+             $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
+            
+	     $row[] = $options;
+	     
+	     $rows[] = $row;
+         endforeach;
+         
+         
+         $response = array(
+            "aaData" => $rows,
+            "sEcho" => (int)$_REQUEST['sEcho'],
+            "iTotalRecords" => $results['totalRecords'],
+            "iTotalDisplayRecords" => $results['totalRecords']
+        );
+       
+        echo json_encode($response);
+     }
+     
+     public function showRallyDetailedResult(){
+	 
+	$rally_id = $GLOBALS['urlParams']['id'];
+        $rallyService = parent::getService('rally','rally');
+	$rally = $rallyService->getRally($rally_id,'id',Doctrine_Core::HYDRATE_RECORD);
+        
+	$this->view->assign('rally',$rally);
+     }
+     
+     public function showRallyDetailedResultData(){
+         $view = $this->view;
+         $view->setNoRender();
+         $view->requireDTFactory();
+         Service::loadModels('rally', 'rally');
+         Service::loadModels('people', 'people');
+         Service::loadModels('team', 'team');
+         Service::loadModels('car', 'car');
+         
+         $results = $dataTables = Index_DataTables_Factory::factory(array(
+            'table' => 'Rally_Model_Doctrine_RallyResult', 
+            'class' => 'Rally_DataTables_RallyDetailedResult', 
+            'fields' => array('r.id','t.name','d.composure','p.composure','m.name','c.risk','r.total_time','r.out_of_race','r.stage_out_number'),
+        ));
+	 
+         $iTotalRecords = count($results['query']);
+         $rows = array();
+         foreach($results['query'] as $result):
+             $row = array();
+             $row[] = '<input type="checkbox" name="id[]" value="'.$result['id'].'">';
+             $row[] = $result['id'];
+             
+             $driverData = " Composure: ".$result['Crew']['Driver']['composure']."<br />";
+             $driverData .= " Speed: ".$result['Crew']['Driver']['speed']."<br />";
+             $driverData .= " Regularity: ".$result['Crew']['Driver']['regularity']."<br />";
+             $driverData .= " On gravel: ".$result['Crew']['Driver']['on_gravel']."<br />";
+             $driverData .= " On tarmac: ".$result['Crew']['Driver']['on_tarmac']."<br />";
+             $driverData .= " On snow: ".$result['Crew']['Driver']['on_snow']."<br />";
+             $driverData .= " In rain: ".$result['Crew']['Driver']['in_rain']."<br />";
+             $driverData .= " Form: ".$result['Crew']['Driver']['form']."<br />";
+             $driverData .= " Talent: ".$result['Crew']['Driver']['talent'];
+             
+             $pilotData = " Composure: ".$result['Crew']['Pilot']['composure']."<br />";
+             $pilotData .= " Dictate rhytm: ".$result['Crew']['Pilot']['dictate_rhytm']."<br />";
+             $pilotData .= " Diction: ".$result['Crew']['Pilot']['diction']."<br />";
+             $pilotData .= " Route description: ".$result['Crew']['Pilot']['route_description']."<br />";
+             $pilotData .= " Intelligence: ".$result['Crew']['Pilot']['intelligence']."<br />";
+             $pilotData .= " Form: ".$result['Crew']['Pilot']['form']."<br />";
+             $pilotData .= " Talent: ".$result['Crew']['Pilot']['talent'];
+             
+             $carData = " Model: ".$result['Crew']['Car']['Model']['name']."<br />";
+             $carData .= " Capacity: ".$result['Crew']['Car']['Model']['capacity']."<br />";
+             $carData .= " Horse power: ".$result['Crew']['Car']['Model']['horsepower']."<br />";
+             $carData .= " Max speed: ".$result['Crew']['Car']['Model']['max_speed']."<br />";
+             $carData .= " Acceleration: ".$result['Crew']['Car']['Model']['acceleration']."<br />";
+             $carData .= " Mileage: ".$result['Crew']['Car']['mileage']."<br />";
+             
+             $row[] = $result['Crew']['Team']['name']."<br />".$result['Crew']['id'];
+             $row[] = $driverData;
+             $row[] = $pilotData;
+             $row[] = $carData;
+             $row[] = $result['Crew']['risk'];
+             $row[] = $result['total_time'];
+             if(!$result['out_of_race']){
+                 $row[] = '<span class="label label-sm label-success">W wyścigu</span>';
+                 $row[] = $result['stage_out_number'];
+             }
+             else{
+                 $row[] = '<span class="label label-sm label-danger">Poza trasą</span>';
+                 $row[] = $result['stage_out_number'];
+             }
+             
+             
              
              $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
             

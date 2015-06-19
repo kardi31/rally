@@ -1,7 +1,15 @@
-Zalogowano jako <?php echo $user['email'] ?>
+<div class="lastNewses mainUserBox">
+    <h4 class="boxHeader">News</h4>
+    <?php foreach($lastNewses as $news): ?>
+    <div class="newsItem">
+        <div class="newsTitle">
+            <?php echo $news['title']; ?>
+            <div class="newsDate">
+                <?php echo TK_Text::timeFormat($news['publish_date'], 'd/m/Y H:i'); ?>
+            </div>
+        </div>
+        <div class="newsContent"><?php echo $news['content']; ?></div>
+    </div>
 
-<a href="/user/logout">Wyloguj</a><br /><br />
-
-<a href="/account/my-team">Mój zespół</a>
-
-<a href="/rally/list-rally">Lista rajdów</a>
+    <?php endforeach; ?>
+</div>

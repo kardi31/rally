@@ -95,8 +95,6 @@ abstract class Car_Model_Doctrine_BaseCarModels extends Doctrine_Record
              'foreign' => 'model_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
-        $softdelete0 = new Doctrine_Template_SoftDelete();
         $this->actAs($timestampable0);
-        $this->actAs($softdelete0);
     }
 }

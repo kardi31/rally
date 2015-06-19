@@ -33,7 +33,12 @@ class Index_DataTables_FilterFactory {
     function sortQuery($q,$fields){
         
             if(isset($_REQUEST['iSortCol_0'])){
-                $col = $_REQUEST['iSortCol_0']-1;
+                if($_REQUEST['iSortCol_0']>0){
+                    $col = $_REQUEST['iSortCol_0']-1;
+                }
+                else{
+                    $col = $_REQUEST['iSortCol_0'];
+                }
                 $direction = $_REQUEST['sSortDir_0'];
                 $q->addOrderBy($fields[$col]." ".$direction);
             }
@@ -58,8 +63,22 @@ class Index_DataTables_FilterFactory {
                 
                 $fieldDelimiter = $filterParts[3];
                 $searchField = $fields[$fieldDelimiter-1];
-                $q->addWhere($searchField ." like ?",'%'.$filterValue.'%');
-                
+                if(is_array($searchField)){
+                    $searchFieldQuery = "";
+                    $searchFieldValue = array();
+                    $sfCounter = count($searchField);
+                    foreach($searchField as $key => $sf):
+                        $searchFieldQuery .= $sf." like ?";
+                        if($key!=$sfCounter-1){
+                            $searchFieldQuery .= " or ";
+                        }
+                        $searchFieldValue[] = '%'.$filterValue.'%';
+                    endforeach;
+                    $q->addWhere($searchFieldQuery,$searchFieldValue);
+                }
+                else{
+                    $q->addWhere($searchField ." like ?",'%'.$filterValue.'%');
+                }
                 // filter select - remove "-1" value to prevent filtering empty results
                 
             elseif ( $filterParts[2] == 'select' && $filterValue !="-1"):

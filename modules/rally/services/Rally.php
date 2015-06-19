@@ -207,10 +207,13 @@ class RallyService extends Service{
 	return $stage;
     }
     
-    public function saveStageResult($values){
+    public function saveStageResult($values,$accident = false){
         $stageResult = $this->stageResultTable->getRecord();
 	
 	$stageResult->fromArray($values);
+        if($accident&&(int)$accident>0){
+            $stageResult->set('accident_id',$accident['id']);
+        }
 	$stageResult->save();
 	
 	return $stageResult;

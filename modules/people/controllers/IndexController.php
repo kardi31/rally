@@ -34,6 +34,7 @@ class People_Index extends Controller{
         $marketService = parent::getService('market','market');
         $peopleService = parent::getService('people','people');
         $teamService = parent::getService('team','team');
+        $userService = parent::getService('user','user');
         
         $id = $GLOBALS['urlParams']['id'];
         $player = $peopleService->getPerson($id,'id',Doctrine_Core::HYDRATE_RECORD);
@@ -47,16 +48,24 @@ class People_Index extends Controller{
         $days->addMultiOptions(array(1,2,3));
         $form->createElement('submit','submit');
         
+        $user = $userService->getAuthenticatedUser();
         if($form->isSubmit()){
             if($form->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
-                
+                $values['team_id'] = $user['Team']['id'];
                 $result = $marketService->addPlayerOnMarket($values,$player);
                 
-                if($result!== false)
-                    TK_Helper::redirect('/account/my-drivers');
+                
+                if($result!== false){
+                    if(isset($_COOKIE['player_seller'])){
+                        $player_seller = unserialize($_COOKIE['player_seller']);
+                    }
+                    $player_seller[$player['id']] = $user['id'];
+                    setcookie('player_seller',serialize($player_seller),time()+(86400 * 4),'/');
+                    TK_Helper::redirect('/account/my-people');
+                }
                 else{
                     $this->view->assign('message','Player already on market');
                 }

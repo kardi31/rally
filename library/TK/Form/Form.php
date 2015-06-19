@@ -32,6 +32,8 @@ class Form extends Element{
         }
         elseif($type == "select"){
             $element = new Select($type,$name,$options,$label);
+        }elseif($type == "checkbox"){
+            $element = new Checkbox($type,$name,$options,$label);
         }
         else{
             $element = new Element($type,$name,$options,$label);
@@ -53,6 +55,14 @@ class Form extends Element{
     
     public function setMethod($method){
         $this->method = $method;
+    }
+    
+    function populate($values){
+        foreach($this->elements as $key => $element):
+            if(isset($values[$key])){
+                $element->setValue($values[$key]);
+            }
+        endforeach;
     }
     
     

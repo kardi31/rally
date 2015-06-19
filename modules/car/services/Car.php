@@ -18,7 +18,7 @@ class CarService extends Service{
     );
        
     protected static $carModelSkillsWages = array(
-	3,5,4,6
+	6,10,8,12
     );
     
     protected static $carModelSkillsMax = array(
@@ -180,6 +180,17 @@ class CarService extends Service{
 	$q->addWhere('cm.on_market = 1');
 	$q->addWhere('cm.price > 0');
 	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function saveCarModel($values){
+        if(!(isset($values['id'])&&$record = $this->getCarModel($values['id']))){
+            $record = $this->carModelTable->getRecord();
+        }
+	
+	$record->fromArray($values);
+	$record->save();
+	
+	return $record;
     }
 }
 ?>

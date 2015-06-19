@@ -1,0 +1,32 @@
+<div class="mainUserBox boxTransfer">
+    <h4 class="boxHeader">Transfers</h4>
+    <?php if(!$user['gold_member']){ ?>
+        <div class="goldOverlay">
+            <a href="#">
+                <img src="/images/layout/gc_big.png" />
+            </a>
+        </div>
+    <?php }
+    else{ ?>
+        <?php foreach($marketOffers as $offer):?>
+            <div class="item">
+                <?php $player = $offer['Player']; ?>
+                <a href="#"><?php echo $player['last_name']." ".$player['first_name']; ?></a>
+                <?php
+                if(isset($offer['Bids'][0]))
+                    echo '<i class="fa fa-money"></i> '.(int)$offer['Bids'][0]['value']."$ - <span class='transferTeam'>".$offer['Bids'][0]['Team']['name']."</span><br />"; 
+                else
+                    echo "brak ofert";
+                ?>
+                <span>
+                    <i class="fa fa-clock-o"></i>
+                    <?php echo TK_Text::timeFormat($offer['finish_date'],'d/m/Y H:i'); ?>
+                </span>
+            </div>
+        <?php endforeach; ?>
+        <div class="bottom">
+            <a href="#" class="logIn btn seeAllTransfer">SEE ALL</a>
+        </div>
+    <?php } ?>
+</div>
+

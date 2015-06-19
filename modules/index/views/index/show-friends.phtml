@@ -1,31 +1,39 @@
-<?php if(isset($friends)): ?>
-    <ul>
-    <?php foreach($friends as $friend): ?>
-        <li>
-            <?php 
-            if($friend['user_id']==$user['id']){
-                if(strtotime($friend['UserFriends']['last_active'])>strtotime("-2 minutes")){
-                    echo '<img src="/images/layout/bulb-on.png" />';
+<div class="mainUserBox boxFriends">
+    <h4 class="boxHeader">Friends</h4>
+    <?php if(isset($friends)): ?>
+    <div class="subboxFriends">
+        <ul>
+        <?php foreach($friends as $friend): ?>
+                <?php 
+                if($friend['user_id']==$user['id']){
+                    if(strtotime($friend['UserFriends']['last_active'])>strtotime("-2 minutes")){
+                        echo "<li class='active'>";
+                    }
+                    else{
+                        echo "<li>";
+                    }
+
+                    echo '<img src="http://placehold.it/20x20" />';
+                    echo TK_Text::truncate($friend['UserFriends']['username'],15); 
+                    echo "<i class='fa fa-circle-thin'></i>";
                 }
                 else{
-                    echo '<img src="/images/layout/bulb.png" />';
-                }
+                    if(strtotime($friend['User']['last_active'])>strtotime("-2 minutes")){
+                        echo "<li class='active'>";
+                    }
+                    else{
+                        echo "<li>";
+                    }
+                    echo '<img src="http://placehold.it/20x20" />';
 
-                echo $friend['UserFriends']['username']; 
-            }
-            else{
-                if(strtotime($friend['User']['last_active'])>strtotime("-2 minutes")){
-                    echo '<img src="/images/layout/bulb-on.png" />';
+                    echo TK_Text::truncate($friend['User']['username'],15); 
+                    echo "<i class='fa fa-circle-thin'></i>";
                 }
-                else{
-                    echo '<img src="/images/layout/bulb.png" />';
-                }
+                ?>
+            </li>
 
-                echo $friend['User']['username']; 
-            }
-            ?>
-        </li>
-
-    <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
+        <?php endforeach; ?>
+        </ul>
+    </div>
+    <?php endif; ?>
+</div>

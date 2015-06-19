@@ -33,7 +33,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <meta content="" name="author"/>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
-<link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<!--<link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>-->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
@@ -540,55 +541,75 @@ License: You must have a valid license purchased only from themeforest(the above
 					</form>
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
-				<li class="start active ">
+				<li class="start ">
                                     <a href="/admin/rally/list-rally">
                                         <i class="fa fa-list"></i>
                                         <span class="title">Rally list </span>
                                         <span class="selected"></span>
                                     </a>
 				</li>
-				<li class="start active ">
+				<li class=" ">
                                     <a href="/admin/user/list-user">
-                                        <i class="fa fa-list"></i>
+                                        <i class="fa fa-users"></i>
                                         <span class="title">User list </span>
                                     </a>
 				</li>
-				<li>
+				<li class="">
 					<a href="javascript:;">
-					<i class="fa fa-shopping-cart"></i>
-					<span class="title">
-					eCommerce </span>
-					<span class="arrow ">
-					</span>
+                                            <i class="fa fa-shopping-cart"></i>
+                                            <span class="title">Transfers</span>
+                                            <span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
-						<li>
-							<a href="ecommerce_index.html">
-							<i class="fa fa-bullhorn"></i>
-							t2Dashboard </a>
+						<li class="">
+							<a href="/admin/market/list-people-transfer">
+							<i class="fa fa-user"></i>
+							All people transfers </a>
 						</li>
 						<li>
-							<a href="ecommerce_orders.html">
-							<i class="fa fa-shopping-cart"></i>
-							Orders </a>
+							<a href="/admin/market/list-people-future-transfer">
+							<i class="fa fa-calendar"></i>
+							Future people transfer </a>
 						</li>
 						<li>
-							<a href="ecommerce_orders_view.html">
-							<i class="fa fa-tags"></i>
-							Order View </a>
+							<a href="/admin/market/people-duplicate">
+							<i class="fa fa-warning"></i>
+							Illegal people transfers </a>
 						</li>
 						<li>
-							<a href="ecommerce_products.html">
-							<i class="fa fa-sitemap"></i>
-							Products </a>
+							<a href="/admin/market/list-people-illegal-transfer">
+							<i class="fa fa-warning"></i>
+							Illegal people transfers by ip</a>
+						</li>
+                                                <li class="">
+							<a href="/admin/market/list-car-transfer">
+							<i class="fa fa-user"></i>
+							All car transfers </a>
 						</li>
 						<li>
-							<a href="ecommerce_products_edit.html">
-							<i class="fa fa-file-o"></i>
-							Product Edit </a>
+							<a href="/admin/market/list-car-future-transfer">
+							<i class="fa fa-calendar"></i>
+							Future car transfer </a>
+						</li>
+						<li>
+							<a href="/admin/market/car-duplicate">
+							<i class="fa fa-warning"></i>
+							Illegal car transfers </a>
+						</li>
+						<li>
+							<a href="/admin/market/list-car-illegal-transfer">
+							<i class="fa fa-warning"></i>
+							Illegal car transfers by ip</a>
 						</li>
 					</ul>
 				</li>
+				<li>
+                                    <a href="/admin/car/list-car">
+                                        <i class="fa fa-car"></i>
+                                        <span class="title">
+                                        Cars </span>
+                                    </a>
+                                </li>
 				<li>
 					<a href="javascript:;">
 					<i class="fa fa-cogs"></i>

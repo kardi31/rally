@@ -6,7 +6,6 @@ CarModels:
   tableName: car_car_models
   actAs: 
     Timestampable: ~
-    SoftDelete: ~
   columns:
     id:
       primary: true
