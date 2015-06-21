@@ -16,7 +16,7 @@
  * @property timestamp $moderator_date
  * @property string $moderator_name
  * @property Forum_Model_Doctrine_Thread $Thread
- * @property Forum_Model_Doctrine_Category $Posts
+ * @property Forum_Model_Doctrine_Category $Category
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -80,7 +80,7 @@ abstract class Forum_Model_Doctrine_BasePost extends Doctrine_Record
              'local' => 'thread_id',
              'foreign' => 'id'));
 
-        $this->hasOne('Forum_Model_Doctrine_Category as Posts', array(
+        $this->hasOne('Forum_Model_Doctrine_Category as Category', array(
              'local' => 'category_id',
              'foreign' => 'id'));
 

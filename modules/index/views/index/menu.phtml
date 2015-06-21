@@ -1,26 +1,43 @@
 <script type="text/javascript">
   $(document).ready(function(){
  
-    $('#jMenu > li > a').on('click',function(){
-        $('#jMenu > li > ul').slideUp(150);
-    });
-    
-    // more complex jMenu plugin called
-    $("#jMenu").jMenu({
-      ulWidth : 'auto',
-      effects : {
-        effectSpeedOpen : 300,
-        effectTypeClose : 'slide',
-        effectTypeOpen : 'slide'
-      },
-      openClickBoolean: true,
-    });
-    
+ $("#tMenu > li > a").click(function (e) { // binding onclick
+	        if ($(this).parent().hasClass('selected')) {
+	            $("#tMenu .selected").slideUp(100); // hiding popups
+	            $("#tMenu .selected").removeClass("selected");
+	        } else {
+	            $("#tMenu .selected ").slideUp(100); // hiding popups
+	            $("#tMenu .selected").removeClass("selected");
+	 
+	            if ($(this).next(".subs").length) {
+	                $(this).parent().addClass("selected"); // display popup
+	                $(this).next(".subs").children().slideDown(200);
+	            }
+	        }
+	        e.stopPropagation();
+	    });
+	 
+	    $("body").click(function () { // binding onclick to body
+	        $("#tMenu .selected div div").slideUp(100); // hiding popups
+	        $("#tMenu .selected").removeClass("selected");
+	    });
+
   });
   
 </script>
+<style>
+    #tMenu{
+        list-style-type: none;
+    }
+    #tMenu  > li {
+        display:inline-block;
+    }
+    #tMenu > li > ul{
+        display:none;
+    }
+    </style>
 <div id="menu">
-    <ul id="jMenu">
+    <ul id="tMenu">
         <li>
             <a href="#">Office</a>
             <ul>

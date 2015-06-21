@@ -11,7 +11,7 @@
  * @property text $description
  * @property boolean $active
  * @property Doctrine_Collection $Threads
- * @property Doctrine_Collection $Category
+ * @property Doctrine_Collection $Posts
  * @property Doctrine_Collection $Favourites
  * 
  * @package    ##PACKAGE##
@@ -58,7 +58,7 @@ abstract class Forum_Model_Doctrine_BaseCategory extends Doctrine_Record
              'local' => 'id',
              'foreign' => 'category_id'));
 
-        $this->hasMany('Forum_Model_Doctrine_Post as Category', array(
+        $this->hasMany('Forum_Model_Doctrine_Post as Posts', array(
              'local' => 'id',
              'foreign' => 'category_id'));
 

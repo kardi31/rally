@@ -34,8 +34,8 @@ Category:
       foreign: category_id
       foreignType: one
       type: many
-      alias: Category
-      foreignAlias: Posts
+      alias: Posts
+      foreignAlias: Category
 Thread:
   tableName: forum_thread
   actAs: 

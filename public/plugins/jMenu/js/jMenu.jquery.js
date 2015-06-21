@@ -93,16 +93,18 @@
                                 $.jMenu._closeList($ul);
                             }
                         });
-                    else
+                    else{
+                        console.log($(this));
                         $(this).bind({
                             click:function(e) {
                                 e.preventDefault();
                                 $.jMenu._show($ul);
                             },
-//                            mouseleave:function(){
-//                                $.jMenu._closeList($ul);
-//                            }
+                            mouseleave:function(){
+                                $.jMenu._closeList($ul);
+                            }
                         });
+                    }
                 }
             });
         },
