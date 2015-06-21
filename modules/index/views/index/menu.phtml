@@ -1,21 +1,24 @@
 <script type="text/javascript">
   $(document).ready(function(){
  
- $("#tMenu > li > a").click(function (e) { // binding onclick
-	        if ($(this).parent().hasClass('selected')) {
-	            $("#tMenu .selected").slideUp(100); // hiding popups
-	            $("#tMenu .selected").removeClass("selected");
+        $("#tMenu > li > a").click(function (e) { // binding onclick
+                var li = $(this).parent();
+                var ul = $(this).next('ul');
+	        if (li.hasClass('selected')) {
+	            ul.slideUp(100); // hiding popups
+	            li.removeClass("selected");
 	        } else {
-	            $("#tMenu .selected ").slideUp(100); // hiding popups
-	            $("#tMenu .selected").removeClass("selected");
-	 
-	            if ($(this).next(".subs").length) {
-	                $(this).parent().addClass("selected"); // display popup
-	                $(this).next(".subs").children().slideDown(200);
-	            }
+	            ul.slideDown(100); // hiding popups
+	            li.addClass("selected");
+//	 
+//	            if ($(this).next(".subs").length) {
+//	                li.addClass("selected"); // display popup
+//	                $(this).next(".subs").children().slideDown(200);
+//	            }
 	        }
 	        e.stopPropagation();
 	    });
+            
 	 
 	    $("body").click(function () { // binding onclick to body
 	        $("#tMenu .selected div div").slideUp(100); // hiding popups
@@ -31,6 +34,9 @@
     }
     #tMenu  > li {
         display:inline-block;
+        vertical-align:top;
+        margin-bottom:20px;
+        width:200px;
     }
     #tMenu > li > ul{
         display:none;

@@ -9,9 +9,11 @@
             <file>file:/C:/xampp/htdocs/ral/modules/car/views/index/sell-car.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/data/schema/schema.yml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/models/Post.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/plugins/jMenu/js/jMenu.jquery.js</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/models/BasePost.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_header_main.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/library/DataTables/Thread.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/data/schema/schema.yml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/library/DataTables/CarDuplicate.php</file>
@@ -27,10 +29,12 @@
             <file>file:/C:/xampp/htdocs/ral/modules/market/form/Offer.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/library/DataTables/FilterFactory.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/menu.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/cron/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/layout/layout.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/library/DataTables/Post.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/team/services/Team.php</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_head_main.phtml</file>
         </group>
     </open-files>
 </project-private>
