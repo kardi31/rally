@@ -44,7 +44,7 @@ class Element{
         
         if($this->type=="submit"):
             $this->elementDisplay .= "<div class='formSubmitWrapper'>";
-            $this->elementDisplay .= "<input value=".$this->label." name='".$this->name."' id='".$this->name."' type='".$this->type."' />";
+            $this->elementDisplay .= "<input value='".$this->label."' name='".$this->name."' ".$this->renderParams()." id='".$this->name."' type='".$this->type."' class='".$this->renderClasses()."' />";
             $this->elementDisplay .= "</div>";
 	elseif($this->type=="select"):
             
@@ -81,7 +81,7 @@ class Element{
         
         if($this->type=="submit"):
             $this->elementDisplay .= "<div class='formSubmitWrapper'>";
-            $this->elementDisplay .= "<input value=".$this->label." name='".$this->name."' id='".$this->name."' type='".$this->type."' />";
+            $this->elementDisplay .= '<input value="'.$this->label.'" name="'.$this->name.'" id="'.$this->name.'" type="'.$this->type.'" />';
             $this->elementDisplay .= "</div>";
 	elseif($this->type=="select"):
             $this->elementDisplay .= "<select ".$this->renderParams()."  class='".$this->renderClasses()."'  name='".$this->name."' id='".$this->name."'>";
@@ -137,6 +137,10 @@ class Element{
     
     public function getLabel(){
         return $this->label;
+    }
+    
+    public function setLabel($value){
+        $this->label = $value;
     }
     
     public function setMethod($method){

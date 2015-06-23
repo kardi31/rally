@@ -4,6 +4,7 @@ class Account_Index extends Controller{
  
     public function __construct(){
         parent::__construct();
+        $this->getLayout()->setLayout('page');
     }
     
     public function render($viewName) {
@@ -22,9 +23,10 @@ class Account_Index extends Controller{
         
         $user = $userService->getAuthenticatedUser();
         if(!$user)
-            TK_Helper::redirect('/user/login');
+            TK_Helper::redirect('/');
         
         $this->view->assign('user',$user);
+        $this->getLayout()->setLayout('layout');
         
     }
     
@@ -118,6 +120,8 @@ class Account_Index extends Controller{
         $this->view->assign('financialReportSimple',$financialReportSimple);
         $this->view->assign('financialReportSimpleLastWeek',$financialReportSimpleLastWeek);
         $this->view->assign('financialReportAdvanced',$financialReportAdvanced);
+        
+        $this->getLayout()->setLayout('page');
     }
     
     public function sponsor(){
@@ -125,9 +129,24 @@ class Account_Index extends Controller{
         Service::loadModels('team', 'team');
         
         $sponsorService = parent::getService('team','sponsor');
+        $teamService = parent::getService('team','team');
+        $userService = parent::getService('user','user');
         
-        $sponsors = $sponsorService->getAllSponsors();
         
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        $team = $teamService->getTeam($user['Team']['id']);
+        
+        $sponsors = $sponsorService->getAllSponsorList($user['Team']['sponsor_id']);
+        
+        if(isset($_POST['submit_sponsor'])&&strlen($_POST['sponsor_id'])>0){
+            $team->set('sponsor_id',$_POST['sponsor_id']);
+            $team->save();
+            TK_Helper::redirect('/account/sponsor/');
+        }
+        $this->view->assign('user',$user);
         $this->view->assign('sponsors',$sponsors);
     }
     
@@ -156,6 +175,10 @@ class Account_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
 	
         $cars = $carService->getTeamCars($user['Team']['id']);
+        
+        
+	$form = $this->getForm('market','offer');
+        
 	$formCar1 = new Form();
 	
         $formCar1->createElement('text','car1_name',array('validators' => 'alnum'),'Nowa nazwa(dozwolona 1 zmiana na miesiąc)');
@@ -205,6 +228,7 @@ class Account_Index extends Controller{
         }
 	
 	$this->view->assign('cars',$cars);
+	$this->view->assign('form',$form);
 	$this->view->assign('formCar1',$formCar1);
     }
     

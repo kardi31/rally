@@ -200,16 +200,21 @@ class MarketService extends Service{
         $data['team_id'] = $values['team_id'];
         $data['highest_bid'] = 0;
         if($this->checkIfCarOnMarket($car['id'])!=0){
-            return false;
+            return array('status' => false,'message' => 'car+on+market');
         }
         
+        if(!TeamService::getInstance()->canAfford($values['team_id'],$values['selling_fee'])){
+            return array('status' => false,'message' => 'no+cash');
+        }
+        
+        echo "good";exit;
         $record = $this->carOfferTable->getRecord();
         $record->fromArray($data);
         $record->save();
         $teamService->removeTeamMoney($car['Team']['id'],$values['selling_fee'],6,'Putting car '.$car['name'].' on market');
         $car->set('on_market',1);
         $car->save();
-        return $record;
+        return array('status' => true, 'element' => $record);
     }
     
     public function getAllActiveOffers(){

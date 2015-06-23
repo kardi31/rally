@@ -21,6 +21,14 @@ class SponsorService extends Service{
         return $this->sponsorTable->findAll();
     }
     
+    public function getAllSponsorList($sponsor_id = null){
+        $q = $this->sponsorTable->createQuery('s');
+        if($sponsor_id!=null){
+            $q->orderBy('id = '.$sponsor_id.' DESC');
+        }
+        return $q->fetchArray();
+    }
+    
     public function getSponsor($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         return $this->sponsorTable->findOneBy($field,$id,$hydrationMode);
     }

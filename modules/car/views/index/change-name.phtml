@@ -1,0 +1,99 @@
+<style>
+    .changeCarName .formSubmitWrapper{
+        display:inline-block;
+    }
+    .nameBack{
+        float:right;
+    }
+</style>
+
+<?php 
+if(isset($_GET['msg'])&&$_GET['msg']=="car bought"){
+    $this->showSuccess("You have successfully bought a car. You can now see it in your garage.");
+}
+?>
+
+<?php $team = $authenticatedUser['Team']; ?>
+<div class="mainUserBox myCarsBox">
+    <?php 
+        if(isset($_GET['msg'])){
+            if($_GET['msg']=="car on market"){
+                $this->showError("This car is already on market");
+            }
+//            elseif($_GET['msg']=="car added"){
+//                $this->showSuccess("Sorry. You don't have enough money to buy this car.");
+//            }
+        }
+    ?>
+    
+    <h4 class="boxHeader">Change car name</h4>
+        <div class="carCard">
+
+            <strong><?= $car['name']; ?></strong>
+            <div class="clearfix"></div>
+            <div class="col-md-6">
+               <br />
+               <div class="notifyInfo">
+                   You are allowed to change name of your car every 30 days.
+                        <img src="/images/layout/gc_small.png" class=""> members can change car name every 7 days.
+                        <br /><br />
+                      <?php if(!$nextDateChange): 
+                       echo "You still have <b>1</b> name change left.";
+                   else:
+                       echo "You can change car name on <b>".$nextDateChange->format('d/m/Y H:i')."</b>.";
+                   endif;
+                   ?>
+                   <br />
+                   <br />
+               </div>
+                <div class="changeCarName" id="changeCarName1">
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="name" class="control-label">New name</label>
+                            <?php echo $form->getElement('name')->renderElement(); ?>
+                        </div>
+                        <?php echo $form->getElement('submit')->renderElement(); ?>
+                        <a href="/account/my-cars" class="btn btn-default nameBack"><i class="fa fa-level-up"></i> Go back</a>
+                    </form>
+                </div>
+            </div>
+           <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
+                <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" class="carCardPhoto" />
+           <?php } 
+                else{ ?>
+                    <img src="http://dummyimage.com/340x220&amp;text=No+photo" class="carCardPhoto" />
+                <?php
+                }
+                ?>
+            <div class="col-md-6 pr0 pl0">
+
+            <div class="carParameters">
+                 <table>
+                    <tr>
+                    <td>marka:</td>
+                    <td><?php echo $car['Model']['name']; ?></td>
+                </tr>
+                    <tr>
+                        <td>poj. silnika</td>
+                        <td><?php echo $car['Model']['capacity'];?></td>
+                    </tr>
+                    <tr>
+                        <td>moc</td>
+                        <td><?php echo $car['Model']['horsepower'];?></td>
+                    </tr>
+                    <tr>
+                        <td>v-max</td>
+                        <td><?php echo $car['Model']['max_speed'];?></td>
+                    </tr>
+                    <tr>
+                        <td>przyspieszenie</td>
+                        <td><?php echo $car['Model']['acceleration'];?></td>
+                    </tr>
+
+                </table>
+            </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+</div>

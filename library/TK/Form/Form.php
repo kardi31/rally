@@ -196,6 +196,8 @@ class Form extends Element{
     }
     
     public function renderClasses(){
+        if(empty($this->classes))
+            return "";
 	$classes = array_keys($this->classes);
 	$classList = implode(' ',$classes);
 	

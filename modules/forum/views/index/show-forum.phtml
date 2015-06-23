@@ -14,10 +14,8 @@ foreach($categories as $category):
         <br />
 
         <?php
-
-    endif;
-    
-?>
+            endif;
+        ?>
         Number of posts: <?php echo $category['post_count']; ?><br />
         Number of threads: <?php echo $category['thread_count']; ?><br />
         <?php if(is_array($favouriteCategories)&&in_array($category['id'], $favouriteCategories)){ ?>

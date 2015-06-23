@@ -140,6 +140,7 @@ class Market_Index extends Controller{
         $carsForSale = $carService->getCarsForSale(Doctrine_Core::HYDRATE_ARRAY);
         
         $this->view->assign('carsForSale',$carsForSale);
+        $this->getLayout()->setLayout('page');
     }
     
     public function buyCar(){
@@ -150,7 +151,7 @@ class Market_Index extends Controller{
         $teamService = parent::getService('team','team');
         
         $id = $GLOBALS['urlParams']['id'];
-        $carModel = $carService->getCarModel($id,'id',Doctrine_Core::HYDRATE_ARRAY);
+        $carModel = $carService->getCarModel($id,'id',Doctrine_Core::HYDRATE_RECORD);
         
         $userService = parent::getService('user','user');
         
@@ -160,15 +161,11 @@ class Market_Index extends Controller{
         
         if($teamService->canAfford($user['Team'],$carModel['price'])){
             $carService->createNewTeamCar($carModel,$user['Team']['id']);
-            $teamService->saveTeamFinance($user['Team']['id'],$carModel['price'],7,false,'Car '.$carModel['name'].' was bought');
-            $this->view->assign('message','car was bought');
-            
-            TK_Helper::redirect('/account/my-cars');
+            $teamService->saveTeamFinance($user['Team']['id'],$carModel['price'],7,false,'Car '.$carModel['name'].' was bought');            
+            TK_Helper::redirect('/account/my-cars?msg=car+bought');
         }
         else{
-            
-            $this->view->assign('message','car was bought');
-            TK_Helper::redirect('/market/car-dealer');
+            TK_Helper::redirect('/market/car-dealer?msg=cant+afford');
         }
         
     }

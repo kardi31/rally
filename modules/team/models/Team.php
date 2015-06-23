@@ -39,6 +39,12 @@ class Team_Model_Doctrine_Team extends Team_Model_Doctrine_BaseTeam
              'local' => 'car2_id',
              'foreign' => 'id'));
 	
+        
+	$this->hasMany('Car_Model_Doctrine_Car as Cars', array(
+             'local' => 'id',
+             'foreign' => 'team_id'));
+
+        
 	$this->hasOne('User_Model_Doctrine_User as User', array(
              'local' => 'user_id',
              'foreign' => 'id'));

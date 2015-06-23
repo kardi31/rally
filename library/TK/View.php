@@ -63,4 +63,12 @@ class View{
         require_once(BASE_PATH.'/modules/index/library/DataTables/Factory.php');
     }
  
+    public function showError($message){
+        include(BASE_PATH."/views/message/error.phtml");
+    }
+    
+    public function showSuccess($message){
+        include(BASE_PATH."/views/message/success.phtml");
+    }
+    
 }

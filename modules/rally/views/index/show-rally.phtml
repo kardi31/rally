@@ -6,38 +6,52 @@
         float:left;
         width:60px;
     }
+    
+    .rallyStages{
+        padding-left:0px;
+        list-style:none;
+        column-count: 3;
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+    }
     </style>
-<a href="/rally/list-rally">Powrót do listy rajdów</a>
+<!--<a href="/rally/list-rally">Powrót do listy rajdów</a>-->
 
 <?php if(!$rally['finished']): ?>
-    <div class="col-md-6">
+<div class="mainUserBox myCarsBox">
+        <div class="mainUserBox">
+    <h4 class="boxHeader"><?php echo $rally['name']; ?></h4>
+    <div class="col-md-8">
+        <ul class="rallyStages">
+            <?php foreach($rally['Stages'] as $stage): ?>
+                    <li><?= $stage['name']." - ".$stage['length']; ?> km</li>
+            <?php endforeach; ?>
+        </ul>
+            <h6>Zapisane załogi</h6>
+            <table>
+                <tr>
+                    <th>Załoga</th>
+                    <th>Samochód</th>
+                    <th>Nazwa zespołu</th>
+                </tr>
+                <?php foreach($rally['Crews'] as $crew): ?>
+                        <tr>
+                            <td>
+                                <?php echo $crew['Driver']['last_name']." ".$crew['Driver']['first_name']; ?> - 
+                                <?php echo $crew['Pilot']['last_name']." ".$crew['Pilot']['first_name']; ?>
+                            </td>
+                            <td>
+                                <?php echo $crew['Car']['name']; ?>
+                            </td>
+                            <td>
+                                <?php echo $crew['Team']['name']; ?>
+                            </td>
+                        </tr>
+                <?php endforeach; ?>
 
-    <h2><?php echo $rally['name']; ?></h2><br /><br />
-        <h4>Zapisane załogi</h4>
-        <table>
-            <tr>
-                <th>Załoga</th>
-                <th>Samochód</th>
-                <th>Nazwa zespołu</th>
-            </tr>
-    <?php foreach($rally['Crews'] as $crew): ?>
-            <tr>
-                <td>
-                    <?php echo $crew['Driver']['last_name']." ".$crew['Driver']['first_name']; ?> - 
-                    <?php echo $crew['Pilot']['last_name']." ".$crew['Pilot']['first_name']; ?>
-                </td>
-                <td>
-                    <?php echo $crew['Car']['name']; ?>
-                </td>
-                <td>
-                    <?php echo $crew['Team']['name']; ?>
-                </td>
-            </tr>
-    <?php endforeach; ?>
-
-        </table>
-    </div>
-        <div class="col-md-3">
+            </table>
+        </div>
+        <div class="col-md-4">
             <?php if($rally['big_awards']): ?>
                 <img src="/images/b_letter.gif" />
                 <br />
@@ -60,8 +74,9 @@
                         <?php
                 endforeach; 
             else: ?>
-                Ilosc zalog : <?php echo $crewCounter; ?><br />
-                Pula nagród : <?php echo $prizePool."$"; ?><br />
+                Prize pool : <?php echo $prizePool."$"; ?><br />
+                Signed crews : <?php echo $crewCounter; ?><br />
+                Race start : <?php echo $rally['']; ?><br />
                 <h3>Prizes</h3>
                 <?php 
                 foreach($rallyPrizes as $position => $rallyPrize): 
@@ -69,9 +84,8 @@
                     echo $rallyPrize."$ <br />";
                 endforeach; 
             endif; ?>
-        </div>
         <?php if(isset($form)): ?>
-        <div class="col-md-3 sign-up-rally">
+        <div class="sign-up-rally">
             <h3>Zapisz się do rajdu</h3>
             <form method="POST">
                 <div class='formElemWrapper'>
@@ -97,6 +111,10 @@
             </form>
         </div>
         <?php endif; ?>
+        </div>
+    <div class="clearfix"></div>
+    </div>
+</div>
 <?php else: ?>
 <div class="col-md-8">
     

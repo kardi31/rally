@@ -1,6 +1,6 @@
 <div class="mainUserBox boxTransfer">
     <h4 class="boxHeader">Transfers</h4>
-    <?php if(!$user['gold_member']){ ?>
+    <?php if(!$authenticatedUser['gold_member']){ ?>
         <div class="goldOverlay">
             <a href="#">
                 <img src="/images/layout/gc_big.png" />

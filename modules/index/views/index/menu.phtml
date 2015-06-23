@@ -4,58 +4,42 @@
         $("#tMenu > li > a").click(function (e) { // binding onclick
                 var li = $(this).parent();
                 var ul = $(this).next('ul');
+                
+                $('li.selected ul').slideUp(100);
+	        $('li.selected ul').removeClass("selected");
 	        if (li.hasClass('selected')) {
-	            ul.slideUp(100); // hiding popups
+                    console.log('has');
+	            ul.slideUp(200); // hiding popups
 	            li.removeClass("selected");
 	        } else {
-	            ul.slideDown(100); // hiding popups
+                    console.log('nohas');
+	            ul.slideDown(200); // hiding popups
 	            li.addClass("selected");
-//	 
-//	            if ($(this).next(".subs").length) {
-//	                li.addClass("selected"); // display popup
-//	                $(this).next(".subs").children().slideDown(200);
-//	            }
 	        }
 	        e.stopPropagation();
-	    });
-            
-	 
-	    $("body").click(function () { // binding onclick to body
-	        $("#tMenu .selected div div").slideUp(100); // hiding popups
-	        $("#tMenu .selected").removeClass("selected");
 	    });
 
   });
   
 </script>
-<style>
-    #tMenu{
-        list-style-type: none;
-    }
-    #tMenu  > li {
-        display:inline-block;
-        vertical-align:top;
-        margin-bottom:20px;
-        width:200px;
-    }
-    #tMenu > li > ul{
-        display:none;
-    }
-    </style>
+
 <div id="menu">
     <ul id="tMenu">
         <li>
             <a href="#">Office</a>
             <ul>
                 <li>
+                    <a href="/team/show-team/id/<?= $authenticatedUser['Team']['id']; ?>">Mój zespół</a>
+                </li>
+                <li>
                     <a href="/account/my-account">My account</a>
                 </li>
                 <li>
                     <a href="/account/my-people">Moi ludzie</a>
                 </li>
-                <li>
+<!--                <li>
                     <a href="/account/tactics">Taktyka</a>
-                </li>
+                </li>-->
                 <li>
                     <a href="/account/my-cars">Moje auta</a>
                 </li>

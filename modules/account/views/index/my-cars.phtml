@@ -6,63 +6,172 @@
 	    }
 	    else{
 	       $('#changeCarName1').show(); 
-		
 	    }
 	});
     });
 </script>
-<?php if(isset($message))
-    echo $message; ?>
+<style>
+   
+    </style>
+<?php 
+if(isset($_GET['msg'])&&$_GET['msg']=="car bought"){
+    $this->showSuccess("You have successfully bought a car. You can now see it in your garage.");
+}
+?>
+
 <?php $team = $authenticatedUser['Team']; ?>
-<h3>My cars</h3>
-<div class="myDrivers">
-<?php foreach($cars as $key => $car): ?>
-<fieldset>
+<div class="mainUserBox myCarsBox">
+    <?php 
+        if(isset($_GET['msg'])){
+            if($_GET['msg']=="car on market"){
+                $this->showError("This car is already on market");
+            }
+            elseif($_GET['msg']=="no cash"){
+                $this->showError("Sorry. You don't have enough money to pay selling fee.");
+            }
+        }
+    ?>
     
-   <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
-        <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" style="width:300px;float:right;margin-right:100px;" />
-   <?php } ?>
-    <h5>Car <?php echo $key+1; ?></h5>
-    Car name: <?php echo $car['name']; ?> <a href="javascript:void(0)" id="btnChangeCarNameButton1">change name</a><br />
-    <div class="changeCarName" id="changeCarName1">
-	<?php // echo $formCar1->renderForm(); ?>
+    <h4 class="boxHeader">My cars</h4>
+    <div class="myCars">
+    <?php foreach($cars as $key => $car): ?>
+        <div class="carCard">
+
+            <strong><?= $car['name']; ?></strong>
+            <div class="clearfix"></div>
+            <div class="col-md-6">
+        <!--    Car name: <?php echo $car['name']; ?> <a href="javascript:void(0)" id="btnChangeCarNameButton1">change name</a><br />
+            <div class="changeCarName" id="changeCarName1">
+                <?php // echo $formCar1->renderForm(); ?>
+            </div>-->
+                <ul>
+                    <li>
+                        Przebieg: <?php echo $car['mileage']; ?>
+                    </li>
+                    <li>
+                        Wartość:<?php echo $car['value']; ?>
+                    </li>
+                    <li>
+                        Koszty utrzymania: <?php echo $car['upkeep']; ?>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            <div class="carBtn">
+                <?php if(!$car['on_market']): ?>
+                    <a class="btn sellCar" type="button" data-toggle="modal" data-target="#sellCar" href="javascript:void(0)" data-name="<?= $car['name']; ?>"  rel="<?php echo $car['id']; ?>"> <i class="fa fa-money"></i> Sprzedaj samochód</a>
+                <?php else: ?>
+                    <a href="#" class="btn" disabled>Car is on the market</a>
+                <?php endif; ?>
+                <a class="btn" href="/car/change-name/id/<?= $car['id']; ?>">
+                    <i class="fa fa-edit"></i> Change name
+                </a>
+            </div>
+
+            </div>
+           <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
+                <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" class="carCardPhoto" />
+           <?php } 
+                else{ ?>
+                    <img src="http://dummyimage.com/340x220&amp;text=No+photo" class="carCardPhoto" />
+                <?php
+                }
+                ?>
+            <div class="col-md-6 pr0 pl0">
+
+            <div class="carParameters">
+                 <table>
+                    <tr>
+                    <td>marka:</td>
+                    <td><?php echo $car['Model']['name']; ?></td>
+                </tr>
+                    <tr>
+                        <td>poj. silnika</td>
+                        <td><?php echo $car['Model']['capacity'];?></td>
+                    </tr>
+                    <tr>
+                        <td>moc</td>
+                        <td><?php echo $car['Model']['horsepower'];?></td>
+                    </tr>
+                    <tr>
+                        <td>v-max</td>
+                        <td><?php echo $car['Model']['max_speed'];?></td>
+                    </tr>
+                    <tr>
+                        <td>przyspieszenie</td>
+                        <td><?php echo $car['Model']['acceleration'];?></td>
+                    </tr>
+
+                </table>
+            </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <?php endforeach; ?>
     </div>
-    Marka: <?php echo $car['Model']['name']; ?><br />
-    Przebieg: <?php echo $car['mileage']; ?><br />
-    Wartość: <?php echo $car['value']; ?><br />
-    Koszty utrzymania: <?php echo $car['upkeep']; ?><br />
-    Skills: <br />
-    <fieldset>
-        <table>
-            <tr>
-                <td>Pojemność silnika</td>
-                <td><?php echo $car['Model']['capacity'];?></td>
-            </tr>
-            <tr>
-                <td>Moc</td>
-                <td><?php echo $car['Model']['horsepower'];?></td>
-            </tr>
-            <tr>
-                <td>V max</td>
-                <td><?php echo $car['Model']['max_speed'];?></td>
-            </tr>
-            <tr>
-                <td>Przyspieszenie</td>
-                <td><?php echo $car['Model']['acceleration'];?></td>
-            </tr>
-            <tr>
-                <td>Napęd</td>
-		<td><?php echo $car['Model']['wheel_drive'];?></td>
-            </tr>
-            
-        </table>
-    </fieldset>
-</fieldset>
-    
-        <?php if(!$car['on_market']): ?>
-            <a href="/car/sell-car/id/<?php echo $car['id']; ?>">Sprzedaj samochód</a>
-        <?php else: ?>
-            Car is on the market
-        <?php endif; ?>
-    <?php endforeach; ?>
+
+    <div id="sellCar" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+            <form method="POST" action="/car/sell-car">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Sell car <span id="sellCarName"></span></h4>
+          </div>
+          <div class="modal-body">
+                <div class="form-group">
+                    <label for="asking_price" class="control-label">Asking price</label>
+                    <?php echo $form->getElement('asking_price')->renderElement(); ?>
+                </div>
+
+                <div class="form-group">
+                    <label for="asking_price" class="control-label">Days on the market</label>
+                    <?php echo $form->getElement('days')->renderElement(); ?>
+                </div>
+
+                <div class="form-group">
+                    <label for="selling_fee" class="control-label">Selling fee</label>
+                    <?php echo $form->getElement('selling_fee')->renderElement(); ?>
+                </div>
+                <input type="hidden" name="car_id" id="car_id" /> 
+
+          </div>
+          <div class="modal-footer">
+            <?php echo $form->getElement('submit')->renderElement(); ?>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+            </form>
+
+      </div>
+    </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('#asking_price').keyup(function(){
+            var asking_price = $(this).val();
+            if($.isNumeric(asking_price)){
+                var selling_fee = Math.round(0.0125*asking_price);
+                if(selling_fee > 5000){
+                    selling_fee = 5000;
+                }
+                if(selling_fee < 150){
+                    selling_fee = 150;
+                }
+                
+                $('#selling_fee').val(selling_fee);
+            }
+            else{
+                $('#selling_fee').val('');
+            }
+        });
+        
+        
+        $('.sellCar').click(function(){
+           var rel = $(this).attr('rel');
+           $('#car_id').val(rel);
+           $('#sellCarName').html($(this).attr('data-name'));
+        });
+    });
+</script>

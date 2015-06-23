@@ -2,13 +2,10 @@
 
 class Offer extends Form{
     public function __construct(){
-        $askingPrice = $this->createElement('text','asking_price',array('validators' => array('int')),'Cena');
-        $askingPrice->addClass('form-control');
-        $askingPrice->addParam('required');
+         $this->createElement('text','asking_price',array('validators' => array('int')),'Cena')->addClass('form-control');
         $fee = $this->createElement('text','selling_fee',array('validators' => array('int')),'Cena');
         $fee->addParam('readonly','readonly');
         $fee->addClass('form-control');
-        $fee->addParam('required');
         $this->getElement('asking_price')->addParam('autocomplete','off');
         $days = $this->createElement('select','days',array(),'Test');
         $days->addMultiOptions(array(1 => 1,2 => 2,3 => 3));

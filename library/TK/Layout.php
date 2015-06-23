@@ -54,6 +54,12 @@ class Layout{
             $this->controller->setResponseSegment('right-banner','banner','index','show-right-banner'); 
             $this->controller->setResponseSegment('market','market','index','show-my-player-offers'); 
         }
+        elseif($this->layoutName == 'page'){
+            $this->controller->setResponseSegment('calendar','index','index','show-calendar'); 
+            $this->controller->setResponseSegment('friends','index','index','show-friends'); 
+            $this->controller->setResponseSegment('menu','index','index','menu'); 
+            $this->controller->setResponseSegment('left-banner','banner','index','show-left-banner'); 
+        }
     }
     
     

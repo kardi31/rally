@@ -242,7 +242,7 @@ class TeamService extends Service{
     
     public function canAfford($team,$price){
         // team must be an instance of Team_Model_Doctrine_Team
-        if(is_integer($team)){
+        if(is_numeric($team)){
             $team = $this->getTeam($team,'id');
         }
         if($team->cash>=$price)

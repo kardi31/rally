@@ -23,6 +23,13 @@ class Index_Index extends Controller{
     public function index(){
         $this->getLayout()->setLayout('main');
         
+        $userService = parent::getService('user','user');
+        
+        $user = $userService->getAuthenticatedUser();
+        
+        if($user)
+            TK_Helper::redirect('/account/my-account');
+       
     }
     
     public function showFriends(){

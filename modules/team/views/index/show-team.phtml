@@ -9,22 +9,44 @@
     </tr>
     <tr>
         <td>League</td>
-        <td><?php echo $team['name']; ?></td>
+        <td><?php echo $team['league_name']; ?></td>
+    </tr>
+    
+    <tr>
+        <td>Cars</td>
+        <td>
+            <?php 
+                foreach($team['Cars'] as $car):
+                    if(strlen($car['Model']['photo'])){
+                        ?>
+                        <img src="/media/photos/cars/<?= $car['Model']['photo']; ?>" />
+                        <?php
+                    }
+                    else{
+                        echo $car['Model']['name'];
+                    }
+                endforeach;
+            ?>
+        </td>
     </tr>
 </table>
-<?php if(!$friendInvited){ ?>
-    <form action="/user/invite-friend" method="POST">
-        <input type="hidden" value="<?= $team['User']['id']; ?>" name="id" />
-        <input type="submit" name="submit" value="Invite to friend list" />
-    </form>
-<?php } 
-else{
-    
-    if($friendInvited=="invited"){
-        echo 'This user has already been invited to your friend list.';
-    }
+<?php 
+if($authenticatedUser['id']!=$team['User']['id']){
+    if(!$friendInvited){ ?>
+        <form action="/user/invite-friend" method="POST">
+            <input type="hidden" value="<?= $team['User']['id']; ?>" name="id" />
+            <input type="submit" name="submit" value="Invite to friend list" />
+        </form>
+    <?php } 
     else{
-        echo 'This user is in your friend list';
-    }
-   
-} ?>
+
+        if($friendInvited=="invited"){
+            echo 'This user has already been invited to your friend list.';
+        }
+        else{
+            echo 'This user is in your friend list';
+        }
+
+    } 
+}
+?>

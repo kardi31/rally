@@ -13,6 +13,7 @@ class Team_Index extends Controller{
     public function showTeam(){
         Service::loadModels('team', 'team');
         Service::loadModels('people', 'people');
+        Service::loadModels('car', 'car');
 	
         $teamService = parent::getService('team','team');
         $userService = parent::getService('user','user');
@@ -29,6 +30,8 @@ class Team_Index extends Controller{
 	
 	$this->view->assign('friendInvited',$friendInvited);
 	$this->view->assign('team',$team);
+        
+        $this->getLayout()->setLayout('page');
     }
     
     

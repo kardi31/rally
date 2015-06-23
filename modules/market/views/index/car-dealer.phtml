@@ -3,6 +3,12 @@
         max-width:200px;
     }
 </style>
+
+<?php 
+if(isset($_GET['msg'])&&$_GET['msg']=="cant afford"){
+    $this->showError("Sorry. You don't have enough money to buy this car.");
+}
+?>
 <h2>Car dealer</h2>
 <hr />
 <?php foreach($carsForSale as $car):?>
@@ -12,15 +18,17 @@
     Horsepower: <?php echo $car['horsepower']; ?><br />
     Max speed: <?php echo $car['max_speed']; ?><br />
     Acceleration: <?php echo $car['acceleration']; ?><br />
-    Price: <strong><?php echo $car['price']; ?></strong><br />
+    Price: <strong><?php echo $car['price']; ?></strong><br /><br />
+    <a href="/market/buy-car/id/<?php echo $car['id']; ?>"><i class="fa fa-shopping-cart"></i> Kup</a>
 </div>
 <div class="col-md-4">
     <div class="carPhoto">
+        <?php if(strlen($car['photo'])): ?>
         <img src="/media/cars/<?php echo $car['photo']; ?>" alt="<?php echo $car['name']; ?>" title="<?php echo $car['name']; ?>" />
+        <?php else: ?>
+        <img src="http://dummyimage.com/200x130&text=No+photo" />
+        <?php endif; ?>
     </div>
-    <?php // if($player['Team']['id']!=$user['Team']['id']): ?>
-    <a href="/market/buy-car/id/<?php echo $car['id']; ?>">Kup</a>
-    <?php // endif; ?>
 </div>
 <div class='clearfix'></div>
 <hr />
