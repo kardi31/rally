@@ -68,6 +68,16 @@ class RallyService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getAllTeamRallies($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->rallyTable->createQuery('r');
+        $q->leftJoin('r.Crews c');
+//	$q->addWhere('r.date > NOW()');
+	$q->orderBy('r.date DESC');
+        $q->addWhere('c.team_id = ?',$team_id);
+        $q->select('r.id');
+	return $q->execute(array(),$hydrationMode);
+    }
+    
     public function getAllFutureTeamRallies($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->rallyTable->createQuery('r');
         $q->leftJoin('r.Crews c');
@@ -128,6 +138,22 @@ class RallyService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getRalliesWithNotFinishedStages($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->rallyTable->createQuery('r');
+	$q->leftJoin('r.Stages s');
+	$q->addWhere('s.date <= NOW()');
+	$q->addWhere('s.finished = 0');
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getRalliesToFinish($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->rallyTable->createQuery('r');
+	$q->leftJoin('r.Stages s');
+	$q->addWhere('s.finished !=0');
+	$q->addWhere('r.finished = 0');
+	return $q->execute(array(),$hydrationMode);
+    }
+    
     public function getRallySurfaces($rally_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->surfaceTable->createQuery('su');
 	$q->select('su.*');
@@ -161,12 +187,13 @@ class RallyService extends Service{
         $record = $this->crewTable->getRecord();
 	
 	// we must encode risk to get float value, not a string
-	$riskArray = Rally_Model_Doctrine_Rally::getRisks();
+//	$riskArray = Rally_Model_Doctrine_Rally::getRisks();
 	
-	$values['risk'] = array_search($values['risk'], $riskArray);
+	$values['risk'] = $values['risk'];
 	$values['rally_id'] = $rally['id'];
 	$values['team_id'] = $team['id'];
 	$record->fromArray($values);
+//        var_dump($record->toArray());exit;
 	$record->save();
 	
 	return $record;
@@ -447,6 +474,26 @@ class RallyService extends Service{
         return $q->execute(array(),$hydrationMode);
     }
     
+    public function calculatePartialRallyResult(Rally_Model_Doctrine_Rally $rally){		
+        $q = $this->stageResultTable->createQuery('sr');
+        $q->leftJoin('sr.Stage s');
+	$q->leftJoin('sr.Crew cr');
+	$q->leftJoin('cr.Team t');
+	$q->leftJoin('cr.Driver d');
+	$q->leftJoin('cr.Pilot p');
+        $q->select('SEC_TO_TIME(SUM(TIME_TO_SEC(sr.base_time))) as total_time');
+        $q->addSelect('count(sr.id) as number_of_stages');
+        $q->addSelect('SUM(sr.out_of_race) as out_of_race');
+        $q->addSelect('sr.crew_id');
+        $q->addSelect('stage_id');
+        $q->addSelect('cr.*,d.*,p.*,t.*');
+        $q->groupBy('crew_id');
+        $q->addWhere('s.rally_id = ?',$rally['id']);
+        $q->orderBy('out_of_race ASC,number_of_stages DESC,total_time ASC');
+        return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
+        
+    }
+    
     public function calculateRallyResult(Rally_Model_Doctrine_Rally $rally){
 	$teamService = TeamService::getInstance();
 	$leagueService = LeagueService::getInstance();
@@ -513,6 +560,20 @@ class RallyService extends Service{
         return $q->fetchOne(array(),Doctrine_Core::HYDRATE_RECORD);
     }
     
+    public function getRallyStagesResults($id){
+        $q = $this->stageTable->createQuery('s');
+        $q->addSelect('s.*,sr.*,cr.*,d.*,p.*,t.*,a.*');
+        $q->leftJoin('s.Results sr');
+        $q->leftJoin('sr.Crew cr');
+        $q->leftJoin('cr.Driver d');
+        $q->leftJoin('cr.Pilot p');
+        $q->leftJoin('cr.Team t');
+        $q->leftJoin('sr.Accident a');
+        $q->addWhere('s.rally_id = ?',$id);
+        $q->orderBy('s.id,sr.out_of_race, sr.base_time');
+        return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
+    }
+    
     public function getRallyResults($id,$field='id'){
         $q = $this->resultTable->createQuery('re');
         $q->addSelect('re.*');
@@ -536,6 +597,15 @@ class RallyService extends Service{
      * 
      */
     
+    public function countRecentUserFriendlies($user_id){
+        $q = $this->friendlyTable->createQuery('f');
+        $q->select('count(f.id) as cnt,f.created_at');
+        $q->addWhere('f.user_id = ?',$user_id);
+        $q->addWhere('f.created_at > DATE_SUB(NOW(), INTERVAL +1 MONTH)');
+        $q->groupBy('f.user_id');
+        $q->orderBy('created_at');
+	return $q->fetchOne(array(),Doctrine_Core::HYDRATE_ARRAY);
+    }
     
     public function getAllFutureFriendlyRallies($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->rallyTable->createQuery('r');
@@ -568,6 +638,7 @@ class RallyService extends Service{
         $q->select('r.*,f.*,p.*,u.*');
         return $q->fetchOne(array(),$hydrationMode);
     }
+    
     
     public function saveFriendlyRally($values,$user_id){
         $rally = $this->createRandomFriendlyRally($values);
@@ -659,6 +730,8 @@ class RallyService extends Service{
 	return $q->fetchOne(array(),$hydrationMode);
     }
     
+    
+    
     public function inviteUserToFriendlyRally($friendly,$friendlyUser){
         $invitation = $this->friendlyInvitationsTable->getRecord();
         $invitation->user_id = $friendlyUser['id'];
@@ -680,6 +753,14 @@ class RallyService extends Service{
         $invite = $this->getFriendlyInvitedUser($friendly_id,$username);
         if($invite)
             $invite->delete();
+    }
+    
+    public function getRallyParticipant($rally_id,$team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->crewTable->createQuery('c');
+        $q->select('c.*');
+        $q->addWhere('c.rally_id = ?',$rally_id);
+        $q->addWhere('c.team_id = ?',$team_id);
+	return $q->fetchOne(array(),$hydrationMode);
     }
 }
 ?>

@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/my-cars.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/controllers/AdminController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/services/Team.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/rally/controllers/TestController.php</file>
@@ -79,7 +80,6 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/market/views/admin/list-people-transfer.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/services/Duplicate.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/library/DataTables/OfferIllegal.php</file>
-            <file>file:/C:/xampp2/htdocs/ral/modules/market/controllers/IndexController.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/views/admin/list-people-illegal-transfer.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/show-market.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/team/form/Tactics.php</file>
@@ -139,9 +139,14 @@
             <file>file:/C:/xampp2/htdocs/ral/modules/team/models/BaseTeam.php</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/views/index/car-dealer.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/views/message/error.phtml</file>
-            <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/my-cars.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/views/message/success.phtml</file>
             <file>file:/C:/xampp2/htdocs/ral/modules/market/form/Offer.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/car/views/index/change-name.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/car/form/NameChange.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/account/views/index/sponsor.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/team/services/Sponsor.php</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/views/index/list-rally.phtml</file>
+            <file>file:/C:/xampp2/htdocs/ral/modules/rally/views/index/show-rally.phtml</file>
         </group>
     </open-files>
 </project-private>

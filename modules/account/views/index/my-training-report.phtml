@@ -1,30 +1,63 @@
-
-<h3>My training report from <?php echo date('d-m-Y'); ?></h3>
-<div class="myDrivers">
-<?php if(is_array($results)){ ?>
-<fieldset>
+<style>
     
-    <fieldset>
-        <table>
-            <?php foreach($results as $result): ?>
+    .trainingBar{
+        width:100px;
+        display:block;
+        background:lightgray;
+    }
+    .trainingBar .innerTrainingBar{
+        display:block;
+        height:15px;
+        background:green;
+    }
+    .trainingBox{
+        padding:20px;
+    }
+    .trainingBox td{
+        padding:10px 15px;
+    }
+    </style>
+<div class="mainUserBox ">
+    <h4 class="boxHeader">My training report </h4>
+    <div class="trainingBox">
+    <?php if(is_array($results)){ ?>
+            <table>
+                <?php 
+                $lastDate = null;
+                foreach($results as $result): 
+                    if(substr($result['training_date'],0,10)!=$lastDate){
+                        $lastDate = substr($result['training_date'],0,10);
+                        ?>
                 <tr>
-                    <td><?php echo $result['People']['last_name']." ".$result['People']['first_name']; ?></td>
-                    <td><?php echo $result['skill_name'];?></td>
-                    <td><?php echo $result['current_skill_level'];?></td>
-                    <td><?php echo round($result['max_available_km_passed_today']/$result['km_passed_today'],2);?>%</td>
-                    <td><?php if($result['skill_promotion']){
-                        echo "Nowa gwiazdka";
-                    };?></td>
+                    <th><?php echo $lastDate; ?></th>
                 </tr>
-            <?php endforeach; ?>
-            
-        </table>
-    </fieldset>
-   
-</fieldset>
-<?php }else{ ?>
-    brak wynikow
-   
-<?php 
-} ?>
+                        
+                        <?php
+                        
+                        
+                    }
+                    ?>
+                    <tr>
+                        <td><?php echo $result['People']['last_name']." ".$result['People']['first_name']; ?></td>
+                        <td><?php echo People_Model_Doctrine_People::showSkillName($result['skill_name']);?></td>
+                        <td><?php echo $result['current_skill_level'];?></td>
+                        <td>
+                            <?php //echo round($result['max_available_km_passed_today']/$result['km_passed_today'],2);?>
+                            <div class="trainingBar">
+                                <div class="innerTrainingBar" title="<?php echo round($result['max_available_km_passed_today']/$result['km_passed_today'],2);?>%" style="width:<?php echo round($result['max_available_km_passed_today']/$result['km_passed_today'],2);?>%">
+                                </div>
+                            </div>
+                        </td>
+                        <td><?php if($result['skill_promotion']){
+                            echo '<img src="/images/gwiazdka.png" alt="gw">';
+                        };?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+    <?php }else{ ?>
+        brak wynikow
+
+    <?php 
+    } ?>
+    </div>
 </div>

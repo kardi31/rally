@@ -1,3 +1,17 @@
+<style>
+    .rallyList table{
+        margin-left:20px;
+    }
+    .rallyList td:not(:first-of-type){
+        padding:5px 20px;
+    }
+    .rallyList td.big{
+        padding-right:10px;
+    }
+    .rallyList td.rallyName{
+        padding-left:0px;
+    }
+</style>
 <div class="mainUserBox rallyList">
     <h4 class="boxHeader">Lista rajdów</h4>
     <table>
@@ -15,11 +29,6 @@
                 <td class="rallyName">
                     <a href="/rally/show-rally/slug/<?php echo $rally['slug']; ?>"><?php echo $rally['name'];?></a>
                     
-                </td>
-                <td>
-                    <?php if((is_array($futureTeamRallies)&&in_array($rally['id'],$futureTeamRallies))||$rally['id']==$futureTeamRallies){
-                        echo "<span class='label label-success'>Joined</span>"; 
-                    } ?>
                 </td>
                 <td>
                     <?= count($rally['Crews'])." crews"; ?>

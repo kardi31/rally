@@ -12,6 +12,23 @@
  */
 class People_Model_Doctrine_People extends People_Model_Doctrine_BasePeople
 {
+    private static $skillName = array(
+        'composure' => 'Composure',
+        'speed' => 'Speed',
+        'regularity' => 'Regularity',
+        'reflex' => 'Reflex',
+        'on_gravel' => 'Driving on gravel',
+        'on_tarmac' => 'Driving on tarmac',
+        'on_snow' => 'Driving on snow',
+        'talent' => 'Talent',
+        'form' => 'Form',
+        'composure' => 'Composure',
+        'dictate_rhytm' => 'Dictate rhytm',
+        'diction' => 'Diction',
+        'route_description' => 'Route description'
+    );
+    
+    
     public function setUp()
     {
         parent::setUp();
@@ -44,5 +61,9 @@ class People_Model_Doctrine_People extends People_Model_Doctrine_BasePeople
              'local' => 'id',
              'foreign' => 'driver_id'));
 	
+    }
+    
+    public static function showSkillName($skill){
+        return self::$skillName[$skill];
     }
 }

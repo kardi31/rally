@@ -30,7 +30,7 @@
  * @property integer $experience
  * @property string $active_training_skill
  * @property boolean $on_market
- * @property People_Model_Doctrine_Training $TrainingReports
+ * @property Doctrine_Collection $TrainingReports
  * @property People_Model_Doctrine_TrainingFactor $TrainingFactor
  * 
  * @package    ##PACKAGE##
@@ -154,7 +154,7 @@ abstract class People_Model_Doctrine_BasePeople extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('People_Model_Doctrine_Training as TrainingReports', array(
+        $this->hasMany('People_Model_Doctrine_Training as TrainingReports', array(
              'local' => 'id',
              'foreign' => 'people_id'));
 

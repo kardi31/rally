@@ -96,8 +96,97 @@ class Cron_Admin extends Controller{
         echo "done";exit;
     }
     
+    public function calculateTraining(){
+        $view = $this->view;
+        $view->setNoRender();
+        
+        
+        Service::loadModels('team', 'team');
+        Service::loadModels('people', 'people');
+        Service::loadModels('car', 'car');
+        $rallyService = parent::getService('rally','rally');
+        $trainingService = parent::getService('people','training');
+        
+        $crews = $rallyService->getCrewsWithNotCompletedTrainingToday(Doctrine_Core::HYDRATE_ARRAY);
+        $trainingService->calculateTraining($crews,$rallyService);
+        
+        echo "done";exit;
+    }
+    
     // do this every day - end
     
+    // do this every 15 min 
     
+    public function calculateRallyResult(){
+        $rallyService = parent::getService('rally','rally');
+        $teamService = parent::getService('team','team');
+        $leagueService = parent::getService('league','league');
+        
+        
+        $ralliesWithNotFinishedStages = $rallyService->getRalliesWithNotFinishedStages();
+        foreach($ralliesWithNotFinishedStages as $rally):
+            foreach($rally['Stages'] as $stage):
+                $this->calculateStageTime($stage['Rally']['id'],$stage['id']);
+                $stage->set('finished',1);
+                $stage->save();
+            endforeach;
+            
+        endforeach;
+        
+        $rallyToFinish = $rallyService->getRalliesToFinish();
+        foreach($rallyToFinish as $rally):
+            $rallyService->calculateRallyResult($rally);
+        endforeach;
+                
+        
+        echo "pp";exit;
+        
+    }
+    
+    public function calculateStageTime($rally_id,$stage_id){
+	 
+        Service::loadModels('team', 'team');
+        Service::loadModels('people', 'people');
+        Service::loadModels('car', 'car');
+        $rallyService = parent::getService('rally','rally');
+        $crews = $rallyService->getRallyCrews($rally_id,'rally_id',Doctrine_Core::HYDRATE_RECORD);
+	$stage = $rallyService->getStageShort($stage_id,'id',Doctrine_Core::HYDRATE_ARRAY);
+	// get array with id of crews which's time hasn't been calculated yet
+	$crewsWithResults = $rallyService->getCrewsWithoutResults($stage['id'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+	$surfaces = $rallyService->getRallySurfaces($rally_id,Doctrine_Core::HYDRATE_ARRAY);
+        
+        $carService = parent::getService('car','car');
+        $trainingService = parent::getService('people','training');
+        $peopleService = parent::getService('people','people');
+	$peopleService->runStageForCrew($stage,$crews,$crewsWithResults,$surfaces);
+	
+    }
+    
+    // 15 min finish
+    
+    // random scripts
+    
+    public function calculateStageDate(){
+        $rallyService = parent::getService('rally','rally');
+        $teamService = parent::getService('team','team');
+        $leagueService = parent::getService('league','league');
+        
+        $allRallies = $rallyService->getAllRallies();
+        foreach($allRallies as $rally):
+            $date = new DateTime($rally['date']);
+            foreach($rally['Stages'] as $key => $stage):
+            if($key!=0){
+                $date->add(new DateInterval('PT15M'));
+            }
+                $stage->set('date',$date->format('Y-m-d H:i:s'));
+                if($date->format('Y-m-d H:i:s')<date('Y-m-d H:i:s')){
+                    $stage->set('finished',1);
+                }
+                $stage->save();
+//                var_dump($stage->toArray());exit;
+            endforeach;
+        endforeach;
+        echo "pp";exit;
+    }
 }
 ?>

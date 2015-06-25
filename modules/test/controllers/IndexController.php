@@ -97,8 +97,6 @@ class Test_Index extends Controller{
         $leagueService = parent::getService('league','league');
         $userService = parent::getService('user','user');
 	
-//        Zend_Debug::dump($rallyResults);exit;
-        
         $rally = $rallyService->getRally($GLOBALS['urlParams']['slug'],'slug');
         $rallyStages = $rallyService->getRallyStages($GLOBALS['urlParams']['slug'],'slug',Doctrine_Core::HYDRATE_ARRAY);
         

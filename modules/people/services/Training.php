@@ -88,6 +88,17 @@ class TrainingService extends Service{
         return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
     }
     
+    public function getLastWeekTrainingResults($team_id){
+        $q = $this->trainingTable->createQuery('t');
+        $q->leftJoin('t.People p');
+        $q->addSelect('t.*,p.*');
+        $q->orderBy('km_passed_today/max_available_km_passed_today');
+        $q->addWhere('p.team_id = ?',$team_id);
+        $q->addWhere('DATE(t.training_date) > DATE_SUB(CURDATE(), INTERVAL 7 DAY)');
+        $q->orderBy('t.training_date DESC');
+        return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
+    }
+    
     public function checkTodayTrainingForPerson($skill,$people_id){
         $q = $this->trainingTable->createQuery('t');
         $q->addWhere('t.people_id = ?',$people_id);
@@ -111,9 +122,9 @@ class TrainingService extends Service{
             // driver training
             $driver = $this->getPerson($crew['driver_id']);
             $this->calculateTrainingForPerson($driver['People'],$crew['km_passed'],$crew['rally_id']);
-            
             $pilot = $this->getPerson($crew['pilot_id']);
-            $this->calculateTrainingForPerson($pilot['People'],$crew['km_passed'],$crew['rally_id']);
+            if(is_object($pilot))
+                $this->calculateTrainingForPerson($pilot['People'],$crew['km_passed'],$crew['rally_id']);
             
             $crewRecord = $rallyService->getCrew($crew['id']);
             $crewRecord->set('training_done',1);
@@ -122,8 +133,22 @@ class TrainingService extends Service{
     }
     
     public function calculateTrainingForPerson(People_Model_Doctrine_People $person,$km_passed,$rally_id){
-        $trainingSkill = $person->active_training_skill;
+                
+        if(!strlen($person->active_training_skill)){
+            if($person->job=="pilot"){
+                $newSkill = $this->pilotTrainableSkills[array_rand($this->pilotTrainableSkills)];
+                $person->set('active_training_skill',$newSkill);
+                $person->save();
+            }
+            elseif($person->job=="driver"){
+                $newSkill = $this->driverTrainableSkills[array_rand($this->driverTrainableSkills)];
+                $person->set('active_training_skill',$newSkill);
+                $person->save();
+            }
+        }
         
+        $trainingSkill = $person->active_training_skill;
+//        echo "pp";exit;
         if($this->checkTodayTrainingForPerson($trainingSkill,$person['id'])){
             return false;
         }

@@ -15,7 +15,13 @@
   3. Office
     3.1 My cars page + Sell
     3.2 Sponsor
-   
+    3.3 Show rally
+    3.4 Rally result
+    3.5 My finances
+  
+  4. Rallies
+    4.1 List rally
+    4.2 Friendly rallies
 */
 /*
 0. Global elements
@@ -57,6 +63,10 @@ input.textInput:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 a{
     color:#f3f3f3;
+}
+
+select:disabled{
+    cursor: not-allowed;
 }
 
 table tr td{
@@ -267,8 +277,8 @@ footer{
 
 .mainContent.mainUserContent{
     border-radius:0px;
-    background:url('/images/layout/ground_background.jpg') no-repeat;
-    background-size:cover;
+    background:url('/images/layout/ground_background.jpg') repeat-y;
+    /*background-size:100;*/
 }
 
 /* 
@@ -630,3 +640,263 @@ footer{
     margin-left:15px;
     display:block;
 }
+
+/* 
+3.3 show rally
+*/
+
+.rallyStages{
+        padding-left:0px;
+        list-style:none;
+        column-count: 3;
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+    }
+    
+    .showRallyBox{
+        width:80%;
+        margin-top:0px;
+        float:left;
+    }
+    .rallyButtons{
+        width:20%;
+        float:right;
+    }
+    
+    .rallyButtons ul{
+        padding-left:0px;
+        list-style:none;
+        
+    }
+   
+    
+    .rallyButtons a{
+        display:block;
+        padding:10px 10px;
+        background:url('/images/layout/menu-bg.png');
+        padding-left:35px;
+        background-size:100% 100%;
+    }
+    
+    .rallyButtons a.active{
+        background:url('/images/layout/menu-bg-active.png');
+        background-size:100%;
+        border-left:2px solid white;
+        color:#fff;
+    }
+    
+    .showRallyBox{
+        padding:20px;
+        position: relative;
+        display:none;
+    }
+    
+    .showRallyBox.active{
+        display:block;
+    }
+    .showRallyWrapper{
+        background:none;
+    }
+    
+    .showRallyWrapper h4{
+        margin-bottom:0px;
+    }
+    
+    .showRallyWrapper h3{
+        margin-top:0px;
+        margin-bottom:20px;
+    }
+    
+    .sign-up-rally .formElemWrapper select{
+        width:50%;
+    }
+    .sign-up-rally .formElemWrapper{
+        margin:15px 0px;
+    }
+    .sign-up-rally .formElemWrapper .col-md-3{
+        padding-left:0px;
+    }
+    #crews td{
+        padding:5px
+    }
+    
+/*
+    3.4 Rally result
+*/
+.rallyResultWrapper table tr td,table tr th{
+    padding:20px 5px;
+    min-width:20px;
+    text-align:center;
+}
+.rallyResultWrapper table tr td{
+    vertical-align:top;
+}
+.rallyResultWrapper table tr td:first-of-type,table tr th:first-of-type{
+    /*padding:3px 15px;*/
+    padding:20px 0px;
+    min-width:10px;
+    text-align:center;
+}
+
+.rallyResultWrapper .rallyButtons a.disabled{
+    cursor:not-allowed;
+    opacity:0.6;
+}
+
+.rallyResultWrapper .rallyButtons a.disabled:hover{
+    text-decoration: none;
+}
+    
+/*
+    3.5 
+*/
+    .advancedReportIncome,.advancedReportExpense{
+        display:block;
+        width:50%;
+        margin:10px 0px;
+        font-size:14px;
+        text-align:left;
+    }
+    .advancedReportIncome{
+        float:left;
+        clear:left;
+    }
+    .advancedReportExpense{
+        float:right;
+        clear:right;
+    }
+    
+    .accountBalance{
+        font-size:18px;
+    }
+    
+    .myFinances{
+        padding:20px;
+    }
+    
+    .financeSubHeader{
+        font-weight:bold;
+        display:block;
+        margin-top:5px;
+        margin-bottom: 5px;
+    }
+    
+    .myFinances h5{
+        border-bottom:1px solid #fff;
+        padding:5px 0px;
+        font-size:16px;
+    }
+    
+    .incomeBox{
+        background:#5cb85c;
+    }
+    .expenseBox{
+        background:#d9534f;
+    }
+    
+    .advancedFinanceReport h5{
+        margin-top:50px;
+    }
+    .advancedReportIncome,.advancedReportExpense{
+        line-height:20px;
+    }
+    
+    .advancedReportIncome i,.advancedReportExpense i{
+        margin-right:10px;
+    }
+    .noGoldAvancedReport{
+        position:relative;
+    }
+    .noGoldAvancedReport h5{
+        padding:20px;
+    }
+    
+    /*
+        4.1 List rallies
+    */
+    
+     .rallyList{
+        min-height:400px;
+    }
+    
+    .rallyList table{
+        margin-left:20px;
+    }
+    .rallyList td:not(:first-of-type){
+        padding:5px 20px;
+    }
+    .rallyList td.big{
+        padding-right:10px;
+    }
+    .rallyList td.rallyName{
+        padding-left:0px;
+    }
+    
+    /*
+        4.2 Friendly rallies
+    */
+    
+    .createFriendly{
+        margin-left:20px;
+    }
+    
+    .createFriendlyBox .form-group:after{
+        clear:both;
+        display:block;
+        content: " ";
+    }
+    
+    .createFriendlyBox .radioWrapper{
+        display:block;
+        margin:0 auto;
+        max-width:400px;
+    }
+    
+    
+    .createFriendlyBox .radioElemWrapper{
+        display:block;
+        float:left;
+        margin-right:20px;
+    }
+    
+    .friendlyNote{
+        display:block;
+        margin-left:20px;
+        margin-bottom:20px;
+        font-style:italic;
+    }
+    .friendlyNote strong{
+        font-style:normal;
+    }
+    
+    #crewAddWrapper{
+        padding-left:20px;
+    }
+    #crewAddWrapper label{
+        width:100px;
+    }
+    
+    .goldCoinBox{
+        background:#5cb85c;
+        width:600px;
+        margin:20px 0px;
+        padding:5px 20px;
+        padding-bottom:10px;
+        /*line-height:28px;*/
+    }
+    
+    .goldCoinBox h4{
+        margin-bottom:0px;
+        padding-bottom:10px;
+    }
+    
+    .goldCoinBox img.coin{
+        margin-left:5px;
+    }
+    .goldCoinBox .balance{
+        float:right;
+    }
+    .goldCoinBox .balanceWrapper{
+        display:block;
+        margin-top:20px;
+    }

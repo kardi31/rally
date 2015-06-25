@@ -16,12 +16,13 @@ class Rally_Index extends Controller{
         Service::loadModels('team', 'team');
         Service::loadModels('car', 'car');
         $rallyService = parent::getService('rally','rally');
-        $rally = $rallyService->getRally($GLOBALS['urlParams']['name'],'slug');
-	
+        $rally = $rallyService->getRally($GLOBALS['urlParams']['slug'],'slug');
 	
         $peopleService = parent::getService('people','people');
         $userService = parent::getService('user','user');
         $carService = parent::getService('car','car');
+        
+        $user = $userService->getAuthenticatedUser();
         
         $leagueInt = (int)$rally['league'];
         $crewCounter = count($rally['Crews']);
@@ -33,28 +34,26 @@ class Rally_Index extends Controller{
             $prizePool = $rallyService->getPrizesHelper()->getPrizePool($leagueInt,$crewCounter);
         }
         
+        
+        $isParticipant = $rallyService->getRallyParticipant($rally['id'],$user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
+        
         if($rally['finished']){
             $rallyResults = $rallyService->getRallyResults($rally['id'],'rally_id');
             $this->view->assign('rallyResults',$rallyResults);
         }
         
-        $user = $userService->getAuthenticatedUser();
+        
 	
         if($user){
             $freeDrivers = $peopleService->getFreeDrivers($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
             $freePilots = $peopleService->getFreePilots($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
             $freeCars = $carService->getFreeCars($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
-            $form = new Form();
-
-            $driver_id = $form->createElement('select','driver_id',array(),'Kierowca');
-            $driver_id->addMultiOptions($freeDrivers,true);
-            $pilot_id = $form->createElement('select','pilot_id',array(),'Pilot');
-            $pilot_id->addMultiOptions($freePilots,true);
-            $car_id = $form->createElement('select','car_id',array(),'Auto');
-            $car_id->addMultiOptions($freeCars,true);
-            $risk = $form->createElement('select','risk',array('selected' => 'Normal risk'),'Ryzyko');
-            $risk->addMultiOptions(Rally_Model_Doctrine_Rally::getFormRisks(),true);
-            $form->createElement('submit','submit');
+	
+            $form = $this->getForm('rally','JoinRally');
+            $form->getElement('driver_id')->addMultiOptions($freeDrivers,true);
+            $form->getElement('pilot_id')->addMultiOptions($freePilots,true);
+            $form->getElement('car_id')->addMultiOptions($freeCars,true);
+            $this->view->assign('form',$form);
 
             if($form->isSubmit()){
                 if($form->isValid()){
@@ -64,7 +63,7 @@ class Rally_Index extends Controller{
 
                     $rallyService->saveRallyCrew($values,$rally,$user['Team']);
 
-                    TK_Helper::redirect('/rally/show-rally/name/'.$rally['slug']);
+                    TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug']);
 
                     Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
                 }
@@ -73,6 +72,13 @@ class Rally_Index extends Controller{
         $this->view->assign('form',$form);
         }
         
+        $startDate = new DateTime($rally['date']);
+        $signUpFinish = clone $startDate;
+        $signUpFinish->sub(new DateInterval('PT15M'));
+        
+        $this->view->assign('isParticipant',$isParticipant);
+        $this->view->assign('startDate',$startDate);
+        $this->view->assign('signUpFinish',$signUpFinish);
         $this->view->assign('rally',$rally);
         $this->view->assign('rallyPrizes',$rallyPrizes);
         $this->view->assign('prizePool',$prizePool);
@@ -92,6 +98,21 @@ class Rally_Index extends Controller{
 
         $this->view->assign('rallies',$rallies);
         $this->view->assign('futureTeamRallies',$futureTeamRallies);
+    }
+    
+    public function myRallies(){
+        
+        Service::loadModels('team', 'team');
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        
+        $rallyService = parent::getService('rally','rally');
+//        $rallies = $rallyService->getAllFutureRallies();
+        
+        $rallies = $rallyService->getAllTeamRallies($user['Team']['id'],Doctrine_Core::HYDRATE_RECORD);
+
+        $this->view->assign('rallies',$rallies);
+//        $this->view->assign('futureTeamRallies',$futureTeamRallies);
     }
     
     public function listFriendlyRally(){
@@ -125,7 +146,8 @@ class Rally_Index extends Controller{
         $freeDrivers = $peopleService->getFreeDriversFriendly($user['Team'],null,Doctrine_Core::HYDRATE_ARRAY);
         $freePilots = $peopleService->getFreePilotsFriendly($user['Team'],null,Doctrine_Core::HYDRATE_ARRAY);
         $freeCars = $carService->getFreeCarsFriendly($user['Team'],null,Doctrine_Core::HYDRATE_ARRAY);
-            
+        
+        $recentUserFriendlies = $rallyService->countRecentUserFriendlies($user['id']);
         $joinForm = $this->getForm('rally','JoinRally');
         $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,true);
         $joinForm->getElement('pilot_id')->addMultiOptions($freePilots,true);
@@ -141,7 +163,14 @@ class Rally_Index extends Controller{
                 
                 $values = $_POST;
 
-                if(!$userService->checkUserPremium($user['id'],10)){
+                if($user['gold_member']&&$recentUserFriendlies<2){
+                    $friendly = $rallyService->saveFriendlyRally($values,$user);
+                    $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
+                    $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
+
+                    TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
+                }
+                elseif(!$userService->checkUserPremium($user['id'],10)){
                     $this->view->assign('message','You do not have enough premium. Please buy more premium');
                 }
                 else{
@@ -156,6 +185,7 @@ class Rally_Index extends Controller{
         }
         
         
+        $this->view->assign('recentUserFriendlies',$recentUserFriendlies);
         $this->view->assign('form',$form);
         
     }
@@ -354,10 +384,17 @@ class Rally_Index extends Controller{
         Service::loadModels('people', 'people');
         
         $rallyService = parent::getService('rally','rally');
-        $rally = $rallyService->getRally($GLOBALS['urlParams']['rally'],'slug');
-        $rallyResults = $rallyService->getRallyResults($rally['id'],'rally_id');
+        $rally = $rallyService->getRally($GLOBALS['urlParams']['id'],'id');
+        if($rally['finished']){
+            $rallyResults = $rallyService->getRallyResults($rally['id'],'rally_id');
+        }
+        else{
+            $rallyResults = $rallyService->calculatePartialRallyResult($rally);
+        }
+        $rallyStagesResults = $rallyService->getRallyStagesResults($rally['id']);
         $this->view->assign('rally',$rally);
         $this->view->assign('rallyResults',$rallyResults);
+        $this->view->assign('rallyStagesResults',$rallyStagesResults);
     }
     
     

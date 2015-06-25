@@ -97,7 +97,7 @@ class Account_Index extends Controller{
             TK_Helper::redirect('/user/login');
         
         $trainingService = parent::getService('people','training');
-        $results = $trainingService->getMyTrainingResults($user['Team']['id']);
+        $results = $trainingService->getLastWeekTrainingResults($user['Team']['id']);
         $this->view->assign('results',$results);
     }
     

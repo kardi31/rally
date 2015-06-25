@@ -53,46 +53,89 @@
         width:60px;
     }
     </style>
-    <?php if(isset($message)){
-        echo $message;
+    
+<div class="mainUserBox createFriendlyBox">
+    <h4 class="boxHeader">Create friendly rally</h4>
+<?php if(isset($message)){
+        echo $this->showError($message);
     } ?>
-<a href="/rally/list-friendly-rally">Powrót do listy rajdów</a>
-<div>
-    Cost of this = 10 CC <br />
-    <form method="POST">
-    <label for="name">Name</label>
-    <?php echo $form->getElement('name')->renderElement(); ?>
-    <label for="description">Description</label>
-    <?php echo $form->getElement('description')->renderElement(); ?>
-    <label for="invite_only">Invite only</label>
-    <?php echo $form->getElement('invite_only')->renderElement(); ?>
-    <label for="date">Rally date</label>
-    <?php echo $form->getElement('date')->renderElement(); ?>
-    
-    <hr />
-    <div id="myMessage" class='error'>
-        
-    </div>
-    <span>Please note: to create a friendly rally you need to have free driver,pilot and car. One crew is allowed to drive only one friendly rally/day. If you don't have free crew on that date, please choose another date of rally.</span>
-    <div>My rally settings</div>
-    
-    <div id='crewAddWrapper'>
-        <label for="driver_id">Driver</label>
-        <span id="driverWrapper">
-            <?php echo $joinForm->getElement('driver_id')->renderElement(); ?>
-        </span>
-        <label for="pilot_id">Pilot</label>
-        <span id="pilotWrapper">
-            <?php echo $joinForm->getElement('pilot_id')->renderElement(); ?>
-        </span>
-        <label for="car_id">Car</label>
-        <span id="carWrapper">
-            <?php echo $joinForm->getElement('car_id')->renderElement(); ?>
-        </span>
-        <label for="risk">Risk</label>
-        <?php echo $joinForm->getElement('risk')->renderElement(); ?>
+    <div>
+        <!--Cost of this = 10 CC <br />-->
+        <form  method="POST">
+            <div class='form-group'>
+                <label class='control-label col-md-2' for="name">Name</label>
+                <div class='col-md-9'>
+                    <?php echo $form->getElement('name')->renderElement(); ?>
+                </div>
+            </div>
+            <div class='form-group'>
+                <label class='control-label col-md-2' for="description">Description</label>
+                <div class='col-md-9'>
+                    <?php echo $form->getElement('description')->renderElement(); ?>
+                </div>
+            </div>
+            <div class='form-group'>
+                <?php echo $form->getElement('invite_only')->renderElement(); ?>
+            </div>
+            <div class='form-group'>
+                <label class='control-label col-md-2' for="date">Rally date</label>
+                <div class='col-md-9'>
+                    <?php echo $form->getElement('date')->renderElement(); ?>
+                </div>
+            </div>
+        <hr />
+        <div id="myMessage" class='error'>
 
-        <?php echo $form->getElement('submit')->renderElement(); ?>
+        </div>
+        <span class='friendlyNote'><strong>Please note:</strong> to create a friendly rally you need to have free driver,pilot and car. One crew is allowed to drive only one friendly rally/day. If you don't have free crew on that date, please choose another date of rally.</span>
+        <div id='crewAddWrapper'>
+            <label for="driver_id">Driver</label>
+            <span id="driverWrapper">
+                <?php echo $joinForm->getElement('driver_id')->renderElement(); ?>
+            </span>
+            <label for="pilot_id">Pilot</label>
+            <span id="pilotWrapper">
+                <?php echo $joinForm->getElement('pilot_id')->renderElement(); ?>
+            </span>
+            <label for="car_id">Car</label>
+            <span id="carWrapper">
+                <?php echo $joinForm->getElement('car_id')->renderElement(); ?>
+            </span>
+            <label for="risk">Risk</label>
+            <?php echo $joinForm->getElement('risk')->renderElement(); ?>
+            
+            <div class='goldCoinBox'>
+                <h4>Create friendly rally</h4>
+                <?php if(!$authenticatedUser['gold_member']): ?>
+                    <div class="balance">
+                        Balance: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
+                    </div>
+                     Cost:  10<img class="coin" src="/images/layout/coin.png" />
+               <?php else: ?>
+                    You are a <img src="/images/layout/gc_small.png" /> member. You are allowed to create 2 friendly rallies every 30 days.
+                    <?php 
+                    if($recentUserFriendlies['cnt']>=2){
+                       $oldestFriendly = new DateTime($recentUserFriendlies['created_at']);
+                       $oldestFriendly->add(new DateInterval('P30D'));
+                       echo "<br/> You have to wait until <strong>".$oldestFriendly->format('d/m/Y H:i')."</strong> to create another free friendly rally."; 
+                    
+                       ?>
+                    <br />
+                    <div class="balanceWrapper">
+                        <div class="balance">
+                            Balance: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
+                        </div>
+                         Cost:  10<img class="coin" src="/images/layout/coin.png" />
+                         <div class="clearfix"></div>
+                    </div>
+                    <?php
+                    }
+                    ;?>
+                    
+                <?php endif; ?>
+            </div>
+            <?php echo $form->getElement('submit')->renderElement(); ?>
+        </div>
+        </form>
     </div>
-    </form>
 </div>

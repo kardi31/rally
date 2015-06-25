@@ -12,5 +12,11 @@
  */
 class Rally_Model_Doctrine_Stage extends Rally_Model_Doctrine_BaseStage
 {
-
+    public function setUp()
+    {
+        parent::setUp();
+        $this->hasMany('Rally_Model_Doctrine_StageResult as Results', array(
+             'local' => 'id',
+             'foreign' => 'stage_id'));
+    }
 }

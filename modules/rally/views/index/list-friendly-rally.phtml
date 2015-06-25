@@ -1,12 +1,8 @@
-<h3>Lista rajdów</h3>
- <a href="/rally/create-friendly-rally/">Stwórz rajd towarzyski</a>
+<div class="mainUserBox rallyList">
+    <h4 class="boxHeader">Friendly rallies</h4>
+    <a class='createFriendly btn btn-primary' href="/rally/create-friendly-rally/">Create friendly rally</a>
            
 <table>
-    <tr>
-	<th>Nazwa rajdu</th>
-	<th>Data</th>
-	<th>Dostępny do zapisu</th>
-    </tr>
 <?php foreach($rallies as $rally): ?>
     <tr>
 	<td>
@@ -24,13 +20,14 @@
 	<td>
 	    <?php 
             if($rally['Friendly']['invite_only']){
-                echo "nie";
+                echo "<span class='label label-danger'>Private</span>";
             }
             else{
-                echo "tak";
+                echo "<span class='label label-success'>Public</span>";
             }
             ?>
 	</td>
     </tr>
 <?php endforeach; ?>
 </table>
+</div>

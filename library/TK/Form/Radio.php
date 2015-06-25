@@ -33,15 +33,19 @@ class Radio extends Element {
     }
     
     public function renderElement($submitElem = 'submit'){
+        $this->elementDisplay .= '<span class="radioWrapper">';
         if(count($this->multiOptions)>0){
             foreach($this->multiOptions as $option){
 //                var_dump($option);exit;
+                $this->elementDisplay .= "<span class='radioElemWrapper'>";
                 $this->elementDisplay .= "<label for=".$this->name.'_'.$option['value'].">".$option['label']."</label>";
 //                echo "good";exit;
                 $this->elementDisplay .= "<input ".$this->isSelected($option['value'],$submitElem)." value='".$option['value']."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."'  type='".$this->type."' />";
                 $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
+                $this->elementDisplay .= "</span>";
             }
         }
+        $this->elementDisplay .= '</span>';
         return $this->elementDisplay;
     }
     

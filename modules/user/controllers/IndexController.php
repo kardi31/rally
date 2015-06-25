@@ -163,8 +163,10 @@ class User_Index extends Controller{
     public function logout(){
         $userService = parent::getService('user','user');
         
-        if($userService->logout())
+        if($userService->logout()){
             TK_Helper::redirect('/');
+        }
+        exit;
                 
     }
     

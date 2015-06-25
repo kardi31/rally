@@ -94,8 +94,8 @@ Training:
     People:
       local: people_id
       foreign: id
-      foreignType: one
-      type: many
+      foreignType: many
+      type: one
       foreignAlias: TrainingReports
       alias: People
 TrainingFactor:

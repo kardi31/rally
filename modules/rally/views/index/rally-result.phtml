@@ -1,16 +1,133 @@
-<style>
-    table tr td,table tr th{
-        padding:3px 15px;
-        min-width:300px;
-        text-align:center;
-    }
-    table tr td:first-of-type,table tr th:first-of-type{
-        padding:3px 15px;
-        min-width:50px;
-        text-align:center;
-    }
-</style>
+<script>
+    $(document).ready(function(){
+       $('.rallyButtons a').click(function(){
+           if($(this).hasClass('disabled')){
+               return false;
+           }
+          $('.rallyButtons a.active').removeClass('active');
+          $(this).addClass('active');
+          $('.mainUserBox.active').hide();
+          $('.mainUserBox.active').removeClass('active');
+          $('#'+$(this).attr('rel')).show();
+          $('#'+$(this).attr('rel')).addClass('active');
+       });
+    });
 
+</script>
+
+
+<div class="mainUserBox showRallyWrapper rallyResultWrapper">
+    <h4 class="boxHeader"><?php echo $rally['name']; ?> results</h4>
+    
+        <div class="showRallyBox active mainUserBox" id="results">
+            <?php if($rally['finished']): ?>
+                <table>
+                    <?php foreach($rallyResults as $result): ?>
+                        <tr>
+                            <td>
+                                <?php if($result['out_of_race']==0){
+                                    echo $result['position'];
+                                }
+                                ?>
+                            </td>
+                            <td>
+                                <?php echo $result['Crew']['Team']['name']; ?>
+                            </td>
+                            <td>
+                                <?php echo $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name']; ?> - 
+                                <?php echo $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name']; ?>
+                            </td>
+                            <td>
+                                 <?php if($result['out_of_race']==0){
+                                    echo $result['total_time'];
+                                }
+                                else{
+                                    echo "Accident on stage no ".$result['stage_out_number'];
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            <?php else: ?>
+            <table>
+                    <?php foreach($rallyResults as $key => $result): ?>
+                        <tr>
+                            <td>
+                                <?php if($result['out_of_race']==0){
+                                    echo $key+1;
+                                }
+                                ?>
+                            </td>
+                            <td>
+                                <?php echo $result['Crew']['Team']['name']; ?>
+                            </td>
+                            <td>
+                                <?php echo $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name']; ?> - 
+                                <?php echo $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name']; ?>
+                            </td>
+                            <td>
+                                 <?php if($result['out_of_race']==0){
+                                    echo $result['total_time'];
+                                }
+                                else{
+                                    echo "Out of race";
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            <?php endif; ?>
+        </div>
+        <?php foreach($rallyStagesResults as $key => $stage): ?>
+            <div class="showRallyBox mainUserBox" id="<?= $stage['rally_id']."_".$stage['id']; ?>">
+                <table>
+                    <?php foreach($stage['Results'] as $key => $result): ?>
+                            <tr>
+                                <td>
+                                    <?= ($key+1)."."; ?>
+                                </td>
+                                <td>
+                                    <?php echo $result['Crew']['Team']['name']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name']; ?> - 
+                                    <?php echo $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name']; ?>
+                                </td>
+                                <td>
+                                     <?php 
+                                     if($result['out_of_race']==0){
+                                        echo $result['base_time'];
+                                        if($result['Accident']){
+                                            echo '<br /><br /><i class="fa fa-exclamation-circle"></i> '.$result['Accident']['name'];
+                                        }
+                                    }
+                                    else{
+                                        echo "Out of race - ".$result['Accident']['name'];
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+                    <?php endforeach; ?>
+                </table>
+            </div>
+        <?php endforeach; ?>
+    <div class="rallyButtons">
+        <ul>
+                <li>
+                    <a class="active" rel="results" href="javascript:void(0)"><?= "Results"?></a>
+                </li>
+            <?php foreach($rallyStagesResults as $key => $stage): ?>
+                <li>
+                    <a class="<?php echo ($stage['finished']==0)?"disabled":""; ?>" rel="<?= $stage['rally_id']."_".$stage['id']; ?>" href="javascript:void(0)"><?= "Stage ".($key+1)." - ".$stage['name']; ?></a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+
+<!--
 <a href="/rally/list-rally">Powrót do listy rajdów</a>
 <div class="row">
 <div class="container">
@@ -59,4 +176,4 @@ This is a friendly rally. Find out more about friendly rallies.
     </table>
 
 </div>
-</div></div>
+</div></div>-->

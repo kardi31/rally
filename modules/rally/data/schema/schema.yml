@@ -111,6 +111,9 @@ Stage:
       type: string(255)
     length:
       type: decimal(18)
+    finished:
+      type: boolean
+      default: 0
     date:
       type: timestamp
     min_time:

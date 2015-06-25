@@ -9,6 +9,7 @@
  * @property integer $rally_id
  * @property string $name
  * @property decimal $length
+ * @property boolean $finished
  * @property timestamp $date
  * @property time $min_time
  * @property Rally_Model_Doctrine_Rally $Rally
@@ -41,6 +42,10 @@ abstract class Rally_Model_Doctrine_BaseStage extends Doctrine_Record
         $this->hasColumn('length', 'decimal', 18, array(
              'type' => 'decimal',
              'length' => '18',
+             ));
+        $this->hasColumn('finished', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
              ));
         $this->hasColumn('date', 'timestamp', null, array(
              'type' => 'timestamp',

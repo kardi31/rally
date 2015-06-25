@@ -62,26 +62,51 @@ class CarService extends Service{
     }
     
     public function getFreeCars(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
-	$q = $this->carTable->createQuery('c');
+	$busyCars = $this->getBusyCars($team, $date,Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        $q = $this->carTable->createQuery('c');
 	$q->select('c.id,c.name');
-	$q->leftJoin('c.Car1Team c1t');
-	$q->leftJoin('c.Car2Team c2t');
+	$q->leftJoin('c.Team t');
 	$q->leftJoin('c.CarRallies cr');
 	$q->leftJoin('cr.Rally r');
-	$q->addWhere('c1t.id = ? or c2t.id = ?',array($team['id'],$team['id']));
-	$q->addWhere('r.date NOT like ? or r.date IS NULL',substr($date,0,10)."%");
+	$q->addWhere('t.id = ?',$team['id']);
+        if(!empty($busyCars))
+            $q->addWhere('c.id NOT IN ?',$busyCars);
 	return $q->execute(array(),$hydrationMode);
     }
     
-    public function getFreeCarsFriendly(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+    public function getBusyCars(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	$q = $this->carTable->createQuery('c');
 	$q->select('c.id,c.name');
 	$q->leftJoin('c.Team t');
 	$q->leftJoin('c.CarRallies cr');
 	$q->leftJoin('cr.Rally r');
 	$q->addWhere('t.id = ?',$team['id']);
-        if(!is_null($date))
-            $q->addWhere('r.id IS NULL or (r.friendly != 1 OR (r.friendly = 1 and (r.date NOT like ? or r.date IS NULL)))',substr($date,0,10)."%");
+	$q->addWhere('r.date like ?',substr($date,0,10)."%");
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+     public function getFreeCarsFriendly(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+	$busyCars = $this->getBusyCarsFriendly($team, $date,Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        $q = $this->carTable->createQuery('c');
+	$q->select('c.id,c.name');
+	$q->leftJoin('c.Team t');
+	$q->leftJoin('c.CarRallies cr');
+	$q->leftJoin('cr.Rally r');
+	$q->addWhere('t.id = ?',$team['id']);
+        if(!empty($busyCars))
+	$q->addWhere('c.id NOT IN ?',$busyCars);
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+     public function getBusyCarsFriendly(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+	$q = $this->carTable->createQuery('c');
+	$q->select('c.id,c.name');
+	$q->leftJoin('c.Team t');
+	$q->leftJoin('c.CarRallies cr');
+	$q->leftJoin('cr.Rally r');
+	$q->addWhere('t.id = ?',$team['id']);
+        $q->addWhere('r.friendly = 1');
+	$q->addWhere('r.date like ?',substr($date,0,10)."%");
 	return $q->execute(array(),$hydrationMode);
     }
     
