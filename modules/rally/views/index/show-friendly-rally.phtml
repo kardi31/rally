@@ -1,34 +1,299 @@
-
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <?php if(isset($message)){ ?>
-     <div class="alert alert-danger alert-dismissable">
-         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <?php 
-            echo $message; 
-            ?>
-     </div>
-  <?php } ?>
-<h2><?php echo $friendly['Rally']['name']; ?></h2>
-<?php echo $friendly['description']; ?>
-<hr />
-<?php if($friendly['invite_only']){ ?>
-Zaproszeni: <br />
-<?php 
-if(isset($invitedUsers)){
-    foreach($invitedUsers as $invitedUser): 
-        echo $invitedUser['User']['username']."<br />";
-    endforeach; 
-}
+    <script>
+        $(document).ready(function(){
+           $('.rallyButtons a').click(function(){
+              $('.rallyButtons a.active').removeClass('active');
+              $(this).addClass('active');
+              $('.mainUserBox.active').hide();
+              $('.mainUserBox.active').removeClass('active');
+              $('#'+$(this).attr('rel')).show();
+              $('#'+$(this).attr('rel')).addClass('active');
+           });
+        });
+        
+    </script>
+<?php $rally = $friendly['Rally']; ?>
+<div class="mainUserBox showRallyWrapper">
+    <h4 class="boxHeader"><?php echo $friendly['Rally']['name']; ?></h4> 
    
-}
-else{
-    echo "Ten rajd jest ogólnodostępny do zapisów";
-}
-    ?>
-<h3>Uczestnicy</h3>
-<?php foreach($friendly['Participants'] as $participant): 
+    <div class="showRallyBox <?php if(!$rally['finished']) echo "active"?> mainUserBox" id="details">
+         <?php
+            if(isset($message)){
+                if(!$message['status'])
+                    $this->showError($message);
+                else
+                    $this->showSuccess($message);
+            }
+
+            if(isset($_GET['msg'])){
+                if($_GET['msg']=="user invited")
+                    $this->showSuccess('User was succesfully invited.');
+                if($_GET['msg']=="joined")
+                    $this->showSuccess('You have joined this rally.');
+            }
+        ?>
+        <span class="rallyDescription">
+            <?= nl2br($friendly['description']); ?>
+        </span>
+        <hr />
+        
+        Prize pool : <?php echo $prizePool."$"; ?><br />
+        Signed crews : <?php echo $crewCounter; ?><br />
+        Race start : <?php echo $startDate->format('d/m/Y H:i'); ?><br />
+        Sign up finish : <?php echo $signUpFinish->format('d/m/Y H:i'); ?><br />
+        Surface : <?php
+        foreach($rally['Surfaces'] as $key=>$surface):
+          echo $surface['surface']." ".round($surface['percentage'])."%";  
+            if($key==0)
+                echo ", ";
+        endforeach;
+        ?>
+        <br />
+        Rally type :  <?php echo $friendly['invite_only']?"<span class='label label-danger'>Private</span>":"<span class='label label-success'>Public</span>"; ?><br />
+        
+        <br />
+        <?php if(isset($isParticipant)&&$isParticipant): ?>
+            <span class="label label-success">You already participate in this rally.</span>
+        <?php endif; ?>
+        <br />
+        <?php if(isset($form)){ ?>
+        
+            <div class='goldCoinBox inviteFriendFriendly'>
+                <strong>Invite your friend</strong>
+                <form method="POST">
+                    <br />
+                    <div class='formElemWrapper'>
+                        <?php echo $form->getElement('name')->renderElement(); ?>
+                    </div>
+                    <br />
+                    <?php echo $form->getElement('submit')->renderElement(); ?>
+                </form>
+            </div>
+
+<?php } ?>
+
+<?php if(isset($joinForm)){ ?>
+        <span class="label label-warning bigLabel">You have been invited to this rally.</span>
+        <br /><br />
+
+        <div class="sign-up-rally">
+            <h3>Sign up</h3>
+            <form method="POST">
+                <div class='formElemWrapper'>
+                    <label for='driver_id' class="col-md-3 control-label" type='text'>Kierowca</label>
+                    <?php echo $joinForm->getElement('driver_id')->renderElement(); ?>
+                </div>
+                <div class='formElemWrapper'>
+                    <label for='pilot_id' class="col-md-3 control-label"  type='text'>Pilot</label>
+                    <?php echo $joinForm->getElement('pilot_id')->renderElement(); ?>
+                </div>     
+                <div class='formElemWrapper'>
+                    <label for='car_id' class="col-md-3 control-label"  type='text'>Samochód</label>
+                    <?php echo $joinForm->getElement('car_id')->renderElement(); ?>
+                </div>
+                <div class='formElemWrapper'>
+                    <label for='risk' class="col-md-3 control-label"  type='text'>Ryzyko</label>
+                    <?php echo $joinForm->getElement('risk')->renderElement(); ?>
+                </div>
+                <div class='goldCoinBox'>
+                    <h4>Join friendly rally</h4>
+                    <?php if(!$authenticatedUser['gold_member']): ?>
+                        <div class="balance">
+                            Balance: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
+                        </div>
+                         Cost:  10<img class="coin" src="/images/layout/coin.png" />
+                   <?php else: ?>
+                        You are a <img src="/images/layout/gc_small.png" /> member. You are allowed to create 2 friendly rallies every 30 days.
+                        <?php 
+                        if($recentUserFriendlies['cnt']>=2){
+                           $oldestFriendly = new DateTime($recentUserFriendlies['created_at']);
+                           $oldestFriendly->add(new DateInterval('P30D'));
+                           echo "<br/> You have to wait until <strong>".$oldestFriendly->format('d/m/Y H:i')."</strong> to create another free friendly rally."; 
+
+                           ?>
+                        <br />
+                        <div class="balanceWrapper">
+                            <div class="balance">
+                                Balance: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
+                            </div>
+                             Cost:  10<img class="coin" src="/images/layout/coin.png" />
+                             <div class="clearfix"></div>
+                        </div>
+                        <?php
+                        }
+                        ;?>
+
+                    <?php endif; ?>
+                </div>
+                <div class='formSubmitWrapper'>
+                    <?php echo $joinForm->getElement('submit')->renderElement(); ?>
+                </div>
+
+            </form>
+        </div>
+        
+
+<?php } ?>
+    </div>
+    <div class="showRallyBox mainUserBox" id="stages">
+        <ul class="rallyStages">
+            <?php foreach($rally['Stages'] as $key => $stage): ?>
+            <li><?= $stage['name']." - ".$stage['length']; ?> km 
+                <br /><i class="fa fa-clock-o"></i> 
+                <?php 
+                if($key!=0){
+                    $startDate->add(new DateInterval('PT15M'));
+                }
+                echo $startDate->format("H:i"); 
+                ?>
+            <br /><br />
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <div class="showRallyBox mainUserBox" id="invited">
+        <?php
+        if($friendly['invite_only']){
+            echo "This rally is open for all";
+        }
+        else{
+            if(count($friendly['Invitations'] )==0)
+                echo "No teams invited yet";
+            ?>
+            <table>
+                <?php foreach($friendly['Invitations'] as $key => $invited): ?>
+                        <tr>
+                            <td>
+                                <?= ($key+1)."."; ?>
+                            </td>
+                            <td>
+                                <?php echo $invited['User']['Team']['name']; ?>
+                            </td>
+                            <td>
+                                <?php echo $invited['User']['username']; ?>
+                            </td>
+                        </tr>
+                <?php endforeach; ?>
+
+                </table>
+        <?php } ?>
+    </div>
+    <div class="showRallyBox mainUserBox" id="crews">
+        <table>
+            <tr>
+                <th></th>
+                <th>Załoga</th>
+                <th>Samochód</th>
+                <th>Nazwa zespołu</th>
+            </tr>
+            <?php foreach($rally['Crews'] as $key => $crew): ?>
+                    <tr>
+                        <td>
+                            <?= ($key+1)."."; ?>
+                        </td>
+                        <td>
+                            <?php echo $crew['Driver']['last_name']." ".$crew['Driver']['first_name']; ?> - 
+                            <?php echo $crew['Pilot']['last_name']." ".$crew['Pilot']['first_name']; ?>
+                        </td>
+                        <td>
+                            <?php echo $crew['Car']['name']; ?>
+                        </td>
+                        <td>
+                            <?php echo $crew['Team']['name']; ?>
+                        </td>
+                    </tr>
+            <?php endforeach; ?>
+
+            </table>
+    </div>
+    <div class="showRallyBox mainUserBox" id="prizes">
+        <?php if($rally['big_awards']): ?>
+                <img src="/images/b_letter.gif" />
+                <br />
+                Ilosc zalog : <?php echo $crewCounter; ?><br />
+                <h3>Prizes</h3>
+                <?php 
+                foreach($rallyPrizes as $key => $rallyPrize): 
+                    $position = $key+1;
+                    echo "Position ".$position." - ";
+                    if($rallyPrize['type']=="car"):
+                        $car = $rallyPrize['value'];
+                        ?>
+                        <img src="/media/cars/<?php echo $car['photo']; ?>" alt="<?php echo $car['name']; ?>" />
+                        <?php 
+                    else:
+                        echo $rallyPrize['value']." premium";
+                    endif;
+                    ?>
+                        <br />
+                        <?php
+                endforeach; 
+            else: ?>
+                <h3>Prizes</h3>
+                <?php 
+                foreach($rallyPrizes as $position => $rallyPrize): 
+                    echo "Position ".$position." - ";
+                    echo $rallyPrize."$ <br /><br />";
+                endforeach; 
+            endif; ?>
+    </div>
+    <div class="showRallyBox rallyResultWrapper mainUserBox <?php if($rally['finished']) echo "active"?>" id="result">
+        <table>
+                    <?php foreach($rallyResults as $result): ?>
+                        <tr>
+                            <td>
+                                <?php if($result['out_of_race']==0){
+                                    echo $result['position'];
+                                }
+                                ?>
+                            </td>
+                            <td>
+                                <?php echo $result['Crew']['Team']['name']; ?>
+                            </td>
+                            <td>
+                                <?php echo $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name']; ?> - 
+                                <?php echo $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name']; ?>
+                            </td>
+                            <td>
+                                 <?php if($result['out_of_race']==0){
+                                    echo $result['total_time'];
+                                }
+                                else{
+                                    echo "Accident on stage no ".$result['stage_out_number'];
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+    </div>
+    <div class="rallyButtons">
+        <ul>
+            
+            <?php if($rally['finished']): ?>
+                <li>
+                    <a href="#" class="active" rel="result">Results</a>
+                </li>
+            <?php endif ; ?>
+            <li>
+                <a class="<?php if(!$rally['finished']) echo "active"?>" rel="details" href="#">Details</a>
+            </li>
+            <li>
+                <a href="#" rel="stages">Stages</a>
+            </li>
+            <li>
+                <a href="#" rel="invited">Invited crews</a>
+            </li>
+            <li>
+                <a href="#" rel="crews">Signed crews</a>
+            </li>
+            <li>
+                <a href="#" rel="prizes">Prize pool</a>
+            </li>
+        </ul>
+    </div>
+    
+<!--<h3>Uczestnicy</h3>-->
+<?php /*/* foreach($friendly['Participants'] as $participant): 
     if(is_null($participant['deleted_at'])){
         echo $participant['User']['username']."<br />";
     }
@@ -39,36 +304,11 @@ else{
         ?>
 <a href="/rally/remove-friendly-rally-participant/slug/<?php echo $friendly['Rally']['slug'];?>">Wyrejestruj sie</a>
 <?php
-    }
+    }*/
     
     ?>
-<?php if(isset($form)){ ?>
-<h2>Invite your friend</h2>
-<form method="POST">
-    <label for="name">Friend's name</label>
-    <?php echo $form->getElement('name')->renderElement(); ?>
-    <?php echo $form->getElement('submit')->renderElement(); ?>
-</form>
 
-<?php } ?>
-
-<?php if(isset($joinForm)){ ?>
-<h2>Join friendly rally</h2>
-<span>You have been invited to this rally.</span>
-<form method="POST">
-    <label for="driver_id">Driver</label>
-    <?php echo $joinForm->getElement('driver_id')->renderElement(); ?>
-    <label for="pilot_id">Pilot</label>
-    <?php echo $joinForm->getElement('pilot_id')->renderElement(); ?>
-    <label for="car_id">Car</label>
-    <?php echo $joinForm->getElement('car_id')->renderElement(); ?>
-    <label for="risk">Risk</label>
-    <?php echo $joinForm->getElement('risk')->renderElement(); ?>
-    <?php echo $joinForm->getElement('submit')->renderElement(); ?>
-</form>
-
-<?php } ?>
-
+</div>
  <script>
   $(function() {
     $( "#name" ).autocomplete({

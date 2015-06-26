@@ -607,6 +607,18 @@ class RallyService extends Service{
 	return $q->fetchOne(array(),Doctrine_Core::HYDRATE_ARRAY);
     }
     
+    public function countRecentUserParticipateFriendlies($user_id){
+        $q = $this->friendlyTable->createQuery('f');
+        $q->leftJoin('f.Rally r');
+        $q->leftJoin('f.Participants p');
+        $q->select('count(f.id) as cnt,f.created_at');
+        $q->addWhere('p.user_id = ?',$user_id);
+        $q->addWhere('r.date > DATE_SUB(NOW(), INTERVAL +1 MONTH)');
+        $q->groupBy('p.user_id');
+        $q->orderBy('created_at');
+	return $q->fetchOne(array(),Doctrine_Core::HYDRATE_ARRAY);
+    }
+    
     public function getAllFutureFriendlyRallies($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->rallyTable->createQuery('r');
         $q->leftJoin('r.Friendly f');
@@ -634,11 +646,36 @@ class RallyService extends Service{
         $q->leftJoin('f.Rally r');
         $q->leftJoin('f.Participants p');
         $q->leftJoin('p.User u');
+        $q->leftJoin('r.Crews c');
+        $q->leftJoin('c.Driver d');
+        $q->leftJoin('c.Pilot pi');
+        $q->leftJoin('c.Car ca');
+        $q->leftJoin('c.Team t');
         $q->addWhere($field .' = ?',$id);
-        $q->select('r.*,f.*,p.*,u.*');
+        $q->select('r.*,f.*,p.*,u.*,c.*,ca.*,t.*,pi.*,d.*');
         return $q->fetchOne(array(),$hydrationMode);
     }
     
+    public function getFullFriendlyRally($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->friendlyTable->createQuery('f');
+        $q->leftJoin('f.Rally r');
+        $q->leftJoin('r.Stages s');
+        $q->leftJoin('f.Participants p');
+        $q->leftJoin('f.Invitations i');
+        $q->leftJoin('p.User u');
+        $q->leftJoin('r.Crews c');
+        $q->leftJoin('c.Driver d');
+        $q->leftJoin('c.Pilot pi');
+        $q->leftJoin('c.Car ca');
+        $q->leftJoin('c.Team t');
+        $q->leftJoin('i.User iu');
+        $q->leftJoin('iu.Team it');
+        $q->leftJoin('r.Surfaces sf');
+        $q->addWhere($field .' = ?',$id);
+        $q->orderBy('sf.percentage DESC');
+        $q->select('r.*,f.*,p.*,u.*,c.*,ca.*,t.*,pi.*,d.*,it.*,i.*,iu.*,s.*,sf.*');
+        return $q->fetchOne(array(),$hydrationMode);
+    }
     
     public function saveFriendlyRally($values,$user_id){
         $rally = $this->createRandomFriendlyRally($values);
@@ -707,6 +744,17 @@ class RallyService extends Service{
         $q->select('u.username,fi.id');
         $q->addWhere('fi.friendly_id = ?',$friendly['id']);
         $q->addWhere('fi.deleted_at IS NULL');
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getMyFriendlyInvitations($user_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->rallyTable->createQuery('r');
+        $q->leftJoin('r.Friendly f');
+        $q->leftJoin('f.Invitations fi');
+        $q->leftJoin('fi.User u');
+        $q->addWhere('r.date > NOW()');
+        $q->addWhere('u.id = ?',$user_id);
+        $q->select('r.id');
 	return $q->execute(array(),$hydrationMode);
     }
     

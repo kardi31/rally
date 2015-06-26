@@ -22,6 +22,7 @@
   4. Rallies
     4.1 List rally
     4.2 Friendly rallies
+    4.3 Show friendly
 */
 /*
 0. Global elements
@@ -879,6 +880,7 @@ footer{
     .goldCoinBox{
         background:#5cb85c;
         width:600px;
+        max-width:100%;
         margin:20px 0px;
         padding:5px 20px;
         padding-bottom:10px;
@@ -899,4 +901,21 @@ footer{
     .goldCoinBox .balanceWrapper{
         display:block;
         margin-top:20px;
+    }
+    
+    /* 
+    4.3 Show friendly
+    */
+    
+    .inviteFriendFriendly{
+        max-width:100%;
+        padding-top:10px;
+    }
+    
+    .inviteFriendFriendly strong{
+        font-size:16px;
+    }
+    
+    .bigLabel{
+        font-size:14px;
     }

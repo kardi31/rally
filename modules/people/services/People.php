@@ -159,14 +159,19 @@ class PeopleService extends Service{
 	$q->leftJoin('p.Team t');
         $q->addWhere("p.job like 'driver'");
 	$q->addWhere('t.id = ?',$team['id']);
-        if(!empty($busyDrivers))
-	$q->addWhere('p.id NOT IN ?',$busyDrivers);
+        
+        if(!empty($busyDrivers)){
+            if(!is_array($busyDrivers)&&strlen($busyDrivers)>3){
+                $busyDrivers = array($busyDrivers);
+            }
+            $q->addWhere('p.id NOT IN ?',$busyDrivers);
+        }
 	return $q->execute(array(),$hydrationMode);
     }
     
     public function getTeamBusyDriversFriendly(Team_Model_Doctrine_Team $team,$date,$hydrationMode){
         $q = $this->peopleTable->createQuery('p');
-	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name,dr.*,r.*');
+	$q->select('p.id');
 	$q->leftJoin('p.Team t');
 	$q->leftJoin('p.DriverRallies dr');
 	$q->leftJoin('dr.Rally r');
@@ -174,6 +179,7 @@ class PeopleService extends Service{
         $q->addWhere("p.job like 'driver'");
 	$q->addWhere('t.id = ?',$team['id']);
 	$q->addWhere('r.date like ?',substr($date,0,10)."%");
+        $q->groupBy('p.id');
 	return $q->execute(array(),$hydrationMode);
     }
     
@@ -185,14 +191,18 @@ class PeopleService extends Service{
 	$q->leftJoin('p.Team t');
         $q->addWhere("p.job like 'pilot'");
 	$q->addWhere('t.id = ?',$team['id']);
-        if(!empty($busyDrivers))
-	$q->addWhere('p.id NOT IN ?',$busyDrivers);
+         if(!empty($busyDrivers)){
+            if(!is_array($busyDrivers)&&strlen($busyDrivers)>3){
+                $busyDrivers = array($busyDrivers);
+            }
+            $q->addWhere('p.id NOT IN ?',$busyDrivers);
+        }
 	return $q->execute(array(),$hydrationMode);
     }
     
     public function getTeamBusyPilotsFriendly(Team_Model_Doctrine_Team $team,$date,$hydrationMode){
         $q = $this->peopleTable->createQuery('p');
-	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name,dr.*,r.*');
+	$q->select('p.id');
 	$q->leftJoin('p.Team t');
 	$q->leftJoin('p.DriverRallies dr');
 	$q->leftJoin('dr.Rally r');
@@ -200,6 +210,7 @@ class PeopleService extends Service{
         $q->addWhere('r.friendly = 1');
 	$q->addWhere('t.id = ?',$team['id']);
 	$q->addWhere('r.date like ?',substr($date,0,10)."%");
+        $q->groupBy('p.id');
 	return $q->execute(array(),$hydrationMode);
     }
     

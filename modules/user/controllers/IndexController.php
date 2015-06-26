@@ -184,10 +184,12 @@ class User_Index extends Controller{
         $users = $userService->findUsers($query,Doctrine_Core::HYDRATE_SINGLE_SCALAR);
         $responseUsers = array();
         $counter = 0;
-        foreach($users as $user){
-            $responseUsers[$counter]['label'] = $user;
-            $responseUsers[$counter]['value'] = $user;
-            $counter++;
+        if(isset($users)){
+            foreach($users as $user){
+                $responseUsers[$counter]['label'] = $user;
+                $responseUsers[$counter]['value'] = $user;
+                $counter++;
+            }
         }
         echo json_encode($responseUsers);
     }

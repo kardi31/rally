@@ -42,7 +42,7 @@ class Validator{
     }
     
     public static function validateAlnum($var){
-	$pattern = '/^[A-Za-z0-9\s]+$/';
+	$pattern = '/^[A-Za-zążśźęćńółĄŻŚŹĘĆŃÓŁ0-9\s]+$/';
 	if(preg_match($pattern,$var)==1):
             $response['result'] = true;
         else:

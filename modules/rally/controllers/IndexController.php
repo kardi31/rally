@@ -124,10 +124,14 @@ class Rally_Index extends Controller{
         $rallyService = parent::getService('rally','rally');
         $rallies = $rallyService->getAllFutureFriendlyRallies();
         
-        
+        $myInvitations = $rallyService->getMyFriendlyInvitations($user['id'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        if(!is_array($myInvitations)&&strlen($myInvitations)>0){
+            $myInvitations = array($myInvitations);
+        }
         $futureTeamRallies = $rallyService->getAllFutureTeamFriendlyRallies($user['Team']['id'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
 
         
+        $this->view->assign('myInvitations',$myInvitations);
         $this->view->assign('rallies',$rallies);
         $this->view->assign('futureTeamRallies',$futureTeamRallies);
     }
@@ -146,7 +150,6 @@ class Rally_Index extends Controller{
         $freeDrivers = $peopleService->getFreeDriversFriendly($user['Team'],null,Doctrine_Core::HYDRATE_ARRAY);
         $freePilots = $peopleService->getFreePilotsFriendly($user['Team'],null,Doctrine_Core::HYDRATE_ARRAY);
         $freeCars = $carService->getFreeCarsFriendly($user['Team'],null,Doctrine_Core::HYDRATE_ARRAY);
-        
         $recentUserFriendlies = $rallyService->countRecentUserFriendlies($user['id']);
         $joinForm = $this->getForm('rally','JoinRally');
         $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,true);
@@ -193,11 +196,13 @@ class Rally_Index extends Controller{
     public function showFriendlyRally(){
         
         Service::loadModels('team', 'team');
+        Service::loadModels('car', 'car');
+        Service::loadModels('people', 'people');
         $rallyService = parent::getService('rally','rally');
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
         
-        if(!$friendly = $rallyService->getFriendlyRally($GLOBALS['urlParams']['slug'],'r.slug',Doctrine_Core::HYDRATE_ARRAY)){
+        if(!$friendly = $rallyService->getFullFriendlyRally($GLOBALS['urlParams']['slug'],'r.slug',Doctrine_Core::HYDRATE_ARRAY)){
             echo "blad";exit;
         }
         
@@ -206,6 +211,24 @@ class Rally_Index extends Controller{
         $this->view->assign('invitedUsers',$invitedUsers);
         
         $isParticipant = $rallyService->getFriendlyParticipant($friendly['id'],$user['username'],Doctrine_Core::HYDRATE_ARRAY);
+        
+        $rally = $friendly['Rally'];
+        $crewCounter = count($rally['Crews']);
+        
+        
+        // prizes for league 3
+        // for friendly rallies
+        $leagueInt = 3;
+        if($rally['big_awards']){
+            $rallyPrizes = $rallyService->getPrizesHelper()->getBigPrizes($rally,$crewCounter);
+        }
+        else{
+            $rallyPrizes = $rallyService->getPrizesHelper()->getPrizes($leagueInt,$crewCounter);
+            $prizePool = $rallyService->getPrizesHelper()->getPrizePool($leagueInt,$crewCounter);
+        }
+        
+        $recentUserFriendlies = $rallyService->countRecentUserParticipateFriendlies($user['id']);
+        
         
         if($user['id']==$friendly['user_id']&&$friendly['invite_only']==1){
             $form = $this->getForm('rally','InviteFriendly');
@@ -219,16 +242,17 @@ class Rally_Index extends Controller{
 
                     $values = $_POST;
                     if(!$friendlyUser = $userService->getUser($values['name'],'username',Doctrine_Core::HYDRATE_ARRAY)){
-                        $this->view->assign('message','This user does not exists');
+                        
+                        $this->view->assign(array('status' => false,'message' => 'This user does not exists'));
                     }
                     elseif($rallyService->getFriendlyInvitedUser($friendly['id'],$values['name'])){
-                        $this->view->assign('message','This user was already invited');
+                        $this->view->assign(array('status' => false,'message' => 'This user was already invited'));
                     }
                     else{
                         $rally = $rallyService->inviteUserToFriendlyRally($friendly,$friendlyUser);
                         unset($_POST);
                         
-                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$GLOBALS['urlParams']['slug']);
+                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$GLOBALS['urlParams']['slug']."?msg=user+invited");
                     }
 
 
@@ -273,11 +297,20 @@ class Rally_Index extends Controller{
             $this->view->assign('participant',true);
         }
         
+        $startDate = new DateTime($rally['date']);
+        $signUpFinish = clone $startDate;
+        $signUpFinish->sub(new DateInterval('PT15M'));
         
-        
+        $this->view->assign('isParticipant',$isParticipant);
+        $this->view->assign('startDate',$startDate);
+        $this->view->assign('signUpFinish',$signUpFinish);
+        $this->view->assign('rallyPrizes',$rallyPrizes);
+        $this->view->assign('prizePool',$prizePool);
         
         $this->view->assign('isParticipant',$isParticipant);
         $this->view->assign('friendly',$friendly);
+        $this->view->assign('crewCounter',$crewCounter);
+        $this->view->assign('recentUserFriendlies',$recentUserFriendlies);
         
     }
     
