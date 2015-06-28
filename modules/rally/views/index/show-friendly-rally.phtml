@@ -1,16 +1,16 @@
-    <script>
-        $(document).ready(function(){
-           $('.rallyButtons a').click(function(){
-              $('.rallyButtons a.active').removeClass('active');
-              $(this).addClass('active');
-              $('.mainUserBox.active').hide();
-              $('.mainUserBox.active').removeClass('active');
-              $('#'+$(this).attr('rel')).show();
-              $('#'+$(this).attr('rel')).addClass('active');
-           });
-        });
-        
-    </script>
+<script>
+    $(document).ready(function(){
+       $('.rallyButtons a').click(function(){
+          $('.rallyButtons a.active').removeClass('active');
+          $(this).addClass('active');
+          $('.mainUserBox.active').hide();
+          $('.mainUserBox.active').removeClass('active');
+          $('#'+$(this).attr('rel')).show();
+          $('#'+$(this).attr('rel')).addClass('active');
+       });
+    });
+
+</script>
 <?php $rally = $friendly['Rally']; ?>
 <div class="mainUserBox showRallyWrapper">
     <h4 class="boxHeader"><?php echo $friendly['Rally']['name']; ?></h4> 
@@ -19,9 +19,9 @@
          <?php
             if(isset($message)){
                 if(!$message['status'])
-                    $this->showError($message);
+                    $this->showError($message['message']);
                 else
-                    $this->showSuccess($message);
+                    $this->showSuccess($message['message']);
             }
 
             if(isset($_GET['msg'])){
@@ -152,7 +152,7 @@
     </div>
     <div class="showRallyBox mainUserBox" id="invited">
         <?php
-        if($friendly['invite_only']){
+        if(!$friendly['invite_only']){
             echo "This rally is open for all";
         }
         else{

@@ -200,6 +200,7 @@ class Rally_Index extends Controller{
         Service::loadModels('people', 'people');
         $rallyService = parent::getService('rally','rally');
         $userService = parent::getService('user','user');
+        $notificationService = parent::getService('user','notification');
         $user = $userService->getAuthenticatedUser();
         
         if(!$friendly = $rallyService->getFullFriendlyRally($GLOBALS['urlParams']['slug'],'r.slug',Doctrine_Core::HYDRATE_ARRAY)){
@@ -243,13 +244,14 @@ class Rally_Index extends Controller{
                     $values = $_POST;
                     if(!$friendlyUser = $userService->getUser($values['name'],'username',Doctrine_Core::HYDRATE_ARRAY)){
                         
-                        $this->view->assign(array('status' => false,'message' => 'This user does not exists'));
+                        $this->view->assign('message',array('status' => false,'message' => 'This user does not exists'));
                     }
                     elseif($rallyService->getFriendlyInvitedUser($friendly['id'],$values['name'])){
-                        $this->view->assign(array('status' => false,'message' => 'This user was already invited'));
+                        $this->view->assign('message',array('status' => false,'message' => 'This user was already invited'));
                     }
                     else{
                         $rally = $rallyService->inviteUserToFriendlyRally($friendly,$friendlyUser);
+                        $notificationService->addNotification('You have been invited to friendly rally '.$friendly['name'],1,$friendlyUser['id']);
                         unset($_POST);
                         
                         TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$GLOBALS['urlParams']['slug']."?msg=user+invited");
@@ -281,14 +283,30 @@ class Rally_Index extends Controller{
 
                     $values = $_POST;
                     
-                    $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
-                    $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
-                    $rallyService->removeFriendlyInvite($friendly['id'],$user['username']);
-                    unset($_POST);
-
-                    Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
                     
-                    TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$GLOBALS['urlParams']['slug']);
+                    if($user['gold_member']&&$recentUserFriendlies<2){
+                        $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
+                        $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id'],true);
+                        $rallyService->removeFriendlyInvite($friendly['id'],$user['username']);
+
+                        unset($_POST);
+                        Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+                        
+                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
+                    }
+                    elseif(!$userService->checkUserPremium($user['id'],10)){
+                        $this->view->assign('message',array('status' => false,'message' => 'You do not have enough premium. Please buy more premium'));
+                    }
+                    else{
+                        $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
+                        $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
+                        $rallyService->removeFriendlyInvite($friendly['id'],$user['username']);
+
+                        unset($_POST);
+                        Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+                        
+                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
+                    }
 
                 }
             }

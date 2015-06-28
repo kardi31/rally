@@ -68,6 +68,18 @@ class Index_Index extends Controller{
     
     public function showCalendar(){
         
+        $notificationService = parent::getService('user','notification');
+        
+        $userService = parent::getService('user','user');
+        
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        $notifications = $notificationService->getAllUserNotifications($user['id'],10,Doctrine_Core::HYDRATE_ARRAY);
+        
+        $this->view->assign('notifications',$notifications);
+        
     }
     
     

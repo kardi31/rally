@@ -12,6 +12,9 @@
     2.5 Reklama 1 
     2.6 Forum box
     2.7 Last newses
+    2.8 Transfer box
+    2.9 Gold box
+    2.10 Notification box
   3. Office
     3.1 My cars page + Sell
     3.2 Sponsor
@@ -508,6 +511,31 @@ footer{
 .goldOverlay a img{
     height:30px;
     opacity:1;
+}
+
+/*
+    2.10 Notification box
+*/
+.boxNotification{
+    max-height:250px;
+}
+.boxNotificationInner{
+    overflow-y: visible;
+    padding:20px;
+    padding-top:0px;
+    max-height:175px;
+}
+.boxNotificationInner div{
+    border-bottom: 1px solid #E3E3E3;
+    padding-bottom:5px;
+    padding-top:5px;
+}
+.boxNotificationInner div:last-of-type{
+    border:0px;
+}
+.boxNotificationInner div span{
+    font-size:11px;
+    display:block;
 }
 
 /*
