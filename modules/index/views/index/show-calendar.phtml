@@ -1,6 +1,15 @@
-<div class="mainUserBox boxCalendar">
-    <h4 class="boxHeader">Calendar</h4>
-    <?php if(!$authenticatedUser['gold_member']){ ?>
+<div class="mainUserBox boxNotification">
+    <h4 class="boxHeader">Message box</h4>
+    <div class="boxNotificationInner">
+        <?php foreach($notifications as $notification): 
+                ?>
+        <div>
+            <span><?= TK_Text::timeFormat($notification['created_at'], 'd/m/y'); ?></span>
+            <?= $notification['message']; ?>
+        </div>
+         <?php endforeach; ?>
+    </div>
+    <?php /* if(!$authenticatedUser['gold_member']){ ?>
         <div class="goldOverlay">
             <a href="#">
                 <img src="/images/layout/gc_big.png" />
@@ -21,5 +30,5 @@
                 });
             });
         </script>
-    <?php } ?>
+    <?php } */ ?>
 </div>

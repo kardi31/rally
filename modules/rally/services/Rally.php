@@ -440,6 +440,17 @@ class RallyService extends Service{
         
     }
     
+    public function deleteFriendlyRally($friendly){
+        $rally = $friendly->get('Rally');
+        $rally->get('Crews')->delete();
+        $friendly->get('Participants')->delete();
+        $friendly->get('Invitations')->delete();
+        $rally->get('Surfaces')->delete();
+        $rally->get('Stages')->delete();
+        $rally->delete();
+        $friendly->delete();
+        
+    }
     
     
     public function createRandomStage($rally_id,$stage_name){
@@ -677,6 +688,14 @@ class RallyService extends Service{
         return $q->fetchOne(array(),$hydrationMode);
     }
     
+    public function getFriendliesNotFinished($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->friendlyTable->createQuery('f');
+        $q->leftJoin('f.Rally r');
+        $q->addWhere('r.date < NOW()');
+        $q->addWhere('r.finished = 0');
+        return $q->execute(array(),$hydrationMode);
+    }
+    
     public function saveFriendlyRally($values,$user_id){
         $rally = $this->createRandomFriendlyRally($values);
         $friendly = $this->friendlyTable->getRecord();
@@ -788,11 +807,14 @@ class RallyService extends Service{
         return $invitation;
     }
     
-    public function saveCrewToFriendlyRally($friendly_id,$crew_id,$user_id){
+    public function saveCrewToFriendlyRally($friendly_id,$crew_id,$user_id,$from_gold_member = false){
         $invitation = $this->friendlyParticipantsTable->getRecord();
         $invitation->user_id = $user_id;
         $invitation->friendly_id = $friendly_id;
         $invitation->crew_id = $crew_id;
+        if($from_gold_member){
+            $invitation->from_gold_member = $from_gold_member;
+        }
         $invitation->save();
         return $invitation;
     }

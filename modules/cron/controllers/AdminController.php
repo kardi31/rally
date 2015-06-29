@@ -121,7 +121,32 @@ class Cron_Admin extends Controller{
         $rallyService = parent::getService('rally','rally');
         $teamService = parent::getService('team','team');
         $leagueService = parent::getService('league','league');
+        $userService = parent::getService('user','user');
+        $notificationService = parent::getService('notification','user');
         
+        /*
+         * if friendly rally has less than 4 participants 
+         * cancel the rally and give back premium to all members 
+         * if field from_gold_member is ticked then dont give prem back
+         */
+        
+        $friendliesNotFinished = $rallyService->getFriendliesNotFinished();
+            
+        foreach($friendliesNotFinished as $friendly):
+            if(count($friendly['Participants'])<3){
+                foreach($friendly['Participants'] as $participant){
+                    if(!$participant['from_gold_member']){
+                        $userService->addPremium($participant['User']['id'],10,array('income' => 1,'description'=>'Payback for canceled friendly rally'.$friendly['Rally']['name']));
+                        $notificationService->addNotification('Friendly rally'.$friendly['Rally']['name'].' was canceled due to lack of participants',1,$participant['User']['id']);
+                        $participant->delete();
+                    }
+                }
+                $userService->addPremium($friendly['User']['id'],10,array('income' => 1,'description'=>'Payback for canceled friendly rally'.$friendly['Rally']['name']));
+                $notificationService->addNotification('Friendly rally'.$friendly['Rally']['name'].' was canceled due to lack of participants',1,$friendly['User']['id']);
+                $rallyService->deleteFriendlyRally();
+                 
+            }
+        endforeach;
         
         $ralliesWithNotFinishedStages = $rallyService->getRalliesWithNotFinishedStages();
         foreach($ralliesWithNotFinishedStages as $rally):

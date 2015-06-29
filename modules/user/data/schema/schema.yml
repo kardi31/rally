@@ -93,4 +93,37 @@ Invite:
       type: integer(11)
     email:
       type: string(255)
-      
+Notification:
+  tableName: user_notification
+  actAs: 
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    user_id:
+      type: integer(11)
+    type:
+      type: integer(4)
+    link:
+      type: string(255)
+    message:
+      type: text
+Board:
+  tableName: user_board
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    user_id:
+      type: integer(11)
+    writer_id:
+      type: integer(11)
+    message:
+      type: text
+    

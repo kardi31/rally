@@ -260,6 +260,9 @@ Friendly:
       type: datetime
     description:
       type: text
+    from_gold_member:
+      type: boolean
+      default: 0
   relations:
     Rally:
       local: rally_id
@@ -284,6 +287,9 @@ FriendlyParticipants:
       type: integer(4)
     user_id:
       type: integer(4)
+    from_gold_member:
+      type: boolean
+      default: 0
   relations:
     Friendly:
       local: friendly_id

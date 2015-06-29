@@ -11,6 +11,7 @@
  * @property boolean $invite_only
  * @property datetime $start_friendly_date
  * @property text $description
+ * @property boolean $from_gold_member
  * @property Rally_Model_Doctrine_Rally $Rally
  * @property Doctrine_Collection $Participants
  * @property Doctrine_Collection $Invitations
@@ -48,6 +49,10 @@ abstract class Rally_Model_Doctrine_BaseFriendly extends Doctrine_Record
              ));
         $this->hasColumn('description', 'text', null, array(
              'type' => 'text',
+             ));
+        $this->hasColumn('from_gold_member', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
              ));
 
         $this->option('type', 'MyISAM');
