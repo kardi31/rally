@@ -5,21 +5,21 @@
         <group>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Validator.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-friendly-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Rally.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/create-friendly-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/form/InviteFriendly.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/list-friendly-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/list-rally.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Rally.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/services/User.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/car/services/Car.php</file>
-            <file>file:/C:/xampp/htdocs/ral/public/css/custom.css</file>
             <file>file:/C:/xampp/htdocs/ral/views/_head.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/test/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/models/BaseFriendly.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/services/User.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/people/services/People.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/create-friendly-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/services/Car.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/test/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/public/css/custom.css</file>
         </group>
     </open-files>
 </project-private>
