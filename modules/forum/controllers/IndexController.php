@@ -6,6 +6,7 @@ class Forum_Index extends Controller{
     
     public function __construct(){
         parent::__construct();
+        $this->getLayout()->setLayout('page');
     }
     
     public function render($viewName) {
