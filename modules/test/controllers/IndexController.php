@@ -18,13 +18,15 @@ class Test_Index extends Controller{
         require_once(BASE_PATH."/modules/user/controllers/TestController.php");
         $trainingService = parent::getService('people','training');
         $userContr = new User_Test();
+        for($i=1;$i<=15;$i++):
         $randomNumber = rand(1000000,1200000);
         $_POST['password'] = "portal";
-        $_POST['email'] = "test_".$randomNumber."@kardimobile.pl";
-        $_POST['username'] = "test_".$randomNumber."@kardimobile.pl";
+        $_POST['email'] = "peop".$randomNumber."@kardimobile.pl";
+        $_POST['username'] = "peop_".$randomNumber;
         $user = $userContr->register();
         $GLOBALS['urlParams']['token'] = $user['token'];
         $userContr->activate();
+        endfor;
         echo "good";exit;
     }
     
@@ -193,6 +195,12 @@ class Test_Index extends Controller{
             $rallyService->createRalliesForLeague($league_name);
             exit;
         endforeach;
+    }
+    
+    public function randomDriver(){
+        $peopleService = parent::getService('people','people');
+        $peopleService->createRandomDriver(3);
+        echo "dd";exit;
     }
 }
 ?>

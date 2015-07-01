@@ -118,11 +118,13 @@ class Cron_Admin extends Controller{
     // do this every 15 min 
     
     public function calculateRallyResult(){
+        Service::loadModels('people', 'people');
+        Service::loadModels('car', 'car');
         $rallyService = parent::getService('rally','rally');
         $teamService = parent::getService('team','team');
         $leagueService = parent::getService('league','league');
         $userService = parent::getService('user','user');
-        $notificationService = parent::getService('notification','user');
+        $notificationService = parent::getService('user','notification');
         
         /*
          * if friendly rally has less than 4 participants 
@@ -133,18 +135,23 @@ class Cron_Admin extends Controller{
         $friendliesNotFinished = $rallyService->getFriendliesNotFinished();
             
         foreach($friendliesNotFinished as $friendly):
+//            Zend_Debug::dump($friendly['Participants']->toArray());exit;
             if(count($friendly['Participants'])<3){
                 foreach($friendly['Participants'] as $participant){
                     if(!$participant['from_gold_member']){
-                        $userService->addPremium($participant['User']['id'],10,array('income' => 1,'description'=>'Payback for canceled friendly rally'.$friendly['Rally']['name']));
-                        $notificationService->addNotification('Friendly rally'.$friendly['Rally']['name'].' was canceled due to lack of participants',1,$participant['User']['id']);
-                        $participant->delete();
+                        $userService->addPremium($participant['User']['id'],10,'Payback for canceled friendly rally '.$friendly['Rally']['name']);
                     }
+                        $notificationService->addNotification('Friendly rally '.$friendly['Rally']['name'].' was canceled due to lack of participants',1,$participant['User']['id']);
+                        $participant->delete();
+                    
                 }
-                $userService->addPremium($friendly['User']['id'],10,array('income' => 1,'description'=>'Payback for canceled friendly rally'.$friendly['Rally']['name']));
-                $notificationService->addNotification('Friendly rally'.$friendly['Rally']['name'].' was canceled due to lack of participants',1,$friendly['User']['id']);
-                $rallyService->deleteFriendlyRally();
+                $userService->addPremium($friendly['User']['id'],10,'Payback for canceled friendly rally '.$friendly['Rally']['name']);
+                $notificationService->addNotification('Friendly rally '.$friendly['Rally']['name'].' was canceled due to lack of participants',1,$friendly['User']['id']);
+                $rallyService->deleteFriendlyRally($friendly);
                  
+            }
+            else{
+                $friendly->get('Invitations')->delete();
             }
         endforeach;
         

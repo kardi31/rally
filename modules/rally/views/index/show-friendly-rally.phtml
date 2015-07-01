@@ -49,6 +49,7 @@
         ?>
         <br />
         Rally type :  <?php echo $friendly['invite_only']?"<span class='label label-danger'>Private</span>":"<span class='label label-success'>Public</span>"; ?><br />
+        Created by : <?php echo $friendly['User']['username']; ?><br />
         
         <br />
         <?php if(isset($isParticipant)&&$isParticipant): ?>
@@ -140,52 +141,53 @@
             <li><?= $stage['name']." - ".$stage['length']; ?> km 
                 <br /><i class="fa fa-clock-o"></i> 
                 <?php 
-                if($key!=0){
-                    $startDate->add(new DateInterval('PT15M'));
-                }
-                echo $startDate->format("H:i"); 
+                    echo TK_Text::timeFormat($stage['date'],"H:i"); 
                 ?>
             <br /><br />
             </li>
             <?php endforeach; ?>
         </ul>
     </div>
-    <div class="showRallyBox mainUserBox" id="invited">
-        <?php
-        if(!$friendly['invite_only']){
-            echo "This rally is open for all";
-        }
-        else{
-            if(count($friendly['Invitations'] )==0)
-                echo "No teams invited yet";
-            ?>
-            <table>
-                <?php foreach($friendly['Invitations'] as $key => $invited): ?>
-                        <tr>
-                            <td>
-                                <?= ($key+1)."."; ?>
-                            </td>
-                            <td>
-                                <?php echo $invited['User']['Team']['name']; ?>
-                            </td>
-                            <td>
-                                <?php echo $invited['User']['username']; ?>
-                            </td>
-                        </tr>
-                <?php endforeach; ?>
+    <?php if(!$rally['finished']){ ?>
+        <div class="showRallyBox mainUserBox" id="invited">
+            <?php
 
-                </table>
-        <?php } ?>
-    </div>
+            if(!$friendly['invite_only']){
+                echo "This rally is open for all";
+            }
+            else{
+                if(count($friendly['Invitations'] )==0)
+                    echo "No teams invited yet";
+                ?>
+                <table>
+                    <?php foreach($friendly['Invitations'] as $key => $invited): ?>
+                            <tr>
+                                <td>
+                                    <?= ($key+1)."."; ?>
+                                </td>
+                                <td>
+                                    <?php echo $invited['User']['Team']['name']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $invited['User']['username']; ?>
+                                </td>
+                            </tr>
+                    <?php endforeach; ?>
+
+                    </table>
+            <?php } ?>
+        </div>
+    <?php } ?>
     <div class="showRallyBox mainUserBox" id="crews">
         <table>
             <tr>
                 <th></th>
-                <th>Załoga</th>
-                <th>Samochód</th>
-                <th>Nazwa zespołu</th>
+                <th>Crew</th>
+                <th>Car</th>
+                <th>Team</th>
+                <th>User</th>
             </tr>
-            <?php foreach($rally['Crews'] as $key => $crew): ?>
+            <?php foreach($rally['Crews'] as $key => $crew):?>
                     <tr>
                         <td>
                             <?= ($key+1)."."; ?>
@@ -199,6 +201,9 @@
                         </td>
                         <td>
                             <?php echo $crew['Team']['name']; ?>
+                        </td>
+                        <td>
+                            <?php echo $crew['Team']['User']['username']; ?>
                         </td>
                     </tr>
             <?php endforeach; ?>
@@ -280,9 +285,11 @@
             <li>
                 <a href="#" rel="stages">Stages</a>
             </li>
-            <li>
-                <a href="#" rel="invited">Invited crews</a>
-            </li>
+            <?php if(!$rally['finished']){ ?>
+                <li>
+                    <a href="#" rel="invited">Invited crews</a>
+                </li>
+            <?php } ?>
             <li>
                 <a href="#" rel="crews">Signed crews</a>
             </li>

@@ -32,7 +32,29 @@ class UserService extends Service{
         else:
             return false;
         endif;
+    }
+    
+    public function quickAuthenticate(User_Model_Doctrine_User $user){
         
+            if($user['gold_member']==1&&$user['gold_member_expire']<date('Y-m-d H:i:s')){
+                $user->set('gold_member',0);
+                $user->save();
+                $_SESSION['user'] = serialize($user);
+                $_SESSION['role'] = $user['role'];
+            }
+            else{
+                $_SESSION['user'] = serialize($user);
+                $_SESSION['role'] = $user['role'];
+            }
+            View::getInstance()->assign('authenticatedUser',$user);
+            return true;
+    }
+    
+    public function refreshAuthentication(){
+        $user = $this->getAuthenticatedUser();
+        $newUser = $this->getUser($user['id']);
+        $_SESSION['user'] = serialize($newUser);
+        $_SESSION['role'] = $newUser['role'];
     }
     
     
@@ -67,7 +89,7 @@ class UserService extends Service{
         return true;
     }
     
-    public function addPremium($user,$premium,$logValues = false){
+    public function addPremium($user,$premium,$description = false){
         if(!$user instanceof User_Model_Doctrine_User){
             $user = $this->getUser($user);
         }
@@ -75,20 +97,49 @@ class UserService extends Service{
 	$newPremium = (int)$currentPremium+(int)$premium;
 	$user->set('premium',$newPremium);
 	$user->save();
-        
-        if($logValues){
-            $this->addPremiumLog($user,$premium,$logValues);
+        if($description){
+            $this->addPremiumLog($user,$premium,$description);
         }
-        
+        // to display properlyu premium
+        // premium is caught from session which we must refresh
+        if($this->getAuthenticatedUser())
+            $this->refreshAuthentication();
 	return $user;
     }
     
-    public function addPremiumLog($user,$amount,$values){
+    public function removePremium($user,$premium,$description = false){
+        if(!$user instanceof User_Model_Doctrine_User){
+            $user = $this->getUser($user);
+        }
+	$currentPremium = $user->get('premium');
+	$newPremium = (int)$currentPremium-(int)$premium;
+	$user->set('premium',$newPremium);
+	$user->save();
+        
+        if($description){
+            $this->removePremiumLog($user,$premium,$description);
+        }
+        if($this->getAuthenticatedUser())
+            $this->refreshAuthentication();
+	return $user;
+    }
+    
+    public function addPremiumLog($user,$amount,$description){
         $premiumLog = $this->premiumLogTable->getRecord();
         $premiumLog->amount = $amount;
-        $premiumLog->income = $values['income'];
+        $premiumLog->income = 1;
         $premiumLog->user_id = $user['id'];
-        $premiumLog->description = $values['description'];
+        $premiumLog->description = $description;
+        $premiumLog->save();
+    }
+    
+    
+    public function removePremiumLog($user,$amount,$description){
+        $premiumLog = $this->premiumLogTable->getRecord();
+        $premiumLog->amount = $amount;
+        $premiumLog->income = 0;
+        $premiumLog->user_id = $user['id'];
+        $premiumLog->description = $description;
         $premiumLog->save();
     }
     

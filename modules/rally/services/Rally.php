@@ -339,7 +339,7 @@ class RallyService extends Service{
         
         $rally->save();
         for($i=0;$i<18;$i++){
-            $this->createRandomStage($rally['id'],'Etap '.$i);
+            $this->createRandomStage($rally,'Stage '.$i,$i);
         }
         
         return $rally;
@@ -383,7 +383,7 @@ class RallyService extends Service{
         
         $rally->save();
         for($i=0;$i<18;$i++){
-            $this->createRandomStage($rally['id'],'Etap '.$i);
+            $this->createRandomStage($rally,'Stage '.$i,$i);
         }
         
         return $rally;
@@ -429,7 +429,7 @@ class RallyService extends Service{
         
         $rally->save();
         for($i=0;$i<18;$i++){
-            $this->createRandomStage($rally['id'],'Etap '.$i);
+            $this->createRandomStage($rally,'Stage '.$i,$i);
         }
         
         $this->getPrizesHelper()->createBigAward($rally['id'],'car','rand');
@@ -453,12 +453,14 @@ class RallyService extends Service{
     }
     
     
-    public function createRandomStage($rally_id,$stage_name){
+    public function createRandomStage($rally,$stage_name,$i=false){
         $stageArray = array();
         
         $stageArray['name'] = $stage_name;
-        $stageArray['rally_id'] = $rally_id;     
+        $stageArray['rally_id'] = $rally['id'];     
         $stageArray['length'] = TK_Text::float_rand(2,30,2);
+        
+        
         
         // rally min time generator
         $timeMin = "00:02:50";
@@ -467,6 +469,10 @@ class RallyService extends Service{
         $timeMaxUnix = strtotime($timeMax);
         $randomTimeUnix = mt_rand($timeMinUnix,$timeMaxUnix);
         $stageArray['min_time'] = date('H:i:s',$randomTimeUnix);
+        
+        $date = new DateTime($rally['date']);
+        $date->add(new DateInterval('PT'.($i*15).'M'));
+        $stageArray['date'] = $date->format('Y-m-d H:i:s');
         
         $stage = $this->stageTable->getRecord();
         $stage->fromArray($stageArray);
@@ -548,7 +554,7 @@ class RallyService extends Service{
 	    if(!$alreadyCalculated){
                 if(!$rally['big_awards']){
                     $cashEarned = $this->getPrizesHelper()->calculatePrizeForPlace($result['position'],$leagueLevel,$participants);
-                    $teamService->addTeamMoney($result['Crew']['team_id'],$cashEarned,1,'Za zajęcie '.$result['position'].' w rajdzie '.$rally['name']);
+                    $teamService->addTeamMoney($result['Crew']['team_id'],$cashEarned,1,'For '.TK_Text::addOrdinalNumberSuffix($result['position']).' place in rally '.$rally['name']);
                     if($rally['league_rally']){
                         if($result['position']<=10){
                             $leagueService->addTeamPoints($result['Crew']['team_id'],$result['position']);
@@ -640,7 +646,18 @@ class RallyService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
-    public function getAllFutureTeamFriendlyRallies($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+    public function getMyFriendlyRallies($user,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->rallyTable->createQuery('r');
+        $q->leftJoin('r.Friendly f');
+        $q->leftJoin('r.Crews c');
+        $q->select('r.*,f.*');
+	$q->addWhere('r.friendly = 1');
+        $q->addWhere('c.team_id = ? or f.user_id = ?',array($user['Team']['id'],$user['id']));
+        $q->orderBy('r.date DESC');
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getAllFutureTeamFriendlyRallies($user,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->rallyTable->createQuery('r');
         $q->leftJoin('r.Friendly f');
         $q->leftJoin('r.Crews c');
@@ -648,7 +665,7 @@ class RallyService extends Service{
 	$q->addWhere('r.date > NOW()');
 	$q->addWhere('r.friendly = 1');
         $q->addWhere('r.finished = 0');
-        $q->addWhere('c.team_id = ?',$team_id);
+        $q->addWhere('c.team_id = ? or f.user_id = ?',array($user['Team']['id'],$user['id']));
 	return $q->execute(array(),$hydrationMode);
     }
     
@@ -674,17 +691,20 @@ class RallyService extends Service{
         $q->leftJoin('f.Participants p');
         $q->leftJoin('f.Invitations i');
         $q->leftJoin('p.User u');
+        $q->leftJoin('f.User fu');
         $q->leftJoin('r.Crews c');
         $q->leftJoin('c.Driver d');
         $q->leftJoin('c.Pilot pi');
         $q->leftJoin('c.Car ca');
         $q->leftJoin('c.Team t');
+        $q->leftJoin('t.User tu');
         $q->leftJoin('i.User iu');
         $q->leftJoin('iu.Team it');
         $q->leftJoin('r.Surfaces sf');
         $q->addWhere($field .' = ?',$id);
         $q->orderBy('sf.percentage DESC');
-        $q->select('r.*,f.*,p.*,u.*,c.*,ca.*,t.*,pi.*,d.*,it.*,i.*,iu.*,s.*,sf.*');
+//        $q->select('*');
+//        $q->select('r.*,f.*,p.*,u.*,c.*,ca.*,t.*,pi.*,d.*,it.*,i.*,iu.*,s.*,sf.*,fu.username','tu.*');
         return $q->fetchOne(array(),$hydrationMode);
     }
     
@@ -733,6 +753,7 @@ class RallyService extends Service{
         $rallyArray['slug'] = TK_Text::createUniqueTableSlug('Rally_Model_Doctrine_Rally',$values['name']);  
         $rallyArray['active'] = 1;
         $rallyArray['friendly'] = 1;
+        $rallyArray['league'] = 3;
         
         $randomSurfaces = array_rand($this->surfaces,2);
         $randomSurfacePercentage = TK_Text::float_rand(10,90,2);
@@ -751,7 +772,7 @@ class RallyService extends Service{
         
         $rally->save();
         for($i=0;$i<18;$i++){
-            $this->createRandomStage($rally['id'],'Stage '.$i);
+            $this->createRandomStage($rally,"Stage ".$i,$i);
         }
         
         return $rally;

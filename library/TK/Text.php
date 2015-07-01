@@ -162,10 +162,10 @@ class TK_Text{
 	
 	
 	
-    public static function float_rand($min, $max, $round=0){
+    public static function float_rand($min, $max, $round=false){
 	//validate input
 	$randomfloat = $min + mt_rand() / mt_getrandmax() * ($max - $min);
-	if($round>0)
+	if($round)
 	    $randomfloat = round($randomfloat,$round);
 
 	return $randomfloat;
@@ -218,6 +218,27 @@ class TK_Text{
             
         }
         return $result;
+    }
+    
+    public static function addOrdinalNumberSuffix($num){
+        if (!in_array(($num % 100),array(11,12,13))){
+          switch ($num % 10) {
+            // Handle 1st, 2nd, 3rd
+            case 1:  return $num.'st';
+            case 2:  return $num.'nd';
+            case 3:  return $num.'rd';
+          }
+        }
+        return $num.'th';
+    }
+    
+    public static function dotDash($word){
+        if(strpos($word,'.')!==false){
+            return str_replace('.','-',$word);
+        }
+        elseif(strpos($word,'-')!==false){
+            return str_replace('-','.',$word);
+        }
     }
 }
 

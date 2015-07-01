@@ -219,12 +219,18 @@ class PeopleService extends Service{
     public function createRandomDriver($league){
         $skillsValues = $this->uniqueRandomNumbersWithinRangeDriver((int)$league);
         $driverSkills = array_combine($this->driverSkills, $skillsValues);
+        
+        $params = array_map(function($x, $y) { return $x * $y; },
+                   $driverSkills, $this->driverSkillsWages);
+        $driverSkills['value'] = array_sum($params)*1000*TK_Text::float_rand(0.98,1.02,0);
+        $driverSkills['salary'] = 0.007*$driverSkills['value'];
+        
         $driverSkills['age'] = rand(18,21);
         $driverSkills['first_name'] = $this->generateRandomPeopleFirstName();
         $driverSkills['last_name'] = $this->generateRandomPeopleLastName();
         $driverSkills['form'] = 3;
         $driverSkills['job'] = 'driver';
-       
+        
         
         $record = $this->peopleTable->getRecord();
         $record->fromArray($driverSkills);
@@ -237,6 +243,12 @@ class PeopleService extends Service{
     public function createRandomPilot($league){
         $skillsValues = $this->uniqueRandomNumbersWithinRangePilot((int)$league);
         $driverSkills = array_combine($this->pilotSkills, $skillsValues);
+        
+        $params = array_map(function($x, $y) { return $x * $y; },
+                   $driverSkills, $this->pilotSkillsWages);
+        $driverSkills['value'] = array_sum($params)*1000*TK_Text::float_rand(0.98,1.02,0);
+        $driverSkills['salary'] = 0.007*$driverSkills['value'];
+        
         $driverSkills['age'] = rand(18,21);
         $driverSkills['first_name'] = $this->generateRandomPeopleFirstName();
         $driverSkills['last_name'] = $this->generateRandomPeopleLastName();

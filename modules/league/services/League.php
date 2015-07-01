@@ -136,6 +136,7 @@ class LeagueService extends Service{
 	return $q->fetchOne(array(),$hydrationMode);
     }
     
+    
     public function getLeagueTable($league_name,$current_season = true,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         // get league from current season by default
         // otherwise use season that is passed as a param

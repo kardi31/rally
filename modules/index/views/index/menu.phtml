@@ -29,28 +29,28 @@
             <a href="#">Office</a>
             <ul>
                 <li>
-                    <a href="/team/show-team/id/<?= $authenticatedUser['Team']['id']; ?>">Mój zespół</a>
+                    <a href="/team/show-team/id/<?= $authenticatedUser['Team']['id']; ?>">My team</a>
                 </li>
                 <li>
                     <a href="/account/my-account">My account</a>
                 </li>
                 <li>
-                    <a href="/account/my-people">Moi ludzie</a>
+                    <a href="/account/my-people">My people</a>
                 </li>
 <!--                <li>
                     <a href="/account/tactics">Taktyka</a>
                 </li>-->
                 <li>
-                    <a href="/account/my-cars">Moje auta</a>
+                    <a href="/account/my-cars">My cars</a>
                 </li>
                 <li>
                     <a href="/account/sponsor">Sponsor</a>
                 </li>
                 <li>
-                    <a href="/account/my-training-report">Raport z treningu</a> 
+                    <a href="/account/my-training-report">Training report</a> 
                 </li>
                 <li>
-                    <a href="/account/my-finances">Moje finanse</a> 
+                    <a href="/account/my-finances">My finances</a> 
                 </li>
             </ul>
         </li>
@@ -64,10 +64,13 @@
                     <a href="/rally/list-rally">Rallies</a>
                 </li>
                 <li>
+                    <a href="/rally/my-friendly-rallies">My friendly rallies</a>
+                </li>
+                <li>
                     <a href="/rally/list-friendly-rally">Friendly rallies</a>
                 </li>
                 <li>
-                    <a href="/league/show-table">Moja tabela</a> 
+                    <a href="/league/show-table/id/<?= TK_Text::dotDash($user['Team']['league_name']); ?>">My league</a> 
                 </li>
                 
             </ul>
@@ -76,22 +79,22 @@
             <a href="#">Market</a>
             <ul>
                 <li>
-                    <a href="/market/my-cars-market">My cars on market</a> 
+                    <a href="/market/show-market">People market</a> 
                 </li>
                 <li>
-                    <a href="/market/show-car-market">Rynek samochodowy</a> 
+                    <a href="/market/show-car-market">Car market</a> 
                 </li>
                 <li>
-                    <a href="/market/car-dealer">Salon samochodowy</a>
+                    <a href="/market/car-dealer">Car dealer</a>
                 </li>
                 <li>
-                    <a href="/market/show-market">Rynek transferowy</a> 
-                </li>
-                <li>
-                    <a href="/market/my-players-market">My players on market</a> 
+                    <a href="/market/my-players-market">My players</a> 
                 </li>
                 <li>
                     <a href="/market/my-player-offers">My player offers</a> 
+                </li>
+                <li>
+                    <a href="/market/my-cars-market">My cars</a> 
                 </li>
                 <li>
                     <a href="/market/my-car-offers">My car offers</a> 
@@ -117,16 +120,16 @@
             <a href="#">Premium</a>
             <ul>
                 <li>
-                    <a href="/market/my-cars-market">Moje premium</a> 
+                    <a href="/market/my-cars-market">My premium</a> 
                 </li>
                 <li>
-                    <a href="/market/show-car-market">Korzysci z premium</a> 
+                    <a href="/market/show-car-market">Gold membership</a> 
                 </li>
                 <li>
-                    <a href="/market/car-dealer">Zarob zlote monety</a>
+                    <a href="/market/show-market">Premium benefits</a> 
                 </li>
                 <li>
-                    <a href="/market/show-market">Zlote monety</a> 
+                    <a href="/market/car-dealer">Earn premium</a>
                 </li>
             </ul>
         </li>
@@ -148,7 +151,7 @@
             </ul>
         </li>
         <li>
-             <a href="/user/logout">Wyloguj</a>
+             <a href="/user/logout">Log out</a>
         </li>
     </ul>
 </div>

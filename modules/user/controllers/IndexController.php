@@ -160,6 +160,38 @@ class User_Index extends Controller{
         
     }
     
+    public function quickLogin(){
+        $view = $this->view;
+        $view->setNoRender();
+        $userService = parent::getService('user','user');
+        
+        if(isset($_POST)){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                
+                $values = $_POST;
+//                var_dump($values);exit;
+//                var_dump($values);exit;
+                $user = $userService->getUser($values['login'], 'username');
+                if ($user && !$user->get('active')):
+                    $this->view->messages()->add($this->view->translate('User is not active'), 'error');
+                    echo "blad";exit;
+                else:
+                    if($userService->quickAuthenticate($user)):
+                        TK_Helper::redirect($_SERVER['HTTP_REFERER']);
+                    else:
+                        echo "zleeee";exit;
+                    endif;
+                endif;
+                
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+                echo "zle";exti;
+                exit;
+        }
+        
+        $this->view->assign('form',$form);
+        
+    }
+    
     public function logout(){
         $userService = parent::getService('user','user');
         

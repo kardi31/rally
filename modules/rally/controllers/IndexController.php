@@ -18,6 +18,10 @@ class Rally_Index extends Controller{
         $rallyService = parent::getService('rally','rally');
         $rally = $rallyService->getRally($GLOBALS['urlParams']['slug'],'slug');
 	
+        if($rally['friendly']){
+                    TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$rally['slug']);
+        }
+        
         $peopleService = parent::getService('people','people');
         $userService = parent::getService('user','user');
         $carService = parent::getService('car','car');
@@ -128,12 +132,24 @@ class Rally_Index extends Controller{
         if(!is_array($myInvitations)&&strlen($myInvitations)>0){
             $myInvitations = array($myInvitations);
         }
-        $futureTeamRallies = $rallyService->getAllFutureTeamFriendlyRallies($user['Team']['id'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        $futureTeamRallies = $rallyService->getAllFutureTeamFriendlyRallies($user,Doctrine_Core::HYDRATE_SINGLE_SCALAR);
 
         
         $this->view->assign('myInvitations',$myInvitations);
         $this->view->assign('rallies',$rallies);
         $this->view->assign('futureTeamRallies',$futureTeamRallies);
+    }
+    
+    public function myFriendlyRallies(){
+        
+        Service::loadModels('team', 'team');
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        
+        $rallyService = parent::getService('rally','rally');
+        $rallies = $rallyService->getMyFriendlyRallies($user);
+                
+        $this->view->assign('rallies',$rallies);
     }
     
     public function createFriendlyRally(){
@@ -167,6 +183,7 @@ class Rally_Index extends Controller{
                 $values = $_POST;
 
                 if($user['gold_member']&&$recentUserFriendlies<2){
+                    echo "zle";exit;
                     $friendly = $rallyService->saveFriendlyRally($values,$user);
                     $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
                     $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
@@ -180,7 +197,9 @@ class Rally_Index extends Controller{
                     $friendly = $rallyService->saveFriendlyRally($values,$user);
                     $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
                     $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
-
+                    
+                    $userService->removePremium($user,10,'Creation of friendly rally '.$friendly['Rally']['name']);
+                    
                     TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
                 }
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
@@ -207,6 +226,10 @@ class Rally_Index extends Controller{
             echo "blad";exit;
         }
         
+        if($friendly['Rally']['finished']){
+            $rallyResults = $rallyService->getRallyResults($friendly['Rally']['id'],'rally_id');
+            $this->view->assign('rallyResults',$rallyResults);
+        }
         
         $invitedUsers = $rallyService->getFriendlyInvitedUsers($friendly,Doctrine_Core::HYDRATE_ARRAY);
         $this->view->assign('invitedUsers',$invitedUsers);
@@ -251,7 +274,7 @@ class Rally_Index extends Controller{
                     }
                     else{
                         $rally = $rallyService->inviteUserToFriendlyRally($friendly,$friendlyUser);
-                        $notificationService->addNotification('You have been invited to friendly rally '.$friendly['name'],1,$friendlyUser['id']);
+                        $notificationService->addNotification('You have been invited to friendly rally '.$friendly['Rally']['name'],1,$friendlyUser['id']);
                         unset($_POST);
                         
                         TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$GLOBALS['urlParams']['slug']."?msg=user+invited");
@@ -301,7 +324,9 @@ class Rally_Index extends Controller{
                         $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
                         $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
                         $rallyService->removeFriendlyInvite($friendly['id'],$user['username']);
-
+                        
+                        $userService->removePremium($user,10,'Creation of friendly rally '.$friendly['Rally']['name']);
+                        
                         unset($_POST);
                         Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
                         

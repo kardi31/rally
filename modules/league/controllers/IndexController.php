@@ -4,6 +4,7 @@ class League_Index extends Controller{
  
     public function __construct(){
         parent::__construct();
+        $this->getLayout()->setLayout('page');
     }
     
     public function render($viewName) {
@@ -20,11 +21,9 @@ class League_Index extends Controller{
         Service::loadModels('car', 'car');
 	
         $leagueService = parent::getService('league','league');
-        $userService = parent::getService('user','user');
-        $user = $userService->getAuthenticatedUser();
-	$league = $leagueService->getTeamLeague($user['Team']['id']);
         
-        $leagueTable = $leagueService->getLeagueTable($league['league_name']);
+        $league = TK_Text::dotDash($GLOBALS['urlParams']['id']);
+        $leagueTable = $leagueService->getLeagueTable(floatval($league));
 	$this->view->assign('leagueTable',$leagueTable);
 	$this->view->assign('league',$league);
     }

@@ -1,4 +1,9 @@
   /*
+  
+@green #5cb85c
+@red #d9534f
+@blue #5bc0de
+  
     0. Global elements
     1. Main Page
      1.1 Header
@@ -21,16 +26,37 @@
     3.3 Show rally
     3.4 Rally result
     3.5 My finances
-  
+    3.6 My people
   4. Rallies
     4.1 List rally
     4.2 Friendly rallies
     4.3 Show friendly
+    4.4 LEague table
 */
 /*
 0. Global elements
 
 */
+
+.gwEmpty{
+    opacity:0.4;
+}
+
+.lightgreen{
+    background: #5cb85c;
+}
+
+.lightred{
+    background: #d9534f;
+}
+
+tr.lightgreen{
+    background: #5cb85c;
+}
+
+tr.lightred td{
+    background: #d9534f;
+}
 
 a:hover{
     color:#f3f3f3;
@@ -520,7 +546,7 @@ footer{
     max-height:250px;
 }
 .boxNotificationInner{
-    overflow-y: visible;
+    overflow-y: auto;
     padding:20px;
     padding-top:0px;
     max-height:175px;
@@ -777,7 +803,7 @@ footer{
 }
     
 /*
-    3.5 
+    3.5 my finances
 */
     .advancedReportIncome,.advancedReportExpense{
         display:block;
@@ -838,6 +864,58 @@ footer{
     }
     .noGoldAvancedReport h5{
         padding:20px;
+    }
+    
+    /*
+      3.6  My people
+    */
+    
+    .myPeopleWrapper{
+        background:none;
+    }
+    .peopleCard{
+        border-radius: 6px;
+        border: 6px solid #fff;
+        background: #cad3e4;
+        margin-bottom: 20px;
+        color: #7774a9;
+        padding: 0px 0px 15px;
+        position: relative;
+    }
+    
+    .peopleCard strong{
+        display:block;
+        background:#f4e973;
+        padding-top:10px;
+        padding-left:20px;
+        font-size:18px;
+        padding-bottom:10px;
+    }
+    
+    .peopleCard table tr td{
+        color:#7774a9;
+    }
+    
+    .peopleBtn{
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    .peopleBtn a{
+        display:inline-block;
+        color:#7774a9;
+        border:2px solid #7774a9;
+    }
+    
+    .peopleLeft table td{
+        padding:5px 10px;
+        padding-left:0px;
+    }
+    .peopleRight table td{
+        padding:5px 10px;
+        padding-right:20px;
+    }
+    .peopleLeft table{
+        margin-bottom:20px;
     }
     
     /*
@@ -946,4 +1024,23 @@ footer{
     
     .bigLabel{
         font-size:14px;
+    }
+    
+    /*
+    4.4 League table
+    */
+    
+    .showLeagueTable h4{
+        margin-bottom:0px;
+    }
+    
+    .showLeagueTableWrapper {
+        padding:20px; 
+    }
+    .showLeagueTable table{
+        margin-left:20px;
+    }
+    
+    .showLeagueTableWrapper tr td{
+        padding:15px 30px;
     }

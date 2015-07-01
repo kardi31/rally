@@ -1,25 +1,38 @@
-<style>
-    table td, table th{
-        width: 250px;
-        text-align:center;
-    }
-</style>
+<div class="mainUserBox showLeagueTable">
+    <h4 class="boxHeader">League <?php echo $league; ?></h4> 
+   <div class="showLeagueTableWrapper"> 
+       <span>Top 3 teams are promoted to league 3, bottom 3 teams are relegated to league 5.</span>
     
-<h2>Liga <?php echo $league['league_name']; ?></h2>
-
-<table>
-    <tr>
-        <th>Position</th>
-        <th>Team</th>
-        <th>Points</th>
-    </tr>
-<?php foreach($leagueTable as $key => $team): ?>
-    <tr>
-        <td><?php echo $key+1; ?></td>
-        <td><?php echo $team['Team']['name']; ?></td>
-        <td><?php echo $team['points']; ?></td>
-    </tr>
-
-
-<?php endforeach; ?>
-</table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Team</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                $rows = count($leagueTable);
+                $green = array(0,1,2);
+                $red = array($rows-1,$rows-2,$rows-3);
+                foreach($leagueTable as $key => $team): ?>
+                    <tr
+                        class="
+                        <?php
+                        if(in_array($key,$green)): 
+                            echo "lightgreen";
+                        elseif(in_array($key,$red)):
+                            echo "lightred";
+                        endif;
+                            ?>"
+                        >
+                        <td><?php echo $key+1; ?></td>
+                        <td><?php echo $team['Team']['name']; ?></td>
+                        <td><?php echo $team['points']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
