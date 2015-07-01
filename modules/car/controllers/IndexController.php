@@ -64,7 +64,7 @@ class Car_Index extends Controller{
                     }
                     $car_seller[$car['id']] = $user['id'];
                     setcookie('car_seller',serialize($car_seller),time()+(86400 * 4),'/');
-                    TK_Helper::redirect('/market/show-offer/id/'.$result['id']);
+                    TK_Helper::redirect('/market/show-offer/id/'.$result['element']['id']);
                 }
                 else{
                     TK_Helper::redirect('/account/my-cars?msg='.$result['message']);

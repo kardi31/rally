@@ -48,7 +48,7 @@ Car name: <?php echo $car['name']; ?> <br />
     if(isset($offer['Bids'][0]))
         echo (int)$offer['Bids'][0]['value']."$ - ".$offer['Bids'][0]['Team']['name']."<br />"; 
     else
-        echo "brak ofert";
+        echo "no offers";
     ?></strong>
     <span>Koniec aukcji - <?php echo TK_Text::timeFormat($offer['finish_date'],'d/m/Y H:i:s'); ?></span>
     <br /><br />

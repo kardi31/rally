@@ -6,6 +6,7 @@ class Forum_Index extends Controller{
     
     public function __construct(){
         parent::__construct();
+        $this->getLayout()->setLayout('page');
     }
     
     public function render($viewName) {
@@ -324,6 +325,8 @@ class Forum_Index extends Controller{
         endforeach;
         $this->view->assign('favouriteCategories',$favouriteCategories);
         $this->view->assign('lastThreads',$lastThreads);
+        
+        $this->getLayout()->setLayout('layout');
     }
     
 }

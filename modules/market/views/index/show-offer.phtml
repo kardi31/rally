@@ -1,142 +1,287 @@
-<h2>Offer</h2>
-<hr />
-<div class="col-md-8">
-    <?php $player = $offer['Player']; ?>
-   <strong><?php echo $player['last_name']." ".$player['first_name']; ?></strong><br />
-            Job: <?php echo $player['job']; ?><br />
-            Age: <?php echo $player['age']; ?><br />
-             Value: <?php echo $player['value']; ?><br />
-             Salary: <?php echo $player['salary']; ?><br />
-    Skills: <br />
-    <fieldset>
-        <?php if($player['job'] == "driver"): ?>
-                <table class="col-md-8">
-                    <tr>
-                        <td>Composure</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'composure'); ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Speed</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'speed'); ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Regularity</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'regularity'); ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Reflex</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'reflex'); ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Driving on gravel</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'on_gravel'); ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Driving on tarmac</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'on_tarmac'); ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Driving on snow</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'on_snow'); ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Driving in rain</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'in_rain'); ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Talent</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'talent'); ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Form</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'form'); ?>
-                        </td>
-                    </tr>
-                </table>
-                <?php else: ?>
-                <table class="col-md-8">
-                    <tr>
-                        <td>Composure</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'composure'); ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dictate rhytm</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'dictate_rhytm'); ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Diction</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'diction'); ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Route description</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'route_description'); ?>
-                        </td>
-                    </tr>
+<div class="mainUserBox myPeopleWrapper">
+    <h4 class="boxHeader">People market</h4> 
+    <?php
+        if(isset($message)){
+            if(!$message['status'])
+                $this->showError($message['message']);
+            else
+                $this->showSuccess($message['message']);
+        }
 
-                    <tr>
-                        <td>Talent</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'talent'); ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Form</td>
-                        <td>
-                            <?php TK_Helper::displayPeopleSkillsOnList($player, 'form'); ?>
-                        </td>
-                    </tr>
-                </table>
+        if(isset($_GET['msg'])){
+            if($_GET['msg']=="bid placed")
+                $this->showSuccess('Congratulations. You hold the highest bid.');
+            elseif($_GET['msg']=="not highest")
+                $this->showError('Your bid must be greater than the highest one.');
+            elseif($_GET['msg']=="already highest")
+                $this->showError('You already hold the highest bid.');
+            elseif($_GET['msg']=="finished")
+                $this->showError('Sorry, the auction has been finished');
+            elseif($_GET['msg']=="greater than asking")
+                $this->showError('Offer must be greater than asking price');
+            elseif($_GET['msg']=="not enough money")
+                $this->showError('Sorry, You don\'t have enough money for all of your bids');
+
+            
+           
+        }
+    ?>
+    <div class="myPeople">
+        <?php $person = $offer['Player']; ?>
+        <div class="peopleMarketCard peopleCard col-md-8">
+            <strong><?php echo $person['last_name']." ".$person['first_name']; ?> 
+                <?php if($person['Team']['id']!=$authenticatedUser['Team']['id']): ?>
+                    <a class="btn btn-info bidPlayer" data-toggle="modal" data-target="#bidPlayer" data-name="<?= $person['last_name']." ".$person['first_name']; ?>" rel="<?= $offer['id']; ?>">Bid player</a>
                 <?php endif; ?>
-    </fieldset>
-</div>
-<div class="col-md-4">
-    <h3>Oferty</h3>
-    Najwyższa oferta 
-    <strong><?php
-    if(isset($offer['Bids'][0]))
-        echo (int)$offer['Bids'][0]['value']."$ - ".$offer['Bids'][0]['Team']['name']."<br />"; 
-    else
-        echo "brak ofert";
-    ?></strong>
-    <span>Koniec aukcji - <?php echo TK_Text::timeFormat($offer['finish_date'],'d/m/Y H:i:s'); ?></span>
-    <br /><br />
-    Pozostałe oferty<br />
-    <?php foreach($offer['Bids'] as $key => $bid):
-        if($key==0)
-            continue;
-        if($key>5)
-            break;
+            </strong><br />
+                <div class="col-md-5 peopleLeft peopleMarketLeft">
+                    <table>
+                        <tr>
+                            <td>
+                                Team:
+                            </td>
+                            <td>
+                                <?php echo $person['Team']['name']; ?><br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Job:
+                            </td>
+                            <td>
+                                <?php
+                                    if($person['job']=="driver"):
+                                        echo '<img src="/images/layout/driving-wheel.png" title='.$person['job'].'  lt='.$person['job'].' />';
+                                    else:
+                                        echo '<i class="fa fa-book" title='.$person['job'].' ></i>';
+                                    endif;
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Age:
+                            </td>
+                            <td>
+                                <?php echo $person['age']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Value:
+                            </td>
+                            <td>
+                                <?php echo $person['value']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Salary:
+                            </td>
+                            <td>
+                                <?php echo $person['salary']; ?>
+                            </td>
+                        </tr>
+                    </table>
+                     
+                </div>
+            
+                <div class="col-md-7 peopleRight peopleMarketRight">
+                    <?php if($person['job'] == "driver"): ?>
+                    <table>
+                        <tr>
+                            <td>Composure</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'composure',false); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Speed</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'speed',false); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Regularity</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'regularity',false); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Reflex</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'reflex',false); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Driving on gravel</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'on_gravel',false); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Driving on tarmac</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'on_tarmac',false); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Driving on snow</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'on_snow',false); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Driving in rain</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'in_rain',false); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Talent</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'talent',false); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Form</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'form',false); ?>
+                            </td>
+                        </tr>
+                    </table>
+                    <?php else: ?>
+                    <table>
+                        <tr>
+                            <td>Composure</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'composure',false); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dictate rhytm</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'dictate_rhytm',false); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Diction</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'diction',false); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Route description</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'route_description',false); ?>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Talent</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'talent',false); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Form</td>
+                            <td>
+                                <?php TK_Helper::displayPeopleSkillsOnList($person, 'form',false); ?>
+                            </td>
+                        </tr>
+                    </table>
+                    <?php endif; ?>
+
+                </div>
+        </div>
         
-        echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 
-    endforeach; ?>
-    <br />
-    <a href="/market/bid-player/id/<?php echo $offer['id']; ?>">Zalicytuj</a>
+        <div class="col-md-3 peopleMarketSmallCard">
+            <table>
+                <tr>
+                    <th>Highest bid: </th>
+                </tr>
+                <tr>
+                    <td>
+                        <?php
+                            if(isset($offer['Bids'][0])&&$offer['Bids'][0]['active']){
+                                echo (int)$offer['Bids'][0]['value']."$ - ".$offer['Bids'][0]['Team']['name']; 
+                            }
+                            else
+                                echo "no offers";
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Asking price:</th>
+                </tr>
+                <tr>
+                    <td><?= $offer['asking_price']; ?>$</td>
+                </tr>
+                <tr>
+                    <th>Auction finish: </th>
+                </tr>
+                <tr>
+                    <td>
+                        <?php echo TK_Text::timeFormat($offer['finish_date'],'d/m/y H:i'); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Other offers: </th>
+                </tr>
+                <tr>
+                    <td>
+                        <?php foreach($offer['Bids'] as $key => $bid):
+                            if($bid['active']==0)
+                                continue;
+
+                            if($key==0)
+                                continue;
+                            if($key>5)
+                                break;
+
+                            echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 
+                        endforeach; ?>
+                    </td>
+                </tr>
+            </table>            
+        </div>
+    </div>
 </div>
-<div class='clearfix'></div>
-<hr />
+
+
+
+<div id="bidPlayer" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <form method="POST" action="/market/bid-player">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Bid player <span id="bidPlayerName"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <label for="asking_price">Your offer</label>
+                    <?php echo $form->getElement('bid')->renderElement(); ?>
+                    <?php echo $form->getElement('offer_id')->renderElement(); ?>
+                </div>
+                <div class="modal-footer">
+                    <?php echo $form->getElement('submit')->renderElement(); ?>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        
+        $('.bidPlayer').click(function(){
+           var rel = $(this).attr('rel');
+           $('#offer_id').val(rel);
+           $('#bidPlayerName').html($(this).attr('data-name'));
+        });
+    });
+</script>

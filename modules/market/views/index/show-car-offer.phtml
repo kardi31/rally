@@ -1,68 +1,176 @@
-<h2>Offer</h2>
-<hr />
-  <?php 
-  $car = $offer['Car'];
-  if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
-        <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" style="width:300px;float:right;margin-right:100px;" />
-   <?php } ?>
-Car name: <?php echo $car['name']; ?> <br />
-    <div class="changeCarName" id="changeCarName1">
-	<?php // echo $formCar1->renderForm(); ?>
-    </div>
-    Marka: <?php echo $car['Model']['name']; ?><br />
-    Przebieg: <?php echo $car['mileage']; ?><br />
-    Wartość: <?php echo $car['value']; ?><br />
-    Koszty utrzymania: <?php echo $car['upkeep']; ?><br />
-    <fieldset>
-        <table>
-            <tr>
-                <td>Pojemność silnika</td>
-                <td><?php echo $car['Model']['capacity'];?></td>
-            </tr>
-            <tr>
-                <td>Moc</td>
-                <td><?php echo $car['Model']['horsepower'];?></td>
-            </tr>
-            <tr>
-                <td>V max</td>
-                <td><?php echo $car['Model']['max_speed'];?></td>
-            </tr>
-            <tr>
-                <td>Przyspieszenie</td>
-                <td><?php echo $car['Model']['acceleration'];?></td>
-            </tr>
-            <tr>
-                <td>Napęd</td>
-		<td><?php echo $car['Model']['wheel_drive'];?></td>
-            </tr>
+<div class="mainUserBox myCarsBox">
+    <h4 class="boxHeader">My cars</h4>
+    <?php
+        if(isset($message)){
+            if(!$message['status'])
+                $this->showError($message['message']);
+            else
+                $this->showSuccess($message['message']);
+        }
+
+        if(isset($_GET['msg'])){
+            if($_GET['msg']=="bid placed")
+                $this->showSuccess('Congratulations. You hold the highest bid.');
+            elseif($_GET['msg']=="not highest")
+                $this->showError('Your bid must be greater than the highest one.');
+            elseif($_GET['msg']=="already highest")
+                $this->showError('You already hold the highest bid.');
+            elseif($_GET['msg']=="finished")
+                $this->showError('Sorry, the auction has been finished');
+            elseif($_GET['msg']=="greater than asking")
+                $this->showError('Offer must be greater than asking price');
+            elseif($_GET['msg']=="not enough money")
+                $this->showError('Sorry, You don\'t have enough money for all of your bids');
+
             
-        </table>
-    </fieldset>
+           
+        }
+    ?>
+        <?php $car = $offer['Car']; ?>
+        <div class="carCard carMarketCard col-md-8">
+            <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
+                <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" class="carCardPhoto" />
+            <?php } 
+                else{ ?>
+                    <img src="http://dummyimage.com/340x220&amp;text=No+photo"  class="carCardPhoto" />
+            <?php } ?>
+            <strong><?= $car['name']; ?></strong>
+            
+            <div class="col-md-6">
+                <ul>
+                    <li>
+                        Mileage: <?php echo $car['mileage']; ?>
+                    </li>
+                    <li>
+                        Value:<?php echo $car['value']; ?>
+                    </li>
+                    <li>
+                        Upkeep: <?php echo $car['upkeep']; ?>
+                    </li>
+                </ul>
+                
+            <!--<a href="/market/bid-car/id/<?php echo $offer['id']; ?>">Zalicytuj</a>-->
+                <?php if($car['Team']['id']!=$authenticatedUser['Team']['id']): ?>
+                    <a class="btn btn-info bidCar" data-toggle="modal" data-target="#bidCar" data-name="<?= $car['name']; ?>" rel="<?= $offer['id']; ?>">Bid car</a>
+                <?php endif; ?>
+                <div class="clearfix"></div>
+            </div>
+            
+            <div class="col-md-6 pr0 pl0 carParametersWrapper">
+                <div class="carParameters">
+                     <table>
+                        <tr>
+                            <td>brand:</td>
+                            <td><?php echo $car['Model']['name']; ?></td>
+                        </tr>
+                        <tr>
+                            <td>capacity</td>
+                            <td><?php echo $car['Model']['capacity'];?></td>
+                        </tr>
+                        <tr>
+                            <td>horse power</td>
+                            <td><?php echo $car['Model']['horsepower'];?></td>
+                        </tr>
+                        <tr>
+                            <td>v-max</td>
+                            <td><?php echo $car['Model']['max_speed'];?></td>
+                        </tr>
+                        <tr>
+                            <td>acceleration</td>
+                            <td><?php echo $car['Model']['acceleration'];?></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        <div class='clearfix'></div>
+        </div>
+        <div class="col-md-3 peopleMarketSmallCard">
+            
+            <table>
+                <tr>
+                    <th>Highest bid: </th>
+                </tr>
+                <tr>
+                    <td>
+                        <?php
+                            if(isset($offer['Bids'][0])&&$offer['Bids'][0]['active']){
+                                echo (int)$offer['Bids'][0]['value']."$ - ".$offer['Bids'][0]['Team']['name']; 
+                            }
+                            else
+                                echo "no offers";
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Asking price:</th>
+                </tr>
+                <tr>
+                    <td><?= $offer['asking_price']; ?>$</td>
+                </tr>
+                <tr>
+                    <th>Auction finish: </th>
+                </tr>
+                <tr>
+                    <td>
+                        <?php echo TK_Text::timeFormat($offer['finish_date'],'d/m/y H:i'); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Other offers: </th>
+                </tr>
+                <tr>
+                    <td>
+                        <?php foreach($offer['Bids'] as $key => $bid):
+                            if($bid['active']==0)
+                                continue;
+
+                            if($key==0)
+                                continue;
+                            if($key>5)
+                                break;
+
+                            echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 
+                        endforeach; ?>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class='clearfix'></div>
 </div>
-<div class="col-md-4">
-    <h3>Oferty</h3>
-    Najwyższa oferta 
-    <strong><?php
-    if(isset($offer['Bids'][0]))
-        echo (int)$offer['Bids'][0]['value']."$ - ".$offer['Bids'][0]['Team']['name']."<br />"; 
-    else
-        echo "brak ofert";
-    ?></strong>
-    <span>Koniec aukcji - <?php echo TK_Text::timeFormat($offer['finish_date'],'d/m/Y H:i:s'); ?></span>
-    <br /><br />
-    Pozostałe oferty<br />
-    <?php foreach($offer['Bids'] as $key => $bid):
-        if($key==0)
-            continue;
-        if($key>5)
-            break;
+
+<div id="bidCar" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <form method="POST" action="/market/bid-car">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Bid car <span id="bidCarName"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <label for="asking_price">Your offer</label>
+                    <?php echo $form->getElement('bid')->renderElement(); ?>
+                    <?php echo $form->getElement('offer_id')->renderElement(); ?>
+                </div>
+                <div class="modal-footer">
+                    <?php echo $form->getElement('submit')->renderElement(); ?>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
         
-        echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 
-    endforeach; ?>
-    <br />
-    <?php if($car['Team']['id']!=$user['Team']['id']): ?>
-    <a href="/market/bid-car/id/<?php echo $offer['id']; ?>">Zalicytuj</a>
-    <?php endif; ?>
-</div>
-<div class='clearfix'></div>
-<hr />
+        $('.bidCar').click(function(){
+           var rel = $(this).attr('rel');
+           $('#offer_id').val(rel);
+           $('#bidCarName').html($(this).attr('data-name'));
+        });
+    });
+</script>

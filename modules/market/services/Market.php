@@ -207,7 +207,6 @@ class MarketService extends Service{
             return array('status' => false,'message' => 'no+cash');
         }
         
-        echo "good";exit;
         $record = $this->carOfferTable->getRecord();
         $record->fromArray($data);
         $record->save();
@@ -230,6 +229,18 @@ class MarketService extends Service{
         return $q->fetchArray();
     }
     
+    public function getAllActiveMyPlayers($team_id){
+        $q = $this->offerTable->createQuery('o');
+        $q->select('o.*,b.*,t.name,p.*,bt.name');
+        $q->leftJoin('o.Bids b');
+        $q->leftJoin('o.Player p');
+        $q->leftJoin('p.Team t');
+        $q->leftJoin('b.Team bt');
+        $q->addWhere('o.finish_date > NOW()');
+        $q->addWhere('p.team_id = ?',$team_id);
+        $q->orderBy('o.finish_date,b.value DESC');
+        return $q->fetchArray();
+    }
     
     public function getAllActiveMyPlayerOffers($team_id){
         $q = $this->offerTable->createQuery('o');
@@ -239,7 +250,7 @@ class MarketService extends Service{
         $q->leftJoin('p.Team t');
         $q->leftJoin('b.Team bt');
         $q->addWhere('o.finish_date > NOW()');
-        $q->addWhere('p.team_id = ?',$team_id);
+        $q->addWhere('b.team_id = ?',$team_id);
         $q->orderBy('o.finish_date,b.value DESC');
         return $q->fetchArray();
     }
@@ -271,7 +282,41 @@ class MarketService extends Service{
         return $q->fetchArray();
     }
     
-    public function getAllActiveMyCarOffers($team_id){
+    public function canAfford($team,$bid){
+        $team_id = $team['id'];
+        $q = $this->offerTable->createQuery('o');
+        $q->select('o.*,b.*,t.name,p.*,bt.name');
+        $q->leftJoin('o.Bids b');
+        $q->addWhere('b.team_id = ?',$team_id);
+        $q->addWhere('b.value = o.highest_bid');
+        $q->select('sum(b.value) as bids_value');
+        $q->addWhere('o.player_moved = 0');
+        $q->addWhere('o.active = 1');
+        $q->addWhere('o.canceled = 0');
+        $q->groupBy('b.team_id');
+        $playerOfferResult = $q->fetchOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        
+        
+        $q = $this->carOfferTable->createQuery('o');
+        $q->select('o.*,b.*,t.name,p.*,bt.name');
+        $q->leftJoin('o.Bids b');
+        $q->addWhere('b.team_id = ?',$team_id);
+        $q->addWhere('b.value = o.highest_bid');
+        $q->select('sum(b.value) as bids_value');
+        $q->addWhere('o.car_moved = 0');
+        $q->addWhere('o.active = 1');
+        $q->addWhere('o.canceled = 0');
+        $q->groupBy('b.team_id');
+        $carOfferResult = $q->fetchOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        $remainingTeamFinances = $team['cash']-(int)$playerOfferResult-(int)$carOfferResult;
+        
+        if($bid>$remainingTeamFinances)
+            return false;
+        else
+            return true;
+    }
+    
+    public function getAllActiveMyCars($team_id){
         $q = $this->carOfferTable->createQuery('o');
         $q->select('o.*,b.*,t.name,c.*,bt.name,m.*');
         $q->leftJoin('o.Bids b');
@@ -285,27 +330,50 @@ class MarketService extends Service{
         return $q->fetchArray();
     }
     
-    public function bidOffer($values,Market_Model_Doctrine_Offer $offer,$team_id){
+    
+    public function getAllActiveMyCarOffers($team_id){
+        $q = $this->carOfferTable->createQuery('o');
+        $q->select('o.*,b.*,t.name,c.*,bt.name,m.*');
+        $q->leftJoin('o.Bids b');
+        $q->leftJoin('o.Car c');
+        $q->leftJoin('c.Team t');
+        $q->leftJoin('c.Model m');
+        $q->leftJoin('b.Team bt');
+        $q->addWhere('o.finish_date > NOW()');
+        $q->addWhere('b.team_id = ?',$team_id);
+        $q->orderBy('o.finish_date,b.value DESC');
+        return $q->fetchArray();
+    }
+    
+    public function bidOffer($values,Market_Model_Doctrine_Offer $offer,$team){
+        $team_id = $team['id'];
         $data = array();
         $data['offer_id'] = $offer['id'];
         $data['value'] = $values['bid'];
         $data['team_id'] = $team_id;
         $data['user_ip'] = $_SERVER['REMOTE_ADDR'];
+        
+        
+        if(!$this->canAfford($team,$values['bid'])){
+            return array('status' => false,'message' => 'not enough money');
+        }
+        
         if($this->checkIfPlayerOnMarket($offer['Player']['id'])==0){
-            return array('status' => false,'message' => 'Sorry, the auction has been finished');
+            return array('status' => false,'message' => 'finished');
         }
         
         if($this->checkIfHoldHighestBid($offer['id'],$team_id)){
-            return array('status' => false,'message' => 'You already hold the highest bid.');
+            return array('status' => false,'message' => 'already highest');
         }
         
         if($this->anyHigherBids($offer['id'],$values['bid'])){
-            return array('status' => false,'message' => 'Your bid must be greater than the highest one.');
+            return array('status' => false,'message' => 'not highest');
         }
+        
         
         // make sure bid > than asking price
         if($values['bid']<$offer['asking_price']){
-            return array('status' => false,'message' => 'Offer must be greater than asking price');
+            return array('status' => false,'message' => 'greater than asking');
         }
         $record = $this->bidTable->getRecord();
         $record->fromArray($data);
@@ -317,29 +385,37 @@ class MarketService extends Service{
         return array('status' => 'success', 'element' => $record);
     }
     
-    public function bidCarOffer($values,Market_Model_Doctrine_CarOffer $offer,$team_id){
+    public function bidCarOffer($values,Market_Model_Doctrine_CarOffer $offer,$team){
+        $team_id = $team['id'];
         $data = array();
         $data['offer_id'] = $offer['id'];
         $data['value'] = $values['bid'];
         $data['team_id'] = $team_id;
         $data['user_ip'] = $_SERVER['REMOTE_ADDR'];
         
+        
+        if(!$this->canAfford($team,$values['bid'])){
+            return array('status' => false,'message' => 'not enough money');
+        }
+        
         if($this->checkIfCarOnMarket($offer['Car']['id'])==0){
-            return array('status' => false,'message' => 'Sorry, the auction has been finished');
+            return array('status' => false,'message' => 'finished');
         }
         
         if($this->checkIfHoldHighestBidCar($offer['id'],$team_id)){
-            return array('status' => false,'message' => 'You already hold the highest bid.');
+            return array('status' => false,'message' => 'already highest');
         }
         
         if($this->anyHigherBidsCar($offer['id'],$values['bid'])){
-            return array('status' => false,'message' => 'Your bid must be greater than the highest one.');
+            return array('status' => false,'message' => 'not highest');
         }
+        
         
         // make sure bid > than asking price
         if($values['bid']<$offer['asking_price']){
-            return array('status' => false,'message' => 'Offer must be greater than asking price');
+            return array('status' => false,'message' => 'greater than asking');
         }
+        
         
         
         $record = $this->carBidTable->getRecord();

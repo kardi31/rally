@@ -32,6 +32,9 @@
     4.2 Friendly rallies
     4.3 Show friendly
     4.4 LEague table
+  5. Market
+    5.1 People market
+    5.2 Car market
 */
 /*
 0. Global elements
@@ -594,9 +597,7 @@ footer{
     .carCardPhoto{
         height:220px;
         width:340px;
-        position:absolute;
-        top:0px;
-        right:0px;
+        float:right;
         margin-bottom:25px;
     }
     
@@ -611,7 +612,12 @@ footer{
     }
     
     .carParameters{
-        margin-top:190px;
+        
+    }
+    
+    .carParametersWrapper{
+        clear:right;
+        float:right;
     }
     
     .carCard ul{
@@ -778,7 +784,7 @@ footer{
 /*
     3.4 Rally result
 */
-.rallyResultWrapper table tr td,table tr th{
+.rallyResultWrapper table tr td,.rallyResultWrapper table tr th{
     padding:20px 5px;
     min-width:20px;
     text-align:center;
@@ -786,7 +792,7 @@ footer{
 .rallyResultWrapper table tr td{
     vertical-align:top;
 }
-.rallyResultWrapper table tr td:first-of-type,table tr th:first-of-type{
+.rallyResultWrapper table tr td:first-of-type,.rallyResultWrapper table tr th:first-of-type{
     /*padding:3px 15px;*/
     padding:20px 0px;
     min-width:10px;
@@ -890,6 +896,11 @@ footer{
         padding-left:20px;
         font-size:18px;
         padding-bottom:10px;
+    }
+    
+    strong a.offerLink{
+        color: #7774a9;
+        
     }
     
     .peopleCard table tr td{
@@ -1043,4 +1054,95 @@ footer{
     
     .showLeagueTableWrapper tr td{
         padding:15px 30px;
+    }
+    
+    /*
+    5.1 People market
+    */
+    
+    .peopleMarketCard .col-md-5{
+        padding-right:0px;
+    }
+    
+    .peopleMarketCard .col-md-7{
+        padding-left:0px;
+        padding-right:0px;
+    }
+    
+    .peopleMarketRight table td {
+        padding: 5px 5px;
+      }
+      .peopleMarketSmallCard table{
+          width:100%;
+      }
+      .peopleMarketSmallCard{
+          
+        background: #cad3e4;
+        margin-bottom: 20px;
+        color: #7774a9;
+        padding: 0px 0px 15px;
+        position: relative;
+        margin-left:10px;
+        width:30%;
+      }
+      
+      .peopleMarketSmallCard td{
+          color:#7774a9
+      }
+      
+      .peopleMarketSmallCard th{
+          color:#7774a9;
+          padding:0px;
+          padding-bottom:5px;
+          padding-top:5px;
+          font-size:14px;
+          padding-left:20px;
+          font-weight: normal;
+          text-align:left;
+      }
+      
+      .peopleMarketSmallCard td{
+          font-size:12px;
+          text-align:center;
+          font-weight:bold;
+      }
+      
+      .peopleMarketCard strong a.btn{
+          float:right;
+          margin-right:10px;
+          margin-top:-4px;
+      }
+      
+      #bidPlayer input[type="submit"]{
+          float:left;
+      }
+      
+      #bidPlayer label{
+          margin-right:15px;
+      }
+      
+      #bidPlayer input[type="text"]{
+          width:80px;
+      }
+      
+    /*
+    5.2 Car market
+    */
+    
+    
+    .carMarketCard .carCardPhoto{
+        width:200px;
+        height:auto;
+    }
+    .carCard table td {
+        padding-left:10px;
+        padding-right:5px;
+      }
+      
+      .carMarketCard .carParameters table td:first-of-type{
+          padding:0px;
+      }
+      
+      #bidCar .formSubmitWrapper{
+        float:left;
     }

@@ -37,22 +37,30 @@ if(isset($_GET['msg'])&&$_GET['msg']=="car bought"){
     <?php foreach($cars as $key => $car): ?>
         <div class="carCard">
 
+            <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
+                <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" class="carCardPhoto" />
+           <?php } 
+                else{ ?>
+                    <img src="http://dummyimage.com/340x220&amp;text=No+photo" class="carCardPhoto" />
+            <?php } ?>
             <strong><?= $car['name']; ?></strong>
-            <div class="clearfix"></div>
+            
+           
             <div class="col-md-6">
+                
         <!--    Car name: <?php echo $car['name']; ?> <a href="javascript:void(0)" id="btnChangeCarNameButton1">change name</a><br />
             <div class="changeCarName" id="changeCarName1">
                 <?php // echo $formCar1->renderForm(); ?>
             </div>-->
                 <ul>
                     <li>
-                        Przebieg: <?php echo $car['mileage']; ?>
+                        Mileage: <?php echo $car['mileage']; ?>
                     </li>
                     <li>
-                        Wartość:<?php echo $car['value']; ?>
+                        Value:<?php echo $car['value']; ?>
                     </li>
                     <li>
-                        Koszty utrzymania: <?php echo $car['upkeep']; ?>
+                        Upkeep: <?php echo $car['upkeep']; ?>
                     </li>
                 </ul>
                 <div class="clearfix"></div>
@@ -68,28 +76,20 @@ if(isset($_GET['msg'])&&$_GET['msg']=="car bought"){
             </div>
 
             </div>
-           <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
-                <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" class="carCardPhoto" />
-           <?php } 
-                else{ ?>
-                    <img src="http://dummyimage.com/340x220&amp;text=No+photo" class="carCardPhoto" />
-                <?php
-                }
-                ?>
-            <div class="col-md-6 pr0 pl0">
+            <div class="col-md-6 pr0 pl0 carParametersWrapper">
 
-            <div class="carParameters">
+                <div class="carParameters">
                  <table>
                     <tr>
-                    <td>marka:</td>
-                    <td><?php echo $car['Model']['name']; ?></td>
-                </tr>
+                        <td>brand:</td>
+                        <td><?php echo $car['Model']['name']; ?></td>
+                    </tr>
                     <tr>
-                        <td>poj. silnika</td>
+                        <td>capacity</td>
                         <td><?php echo $car['Model']['capacity'];?></td>
                     </tr>
                     <tr>
-                        <td>moc</td>
+                        <td>horse power</td>
                         <td><?php echo $car['Model']['horsepower'];?></td>
                     </tr>
                     <tr>
@@ -97,7 +97,7 @@ if(isset($_GET['msg'])&&$_GET['msg']=="car bought"){
                         <td><?php echo $car['Model']['max_speed'];?></td>
                     </tr>
                     <tr>
-                        <td>przyspieszenie</td>
+                        <td>acceleration</td>
                         <td><?php echo $car['Model']['acceleration'];?></td>
                     </tr>
 

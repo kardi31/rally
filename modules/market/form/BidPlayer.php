@@ -1,6 +1,6 @@
 <?php
 
-class Bid extends Form{
+class BidPlayer extends Form{
     public function __construct(){
          
         $this->createElement('number','bid',array('validators' => array('int')),'Cena');
