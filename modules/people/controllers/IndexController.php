@@ -36,17 +36,10 @@ class People_Index extends Controller{
         $teamService = parent::getService('team','team');
         $userService = parent::getService('user','user');
         
-        $id = $GLOBALS['urlParams']['id'];
+        $id = $_POST['player_id'];
         $player = $peopleService->getPerson($id,'id',Doctrine_Core::HYDRATE_RECORD);
         
-        $form = new Form();
-        $form->createElement('text','asking_price',array('validators' => array('int')),'Cena');
-        $form->createElement('text','selling_fee',array('validators' => array('int')),'Cena');
-        $form->getElement('selling_fee')->addParam('readonly','readonly');
-        $form->getElement('asking_price')->addParam('autocomplete','off');
-        $days = $form->createElement('select','days',array(),'Test');
-        $days->addMultiOptions(array(1,2,3));
-        $form->createElement('submit','submit');
+	$form = $this->getForm('market','offer');
         
         $user = $userService->getAuthenticatedUser();
         if($form->isSubmit()){
@@ -64,10 +57,10 @@ class People_Index extends Controller{
                     }
                     $player_seller[$player['id']] = $user['id'];
                     setcookie('player_seller',serialize($player_seller),time()+(86400 * 4),'/');
-                    TK_Helper::redirect('/account/my-people');
+                    TK_Helper::redirect('/market/show-offer/id/'.$result['element']['id']);
                 }
                 else{
-                    $this->view->assign('message','Player already on market');
+                    TK_Helper::redirect('/account/my-people?msg='.$result['message']);
                 }
                 
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();

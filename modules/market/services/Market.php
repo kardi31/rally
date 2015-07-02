@@ -174,8 +174,12 @@ class MarketService extends Service{
         $data['highest_bid'] = 0;
         $data['team_id'] = $values['team_id'];
         $data['user_ip'] = $_SERVER['REMOTE_ADDR'];
-        if($this->checkIfPlayerOnMarket($player['id'])!=0){
-            return false;
+        if($this->checkIfCarOnMarket($player['id'])!=0){
+            return array('status' => false,'message' => 'player+on+market');
+        }
+        
+        if(!TeamService::getInstance()->canAfford($values['team_id'],$values['selling_fee'])){
+            return array('status' => false,'message' => 'no+cash');
         }
         
         $record = $this->offerTable->getRecord();

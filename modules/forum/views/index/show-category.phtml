@@ -18,49 +18,42 @@
         margin-left:5px;
     }
 </style>
-<h3>Forum</h3>
-<ul class="breadcrumbs">
-    <li><a href="/forum/show-forum">Forum</a></li>
-    <li><?php echo $category['name']; ?></li>
-</ul>
-<h5><?php echo $category['name']; ?></h5>
-<?php
+<div class="mainUserBox showRallyWrapper showForumWrapper ">
+    <div class="boxHeader">
+        <h4><?php echo $category['name']; ?></h4>
+        <small><a href="#">Forum</a></small>
+    </div> 
+    <div class="forumGroup">
+        <?php foreach($threads as $thread): ?>
 
-foreach($threads as $thread):
-    ?>
-    <h3><a href="/forum/show-thread/id/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a></h3>
-    <div>
-    Created at : <?php echo TK_Text::timeFormat($thread['created_at'],'d/m/Y H:i'); ?> by
-        '<?php echo $thread['User']['username']; ?>' <br />
-        <?php if(isset($thread['Posts'][0])&&!empty($thread['Posts'][0])):
-        ?>
-        Last post:
-        <?php 
-        echo TK_Text::timeFormat($thread['Posts'][0]['created_at'],'d/m/Y H:i');
-        ?>
-        by
-        '<?php echo $thread['Posts'][0]['User']['username']; ?>'
-        <br />
+            <div class="forumListElem">
+                <strong><a href="/forum/show-thread/id/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a></strong>
+                <div>
+            Created: 
+                    <i class="fa fa-clock-o"></i> <?php echo TK_Text::timeFormat($thread['created_at'],'d/m/y H:i'); ?>
+                    <i class="fa fa-user"></i>
+                '<?php echo $thread['User']['username']; ?>' <br />
+                <?php if(isset($thread['Posts'][0])&&!empty($thread['Posts'][0])): ?>
+                    Last post:
+                    <i class="fa fa-clock-o"></i>
+                    <?php 
+                    echo TK_Text::timeFormat($thread['Posts'][0]['created_at'],'d/m/y H:i');
+                    ?>
+                    <i class="fa fa-user"></i>
+                    '<?php echo $thread['Posts'][0]['User']['username']; ?>'
+                    <br />
+                <?php endif; ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+        <div class="addThreadWrapper">
+            <h5><i class="fa fa-pencil"></i> Add new thread</h5>
+            <form method="POST">
+                <?php echo $form->getElement('title')->renderElement(); ?>
+                <?php echo $form->getElement('content')->renderElement(); ?>
+                <?php // echo $form->getElement('active')->renderElement(); ?>
+                <?php echo $form->getElement('submit')->renderElement(); ?>
+            </form>
+        </div>
     </div>
-    
-        
-    <?php
-        
-    endif;
-    
-?>
-        
-<hr />
-<?php
-
-endforeach;
-
-?>
-
-<h5>Add new thread</h5>
-<form method="POST">
-    <?php echo $form->getElement('title')->renderElement(); ?>
-    <?php echo $form->getElement('content')->renderElement(); ?>
-    <?php // echo $form->getElement('active')->renderElement(); ?>
-    <?php echo $form->getElement('submit')->renderElement(); ?>
-</form>
+</div>

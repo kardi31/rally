@@ -157,6 +157,10 @@ class Account_Index extends Controller{
         $peopleService = parent::getService('people','people');
         $userService = parent::getService('user','user');
         
+        
+	$form = $this->getForm('market','offer');
+        $this->view->assign('form',$form);
+        
         $user = $userService->getAuthenticatedUser();
         if(!$user)
             TK_Helper::redirect('/user/login');

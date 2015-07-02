@@ -10,17 +10,11 @@
 	});
     });
 </script>
-<style>
-   
-    </style>
-<?php 
-if(isset($_GET['msg'])&&$_GET['msg']=="car bought"){
-    $this->showSuccess("You have successfully bought a car. You can now see it in your garage.");
-}
-?>
+
 
 <?php $team = $authenticatedUser['Team']; ?>
 <div class="mainUserBox myCarsBox">
+    <h4 class="boxHeader">My cars</h4>
     <?php 
         if(isset($_GET['msg'])){
             if($_GET['msg']=="car on market"){
@@ -29,10 +23,11 @@ if(isset($_GET['msg'])&&$_GET['msg']=="car bought"){
             elseif($_GET['msg']=="no cash"){
                 $this->showError("Sorry. You don't have enough money to pay selling fee.");
             }
+            elseif($_GET['msg']=="car bought"){
+                $this->showSuccess("You have successfully bought a car. You can now see it in your garage.");
+            }
         }
     ?>
-    
-    <h4 class="boxHeader">My cars</h4>
     <div class="myCars">
     <?php foreach($cars as $key => $car): ?>
         <div class="carCard">
@@ -113,35 +108,35 @@ if(isset($_GET['msg'])&&$_GET['msg']=="car bought"){
       <div class="modal-dialog">
 
             <form method="POST" action="/car/sell-car">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Sell car <span id="sellCarName"></span></h4>
-          </div>
-          <div class="modal-body">
-                <div class="form-group">
-                    <label for="asking_price" class="control-label">Asking price</label>
-                    <?php echo $form->getElement('asking_price')->renderElement(); ?>
-                </div>
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sell car <span id="sellCarName"></span></h4>
+                  </div>
+                  <div class="modal-body">
+                        <div class="form-group">
+                            <label for="asking_price" class="control-label">Asking price</label>
+                            <?php echo $form->getElement('asking_price')->renderElement(); ?>
+                        </div>
 
-                <div class="form-group">
-                    <label for="asking_price" class="control-label">Days on the market</label>
-                    <?php echo $form->getElement('days')->renderElement(); ?>
-                </div>
+                        <div class="form-group">
+                            <label for="asking_price" class="control-label">Days on the market</label>
+                            <?php echo $form->getElement('days')->renderElement(); ?>
+                        </div>
 
-                <div class="form-group">
-                    <label for="selling_fee" class="control-label">Selling fee</label>
-                    <?php echo $form->getElement('selling_fee')->renderElement(); ?>
-                </div>
-                <input type="hidden" name="car_id" id="car_id" /> 
+                        <div class="form-group">
+                            <label for="selling_fee" class="control-label">Selling fee</label>
+                            <?php echo $form->getElement('selling_fee')->renderElement(); ?>
+                        </div>
+                        <input type="hidden" name="car_id" id="car_id" /> 
 
-          </div>
-          <div class="modal-footer">
-            <?php echo $form->getElement('submit')->renderElement(); ?>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
+                  </div>
+                  <div class="modal-footer">
+                    <?php echo $form->getElement('submit')->renderElement(); ?>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
             </form>
 
       </div>

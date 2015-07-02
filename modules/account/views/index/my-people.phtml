@@ -1,5 +1,15 @@
 <div class="mainUserBox myPeopleWrapper">
     <h4 class="boxHeader">My people</h4> 
+    <?php 
+        if(isset($_GET['msg'])){
+            if($_GET['msg']=="player on market"){
+                $this->showError("This player is already on market");
+            }
+            elseif($_GET['msg']=="no cash"){
+                $this->showError("Sorry. You don't have enough money to pay selling fee.");
+            }
+        }
+    ?>
     <div class="myPeople">
         <?php foreach($teamPeople as $person): ?>
             <div class="peopleCard">
@@ -47,7 +57,7 @@
                     </table>
                      <div class="peopleBtn">
                         <?php if(!$person['on_market']): ?>
-                            <a class="btn" href="/people/sell-player/id/<?php echo $person['id']; ?>"><i class="fa fa-money"></i> Sell player</a>
+                            <a class="btn sellPlayer" type="button" data-toggle="modal" data-target="#sellPlayer" href="javascript:void(0)" data-name='<?php echo $person['last_name']." ".$person['first_name']; ?>' rel='<?php echo $person['id']; ?>'><i class="fa fa-money"></i> Sell player</a>
                         <?php else: ?>
                             Player is on the market
                         <?php endif; ?>
@@ -171,3 +181,72 @@
         <?php endforeach; ?>
     </div>
 </div>
+
+    <div id="sellPlayer" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+          
+          
+            <form method="POST" action="/people/sell-player">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Sell player <span id="sellPlayerName"></span></h4>
+          </div>
+          <div class="modal-body">
+                <div class="form-group">
+                    <label for="asking_price" class="control-label">Asking price</label>
+                    <?php echo $form->getElement('asking_price')->renderElement(); ?>
+                </div>
+
+                <div class="form-group">
+                    <label for="asking_price" class="control-label">Days on the market</label>
+                    <?php echo $form->getElement('days')->renderElement(); ?>
+                </div>
+
+                <div class="form-group">
+                    <label for="selling_fee" class="control-label">Selling fee</label>
+                    <?php echo $form->getElement('selling_fee')->renderElement(); ?>
+                </div>
+                <input type="hidden" name="player_id" id="player_id" /> 
+
+          </div>
+          <div class="modal-footer">
+            <?php echo $form->getElement('submit')->renderElement(); ?>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+            </form>
+
+      </div>
+    </div>
+
+<script>
+    $(document).ready(function(){
+        $('#asking_price').keyup(function(){
+            var asking_price = $(this).val();
+            if($.isNumeric(asking_price)){
+                var selling_fee = Math.round(0.0125*asking_price);
+                if(selling_fee > 5000){
+                    selling_fee = 5000;
+                }
+                if(selling_fee < 150){
+                    selling_fee = 150;
+                }
+                
+                $('#selling_fee').val(selling_fee);
+            }
+            else{
+                $('#selling_fee').val('');
+            }
+        });
+        
+        
+        $('.sellPlayer').click(function(){
+           var rel = $(this).attr('rel');
+           $('#player_id').val(rel);
+           $('#sellPlayerName').html($(this).attr('data-name'));
+        });
+    });
+</script>

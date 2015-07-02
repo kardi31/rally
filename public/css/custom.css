@@ -35,6 +35,10 @@
   5. Market
     5.1 People market
     5.2 Car market
+    5.3 Car dealer
+  6. Forum
+    6.1 Show forum
+    6.2 Show category
 */
 /*
 0. Global elements
@@ -642,23 +646,23 @@ footer{
         padding-left:0px;
     }
     
-     #sellCar label{
+     #sellCar label,#sellPlayer label{
         width:200px;
         float:left;
         margin-bottom:20px;
     }
-    #sellCar input{
+    #sellCar input,#sellPlayer input{
         width:150px;
     }
-    #sellCar select{
+    #sellCar select,#sellPlayer select{
         width:150px;
     }
-    #sellCar label:before{
+    #sellCar label:before,#sellPlayer label:before{
         clear:both;
         display:block;
         content: " ";
     }
-    #sellCar .formSubmitWrapper{
+    #sellCar .formSubmitWrapper,#sellPlayer .formSubmitWrapper{
         float:left;
     }
     
@@ -1145,4 +1149,94 @@ footer{
       
       #bidCar .formSubmitWrapper{
         float:left;
+    }
+    
+    /*
+    5.3 Car dealer
+    */
+    .carDealer .carParameters{
+        margin-top:10px;
+    }
+    
+    /*
+    6.1 Show forum
+    */
+    
+    .forumGroup{
+        border-radius: 6px;
+        border: 6px solid #fff;
+        background: #cad3e4;
+        margin-bottom: 20px;
+        color: #7774a9;
+        padding: 0px 0px 15px;
+        position: relative;
+    }
+
+    .forumGroup h6 a{
+        display: block;
+        background: #f4e973;
+        padding-top: 10px;
+        padding-left: 20px;
+        font-size: 18px;
+        padding-bottom: 10px;
+        color: #7774a9;
+    }
+
+    .forumGroup h6{
+        margin:0px;
+    }
+
+    .fa-star.selected{
+        color: yellow;
+    }
+
+    .forumGroupInside{
+        padding: 10px;
+    }
+
+    .forumGroup .forumGroupRight{
+        float:right;
+    }
+
+    .forumGroup .forumGroupRight i{
+        margin-right:5px;
+    }
+    
+    /*
+    6.2 Show category
+    */
+    
+    .showForumWrapper .boxHeader{
+        
+        background:#212121;
+        padding:15px 20px;
+        margin-top:0px;
+        padding-top:5px;
+    }
+    .showForumWrapper .boxHeader h4{
+        font-size:25px;
+        line-height:25px;
+        padding-bottom:5px;
+    }
+    .forumListElem:first-of-type{
+        margin-top:10px;
+    }
+    
+    .forumListElem{
+        margin-left:10px;
+        margin-bottom:10px;
+    }
+    
+    .forumListElem strong a{
+        color: #7774a9;
+        font-weight:bold;
+    }
+    
+    .addThreadWrapper{
+        margin-left:10px;
+    }
+    
+    .addThreadWrapper h5{
+        font-size:16px;
+        margin-top:5px;
     }
