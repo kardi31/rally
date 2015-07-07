@@ -101,6 +101,24 @@ class ForumService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    
+    
+    public function checkLastUserPost($user,$thread){
+        $q = $this->postTable->createQuery('p');
+        $q->addWhere('p.user_id = ?',$user['id']);
+        $q->addWhere('p.thread_id = ?',$thread['id']);
+        $q->orderBy('p.created_at DESC');
+        $result = $q->fetchOne();
+        if(!$result)
+            return true;
+        
+        if($result['created_at']>date('Y-m-d H:i:s',strtotime('-30 seconds'))){
+            return false;   
+        }
+        return true;
+        
+    }
+    
     public function getAllThreadPosts($thread_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $limits = $this->getPageLimits(20);
         $q = $this->postTable->createQuery('p');

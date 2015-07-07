@@ -1,5 +1,19 @@
-Ilość punktów premium: <?php echo (int)$authenticatedUser['premium']; ?><br /><br />
-<form class="form-horizontal" method="POST">
-    <?php echo $form->getElement('premium')->renderElement(); ?>
-    <?php echo $form->getElement('submit')->renderElement(); ?>
-</form>
+<div class="mainUserBox">
+        <h4 class="boxHeader">My premium</h4>
+        <div class="goldCoinBox">
+            <?php if($authenticatedUser['gold_member']): ?>
+                You are currently a <img src="/images/layout/gc_small.png"> member. Your membership expires at <?= TK_Text::timeFormat($authenticatedUser['gold_member_expire'],'d/m/y H:i'); ?>
+            <?php else: ?>
+            
+            <?php endif; ?>
+            <br />
+            Your account balance: <?= $authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png">
+        </div>
+        <div class="addMorePremium">
+            Add more <img class="coin" src="/images/layout/coin.png" />
+            <form class="form-horizontal" method="POST">
+                <?php echo $form->getElement('premium')->renderElement(); ?>
+                <?php echo $form->getElement('submit')->renderElement(); ?>
+            </form>
+        </div>
+</div>

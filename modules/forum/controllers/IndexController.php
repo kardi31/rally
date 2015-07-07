@@ -99,10 +99,16 @@ class Forum_Index extends Controller{
             if($form->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
+                
+                // user can add a post once every 30 seconds
+                if(!$forumService->checkLastUserPost($user,$thread)){
+                    TK_Helper::redirect('/forum/show-thread/id/'.$thread['id'].'?msg=too+fast');
+                    exit;
+                }
+                
                 $values = $_POST;
 		
-		$forumService->addPost($values,$thread['id'],$user);
-		
+		$forumService->addPost($values,$thread,$user);
 		TK_Helper::redirect('/forum/show-thread/id/'.$thread['id']);
 		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();

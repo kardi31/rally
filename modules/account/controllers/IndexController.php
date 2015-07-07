@@ -237,6 +237,7 @@ class Account_Index extends Controller{
     }
     
     public function premium(){
+        Service::loadModels('team', 'team');
 	$form = $this->getForm('user','premium');
 	
         $userService = parent::getService('user','user');
@@ -247,10 +248,8 @@ class Account_Index extends Controller{
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
-                
                 $result = $userService->addPremium($user,$values['premium']);
                 
-		$_SESSION['user'] = serialize($user);
 		
                 if($result!== false)
                     TK_Helper::redirect('/account/premium');
@@ -265,6 +264,38 @@ class Account_Index extends Controller{
 	$this->view->assign('form',$form);
     }
     
+    public function goldMembership(){
+        Service::loadModels('team', 'team');
+	$form = $this->getForm('user','gold');
+	
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+	
+	if($form->isSubmit()){
+            if($form->isValid()){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                
+                $values = $_POST;
+                $gold = (int)$values['gold'];
+                if(!(User_Model_Doctrine_User::getGoldPackagePrice($gold)&&$userService->checkUserPremium($user['id'],User_Model_Doctrine_User::getGoldPackagePrice($gold)))){
+                    TK_Helper::redirect('/account/gold-membership?msg=no+prem');
+                    exit;
+                }
+                $result = $userService->addGoldMembership($user,$gold);
+                $userService->removePremium($user,User_Model_Doctrine_User::getGoldPackagePrice($gold),$gold.' days gold membership');
+		
+                if($result!== false)
+                    TK_Helper::redirect('/account/gold-membership?msg=bought');
+                else{
+                    $this->view->assign('message','Error');
+                }
+                
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+            }
+        }
+	
+	$this->view->assign('form',$form);
+    }
     
     
 }

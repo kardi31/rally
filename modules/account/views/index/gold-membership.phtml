@@ -1,0 +1,112 @@
+<?php
+if(isset($_GET['msg'])){
+    if($_GET['msg']=="bought"){
+        $this->showSuccess('Gold membership was succesfully bought. Enjoy our <img src="/images/layout/gc_small.png"> features until '.TK_Text::timeFormat($authenticatedUser['gold_member_expire'],'d/m/Y H:i'));
+    }
+    elseif($_GET['msg']=="no prem"){
+        $this->showError("Sorry,you don't have enough premium. <a href='/account/premium'>Buy more premium</a>");
+    }
+    
+}?>
+<div class="mainUserBox">
+        <h4 class="boxHeader">Gold membership</h4>
+        <div class='goldMembershipWrapper'>
+            Gold membership is a package which allows you to benefit of additional in-game features. Check what privileges <img src="/images/layout/gc_small.png"> users poses.
+            <table class='goldMembershipTable'>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Basic user</th>
+                        <th><img src="/images/layout/gc_small.png" /> user</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Creating friendly rally</td>
+                        <td>10 <img class="coin" src="/images/layout/coin.png" /></td>
+                        <td>2 rallies every month for free. Every next costs 5 <img class="coin" src="/images/layout/coin.png" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="gmFeatureDesc">
+                            Invite your friends and check who is the fastest or create a public rally and challenge random players.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Joining friendly rally</td>
+                        <td>10 <img class="coin" src="/images/layout/coin.png" /></td>
+                        <td>2 rallies every month for free. Every next costs 5 <img class="coin" src="/images/layout/coin.png" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="gmFeatureDesc">
+                            Join  friendly rally, give yourself a chance to beat other drivers and earn additional game cash.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Detailed financial report</td>
+                        <td><span class='red'><i class="fa fa-times"></i></span></td>
+                        <td><span class='green'><i class="fa fa-check"></i></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="gmFeatureDesc">
+                            Don't know where this cash cames from? No problem. In our detailed report you can see exact source of every income and expense.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Joining big rally</td>
+                        <td>15 <img class="coin" src="/images/layout/coin.png" /></td>
+                        <td>5 <img class="coin" src="/images/layout/coin.png" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="gmFeatureDesc">
+                            Try to beat other drivers and compete for great prizes like unique cars and premium points.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Forum & transfer boxes</td>
+                        <td><span class='red'><i class="fa fa-times"></i></span></td>
+                        <td><span class='green'><i class="fa fa-check"></i></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="gmFeatureDesc">
+                            Never miss out your transfer offer or important thread. With forum & transfer boxes you see all important information immediately after log in. 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Advertisments on page</td>
+                        <td><span class='green'><i class="fa fa-check"></i></span></td>
+                        <td><span class='red'><i class="fa fa-times"></i></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="gmFeatureDesc">
+                            Get rid of all annoying advertisments on your FastRally&copy; account.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        
+        
+            <?php if($authenticatedUser['gold_member']): ?>
+                <div class="goldCoinBox">
+                    You are currently a <img src="/images/layout/gc_small.png"> member. Your membership expires at <?= TK_Text::timeFormat($authenticatedUser['gold_member_expire'],'d/m/y H:i'); ?>
+                </div>
+            <?php else: ?>
+                <div class="notGoldCoinBox label-danger">
+                    You are not a <img src="/images/layout/gc_small.png"> member. Buy your package now.
+                </div>
+            <?php endif; ?>
+            <br />
+            Your account balance: <?= $authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png">
+        </div>
+        <div class="addMoreGold">
+            
+            <form class="form-horizontal" method="POST">
+                <div class='form-group'>
+                    <label for='gold'>Add more <img class="coin" src="/images/layout/coin.png" /></label>
+                    <?php echo $form->getElement('gold')->renderElement(); ?>
+                    
+                </div>
+                <?php echo $form->getElement('submit')->renderElement(); ?>
+            </form>
+        </div>
+</div>

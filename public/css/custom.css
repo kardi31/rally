@@ -39,6 +39,11 @@
   6. Forum
     6.1 Show forum
     6.2 Show category
+    6.3 Show thread
+  7. Premium
+    7.1 My premium
+    7.2 Gold membership
+  8. Static pages
 */
 /*
 0. Global elements
@@ -1005,7 +1010,6 @@ footer{
         margin:20px 0px;
         padding:5px 20px;
         padding-bottom:10px;
-        /*line-height:28px;*/
     }
     
     .goldCoinBox h4{
@@ -1254,3 +1258,146 @@ footer{
     }
     
     
+    /*
+    6.3 Show thread
+    */
+    
+    .threadInfo{
+        float:right;
+        display:block;
+        padding-top:5px;
+        line-height:25px;
+        font-size:85%;
+    }
+    
+    .threadContent{
+        padding:20px;
+    }
+    
+    .moderatorNotes{
+        color:#ff0000;
+        margin-top:20px;
+        display:block;
+        font-style:italic;
+    }
+    
+    .moderatorEdited{
+        color:#ff0000;
+        font-style:italic;
+    }
+    
+    .threadContent hr{
+        margin:10px 0px;
+    }
+    .threadContent .threadInfo{
+        padding-top:0px;
+    }
+    .threadMainContent{
+        margin-bottom:20px;
+    }
+    .threadMainContent{
+        margin-bottom:20px;
+    }
+    
+    
+    /*
+    7.1 My premium
+    */
+    
+    .addMorePremium{
+        padding:5px 20px;
+    }
+    
+    .addMorePremium input{
+        margin-bottom:15px;
+        margin-top:10px;
+        padding:5px;
+    }
+    
+    
+    .notGoldCoinBox{
+        background:#d9534f;
+        width:600px;
+        max-width:100%;
+        margin:20px 0px;
+        padding:5px 20px;
+        padding-bottom:10px;
+    }
+    
+    .notGoldCoinBox h4{
+        margin-bottom:0px;
+        padding-bottom:10px;
+    }
+    
+    .notGoldCoinBox img.coin{
+        margin-left:5px;
+    }
+    .notGoldCoinBox .balance{
+        float:right;
+    }
+    .notGoldCoinBox .balanceWrapper{
+        display:block;
+        margin-top:20px;
+    }
+    
+    /*
+    7.2 Gold membership
+    */
+    
+    .goldMembershipTable{
+        margin:0 auto;
+        display:block;
+        margin-top:20px;
+    }
+    
+    .goldMembershipTable td{
+        padding:10px;
+        border:1px solid white;
+    }
+    
+    
+    .goldMembershipTable th:not(:first-of-type){
+        padding:10px;
+        border:3px solid white;
+    }
+    
+    .goldMembershipTable .gmFeatureDesc{
+        font-size:12px;
+        padding:15px;
+    }
+    
+    .red{        
+        color:#d9534f;
+    }
+    
+    .green{
+        color:#5cb85c;
+    }
+    
+    .goldMembershipWrapper{
+        padding:10px;
+    }
+    
+    .addMoreGold{
+        padding:20px;
+        padding-top:0px;
+    }
+    
+    .addMoreGold .form-group{
+        width:400px;
+        padding:10px;
+    }
+    
+    .alert-danger a{
+        color:#b94a48;
+        text-decoration: underline;
+    }
+    
+    /*
+        8 Static pages
+    */
+    
+    .staticWrapper{
+        padding:20px;
+        padding-top:10px;
+    }

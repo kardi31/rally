@@ -179,5 +179,27 @@ class UserService extends Service{
         else
             return false;
     }
+    
+    public function addGoldMembership($user,$amount){
+        $expireDate = $user['gold_member_expire'];
+        if(strlen($expireDate)&&$expireDate>=date('Y-m-d H:i:s')){
+            $newDate = new DateTime($expireDate);
+            $newDate->add(new DateInterval('P'.$amount.'D'));
+            $user->set('gold_member',1);
+            $user->set('gold_member_expire',$newDate->format('Y-m-d H:i:s'));
+            $user->save();
+            
+            
+        }
+        else{
+            $user->set('gold_member',1);
+            $user->set('gold_member_expire',date('Y-m-d H:i:s',strtotime('+ '.$amount.' days')));
+            $user->save();
+        }
+        
+        if($this->getAuthenticatedUser()){
+            $this->refreshAuthentication();
+        }
+    }
 }
 ?>

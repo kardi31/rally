@@ -166,6 +166,7 @@ class Rally_Index extends Controller{
         $freeDrivers = $peopleService->getFreeDriversFriendly($user['Team'],null,Doctrine_Core::HYDRATE_ARRAY);
         $freePilots = $peopleService->getFreePilotsFriendly($user['Team'],null,Doctrine_Core::HYDRATE_ARRAY);
         $freeCars = $carService->getFreeCarsFriendly($user['Team'],null,Doctrine_Core::HYDRATE_ARRAY);
+        var_dump($freePilots);exit;
         $recentUserFriendlies = $rallyService->countRecentUserFriendlies($user['id']);
         $joinForm = $this->getForm('rally','JoinRally');
         $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,true);

@@ -32,6 +32,23 @@ class Index_Index extends Controller{
        
     }
     
+    public function rules(){
+        $this->getLayout()->setLayout('layout');
+        
+    }
+    public function faq(){
+        $this->getLayout()->setLayout('layout');
+        
+    }
+    
+    public function privacyPolicy(){
+        $this->getLayout()->setLayout('layout');
+        
+    }
+    public function support(){
+        $this->getLayout()->setLayout('layout');
+        
+    }
     public function showFriends(){
         Service::loadModels('team', 'team');
         $this->actionStack($this, 'layoutHelper');
@@ -69,6 +86,8 @@ class Index_Index extends Controller{
     public function showCalendar(){
         
         $notificationService = parent::getService('user','notification');
+        $rallyService = parent::getService('rally','rally');
+        
         
         $userService = parent::getService('user','user');
         
@@ -76,8 +95,12 @@ class Index_Index extends Controller{
         if(!$user)
             TK_Helper::redirect('/user/login');
         
+        $hasRallyNow = $rallyService->hasRallyNow($user['Team']['id']);
+        $hasFriendlyInvitation = $rallyService->hasFriendlyInvitation($user['Team']['id']);
         $notifications = $notificationService->getAllUserNotifications($user['id'],10,Doctrine_Core::HYDRATE_ARRAY);
         
+        $this->view->assign('hasFriendlyInvitation',$hasFriendlyInvitation);
+        $this->view->assign('hasRallyNow',$hasRallyNow);
         $this->view->assign('notifications',$notifications);
         
     }

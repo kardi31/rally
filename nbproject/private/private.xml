@@ -35,7 +35,6 @@
             <file>file:/C:/xampp/htdocs/ral/modules/forum/models/Post.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/models/Rally.php</file>
             <file>file:/C:/xampp/htdocs/ral/public/plugins/jMenu/js/jMenu.jquery.js</file>
-            <file>file:/C:/xampp/htdocs/ral/public/css/custom.css</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/models/BasePost.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/models/Friendly.php</file>
             <file>file:/C:/xampp/htdocs/ral/views/_header_main.phtml</file>
@@ -50,10 +49,26 @@
             <file>file:/C:/xampp/htdocs/ral/modules/market/form/Offer.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/library/DataTables/FilterFactory.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/premium.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/menu.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/layout/layout.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/library/DataTables/Post.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/show-thread.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/services/Forum.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/form/Post.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Controller.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Premium.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/gold-membership.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Gold.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Element.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Select.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/models/User.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Router.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/faq.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/public/css/custom.css</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_header.phtml</file>
         </group>
     </open-files>
 </project-private>

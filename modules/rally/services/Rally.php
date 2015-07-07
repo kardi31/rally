@@ -161,6 +161,19 @@ class RallyService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function hasRallyNow($team_id){
+        $q = $this->rallyTable->createQuery('r');
+	$q->leftJoin('r.Crews c');
+	$q->leftJoin('r.Stages s');
+        $q->addWhere('s.date < ?',date('Y-m-d H:i:s',strtotime('+15 minutes')));
+        $q->addWhere('s.date > ?',date('Y-m-d H:i:s',strtotime('-15 minutes')));
+	$q->addWhere('c.team_id = ?',$team_id);
+	$q->addWhere('r.active = 1');
+	$q->addWhere('r.finished = 0');
+        $q->select('r.slug');
+	return $q->fetchOne(array(),Doctrine_Core::HYDRATE_ARRAY);
+    }
+    
     public function getRallyWithCrews($id,$field,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->rallyTable->createQuery('r');
 	$q->leftJoin('r.Crews c');
@@ -785,6 +798,14 @@ class RallyService extends Service{
         $q->addWhere('fi.friendly_id = ?',$friendly['id']);
         $q->addWhere('fi.deleted_at IS NULL');
 	return $q->execute(array(),$hydrationMode);
+    }
+    
+    
+    public function hasFriendlyInvitation($user_id){
+        $q = $this->friendlyInvitationsTable->createQuery('fi');
+        $q->addWhere('fi.user_id = ?',$user_id);
+        $q->select('fi.id');
+	return $q->fetchOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
     }
     
     public function getMyFriendlyInvitations($user_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){

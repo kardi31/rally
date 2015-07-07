@@ -1,4 +1,76 @@
-<div class="mainUserBox boxNotification">
+<style>
+    .messageIcons{
+        position:fixed;
+        z-index:100000;
+        /*left:-10px;*/
+    }
+    .messageIconWrapper{
+        display:block;
+        text-align:center;
+        margin:5px 0px;
+    }
+    .messageIconWrapper{
+        font-size:16px;
+    }
+    .mainPageNotification{
+        display:none;
+    }
+    .messageIconWrapper.active i{
+        color:yellow;
+    }
+    .premiumIconWrapper{
+        font-size:12px;
+    }
+    </style>
+    
+    <script>
+        $(document).ready(function(){
+            var position = $('.messageIcons').position().left;
+            var new_position = position-80;
+           $('.messageIcons').css('left',new_position);
+           
+           $('.messageIconWrapper').click(function(){
+               var element = $(this).attr('rel');
+               if($('#'+element).is(':visible')){
+                    $('#'+element).fadeOut(500);
+               }
+               else{
+                    $('#'+element).fadeIn(1000);
+                }
+               
+               
+           });
+           
+        });
+    </script>
+<div class='messageIcons'>
+    <?php if($hasRallyNow): ?>
+        <a href='/rally/show-rally/slug/<?= $hasRallyNow['slug']; ?>' class='messageIconWrapper active'  title='Rally in progress'>
+            <i class='fa fa-car'></i>
+        </a>
+    <?php else: ?>
+        <a href='#' class='messageIconWrapper' title='No rally in progress'>
+            <i class='fa fa-car'></i>
+        </a>
+    <?php endif; ?>
+    <a href='javascript:void(0)' class='messageIconWrapper' rel='mainNotificationMessageBox' title='Notification'>
+        <i class='fa fa-envelope-o'></i>
+    </a>
+    <?php if($hasFriendlyInvitation): ?>
+        <a href='/rally/list-friendly-rally/' class='messageIconWrapper active' title='Pending friendly invitations'>
+            <i class='fa fa-user-plus'></i>
+        </a>
+    <?php else: ?>
+        <a href='#' class='messageIconWrapper' title='No friendly invitations'>
+            <i class='fa fa-user-plus'></i>
+        </a>
+    <?php endif; ?>
+    <a href='#' class='messageIconWrapper premiumIconWrapper'>
+        <?= $authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png">
+    </a>
+</div>
+
+<div class="mainUserBox boxNotification mainPageNotification" id='mainNotificationMessageBox'>
     <h4 class="boxHeader">Message box</h4>
     <div class="boxNotificationInner">
         <?php foreach($notifications as $notification): 
@@ -9,26 +81,4 @@
         </div>
          <?php endforeach; ?>
     </div>
-    <?php /* if(!$authenticatedUser['gold_member']){ ?>
-        <div class="goldOverlay">
-            <a href="#">
-                <img src="/images/layout/gc_big.png" />
-            </a>
-        </div>
-    <?php }
-    else{ ?>
-        <input type="text" id="mydate" gldp-id="mydate" style="visibility:hidden;height:0px;position:absolute;" />
-        <div gldp-el="mydate" style="width:221px; min-height:200px;position:relative !important;top:0px !important; left:auto !important;padding-right:0px !important;margin:0 auto;">
-        </div>
-        <div class="clearfix"></div>
-        <script type="text/javascript">
-            $(window).load(function()
-            {
-                $('#mydate').glDatePicker({
-                    showAlways: true,
-                    cssName: 'darkneon',
-                });
-            });
-        </script>
-    <?php } */ ?>
 </div>

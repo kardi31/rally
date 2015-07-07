@@ -12,6 +12,24 @@
  */
 class User_Model_Doctrine_User extends User_Model_Doctrine_BaseUser
 {
+    public static $goldPackages = array(
+        7 => 20,
+        30 => 40,
+        90 => 80,
+        180 => 160,
+        360 => 320
+    );
+    
+    public static function getGoldPackagePrices(){
+        return self::$goldPackages;
+    }
+    
+    public static function getGoldPackagePrice($days){
+        if(!isset(self::$goldPackages[$days]))
+            return false;
+        return self::$goldPackages[$days];
+    }
+    
     public function setUp()
     {
         parent::setUp();

@@ -75,7 +75,7 @@ class Cron_Admin extends Controller{
         
         $offersNoBid = $marketService->getFinishedOffersNotMovedNoBid();
         foreach($offersNoBid as $offerNoBid):
-            $peopleService->setOffMarket($offerNoBid['player_id']);
+            $peopleService->setOffMarket($offerNoBid['people_id']);
             $offerNoBid->set('player_moved',1);
             $offerNoBid->save();
         endforeach;

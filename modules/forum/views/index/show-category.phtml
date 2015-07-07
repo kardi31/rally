@@ -1,27 +1,7 @@
-<style>
-    .postContent{
-        border:1px solid black;
-    }
-    
-    .breadcrumbs{
-        margin-left:0px;
-        padding-left:0px;
-    }
-    
-    .breadcrumbs li{
-        display:inline-block; 
-    }
-    
-    .breadcrumbs li:not(:last-of-type):after{
-        content: ">";
-        display:inline-block;
-        margin-left:5px;
-    }
-</style>
 <div class="mainUserBox showRallyWrapper showForumWrapper ">
     <div class="boxHeader">
         <h4><?php echo $category['name']; ?></h4>
-        <small><a href="#">Forum</a></small>
+        <small><a href="/forum/show-forum">Forum</a></small>
     </div> 
     <div class="forumGroup">
         <?php foreach($threads as $thread): ?>
