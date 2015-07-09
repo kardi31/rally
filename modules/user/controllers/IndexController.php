@@ -245,6 +245,7 @@ class User_Index extends Controller{
     
     
     public function inviteToGame(){
+        $this->getLayout()->setLayout('page');
         
         $userService = parent::getService('user','user');
         $inviteService = parent::getService('user','invite');

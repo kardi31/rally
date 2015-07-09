@@ -56,9 +56,12 @@ class Controller{
                 if(!class_exists($controllerName)){
                     require_once(BASE_PATH."/modules/".$details['module']."/controllers/".ucfirst($details['controller'])."Controller.php");
                 }
-                
+                try{
                 $controllerName::getInstance()->$actionName();
-                
+                }
+                catch(Exception $e){
+                    var_dump("Error in ".$actionName);exit;
+                }
                 $this->layout->responseSegment[$responseSegment] = $elem->view->render($details['module'],$details['view'],$zone);
             }
             

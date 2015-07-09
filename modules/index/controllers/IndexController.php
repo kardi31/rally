@@ -84,7 +84,7 @@ class Index_Index extends Controller{
     }
     
     public function showCalendar(){
-        
+        Service::loadModels('team', 'team');
         $notificationService = parent::getService('user','notification');
         $rallyService = parent::getService('rally','rally');
         
@@ -96,7 +96,7 @@ class Index_Index extends Controller{
             TK_Helper::redirect('/user/login');
         
         $hasRallyNow = $rallyService->hasRallyNow($user['Team']['id']);
-        $hasFriendlyInvitation = $rallyService->hasFriendlyInvitation($user['Team']['id']);
+        $hasFriendlyInvitation = $rallyService->hasFriendlyInvitation($user['id']);
         $notifications = $notificationService->getAllUserNotifications($user['id'],10,Doctrine_Core::HYDRATE_ARRAY);
         
         $this->view->assign('hasFriendlyInvitation',$hasFriendlyInvitation);

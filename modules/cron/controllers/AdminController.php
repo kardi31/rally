@@ -2,6 +2,22 @@
 
 class Cron_Admin extends Controller{
  
+    /* + Do it every 15 minutes
+     * 1. Calculate rally results
+     * 2. 
+     * 
+     * + Once a day
+     * 1. Calculate training report
+     * 2. Move transfered players and cars 
+     * 3. Pay Premium bonus for invited users
+     * 
+     * + Once a season
+     * 1. Change league for top 3 teams,move inactive teams to 1 bottom league. If team inactive for 6 months, delete team
+     * 2. Calculate new player value + salary
+     * 3. Calculate new car value + upkeep
+     * 4. Create rallies for all leagues
+     */
+    
     public function __construct(){
         parent::__construct();
     }

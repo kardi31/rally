@@ -27,6 +27,25 @@ class People_Index extends Controller{
         $teamService->createRandomTeam($data);
     }
     
+    public function setActiveTrainingSkill(){
+        Service::loadModels('market', 'market');
+        Service::loadModels('rally', 'crew');
+        
+        $marketService = parent::getService('market','market');
+        $peopleService = parent::getService('people','people');
+        $teamService = parent::getService('team','team');
+        $userService = parent::getService('user','user');
+        
+        $id = $GLOBALS['urlParams']['id'];
+        $skill = $GLOBALS['urlParams']['skill'];
+        $player = $peopleService->getPerson($id,'id',Doctrine_Core::HYDRATE_RECORD);
+        $player->set('active_training_skill',$skill);
+        $player->save();
+        
+        TK_Helper::redirect($_SERVER['HTTP_REFERER']);
+	
+    }
+    
     public function sellPlayer(){
         Service::loadModels('market', 'market');
         Service::loadModels('rally', 'crew');

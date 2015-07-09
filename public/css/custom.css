@@ -885,6 +885,21 @@ footer{
       3.6  My people
     */
     
+    .fa-circle-o.fa-circle-empty:before{
+        color:white;
+    }
+    .fa-circle-o:before{
+        color:green;
+        font-size:14px;
+    }
+    .trainingChange{
+        
+        margin-top:5px;
+        margin-left:10px;
+    }
+    .fa-circle-o{
+    }
+    
     .myPeopleWrapper{
         background:none;
     }

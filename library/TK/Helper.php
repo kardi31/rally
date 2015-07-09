@@ -19,8 +19,13 @@ class TK_Helper{
         if($showEmpty)
         echo str_repeat("<img src='/images/gwiazdka-empty.png' class='gwEmpty' alt='gw' />", 10-(int)$person[$skill]);
         
-        if($person['active_training_skill']==$skill){
-            echo "+++";
+        if($showEmpty){
+            if($person['active_training_skill']==$skill){
+                echo '<a class="trainingChange" title="This skill is currently trained by your player" href="#"><i class="fa fa-circle-o"></i></a>';
+            }
+            else{
+                echo '<a class="trainingChange" title="Set this skill to be trained by your player" href="/people/set-active-training-skill/id/'.$person['id'].'/skill/'.$skill.'/"><i class="fa fa-circle-o fa-circle-empty"></i></a>';
+            }
         }
     }
     
