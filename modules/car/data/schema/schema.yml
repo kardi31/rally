@@ -61,6 +61,9 @@ Car:
     on_market:
       type: boolean
       default: 0
+    last_season_value_id:
+      type: integer(11)
+      default: 0
   relations:
     CarModels:
       local: model_id

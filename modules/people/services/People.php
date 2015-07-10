@@ -550,7 +550,7 @@ class PeopleService extends Service{
 	return $accidentProbability;
     }
     
-    public function getAllActivePlayersNotCalculated($season,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+    public function getAllActivePlayersNotCalculated($season){
         $q = $this->peopleTable->createQuery('p');
         $q->leftJoin('p.TrainingFactor tf');
         $q->addWhere('tf.last_season_value_id < ?',$season);

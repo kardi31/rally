@@ -16,29 +16,27 @@ class User_Index extends Controller{
     }
     
     public function register(){
-        
+        $this->getLayout()->setLayout('main');
         $userService = parent::getService('user','user');
         $mailService = parent::getService('user','mail');
         
-        if(isset($GLOBALS['urlParams']['ref'])){
+        if(isset($_GET['ref'])&&is_numeric($_GET['ref'])){
             $ref = true;
             $inviteService = parent::getService('user','invite');
-            if(!$invite = $inviteService->getFullInvite($GLOBALS['urlParams']['ref'],Doctrine_Core::HYDRATE_ARRAY)){
+            if(!$invite = $inviteService->getFullInvite((int)$_GET['ref'],Doctrine_Core::HYDRATE_ARRAY)){
                 $ref = false;
             }
+            else{
+                if($invite['email']!=trim($_GET['email'])){
+                    $ref = false;
+                }
+            }
         }
-        
-        $form = new Form();
-        $form->createElement('text','login',array('validators' => array('stringLength' => array('min' => 4,'max' => 12)),'Login'));
-        $form->createElement('password','password',array('validators' => array('stringLength' => array('min' => 4,'max' => 12))),'Hasło');
-        $form->createElement('password','password2',array('validators' => array('match' => array('elem' => 'password'))),'Powtórz hasło');
-        $email = $form->createElement('text','email',array('validators' => 'email'),'Adres email');
+        $form = $this->getForm('user','register');
         if($ref){
-            $email->setValue($invite['email']);
+            $form->getElement('email')->setValue($invite['email']);
         }
         
-        $form->createElement('captcha','captcha',array());
-        $form->createElement('submit','submit');
         if($form->isSubmit()){
             if($form->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
@@ -60,11 +58,9 @@ class User_Index extends Controller{
                     }
                     
                     $userService->saveUserFromArray($values,false);
-//                    
+                    
                     $mailService->sendMail($values['email'],'Rejestracja w Tomek CMS przebiegła pomyślnie',$mailService::prepareRegistrationMail($values['token']));
                 
-                    
-                    
 		    TK_Helper::redirect('/user/register-complete');
 		
 		}
@@ -184,7 +180,7 @@ class User_Index extends Controller{
                 endif;
                 
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
-                echo "zle";exti;
+                echo "zle";exit;
                 exit;
         }
         
@@ -245,12 +241,17 @@ class User_Index extends Controller{
     
     
     public function inviteToGame(){
+        Service::loadModels('team', 'team');
         $this->getLayout()->setLayout('page');
         
         $userService = parent::getService('user','user');
         $inviteService = parent::getService('user','invite');
         
         $user = $userService->getAuthenticatedUser();
+        
+        $userInvites = $inviteService->getUserInvites($user['id']);
+        $userAcceptedInvites = $userService->getUsersWithReferer($user['id']);
+        
 	$form = $this->getForm('user','InviteToGame');
         $this->view->assign('form',$form);
         if($form->isSubmit()){
@@ -259,33 +260,35 @@ class User_Index extends Controller{
                 
                 $email = $_POST['email'];
                 
-                if($inviteService->checkEmailInvited($email, $user['id'])){
-                    echo "this email was already invited by you";exit;
-                }
-                
-                if($userService->getUser($email,'email')){
-                    echo "this guy is already in the game";exit;
-                }
-                
                 if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-                  echo("$email is invalid email address"); exit;
+                    TK_Helper::redirect('/user/invite-to-game?msg=not+email');
                 }
-                $invite = $inviteService->saveInviteFromArray($email,$user['id']);
-                
-                echo "Hello, your friend ".$user['username']." has invited you to Fast Rally. To join, please click <a href='/user/register/ref/".$invite['id']."'> join fast rally</a>";
-                exit;
-                $user = $userService->getUser($values['email'], 'email');
-                if ($user && !$user->get('active')):
-                    $this->view->messages()->add($this->view->translate('User is not active'), 'error');
-                else:
-                    if($userService->authenticate($user,$values['password'])):
-                        TK_Helper::redirect('/account/my-account');
-                    endif;
-                endif;
-                
+                elseif($inviteService->checkEmailInvited($email, $user['id'])){
+                    TK_Helper::redirect('/user/invite-to-game?msg=user+already+invited');
+                }
+                elseif($userService->getUser($email,'email')){
+                    TK_Helper::redirect('/user/invite-to-game?msg=user+already+ingame');
+                }
+                else{
+                    $invite = $inviteService->saveInviteFromArray($email,$user['id']);
+
+                    TK_Helper::redirect('/user/invite-to-game?msg=user+invited');
+//                    echo "Hello, your friend ".$user['username']." has invited you to Fast Rally. To join, please click <a href='/user/register/ref/".$invite['id']."'> join fast rally</a>";
+//                    exit;
+//                    $user = $userService->getUser($values['email'], 'email');
+//                    if ($user && !$user->get('active')):
+//                        $this->view->messages()->add($this->view->translate('User is not active'), 'error');
+//                    else:
+//                        if($userService->authenticate($user,$values['password'])):
+//                            TK_Helper::redirect('/account/invite-to-game');
+//                        endif;
+//                    endif;
+                }
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
         }
+        $this->view->assign('userAcceptedInvites',$userAcceptedInvites);
+        $this->view->assign('userInvites',$userInvites);
 //            $to = 'kardi31@tlen.pl';
 //
 //    $subject = 'Website Change Request';

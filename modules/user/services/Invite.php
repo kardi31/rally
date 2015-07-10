@@ -21,20 +21,6 @@ class InviteService extends Service{
         return $this->inviteTable->findOneBy($field,$id,$hydrationMode);
     }
     
-    public function authenticate(User_Model_Doctrine_Invite $invite,$password){
-        $enteredPassword = TK_Text::encode($password, $invite['salt']);
-        if($enteredPassword==$invite['password']):
-            $_SESSION['invite'] = serialize($invite);
-            $_SESSION['role'] = $invite['role'];
-            return true;
-        else:
-            return false;
-        endif;
-        
-    }
-    
-    
-    
     public function saveInviteFromArray($email,$user_id){
         $invite = $this->inviteTable->getRecord();
         $invite['user_id'] = $user_id;
@@ -58,21 +44,11 @@ class InviteService extends Service{
         }
     }
     
-    public function logout(){
-        unset($_SESSION['invite']);
-        unset($_SESSION['role']);
-        return true;
-    }
-    
-    public function addPremium($invite,$premium){
-        if(!$invite instanceof Invite_Model_Doctrine_Invite){
-            $invite = $this->getInvite($invite);
-        }
-	$currentPremium = $invite->get('premium');
-	$newPremium = (int)$currentPremium+(int)$premium;
-	$invite->set('premium',$newPremium);
-	$invite->save();
-	return $invite;
+    public function getUserInvites($user_id){
+        $q = $this->inviteTable->createQuery('i');
+        $q->select('i.*');
+        $q->addWhere("i.user_id = ?",$user_id);
+        return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
     }
     
     public function getFullInvite($id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){

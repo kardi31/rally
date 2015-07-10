@@ -40,6 +40,18 @@ class Cron_Admin extends Controller{
         echo "good";
     }
     
+     public function calculateAllTeamsCarValues(){
+        $view= $this->view;
+        $view->setNoRender();
+        $peopleService = parent::getService('car','car');
+        $teamService = parent::getService('team','team');
+        $leagueService = parent::getService('league','league');
+        Service::loadModels('rally', 'rally');
+        $season = $leagueService->getCurrentSeason();
+        $peopleService->calculateNewValuesForAllCars($season);
+        echo "good";
+    }
+    
     public function createRalliesForAllLeagues(){
         $view= $this->view;
         $view->setNoRender();
@@ -64,19 +76,31 @@ class Cron_Admin extends Controller{
         
         $refererUsers = $userService->getUsersWithRefererNotPaid();
         foreach($refererUsers as $user):
-            // if created at least 7 days ago
-            if(strtotime($user['created_at'])>strtotime('-7 days')){
+            // if created at least 30 days ago
+            if(strtotime($user['created_at'])>strtotime('-30 days')){
                 continue;
             }
-            // if logged within last 3 days ago
-            if(!(strtotime($user['last_active'])>strtotime('-3 days'))){
+            // if logged within last 5 days ago
+            if(!(strtotime($user['last_active'])>strtotime('-7 days'))){
+                $user->referer_not_active = 1;
+                $user->save();
                 continue;
             }
             
             $values = array();
             $values['description'] = 'Referencing FastRally to user '.$user['username'];
             $values['income'] = 1;
-            $userService->addPremium($user['referer'],10,$values);
+            
+            
+            if($user['gold_member_expire']!=null){
+                $amount = 100;
+            }
+            else{
+                $amount = 10;
+            }
+            
+            
+            $userService->addPremium($user['referer'],$amount,$values);
             $user->referer_paid = 1;
             $user->save();
         endforeach;

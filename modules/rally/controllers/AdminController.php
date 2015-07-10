@@ -507,6 +507,42 @@ class Rally_Admin extends Controller{
 	$this->view->assign('form',$form);
      }
      
+     
+     public function addLeagueRally(){
+	 
+        $rallyService = parent::getService('rally','rally');
+	
+	$surfaces = $rallyService->getAllSurfaces(Doctrine_Core::HYDRATE_ARRAY);
+
+	$form = $this->getForm('rally','AddRally');
+	
+        $form->getElement('surface1')->addMultiOptions($surfaces,true);
+        $form->getElement('surface2')->addMultiOptions($surfaces,true);
+        $form->getElement('surface3')->addMultiOptions($surfaces,true);
+	
+	if(isset($_POST['form_send'])){
+		Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                
+                $values = $_POST;
+		
+		$rally = $rallyService->saveRally($values);
+		
+		if(isset($_POST['submit']))
+		    TK_Helper::redirect('/admin/rally/list-rally');
+		
+		if(isset($_POST['save_and_add_new']))
+		    TK_Helper::redirect('/admin/rally/add-rally');
+		
+		if(isset($_POST['save_and_stay']))
+		    TK_Helper::redirect('/admin/rally/edit-rally/id/'.$rally['id']);
+		
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+	    
+	}
+	
+	$this->view->assign('form',$form);
+     }
+     
      public function calculateStageTime(){
 	 
          $view = $this->view;

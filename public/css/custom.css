@@ -43,6 +43,7 @@
   7. Premium
     7.1 My premium
     7.2 Gold membership
+    7.3 Invite to game
   8. Static pages
 */
 /*
@@ -1406,6 +1407,44 @@ footer{
     .alert-danger a{
         color:#b94a48;
         text-decoration: underline;
+    }
+    
+    /*
+        7.3 Invite to game
+    */
+    
+    .inviteToGame{
+        margin-top:20px;
+    }
+    
+    .inviteToGame input[type="text"]{
+        width:200px;
+        margin-bottom:10px;
+    }
+    
+    .invitedToGame ol{
+        padding-left:20px;
+        margin-top:10px;
+    }
+    
+    .invitedToGame strong:first-of-type{
+        margin-top:0px;
+    }
+    
+    .invitedToGame strong{
+        text-decoration:underline;
+        margin-top:20px;
+        display:block;
+    }
+    .invitedToGame table{
+        margin-top:10px;
+    }
+    .invitedToGame td{
+        padding:5px 10px;
+    }
+    .invitedToGame th{
+        font-size:14px;
+        padding:5px 10px;
     }
     
     /*

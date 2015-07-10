@@ -201,5 +201,13 @@ class UserService extends Service{
             $this->refreshAuthentication();
         }
     }
+    
+    
+    public function getUsersWithReferer($user_id){
+        $q = $this->userTable->createQuery('u');
+        $q->select('u.referer,u.referer_paid,u.email,u.username,u.email,u.created_at');
+        $q->addWhere("u.referer = ?",$user_id);
+        return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
+    }
 }
 ?>

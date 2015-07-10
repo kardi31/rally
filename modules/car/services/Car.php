@@ -25,6 +25,8 @@ class CarService extends Service{
 	2000,320,200,2.3
     );
     
+    protected $basicCarValue = 20000;
+    
     protected static $carMileageWage = 4;
     
     public function __construct(){
@@ -153,6 +155,46 @@ class CarService extends Service{
 	return $record;
     }
     
+    public function calculateCarValue($car){
+	// get from people object 
+	// only the elements which contains 
+	// driver skills
+	$carSkills = array_intersect_key($car['Model']->toArray(), array_flip(self::$carModelSkills));
+	// get the difference between max skill(10) and people skills. Then get % of it and multiply by skill wage
+	$props = array_map(function($skills,$wages,$max){ return (1-($max-$skills)/$max)*$wages; }, $carSkills,self::$carModelSkillsWages,self::$carModelSkillsMax);
+	
+	// different calculation for acceleration because less time is better
+	// (1 - (min acceleration / car acceleration)) * wage
+	$props[3] = (1-((self::$carModelSkillsMax[3])/$carSkills['acceleration'])) * self::$carModelSkillsWages[3];
+	
+	// calculate mileage wage
+	$props[4] = self::calculateMileageWage($car->toArray());
+	
+	
+	$wages = self::$carModelSkillsWages;
+	
+	// add mileage wage to wages
+	array_push($wages, self::$carMileageWage);
+	
+	// calculate weighted average
+	$weightedAverage = array_sum($props)/array_sum($wages);
+	
+	// multiple by 2.5 because car is the most important thing
+	
+	$weightedAverage *= 2.5;
+	
+	// add random factor(+10%/-10% of time)
+	$random = TK_Text::float_rand(0.9, 1.1);
+	$result = $weightedAverage*$random;
+        
+        $value = round($this->basicCarValue*$result);
+        $upkeep = round($value*0.0531);
+        $car->set('value',$value);
+        $car->set('upkeep',(int)$upkeep);
+        $car->save();
+	return $car;
+    }
+    
     public static function getCarLate($car){
 	// get from people object 
 	// only the elements which contains 
@@ -221,6 +263,22 @@ class CarService extends Service{
 	$record->save();
 	
 	return $record;
+    }
+    
+    
+    public function getAllActiveCarsNotCalculated($season){
+        $q = $this->carTable->createQuery('c');
+        $q->addWhere('c.last_season_value_id < ?',$season);
+        return $q->execute();
+    }
+    
+    public function calculateNewValuesForAllCars($season){
+        $cars = $this->getAllActiveCarsNotCalculated($season);
+        foreach($cars as $car):
+            $car = $this->calculateCarValue($car);
+            $car->set('last_season_value_id',$season);
+            $car->save();
+        endforeach;
     }
 }
 ?>

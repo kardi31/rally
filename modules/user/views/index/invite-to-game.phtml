@@ -1,13 +1,71 @@
+<?php 
+if(isset($_GET['msg'])){ 
+    if($_GET['msg']=="user already ingame"){
+        $this->showError('This email is already registered in Fast Rally');
+    }
+    elseif($_GET['msg']=="not email"){
+        $this->showError('This is not a valid email address.');
+    }
+    elseif($_GET['msg']=="user already invited"){
+        $this->showError('Your have already invited this email address.');
+    }
+    elseif($_GET['msg']=="user invited"){
+        $this->showSuccess('Your invitation has been send.');
+    }
+}
+?>
 <div class="mainUserBox">
     <h4 class="boxHeader">Invite your friend to Fast Rally</h4>
     <div class='staticWrapper'>
-        <form action="/user/invite-to-game" method="POST">
+        If your friend is active for over a month, we will reward you with 10 <img class="coin" src="/images/layout/coin.png"><br />
+        If your friend during this month gets premium to access our great additional features, you will receive additional 100 <img class="coin" src="/images/layout/coin.png"> <br />
+        Don't hesitate! Tell your friends about Fast Rally!
+        <form class='inviteToGame' action="/user/invite-to-game" method="POST">
             <?php echo $form->getElement('email')->renderElement(); ?>
             <?php echo $form->getElement('submit')->renderElement(); ?>
         </form>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere mi nec nisl hendrerit fermentum. Nunc luctus est odio, convallis rhoncus dui varius blandit. Mauris dictum dui vitae massa fringilla, eget scelerisque diam placerat. Pellentesque sed lacus gravida, lacinia sem in, imperdiet orci. Phasellus cursus consequat egestas. Integer feugiat imperdiet libero. Phasellus ac libero vel diam fermentum mollis. Vestibulum fermentum vestibulum lobortis. Aenean vel placerat dolor, id scelerisque odio. Donec rutrum ligula ac interdum tempus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis viverra finibus quam, ut malesuada dui elementum venenatis. Pellentesque in elementum metus.
+        
+        <br />
+        <span class='invitedToGame'>
+            <strong>Send invitations</strong>
+            <ol>
+            <?php foreach($userInvites as $invitation): ?>
+                <li><?= $invitation['email']; ?></li>
 
-Sed condimentum, purus eu euismod euismod, urna augue tempus risus, ac imperdiet felis sapien eget est. Sed lobortis gravida tincidunt. Cras nisl purus, tincidunt et pellentesque quis, volutpat at enim. Vestibulum pellentesque libero at sapien aliquet, vitae ultrices augue pulvinar. Vivamus nec mi velit. Vestibulum eget ultricies leo. Etiam eu interdum mauris, quis pellentesque nulla. Nunc interdum rutrum lorem sit amet iaculis. Quisque et semper nunc, nec mattis felis. Vestibulum urna neque, hendrerit sit amet dictum vitae, blandit vitae lorem. Fusce pulvinar faucibus nibh ac cursus.
+            <?php endforeach; ?>
+            </ol>
+
+            <strong>Accepted invitations</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Registration date</th>
+                        <th>Referer paid</th>
+                    </tr>
+                </thead>
+                <?php foreach($userAcceptedInvites as $acceptedInvite): ?>
+                    <tr>
+                        <td>
+                            <?= $acceptedInvite['email']; ?>
+                        </td>
+                        <td>
+                            <?= TK_Text::timeFormat($acceptedInvite['created_at'],'d/m/y'); ?>
+                        </td>
+                        <td>
+                            <?php
+                                if(!$acceptedInvite['referer_paid']){
+                                    echo '<span class="label label-danger">No</span>';
+                                }
+                                else{
+                                    echo '<span class="label label-success">Yes</span>';
+                                }
+                            ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </span>
     </div>
 </div>
 

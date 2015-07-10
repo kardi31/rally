@@ -14,6 +14,7 @@
  * @property integer $upkeep
  * @property timestamp $last_name_change
  * @property boolean $on_market
+ * @property integer $last_season_value_id
  * @property Car_Model_Doctrine_CarModels $Model
  * 
  * @package    ##PACKAGE##
@@ -62,6 +63,11 @@ abstract class Car_Model_Doctrine_BaseCar extends Doctrine_Record
         $this->hasColumn('on_market', 'boolean', null, array(
              'type' => 'boolean',
              'default' => 0,
+             ));
+        $this->hasColumn('last_season_value_id', 'integer', 11, array(
+             'type' => 'integer',
+             'default' => 0,
+             'length' => '11',
              ));
 
         $this->option('type', 'MyISAM');

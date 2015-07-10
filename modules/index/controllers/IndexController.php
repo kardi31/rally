@@ -22,7 +22,6 @@ class Index_Index extends Controller{
     
     public function index(){
         $this->getLayout()->setLayout('main');
-        
         $userService = parent::getService('user','user');
         
         $user = $userService->getAuthenticatedUser();

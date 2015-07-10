@@ -46,8 +46,6 @@ class Element{
             $this->elementDisplay .= "<div class='formSubmitWrapper'>";
             $this->elementDisplay .= "<input value='".$this->label."' name='".$this->name."' ".$this->renderParams()." id='".$this->name."' type='".$this->type."' class='".$this->renderClasses()."' />";
             $this->elementDisplay .= "</div>";
-	elseif($this->type=="select"):
-            
         elseif($this->type=="checkbox"):
             $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
             $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
