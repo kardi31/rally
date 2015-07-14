@@ -8,6 +8,7 @@
  * @property integer $id
  * @property string $name
  * @property string $slug
+ * @property text $description
  * @property timestamp $date
  * @property boolean $active
  * @property boolean $league_rally
@@ -44,6 +45,9 @@ abstract class Rally_Model_Doctrine_BaseRally extends Doctrine_Record
         $this->hasColumn('slug', 'string', 255, array(
              'type' => 'string',
              'length' => '255',
+             ));
+        $this->hasColumn('description', 'text', null, array(
+             'type' => 'text',
              ));
         $this->hasColumn('date', 'timestamp', null, array(
              'type' => 'timestamp',

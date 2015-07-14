@@ -723,7 +723,12 @@ footer{
         -moz-column-count: 3;
         -webkit-column-count: 3;
     }
-    
+    .RallyStages li{
+        display: inline-block;
+    }
+    .rallyList .finished,.rallyList .finished a:not(.label){
+        color:#999;
+    }
     .showRallyBox{
         width:80%;
         margin-top:0px;

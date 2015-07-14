@@ -258,7 +258,6 @@ class CarService extends Service{
         if(!(isset($values['id'])&&$record = $this->getCarModel($values['id']))){
             $record = $this->carModelTable->getRecord();
         }
-	
 	$record->fromArray($values);
 	$record->save();
 	

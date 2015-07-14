@@ -129,7 +129,6 @@ class PeopleService extends Service{
     
     public function getFreePilots(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $busyDrivers = $this->getTeamBusyPilots($team,$date,Doctrine_Core::HYDRATE_SINGLE_SCALAR);
-//        var_dump($busyDrivers);exit;
 	$q = $this->peopleTable->createQuery('p');
 	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name,dr.*,r.*');
 	$q->leftJoin('p.Team t');
@@ -146,7 +145,6 @@ class PeopleService extends Service{
 	$q->leftJoin('p.Team t');
 	$q->leftJoin('p.PilotRallies dr');
 	$q->leftJoin('dr.Rally r');
-        $q->addWhere('r.friendly = 1');
         $q->addWhere("p.job like 'pilot'");
 	$q->addWhere('t.id = ?',$team['id']);
 	$q->addWhere('r.date like ?',substr($date,0,10)."%");

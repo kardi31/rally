@@ -16,8 +16,7 @@
 <div class="mainUserBox showRallyWrapper">
     <h4 class="boxHeader"><?php echo $rally['name']; ?></h4>
     <div class="showRallyBox <?php if(!$rally['finished']) echo "active"?> mainUserBox" id="details">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <br /><br />
+        <?php if(strlen($rally['description'])) echo $rally['description']."<br /><br />"; ?>
         
         Prize pool : <?php echo $prizePool."$"; ?><br />
         Signed crews : <?php echo $crewCounter; ?><br />
@@ -34,7 +33,7 @@
             <h3>Sign up</h3>
             <form method="POST">
                 <div class='formElemWrapper'>
-                    <label for='driver_id' class="col-md-3 control-label" type='text'>Kierowca</label>
+                    <label for='driver_id' class="col-md-3 control-label" type='text'>Driver</label>
                     <?php echo $form->getElement('driver_id')->renderElement(); ?>
                 </div>
                 <div class='formElemWrapper'>
@@ -42,11 +41,11 @@
                     <?php echo $form->getElement('pilot_id')->renderElement(); ?>
                 </div>     
                 <div class='formElemWrapper'>
-                    <label for='car_id' class="col-md-3 control-label"  type='text'>Samochód</label>
+                    <label for='car_id' class="col-md-3 control-label"  type='text'>Car</label>
                     <?php echo $form->getElement('car_id')->renderElement(); ?>
                 </div>
                 <div class='formElemWrapper'>
-                    <label for='risk' class="col-md-3 control-label"  type='text'>Ryzyko</label>
+                    <label for='risk' class="col-md-3 control-label"  type='text'>Risk</label>
                     <?php echo $form->getElement('risk')->renderElement(); ?>
                 </div>
                 <div class='formSubmitWrapper'>
@@ -77,9 +76,9 @@
         <table>
             <tr>
                 <th></th>
-                <th>Załoga</th>
-                <th>Samochód</th>
-                <th>Nazwa zespołu</th>
+                <th>Crew</th>
+                <th>Car</th>
+                <th>Team</th>
             </tr>
             <?php foreach($rally['Crews'] as $key => $crew): ?>
                     <tr>
@@ -105,7 +104,7 @@
         <?php if($rally['big_awards']): ?>
                 <img src="/images/b_letter.gif" />
                 <br />
-                Ilosc zalog : <?php echo $crewCounter; ?><br />
+                Number of crews : <?php echo $crewCounter; ?><br />
                 <h3>Prizes</h3>
                 <?php 
                 foreach($rallyPrizes as $key => $rallyPrize): 

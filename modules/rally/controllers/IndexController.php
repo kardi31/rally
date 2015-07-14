@@ -19,7 +19,7 @@ class Rally_Index extends Controller{
         $rally = $rallyService->getRally($GLOBALS['urlParams']['slug'],'slug');
 	
         if($rally['friendly']){
-                    TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$rally['slug']);
+            TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$rally['slug']);
         }
         
         $peopleService = parent::getService('people','people');
@@ -49,31 +49,33 @@ class Rally_Index extends Controller{
         
 	
         if($user){
-            $freeDrivers = $peopleService->getFreeDrivers($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
-            $freePilots = $peopleService->getFreePilots($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
-            $freeCars = $carService->getFreeCars($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
-	
-            $form = $this->getForm('rally','JoinRally');
-            $form->getElement('driver_id')->addMultiOptions($freeDrivers,true);
-            $form->getElement('pilot_id')->addMultiOptions($freePilots,true);
-            $form->getElement('car_id')->addMultiOptions($freeCars,true);
-            $this->view->assign('form',$form);
+            if(!$rally['league_rally']||$rally['league']==$user['Team']['league_name']){
+                $freeDrivers = $peopleService->getFreeDrivers($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
+                $freePilots = $peopleService->getFreePilots($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
+                $freeCars = $carService->getFreeCars($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
 
-            if($form->isSubmit()){
-                if($form->isValid()){
-                    Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                $form = $this->getForm('rally','JoinRally');
+                $form->getElement('driver_id')->addMultiOptions($freeDrivers,true);
+                $form->getElement('pilot_id')->addMultiOptions($freePilots,true);
+                $form->getElement('car_id')->addMultiOptions($freeCars,true);
+                $this->view->assign('form',$form);
 
-                    $values = $_POST;
+                if($form->isSubmit()){
+                    if($form->isValid()){
+                        Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
 
-                    $rallyService->saveRallyCrew($values,$rally,$user['Team']);
+                        $values = $_POST;
 
-                    TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug']);
+                        $rallyService->saveRallyCrew($values,$rally,$user['Team']);
 
-                    Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+                        TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug']);
+
+                        Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+                    }
                 }
-            }
 	
-        $this->view->assign('form',$form);
+                $this->view->assign('form',$form);
+            }
         }
         
         $startDate = new DateTime($rally['date']);
@@ -100,6 +102,19 @@ class Rally_Index extends Controller{
         
         $futureTeamRallies = $rallyService->getAllFutureTeamRallies($user['Team']['id'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
 
+        $this->view->assign('rallies',$rallies);
+        $this->view->assign('futureTeamRallies',$futureTeamRallies);
+    }
+    
+    public function myLeagueRallies(){
+        
+        Service::loadModels('team', 'team');
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        
+        $rallyService = parent::getService('rally','rally');
+        $rallies = $rallyService->getAllFutureLeagueRallies($user['Team']['league_name'],Doctrine_Core::HYDRATE_ARRAY);
+        $futureTeamRallies = $rallyService->getAllFutureTeamLeagueRallies($user['Team'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
         $this->view->assign('rallies',$rallies);
         $this->view->assign('futureTeamRallies',$futureTeamRallies);
     }

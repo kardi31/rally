@@ -524,8 +524,12 @@ class Rally_Admin extends Controller{
 		Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
-		
+		$values['league_rally'] = 1;
 		$rally = $rallyService->saveRally($values);
+                for($i=0;$i<17;$i++){
+                    $rallyService->saveRallyStage($rally,$values['stage_name'][$i],$values['stage_length'][$i],$i);
+                }
+                
 		
 		if(isset($_POST['submit']))
 		    TK_Helper::redirect('/admin/rally/list-rally');

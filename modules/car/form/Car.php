@@ -6,6 +6,7 @@ class Car extends Form{
         $this->createElement('text','capacity',array(),'Capacity')->addClass('input-medium');
         $this->createElement('text','horsepower',array(),'Horse power')->addClass('input-medium');
         $this->createElement('text','max_speed',array(),'Max speed')->addClass('input-medium');
+        $this->createElement('text','photo',array(),'Photo')->addClass('input-medium');
         $acceleration = $this->createElement('text','acceleration',array(),'Acceleration');
         $acceleration->addClass('input-medium decimalMask');
         $league = $this->createElement('select','league',array(),'League');

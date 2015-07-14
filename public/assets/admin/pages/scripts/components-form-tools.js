@@ -382,9 +382,9 @@ var ComponentsFormTools = function () {
         $("#mask_phone").inputmask("mask", {
             "mask": "(999) 999-9999"
         }); //specifying fn & options
-        $(".timePicker").inputmask({
-            "mask": "99-9999999"
-        }); //specifying options only
+//        $(".timePicker").inputmask({
+//            "mask": "99-9999999"
+//        }); //specifying options only
         $("#mask_number").inputmask({
             "mask": "9",
             "repeat": 10,

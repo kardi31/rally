@@ -19,7 +19,7 @@
                 foreach($team['Cars'] as $car):
                     if(strlen($car['Model']['photo'])){
                         ?>
-                        <img src="/media/photos/cars/<?= $car['Model']['photo']; ?>" />
+                        <img src="/media/cars/<?= $car['Model']['photo']; ?>" style='max-width:150px;' />
                         <?php
                     }
                     else{
@@ -50,3 +50,8 @@ if($authenticatedUser['id']!=$team['User']['id']){
     } 
 }
 ?>
+<?php if(strlen($authenticatedUser['Team']['Sponsor']['name'])): ?>
+<img src='/media/sponsor/<?= $authenticatedUser['Team']['Sponsor']['logo']; ?>' title='<?= $authenticatedUser['Team']['Sponsor']['name']; ?>' alt='<?= $authenticatedUser['Team']['Sponsor']['name']; ?>' />
+
+<?php endif; ?>
+

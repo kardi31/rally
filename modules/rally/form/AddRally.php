@@ -9,9 +9,8 @@ class AddRally extends Form{
         $date->addAdminDefaultClasses();
         $date->addParam('readonly', '');
         $date->addParam('size', '16');
-        $min_time = $this->createElement('text','min_time',array(),'Minimalny czas');
+        $min_time = $this->createElement('textarea','description',array(),'Minimalny czas');
         $min_time->addAdminDefaultClasses();
-        $min_time->addClass('timePicker');
         $surface1 = $this->createElement('select','surface1',array(),'Nawierzchnia 1');
         $surface1->addClass('form-control');
         $surface2 = $this->createElement('select','surface2',array(),'Nawierzchnia 2');

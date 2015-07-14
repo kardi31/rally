@@ -16,6 +16,8 @@ Rally:
       type: string(255)
     slug:
       type: string(255)
+    description:
+      type: text
     date:
       type: timestamp
     active:

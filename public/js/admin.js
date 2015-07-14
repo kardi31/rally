@@ -29,7 +29,7 @@ $.extend($.inputmask.defaults, {
         });
 
 $(".timePicker").inputmask({
-    "mask": "00:99:99"
+    "mask": "09:99:99"
 });
 
 $(".decimalMask").inputmask({

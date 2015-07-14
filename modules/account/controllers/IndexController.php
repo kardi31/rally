@@ -141,7 +141,8 @@ class Account_Index extends Controller{
         
         $sponsors = $sponsorService->getAllSponsorList($user['Team']['sponsor_id']);
         
-        if(isset($_POST['submit_sponsor'])&&strlen($_POST['sponsor_id'])>0){
+        
+        if(isset($_POST['sponsor_id'])&&strlen($_POST['sponsor_id'])>0){
             $team->set('sponsor_id',$_POST['sponsor_id']);
             $team->save();
             TK_Helper::redirect('/account/sponsor/');

@@ -34,7 +34,7 @@ class Car_Admin extends Controller{
              $row = array();
              $row[] = '<input type="checkbox" name="id[]" value="'.$result['id'].'" />';
              $row[] = $result['id'];
-             $row[] = $result['name'];
+             $row[] = '<img src="/media/cars/'.$result['photo'].'" style="width:40px;margin-right:20px;" />'.$result['name'];
              $row[] = $result['capacity'];
              $row[] = $result['horsepower'];
              $row[] = $result['max_speed'];
