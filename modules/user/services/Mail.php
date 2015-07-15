@@ -34,9 +34,9 @@ class MailService extends Service{
         $mail->Port = 465;                                    // TCP port to connect to
         $mail->CharSet = "UTF-8";
         $mail->From = 'tomekvarts@o2.pl';
-        $mail->FromName = 'Tomek CMS';
+        $mail->FromName = 'FastRally';
         $mail->addAddress($mailTo);
-        $mail->addReplyTo('tomekvarts@o2.pl', 'Tomek CMS');
+        $mail->addReplyTo('tomekvarts@o2.pl', 'FastRally');
 
         $mail->isHTML(true);                                  // Set email format to HTML
 
@@ -47,16 +47,22 @@ class MailService extends Service{
     }
     
     public static function prepareRegistrationMail($token){
-        $text = "Dziękujemy za rejestracje w Tomek CMS. Aby aktywować konto kliknij w link ";
-        $text .= "<a href='http://ral.localhost/user/activate/token/".$token."'>http://ral.localhost/user/activate/token/".$token."</a>";
+        $text = "Thank you for your registration in FastRally.<br />";
+        $text .= "To activate your account please click the link below or paste the url in your browser.<br />";
+        $text .= "<a href='http://".$_SERVER['SERVER_NAME']."/user/activate/token/".$token."'>http://".$_SERVER['SERVER_NAME']."/user/activate/token/".$token."</a><br />";
+        $text .= "Let your journey in world of Fast Rally begin.<br /><br />";
+        $text .= "FastRally Team";
         
         return $text;
     }
     
      public static function prepareConfirmActivationMail(){
-        $text = "Twoje konto w Tomek CMS zostało pomyślnie aktywowane. Przejdź na stronę ";
-        $text .= "<a href='http://ral.localhost/user/login/'>http://ral.localhost/user/login/</a>";
-        $text .= " aby się zalogować";
+        $text = "Congratulations! Your account in FastRally is now active <br />";
+        $text .= "You can now fully enjoy the world of FastRally.<br />";
+        $text .= "Log in with the link below and compete with other drivers on FastRally routes.<br />";
+        $text .= "<a href='http://".$_SERVER['SERVER_NAME']."/user/login/'>http://".$_SERVER['SERVER_NAME']."/user/login/</a><br />";
+        $text .= "<br />Kind regards, <br />";
+        $text .= "FastRally Team";
         return $text;
     }
     

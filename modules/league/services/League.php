@@ -8,6 +8,50 @@ class LeagueService extends Service{
     protected $maxTeamsInLeague = 12;
     protected $season = 1;
     
+    private static $leagues = array(
+        '1' => 1,
+        '2.1' => 2,
+        '2.2' => 2,
+        '2.3' => 2,
+        '3.1' => 3,
+        '3.2' => 3,
+        '3.3' => 3,
+        '3.4' => 3,
+        '3.5' => 3,
+        '3.6' => 3,
+        '3.7' => 3,
+        '3.8' => 3,
+        '3.9' => 3,
+        '4.1' => 4,
+        '4.2' => 4,
+        '4.3' => 4,
+        '4.4' => 4,
+        '4.5' => 4,
+        '4.6' => 4,
+        '4.7' => 4,
+        '4.8' => 4,
+        '4.9' => 4,
+        '4.10' => 4,
+        '4.11' => 4,
+        '4.12' => 4,
+        '4.13' => 4,
+        '4.14' => 4,
+        '4.15' => 4,
+        '4.16' => 4,
+        '4.17' => 4,
+        '4.18' => 4,
+        '4.19' => 4,
+        '4.20' => 4,
+        '4.21' => 4,
+        '4.22' => 4,
+        '4.23' => 4,
+        '4.24' => 4,
+        '4.25' => 4,
+        '4.26' => 4,
+        '4.27' => 4
+    );
+    
+    
     private static $instance = NULL;
 
     static public function getInstance()
@@ -26,6 +70,20 @@ class LeagueService extends Service{
         return $this->carTable->findAll();
     }
     
+    
+    public function getLeague($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        return $this->leagueTable->findOneBy($field,$id,$hydrationMode);
+    }
+    
+    public function saveLeagueFromArray($data){
+	
+	$league = $this->leagueTable->getRecord();
+	$league->fromArray($data);
+	$league->save();
+	
+        return $league;
+    }
+    
     public function appendTeamToLeague($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	// check if there is any not full league
         $q = $this->seasonTable->createQuery('s');
@@ -42,7 +100,6 @@ class LeagueService extends Service{
 	else{
 	    $league = $result;
 	}
-        
 	// save team to league
 	$newTeamData = array(
 	  'team_id' => $team_id,
@@ -82,9 +139,18 @@ class LeagueService extends Service{
 	$q->select('s.league_name');
         $q->groupBy('s.league_name');
 	$full_league_list = $q->execute(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
-        
         // if there's just one league
-        if(!is_array($full_league_list)){
+        if(!is_array($full_league_list)||empty($full_league_list)){
+            if(!strlen($full_league_list)){
+                $league['league_name'] = key(self::$leagues);
+                $league['league_level'] = (int)key(self::$leagues);
+                if(!$league = $this->getLeague(key(self::$leagues),'league_name')){
+                    $league = $this->saveLeagueFromArray($league);
+                }
+                return $league;
+                
+            }
+            
             $league_id = $full_league_list;
             $full_league_list = array();
             $full_league_list[] = $league_id;
@@ -99,24 +165,6 @@ class LeagueService extends Service{
 	return $league_query->fetchOne(array(),$hydrationMode);
     }
     
-    
-    
-    public function createNewTeamCar($model_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
-        $record = $this->carTable->getRecord();
-	
-	$data = array(
-	  'model_id' => $model_id,
-	  'value' => '100000',
-	  'upkeep' => '1000',
-	  'mileage' => 0,
-	  'name' => 'Samochod '.rand()
-	);
-	
-	$record->fromArray($data);
-	$record->save();
-	
-	return $record;
-    }
     
     public function getCurrentSeason(){
         return $this->season;

@@ -3,41 +3,49 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Premium.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/my-friendly-rallies.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/models/User.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/people/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/cron/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Rally.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/views/index/show-team.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/services/User.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/privacy-policy.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/css/custom.css</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Helper.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/TestController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/show-calendar.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/people/services/People.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Rally.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/my-friendly-rallies.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/cron/controllers/AdminController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-account.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-people.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/library/TK/Helper.php</file>
-            <file>file:/C:/xampp/htdocs/ral/public/css/custom.css</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/people/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Form.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/form/Car.php</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Controller.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-cars.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/menu.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/privacy-policy.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/invite-to-game.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/car/services/Car.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/cron/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/people/data/schema/schema.yml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/car/data/schema/schema.yml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/form/InviteToGame.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Router.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/index.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/register.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Register.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Premium.php</file>
-            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Element.php</file>
-            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Form.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/models/User.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/models/BaseUser.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/TestController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/services/User.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/services/Invite.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/views/admin/add-car.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/models/BaseUser.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/sponsor.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/data/schema/schema.yml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/invite-to-game.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-people.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/services/Car.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/people/data/schema/schema.yml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-account.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Element.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/people/services/People.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Register.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/menu.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/views/admin/edit-car.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/cron/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/InviteToGame.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/register.phtml</file>
         </group>
     </open-files>
 </project-private>

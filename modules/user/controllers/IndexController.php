@@ -18,6 +18,7 @@ class User_Index extends Controller{
     public function register(){
         $this->getLayout()->setLayout('main');
         $userService = parent::getService('user','user');
+        
         $mailService = parent::getService('user','mail');
         
         if(isset($_GET['ref'])&&is_numeric($_GET['ref'])){
@@ -37,11 +38,13 @@ class User_Index extends Controller{
             $form->getElement('email')->setValue($invite['email']);
         }
         
+        try{
         if($form->isSubmit()){
             if($form->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
+                echo "pp";exit;
                 if($userService->getUser($values['email'],'email')!==false){
                     $form->setError('Ten adres email jest już zarejestrowany');
                 }
@@ -59,7 +62,7 @@ class User_Index extends Controller{
                     
                     $userService->saveUserFromArray($values,false);
                     
-                    $mailService->sendMail($values['email'],'Rejestracja w Tomek CMS przebiegła pomyślnie',$mailService::prepareRegistrationMail($values['token']));
+                    $mailService->sendMail($values['email'],'Your FastRally registration',$mailService::prepareRegistrationMail($values['token']));
                 
 		    TK_Helper::redirect('/user/register-complete');
 		
@@ -67,22 +70,24 @@ class User_Index extends Controller{
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
         }
-        
+        }
+        catch(Exception $e){
+            var_dump($e->getMessage());exit;
+        }
         $this->view->assign('form',$form);
     }
     
     public function activate(){
-        
-               
+        $this->getLayout()->setLayout('main');
         $trainingService = parent::getService('people','training');
         $userService = parent::getService('user','user');
         $mailService = parent::getService('user','mail');
         
         if(!$user = $userService->getUser($GLOBALS['urlParams']['token'],'token')){
-            $message = "brak użytkownika";
+            $message = "No user";
         }
         elseif($user->get('active')){
-            $message = "Użytkownik już aktywowany";
+            $message = "User already activated";
         }
         else{
             
@@ -91,43 +96,49 @@ class User_Index extends Controller{
             $carService = parent::getService('car','car');
             $leagueService = parent::getService('league','league');
             
-	    
+            try{
+            
             $data = array();
             $data['user_id'] = $user['id'];
 	    
             $team = $teamService->createRandomTeam($data,$user['id']);
 	    
 	    $league = $leagueService->appendTeamToLeague($team['id']);
-	    
 	    $league_level = $league['League']['league_level'];
 	    
-	    $carModel = $carService->getRandomLeagueCar($league_level);
-	    $team['Car1'] = $carService->createNewTeamCar($carModel);
-            $team['Driver1'] = $peopleService->createRandomDriver($league_level);
-            $team['Pilot1'] = $peopleService->createRandomPilot($league_level);
 	    $team->set('league_name',$league['league_name']);
 	    $team->save();
 	    
-            $team->get('Pilot1')->set('team_id',$team['id']);
-            $team->get('Driver1')->set('team_id',$team['id']);
-            $team->save();
+            
+	    $carModel = $carService->getRandomLeagueCar($league_level);
+	    $car = $carService->createNewTeamCar($carModel,$team['id']);
+            $driver = $peopleService->createRandomDriver($league_level,$team['id']);
+            $pilot = $peopleService->createRandomPilot($league_level,$team['id']);
+            
+            $driver->set('team_id',$team['id']);
+            $driver->save();
+            $pilot->set('team_id',$team['id']);
+            $pilot->save();
+            $car->set('team_id',$team['id']);
+            $car->save();
             
             $user->set('active',1);
             $user->save();
-            $mailService->sendMail($user['email'],'Konto w Tomek CMS zostało aktywowane',$mailService::prepareConfirmActivationMail());
+            $mailService->sendMail($user['email'],'Your FastRally account is now active',$mailService::prepareConfirmActivationMail());
                 
-            $message = "Użytkownik pomyślnie aktywowany";
+            $message = "User has been activated";
+            }
+            catch(Exception $e){
+                var_dump($e->getMessage());exit;
+            }
         }
         
 	$this->view->assign('message',$message);
     }
     
     public function login(){
+        $this->getLayout()->setLayout('main');
         $userService = parent::getService('user','user');
-        
-        $user = $userService->getAuthenticatedUser();
-        if($user)
-            TK_Helper::redirect('/user/my-account');
         
         $form = new Form();
 //        $form->createElement('text','email',array('validators' => array('stringLength' => array('min' => 4,'max' => 30)),'Email'));
@@ -138,7 +149,6 @@ class User_Index extends Controller{
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
-//                var_dump($values);exit;
                 $user = $userService->getUser($values['login'], 'username');
                 if ($user && !$user->get('active')):
                     $this->view->messages()->add($this->view->translate('User is not active'), 'error');
@@ -147,7 +157,6 @@ class User_Index extends Controller{
                         TK_Helper::redirect('/account/my-account');
                     endif;
                 endif;
-                
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
         }
@@ -199,7 +208,7 @@ class User_Index extends Controller{
     }
     
     public function registerComplete(){
-	
+	$this->getLayout()->setLayout('main');
     }
     
     public function findUser(){
@@ -273,36 +282,12 @@ class User_Index extends Controller{
                     $invite = $inviteService->saveInviteFromArray($email,$user['id']);
 
                     TK_Helper::redirect('/user/invite-to-game?msg=user+invited');
-//                    echo "Hello, your friend ".$user['username']." has invited you to Fast Rally. To join, please click <a href='/user/register/ref/".$invite['id']."'> join fast rally</a>";
-//                    exit;
-//                    $user = $userService->getUser($values['email'], 'email');
-//                    if ($user && !$user->get('active')):
-//                        $this->view->messages()->add($this->view->translate('User is not active'), 'error');
-//                    else:
-//                        if($userService->authenticate($user,$values['password'])):
-//                            TK_Helper::redirect('/account/invite-to-game');
-//                        endif;
-//                    endif;
                 }
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
         }
         $this->view->assign('userAcceptedInvites',$userAcceptedInvites);
         $this->view->assign('userInvites',$userInvites);
-//            $to = 'kardi31@tlen.pl';
-//
-//    $subject = 'Website Change Request';
-//
-//    $headers = "From: tomekvarts@o2.pl \r\n";
-//    $headers .= "Reply-To: tomekvarts@o2.pl \r\n";
-//    $headers .= "MIME-Version: 1.0\r\n";
-//    $headers .= "Content-Type: text/html; charset=ISO-8859-2\r\n";
-//
-//    $message = '<html><body>';
-//    $message .= '<h1>Hello, World!</h1>';
-//    $message .= '</body></html>';
-//    mail($to, $subject, $message, $headers);
-//echo "ok";exit;
     }
 }
 ?>

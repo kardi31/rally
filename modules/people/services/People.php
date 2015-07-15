@@ -222,7 +222,7 @@ class PeopleService extends Service{
     
     /* create people section */
     
-    public function createRandomDriver($league){
+    public function createRandomDriver($league,$team_id = false){
         $skillsValues = $this->uniqueRandomNumbersWithinRangeDriver((int)$league);
         $driverSkills = array_combine($this->driverSkills, $skillsValues);
         
@@ -237,6 +237,9 @@ class PeopleService extends Service{
         $driverSkills['form'] = 3;
         $driverSkills['job'] = 'driver';
         
+        if($team_id){
+            $driverSkills['team_id'] = $team_id;
+        }
         
         $record = $this->peopleTable->getRecord();
         $record->fromArray($driverSkills);
@@ -246,7 +249,7 @@ class PeopleService extends Service{
         return $record;
     }
     
-    public function createRandomPilot($league){
+    public function createRandomPilot($league,$team_id = false){
         $skillsValues = $this->uniqueRandomNumbersWithinRangePilot((int)$league);
         $driverSkills = array_combine($this->pilotSkills, $skillsValues);
         
@@ -260,6 +263,10 @@ class PeopleService extends Service{
         $driverSkills['last_name'] = $this->generateRandomPeopleLastName();
         $driverSkills['form'] = 3;
         $driverSkills['job'] = 'pilot';
+        
+        if($team_id){
+            $driverSkills['team_id'] = $team_id;
+        }
         
         $record = $this->peopleTable->getRecord();
         $record->fromArray($driverSkills);
