@@ -24,10 +24,10 @@ class TeamService extends Service{
     protected $financeTypes = array(
         1 => 'Income from rallies',
         2 => 'Sponsor cash',
-        3 => 'Player transfer income',
+        3 => 'Transfer income',
         4 => 'Player salaries',
         5 => 'Car costs',
-        6 => 'Player transfer expense',
+        6 => 'Transfer expense',
         7 => 'Car purchase'
     );
     
