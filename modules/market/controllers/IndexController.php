@@ -200,7 +200,7 @@ class Market_Index extends Controller{
         
         if($teamService->canAfford($user['Team'],$carModel['price'])){
             $carService->createNewTeamCar($carModel,$user['Team']['id']);
-            $teamService->saveTeamFinance($user['Team']['id'],$carModel['price'],7,false,'Car '.$carModel['name'].' was bought');            
+            $teamService->removeTeamMoney($user['Team']['id'],$carModel['price'],7,'Car '.$carModel['name'].' was bought');            
             TK_Helper::redirect('/account/my-cars?msg=car+bought');
         }
         else{

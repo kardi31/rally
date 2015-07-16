@@ -28,24 +28,28 @@ class Index_Index extends Controller{
         
         if($user)
             TK_Helper::redirect('/account/my-account');
+
+
+        $form = $this->getForm('user','register');
+        $this->view->assign('form',$form);
        
     }
     
     public function rules(){
-        $this->getLayout()->setLayout('layout');
+        $this->getLayout()->setLayout('page');
         
     }
     public function faq(){
-        $this->getLayout()->setLayout('layout');
+        $this->getLayout()->setLayout('page');
         
     }
     
     public function privacyPolicy(){
-        $this->getLayout()->setLayout('layout');
+        $this->getLayout()->setLayout('page');
         
     }
     public function support(){
-        $this->getLayout()->setLayout('layout');
+        $this->getLayout()->setLayout('page');
         
     }
     public function showFriends(){

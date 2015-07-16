@@ -44,9 +44,11 @@ class User_Index extends Controller{
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
-                echo "pp";exit;
                 if($userService->getUser($values['email'],'email')!==false){
-                    $form->setError('Ten adres email jest już zarejestrowany');
+		    TK_Helper::redirect('/user/register?msg=email+exists');
+                }
+                elseif($userService->getUser($values['username'],'username')!==false){
+		    TK_Helper::redirect('/user/register?msg=username+exists');
                 }
                 else{
                     $values['salt'] = TK_Text::createUniqueToken();
@@ -68,6 +70,9 @@ class User_Index extends Controller{
 		
 		}
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+            }
+            else{
+                $form->populate($_POST);
             }
         }
         }
@@ -122,6 +127,9 @@ class User_Index extends Controller{
             $car->set('team_id',$team['id']);
             $car->save();
             
+            $teamService->addTeamMoney($team['id'],50000,8,'Initial FastRally bonus');            
+            
+            
             $user->set('active',1);
             $user->save();
             $mailService->sendMail($user['email'],'Your FastRally account is now active',$mailService::prepareConfirmActivationMail());
@@ -153,8 +161,13 @@ class User_Index extends Controller{
                 if ($user && !$user->get('active')):
                     $this->view->messages()->add($this->view->translate('User is not active'), 'error');
                 else:
-                    if($userService->authenticate($user,$values['password'])):
+
+                    if($user && $userService->authenticate($user,$values['password'])):
                         TK_Helper::redirect('/account/my-account');
+                    elseif(!$user):
+                        TK_Helper::redirect('/user/login?msg=no+user');
+                    else:
+                        TK_Helper::redirect('/user/login?msg=wrong+password');
                     endif;
                 endif;
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();

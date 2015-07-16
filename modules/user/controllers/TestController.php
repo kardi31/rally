@@ -79,15 +79,25 @@ class User_Test extends Controller{
             $team = $teamService->createRandomTeam($data,$user['id']);
 	    $league = $leagueService->appendTeamToLeague($team['id']);
 	    $league_level = $league['League']['league_level'];
-	    $carModel = $carService->getRandomLeagueCar($league_level);
-	    $team['Car1'] = $carService->createNewTeamCar($carModel,$team['id']);
-            $team['Driver1'] = $peopleService->createRandomDriver($league_level);
-            $team['Pilot1'] = $peopleService->createRandomPilot($league_level);
+	    
 	    $team->set('league_name',$league['league_name']);
 	    $team->save();
-            $team->get('Pilot1')->set('team_id',$team['id']);
-            $team->get('Driver1')->set('team_id',$team['id']);
-            $team->save();
+	    
+            
+	    $carModel = $carService->getRandomLeagueCar($league_level);
+	    $car = $carService->createNewTeamCar($carModel,$team['id']);
+            $driver = $peopleService->createRandomDriver($league_level,$team['id']);
+            $pilot = $peopleService->createRandomPilot($league_level,$team['id']);
+            
+            $driver->set('team_id',$team['id']);
+            $driver->save();
+            $pilot->set('team_id',$team['id']);
+            $pilot->save();
+            $car->set('team_id',$team['id']);
+            $car->save();
+            
+           
+            $teamService->addTeamMoney($team['id'],50000,8,'Initial FastRally bonus'); 
             
             $user->set('active',1);
             $user->save();

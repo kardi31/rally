@@ -52,6 +52,7 @@ if(isset($_GET['msg'])&&$_GET['msg']=="cant afford"){
                    </div>
                     <div class="clearfix"></div>
                 <div class="carBtn">
+                    Car price : <?= $car['price']; ?>$<br />
                     <a class='btn' href="/market/buy-car/id/<?php echo $car['id']; ?>"><i class="fa fa-shopping-cart"></i> Buy this car</a>
 
                 </div>

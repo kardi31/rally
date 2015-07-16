@@ -180,8 +180,9 @@ class Form extends Element{
     
     public function isValid(){
         foreach($this->elements as $element):
-	    if(!$element->getValid())
+	    if(!$element->getValid()){
 		return false;
+            }
 	endforeach;
 	
 	    return true;

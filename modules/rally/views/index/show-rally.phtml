@@ -13,6 +13,14 @@
     </script>
 <!--<a href="/rally/list-rally">Powrót do listy rajdów</a>-->
 
+<?php
+    if(isset($_GET['msg'])){
+        if($_GET['msg']=='joined'){
+            $this->showSuccess('You have joined the rally.');
+        }
+    }
+?>
+
 <div class="mainUserBox showRallyWrapper">
     <h4 class="boxHeader"><?php echo $rally['name']; ?></h4>
     <div class="showRallyBox <?php if(!$rally['finished']) echo "active"?> mainUserBox" id="details">

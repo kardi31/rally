@@ -19,7 +19,7 @@ class TK_Helper{
         if($showEmpty)
         echo str_repeat("<img src='/images/gwiazdka-empty.png' class='gwEmpty' alt='gw' />", 10-(int)$person[$skill]);
         
-        if($showEmpty){
+        if($showEmpty&&$skill!="form"&&$skill!="talent"){
             if($person['active_training_skill']==$skill){
                 echo '<a class="trainingChange" title="This skill is currently trained by your player" href="#"><i class="fa fa-circle-o"></i></a>';
             }

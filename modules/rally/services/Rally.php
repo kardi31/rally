@@ -61,10 +61,13 @@ class RallyService extends Service{
         return $this->stageTable->findOneBy($field,$id,$hydrationMode);
     }
     
-    public function getAllFutureRallies($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+    public function getAllFutureRallies($hydrationMode = Doctrine_Core::HYDRATE_RECORD,$league = true){
         $q = $this->rallyTable->createQuery('r');
 	$q->addWhere('r.date > NOW()');
 	$q->orderBy('r.date');
+    if(!$league){
+        $q->addWhere('r.league_rally != 1');
+    }
 	return $q->execute(array(),$hydrationMode);
     }
     
@@ -366,7 +369,7 @@ class RallyService extends Service{
         
         $rallyArray = array();
         
-        $rallyArray['name'] = "League ".$league." Rally - #1";
+        $rallyArray['name'] = "League ".$league." Rally - #".$key;
         $rallyArray['slug'] = TK_Text::createUniqueTableSlug('Rally_Model_Doctrine_Rally',$rallyArray['name']);  
         $rallyArray['date'] = date('Y-m-d',strtotime('+ '.($key-1).' weeks sunday'));
         
