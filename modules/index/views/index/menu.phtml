@@ -26,138 +26,138 @@
 <div id="menu">
     <ul id="tMenu">
         <li>
-            <a href="javascript:void(0)">Office</a>
+            <a href="javascript:void(0)"><?= $this->translate('Office'); ?></a>
             <ul>
                 <li>
-                    <a href="/team/show-team/id/<?= $authenticatedUser['Team']['id']; ?>">My team</a>
+                    <a href="/team/show-team/id/<?= $authenticatedUser['Team']['id']; ?>"><?= $this->translate('My team'); ?></a>
                 </li>
                 <li>
-                    <a href="/account/my-account">My account</a>
+                    <a href="/account/my-account"><?= $this->translate('My account'); ?></a>
                 </li>
                 <li>
-                    <a href="/account/my-people">My people</a>
+                    <a href="/account/my-people"><?= $this->translate('My people'); ?></a>
                 </li>
 <!--                <li>
-                    <a href="/account/tactics">Taktyka</a>
+                    <a href="/account/tactics"><?= $this->translate('Taktyka'); ?></a>
                 </li>-->
                 <li>
-                    <a href="/account/my-cars">My cars</a>
+                    <a href="/account/my-cars"><?= $this->translate('My cars'); ?></a>
                 </li>
                 <li>
-                    <a href="/account/sponsor">Sponsor</a>
+                    <a href="/account/sponsor"><?= $this->translate('Sponsor'); ?></a>
                 </li>
                 <li>
-                    <a href="/account/my-training-report">Training report</a> 
+                    <a href="/account/my-training-report"><?= $this->translate('Training report'); ?></a> 
                 </li>
                 <li>
-                    <a href="/account/my-finances">My finances</a> 
+                    <a href="/account/my-finances"><?= $this->translate('My finances');?></a> 
                 </li>
             </ul>
         </li>
         <li>
-            <a href="javascript:void(0)">My rallies</a>
+            <a href="javascript:void(0)"><?= $this->translate('My rallies') ;?></a>
             <ul>
                 <li>
-                    <a href="/rally/my-rallies">My rallies</a>
+                    <a href="/rally/my-rallies"><?= $this->translate('My rallies'); ?></a>
                 </li>
                 <li>
-                    <a href="/rally/list-rally">Rallies</a>
+                    <a href="/rally/list-rally"><?= $this->translate('Rallies'); ?></a>
                 </li>
                 <li>
-                    <a href="/rally/my-friendly-rallies">My friendly rallies</a>
+                    <a href="/rally/my-friendly-rallies"><?= $this->translate('My friendly rallies'); ?></a>
                 </li>
                 <li>
-                    <a href="/rally/list-friendly-rally">Friendly rallies</a>
+                    <a href="/rally/list-friendly-rally"><?= $this->translate('Friendly rallies'); ?></a>
                 </li>
                 <li>
-                    <a href="/league/show-table/id/<?= TK_Text::dotDash($user['Team']['league_name']); ?>">My league</a> 
+                    <a href="/league/show-table/id/<?= TK_Text::dotDash($user['Team']['league_name']); ?>"><?= $this->translate('My league'); ?></a> 
                 </li>
                 <li>
-                    <a href="/rally/my-league-rallies">My league rallies</a>
+                    <a href="/rally/my-league-rallies"><?= $this->translate('My league rallies'); ?></a>
                 </li>
                 
             </ul>
         </li>
         <li>
-            <a href="javascript:void(0)">Market</a>
+            <a href="javascript:void(0)"><?= $this->translate('Market'); ?></a>
             <ul>
                 <li>
-                    <a href="/market/show-market">Players market</a> 
+                    <a href="/market/show-market"><?= $this->translate('Players market'); ?></a> 
                 </li>
                 <li>
-                    <a href="/market/show-car-market">Car market</a> 
+                    <a href="/market/show-car-market"><?= $this->translate('Car market'); ?></a> 
                 </li>
                 <li>
-                    <a href="/market/car-dealer">Car dealer</a>
+                    <a href="/market/car-dealer"><?= $this->translate('Car dealer'); ?></a>
                 </li>
                 <li>
-                    <a href="/market/my-players">My players</a> 
+                    <a href="/market/my-players"><?= $this->translate('My players'); ?></a> 
                 </li>
                 <li>
-                    <a href="/market/my-player-offers">My player offers</a> 
+                    <a href="/market/my-player-offers"><?= $this->translate('My player offers'); ?></a> 
                 </li>
                 <li>
-                    <a href="/market/my-cars">My cars</a> 
+                    <a href="/market/my-cars"><?= $this->translate('My cars'); ?></a> 
                 </li>
                 <li>
-                    <a href="/market/my-car-offers">My car offers</a> 
+                    <a href="/market/my-car-offers"><?= $this->translate('My car offers'); ?></a> 
                 </li>
                 
             </ul>
         </li>
         <li>
-            <a href="javascript:void(0)">Community</a>
+            <a href="javascript:void(0)"><?= $this->translate('Community'); ?></a>
             <ul>
                 <li>
-                    <a href="/forum/show-forum">Forum</a> 
+                    <a href="/forum/show-forum"><?= $this->translate('Forum'); ?></a> 
                 </li>
                 <li>
-                    <a href="#">Top world list</a> 
+                    <a href="#"><?= $this->translate('Top world list'); ?></a> 
                 </li>
                 <li>
-                    <a href="#">National ranking</a>
+                    <a href="#"><?= $this->translate('National ranking'); ?></a>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="javascript:void(0)">Premium</a>
+            <a href="javascript:void(0)"><?= $this->translate('Premium');?></a>
             <ul>
                 <li>
-                    <a href="/account/premium">My premium</a> 
+                    <a href="/account/premium"><?= $this->translate('My premium');?></a> 
                 </li>
                 <li>
-                    <a href="/account/gold-membership">Gold membership</a> 
+                    <a href="/account/gold-membership"><?= $this->translate('Gold membership');?></a> 
                 </li>
                 <li>
-                    <a href="/user/invite-to-game">Invite friends</a> 
+                    <a href="/user/invite-to-game"><?= $this->translate('Invite friends');?></a> 
                 </li>
                 <li>
-                    <a href="#">Premium benefits</a> 
+                    <a href="#"><?= $this->translate('Premium benefits');?></a> 
                 </li>
                 <li>
-                    <a href="#">Earn premium</a>
+                    <a href="#"><?= $this->translate('Earn premium');?></a>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="javascript:void(0)">Help</a>
+            <a href="javascript:void(0)"><?= $this->translate('Help');?></a>
             <ul>
                 <li>
-                    <a href="/faq">Faq</a> 
+                    <a href="/faq"><?= $this->translate('Faq');?></a> 
                 </li>
                 <li>
-                    <a href="/privacy-policy">Privacy Policy</a> 
+                    <a href="/privacy-policy"><?= $this->translate('Privacy Policy');?></a> 
                 </li>
                 <li>
-                    <a href="/rules">Rules</a>
+                    <a href="/rules"><?= $this->translate('Rules');?></a>
                 </li>
                 <li>
-                    <a href="/support">Support</a> 
+                    <a href="/support"><?= $this->translate('Support');?></a> 
                 </li>
             </ul>
         </li>
         <li>
-             <a href="/user/logout">Log out</a>
+             <a href="/user/logout"><?= $this->translate('Log out');?></a>
         </li>
     </ul>
 </div>

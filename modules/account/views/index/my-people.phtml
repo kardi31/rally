@@ -1,12 +1,12 @@
 <div class="mainUserBox myPeopleWrapper">
-    <h4 class="boxHeader">My people</h4> 
+    <h4 class="boxHeader"><?= $this->translate('My people'); ?></h4> 
     <?php 
         if(isset($_GET['msg'])){
             if($_GET['msg']=="player on market"){
-                $this->showError("This player is already on market");
+                $this->showError($this->translate('This player is already on market'));
             }
             elseif($_GET['msg']=="no cash"){
-                $this->showError("Sorry. You don't have enough money to pay selling fee.");
+                $this->showError($this->translate("Sorry. You don't have enough money to pay selling fee."));
             }
         }
     ?>
@@ -18,7 +18,7 @@
                     <table>
                         <tr>
                             <td>
-                                Job:
+                                <?= $this->translate('Job'); ?>:
                             </td>
                             <td>
                                 <?php
@@ -32,7 +32,7 @@
                         </tr>
                         <tr>
                             <td>
-                                Age:
+                                <?= $this->translate('Age'); ?>:
                             </td>
                             <td>
                                 <?php echo $person['age']; ?>
@@ -40,7 +40,7 @@
                         </tr>
                         <tr>
                             <td>
-                                Value:
+                                <?= $this->translate('Value'); ?>:
                             </td>
                             <td>
                                 <?php echo $person['value']; ?>
@@ -48,7 +48,7 @@
                         </tr>
                         <tr>
                             <td>
-                                Salary:
+                                <?= $this->translate('Salary'); ?>:
                             </td>
                             <td>
                                 <?php echo $person['salary']; ?>
@@ -57,9 +57,9 @@
                     </table>
                      <div class="peopleBtn">
                         <?php if(!$person['on_market']): ?>
-                            <a class="btn sellPlayer" type="button" data-toggle="modal" data-target="#sellPlayer" href="javascript:void(0)" data-name='<?php echo $person['last_name']." ".$person['first_name']; ?>' rel='<?php echo $person['id']; ?>'><i class="fa fa-money"></i> Sell player</a>
+                            <a class="btn sellPlayer" type="button" data-toggle="modal" data-target="#sellPlayer" href="javascript:void(0)" data-name='<?php echo $person['last_name']." ".$person['first_name']; ?>' rel='<?php echo $person['id']; ?>'><i class="fa fa-money"></i> <?= $this->translate('Sell player'); ?></a>
                         <?php else: ?>
-                            Player is on the market
+                             <?= $this->translate('Player is on the market'); ?>
                         <?php endif; ?>
                      </div>
                 </div>
@@ -67,49 +67,49 @@
                     <?php if($person['job'] == "driver"): ?>
                     <table>
                         <tr>
-                            <td>Composure</td>
+                            <td><?= $this->translate('Composure'); ?></td>
                             <td>
                                 <?php TK_Helper::displayPeopleSkillsOnList($person, 'composure'); ?>
                             </td>
                         </tr>
                         <tr>
-                            <td>Speed</td>
+                            <td><?= $this->translate('Speed'); ?></td>
                             <td>
                                 <?php TK_Helper::displayPeopleSkillsOnList($person, 'speed'); ?>
                             </td>
                         </tr>
                         <tr>
-                            <td>Regularity</td>
+                            <td><?= $this->translate('Regularity'); ?></td>
                             <td>
                                 <?php TK_Helper::displayPeopleSkillsOnList($person, 'regularity'); ?>
                             </td>
                         </tr>
                         <tr>
-                            <td>Reflex</td>
+                            <td><?= $this->translate('Reflex'); ?></td>
                             <td>
                                 <?php TK_Helper::displayPeopleSkillsOnList($person, 'reflex'); ?>
                             </td>
                         </tr>
                         <tr>
-                            <td>Driving on gravel</td>
+                            <td><?= $this->translate('Driving on gravel'); ?></td>
                             <td>
                                 <?php TK_Helper::displayPeopleSkillsOnList($person, 'on_gravel'); ?>
                             </td>
                         </tr>
                         <tr>
-                            <td>Driving on tarmac</td>
+                            <td><?= $this->translate('Driving on tarmac'); ?></td>
                             <td>
                                 <?php TK_Helper::displayPeopleSkillsOnList($person, 'on_tarmac'); ?>
                             </td>
                         </tr>
                         <tr>
-                            <td>Driving on snow</td>
+                            <td><?= $this->translate('Driving on snow'); ?></td>
                             <td>
                                 <?php TK_Helper::displayPeopleSkillsOnList($person, 'on_snow'); ?>
                             </td>
                         </tr>
                         <tr>
-                            <td>Driving in rain</td>
+                            <td><?= $this->translate('Driving in rain'); ?></td>
                             <td>
                                 <?php TK_Helper::displayPeopleSkillsOnList($person, 'in_rain'); ?>
                             </td>
@@ -121,7 +121,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Form</td>
+                            <td><?= $this->translate('Form'); ?></td>
                             <td>
                                 <?php TK_Helper::displayPeopleSkillsOnList($person, 'form'); ?>
                             </td>
@@ -130,25 +130,25 @@
                     <?php else: ?>
                     <table>
                         <tr>
-                            <td>Composure</td>
+                            <td><?= $this->translate('Composure'); ?></td>
                             <td>
                                 <?php TK_Helper::displayPeopleSkillsOnList($person, 'composure'); ?>
                             </td>
                         </tr>
                         <tr>
-                            <td>Dictate rhytm</td>
+                            <td><?= $this->translate('Dictate rhytm'); ?></td>
                             <td>
                                 <?php TK_Helper::displayPeopleSkillsOnList($person, 'dictate_rhytm'); ?>
                             </td>
                         </tr>
                         <tr>
-                            <td>Diction</td>
+                            <td><?= $this->translate('Diction'); ?></td>
                             <td>
                                 <?php TK_Helper::displayPeopleSkillsOnList($person, 'diction'); ?>
                             </td>
                         </tr>
                         <tr>
-                            <td>Route description</td>
+                            <td><?= $this->translate('Route description'); ?></td>
                             <td>
                                 <?php TK_Helper::displayPeopleSkillsOnList($person, 'route_description'); ?>
                             </td>
@@ -161,7 +161,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Form</td>
+                            <td><?= $this->translate('Form'); ?></td>
                             <td>
                                 <?php TK_Helper::displayPeopleSkillsOnList($person, 'form'); ?>
                             </td>

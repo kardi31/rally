@@ -16,20 +16,20 @@
     <div class="col-md-4 mainPageBox rightMainPageBox">
         <h2>REGISTRATION</h2>
         <form method="POST" action="/user/register">
-            <label for="username">Login<sup>*</sup></label>
+            <label for="username"><?= $this->translate('Login'); ?><sup>*</sup></label>
             <input type="text" required name="username" class="textInput" />
-            <label for="login">Password<sup>*</sup></label>
+            <label for="login"><?= $this->translate('Password'); ?><sup>*</sup></label>
             <input type="password" required name="password" class="textInput"  />
-            <label for="login">Repeat password<sup>*</sup></label>
+            <label for="login"><?= $this->translate('Repeat password'); ?><sup>*</sup></label>
             <input type="password" required name="password2" class="textInput" />
-            <label for="login">E-mail address<sup>*</sup></label>
+            <label for="login"><?= $this->translate('E-mail address'); ?><sup>*</sup></label>
             <?= $form->getElement('email')->renderElement(); ?>
             <span class="acceptRules">
                 <input type="checkbox" required name="rules" id='acceptRules'/> 
-                <label for='acceptRules'>I accept <a href="#">rules</a></label>
+                <label for='acceptRules'><?= $this->translate('I accept'); ?> <a href="#"><?= $this->translate('rules');?></a></label>
             </span>
 
-            <button type="submit" name="submit" class='logIn btn'>REGISTER</button>
+            <button type="submit" name="submit" class='logIn btn'><?= $this->translate('REGISTER'); ?></button>
         </form>
     </div>
 </div>

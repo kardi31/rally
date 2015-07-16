@@ -6,9 +6,15 @@ class View{
     public $controller_instance;
     public $render = 1;
     private static $instance = NULL;
+    private static $doc;
     
     public function __construct() {
 	
+        if(!isset($this->doc)){
+            $this->doc = new DomDocument;
+            $this->doc->validateOnParse = true;
+            $this->doc->Load(BASE_PATH."/config/translate.xml");
+        }
     }
     
     static public function getInstance()
@@ -70,5 +76,24 @@ class View{
     public function showSuccess($message){
         include(BASE_PATH."/views/message/success.phtml");
     }
+    
+    public function translate($string){
+        try{
+            $elem = $this->doc->getElementById($string);
+        
+            if($elem){
+                if(strlen($elem->getElementsByTagName('pl')[0]->nodeValue)){
+                    return $elem->getElementsByTagName('pl')[0]->nodeValue;
+                }
+            }
+            else
+                return $string;
+        }
+        catch(Exception $e){
+            return $string;
+        }
+    }
+    
+    
     
 }

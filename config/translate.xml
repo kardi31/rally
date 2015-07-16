@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE books [
+  <!ELEMENT word   (word)>
+  <!ATTLIST word    id           ID     #IMPLIED>
+]>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<root>
+    <word id="Password">
+        <pl>Hasło</pl>
+    </word>
+    <word id="Repeat password">
+        <pl>Powtórz hasło</pl>
+    </word>
+    <word id="E-mail address">
+        <pl>Adres email</pl>
+    </word>
+    <word id="I accept">
+        <pl>Akceptuje</pl>
+    </word>
+    <word id="rules">
+        <pl>regulamin</pl>
+    </word>
+    <word id="Remember me">
+        <pl>Zapamiętaj mnie</pl>
+    </word>
+    <word id="Can't login?">
+        <pl>Problem z logowaniem?</pl>
+    </word>
+    <word id="REGISTER">
+        <pl>REJESTRACJA</pl>
+    </word>
+    <word id="LOGIN">
+        <pl>ZALOGUJ</pl>
+    </word>
+    <word id="Login">
+        <pl>Login</pl>
+    </word>
+    <word id="No rally in progress">
+        <pl>Brak trwających rajdów</pl>
+    </word>
+    <word id="Rally in progress">
+        <pl>Rajd właśnie trwa</pl>
+    </word>
+    <word id="Pending friendly invitations">
+        <pl>Nowe zaproszenie do rajdu towarzyskiego</pl>
+    </word>
+    <word id="No friendly invitations">
+        <pl>Brak zaproszeń do rajdów towarzyskich</pl>
+    </word>
+    <word id="Message box">
+        <pl>Wiadomości</pl>
+    </word>
+    <word id="Friends">
+        <pl>Znajomi</pl>
+    </word>
+    <word id="Transfers">
+        <pl>Transfery</pl>
+    </word>
+    <word id="SEE ALL">
+        <pl>ZOBACZ WSZYSTKIE</pl>
+    </word>
+    <word id="News">
+        <pl>Aktualności</pl>
+    </word>
+    <word id="Office">
+        <pl>Biuro</pl>
+    </word>
+    <word id="My account">
+        <pl>Moje konto</pl>
+    </word>
+    <word id="My people">
+        <pl>Moi ludzie</pl>
+    </word>
+    <word id="My cars">
+        <pl>Moje auta</pl>
+    </word>
+    <word id="Training report">
+        <pl>Raport z treningu</pl>
+    </word>
+    <word id="My finances">
+        <pl>Moje finanse</pl>
+    </word>
+    <word id="My team">
+        <pl>Moja drużyna</pl>
+    </word>
+    <word id="My rallies">
+        <pl>Moje rajdy</pl>
+    </word>
+    <word id="Rallies">
+        <pl>Rajdy</pl>
+    </word>
+    <word id="My friendly rallies">
+        <pl>Moje rajdy towarzyskie</pl>
+    </word>
+    <word id="Friendly rallies">
+        <pl>Rajdy towarzyskie</pl>
+    </word>
+    <word id="My league">
+        <pl>Moja liga</pl>
+    </word>
+    <word id="My league rallies">
+        <pl>Moje rajdy ligowe</pl>
+    </word>
+    <word id="Market">
+        <pl>Rynek</pl>
+    </word>
+    <word id="Players market">
+        <pl>Rynek zawodników</pl>
+    </word>
+    <word id="Car market">
+        <pl>Rynek samochodowy</pl>
+    </word>
+    <word id="Car dealer">
+        <pl>Dealer samochodowy</pl>
+    </word>
+    <word id="My players">
+        <pl>Moi zawodnicy</pl>
+    </word>
+    <word id="My player offers">
+        <pl>Moje oferty zawodników</pl>
+    </word>
+    <word id="My cars">
+        <pl>Moje auta</pl>
+    </word>
+    <word id="My car offers">
+        <pl>Moje oferty aut</pl>
+    </word>
+    <word id="Community">
+        <pl>Społeczność</pl>
+    </word>
+    <word id="My premium">
+        <pl>Moje premium</pl>
+    </word>
+    <word id="Gold membership">
+        <pl>Pakiet gold</pl>
+    </word>
+    <word id="Invite friends">
+        <pl>Zaproś znajomych</pl>
+    </word>
+    <word id="Premium benefits">
+        <pl>Zalety premium</pl>
+    </word>
+    <word id="Earn premium">
+        <pl>Zarób premium</pl>
+    </word>
+    <word id="Help">
+        <pl>Pomoc</pl>
+    </word>
+    <word id="Privacy Policy">
+        <pl>Polityka prywatności</pl>
+    </word>
+    <word id="Rules">
+        <pl>Zasady</pl>
+    </word>
+    <word id="Support">
+        <pl>Wsparcie</pl>
+    </word>
+    <word id="Log out">
+        <pl>Wyloguj</pl>
+    </word>
+    <word id="This player is already on market">
+        <pl>Ten zawodnik jest już na liście transferowej</pl>
+    </word>
+    <word id="Sorry. You don't have enough money to pay selling fee.">
+        <pl>Niestety nie masz wystarczająco pieniędzy na zapłacenie opłaty transferowej.</pl>
+    </word>
+    <word id="Job">
+        <pl>Rola</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Value">
+        <pl>Wartość</pl>
+    </word>
+    <word id="Salary">
+        <pl>Pensja</pl>
+    </word>
+    <word id="Sell player">
+        <pl>Sprzedaj zawodnika</pl>
+    </word>
+    <word id="Player is on the market">
+        <pl>Zawodnik jest już na liście transferowej.</pl>
+    </word>
+    <word id="Composure">
+        <pl>Opanowanie</pl>
+    </word>
+    <word id="Speed">
+        <pl>Szybkość</pl>
+    </word>
+    <word id="Regularity">
+        <pl>Regularność</pl>
+    </word>
+    <word id="Reflex">
+        <pl>Refleks</pl>
+    </word>
+    <word id="Driving on gravel">
+        <pl>Jazda po szutrze</pl>
+    </word>
+    <word id="Driving on tarmac">
+        <pl>Jazda po asfalcie</pl>
+    </word>
+    <word id="Driving on snow">
+        <pl>Jazda po śniegu</pl>
+    </word>
+    <word id="Driving in rain">
+        <pl>Jazda w deszczu</pl>
+    </word>
+    <word id="Form">
+        <pl>Forma</pl>
+    </word>
+    <word id="Dictate rhytm">
+        <pl>Rytm dyktowania</pl>
+    </word>
+    <word id="Diction">
+        <pl>Dykcja</pl>
+    </word>
+    <word id="Route description">
+        <pl>Opis trasy</pl>
+    </word>
+    <word id="This car is already on market">
+        <pl>Ten samochód jest już na liście transferowej</pl>
+    </word>
+    <word id="You have successfully bought a car. You can now see it in your garage.">
+        <pl>Gratulacje. Kupiłeś samochód. Możesz go zobaczyć w swoim garażu.</pl>
+    </word>
+    <word id="Mileage">
+        <pl>Przebieg</pl>
+    </word>
+    <word id="Value">
+        <pl>Wartość</pl>
+    </word>
+    <word id="Upkeep">
+        <pl>Koszt utrzymania</pl>
+    </word>
+    <word id="Car is on the market">
+        <pl>Samochód jest już na liście transferowej.</pl>
+    </word>
+    <word id="Change name">
+        <pl>Zmień nazwe</pl>
+    </word>
+    <word id="brand">
+        <pl>marka</pl>
+    </word>
+    <word id="capacity">
+        <pl>poj. skokowa</pl>
+    </word>
+    <word id="horse power">
+        <pl>moc</pl>
+    </word>
+    <word id="v-max">
+        <pl>v-max</pl>
+    </word>
+    <word id="acceleration">
+        <pl>przyspieszenie</pl>
+    </word>
+    <word id="Sell car">
+        <pl>Sprzedaj auto</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>v
+</root>

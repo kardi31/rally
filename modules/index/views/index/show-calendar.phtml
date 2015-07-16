@@ -45,11 +45,11 @@
     </script>
 <div class='messageIcons'>
     <?php if($hasRallyNow): ?>
-        <a href='/rally/show-rally/slug/<?= $hasRallyNow['slug']; ?>' class='messageIconWrapper active'  title='Rally in progress'>
+        <a href='/rally/show-rally/slug/<?= $hasRallyNow['slug']; ?>' class='messageIconWrapper active'  title='<?= $this->translate('Rally in progress'); ?>'>
             <i class='fa fa-car'></i>
         </a>
     <?php else: ?>
-        <a href='#' class='messageIconWrapper' title='No rally in progress'>
+        <a href='#' class='messageIconWrapper' title='<?= $this->translate('No rally in progress'); ?>'>
             <i class='fa fa-car'></i>
         </a>
     <?php endif; ?>
@@ -57,11 +57,11 @@
         <i class='fa fa-envelope-o'></i>
     </a>
     <?php if($hasFriendlyInvitation): ?>
-        <a href='/rally/list-friendly-rally/' class='messageIconWrapper active' title='Pending friendly invitations'>
+        <a href='/rally/list-friendly-rally/' class='messageIconWrapper active' title='<?= $this->translate('Pending friendly invitations');?>'>
             <i class='fa fa-user-plus'></i>
         </a>
     <?php else: ?>
-        <a href='#' class='messageIconWrapper' title='No friendly invitations'>
+        <a href='#' class='messageIconWrapper' title='<?= $this->translate('No friendly invitations'); ?>'>
             <i class='fa fa-user-plus'></i>
         </a>
     <?php endif; ?>
@@ -71,7 +71,7 @@
 </div>
 
 <div class="mainUserBox boxNotification mainPageNotification" id='mainNotificationMessageBox'>
-    <h4 class="boxHeader">Message box</h4>
+    <h4 class="boxHeader"><?= $this->translate('Message box'); ?></h4>
     <div class="boxNotificationInner">
         <?php foreach($notifications as $notification): 
                 ?>

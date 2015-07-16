@@ -1,5 +1,5 @@
 <div class="mainUserBox boxTransfer">
-    <h4 class="boxHeader">Transfers</h4>
+    <h4 class="boxHeader"><?= $this->translate('Transfers'); ?></h4>
     <?php if(!$authenticatedUser['gold_member']){ ?>
         <div class="goldOverlay">
             <a href="#">
@@ -25,7 +25,7 @@
             </div>
         <?php endforeach; ?>
         <div class="bottom">
-            <a href="#" class="logIn btn seeAllTransfer">SEE ALL</a>
+            <a href="#" class="logIn btn seeAllTransfer"><?= $this->translate('SEE ALL'); ?></a>
         </div>
     <?php } ?>
 </div>

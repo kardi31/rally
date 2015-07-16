@@ -4,17 +4,17 @@
 <div class="topToolbar">
     <form method="POST" action="/user/login">
         <div class='topToolbarTop'>
-            <input type="text" name="login" class="textInput" placeholder='Login'/>
-            <input type="password" name="password" class="textInput" placeholder='Password' />
-            <button type="submit" name="submit" class='logIn btn'>LOGIN</button>
+            <input type="text" name="login" class="textInput" placeholder='<?= $this->translate('Login'); ?>'/>
+            <input type="password" name="password" class="textInput" placeholder='<?= $this->translate('Password'); ?>' />
+            <button type="submit" name="submit" class='logIn btn'><?= $this->translate('LOGIN'); ?></button>
             <span class='flagSelect'>
                 <img src='/images/layout/gb.png' />
             </span>
         </div>
         <div class='topToolbarBottom'>
             <input type="checkbox" id='rememberMe'/> 
-            <label for='rememberMe'>Remember me</label>
-            <a href="#">Can't login?</a>
+            <label for='rememberMe'><?= $this->translate('Remember me'); ?></label>
+            <a href="#"><?= $this->translate("Can't login?"); ?></a>
 
         </div>
     </form>
