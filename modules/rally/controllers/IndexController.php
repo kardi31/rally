@@ -68,7 +68,7 @@ class Rally_Index extends Controller{
 
                         $rallyService->saveRallyCrew($values,$rally,$user['Team']);
 
-                        TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug']);
+                        TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=joined');
 
                         Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
                     }
@@ -98,7 +98,7 @@ class Rally_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
         
         $rallyService = parent::getService('rally','rally');
-        $rallies = $rallyService->getAllFutureRallies();
+        $rallies = $rallyService->getAllFutureRallies(Doctrine_Core::HYDRATE_RECORD,false);
         
         $futureTeamRallies = $rallyService->getAllFutureTeamRallies($user['Team']['id'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
 

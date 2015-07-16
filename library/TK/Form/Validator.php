@@ -63,7 +63,6 @@ class Validator{
         else:
             $response['result'] = true;
         endif;
-        
         return $response;
     }
     
