@@ -1,6 +1,6 @@
 <div class="mainUserBox rallyList">
-    <h4 class="boxHeader">My friendly rallies</h4>
-    <a class='createFriendly btn btn-primary' href="/rally/create-friendly-rally/">Create friendly rally</a>
+    <h4 class="boxHeader"><?= $this->translate('My friendly rallies'); ?></h4>
+    <a class='createFriendly btn btn-primary' href="/rally/create-friendly-rally/"><?= $this->translate('Create friendly rally'); ?></a>
            
 <table>
         <?php foreach($rallies as $rally): ?>
@@ -11,7 +11,7 @@
                 <td class="big">
                     
                     <?php if($rally['big_awards']==1): ?>
-                        <img src="/images/b_letter_small.gif" alt="Big awards" />
+                        <img src="/images/b_letter_small.gif" title="<?= $this->translate('Big awards');?>" alt="<?= $this->translate('Big awards');?>" />
                     <?php endif; ?>
                 </td>
                 <td class="rallyName">
@@ -23,7 +23,7 @@
                 </td>
                 <td>
                     <?php if($rally['date']<=date('Y-m-d H:i:s')){ ?>
-                        <a href="/rally/rally-result/id/<?= $rally['id']; ?>" class="label label-primary">See results</a>
+                        <a href="/rally/rally-result/id/<?= $rally['id']; ?>" class="label label-primary"><?= $this->translate('See results'); ?></a>
                     <?php } ?>
                 </td>
             </tr>

@@ -12,48 +12,47 @@
         
     </script>
 <!--<a href="/rally/list-rally">Powrót do listy rajdów</a>-->
-
 <?php
-    if(isset($_GET['msg'])){
+     if(isset($_GET['msg'])){
         if($_GET['msg']=='joined'){
-            $this->showSuccess('You have joined the rally.');
+            $this->showSuccess($this->translate('You have joined the rally.'));
         }
     }
 ?>
 
 <div class="mainUserBox showRallyWrapper">
-    <h4 class="boxHeader"><?php echo $rally['name']; ?></h4>
+    <h4 class="boxHeader"><?php  echo $rally['name']; ?></h4>
     <div class="showRallyBox <?php if(!$rally['finished']) echo "active"?> mainUserBox" id="details">
         <?php if(strlen($rally['description'])) echo $rally['description']."<br /><br />"; ?>
-        
-        Prize pool : <?php echo $prizePool."$"; ?><br />
-        Signed crews : <?php echo $crewCounter; ?><br />
-        Race start : <?php echo $startDate->format('d/m/Y H:i'); ?><br />
-        Sign up finish : <?php echo $signUpFinish->format('d/m/Y H:i'); ?><br />
+       
+       <?= $this->translate('Prize pool');?> : <?php echo $prizePool."$"; ?><br />
+        <?= $this->translate('Signed crews');?> : <?php echo $crewCounter; ?><br />
+        <?= $this->translate('Race start');?> : <?php echo $startDate->format('d/m/Y H:i'); ?><br />
+        <?= $this->translate('Sign up finish');?> : <?php echo $signUpFinish->format('d/m/Y H:i'); ?><br />
         <br />
         <?php if(isset($isParticipant)&&$isParticipant): ?>
-            <span class="label label-success">You already participate in this rally.</span>
+            <span class="label label-success"><?= $this->translate('You already participate in this rally.');?></span>
         <?php endif; ?>
         <br />
         <br />
          <?php if(isset($form)&&!$rally['finished']): ?>
         <div class="sign-up-rally">
-            <h3>Sign up</h3>
+            <h3><?= $this->translate('Sign up');?></h3>
             <form method="POST">
                 <div class='formElemWrapper'>
-                    <label for='driver_id' class="col-md-3 control-label" type='text'>Driver</label>
+                    <label for='driver_id' class="col-md-3 control-label" type='text'><?= $this->translate('Driver');?></label>
                     <?php echo $form->getElement('driver_id')->renderElement(); ?>
                 </div>
                 <div class='formElemWrapper'>
-                    <label for='pilot_id' class="col-md-3 control-label"  type='text'>Pilot</label>
+                    <label for='pilot_id' class="col-md-3 control-label"  type='text'><?= $this->translate('Pilot');?></label>
                     <?php echo $form->getElement('pilot_id')->renderElement(); ?>
                 </div>     
                 <div class='formElemWrapper'>
-                    <label for='car_id' class="col-md-3 control-label"  type='text'>Car</label>
+                    <label for='car_id' class="col-md-3 control-label"  type='text'><?= $this->translate('Car');?></label>
                     <?php echo $form->getElement('car_id')->renderElement(); ?>
                 </div>
                 <div class='formElemWrapper'>
-                    <label for='risk' class="col-md-3 control-label"  type='text'>Risk</label>
+                    <label for='risk' class="col-md-3 control-label"  type='text'><?= $this->translate('Risk');?></label>
                     <?php echo $form->getElement('risk')->renderElement(); ?>
                 </div>
                 <div class='formSubmitWrapper'>
@@ -84,9 +83,9 @@
         <table>
             <tr>
                 <th></th>
-                <th>Crew</th>
-                <th>Car</th>
-                <th>Team</th>
+                <th><?= $this->translate('Crew');?></th>
+                <th><?= $this->translate('Car');?></th>
+                <th><?= $this->translate('Team');?></th>
             </tr>
             <?php foreach($rally['Crews'] as $key => $crew): ?>
                     <tr>
@@ -112,8 +111,8 @@
         <?php if($rally['big_awards']): ?>
                 <img src="/images/b_letter.gif" />
                 <br />
-                Number of crews : <?php echo $crewCounter; ?><br />
-                <h3>Prizes</h3>
+                <?= $this->translate('Number of crews');?> : <?php echo $crewCounter; ?><br />
+                <h3><?= $this->translate('Prizes'); ?></h3>
                 <?php 
                 foreach($rallyPrizes as $key => $rallyPrize): 
                     $position = $key+1;
@@ -131,7 +130,7 @@
                         <?php
                 endforeach; 
             else: ?>
-                <h3>Prizes</h3>
+                <h3><?= $this->translate('Prizes');?></h3>
                 <?php 
                 foreach($rallyPrizes as $position => $rallyPrize): 
                     echo "Position ".$position." - ";
@@ -161,7 +160,7 @@
                                     echo $result['total_time'];
                                 }
                                 else{
-                                    echo "Accident on stage no ".$result['stage_out_number'];
+                                    echo $this->translate("Accident on stage no")." ".$result['stage_out_number'];
                                 }
                                 ?>
                             </td>
@@ -174,20 +173,20 @@
             
             <?php if($rally['finished']): ?>
                 <li>
-                    <a href="#" class="active" rel="result">Results</a>
+                    <a href="#" class="active" rel="result"><?= $this->translate('Results');?></a>
                 </li>
             <?php endif ; ?>
             <li>
-                <a class="<?php if(!$rally['finished']) echo "active"?>" rel="details" href="#">Details</a>
+                <a class="<?php if(!$rally['finished']) echo "active"?>" rel="details" href="#"><?= $this->translate('Details'); ?></a>
             </li>
             <li>
-                <a href="#" rel="stages">Stages</a>
+                <a href="#" rel="stages"><?= $this->translate('Stages');?></a>
             </li>
             <li>
-                <a href="#" rel="crews">Signed crews</a>
+                <a href="#" rel="crews"><?= $this->translate('Signed crews');?></a>
             </li>
             <li>
-                <a href="#" rel="prizes">Prize pool</a>
+                <a href="#" rel="prizes"><?= $this->translate('Prize pool');?></a>
             </li>
         </ul>
     </div>

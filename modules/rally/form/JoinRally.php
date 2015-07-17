@@ -1,6 +1,7 @@
 <?php
 class JoinRally extends Form{
     public function __construct(){
+        $view = View::getInstance();
         $driver_id = $this->createElement('select','driver_id',array(),'Kierowca');
         $driver_id->addParam('required');
         $driver_id->addParam('class','checkJoin');
@@ -14,7 +15,7 @@ class JoinRally extends Form{
         $risk->addMultiOptions(Rally_Model_Doctrine_Rally::getFormRisks(),true);
         $risk->setValue('normal');
         $submit = $this->createElement('submit','submit');
-        $submit->setLabel('Join rally');
+        $submit->setLabel($view->translate('Join rally'));
         $submit->addClass('btn btn-primary');
     }
 }

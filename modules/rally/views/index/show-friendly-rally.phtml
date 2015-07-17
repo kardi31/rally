@@ -36,11 +36,11 @@
         </span>
         <hr />
         
-        Prize pool : <?php echo $prizePool."$"; ?><br />
-        Signed crews : <?php echo $crewCounter; ?><br />
-        Race start : <?php echo $startDate->format('d/m/Y H:i'); ?><br />
-        Sign up finish : <?php echo $signUpFinish->format('d/m/Y H:i'); ?><br />
-        Surface : <?php
+        <?= $this->translate('Prize pool');?> : <?php echo $prizePool."$"; ?><br />
+        <?= $this->translate('Signed crews');?> : <?php echo $crewCounter; ?><br />
+        <?= $this->translate('Race start');?> : <?php echo $startDate->format('d/m/Y H:i'); ?><br />
+        <?= $this->translate('Sign up finish');?> : <?php echo $signUpFinish->format('d/m/Y H:i'); ?><br />
+        <?= $this->translate('Surface');?> : <?php
         foreach($rally['Surfaces'] as $key=>$surface):
           echo $surface['surface']." ".round($surface['percentage'])."%";  
             if($key==0)
@@ -48,18 +48,18 @@
         endforeach;
         ?>
         <br />
-        Rally type :  <?php echo $friendly['invite_only']?"<span class='label label-danger'>Private</span>":"<span class='label label-success'>Public</span>"; ?><br />
-        Created by : <?php echo $friendly['User']['username']; ?><br />
+        <?= $this->translate('Rally type'); ?> :  <?php echo $friendly['invite_only']?"<span class='label label-danger'>Private</span>":"<span class='label label-success'>Public</span>"; ?><br />
+        <?= $this->translate('Created by'); ?> : <?php echo $friendly['User']['username']; ?><br />
         
         <br />
         <?php if(isset($isParticipant)&&$isParticipant): ?>
-            <span class="label label-success">You already participate in this rally.</span>
+            <span class="label label-success"><?= $this->translate('You already participate in this rally.'); ?></span>
         <?php endif; ?>
         <br />
         <?php if(isset($form)){ ?>
         
             <div class='goldCoinBox inviteFriendFriendly'>
-                <strong>Invite your friend</strong>
+                <strong><?= $this->translate('Invite your friend'); ?></strong>
                 <form method="POST">
                     <br />
                     <div class='formElemWrapper'>
@@ -73,50 +73,50 @@
 <?php } ?>
 
 <?php if(isset($joinForm)){ ?>
-        <span class="label label-warning bigLabel">You have been invited to this rally.</span>
+        <span class="label label-warning bigLabel"><?= $this->translate('You have been invited to this rally.'); ?></span>
         <br /><br />
 
         <div class="sign-up-rally">
             <h3>Sign up</h3>
             <form method="POST">
                 <div class='formElemWrapper'>
-                    <label for='driver_id' class="col-md-3 control-label" type='text'>Driver</label>
+                    <label for='driver_id' class="col-md-3 control-label" type='text'><?= $this->translate('Driver'); ?></label>
                     <?php echo $joinForm->getElement('driver_id')->renderElement(); ?>
                 </div>
                 <div class='formElemWrapper'>
-                    <label for='pilot_id' class="col-md-3 control-label"  type='text'>Pilot</label>
+                    <label for='pilot_id' class="col-md-3 control-label"  type='text'><?= $this->translate('Pilot'); ?></label>
                     <?php echo $joinForm->getElement('pilot_id')->renderElement(); ?>
                 </div>     
                 <div class='formElemWrapper'>
-                    <label for='car_id' class="col-md-3 control-label"  type='text'>Car</label>
+                    <label for='car_id' class="col-md-3 control-label"  type='text'><?= $this->translate('Car'); ?></label>
                     <?php echo $joinForm->getElement('car_id')->renderElement(); ?>
                 </div>
                 <div class='formElemWrapper'>
-                    <label for='risk' class="col-md-3 control-label"  type='text'>Risk</label>
+                    <label for='risk' class="col-md-3 control-label"  type='text'><?= $this->translate('Risk'); ?></label>
                     <?php echo $joinForm->getElement('risk')->renderElement(); ?>
                 </div>
                 <div class='goldCoinBox'>
-                    <h4>Join friendly rally</h4>
+                    <h4><?= $this->translate('Join friendly rally'); ?></h4>
                     <?php if(!$authenticatedUser['gold_member']): ?>
                         <div class="balance">
                             Balance: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
                         </div>
                          Cost:  10<img class="coin" src="/images/layout/coin.png" />
                    <?php else: ?>
-                        You are a <img src="/images/layout/gc_small.png" /> member. You are allowed to create 2 friendly rallies every 30 days.
+                        <?= $this->translate('You are a');?> <img src="/images/layout/gc_small.png" /> <?= $this->translate('member. You are allowed to create 2 friendly rallies every 30 days.');?>
                         <?php 
                         if($recentUserFriendlies['cnt']>=2){
                            $oldestFriendly = new DateTime($recentUserFriendlies['created_at']);
                            $oldestFriendly->add(new DateInterval('P30D'));
-                           echo "<br/> You have to wait until <strong>".$oldestFriendly->format('d/m/Y H:i')."</strong> to create another free friendly rally."; 
+                           echo "<br/>".$this->translate('You have to wait until')."<strong>".$oldestFriendly->format('d/m/Y H:i')."</strong> ".$this->translate('to create another free friendly rally.'); 
 
                            ?>
                         <br />
                         <div class="balanceWrapper">
                             <div class="balance">
-                                Balance: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
+                                <?= $this->translate('Balance');?>: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
                             </div>
-                             Cost:  10<img class="coin" src="/images/layout/coin.png" />
+                             <?= $this->translate('Cost'); ?>:  10<img class="coin" src="/images/layout/coin.png" />
                              <div class="clearfix"></div>
                         </div>
                         <?php
@@ -153,11 +153,11 @@
             <?php
 
             if(!$friendly['invite_only']){
-                echo "This rally is open for all";
+                echo $this->translate("This rally is open for all");
             }
             else{
                 if(count($friendly['Invitations'] )==0)
-                    echo "No teams invited yet";
+                    echo $this->translate("No teams invited yet");
                 ?>
                 <table>
                     <?php foreach($friendly['Invitations'] as $key => $invited): ?>
@@ -182,10 +182,10 @@
         <table>
             <tr>
                 <th></th>
-                <th>Crew</th>
-                <th>Car</th>
-                <th>Team</th>
-                <th>User</th>
+                <th><?= $this->translate('Crew'); ?></th>
+                <th><?= $this->translate('Car'); ?></th>
+                <th><?= $this->translate('Team');?></th>
+                <th><?= $this->translate('User'); ?></th>
             </tr>
             <?php foreach($rally['Crews'] as $key => $crew):?>
                     <tr>
@@ -214,12 +214,12 @@
         <?php if($rally['big_awards']): ?>
                 <img src="/images/b_letter.gif" />
                 <br />
-                Ilosc zalog : <?php echo $crewCounter; ?><br />
-                <h3>Prizes</h3>
+                <?= $this->translate('Crew number'); ?> : <?php echo $crewCounter; ?><br />
+                <h3><?= $this->translate('Prizes'); ?></h3>
                 <?php 
                 foreach($rallyPrizes as $key => $rallyPrize): 
                     $position = $key+1;
-                    echo "Position ".$position." - ";
+                    echo $this->translate("Position")." ".$position." - ";
                     if($rallyPrize['type']=="car"):
                         $car = $rallyPrize['value'];
                         ?>
@@ -233,10 +233,10 @@
                         <?php
                 endforeach; 
             else: ?>
-                <h3>Prizes</h3>
+                <h3><?= $this->translate('Prizes'); ?></h3>
                 <?php 
                 foreach($rallyPrizes as $position => $rallyPrize): 
-                    echo "Position ".$position." - ";
+                    echo $this->translate("Position")." ".$position." - ";
                     echo $rallyPrize."$ <br /><br />";
                 endforeach; 
             endif; ?>
@@ -263,7 +263,7 @@
                                     echo $result['total_time'];
                                 }
                                 else{
-                                    echo "Accident on stage no ".$result['stage_out_number'];
+                                    echo $this->translate('Accident on stage no')." ".$result['stage_out_number'];
                                 }
                                 ?>
                             </td>
@@ -276,22 +276,22 @@
             
             <?php if($rally['finished']): ?>
                 <li>
-                    <a href="#" class="active" rel="result">Results</a>
+                    <a href="#" class="active" rel="result"><?= $this->translate('Results'); ?></a>
                 </li>
             <?php endif ; ?>
             <li>
-                <a class="<?php if(!$rally['finished']) echo "active"?>" rel="details" href="#">Details</a>
+                <a class="<?php if(!$rally['finished']) echo "active"?>" rel="details" href="#"><?= $this->translate('Details'); ?></a>
             </li>
             <li>
-                <a href="#" rel="stages">Stages</a>
+                <a href="#" rel="stages"><?= $this->translate('Stages'); ?></a>
             </li>
             <?php if(!$rally['finished']){ ?>
                 <li>
-                    <a href="#" rel="invited">Invited crews</a>
+                    <a href="#" rel="invited"><?= $this->translate('Invited crews'); ?></a>
                 </li>
             <?php } ?>
             <li>
-                <a href="#" rel="crews">Signed crews</a>
+                <a href="#" rel="crews"><?= $this->translate('Signed crews'); ?></a>
             </li>
             <li>
                 <a href="#" rel="prizes">Prize pool</a>

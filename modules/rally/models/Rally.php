@@ -12,6 +12,8 @@
  */
 class Rally_Model_Doctrine_Rally extends Rally_Model_Doctrine_BaseRally
 {
+    
+    
     protected static $risks = array(
 	'very-small' => 'Very small risk',
 	'small' => 'Small risk',

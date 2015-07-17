@@ -176,6 +176,7 @@ class RallyService extends Service{
 	$q->leftJoin('r.Stages s');
 	$q->addWhere('s.finished !=0');
 	$q->addWhere('r.finished = 0');
+        $q->addWhere('r.date < ?',date('Y-m-d H:i:s',strtotime('-270 minutes')));
 	return $q->execute(array(),$hydrationMode);
     }
     

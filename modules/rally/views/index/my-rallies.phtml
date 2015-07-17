@@ -13,7 +13,7 @@
     }
 </style>
 <div class="mainUserBox rallyList">
-    <h4 class="boxHeader">My rallies</h4>
+    <h4 class="boxHeader"><?= $this->translate('My rallies'); ?></h4>
     <table>
         <?php foreach($rallies as $rally): ?>
             <tr>
@@ -29,19 +29,19 @@
                 <td>
                     <?php 
                     if($rally['Friendly']['invite_only']){
-                        echo "<span class='label label-danger'>Private</span>";
+                        echo "<span class='label label-danger'>".$this->translate('Private')."</span>";
                     }
                     else{
-                        echo "<span class='label label-success'>Public</span>";
+                        echo "<span class='label label-success'>".$this->translate('Public')."</span>";
                     }
                     ?>
                 </td>
                 <td>
                     <?php if((is_array($futureTeamRallies)&&in_array($rally['id'],$futureTeamRallies))||$rally['id']==$futureTeamRallies){
-                        echo "<span class='label label-info'>Joined</span>"; 
+                        echo "<span class='label label-info'>".$this->translate('Joined')."</span>"; 
                     } ?>
                         <?php if((is_array($myInvitations)&&in_array($rally['id'],$myInvitations))){
-                        echo "<span class='label label-warning'>Invited</span>"; 
+                        echo "<span class='label label-warning'>".$this->translate('Invited')."</span>"; 
                     } ?>
                 </td>
             </tr>

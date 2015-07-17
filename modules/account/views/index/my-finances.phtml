@@ -1,15 +1,15 @@
 <?php $financeTypes = TeamService::getInstance()->getFinanceTypes(); ?>
 <div class="mainUserBox ">
-    <h4 class="boxHeader">My finances </h4>
+    <h4 class="boxHeader"><?= $this->translate('My finances'); ?></h4>
     <div class="myFinances">
         <div class="accountBalance">
-            Account balance:  <strong><?php echo $team['cash'];?>$ </strong>
+            <?= $this->translate('Account balance'); ?>:  <strong><?php echo $team['cash'];?>$ </strong>
         </div>
         <br /><br />
 
-        <h5>This week</h5>
+        <h5><?= $this->translate('This week'); ?></h5>
         <div class="col-md-6 incomeBox">
-            <span class="financeSubHeader">Incomes</span> 
+            <span class="financeSubHeader"><?= $this->translate('Incomes'); ?></span> 
             <br />
             <?php 
             foreach($financialReportSimple['income'] as $simpleReport): 
@@ -18,16 +18,16 @@
             <?php endforeach; ?>
         </div>
         <div class="col-md-6 expenseBox">
-            <span class="financeSubHeader">Expenses</span> <br />
+            <span class="financeSubHeader"><?= $this->translate('Expenses'); ?></span> <br />
             <?php 
             foreach($financialReportSimple['expense'] as $simpleReport2): 
                 echo $financeTypes[$simpleReport2['detailed_type']]." - ".$simpleReport2['amount']; ?>$<br />
             <?php endforeach; ?>
         </div>
         <div class="clearfix"></div>
-        <h5>Last week</h5>
+        <h5><?= $this->translate('Last week'); ?></h5>
         <div class="col-md-6 incomeBox">
-            <span class="financeSubHeader">Incomes</span> 
+            <span class="financeSubHeader"><?= $this->translate('Incomes'); ?></span> 
             <br />
             <?php 
             foreach($financialReportSimpleLastWeek['income'] as $simpleReport): 
@@ -36,7 +36,7 @@
             <?php endforeach; ?>
         </div>
         <div class="col-md-6 expenseBox">
-            <span class="financeSubHeader">Expenses</span> <br />
+            <span class="financeSubHeader"><?= $this->translate('Expenses'); ?></span> <br />
             <?php 
             foreach($financialReportSimpleLastWeek['expense'] as $simpleReport2): 
                 echo $financeTypes[$simpleReport2['detailed_type']]." - ".$simpleReport2['amount']; ?>$<br />
@@ -45,12 +45,12 @@
         <div class="clearfix"></div>
         <div class="advancedFinanceReport">
         <?php if($authenticatedUser['gold_member']): ?>
-            <h5>Advanced report </h5>
+            <h5><?= $this->translate('Advanced report'); ?></h5>
             <div class="col-md-6">
-                <h4>Incomes</h4>
+                <h4><?= $this->translate('Incomes'); ?></h4>
             </div>
             <div class="col-md-6">
-                <h4>Expenses</h4>
+                <h4><?= $this->translate('Expenses'); ?></h4>
             </div>
             <div>
                 <?php foreach($financialReportAdvanced as $advancedReport):
@@ -70,7 +70,7 @@
                     <div class="clearfix"></div>
             <?php else: ?>
             <div class="noGoldAvancedReport">
-                <h5>Advanced report </h5>
+                <h5><?= $this->translate('Advanced report'); ?></h5>
                 <div class="goldOverlay">
                     <a href="#">
                         <img src="/images/layout/gc_big.png">

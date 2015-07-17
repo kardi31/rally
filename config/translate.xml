@@ -257,6 +257,186 @@
     <word id="Sell car">
         <pl>Sprzedaj auto</pl>
     </word>
+    <word id="Joined">
+        <pl>Uczestniczysz</pl>
+    </word>
+    <word id="Invited">
+        <pl>Zaproszony</pl>
+    </word>
+    <word id="Private">
+        <pl>Prywatny</pl>
+    </word>
+    <word id="Public">
+        <pl>Publiczny</pl>
+    </word>
+    <word id="Sell car">
+        <pl>Sprzedaj samochód</pl>
+    </word>
+    <word id="Change car name">
+        <pl>Zmień nazwe samochodu</pl>
+    </word>
+    <word id="You are allowed to change name of your car every 30 days.">
+        <pl>Możesz zmienić nazwę samochodu raz na 30 dni.</pl>
+    </word>
+    <word id="members can change car name every 7 days.">
+        <pl>gracze mogą zmieniać nazwę samochodu raz na 7 dni.</pl>
+    </word>
+    <word id="You still have">
+        <pl>Pozostało ci</pl>
+    </word>
+    <word id="name change left.">
+        <pl>zmian.</pl>
+    </word>
+    <word id="You can change car name on">
+        <pl>Możesz zmienić nazwę samochodu dnia</pl>
+    </word>
+    <word id="New name">
+        <pl>Nowa nazwa</pl>
+    </word>
+    <word id="Go back">
+        <pl>Powrót</pl>
+    </word>
+    <word id="No training report.">
+        <pl>Brak raportu z treningu.</pl>
+    </word>
+    <word id="Account balance">
+        <pl>Stan konta</pl>
+    </word>
+    <word id="This week">
+        <pl>Ten tydzień</pl>
+    </word>
+    <word id="Last week">
+        <pl>Poprzedni tydzień</pl>
+    </word>
+    <word id="Incomes">
+        <pl>Przychody</pl>
+    </word>
+    <word id="Expenses">
+        <pl>Wydatki</pl>
+    </word>
+    <word id="Last week">
+        <pl>Poprzedni tydzień</pl>
+    </word>
+    <word id="Advanced report">
+        <pl>Raport szczegółowy</pl>
+    </word>
+    <word id="My friendly rallies">
+        <pl>Moje rajdy towarzyskie</pl>
+    </word>
+    <word id="Friendly rallies">
+        <pl>Rajdy towarzyskie</pl>
+    </word>
+    <word id="Rally list">
+        <pl>Lista rajdów</pl>
+    </word>
+    <word id="Create friendly rally">
+        <pl>Stwórz rajd towarzyski</pl>
+    </word>
+    <word id="See results">
+        <pl>Zobacz wyniki</pl>
+    </word>
+    <word id="Big awards">
+        <pl>Duże nagrody</pl>
+    </word>
+    <word id="Top 3 teams are promoted to league 3, bottom 3 teams are relegated to league 5.">
+        <pl>Najlepsze 3 drużyny awansują do ligi 3, najsłabsze 3 drużyny spadają do ligi niżej.</pl>
+    </word>
+    <word id="Position">
+        <pl>Pozycja</pl>
+    </word>
+    <word id="Team">
+        <pl>Drużyna</pl>
+    </word>
+    <word id="Points">
+        <pl>Punkty</pl>
+    </word>
+    <word id="League">
+        <pl>Liga</pl>
+    </word>
+    <word id="You have joined the rally.">
+        <pl>Dołączyłeś do rajdu.</pl>
+    </word>
+    <word id="Prize pool">
+        <pl>Pula nagród</pl>
+    </word>
+    <word id="Signed crews">
+        <pl>Zapisane załogi</pl>
+    </word>
+    <word id="Race start">
+        <pl>Start rajdu</pl>
+    </word>
+    <word id="Sign up finish">
+        <pl>Koniec zapisów</pl>
+    </word>
+    <word id="You already participate in this rally.">
+        <pl>Już uczestniczysz w tym rajdzie</pl>
+    </word>
+    <word id="Sign up">
+        <pl>Zapisy</pl>
+    </word>
+    <word id="Driver">
+        <pl>Kierowca</pl>
+    </word>
+    <word id="Car">
+        <pl>Samochód</pl>
+    </word>
+    <word id="Risk">
+        <pl>Ryzyko</pl>
+    </word>
+    <word id="Join rally">
+        <pl>Dołącz do rajdu</pl>
+    </word>
+    <word id="Details">
+        <pl>Informacje</pl>
+    </word>
+    <word id="Stages">
+        <pl>Odcinki</pl>
+    </word>
+    <word id="Crew">
+        <pl>Załoga</pl>
+    </word>
+    <word id="Prizes">
+        <pl>Nagrody</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
     <word id="Age">
         <pl>Wiek</pl>
     </word>
@@ -301,5 +481,65 @@
     </word>
     <word id="Age">
         <pl>Wiek</pl>
-    </word>v
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
+    <word id="Age">
+        <pl>Wiek</pl>
+    </word>
 </root>

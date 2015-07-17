@@ -1,14 +1,14 @@
 <div class="mainUserBox showLeagueTable">
-    <h4 class="boxHeader">League <?php echo $league; ?></h4> 
+    <h4 class="boxHeader"><?= $this->translate('League')." ".$league; ?></h4> 
    <div class="showLeagueTableWrapper"> 
-       <div>Top 3 teams are promoted to league 3, bottom 3 teams are relegated to league 5.</div>
+       <div><?= $this->translate('Top 3 teams are promoted to league 3, bottom 3 teams are relegated to league 5.'); ?></div>
        <br />
         <table>
             <thead>
                 <tr>
-                    <th>Position</th>
-                    <th>Team</th>
-                    <th>Points</th>
+                    <th><?= $this->translate('Position');?></th>
+                    <th><?= $this->translate('Team');?></th>
+                    <th><?= $this->translate('Points');?></th>
                 </tr>
             </thead>
             <tbody>

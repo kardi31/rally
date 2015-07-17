@@ -1,5 +1,5 @@
 <div class="mainUserBox rallyList">
-    <h4 class="boxHeader">Rally list</h4>
+    <h4 class="boxHeader"><?= $this->translate('Rally list'); ?></h4>
     <table>
         <?php foreach($rallies as $rally): ?>
             <tr>
@@ -18,7 +18,7 @@
                 </td>
                 <td>
                     <?php if((is_array($futureTeamRallies)&&in_array($rally['id'],$futureTeamRallies))||$rally['id']==$futureTeamRallies){
-                        echo "<span class='label label-info'>Joined</span>"; 
+                        echo "<span class='label label-info'>".$this->translate('Joined')."</span>"; 
                     } ?>
                 </td>
                 <td>

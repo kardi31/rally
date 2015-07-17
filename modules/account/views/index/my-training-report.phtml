@@ -18,7 +18,7 @@
     }
     </style>
 <div class="mainUserBox ">
-    <h4 class="boxHeader">My training report </h4>
+    <h4 class="boxHeader"><?= $this->translate('My training report'); ?></h4>
     <div class="trainingBox">
     <?php if(is_array($results)){ ?>
             <table>
@@ -54,10 +54,8 @@
                     </tr>
                 <?php endforeach; ?>
             </table>
-    <?php }else{ ?>
-        brak wynikow
-
-    <?php 
+    <?php }else{ 
+        echo $this->translate('No training report.');
     } ?>
     </div>
 </div>
