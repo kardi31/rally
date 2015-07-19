@@ -10,10 +10,10 @@ class View{
     
     public function __construct() {
 	
-        if(!isset($this->doc)){
-            $this->doc = new DomDocument;
-            $this->doc->validateOnParse = true;
-            $this->doc->Load(BASE_PATH."/config/translate.xml");
+        if(!isset(self::$doc)&&get_class(self::$doc)!="DOMDocument"){
+            self::$doc = new DomDocument();
+//            self::$doc->validateOnParse = false;
+            self::$doc->Load(BASE_PATH."/config/translate.xml");
         }
     }
     
@@ -78,18 +78,27 @@ class View{
     }
     
     public function translate($string){
-        try{
-            $elem = $this->doc->getElementById($string);
-        
-            if($elem){
-                if(strlen($elem->getElementsByTagName('pl')[0]->nodeValue)){
-                    return $elem->getElementsByTagName('pl')[0]->nodeValue;
+        if(isset($_COOKIE['lang'])){
+            $lang = $_COOKIE['lang'];
+            try{
+                $elem = self::$doc->getElementById($string);
+                if($elem){
+                    $nodeElem = $elem->getElementsByTagName($lang)->item(0);
+                    if(strlen($nodeElem->nodeValue)){
+                        return $nodeElem->nodeValue;
+                    }
+                    else{
+                        return $string;
+                    }
                 }
+                else
+                    return $string;
             }
-            else
+            catch(Exception $e){
                 return $string;
+            }
         }
-        catch(Exception $e){
+        else{
             return $string;
         }
     }

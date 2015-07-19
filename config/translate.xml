@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE books [
-  <!ELEMENT word   (word)>
-  <!ATTLIST word    id           ID     #IMPLIED>
+<!DOCTYPE root [
+  <!ELEMENT word   (pl,id)>
+  <!ATTLIST word id       ID     #IMPLIED>
+  <!ATTLIST word pl       CDATA      #IMPLIED>
 ]>
 <?xml-stylesheet type="text/xsl" href="style.xsl"?>
 <root>
@@ -71,9 +72,6 @@
     <word id="My people">
         <pl>Moi ludzie</pl>
     </word>
-    <word id="My cars">
-        <pl>Moje auta</pl>
-    </word>
     <word id="Training report">
         <pl>Raport z treningu</pl>
     </word>
@@ -88,9 +86,6 @@
     </word>
     <word id="Rallies">
         <pl>Rajdy</pl>
-    </word>
-    <word id="My friendly rallies">
-        <pl>Moje rajdy towarzyskie</pl>
     </word>
     <word id="Friendly rallies">
         <pl>Rajdy towarzyskie</pl>
@@ -227,9 +222,6 @@
     <word id="Mileage">
         <pl>Przebieg</pl>
     </word>
-    <word id="Value">
-        <pl>Wartość</pl>
-    </word>
     <word id="Upkeep">
         <pl>Koszt utrzymania</pl>
     </word>
@@ -269,9 +261,6 @@
     <word id="Public">
         <pl>Publiczny</pl>
     </word>
-    <word id="Sell car">
-        <pl>Sprzedaj samochód</pl>
-    </word>
     <word id="Change car name">
         <pl>Zmień nazwe samochodu</pl>
     </word>
@@ -305,9 +294,6 @@
     <word id="This week">
         <pl>Ten tydzień</pl>
     </word>
-    <word id="Last week">
-        <pl>Poprzedni tydzień</pl>
-    </word>
     <word id="Incomes">
         <pl>Przychody</pl>
     </word>
@@ -322,9 +308,6 @@
     </word>
     <word id="My friendly rallies">
         <pl>Moje rajdy towarzyskie</pl>
-    </word>
-    <word id="Friendly rallies">
-        <pl>Rajdy towarzyskie</pl>
     </word>
     <word id="Rally list">
         <pl>Lista rajdów</pl>

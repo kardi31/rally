@@ -82,6 +82,18 @@ class Index_Index extends Controller{
         $this->view->assign('users',$users);
     }
     
+    public function setLang(){
+        $view = $this->view;
+        $view->setNoRender();
+        $langs = array('pl','gb');
+        
+        $lang = $GLOBALS['urlParams']['id'];
+        if(in_array($lang,$langs)){
+            setcookie('lang',$lang,time() + (86400 * 30),'/');
+        }
+        TK_Helper::redirect($_SERVER['HTTP_REFERER']);
+    }
+    
     public function menu(){
         
     }

@@ -92,7 +92,6 @@ class Rally_Index extends Controller{
     }
     
     public function listRally(){
-        
         Service::loadModels('team', 'team');
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();

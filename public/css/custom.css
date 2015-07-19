@@ -120,6 +120,30 @@ table tr td{
     color:#000;
 }
 
+    .flagSelect{
+        float:right;
+    }
+    .flagSelect ul{
+        padding:0px;
+        list-style-type:none;
+    }
+    .flagSelect li{
+        display:none;
+        margin-bottom:5px;
+    }
+    .flagSelect li img{
+        margin-right:5px;
+    }
+    .flagSelect li.selected{
+        display:inline-block;
+    }
+    .flagSelect li.selected img{
+        margin-top:5px;
+    }
+    .flagSelect a,.flagSelect a:active,.flagSelect a:focus,.flagSelect a:hover{
+        text-decoration:none;
+    }
+
 /*
 1.1 MAIN HEADER
 */
@@ -194,7 +218,7 @@ label[for="rememberMe"],.topToolbarBottom a{
     display:block;
     min-height:500px;
     padding-bottom:50px;
-    border-radius:20px;
+    /*border-radius:20px;*/
 }
 .mainPageBox{
     background:rgba(34, 33, 33, 0.85);
@@ -338,12 +362,12 @@ footer{
   cursor: pointer;
   font-size: 16px;
 }
-#tMenu li a:hover{background-color:#3a3a3a}
+#tMenu li a:hover{background-color:#3a3a3a; text-decoration:none;color:#FFCC00;}
 #tMenu li:hover>a{background-color:#3a3a3a}
-#tMenu li ul{display:none;position:absolute;z-index:9999;padding:0;margin:0;list-style:none;margin-top:10px;width:100% !important; 
+#tMenu li ul{display:none;position:absolute;z-index:9999;padding:0;margin:0;list-style:none;width:100% !important; 
 }
 /*#tMenu li:first-of-type ul{display:block !important;}*/
-#tMenu li ul li{background-color:#fff;display:block;border-bottom:1px solid #484548;padding:0px;list-style:none;position:relative;display:inline-block;vertical-align: top;}
+#tMenu li ul li{background-color:#fff;display:block;max-width:200px;border-bottom:1px solid #484548;padding:0px;list-style:none;position:relative;vertical-align: top;}
 #tMenu li ul li a{font-size:11px;color:#322f32;text-transform:none;display:block;padding:7px 17px;border-top:1px solid transparent;border-bottom:1px solid transparent;font-size:14px;}
 #tMenu li ul li a.isParent{background-color:#3a3a3a}
 #tMenu li ul li a:hover{background-color:#514c52;border-top:1px solid #322f32;border-bottom:1px solid #322f32}

@@ -1,3 +1,15 @@
+<script>
+    $(document).ready(function(){
+                $('.flagSelect li.selected a').click(function(){
+                    if($('.flagSelect li:not(.selected)').is(':visible')){
+                        $('.flagSelect li:not(.selected)').hide();
+                    }
+                    else{
+                        $('.flagSelect li').show();
+                    }
+                }) ;
+    });
+    </script>
 <a href='/'>
     <img src="/images/layout/logo-fastrally.png" class="logo" />
 </a>
@@ -20,8 +32,61 @@
         <img src="/images/layout/kask.jpg" class="userImg" />
         <?php echo $user['username']; ?>
         <span class='flagSelect'>
-            <img src='/images/layout/gb.png' />
-        </span>
+                <ul>
+                    <?php if(!isset($_COOKIE['lang'])){ ?>
+                        <li class="selected">
+                            <a href="#">
+                                <img src='/images/layout/gb.png' />
+                                <i class="fa fa-sort-desc"></i>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="/index/set-lang/id/pl/">
+                                <img src='/images/layout/pl.png' />
+                            </a>
+                        </li>
+                    <?php                        
+                    }
+                    else{
+                        if($_COOKIE['lang']=="pl"){ ?>
+                        
+                        <li class="selected">
+                            <a href="#">
+                                <img src='/images/layout/pl.png' />
+                                <i class="fa fa-sort-desc"></i>
+                            </a>
+                        </li>
+                         <li>
+                            <a href="/index/set-lang/id/gb/">
+                                <img src='/images/layout/gb.png' />
+                            </a>
+
+                        </li>
+                        <?php
+                        }
+                        elseif($_COOKIE['lang']=="gb"){ ?>
+                            <li class="selected">
+                                <a href="#">
+                                    <img src='/images/layout/gb.png' />
+                                    <i class="fa fa-sort-desc"></i>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a href="/index/set-lang/id/pl/">
+                                    <img src='/images/layout/pl.png' />
+                                </a>
+                            </li>
+                        <?php
+                        }
+                    }
+                    ?>
+                </ul>
+                
+            </span>
+        
+             <a class="logOut" href="/user/logout"><?= $this->translate('Logout');?></a>
     </div>
 <!--                <select>
         <option value='gb'><img src='/images/layout/gb.png' /></option>
@@ -29,6 +94,13 @@
     </select>-->
 </div>
 <style>
+    .logOut{
+        display:block;
+        font-size:12px;
+        margin-left:50px;  
+        float: right;
+  clear: right;
+    }
     .quickLogin{
         position:fixed;
         left:0px;
