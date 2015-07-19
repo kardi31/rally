@@ -537,6 +537,21 @@ footer{
     padding-left:25px;
 }
 
+.myBtn{
+      background: #00a651;
+  border-radius: 0px;
+  color: #fff;
+  font-size: 18px;
+    margin:0 auto;
+    width: auto;
+    display:inline-block;
+  height: auto;
+  text-align:center;
+  padding:5px !important;
+  white-space: normal;
+    
+}
+
 .seeAllTransfer{
     margin:0 auto;
       width: auto;
@@ -1013,6 +1028,8 @@ footer{
     */
     
     .createFriendly{
+        margin-top:0px;
+        margin-bottom:10px;
         margin-left:20px;
     }
     
@@ -1026,6 +1043,15 @@ footer{
         display:block;
         margin:0 auto;
         max-width:400px;
+    }
+    
+    .createFriendlyBox .boxHeader{
+        margin-bottom:25px;
+    }
+    
+    .createFriendlyBox input[type="radio"]{
+        margin-left:5px;
+        margin-top:10px;
     }
     
     
