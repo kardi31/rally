@@ -10,17 +10,17 @@
 
         if(isset($_GET['msg'])){
             if($_GET['msg']=="bid placed")
-                $this->showSuccess('Congratulations. You hold the highest bid.');
+                $this->showSuccess($this->translate('Congratulations. You hold the highest bid.'));
             elseif($_GET['msg']=="not highest")
-                $this->showError('Your bid must be greater than the highest one.');
+                $this->showError($this->translate('Your bid must be greater than the highest one.'));
             elseif($_GET['msg']=="already highest")
-                $this->showError('You already hold the highest bid.');
+                $this->showError($this->translate('You already hold the highest bid.'));
             elseif($_GET['msg']=="finished")
-                $this->showError('Sorry, the auction has been finished');
+                $this->showError($this->translate('Sorry, the auction has been finished'));
             elseif($_GET['msg']=="greater than asking")
-                $this->showError('Offer must be greater than asking price');
+                $this->showError($this->translate('Offer must be greater than asking price'));
             elseif($_GET['msg']=="not enough money")
-                $this->showError('Sorry, You don\'t have enough money for all of your bids');
+                $this->showError($this->translate('Sorry, You don\'t have enough money for all of your bids'));
 
             
            
@@ -42,7 +42,7 @@
                         <?= $this->translate('Mileage');?>: <?php echo $car['mileage']; ?>
                     </li>
                     <li>
-                        <?= $this->translate('Value'); ?>:<?php echo $car['value']; ?>
+                        <?= $this->translate('Value'); ?>: <?php echo $car['value']; ?>
                     </li>
                     <li>
                         <?= $this->translate('Upkeep'); ?>: <?php echo $car['upkeep']; ?>

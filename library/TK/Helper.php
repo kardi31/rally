@@ -15,18 +15,20 @@ class TK_Helper{
     }
     
     public static function displayPeopleSkillsOnList($person,$skill,$showEmpty = true){
-        echo str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$person[$skill]);
+        $result = "";
+        $result .= str_repeat("<img src='/images/gwiazdka.png' alt='gw' />", (int)$person[$skill]);
         if($showEmpty)
-        echo str_repeat("<img src='/images/gwiazdka-empty.png' class='gwEmpty' alt='gw' />", 10-(int)$person[$skill]);
+        $result .= str_repeat("<img src='/images/gwiazdka-empty.png' class='gwEmpty' alt='gw' />", 10-(int)$person[$skill]);
         
         if($showEmpty&&$skill!="form"&&$skill!="talent"){
             if($person['active_training_skill']==$skill){
-                echo '<a class="trainingChange" title="This skill is currently trained by your player" href="#"><i class="fa fa-circle-o"></i></a>';
+                $result .= '<a class="trainingChange" title="This skill is currently trained by your player" href="#"><i class="fa fa-circle-o"></i></a>';
             }
             else{
-                echo '<a class="trainingChange" title="Set this skill to be trained by your player" href="/people/set-active-training-skill/id/'.$person['id'].'/skill/'.$skill.'/"><i class="fa fa-circle-o fa-circle-empty"></i></a>';
+                $result .= '<a class="trainingChange" title="Set this skill to be trained by your player" href="/people/set-active-training-skill/id/'.$person['id'].'/skill/'.$skill.'/"><i class="fa fa-circle-o fa-circle-empty"></i></a>';
             }
         }
+        return $result;
     }
     
     public static function showCarParameters($car){
@@ -116,13 +118,13 @@ class TK_Helper{
                         <tr>
                             <td>Talent</td>
                             <td>
-                                '.TK_Helper::displayPeopleSkillsOnList($person, 'talent').'
+                                '.TK_Helper::displayPeopleSkillsOnList($person, 'talent',$showTraining).'
                             </td>
                         </tr>
                         <tr>
                             <td>'.$view->translate('Form').'</td>
                             <td>
-                                '.TK_Helper::displayPeopleSkillsOnList($person, 'form').'
+                                '.TK_Helper::displayPeopleSkillsOnList($person, 'form',$showTraining).'
                             </td>
                         </tr>
                     </table>';
@@ -157,13 +159,13 @@ class TK_Helper{
             <tr>
                 <td>Talent</td>
                 <td>
-                    '.TK_Helper::displayPeopleSkillsOnList($person, 'talent').'
+                    '.TK_Helper::displayPeopleSkillsOnList($person, 'talent',$showTraining).'
                 </td>
             </tr>
             <tr>
                 <td>'.$view->translate('Form').'</td>
                 <td>
-                    '.TK_Helper::displayPeopleSkillsOnList($person, 'form').'
+                    '.TK_Helper::displayPeopleSkillsOnList($person, 'form',$showTraining).'
                 </td>
             </tr>
         </table>';
