@@ -1,6 +1,6 @@
 <?php if(isset($_GET['msg'])){
         if($_GET['msg']=="too fast"){
-            $this->showError('You can post once every 30 seconds');
+            $this->showError($this->translate('You can post once every 30 seconds'));
         }
     }
     ?>
@@ -72,7 +72,7 @@
             <?php endforeach; ?>
     </div>
     <div class="addThreadWrapper replyThreadWrapper">
-        <h5><i class="fa fa-pencil"></i> Respond to this thread</h5>
+        <h5><i class="fa fa-pencil"></i> <?= $this->translate('Respond to this thread'); ?></h5>
         <form method="POST">
             <?php echo $form->getElement('content')->renderElement(); ?>
             <?php // echo $form->getElement('active')->renderElement(); ?>

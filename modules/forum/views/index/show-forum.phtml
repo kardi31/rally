@@ -1,5 +1,5 @@
 <div class="mainUserBox showRallyWrapper">
-    <h4 class="boxHeader">Forum</h4> 
+    <h4 class="boxHeader"><?= $this->translate('Forum'); ?></h4> 
    
     <?php foreach($categories as $category): ?>
         <div class="forumGroup">
@@ -7,7 +7,7 @@
             <div class="forumGroupInside">
                 <div class="forumGroupRight">
                     <?php if(isset($category['last_post'])&&!empty($category['last_post'])): ?>
-                        Last post: <br />
+                        <?= $this->translate('Last post'); ?>: <br />
                         <i class="fa fa-clock-o"></i>
                         <?php 
                         echo date(TK_Text::timeFormat($category['last_post']['created_at'],'d/m/Y H:i'));
@@ -18,8 +18,8 @@
                         <br />
                     <?php endif; ?>
                 </div>
-                Number of posts: <strong><?php echo $category['post_count']; ?></strong><br />
-                Number of threads: <?php echo $category['thread_count']; ?><br />
+                <?= $this->translate('Number of posts'); ?>: <strong><?php echo $category['post_count']; ?></strong><br />
+                <?= $this->translate('Number of threads'); ?>: <?php echo $category['thread_count']; ?><br />
                 <?php if(is_array($favouriteCategories)&&in_array($category['id'], $favouriteCategories)){ ?>
                     <a href="/forum/remove-favourite-forum/id/<?php echo $category['id']; ?>/"><i class="fa fa-star selected"></i></a>
                 <?php }
