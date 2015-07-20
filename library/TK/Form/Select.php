@@ -98,14 +98,16 @@ class Select extends Element {
     
     public function addMultiOptions($options,$emptyOption = false){
 	
+	if($emptyOption)
+	    $this->multiOptions[$this->name][''] = $emptyOption;
+        
 	if(count($options)==0)
 	    return ;
 	
 	// set pointer to begining of array
 	reset($options);
 	$first_value = current($options);
-	if($emptyOption)
-	    $this->multiOptions[$this->name][''] = '';
+        
 	// if as a value we get an array then first col is a key and second is a value
 	if(is_array($first_value)):
 	    $keys = array_keys($first_value);

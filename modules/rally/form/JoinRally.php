@@ -16,6 +16,6 @@ class JoinRally extends Form{
         $risk->setValue('normal');
         $submit = $this->createElement('submit','submit');
         $submit->setLabel($view->translate('Join rally'));
-        $submit->addClass('btn btn-primary');
+        $submit->addClass('myBtn');
     }
 }

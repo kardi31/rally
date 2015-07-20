@@ -140,6 +140,9 @@ table tr td{
     .flagSelect li.selected img{
         margin-top:5px;
     }
+    .flagSelect li:not(.selected){
+        position:absolute;
+    }
     .flagSelect a,.flagSelect a:active,.flagSelect a:focus,.flagSelect a:hover{
         text-decoration:none;
     }
@@ -1045,13 +1048,16 @@ footer{
         max-width:400px;
     }
     
+    .createFriendlyBox .radioWrapper label{
+        vertical-align:top;
+    }
+    
     .createFriendlyBox .boxHeader{
         margin-bottom:25px;
     }
     
     .createFriendlyBox input[type="radio"]{
         margin-left:5px;
-        margin-top:10px;
     }
     
     
