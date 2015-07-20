@@ -192,29 +192,29 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Sell player <span id="sellPlayerName"></span></h4>
+            <h4 class="modal-title"><?= $this->translate('Sell player'); ?> <span id="sellPlayerName"></span></h4>
           </div>
           <div class="modal-body">
                 <div class="form-group">
-                    <label for="asking_price" class="control-label">Asking price</label>
+                    <label for="asking_price" class="control-label"><?= $this->translate('Asking price'); ?></label>
                     <?php echo $form->getElement('asking_price')->renderElement(); ?>
                 </div>
 
                 <div class="form-group">
-                    <label for="asking_price" class="control-label">Days on the market</label>
+                    <label for="asking_price" class="control-label"><?= $this->translate('Days on the market'); ?></label>
                     <?php echo $form->getElement('days')->renderElement(); ?>
                 </div>
 
                 <div class="form-group">
-                    <label for="selling_fee" class="control-label">Selling fee</label>
+                    <label for="selling_fee" class="control-label"><?= $this->translate('Selling fee'); ?></label>
                     <?php echo $form->getElement('selling_fee')->renderElement(); ?>
                 </div>
-                <input type="hidden" name="player_id" id="player_id" /> 
+                <input type="hidden" name="player_id" id="player_id" value="<?= $person['id']; ?>" /> 
 
           </div>
           <div class="modal-footer">
             <?php echo $form->getElement('submit')->renderElement(); ?>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><?= $this->translate('Close'); ?></button>
           </div>
         </div>
             </form>

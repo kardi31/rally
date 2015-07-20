@@ -190,7 +190,7 @@ class MarketService extends Service{
         $player->set('on_market',1);
         $player->save();
         
-        return $record;
+        return array('element' => $record,'status' => true);
     }
     
     public function addCarOnMarket($values,Car_Model_Doctrine_Car $car){

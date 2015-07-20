@@ -133,7 +133,7 @@
                 <h3><?= $this->translate('Prizes');?></h3>
                 <?php 
                 foreach($rallyPrizes as $position => $rallyPrize): 
-                    echo "Position ".$position." - ";
+                    echo $this->translate('Positon')." ".$position." - ";
                     echo $rallyPrize."$ <br /><br />";
                 endforeach; 
             endif; ?>

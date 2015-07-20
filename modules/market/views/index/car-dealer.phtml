@@ -1,10 +1,10 @@
 <?php 
 if(isset($_GET['msg'])&&$_GET['msg']=="cant afford"){
-    $this->showError("Sorry. You don't have enough money to buy this car.");
+    $this->showError($this->translate("Sorry. You don't have enough money to buy this car."));
 }
 ?>
 <div class="mainUserBox myCarsBox">
-    <h4 class="boxHeader">Car dealer</h4>
+    <h4 class="boxHeader"><?= $this->translate('Car dealer'); ?></h4>
     <div class="myCars">
         <?php foreach($carsForSale as $car): ?>
             <div class="carCard carDealer">
@@ -25,35 +25,12 @@ if(isset($_GET['msg'])&&$_GET['msg']=="cant afford"){
                     <?php // echo $formCar1->renderForm(); ?>
                 </div>-->
                     
-                    <div class="carParameters">
-                        <table>
-                           <tr>
-                               <td>brand:</td>
-                               <td><?php echo $car['name']; ?></td>
-                           </tr>
-                           <tr>
-                               <td>capacity</td>
-                               <td><?php echo $car['capacity'];?></td>
-                           </tr>
-                           <tr>
-                               <td>horse power</td>
-                               <td><?php echo $car['horsepower'];?></td>
-                           </tr>
-                           <tr>
-                               <td>v-max</td>
-                               <td><?php echo $car['max_speed'];?></td>
-                           </tr>
-                           <tr>
-                               <td>acceleration</td>
-                               <td><?php echo $car['acceleration'];?></td>
-                           </tr>
-
-                       </table>
-                   </div>
+                    <?= TK_Helper::showCarParameters($car); ?>
+                    
                     <div class="clearfix"></div>
                 <div class="carBtn">
-                    Car price : <?= $car['price']; ?>$<br />
-                    <a class='btn' href="/market/buy-car/id/<?php echo $car['id']; ?>"><i class="fa fa-shopping-cart"></i> Buy this car</a>
+                    <?= $this->translate('Car price'); ?> : <?= $car['price']; ?>$<br />
+                    <a class='btn' href="/market/buy-car/id/<?php echo $car['id']; ?>"><i class="fa fa-shopping-cart"></i> <?= $this->translate('Buy this car'); ?></a>
 
                 </div>
 

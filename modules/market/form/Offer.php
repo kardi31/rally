@@ -2,6 +2,7 @@
 
 class Offer extends Form{
     public function __construct(){
+        $view = View::getInstance();
         $askingPrice = $this->createElement('text','asking_price',array('validators' => array('int')),'Cena');
         $askingPrice->addClass('form-control');
         $askingPrice->addParam('required');
@@ -15,7 +16,7 @@ class Offer extends Form{
         $days->addClass('form-control');
         $submit = $this->createElement('submit','submit');
         $submit->addClass('btn btn-success');
-        $submit->setLabel('Put on market');
+        $submit->setLabel($view->translate('Put on market'));
     }
 }
 

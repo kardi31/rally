@@ -22,7 +22,7 @@
                     } ?>
                 </td>
                 <td>
-                    <?= count($rally['Crews'])." crews"; ?>
+                    <?= count($rally['Crews'])." ".$this->translate("crews"); ?>
                 </td>
                 <td>
                     <?php if($rally['date']<=date('Y-m-d H:i:s')){ ?>

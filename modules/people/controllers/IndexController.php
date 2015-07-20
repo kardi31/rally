@@ -67,16 +67,18 @@ class People_Index extends Controller{
                 
                 $values = $_POST;
                 $values['team_id'] = $user['Team']['id'];
+//                var_dump($values);exit;
+//                echo "pp";exit;
                 $result = $marketService->addPlayerOnMarket($values,$player);
                 
-                
-                if($result!== false){
+                if($result['status']!== false){
                     if(isset($_COOKIE['player_seller'])){
                         $player_seller = unserialize($_COOKIE['player_seller']);
                     }
                     $player_seller[$player['id']] = $user['id'];
                     setcookie('player_seller',serialize($player_seller),time()+(86400 * 4),'/');
                     TK_Helper::redirect('/market/show-offer/id/'.$result['element']['id']);
+                    exit;
                 }
                 else{
                     TK_Helper::redirect('/account/my-people?msg='.$result['message']);

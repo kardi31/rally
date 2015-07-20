@@ -77,13 +77,13 @@ class View{
         include(BASE_PATH."/views/message/success.phtml");
     }
     
-    public function translate($string){
+    public function translate($string,$trItem = 0){
         if(isset($_COOKIE['lang'])){
             $lang = $_COOKIE['lang'];
             try{
                 $elem = self::$doc->getElementById($string);
                 if($elem){
-                    $nodeElem = $elem->getElementsByTagName($lang)->item(0);
+                    $nodeElem = $elem->getElementsByTagName($lang)->item($trItem);
                     if(strlen($nodeElem->nodeValue)){
                         return $nodeElem->nodeValue;
                     }
