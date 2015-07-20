@@ -66,16 +66,16 @@
     <word id="Office">
         <pl>Biuro</pl>
     </word>
-    <word id="My account">
+    <word id="Account">
         <pl>Moje konto</pl>
     </word>
-    <word id="My people">
+    <word id="People">
         <pl>Moi ludzie</pl>
     </word>
     <word id="Training report">
         <pl>Raport z treningu</pl>
     </word>
-    <word id="My finances">
+    <word id="Finances">
         <pl>Moje finanse</pl>
     </word>
     <word id="My team">
@@ -114,8 +114,9 @@
     <word id="My player offers">
         <pl>Moje oferty zawodników</pl>
     </word>
-    <word id="My cars">
+    <word id="Cars">
         <pl>Moje auta</pl>
+        <pl>Auta</pl>
     </word>
     <word id="My car offers">
         <pl>Moje oferty aut</pl>
@@ -381,95 +382,92 @@
     <word id="Prizes">
         <pl>Nagrody</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Rally type">
+        <pl>Typ rajdu</pl>
+    </word>
+    <word id="Created by">
+        <pl>Utworzył</pl>
+    </word>
+    <word id="Surface">
+        <pl>Nawierzchnia</pl>
+    </word>
+    <word id="Invited crews">
+        <pl>Zaproszeni</pl>
+    </word>
+    <word id="User">
+        <pl>Gracz</pl>
+    </word>
+    <word id="This rally is open for all">
+        <pl>Ten rajd jest dostępny dla wszystkich</pl>
+    </word>
+    <word id="Crews">
+        <pl>Załóg</pl>
     </word>
     <word id="Age">
         <pl>Wiek</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Results">
+        <pl>Wyniki</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Position">
+        <pl>Miejsce</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="crews">
+        <pl>załóg</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="My cars">
+        <pl>Moje auta</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Players">
+        <pl>Zawodnicy</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Sell player">
+        <pl>Sprzedaj zawodnika</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Asking price">
+        <pl>Cena wywoławcza</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Days on the market">
+        <pl>Długość aukcji</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Selling fee">
+        <pl>Opłata transferowa</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Put on market">
+        <pl>Rozpocznij aukcje</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Close">
+        <pl>Zamknij</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="My people">
+        <pl>Moi ludzie</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Highest bid">
+        <pl>Najwyższa oferta</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Auction finish">
+        <pl>Koniec aukcji</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Other offers">
+        <pl>Pozostałe oferty</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="no offers">
+        <pl>brak ofert</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Players market">
+        <pl>Rynek zawodników</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Cars market">
+        <pl>Rynek samochodów</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Car price">
+        <pl>Cena samochodu</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Buy this car">
+        <pl>Kup samochód</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
-    </word>
-    <word id="Age">
-        <pl>Wiek</pl>
-    </word>
-    <word id="Age">
-        <pl>Wiek</pl>
-    </word>
-    <word id="Age">
-        <pl>Wiek</pl>
-    </word>
-    <word id="Age">
-        <pl>Wiek</pl>
-    </word>
-    <word id="Age">
-        <pl>Wiek</pl>
-    </word>
-    <word id="Age">
-        <pl>Wiek</pl>
-    </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="My players on the market">
+        <pl>Moi zawodnicy na rynku</pl>
     </word>
     <word id="Age">
         <pl>Wiek</pl>

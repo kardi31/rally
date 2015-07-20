@@ -24,7 +24,7 @@ class CreateFriendly extends Form{
         $invite_only->addParam('required');
         
         $submit = $this->createElement('submit','submit',array(),'Submit');
-        $submit->addClass('btn btn-primary');
+        $submit->addClass('btn myBtn');
         
     }
 }
