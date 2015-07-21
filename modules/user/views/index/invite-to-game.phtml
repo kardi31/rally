@@ -1,25 +1,25 @@
 <?php 
 if(isset($_GET['msg'])){ 
     if($_GET['msg']=="user already ingame"){
-        $this->showError('This email is already registered in Fast Rally');
+        $this->showError($this->translate('This email is already registered in Fast Rally'));
     }
     elseif($_GET['msg']=="not email"){
-        $this->showError('This is not a valid email address.');
+        $this->showError($this->translate('This is not a valid email address.'));
     }
     elseif($_GET['msg']=="user already invited"){
-        $this->showError('Your have already invited this email address.');
+        $this->showError($this->translate('Your have already invited this email address.'));
     }
     elseif($_GET['msg']=="user invited"){
-        $this->showSuccess('Your invitation has been send.');
+        $this->showSuccess($this->translate('Your invitation has been send.'));
     }
 }
 ?>
 <div class="mainUserBox">
-    <h4 class="boxHeader">Invite your friend to Fast Rally</h4>
+    <h4 class="boxHeader"><?= $this->translate('Invite your friend to Fast Rally'); ?></h4>
     <div class='staticWrapper'>
-        If your friend is active for over a month, we will reward you with 10 <img class="coin" src="/images/layout/coin.png"><br />
-        If your friend during this month gets premium to access our great additional features, you will receive additional 100 <img class="coin" src="/images/layout/coin.png"> <br />
-        Don't hesitate! Tell your friends about Fast Rally!
+        <?= $this->translate('If your friend is active for over a month, we will reward you with 10'); ?> <img class="coin" src="/images/layout/coin.png"><br />
+        <?= $this->translate('If your friend during this month gets premium to access our great additional features, you will receive additional 100'); ?> <img class="coin" src="/images/layout/coin.png"> <br />
+        <?= $this->translate("Don't hesitate! Tell your friends about Fast Rally!"); ?>
         <form class='inviteToGame' action="/user/invite-to-game" method="POST">
             <?php echo $form->getElement('email')->renderElement(); ?>
             <?php echo $form->getElement('submit')->renderElement(); ?>
@@ -27,7 +27,7 @@ if(isset($_GET['msg'])){
         
         <br />
         <span class='invitedToGame'>
-            <strong>Send invitations</strong>
+            <strong><?= $this->translate('Send invitations'); ?></strong>
             <ol>
             <?php foreach($userInvites as $invitation): ?>
                 <li><?= $invitation['email']; ?></li>
@@ -35,13 +35,13 @@ if(isset($_GET['msg'])){
             <?php endforeach; ?>
             </ol>
 
-            <strong>Accepted invitations</strong>
+            <strong><?= $this->translate('Accepted invitations');?></strong>
             <table>
                 <thead>
                     <tr>
-                        <th>Email</th>
-                        <th>Registration date</th>
-                        <th>Referer paid</th>
+                        <th><?= $this->translate('Email');?></th>
+                        <th><?= $this->translate('Registration date');?></th>
+                        <th><?= $this->translate('Referer paid');?></th>
                     </tr>
                 </thead>
                 <?php foreach($userAcceptedInvites as $acceptedInvite): ?>
@@ -55,10 +55,10 @@ if(isset($_GET['msg'])){
                         <td>
                             <?php
                                 if(!$acceptedInvite['referer_paid']){
-                                    echo '<span class="label label-danger">No</span>';
+                                    echo '<span class="label label-danger">'.$this->translate('No').'</span>';
                                 }
                                 else{
-                                    echo '<span class="label label-success">Yes</span>';
+                                    echo '<span class="label label-success">'.$this->translate('Yes').'</span>';
                                 }
                             ?>
                         </td>

@@ -7,11 +7,12 @@ class TK_Helper{
     }
     
     public static function redirect($url) {
-        ?>
+        header('Location: '.$url);
+       /* ?>
         <script type="text/javascript">
         document.location.href="<?php echo $url; ?>";
         </script>
-        <?php
+        <?php */
     }
     
     public static function displayPeopleSkillsOnList($person,$skill,$showEmpty = true){

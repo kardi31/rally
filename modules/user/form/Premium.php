@@ -5,8 +5,8 @@ class Premium extends Form{
         $premium = $this->createElement('number','premium',array('validators' => array('int')),'Premium');
         $premium->addParam('placeholder','Enter requested amount');
         $premium->setValue(100);
-        $submit = $this->createElement('submit','submit',array(),'Submit request');
-        $submit->addClass('btn btn-info');
+        $submit = $this->createElement('submit','submit',array(),View::getInstance()->translate('Submit request'));
+        $submit->addClass('btn myBtn');
     }
 }
 
