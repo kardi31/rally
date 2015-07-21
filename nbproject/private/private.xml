@@ -3,8 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/my-players.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/config/translate.xml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/show-calendar.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/people/services/People.php</file>
@@ -67,6 +65,7 @@
             <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/show-friends.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/my-players-market.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/my-player-offers.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/my-players.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-my-player-offers.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/car/views/index/change-name.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/my-rallies.phtml</file>
@@ -82,6 +81,12 @@
             <file>file:/C:/xampp/htdocs/ral/modules/market/form/BidPlayer.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/form/Offer.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-market.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/car-dealer.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Text.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-car-offer.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/config/translate.xml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-car-market.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-cars.phtml</file>
         </group>
     </open-files>
 </project-private>
