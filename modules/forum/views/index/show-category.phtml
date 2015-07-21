@@ -1,7 +1,7 @@
 <div class="mainUserBox showRallyWrapper showForumWrapper ">
     <div class="boxHeader">
         <h4><?php echo $category['name']; ?></h4>
-        <small><a href="/forum/show-forum">Forum</a></small>
+        <small><a href="/forum/show-forum"><?= $this->translate('Forum'); ?></a></small>
     </div> 
     <div class="forumGroup">
         <?php foreach($threads as $thread): ?>
@@ -9,12 +9,12 @@
             <div class="forumListElem">
                 <strong><a href="/forum/show-thread/id/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a></strong>
                 <div>
-            Created: 
+            <?= $this->translate('Created'); ?>: 
                     <i class="fa fa-clock-o"></i> <?php echo TK_Text::timeFormat($thread['created_at'],'d/m/y H:i'); ?>
                     <i class="fa fa-user"></i>
                 '<?php echo $thread['User']['username']; ?>' <br />
                 <?php if(isset($thread['Posts'][0])&&!empty($thread['Posts'][0])): ?>
-                    Last post:
+                    <?= $this->translate('Last post'); ?>:
                     <i class="fa fa-clock-o"></i>
                     <?php 
                     echo TK_Text::timeFormat($thread['Posts'][0]['created_at'],'d/m/y H:i');
@@ -27,7 +27,7 @@
             </div>
         <?php endforeach; ?>
         <div class="addThreadWrapper">
-            <h5><i class="fa fa-pencil"></i> Add new thread</h5>
+            <h5><i class="fa fa-pencil"></i> <?= $this->translate('Add new thread'); ?></h5>
             <form method="POST">
                 <?php echo $form->getElement('title')->renderElement(); ?>
                 <?php echo $form->getElement('content')->renderElement(); ?>

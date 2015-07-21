@@ -137,6 +137,9 @@ table tr td{
     .flagSelect li.selected{
         display:inline-block;
     }
+    .flagSelect li:not(.selected){
+        position:absolute;
+    }
     .flagSelect li.selected img{
         margin-top:5px;
     }

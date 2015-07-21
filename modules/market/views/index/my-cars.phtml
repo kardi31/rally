@@ -1,10 +1,10 @@
 <div class="mainUserBox myCarsBox">
-    <h4 class="boxHeader">My cars on the market</h4>
+    <h4 class="boxHeader"><?= $this->translate('My cars on the market'); ?></h4>
     
     <?php
         if(isset($_GET['msg'])){
             if($_GET['msg']=="no exist")
-                $this->showError('This offer does not exist');
+                $this->showError($this->translate('This offer does not exist'));
         }
         ?>
         <?php foreach($marketOffers as $offer):
@@ -24,13 +24,13 @@
             <div class="col-md-6">
                 <ul>
                     <li>
-                        Mileage: <?php echo $car['mileage']; ?>
+                        <?= $this->translate('Mileage');?>: <?php echo $car['mileage']; ?>
                     </li>
                     <li>
-                        Value:<?php echo $car['value']; ?>
+                        <?= $this->translate('Value'); ?>: <?php echo $car['value']; ?>
                     </li>
                     <li>
-                        Upkeep: <?php echo $car['upkeep']; ?>
+                        <?= $this->translate('Upkeep'); ?>: <?php echo $car['upkeep']; ?>
                     </li>
                 </ul>
                 
@@ -50,31 +50,7 @@
             </div>
             
             <div class="col-md-6 pr0 pl0 carParametersWrapper">
-                <div class="carParameters">
-                     <table>
-                        <tr>
-                            <td>brand:</td>
-                            <td><?php echo $car['Model']['name']; ?></td>
-                        </tr>
-                        <tr>
-                            <td>capacity</td>
-                            <td><?php echo $car['Model']['capacity'];?></td>
-                        </tr>
-                        <tr>
-                            <td>horse power</td>
-                            <td><?php echo $car['Model']['horsepower'];?></td>
-                        </tr>
-                        <tr>
-                            <td>v-max</td>
-                            <td><?php echo $car['Model']['max_speed'];?></td>
-                        </tr>
-                        <tr>
-                            <td>acceleration</td>
-                            <td><?php echo $car['Model']['acceleration'];?></td>
-                        </tr>
-
-                    </table>
-                </div>
+                <?= TK_Helper::showCarParameters($car['Model']); ?>
             </div>
         <div class='clearfix'></div>
         </div>
@@ -82,7 +58,7 @@
             
             <table>
                 <tr>
-                    <th>Highest bid: </th>
+                    <th><?= $this->translate('Highest bid'); ?>: </th>
                 </tr>
                 <tr>
                     <td>
@@ -96,13 +72,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Asking price:</th>
+                    <th><?= $this->translate('Asking price'); ?>:</th>
                 </tr>
                 <tr>
                     <td><?= $offer['asking_price']; ?>$</td>
                 </tr>
                 <tr>
-                    <th>Auction finish: </th>
+                    <th><?= $this->translate('Auction finish'); ?>: </th>
                 </tr>
                 <tr>
                     <td>
@@ -110,7 +86,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Other offers: </th>
+                    <th><?= $this->translate('Other offers'); ?>: </th>
                 </tr>
                 <tr>
                     <td>
@@ -140,16 +116,16 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Bid car <span id="bidCarName"></span></h4>
+                    <h4 class="modal-title"><?= $this->translate('Bid car'); ?> <span id="bidCarName"></span></h4>
                 </div>
                 <div class="modal-body">
-                    <label for="asking_price">Your offer</label>
+                    <label for="asking_price"><?= $this->translate('Your offer'); ?></label>
                     <?php echo $form->getElement('bid')->renderElement(); ?>
                     <?php echo $form->getElement('offer_id')->renderElement(); ?>
                 </div>
                 <div class="modal-footer">
                     <?php echo $form->getElement('submit')->renderElement(); ?>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><?= $this->translate('Close'); ?></button>
                 </div>
             </div>
         </form>

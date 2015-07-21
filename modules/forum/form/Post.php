@@ -10,8 +10,8 @@ class Post extends Form{
         $moderator_notes->addParam('rows',4);
         $moderator_notes->addParam('cols',80);
         $active = $this->createElement('checkbox','active',array());
-        $submit = $this->createElement('submit','submit',array(),'Submit reply');
-        $submit->addClass('btn btn-info');
+        $submit = $this->createElement('submit','submit',array(),View::getInstance()->translate('Submit reply'));
+        $submit->addClass('btn myBtn');
     }
 }
 
