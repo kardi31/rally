@@ -86,6 +86,7 @@ class RallyService extends Service{
         $q = $this->rallyTable->createQuery('r');
         $q->leftJoin('r.Crews c');
 //	$q->addWhere('r.date > NOW()');
+        $q->addWhere('r.friendly = 0');
 	$q->orderBy('r.date DESC');
         $q->addWhere('c.team_id = ?',$team_id);
         $q->select('r.id');
