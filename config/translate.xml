@@ -514,13 +514,211 @@
     <word id="Submit reply">
         <pl>Zatwierdź odpowiedź</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="You are currently a">
+        <pl>Obecnie posiadasz pakiet</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="member. Your membership expires at">
+        <pl>Twój pakiet wygasa</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
+    <word id="Your account balance">
+        <pl>Twój stan konta wynosi</pl>
+    </word>
+    <word id="Add more">
+        <pl>Doładuj konto</pl>
+    </word>
+    <word id="Submit request">
+        <pl>Dokonaj zakupu</pl>
+    </word>
+    <word id="Submit bid">
+        <pl>Złóż oferte</pl>
+    </word>
+    <word id="You have successfully bought">
+        <pl>Pomyślnie kupiłeś</pl>
+    </word>
+    <word id="coins">
+        <pl>monet</pl>
+    </word>
+    <word id="Gold membership is a package which allows you to benefit of additional in-game features. Check what privileges">
+        <pl>Pakiet gold pozwala korzystać z dodatkowych funkcji gry. Sprawdź jakie przywileje posiadają gracze </pl>
+    </word>
+    <word id="users poses.">
+        <pl></pl>
+    </word>
+    <word id="Basic user">
+        <pl>Zwykły gracz</pl>
+    </word>
+    <word id="user">
+        <pl>gracz</pl>
+    </word>
+    <word id="Joining friendly rally">
+        <pl>Dołączanie do rajdów towarzyskich</pl>
+    </word>
+    <word id="Creating friendly rally">
+        <pl>Tworzenie rajdów towarzyskich</pl>
+    </word>
+    <word id="2 rallies every month for free. Every next costs 5">
+        <pl>2 rajdy każdego miesiąca za darmo. Każdy następny kosztuje 5</pl>
+    </word>
+    <word id="Invite your friends and check who is the fastest or create a public rally and challenge random players.">
+        <pl>Stwórz prywatny rajd,zaproś znajomych i sprawdź kto z was jest najszybszy. Stwórz publiczny rajd i zmierz się z zawodnikami z całego świata.</pl>
+    </word>
+    <word id="Join friendly rally, give yourself a chance to beat other drivers and earn additional game cash.">
+        <pl>Dołącz do prywatnego rajdu, daj sobie szanse na zmierzenie się z innymi kierowcami i zarobienie dodatkowych monet.</pl>
+    </word>
+    <word id="Detailed financial report">
+        <pl>Szczegółowy raport finansowy</pl>
+    </word>
+    <word id="Don't know where this cash cames from? No problem. In our detailed report you can see exact source of every income and expense.">
+        <pl>Nie wiesz skąd na Twoim koncie znalazły się te pieniądze? Żaden problem. Skorzystaj ze szczegółowego raportu finansowego i bądź na bieżąco z każdym przychodem i wydatkiem z Twojego konta.</pl>
+    </word>
+    <word id="Joining big rally">
+        <pl>Rajdy z dużymi nagrodami</pl>
+    </word>
+    <word id="Try to beat other drivers and compete for great prizes like unique cars and premium points.">
+        <pl>Walcz z innymi kierowcami o duże nagrody jak unikalne samochody oraz punkty premium.</pl>
+    </word>
+    <word id="Forum and transfer boxes">
+        <pl>Informacyjne okienka z transferami i forum</pl>
+    </word>
+    <word id="Never miss out your transfer offer or important thread. With forum and transfer boxes you see all important information immediately after log in.">
+        <pl>Już nigdy nie przegap żadnej oferty transferowej bądź ważnego tematu. Z naszymi okienkami informacyjnymi zobaczysz wszystkie najważniejsze wiadomości zaraz po zalogowaniu.</pl>
+    </word>
+    <word id="Advertisments on site">
+        <pl>Reklamy na stronie</pl>
+    </word>
+    <word id="Get rid of all annoying advertisments on your FastRally account.">
+        <pl>Pozbądź się wszystkich denerwujących reklam na Twoim koncie.</pl>
+    </word>
+    <word id="days">
+        <pl>dni</pl>
+    </word>
+    <word id="This email is already registered in Fast Rally">
+        <pl>Ten email jest już zarejestrowany w Fast Rally</pl>
+    </word>
+    <word id="This is not a valid email address.">
+        <pl>To nie jest poprawny adres email</pl>
+    </word>
+    <word id="Your have already invited this email address.">
+        <pl>Ten email został już zaproszony.</pl>
+    </word>
+    <word id="Your invitation has been send.">
+        <pl>Twoje zaproszenie zostało wysłane.</pl>
+    </word>
+    <word id="Invite your friend to Fast Rally">
+        <pl>Zaproś znajomego do Fast Rally</pl>
+    </word>
+    <word id="If your friend is active for over a month, we will reward you with 10">
+        <pl>Jeżeli Twój znajomy będzie aktywny przez ponad miesiąc, nagrodzimy Cię 10 </pl>
+    </word>
+    <word id="If your friend during this month gets premium to access our great additional features, you will receive additional 100">
+        <pl>Gdy Twój znajomy w ciągu tego miesiąca wykupi punkty premium aby otrzymać dostęp do naszych dodatkowych funkcji, otrzymasz dodatkowo 100</pl>
+    </word>
+    <word id="Don't hesitate! Tell your friends about Fast Rally!">
+        <pl>Nie wahaj się ani chwili! Powiedz swoim znajomym o Fast Rally!</pl>
+    </word>
+    <word id="Send invitation">
+        <pl>Wyślij zaproszenie</pl>
+    </word>
+    <word id="Enter user email address">
+        <pl>Podaj zapraszany adres email</pl>
+    </word>
+    <word id="Send invitations">
+        <pl>Wysłane zaproszenia</pl>
+    </word>
+    <word id="Accepted invitations">
+        <pl>Zaakceptowane zaproszenia</pl>
+    </word>
+    <word id="Registration date">
+        <pl>Data rejestracji</pl>
+    </word>
+    <word id="Referer paid">
+        <pl>Bonus wypłacony</pl>
+    </word>
+    <word id="No">
+        <pl>Nie</pl>
+    </word>
+    <word id="Yes">
+        <pl>Tak</pl>
+    </word>
+    <word id="Bid car">
+        <pl>Zalicytuj</pl>
+    </word>
+    <word id="Your offer">
+        <pl>Twoja oferta</pl>
+    </word>
+    <word id="Congratulations. You hold the highest bid.">
+        <pl>Gratulacje. Twoja oferta jest najwyższa.</pl>
+    </word>
+    <word id="Your bid must be greater than the highest one.">
+        <pl>Twoja oferta musi być wyższa od najwyższej.</pl>
+    </word>
+    <word id="You already hold the highest bid.">
+        <pl>Złożyłeś już najwyższą oferte.</pl>
+    </word>
+    <word id="Sorry, the auction has been finished.">
+        <pl>Przykro nam. Aukcja już się skończyła.</pl>
+    </word>
+    <word id="Offer must be greater than asking price.">
+        <pl>Twoja oferta musi być wyższa od ceny wywoławczej.</pl>
+    </word>
+    <word id="Sorry, You don\'t have enough money for all of your bids">
+        <pl>Niestety nie masz wystarzcająco pieniędzy na wszystkie swoje oferty.</pl>
+    </word>
+    <word id="Bid player">
+        <pl>Zalicytuj</pl>
+    </word>
+    <word id="Choose">
+        <pl>Wybierz</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
+    </word>
+    <word id="Add">
+        <pl>Doładuj</pl>
     </word>
 </root>

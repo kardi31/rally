@@ -53,11 +53,10 @@ class Rally_Index extends Controller{
                 $freeDrivers = $peopleService->getFreeDrivers($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
                 $freePilots = $peopleService->getFreePilots($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
                 $freeCars = $carService->getFreeCars($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
-
                 $form = $this->getForm('rally','JoinRally');
-                $form->getElement('driver_id')->addMultiOptions($freeDrivers,true);
-                $form->getElement('pilot_id')->addMultiOptions($freePilots,true);
-                $form->getElement('car_id')->addMultiOptions($freeCars,true);
+                $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
+                $form->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
+                $form->getElement('car_id')->addMultiOptions($freeCars,'Select car');
                 $this->view->assign('form',$form);
 
                 if($form->isSubmit()){

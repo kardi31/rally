@@ -44,7 +44,7 @@
                     $populateBid = $offer['asking_price'];
                 }
                 ?>
-                    <a class="btn btn-info bidCar" data-toggle="modal" data-bid="<?= $populateBid; ?>" data-target="#bidCar" data-name="<?= $car['name']; ?>" rel="<?= $offer['id']; ?>">Bid car</a>
+                    <a class="btn myBtn bidCar" data-toggle="modal" data-bid="<?= $populateBid; ?>" data-target="#bidCar" data-name="<?= $car['name']; ?>" rel="<?= $offer['id']; ?>"><?= $this->translate('Bid car'); ?></a>
                 <?php endif; ?>
                 <div class="clearfix"></div>
             </div>

@@ -69,6 +69,7 @@ class Index_Index extends Controller{
     }
     
     public function searchUsers(){
+        $this->getLayout()->setLayout('page');
         Service::loadModels('team', 'team');
         $this->actionStack($this, 'layoutHelper');
         
@@ -78,8 +79,10 @@ class Index_Index extends Controller{
         if(!$user)
             TK_Helper::redirect('/user/login');
         
-        $users = $userService->searchForUsers($_POST['username'],Doctrine_Core::HYDRATE_ARRAY);
-        $this->view->assign('users',$users);
+        if(isset($_POST['username'])){
+            $users = $userService->searchForUsers($_POST['username'],Doctrine_Core::HYDRATE_ARRAY);
+            $this->view->assign('users',$users);
+        }
     }
     
     public function setLang(){

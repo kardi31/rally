@@ -36,10 +36,11 @@
     5.1 People market
     5.2 Car market
     5.3 Car dealer
-  6. Forum
+  6. Community
     6.1 Show forum
     6.2 Show category
     6.3 Show thread
+    6.4 Search users
   7. Premium
     7.1 My premium
     7.2 Gold membership
@@ -1383,7 +1384,18 @@ footer{
         margin-bottom:20px;
     }
     
+    /*
+    6.4 Search users
+    */
     
+    .searchUsersBtn{
+        margin-top:20px;
+        margin-left:10px;
+    }
+    
+    .searchTable td{
+        border-top:0px;
+    }
     /*
     7.1 My premium
     */

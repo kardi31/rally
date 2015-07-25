@@ -18,7 +18,7 @@
         <?php foreach($rallies as $rally): ?>
             <tr>
                 <td>
-                    <a href="/rally/show-friendly-rally/slug/<?php echo $rally['slug']; ?>"><?php echo $rally['name'];?></a>
+                    <a href="/rally/show-rally/slug/<?php echo $rally['slug']; ?>"><?php echo $rally['name'];?></a>
                     <?php if($rally['big_awards']==1): ?>
                         <img src="/images/b_letter.gif" alt="Big awards" />
                     <?php endif; ?>
@@ -26,15 +26,9 @@
                 <td>
                     <?php echo TK_Text::timeFormat($rally['date'],'d-m-Y H:i'); ?>
                 </td>
+                
                 <td>
-                    <?php 
-                    if($rally['Friendly']['invite_only']){
-                        echo "<span class='label label-danger'>".$this->translate('Private')."</span>";
-                    }
-                    else{
-                        echo "<span class='label label-success'>".$this->translate('Public')."</span>";
-                    }
-                    ?>
+                    <?= count($rally['Crews'])." ".$this->translate("crews"); ?>
                 </td>
                 <td>
                     <?php if((is_array($futureTeamRallies)&&in_array($rally['id'],$futureTeamRallies))||$rally['id']==$futureTeamRallies){

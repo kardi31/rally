@@ -29,6 +29,13 @@
         <?= $this->translate('Signed crews');?> : <?php echo $crewCounter; ?><br />
         <?= $this->translate('Race start');?> : <?php echo $startDate->format('d/m/Y H:i'); ?><br />
         <?= $this->translate('Sign up finish');?> : <?php echo $signUpFinish->format('d/m/Y H:i'); ?><br />
+        <?= $this->translate('Surface');?> : <?php
+        foreach($rally['Surfaces'] as $key=>$surface):
+          echo $surface['surface']." ".round($surface['percentage'])."%";  
+            if($key==0)
+                echo ", ";
+        endforeach;
+        ?>
         <br />
         <?php if(isset($isParticipant)&&$isParticipant): ?>
             <span class="label label-success"><?= $this->translate('You already participate in this rally.');?></span>

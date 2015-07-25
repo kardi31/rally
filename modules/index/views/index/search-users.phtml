@@ -1,23 +1,53 @@
-<table>
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Username</th>
-            <th>Team name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach($users as $user):  ?>
-        <tr>
-            <td><?php echo $user['id']; ?></td>
-            <td><a href="/team/show-team/id/<?php echo $user['Team']['id']; ?>"><?php echo $user['username']; ?></a></td>
-            <td><?php echo $user['Team']['name']; ?></td>
-        </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
-
-<form action="/index/search-friends" method="POST">
-    <input type="text" name="username" id="username" placeholder="Enter user name" />
-    <input type="submit" value="submit" name="submit" />
-</form>
+<div class="mainUserBox">
+    <h4 class="boxHeader"><?= $this->translate('Search Users'); ?></h4>
+    <div class='staticWrapper'>
+        
+        <form action="/search-users" method="POST">
+            <div class="col-md-6">
+                <input class="form-control" type="text" name="username" id="searchUsername" placeholder="Enter user name" />
+            </div>
+            <div class="clearfix"></div>
+            <input class="btn myBtn searchUsersBtn" type="submit" value="Search" name="submit" />
+        </form>
+        <?php if(count($users)>0){ ?>
+        <table class="table searchTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Team name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($users as $user):  ?>
+                <tr>
+                    <td><?php echo $user['id']; ?></td>
+                    <td><a href="/team/show-team/id/<?php echo $user['Team']['id']; ?>"><?php echo $user['username']; ?></a></td>
+                    <td><?php echo $user['Team']['name']; ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        <?php } ?>
+    </div>
+</div>
+ <script>
+  $(function() {
+    $( "#searchUsername" ).autocomplete({
+      source: function( request, response ) {
+        $.ajax({
+          url: "/user/find-user",
+          dataType: "json",
+          type: "get",
+          data: {
+            q: request.term
+          },
+          success: function( data ) {
+            response( data );
+          }
+        });
+      },
+      minLength: 3
+    });
+  });
+  </script>

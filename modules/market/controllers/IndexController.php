@@ -158,8 +158,7 @@ class Market_Index extends Controller{
         Service::loadModels('people', 'people');
         $marketService = parent::getService('market','market');
         $teamService = parent::getService('team','team');
-        $marketOffers = $marketService->getAllActiveMyPlayerOffers($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
-        
+        $marketOffers = $marketService->getAllActiveMyPlayerOffers($user['Team']['id']);
         $this->view->assign('user',$user);
         $this->view->assign('marketOffers',$marketOffers);
     }

@@ -250,10 +250,10 @@ class Account_Index extends Controller{
                 
                 $values = $_POST;
                 $result = $userService->addPremium($user,$values['premium']);
-                
 		
-                if($result!== false)
-                    TK_Helper::redirect('/account/premium');
+                if($result!== false){
+                    TK_Helper::redirect('/account/premium?msg=success&amount='.$values['premium']);
+                }
                 else{
                     $this->view->assign('message','Error');
                 }

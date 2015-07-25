@@ -16,9 +16,9 @@
             elseif($_GET['msg']=="already highest")
                 $this->showError($this->translate('You already hold the highest bid.'));
             elseif($_GET['msg']=="finished")
-                $this->showError($this->translate('Sorry, the auction has been finished'));
+                $this->showError($this->translate('Sorry, the auction has been finished.'));
             elseif($_GET['msg']=="greater than asking")
-                $this->showError($this->translate('Offer must be greater than asking price'));
+                $this->showError($this->translate('Offer must be greater than asking price.'));
             elseif($_GET['msg']=="not enough money")
                 $this->showError($this->translate('Sorry, You don\'t have enough money for all of your bids'));
 
@@ -51,7 +51,7 @@
                 
             <!--<a href="/market/bid-car/id/<?php echo $offer['id']; ?>">Zalicytuj</a>-->
                 <?php if($car['Team']['id']!=$authenticatedUser['Team']['id']): ?>
-                    <a class="btn btn-info bidCar" data-toggle="modal" data-target="#bidCar" data-name="<?= $car['name']; ?>" rel="<?= $offer['id']; ?>">Bid car</a>
+                    <a class="btn myBtn bidCar" data-toggle="modal" data-target="#bidCar" data-name="<?= $car['name']; ?>" rel="<?= $offer['id']; ?>"><?= $this->translate('Bid car'); ?></a>
                 <?php endif; ?>
                 <div class="clearfix"></div>
             </div>
