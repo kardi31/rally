@@ -112,7 +112,6 @@ class Account_Index extends Controller{
             TK_Helper::redirect('/user/login');
         
         $teamService = parent::getService('team','team');
-//        $financialReportSimple = $teamService->getSimpleReport($user['Team']['id']);
         $financialReportSimple = $teamService->getSimpleReport($user['Team']['id']);
         $financialReportSimpleLastWeek = $teamService->getSimpleReport($user['Team']['id'],1);
         $financialReportAdvanced = $teamService->getAdvancedReport($user['Team']['id']);

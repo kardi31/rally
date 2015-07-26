@@ -206,14 +206,13 @@ class TeamService extends Service{
     
     public function getAdvancedReport($team_id,$prevWeek = false){
         if(!$prevWeek){
-           $dateFrom = date('Y-m-d H:i:s', strtotime('this week monday'));
-           $dateTo = date('Y-m-d H:i:s',strtotime('next week monday'));
+           $dateFrom = date('Y-m-d H:i:s', strtotime('previous monday - 1 week'));
+           $dateTo = date('Y-m-d H:i:s',strtotime('next monday'));
         }
         else{
-           $dateFrom = date('Y-m-d H:i:s', strtotime('this week monday - '.$prevWeek.' week'));
-           $dateTo = date('Y-m-d H:i:s',strtotime('next week monday - '.$prevWeek.' week'));
+           $dateFrom = date('Y-m-d H:i:s', strtotime('previous week monday - '.$prevWeek.' week'));
+           $dateTo = date('Y-m-d H:i:s',strtotime('next monday - '.$prevWeek.' week'));
         }
-        
         
         $q = $this->financeTable->createQuery('f');
         $q->addWhere('save_date < ?',$dateTo);

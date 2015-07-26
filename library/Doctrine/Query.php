@@ -262,6 +262,12 @@ class Doctrine_Query extends Doctrine_Query_Abstract implements Countable
      * @param string $params
      * @return array
      */
+    
+    public function fetchOneArray($params = array())
+    {
+        return $this->fetchOne($params, Doctrine_Core::HYDRATE_ARRAY);
+    }
+    
     public function fetchArray($params = array())
     {
         return $this->execute($params, Doctrine_Core::HYDRATE_ARRAY);

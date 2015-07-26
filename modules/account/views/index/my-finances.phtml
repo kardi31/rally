@@ -31,7 +31,7 @@
             <br />
             <?php 
             foreach($financialReportSimpleLastWeek['income'] as $simpleReport): 
-                echo $financeTypes[$simpleReport['detailed_type']]." - ".$simpleReport['amount']; ?>$<br />
+                echo $this->translate($financeTypes[$simpleReport['detailed_type']])." - ".$simpleReport['amount']; ?>$<br />
 
             <?php endforeach; ?>
         </div>
@@ -59,8 +59,8 @@
                         <i class="fa fa-money" title="Amount"></i>
                         <?php
                         echo $advancedReport['amount']."$<br />";
-                        echo '<i class="fa fa-info-circle" title="Description"></i> '.$advancedReport['description']."<br />";
-                        echo '<i class="fa fa-list-alt" title="Type"></i>'.$financeTypes[$advancedReport['detailed_type']]."<br />";
+                        echo '<i class="fa fa-info-circle" title="Description"></i> '.$this->translate($advancedReport['description'])."<br />";
+                        echo '<i class="fa fa-list-alt" title="Type"></i>'.$this->translate($financeTypes[$advancedReport['detailed_type']])."<br />";
                         echo '<i class="fa fa-calendar" title="Type"></i>'.$advancedReport['save_date']."<br />";
                         ?>
                     </div>

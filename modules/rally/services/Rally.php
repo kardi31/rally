@@ -951,5 +951,15 @@ class RallyService extends Service{
         $q->addWhere('c.team_id = ?',$team_id);
 	return $q->fetchOne(array(),$hydrationMode);
     }
+    
+    public function hasLeagueRallies($league_id,$startDate,$finishDate){
+        $q = $this->rallyTable->createQuery('r');
+        $q->addSelect('r.*');
+        $q->addWhere('r.league_rally = 1');
+        $q->addWhere('r.league like ?',$league_id);
+        $q->addWhere('r.date > ?',$startDate);
+        $q->addWhere('r.date < ?',$finishDate);
+	return $q->fetchOneArray();
+    }
 }
 ?>

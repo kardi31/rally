@@ -33,7 +33,9 @@
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/admin/add-league-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/models/Rally.php</file>
             <file>file:/C:/xampp/htdocs/ral/public/plugins/jMenu/js/jMenu.jquery.js</file>
+            <file>file:/C:/xampp/htdocs/ral/config/translate.xml</file>
             <file>file:/C:/xampp/htdocs/ral/public/css/custom.css</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/login.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/models/BasePost.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-finances.phtml</file>
@@ -56,6 +58,7 @@
             <file>file:/C:/xampp/htdocs/ral/modules/forum/library/DataTables/Post.php</file>
             <file>file:/C:/xampp/htdocs/ral/layout/layout.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Login.php</file>
             <file>file:/C:/xampp/htdocs/ral/layout/admin.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/list-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/people/controllers/IndexController.php</file>
@@ -64,6 +67,7 @@
             <file>file:/C:/xampp/htdocs/ral/modules/market/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/my-cars-market.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/my-cars.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Layout.php</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Text.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/TestController.php</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Form.php</file>
@@ -101,7 +105,6 @@
             <file>file:/C:/xampp/htdocs/ral/config/config.ini</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/form/Offer.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/mail-template.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/register.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/show-category.phtml</file>
         </group>

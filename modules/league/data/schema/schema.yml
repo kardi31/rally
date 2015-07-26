@@ -37,3 +37,19 @@ Season:
       foreign: league_name
       foreignType: one
       alias: League
+SeasonInfo:
+  tableName: league_season_info
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    season:
+      type: integer(11)
+    season_start:
+      type: timestamp
+    season_finish:
+      type: timestamp

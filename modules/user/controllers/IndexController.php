@@ -84,7 +84,7 @@ class User_Index extends Controller{
         $trainingService = parent::getService('people','training');
         $userService = parent::getService('user','user');
         $mailService = parent::getService('user','mail');
-        
+        parent::getService('rally','rally');
         if(!$user = $userService->getUser($GLOBALS['urlParams']['token'],'token')){
             $message = "No user";
         }

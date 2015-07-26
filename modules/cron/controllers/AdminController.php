@@ -43,12 +43,12 @@ class Cron_Admin extends Controller{
      public function calculateAllTeamsCarValues(){
         $view= $this->view;
         $view->setNoRender();
-        $peopleService = parent::getService('car','car');
+        $carService = parent::getService('car','car');
         $teamService = parent::getService('team','team');
         $leagueService = parent::getService('league','league');
         Service::loadModels('rally', 'rally');
         $season = $leagueService->getCurrentSeason();
-        $peopleService->calculateNewValuesForAllCars($season);
+        $carService->calculateNewValuesForAllCars($season);
         echo "good";
     }
     

@@ -78,6 +78,9 @@
     <word id="Finances">
         <pl>Moje finanse</pl>
     </word>
+    <word id="My finances">
+        <pl>Moje finanse</pl>
+    </word>
     <word id="My team">
         <pl>Moja drużyna</pl>
     </word>
@@ -697,11 +700,11 @@
     <word id="Incorrect login">
         <pl>Zły login.</pl>
     </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
+    <word id="Initial FastRally bonus">
+        <pl>Bonus powitalny FastRally</pl>
     </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
+    <word id="Other incomes">
+        <pl>Pozostałe przychody</pl>
     </word>
     <word id="Add">
         <pl>Doładuj</pl>

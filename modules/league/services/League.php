@@ -4,6 +4,7 @@ class LeagueService extends Service{
     
     protected $leagueTable;
     protected $seasonTable;
+    protected $seasonInfoTable;
     
     protected $maxTeamsInLeague = 12;
     protected $season = 1;
@@ -64,6 +65,7 @@ class LeagueService extends Service{
     public function __construct(){
         $this->leagueTable = parent::getTable('league','league');
         $this->seasonTable = parent::getTable('league','season');
+        $this->seasonInfoTable = parent::getTable('league','seasonInfo');
     }
     
     public function getAllDrivers(){
@@ -95,11 +97,14 @@ class LeagueService extends Service{
 	// if not, then get next free league
 	if(!$result){
 	    $league = $this->getNextEmptyLeague();
+            
 	}
 	// if yes, use this league
 	else{
 	    $league = $result;
 	}
+        
+        $this->checkLeagueRallies($league['league_name']);
 	// save team to league
 	$newTeamData = array(
 	  'team_id' => $team_id,
@@ -236,6 +241,29 @@ class LeagueService extends Service{
         $newPoints = $currentPoints + $points;
         $teamSeasonTable->set('points',$newPoints);
         $teamSeasonTable->save();
+    }
+    
+    public function checkLeagueRallies($league){
+        $seasonInfo = $this->getSeasonInfo();
+        $hasRallies = RallyService::getInstance()->hasLeagueRallies($league,$seasonInfo['start_date'],$seasonInfo['finish_date']);
+//        echo "good";exit;
+        $weeks = TK_Text::datediff('ww', date('Y-m-d H:i:s'),$seasonInfo['season_finish'], false);
+       
+        if(!$hasRallies){
+            for($i=2;$i<=$weeks+1;$i++):
+                RallyService::getInstance()->createOneLeagueRally($league,$i);
+            endfor;
+        }
+        
+        
+    }
+    
+    public function getSeasonInfo(){
+        $season = $this->getCurrentSeason();
+        
+        $q = $this->seasonInfoTable->createQuery('s');
+        $q->addWhere('s.season = ?',$season);
+        return $q->fetchOneArray();
     }
 }
 ?>
