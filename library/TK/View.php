@@ -4,6 +4,7 @@ class View{
  
     protected $variables;
     public $controller_instance;
+    protected $_settings;
     public $render = 1;
     private static $instance = NULL;
     private static $doc;
@@ -12,7 +13,6 @@ class View{
 	
         if(!isset(self::$doc)&&get_class(self::$doc)!="DOMDocument"){
             self::$doc = new DomDocument();
-//            self::$doc->validateOnParse = false;
             self::$doc->Load(BASE_PATH."/config/translate.xml");
         }
     }
@@ -22,6 +22,17 @@ class View{
        if (self::$instance === NULL)
           self::$instance = new View();
        return self::$instance;
+    }
+    
+    public function getSetting($param){
+        if(!empty($this->_settings))
+            return $this->_settings[$param];
+        $ini_array = parse_ini_file(BASE_PATH."/config/config.ini");
+        
+        if($ini_array)
+            $this->_settings = $ini_array;
+        
+        return $this->_settings[$param];
     }
     
     function render($module,$viewName,$zone){
@@ -69,6 +80,15 @@ class View{
         require_once(BASE_PATH.'/modules/index/library/DataTables/Factory.php');
     }
  
+    public function showShortError($message){
+        ob_start();
+        
+        include(BASE_PATH."/views/message/short-error.phtml");
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+    
     public function showError($message){
         include(BASE_PATH."/views/message/error.phtml");
     }

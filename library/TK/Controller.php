@@ -5,6 +5,9 @@ class Controller{
         protected $view;
 	protected $layout;
 	public $responseSegment;
+	protected $dif_view_view;
+	protected $dif_view_action;
+        protected $dif_view = 0;
  
     public function __construct(){
         $this->view = View::getInstance();
@@ -45,8 +48,13 @@ class Controller{
         
         
         if($elem->view->render != 0){
-            $this->layout->content = $elem->view->render($module[0],$viewName,$zone);
-            
+            if(!$this->dif_view){
+                $this->layout->content = $elem->view->render($module[0],$viewName,$zone);
+            }
+            else{
+                $this->layout->content = $elem->view->render($this->dif_view_action,$this->dif_view_view,$zone);
+            }
+                
             
             // setting up response segments
             foreach($this->responseSegment as $responseSegment => $details){
@@ -70,12 +78,13 @@ class Controller{
             $this->layout->render();
         }
         
-	
     }
     
     public function setResponseSegment($segment,$module,$controller,$view){
         $this->responseSegment[$segment] = array('module' => $module,'controller' => $controller,'view' => $view);
     }
+    
+    
     
     public function getService($module,$service) {
         $className = ucfirst($service)."Service";
@@ -111,5 +120,11 @@ class Controller{
     
     public function getLayout(){
         return $this->layout;
+    }
+    
+    public function setDifView($action,$view){
+        $this->dif_view = 1;
+        $this->dif_view_view = $view;
+        $this->dif_view_action = $action;
     }
 }

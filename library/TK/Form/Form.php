@@ -14,6 +14,7 @@ class Form extends Element{
 	 protected $elements;
 	 protected $classes;
          
+         
     public function __construct(){
 	$this->multiOptions = array();
 	$this->elements = array();
@@ -100,7 +101,8 @@ class Form extends Element{
         // zwracamy wartość formularza
         if(is_array($response)&&array_key_exists('result',$response)&&$response['result']==false):
             $this->valid = false;
-            return $response['errorMessage'];
+            $view = View::getInstance();
+            return $view->showError($view->translate($response['errorMessage']));
         endif;
         
         

@@ -449,47 +449,22 @@ class Rally_Admin extends Controller{
 	
 	$surfaces = $rallyService->getAllSurfaces(Doctrine_Core::HYDRATE_ARRAY);
 
-	$form = new Form();
-	$form->addClass('form-horizontal');
-        $name = $form->createElement('text','name',array(),'Nazwa');
-	$name->addAdminDefaultClasses();
-        $date = $form->createElement('text','date',array('calendar' => true),'Data');
-	$date->addAdminDefaultClasses();
-	$date->addParam('readonly', '');
-	$date->addParam('size', '16');
-        $min_time = $form->createElement('text','min_time',array(),'Minimalny czas');
-	$min_time->addAdminDefaultClasses();
-	$min_time->addClass('timePicker');
-	$surface1 = $form->createElement('select','surface1',array(),'Nawierzchnia 1');
-	$surface1->addMultiOptions($surfaces,true);
-	$surface1->addClass('form-control');
-	$surface2 = $form->createElement('select','surface2',array(),'Nawierzchnia 2');
-	$surface2->addMultiOptions($surfaces,true);
-	$surface2->addClass('form-control');
-	$surface3 = $form->createElement('select','surface3',array(),'Nawierzchnia 3');
-	$surface3->addMultiOptions($surfaces,true);
-	$surface3->addClass('form-control');
-        $percent1 = $form->createElement('text','percent1',array());
-	$percent1->addAdminDefaultClasses();
-	$percent1->addClass('input-xsmall');
-        $percent2 = $form->createElement('text','percent2',array());
-	$percent2->addAdminDefaultClasses();
-	$percent2->addClass('input-xsmall');
-        $percent3 = $form->createElement('text','percent3',array());
-	$percent3->addAdminDefaultClasses();
-	$percent3->addClass('input-xsmall');
+	$form = $this->getForm('rally','AddRally');
 	
-        $active = $form->createElement('checkbox','active',array());
-	$active->addAdminDefaultClasses();
-	$active->addParam('checked', 'checked');
-	
+        $form->getElement('surface1')->addMultiOptions($surfaces,true);
+        $form->getElement('surface2')->addMultiOptions($surfaces,true);
+        $form->getElement('surface3')->addMultiOptions($surfaces,true);
 	
 	if(isset($_POST['form_send'])){
 		Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
-		
+		$values['league_rally'] = 0;
 		$rally = $rallyService->saveRally($values);
+                for($i=0;$i<17;$i++){
+                    $rallyService->saveRallyStage($rally,$values['stage_name'][$i],$values['stage_length'][$i],$i);
+                }
+                
 		
 		if(isset($_POST['submit']))
 		    TK_Helper::redirect('/admin/rally/list-rally');

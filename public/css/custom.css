@@ -253,12 +253,17 @@ label[for="rememberMe"],.topToolbarBottom a{
     margin-right:40px;
 }
 .rightMainPageBox label{
+    
+    margin-top:15px;
     display:block;
+}
+.rightMainPageBox label:first-of-type{
+    margin-top:0px;
 }
 .rightMainPageBox input:not([type="checkbox"]){
     display:block;
     width:220px;
-    margin-bottom:20px;
+    margin-bottom:5px;
 }
 .rightMainPageBox .acceptRules #acceptRules{
     margin:0px;
@@ -1534,4 +1539,9 @@ footer{
     .staticWrapper{
         padding:20px;
         padding-top:10px;
+    }
+    
+    .shortAlert{
+        padding:5px 10px;
+        margin-bottom:5px;
     }

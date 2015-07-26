@@ -673,29 +673,29 @@
     <word id="Add">
         <pl>Doładuj</pl>
     </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
+    <word id="This text is too long. Type maximum of 12 characters">
+        <pl>Tekst za długi. Maksymalnie 12 znaków</pl>
     </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
+    <word id="Passwords do not match">
+        <pl>Podane hasła nie pasują</pl>
     </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
+    <word id="This email address is not valid">
+        <pl>Podaj poprawny adres email</pl>
     </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
+    <word id="This text is too short. Type at least 4 characters">
+        <pl>Tekst za krótki. Minimum 4 znaki.</pl>
     </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
+    <word id="Sorry. This email is already registered.">
+        <pl>Przykro nam. Ten email jest już zarejestrowany.</pl>
     </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
+    <word id="Sorry. This user is already registered.">
+        <pl>Przykro nam. Taki użytkownik już istnieje.</pl>
     </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
+    <word id="Incorrect password">
+        <pl>Niepoprawne hasło.</pl>
     </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
+    <word id="Incorrect login">
+        <pl>Zły login.</pl>
     </word>
     <word id="Add">
         <pl>Doładuj</pl>

@@ -62,7 +62,7 @@ class Element{
             $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
         else:
             $this->elementDisplay .= "<input value='".$this->prepareFieldValue($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
-            $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
+            $this->elementDisplay .= $this->validateElement();
         endif;
 	
 	return $this->elementDisplay;
@@ -107,7 +107,7 @@ class Element{
 	    $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()."' type='".$this->type."' />";
         else:
             $this->elementDisplay .= "<input value='".$this->getMethodVariable($this->name)."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."' class='".$this->renderClasses()." form-control' type='".$this->type."' />";
-            $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
+            $this->elementDisplay .= $this->validateElement();
         endif;
 	
         if(!$nostyle&&$this->type!="hidden"){
@@ -185,7 +185,8 @@ class Element{
         // zwracamy wartość formularza
         if(is_array($response)&&array_key_exists('result',$response)&&$response['result']==false):
             $this->valid = false;
-            return $response['errorMessage'];
+            $view = View::getInstance();
+            return $view->showShortError($view->translate($response['errorMessage']));
         endif;
         
         

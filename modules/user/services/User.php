@@ -26,6 +26,10 @@ class UserService extends Service{
     public function authenticate(User_Model_Doctrine_User $user,$password){
         $enteredPassword = TK_Text::encode($password, $user['salt']);
         if($enteredPassword==$user['password']):
+            $_SESSION['start'] = time(); // Taking now logged in time.
+            // Ending a session in 15 minutes from the starting time.
+            $_SESSION['expire'] = $_SESSION['start'] + (15);
+        
             $_SESSION['user'] = serialize($user);
             $_SESSION['role'] = $user['role'];
             return true;
@@ -35,6 +39,10 @@ class UserService extends Service{
     }
     
     public function quickAuthenticate(User_Model_Doctrine_User $user){
+        
+            $_SESSION['start'] = time(); // Taking now logged in time.
+            // Ending a session in 15 minutes from the starting time.
+            $_SESSION['expire'] = $_SESSION['start'] + (15 * 60);
         
             if($user['gold_member']==1&&$user['gold_member_expire']<date('Y-m-d H:i:s')){
                 $user->set('gold_member',0);
@@ -59,9 +67,32 @@ class UserService extends Service{
     
     
     public function getAuthenticatedUser(){
+        // if session expired, redirect to login page
+        // 15 mins for session
+        if($_SESSION['expire']< time()&&!isset($_COOKIE['siteAuth'])){
+            $this->logout();
+            return false;
+        }
+        
+        
+//        var_dump($_COOKIE);exit;
         if(!isset($_SESSION['user'])):
+            // if user is not logged but cookie to remember user is set
+            // then automatically log in user
+            if(isset($_COOKIE['siteAuth'])){
+//                echo "in";exit;
+                if($user = $this->getUser($_COOKIE['siteAuth'],'username')){
+                    $this->quickAuthenticate($user);
+                    return $user;
+                }
+            }
             return false;
         else:
+            // extend session
+            $_SESSION['start'] = time(); // Taking now logged in time.
+            // Ending a session in 15 minutes from the starting time.
+            $_SESSION['expire'] = $_SESSION['start'] + (15);
+            
             $user = unserialize($_SESSION['user']);
             if($user['gold_member']==1&&$user['gold_member_expire']<date('Y-m-d H:i:s')){
                 $user->set('gold_member',0);

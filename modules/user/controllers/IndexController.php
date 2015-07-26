@@ -16,6 +16,7 @@ class User_Index extends Controller{
     }
     
     public function register(){
+        $this->setDifView('index', 'index');
         $this->getLayout()->setLayout('main');
         $userService = parent::getService('user','user');
         
@@ -38,7 +39,6 @@ class User_Index extends Controller{
             $form->getElement('email')->setValue($invite['email']);
         }
         
-        try{
         if($form->isSubmit()){
             if($form->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
@@ -72,12 +72,9 @@ class User_Index extends Controller{
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
             else{
+//                $form->getMessage();
                 $form->populate($_POST);
             }
-        }
-        }
-        catch(Exception $e){
-            var_dump($e->getMessage());exit;
         }
         $this->view->assign('form',$form);
     }
@@ -145,15 +142,16 @@ class User_Index extends Controller{
     }
     
     public function login(){
+        $this->setDifView('index', 'index');
         $this->getLayout()->setLayout('main');
         $userService = parent::getService('user','user');
         
-        $form = new Form();
-//        $form->createElement('text','email',array('validators' => array('stringLength' => array('min' => 4,'max' => 30)),'Email'));
-//        $form->createElement('password','password',array('validators' => array('stringLength' => array('min' => 4,'max' => 12))),'Hasło');
-        $form->createElement('submit','submit');
-        if($form->isSubmit()){
-            if($form->isValid()){
+        
+        $form = $this->getForm('user','register');
+        $loginForm = $this->getForm('user','login');
+
+        if($loginForm->isSubmit()){
+            if($loginForm->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
@@ -163,6 +161,22 @@ class User_Index extends Controller{
                 else:
 
                     if($user && $userService->authenticate($user,$values['password'])):
+                        // if checked rememberMe 
+                        // set cookie to remember
+                        // which is used in user service
+                        if(isset($values['rememberMe'])){
+                            $cookie_name = 'siteAuth';
+                            $cookie_time = time() + (3600 * 24 * 30); // 30Days
+                            setcookie($cookie_name, $user['username'], $cookie_time, "/");
+                        }
+                        // if remember me is not checked
+                        // then unset cookie ( user does not want to remember username anymore)
+                        else{
+                            if(isset($_COOKIE['siteAuth'])){
+                                setcookie('siteAuth', null, -1, '/');
+                                unset($_COOKIE['siteAuth']);
+                            }
+                        }
                         TK_Helper::redirect('/account/my-account');
                     elseif(!$user):
                         TK_Helper::redirect('/user/login?msg=no+user');
@@ -174,6 +188,7 @@ class User_Index extends Controller{
             }
         }
         
+        $this->view->assign('loginForm',$loginForm);
         $this->view->assign('form',$form);
         
     }
@@ -213,6 +228,11 @@ class User_Index extends Controller{
     public function logout(){
         $userService = parent::getService('user','user');
         
+        // unset cookie to remember
+        if(isset($_COOKIE['siteAuth'])){
+            setcookie('siteAuth', null, -1, '/');
+            unset($_COOKIE['siteAuth']);
+        }
         if($userService->logout()){
             TK_Helper::redirect('/');
         }
@@ -301,6 +321,10 @@ class User_Index extends Controller{
         }
         $this->view->assign('userAcceptedInvites',$userAcceptedInvites);
         $this->view->assign('userInvites',$userInvites);
+    }
+    
+    public function mailTemplate(){
+        $this->view->disableLayout();
     }
 }
 ?>

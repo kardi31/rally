@@ -13,7 +13,7 @@ class Validator{
             $response['result'] = true;
         else:
             $response['result'] = false;
-            $response['errorMessage'] = "Podana wartość nie jest liczbą";
+            $response['errorMessage'] = "This value is not a number";
         endif;
         
         return $response;
@@ -24,7 +24,7 @@ class Validator{
             $response['result'] = true;
         else:
             $response['result'] = false;
-            $response['errorMessage'] = "Podana wartość może zawierać tylko litery";
+            $response['errorMessage'] = "This field may contain only letters";
         endif;
         
         return $response;
@@ -35,7 +35,7 @@ class Validator{
             $response['result'] = true;
         else:
             $response['result'] = false;
-            $response['errorMessage'] = "Pole nie może być puste";
+            $response['errorMessage'] = "This field cannot be empty";
         endif;
         
         return $response;
@@ -47,7 +47,7 @@ class Validator{
             $response['result'] = true;
         else:
             $response['result'] = false;
-            $response['errorMessage'] = "Podana wartość może zawierać tylko litery, cyfry i spacje";
+            $response['errorMessage'] = "This field may contain only letters,numbers and spaces";
         endif;
         
         return $response;
@@ -56,10 +56,10 @@ class Validator{
     public static function validateStringLength($var,$options) {
         if(array_key_exists('min',$options)&&strlen($var)<$options['min']):
             $response['result'] = false;
-            $response['errorMessage'] = "Pole za krótkie, minimalnie ".$options['min']." znak(i/ów)";
+            $response['errorMessage'] = "This text is too short. Type at least ".$options['min']." characters";
         elseif(array_key_exists('max',$options)&&strlen($var)>$options['max']):
             $response['result'] = false;
-            $response['errorMessage'] = "Pole za długie, maksymalnie ".$options['max']." znak(i/ów)";
+            $response['errorMessage'] = "This text is too long. Type maximum of ".$options['max']." characters";
         else:
             $response['result'] = true;
         endif;
@@ -74,7 +74,7 @@ class Validator{
             $checkVar = $_GET[$options['elem']];
         else:
             $response['result'] = false;
-            $response['errorMessage'] = "Formularz błędnie napisany. Skontaktuj się z administracją";
+            $response['errorMessage'] = "Form error. Contact with administration";
             return $response;
         endif;
         
@@ -83,9 +83,9 @@ class Validator{
         else:
             $response['result'] = false;
             if($options['elem']=="password")
-                $response['errorMessage'] = "Hasła nie pasują do siebie";
+                $response['errorMessage'] = "Passwords do not match";
             else
-                $response['errorMessage'] = "Elementy nie pasują do siebie";
+                $response['errorMessage'] = "Elements do not match";
         endif;
         
         return $response;
@@ -94,7 +94,7 @@ class Validator{
     public static function validateEmail($var) {        
         if(!filter_var($var,FILTER_VALIDATE_EMAIL)):
             $response['result'] = false;
-            $response['errorMessage'] = "Adres email nie jest poprawny";
+            $response['errorMessage'] = "This email address is not valid";
             
         else:
            $response['result'] = true;
@@ -112,14 +112,14 @@ class Validator{
             $checkVar = $_GET['captcha'];
         else:
             $response['result'] = false;
-            $response['errorMessage'] = "Formularz błędnie napisany. Skontaktuj się z administracją";
+            $response['errorMessage'] = "Form error. Contact with administration";
             return $response;
         endif;
         if($_SESSION['originalkey'] == $checkVar&&strlen($checkVar)):
             $response['result'] = true;
         else:
             $response['result'] = false;
-            $response['errorMessage'] = "Niepoprawny tekst";
+            $response['errorMessage'] = "Wrong captcha";
             
         endif;
 	

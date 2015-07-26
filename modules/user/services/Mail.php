@@ -49,21 +49,34 @@ class MailService extends Service{
     public static function prepareRegistrationMail($token){
         $text = "Thank you for your registration in FastRally.<br />";
         $text .= "To activate your account please click the link below or paste the url in your browser.<br />";
-        $text .= "<a href='http://".$_SERVER['SERVER_NAME']."/user/activate/token/".$token."'>http://".$_SERVER['SERVER_NAME']."/user/activate/token/".$token."</a><br />";
+        $text .= "<a style='color:#f3f3f3;' href='http://".$_SERVER['SERVER_NAME']."/user/activate/token/".$token."'>http://".$_SERVER['SERVER_NAME']."/user/activate/token/".$token."</a><br />";
         $text .= "Let your journey in world of Fast Rally begin.<br /><br />";
         $text .= "FastRally Team";
         
-        return $text;
+        ob_start();
+        include(BASE_PATH."/modules/user/views/mail/template.phtml");
+        $content = ob_get_contents();
+        ob_end_clean();
+        
+        die('tt');
+        return $content;
     }
     
      public static function prepareConfirmActivationMail(){
         $text = "Congratulations! Your account in FastRally is now active <br />";
         $text .= "You can now fully enjoy the world of FastRally.<br />";
         $text .= "Log in with the link below and compete with other drivers on FastRally routes.<br />";
-        $text .= "<a href='http://".$_SERVER['SERVER_NAME']."/user/login/'>http://".$_SERVER['SERVER_NAME']."/user/login/</a><br />";
+        $text .= "<a style='color:#f3f3f3' href='http://".$_SERVER['SERVER_NAME']."/user/login/'>http://".$_SERVER['SERVER_NAME']."/user/login/</a><br />";
         $text .= "<br />Kind regards, <br />";
         $text .= "FastRally Team";
-        return $text;
+        
+        ob_start();
+        include(BASE_PATH."/modules/user/views/mail/template.phtml");
+        $content = ob_get_contents();
+        ob_end_clean();
+        
+        
+        return $content;
     }
     
 }
