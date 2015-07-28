@@ -71,8 +71,10 @@ class CarService extends Service{
 	$q->leftJoin('c.CarRallies cr');
 	$q->leftJoin('cr.Rally r');
 	$q->addWhere('t.id = ?',$team['id']);
-        if(!empty($busyCars))
-            $q->addWhere('c.id NOT IN ?',$busyCars);
+        
+        if(!empty($busyCars)){
+            $q->whereNotIn('c.id',$busyCars);
+        }
 	return $q->execute(array(),$hydrationMode);
     }
     

@@ -417,7 +417,7 @@ class RallyService extends Service{
         
         $rallyArray = array();
         
-        $rallyArray['name'] = "Rally_".$randomNumber;
+        $rallyArray['name'] = "Rally ".$randomNumber;
         $rallyArray['slug'] = TK_Text::createUniqueTableSlug('Rally_Model_Doctrine_Rally',$rallyArray['name']);       
         $randDate = rand(1,100);
         $rallyArray['date'] = date('Y-m-d H:i:s',strtotime('+'.$randDate.' days'));
@@ -461,7 +461,7 @@ class RallyService extends Service{
         
         $rallyArray = array();
         
-        $rallyArray['name'] = "Rally_".$randomNumber;
+        $rallyArray['name'] = "Rally ".$randomNumber;
         $rallyArray['slug'] = TK_Text::createUniqueTableSlug('Rally_Model_Doctrine_Rally',$rallyArray['name']);       
         $randDate = rand(1,100);
         $rallyArray['date'] = date('Y-m-d H:i:s',strtotime('+'.$randDate.' days'));

@@ -17,6 +17,9 @@
         if($_GET['msg']=='joined'){
             $this->showSuccess($this->translate('You have joined the rally.'));
         }
+        elseif($_GET['msg']=='signup finish'){
+            $this->showError($this->translate('Sorry. Sign ups for this rally are closed.'));
+        }
     }
 ?>
 
@@ -140,7 +143,7 @@
                 <h3><?= $this->translate('Prizes');?></h3>
                 <?php 
                 foreach($rallyPrizes as $position => $rallyPrize): 
-                    echo $this->translate('Positon')." ".$position." - ";
+                    echo $this->translate('Position')." ".$position." - ";
                     echo $rallyPrize."$ <br /><br />";
                 endforeach; 
             endif; ?>

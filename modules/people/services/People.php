@@ -52,8 +52,9 @@ class PeopleService extends Service{
 	$q->leftJoin('p.Team t');
         $q->addWhere("p.job like 'driver'");
 	$q->addWhere('t.id = ?',$team['id']);
-        if(!empty($busyDrivers))
-	$q->addWhere('p.id NOT IN ?',$busyDrivers);
+        if(!empty($busyDrivers)){
+            $q->whereNotIn('p.id',$busyDrivers);
+        }
 	return $q->execute(array(),$hydrationMode);
     }
     
@@ -134,8 +135,9 @@ class PeopleService extends Service{
 	$q->leftJoin('p.Team t');
         $q->addWhere("p.job like 'pilot'");
 	$q->addWhere('t.id = ?',$team['id']);
-        if(!empty($busyDrivers))
-            $q->addWhere('p.id NOT IN ?',$busyDrivers);
+        if(!empty($busyDrivers)){
+            $q->whereNotIn('p.id',$busyDrivers);
+        }
 	return $q->execute(array(),$hydrationMode);
     }
     

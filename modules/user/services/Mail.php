@@ -53,11 +53,13 @@ class MailService extends Service{
         $text .= "Let your journey in world of Fast Rally begin.<br /><br />";
         $text .= "FastRally Team";
         
+        $facebookUrl = View::getInstance()->getSetting('facebookUrl');
+        $twitterUrl = View::getInstance()->getSetting('twitterUrl');
         ob_start();
         include(BASE_PATH."/modules/user/views/mail/template.phtml");
         $content = ob_get_contents();
         ob_end_clean();
-        
+        echo $content;
         die('tt');
         return $content;
     }
@@ -70,6 +72,8 @@ class MailService extends Service{
         $text .= "<br />Kind regards, <br />";
         $text .= "FastRally Team";
         
+        $facebookUrl = View::getInstance()->getSetting('facebookUrl');
+        $twitterUrl = View::getInstance()->getSetting('twitterUrl');
         ob_start();
         include(BASE_PATH."/modules/user/views/mail/template.phtml");
         $content = ob_get_contents();

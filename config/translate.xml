@@ -328,9 +328,6 @@
     <word id="Top 3 teams are promoted to league 3, bottom 3 teams are relegated to league 5.">
         <pl>Najlepsze 3 drużyny awansują do ligi 3, najsłabsze 3 drużyny spadają do ligi niżej.</pl>
     </word>
-    <word id="Position">
-        <pl>Pozycja</pl>
-    </word>
     <word id="Team">
         <pl>Drużyna</pl>
     </word>
@@ -705,9 +702,6 @@
     </word>
     <word id="Other incomes">
         <pl>Pozostałe przychody</pl>
-    </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
     </word>
     <word id="Add">
         <pl>Doładuj</pl>

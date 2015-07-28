@@ -1,6 +1,6 @@
 
 <div class="mainUserBox rallyList">
-    <h4 class="boxHeader">My league rallies</h4>
+    <h4 class="boxHeader"><?= $this->translate('My league rallies'); ?></h4>
     <table>
         <?php foreach($rallies as $rally): ?>
             <tr
@@ -22,7 +22,7 @@
                     
                 </td>
                 <td>
-                    <?= count($rally['Crews'])." crews"; ?>
+                    <?= count($rally['Crews'])." ".$this->translate('crews'); ?>
                 </td>
                 <td>
                     <?php if($rally['date']<=date('Y-m-d H:i:s')){ ?>

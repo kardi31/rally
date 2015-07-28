@@ -12,7 +12,7 @@ class JoinRally extends Form{
         $car_id->addParam('required');
         $car_id->addParam('class','checkJoin');
         $risk = $this->createElement('select','risk',array('selected' => 'Normal risk'),'Ryzyko');
-        $risk->addMultiOptions(Rally_Model_Doctrine_Rally::getFormRisks(),true);
+        $risk->addMultiOptions(Rally_Model_Doctrine_Rally::getFormRisks(),false);
         $risk->setValue('normal');
         $submit = $this->createElement('submit','submit');
         $submit->setLabel($view->translate('Join rally'));

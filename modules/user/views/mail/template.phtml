@@ -16,10 +16,10 @@
             Follow us for latest promotions and contests.
             <br />
             <div style="margin:0 auto;display:block;text-align:center;margin-top:10px;">
-            <a href="<?= $this->getSetting('facebookUrl'); ?>" class="fb social_icon_link">
+            <a href="<?php $facebookUrl; ?>" class="fb social_icon_link">
                 <img src="http://<?= $_SERVER['SERVER_NAME'];?>/images/layout/fb.png" />
             </a>
-            <a href="<?= $this->getSetting('twitterUrl'); ?>" class="twitter social_icon_link">
+            <a href="<?php $twitterUrl; ?>" class="twitter social_icon_link">
                 <img src="http://<?= $_SERVER['SERVER_NAME'];?>/images/layout/tw.png" />
             </a>
             </div>

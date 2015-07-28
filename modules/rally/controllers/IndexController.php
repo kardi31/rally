@@ -47,6 +47,9 @@ class Rally_Index extends Controller{
         }
         
         
+        $startDate = new DateTime($rally['date']);
+        $signUpFinish = clone $startDate;
+        $signUpFinish->sub(new DateInterval('PT15M'));
 	
         if($user){
             if(!$rally['league_rally']||$rally['league']==$user['Team']['league_name']){
@@ -62,11 +65,13 @@ class Rally_Index extends Controller{
                 if($form->isSubmit()){
                     if($form->isValid()){
                         Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
-
+                        if($signUpFinish->getTimestamp()<time()){
+                            TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=signup+finish');
+                            exit;
+                        }
                         $values = $_POST;
 
                         $rallyService->saveRallyCrew($values,$rally,$user['Team']);
-
                         TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=joined');
 
                         Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
@@ -77,9 +82,6 @@ class Rally_Index extends Controller{
             }
         }
         
-        $startDate = new DateTime($rally['date']);
-        $signUpFinish = clone $startDate;
-        $signUpFinish->sub(new DateInterval('PT15M'));
         
         $this->view->assign('isParticipant',$isParticipant);
         $this->view->assign('startDate',$startDate);
