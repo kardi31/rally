@@ -55,7 +55,7 @@
     </style>
     
 <div class="mainUserBox createFriendlyBox">
-    <h4 class="boxHeader">Create friendly rally</h4>
+    <h4 class="boxHeader"><?= $this->translate('Create friendly rally'); ?></h4>
 <?php if(isset($message)){
         echo $this->showError($message);
     } ?>
@@ -63,13 +63,13 @@
         <!--Cost of this = 10 CC <br />-->
         <form  method="POST">
             <div class='form-group'>
-                <label class='control-label col-md-2' for="name">Name</label>
+                <label class='control-label col-md-2' for="name"><?= $this->translate('Name'); ?></label>
                 <div class='col-md-9'>
                     <?php echo $form->getElement('name')->renderElement(); ?>
                 </div>
             </div>
             <div class='form-group'>
-                <label class='control-label col-md-2' for="description">Description</label>
+                <label class='control-label col-md-2' for="description"><?= $this->translate('Description'); ?></label>
                 <div class='col-md-9'>
                     <?php echo $form->getElement('description')->renderElement(); ?>
                 </div>
@@ -78,7 +78,7 @@
                 <?php echo $form->getElement('invite_only')->renderElement(); ?>
             </div>
             <div class='form-group'>
-                <label class='control-label col-md-2' for="date">Rally date</label>
+                <label class='control-label col-md-2' for="date"><?= $this->translate('Rally date'); ?></label>
                 <div class='col-md-9'>
                     <?php echo $form->getElement('date')->renderElement(); ?>
                 </div>
@@ -87,45 +87,61 @@
         <div id="myMessage" class='error'>
 
         </div>
-        <span class='friendlyNote'><strong>Please note:</strong> to create a friendly rally you need to have free driver,pilot and car. One crew is allowed to drive only one friendly rally/day. If you don't have free crew on that date, please choose another date of rally.</span>
+        <span class='friendlyNote'><strong><?= $this->translate('Please note'); ?>:</strong> <?= $this->translate('to create a friendly rally you need to have free driver,pilot and car. One crew is allowed to drive only one friendly rally/day. If you don\'t have free crew on that date, please choose another date of rally.'); ?></span>
         <div id='crewAddWrapper'>
-            <label for="driver_id">Driver</label>
+            <label for="driver_id"><?= $this->translate('Driver'); ?></label>
             <span id="driverWrapper">
                 <?php echo $joinForm->getElement('driver_id')->renderElement(); ?>
             </span>
-            <label for="pilot_id">Pilot</label>
+            <label for="pilot_id"><?= $this->translate('Pilot'); ?></label>
             <span id="pilotWrapper">
                 <?php echo $joinForm->getElement('pilot_id')->renderElement(); ?>
             </span>
-            <label for="car_id">Car</label>
+            <label for="car_id"><?= $this->translate('Car'); ?></label>
             <span id="carWrapper">
                 <?php echo $joinForm->getElement('car_id')->renderElement(); ?>
             </span>
-            <label for="risk">Risk</label>
+            <label for="risk"><?= $this->translate('Risk');?></label>
             <?php echo $joinForm->getElement('risk')->renderElement(); ?>
             
             <div class='goldCoinBox'>
-                <h4>Create friendly rally</h4>
+                <h4><?= $this->translate('Create friendly rally'); ?></h4>
                 <?php if(!$authenticatedUser['gold_member']): ?>
                     <div class="balance">
-                        Balance: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
+                        <?= $this->translate('Balance'); ?>: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
                     </div>
-                     Cost:  10<img class="coin" src="/images/layout/coin.png" />
+                     <?= $this->translate('Cost') ;?>:  
+                     <?php if($authenticatedUser['gold_member']){
+                                echo 5;
+                            }
+                            else{
+                                echo 10;
+                            }
+                            ?>
+                     <img class="coin" src="/images/layout/coin.png" />
                <?php else: ?>
-                    You are a <img src="/images/layout/gc_small.png" /> member. You are allowed to create 2 friendly rallies every 30 days.
+                    <?= $this->translate('You are a'); ?> <img src="/images/layout/gc_small.png" /> <?= $this->translate('member. You are allowed to create 2 friendly rallies every 30 days.'); ?>
                     <?php 
                     if($recentUserFriendlies['cnt']>=2){
                        $oldestFriendly = new DateTime($recentUserFriendlies['created_at']);
                        $oldestFriendly->add(new DateInterval('P30D'));
-                       echo "<br/> You have to wait until <strong>".$oldestFriendly->format('d/m/Y H:i')."</strong> to create another free friendly rally."; 
+                       echo "<br/>".$this->translate('You have to wait until')." <strong>".$oldestFriendly->format('d/m/Y H:i')."</strong> ".$this->translate('to create another free friendly rally.'); 
                     
                        ?>
                     <br />
                     <div class="balanceWrapper">
                         <div class="balance">
-                            Balance: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
+                            <?= $this->translate('Balance');?>: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
                         </div>
-                         Cost:  10<img class="coin" src="/images/layout/coin.png" />
+                         <?= $this->translate('Cost'); ?>:  
+                         <?php if($authenticatedUser['gold_member']){
+                                echo 5;
+                            }
+                            else{
+                                echo 10;
+                            }
+                            ?>
+                         <img class="coin" src="/images/layout/coin.png" />
                          <div class="clearfix"></div>
                     </div>
                     <?php

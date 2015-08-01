@@ -98,8 +98,12 @@ class Select extends Element {
     
     public function addMultiOptions($options,$emptyOption = false){
 	
-	if($emptyOption)
-	    $this->multiOptions[$this->name][''] = $emptyOption;
+	if($emptyOption){
+            if(!is_bool($emptyOption))
+                $this->multiOptions[$this->name][''] = $emptyOption;
+            else
+                $this->multiOptions[$this->name][''] = '';
+        }
         
 	if(count($options)==0)
 	    return ;

@@ -483,6 +483,65 @@ class Rally_Admin extends Controller{
      }
      
      
+     public function addBigRally(){
+	 
+        $rallyService = parent::getService('rally','rally');
+        $carService = parent::getService('car','car');
+	
+        $cars = $carService->prepareCarModels();
+	$surfaces = $rallyService->getAllSurfaces(Doctrine_Core::HYDRATE_ARRAY);
+
+	$form = $this->getForm('rally','AddRally');
+	
+        $form->getElement('surface1')->addMultiOptions($surfaces,true);
+        $form->getElement('surface2')->addMultiOptions($surfaces,true);
+        $form->getElement('surface3')->addMultiOptions($surfaces,true);
+        $form->getElement('award1')->addMultiOptions($cars,true);
+        $form->getElement('award2')->addMultiOptions($cars,true);
+        $form->getElement('award3')->addMultiOptions($cars,true);
+	
+	if(isset($_POST['form_send'])){
+		Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                
+                $values = $_POST;
+		$values['league_rally'] = 0;
+		$values['big_awards'] = 1;
+		$rally = $rallyService->saveRally($values);
+                for($i=0;$i<17;$i++){
+                    $rallyService->saveRallyStage($rally,$values['stage_name'][$i],$values['stage_length'][$i],$i);
+                }
+                
+                for($i=1;$i<=3;$i++):
+                    $bigAwardData = array('rally_id' => $rally['id']);
+                    if(isset($values['award'.$i])&&!empty($values['award'.$i])){
+                        $bigAwardData['award_type'] = 'car';
+                        $bigAwardData['car_model_id'] = $values['award'.$i];
+                    }
+                    else{
+                        $bigAwardData['award_type'] = 'premium';
+                        $bigAwardData['premium'] = $values['award_premium'.$i];
+                    }
+                    $rallyService->saveBigAwards($bigAwardData);
+                endfor;
+                
+		
+		if(isset($_POST['submit']))
+		    TK_Helper::redirect('/admin/rally/list-rally');
+		
+		if(isset($_POST['save_and_add_new']))
+		    TK_Helper::redirect('/admin/rally/add-rally');
+		
+		if(isset($_POST['save_and_stay']))
+		    TK_Helper::redirect('/admin/rally/edit-rally/id/'.$rally['id']);
+		
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+	    
+	}
+	
+	$this->view->assign('form',$form);
+     }
+     
+     
      public function addLeagueRally(){
 	 
         $rallyService = parent::getService('rally','rally');

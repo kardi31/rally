@@ -27,8 +27,11 @@
             if(isset($_GET['msg'])){
                 if($_GET['msg']=="user invited")
                     $this->showSuccess('User was succesfully invited.');
-                if($_GET['msg']=="joined")
+                elseif($_GET['msg']=="joined")
                     $this->showSuccess('You have joined this rally.');
+                elseif($_GET['msg']=='signup finish'){
+                    $this->showError($this->translate('Sorry. Sign ups for this rally are closed.'));
+                }
             }
         ?>
         <span class="rallyDescription">
@@ -53,7 +56,7 @@
         
         <br />
         <?php if(isset($isParticipant)&&$isParticipant): ?>
-            <span class="label label-success"><?= $this->translate('You already participate in this rally.'); ?></span>
+            <span class="label label-success bigLabel"><?= $this->translate('You already participate in this rally.'); ?></span>
         <?php endif; ?>
         <br />
         <?php if(isset($form)){ ?>
@@ -101,14 +104,22 @@
                         <div class="balance">
                             Balance: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
                         </div>
-                         Cost:  10<img class="coin" src="/images/layout/coin.png" />
+                         Cost:  
+                         <?php if($authenticatedUser['gold_member']){
+                             echo 5;
+                         }
+                         else{
+                             echo 10;
+                         }
+                         ?>
+                         <img class="coin" src="/images/layout/coin.png" />
                    <?php else: ?>
-                        <?= $this->translate('You are a');?> <img src="/images/layout/gc_small.png" /> <?= $this->translate('member. You are allowed to create 2 friendly rallies every 30 days.');?>
+                        <?= $this->translate('You are a');?> <img src="/images/layout/gc_small.png" /> <?= $this->translate('member. You are allowed to join 2 friendly rallies every 30 days.');?>
                         <?php 
                         if($recentUserFriendlies['cnt']>=2){
                            $oldestFriendly = new DateTime($recentUserFriendlies['created_at']);
                            $oldestFriendly->add(new DateInterval('P30D'));
-                           echo "<br/>".$this->translate('You have to wait until')."<strong>".$oldestFriendly->format('d/m/Y H:i')."</strong> ".$this->translate('to create another free friendly rally.'); 
+                           echo "<br/>".$this->translate('You have to wait until')."<strong>".$oldestFriendly->format('d/m/Y H:i')."</strong> ".$this->translate('to join another free friendly rally.'); 
 
                            ?>
                         <br />
@@ -116,7 +127,15 @@
                             <div class="balance">
                                 <?= $this->translate('Balance');?>: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
                             </div>
-                             <?= $this->translate('Cost'); ?>:  10<img class="coin" src="/images/layout/coin.png" />
+                             <?= $this->translate('Cost'); ?>:  
+                             <?php if($authenticatedUser['gold_member']){
+                                echo 5;
+                            }
+                            else{
+                                echo 10;
+                            }
+                            ?>
+                             <img class="coin" src="/images/layout/coin.png" />
                              <div class="clearfix"></div>
                         </div>
                         <?php

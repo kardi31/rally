@@ -853,6 +853,10 @@ footer{
         padding:5px
     }
     
+    .prizeCar{
+        max-width:110px;
+    }
+    
 /*
     3.4 Rally result
 */
@@ -1544,4 +1548,9 @@ footer{
     .shortAlert{
         padding:5px 10px;
         margin-bottom:5px;
+    }
+    
+    .label-warning.bigLabel{
+        margin-top:10px;
+        display:inline-block;
     }

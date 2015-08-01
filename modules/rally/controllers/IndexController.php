@@ -46,38 +46,96 @@ class Rally_Index extends Controller{
             $this->view->assign('rallyResults',$rallyResults);
         }
         
-        
         $startDate = new DateTime($rally['date']);
         $signUpFinish = clone $startDate;
         $signUpFinish->sub(new DateInterval('PT15M'));
 	
         if($user){
             if(!$rally['league_rally']||$rally['league']==$user['Team']['league_name']){
-                $freeDrivers = $peopleService->getFreeDrivers($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
-                $freePilots = $peopleService->getFreePilots($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
-                $freeCars = $carService->getFreeCars($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
-                $form = $this->getForm('rally','JoinRally');
-                $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
-                $form->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
-                $form->getElement('car_id')->addMultiOptions($freeCars,'Select car');
-                $this->view->assign('form',$form);
+                
+                
+                if($signUpFinish->getTimestamp()<time()){
+                    TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=signup+finish');
+                    exit;
+                }
+                
+                if(!$rally['big_awards']){
+                    $freeDrivers = $peopleService->getFreeDrivers($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
+                    $freePilots = $peopleService->getFreePilots($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
+                    $freeCars = $carService->getFreeCars($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
+                    $form = $this->getForm('rally','JoinRally');
+                    $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
+                    $form->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
+                    $form->getElement('car_id')->addMultiOptions($freeCars,'Select car');
+                    $this->view->assign('form',$form);
 
-                if($form->isSubmit()){
-                    if($form->isValid()){
-                        Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
-                        if($signUpFinish->getTimestamp()<time()){
-                            TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=signup+finish');
-                            exit;
+                    if($form->isSubmit()){
+                        if($form->isValid()){
+                            Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                            if($signUpFinish->getTimestamp()<time()){
+                                TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=signup+finish');
+                                exit;
+                            }
+                            $values = $_POST;
+
+                            $rallyService->saveRallyCrew($values,$rally,$user['Team']);
+                            TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=joined');
+
+                            Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
                         }
-                        $values = $_POST;
-
-                        $rallyService->saveRallyCrew($values,$rally,$user['Team']);
-                        TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=joined');
-
-                        Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
                     }
                 }
-	
+                else{
+                    $freeDrivers = $peopleService->getTeamDrivers($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
+                    $freePilots = $peopleService->getTeamPilots($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
+                    $freeCars = $carService->prepareTeamCarsShort($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
+                    $form = $this->getForm('rally','JoinRally');
+                    $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
+                    $form->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
+                    $form->getElement('car_id')->addMultiOptions($freeCars,'Select car');
+                    $this->view->assign('form',$form);
+
+                    if($form->isSubmit()){
+                        if($form->isValid()){
+                            Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                            if($signUpFinish->getTimestamp()<time()){
+                                TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=signup+finish');
+                                exit;
+                            }
+                            $values = $_POST;
+
+                            if($user['gold_member']){
+                                if(!$userService->checkUserPremium($user['id'],5)){
+                                    $this->view->assign('message',array('status' => false,'message' => 'You do not have enough premium. Please buy more premium'));
+                                }
+                                else{
+                                    $crew = $rallyService->saveRallyCrew($values,$rally,$user['Team']);
+
+                                    $userService->removePremium($user,5,'Joined big rally '.$rally['name']);
+                                    unset($_POST);
+                                    Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+
+                                    TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=joined');
+                                }
+                            }
+                             elseif(!$userService->checkUserPremium($user['id'],15)){
+                                $this->view->assign('message',array('status' => false,'message' => 'You do not have enough premium. Please buy more premium'));
+                            }
+                            else{
+                                 $crew = $rallyService->saveRallyCrew($values,$rally,$user['Team']);
+                                 unset($_POST);
+                                 $userService->removePremium($user,15,'Joined big rally '.$rally['name']);
+                                 
+                                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+
+                                TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=joined');
+
+                            }
+                            
+                        }
+                    }
+                    
+                }
                 $this->view->assign('form',$form);
             }
         }
@@ -98,7 +156,7 @@ class Rally_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
         
         $rallyService = parent::getService('rally','rally');
-        $rallies = $rallyService->getAllFutureRallies(Doctrine_Core::HYDRATE_RECORD,false);
+        $rallies = $rallyService->getAllFutureRallies(Doctrine_Core::HYDRATE_RECORD,false,false);
         
         $futureTeamRallies = $rallyService->getAllFutureTeamRallies($user['Team']['id'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
 
@@ -128,7 +186,7 @@ class Rally_Index extends Controller{
         $rallyService = parent::getService('rally','rally');
 //        $rallies = $rallyService->getAllFutureRallies();
         
-        $rallies = $rallyService->getAllTeamRallies($user['Team']['id'],Doctrine_Core::HYDRATE_RECORD);
+        $rallies = $rallyService->getAllTeamRallies($user['Team']['id'],30,Doctrine_Core::HYDRATE_RECORD);
 
         $this->view->assign('rallies',$rallies);
 //        $this->view->assign('futureTeamRallies',$futureTeamRallies);
@@ -197,13 +255,24 @@ class Rally_Index extends Controller{
                 
                 $values = $_POST;
 
-                if($user['gold_member']&&$recentUserFriendlies<2){
-                    echo "zle";exit;
-                    $friendly = $rallyService->saveFriendlyRally($values,$user);
-                    $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
-                    $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
-
-                    TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
+                if($user['gold_member']){
+                    if($recentUserFriendlies['cnt']<2){
+                        $friendly = $rallyService->saveFriendlyRally($values,$user);
+                        $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
+                        $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
+                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
+                    }
+                    elseif(!$userService->checkUserPremium($user['id'],5)){
+                        $this->view->assign('message','You do not have enough premium. Please buy more premium');
+                    }
+                    else{
+                        $friendly = $rallyService->saveFriendlyRally($values,$user);
+                        $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
+                        $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
+                        
+                        $userService->removePremium($user,5,'Creation of friendly rally '.$friendly['Rally']['name']);
+                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
+                    }
                 }
                 elseif(!$userService->checkUserPremium($user['id'],10)){
                     $this->view->assign('message','You do not have enough premium. Please buy more premium');
@@ -255,6 +324,10 @@ class Rally_Index extends Controller{
         $crewCounter = count($rally['Crews']);
         
         
+        $startDate = new DateTime($rally['date']);
+        $signUpFinish = clone $startDate;
+        $signUpFinish->sub(new DateInterval('PT15M'));
+        
         // prizes for league 3
         // for friendly rallies
         $leagueInt = 3;
@@ -280,6 +353,11 @@ class Rally_Index extends Controller{
                     Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
 
                     $values = $_POST;
+                    
+                    if($signUpFinish->getTimestamp()<time()){
+                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$rally['slug'].'?msg=signup+finish');
+                        exit;
+                    }
                     if(!$friendlyUser = $userService->getUser($values['name'],'username',Doctrine_Core::HYDRATE_ARRAY)){
                         
                         $this->view->assign('message',array('status' => false,'message' => 'This user does not exists'));
@@ -302,17 +380,19 @@ class Rally_Index extends Controller{
             
             
         }
-        elseif($rallyService->getFriendlyInvitedUser($friendly['id'],$user['username'])||$friendly['invite_only']==0&&!$isParticipant){
+        elseif($rallyService->getFriendlyInvitedUser($friendly['id'],$user['username'])||$friendly['invite_only']==0){
+            
             $peopleService = parent::getService('people','people');
             $carService = parent::getService('car','car');
             $freeDrivers = $peopleService->getFreeDriversFriendly($user['Team'],$friendly['Rally']['date'],Doctrine_Core::HYDRATE_ARRAY);
             $freePilots = $peopleService->getFreePilotsFriendly($user['Team'],$friendly['Rally']['date'],Doctrine_Core::HYDRATE_ARRAY);
+            
             $freeCars = $carService->getFreeCarsFriendly($user['Team'],$friendly['Rally']['date'],Doctrine_Core::HYDRATE_ARRAY);
             
             $joinForm = $this->getForm('rally','JoinRally');
-            $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,true);
-            $joinForm->getElement('pilot_id')->addMultiOptions($freePilots,true);
-            $joinForm->getElement('car_id')->addMultiOptions($freeCars,true);
+        $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
+        $joinForm->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
+        $joinForm->getElement('car_id')->addMultiOptions($freeCars,'Select car');
             $this->view->assign('joinForm',$joinForm);
             
             if($joinForm->isSubmit()){
@@ -322,30 +402,50 @@ class Rally_Index extends Controller{
                     $values = $_POST;
                     
                     
-                    if($user['gold_member']&&$recentUserFriendlies<2){
-                        $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
-                        $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id'],true);
-                        $rallyService->removeFriendlyInvite($friendly['id'],$user['username']);
+                    if($signUpFinish->getTimestamp()<time()){
+                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$rally['slug'].'?msg=signup+finish');
+                        exit;
+                    }
+                    
+                    if($user['gold_member']){
+                        if($recentUserFriendlies['cnt']<2){
+                            $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
+                            $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id'],true);
+    //                        $rallyService->removeFriendlyInvite($friendly['id'],$user['username']);
 
-                        unset($_POST);
-                        Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+                            unset($_POST);
+                            Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+
+                            TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug'].'?msg=joined');
+                        }
+                         elseif(!$userService->checkUserPremium($user['id'],5)){
+                            $this->view->assign('message',array('status' => false,'message' => 'You do not have enough premium. Please buy more premium'));
+                        }
+                        else{
+                             $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
+                       
+                             $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
+                             $userService->removePremium($user,5,'Joined friendly rally '.$friendly['Rally']['name']);
                         
-                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
+                        }
                     }
                     elseif(!$userService->checkUserPremium($user['id'],10)){
                         $this->view->assign('message',array('status' => false,'message' => 'You do not have enough premium. Please buy more premium'));
                     }
                     else{
-                        $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
-                        $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
-                        $rallyService->removeFriendlyInvite($friendly['id'],$user['username']);
                         
-                        $userService->removePremium($user,10,'Creation of friendly rally '.$friendly['Rally']['name']);
+                        $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
+                       
+                        $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
+                        
+//                        $rallyService->removeFriendlyInvite($friendly['id'],$user['username']);
+                        
+                        $userService->removePremium($user,10,'Joined friendly rally '.$friendly['Rally']['name']);
                         
                         unset($_POST);
                         Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
                         
-                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
+                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug'].'?msg=joined');
                     }
 
                 }
@@ -355,9 +455,6 @@ class Rally_Index extends Controller{
             $this->view->assign('participant',true);
         }
         
-        $startDate = new DateTime($rally['date']);
-        $signUpFinish = clone $startDate;
-        $signUpFinish->sub(new DateInterval('PT15M'));
         
         $this->view->assign('isParticipant',$isParticipant);
         $this->view->assign('startDate',$startDate);
@@ -410,9 +507,9 @@ class Rally_Index extends Controller{
         
         
         $joinForm = $this->getForm('rally','JoinRally');
-        $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,true);
-        $joinForm->getElement('pilot_id')->addMultiOptions($freePilots,true);
-        $joinForm->getElement('car_id')->addMultiOptions($freeCars,true);
+        $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
+        $joinForm->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
+        $joinForm->getElement('car_id')->addMultiOptions($freeCars,'Select car');
         
         $result['result']['driver_id'] = $joinForm->getElement('driver_id')->renderElement();
         $result['result']['pilot_id'] = $joinForm->getElement('pilot_id')->renderElement();

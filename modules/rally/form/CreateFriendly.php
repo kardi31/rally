@@ -7,16 +7,19 @@ class CreateFriendly extends Form{
         $name->addValidator('alnum');
         $name->addValidator('stringLength',array('min' => 5));
         $name->addClass('form-control');
+        
         $description = $this->createElement('textarea','description',array(),'Opis');
         $description->addValidator('alnum');
         $description->addParam('rows',4);
         $description->addParam('cols',70);
+        $description->addParam('required');
         $description->addClass('form-control');
         
         $date = $this->createElement('text','date',array(),'Data');
         $date->addParam('required');
         $date->addParam('readonly');
         $date->addParam('class','form_advance_datetime');
+        $date->addValidator('notEmpty');
         
         $invite_only = $this->createElement('radio','invite_only',array(),'Tylko dla przyjaciół');
         $invite_only->addMultiOption(1,'Private');

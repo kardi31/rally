@@ -9,6 +9,7 @@ class RallyService extends Service{
     protected $stageResultTable;
     protected $resultTable;
     protected $stageTable;
+    protected $bigAwardsTable;
     protected $surfaceTable;
     protected $friendlyTable;
     protected $friendlyInvitationsTable;
@@ -35,6 +36,7 @@ class RallyService extends Service{
         $this->stageResultTable = parent::getTable('rally','stageResult');
         $this->resultTable = parent::getTable('rally','result');
         $this->friendlyTable = parent::getTable('rally','friendly');
+        $this->bigAwardsTable = parent::getTable('rally','bigAwards');
         $this->friendlyInvitationsTable = parent::getTable('rally','friendlyInvitations');
         $this->friendlyParticipantsTable = parent::getTable('rally','friendlyParticipants');
         $this->accidentTable = parent::getTable('rally','accident');
@@ -61,13 +63,17 @@ class RallyService extends Service{
         return $this->stageTable->findOneBy($field,$id,$hydrationMode);
     }
     
-    public function getAllFutureRallies($hydrationMode = Doctrine_Core::HYDRATE_RECORD,$league = true){
+    public function getAllFutureRallies($hydrationMode = Doctrine_Core::HYDRATE_RECORD,$league = true,$friendly = true){
         $q = $this->rallyTable->createQuery('r');
 	$q->addWhere('r.date > NOW()');
 	$q->orderBy('r.date');
-    if(!$league){
-        $q->addWhere('r.league_rally != 1');
-    }
+        if(!$league){
+            $q->addWhere('r.league_rally != 1');
+        }
+        
+        if(!$friendly){
+            $q->addWhere('r.friendly != 1');
+        }
 	return $q->execute(array(),$hydrationMode);
     }
     
@@ -82,12 +88,13 @@ class RallyService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
-    public function getAllTeamRallies($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+    public function getAllTeamRallies($team_id,$limit = 30,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->rallyTable->createQuery('r');
         $q->leftJoin('r.Crews c');
 //	$q->addWhere('r.date > NOW()');
         $q->addWhere('r.friendly = 0');
 	$q->orderBy('r.date DESC');
+        $q->limit($limit);
         $q->addWhere('c.team_id = ?',$team_id);
         $q->select('r.id');
 	return $q->execute(array(),$hydrationMode);
@@ -596,7 +603,7 @@ class RallyService extends Service{
         $q->addSelect('cr.*,d.*,p.*,t.*');
         $q->groupBy('crew_id');
         $q->addWhere('s.rally_id = ?',$rally['id']);
-        $q->orderBy('out_of_race ASC,number_of_stages DESC,total_time ASC');
+        $q->orderBy('out_of_race ASC,number_of_stages DESC,SUM(sr.out_of_race) ASC,total_time ASC');
         return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
         
     }
@@ -622,7 +629,7 @@ class RallyService extends Service{
 	$q->addSelect('cr.team_id');
         $q->groupBy('crew_id');
         $q->addWhere('s.rally_id = ?',$id);
-        $q->orderBy('out_of_race ASC,number_of_stages DESC,total_time ASC');
+        $q->orderBy('out_of_race ASC,number_of_stages DESC,SUM(sr.out_of_race) ASC,total_time ASC');
         $results = $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
         
         foreach($results as $key => $result):
@@ -696,6 +703,7 @@ class RallyService extends Service{
         $q->leftJoin('t.Sponsor s');
         $q->addWhere('re.'.$field.' = ?',$id);
         $q->orderBy('re.position');
+        
         return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
     }
     
@@ -708,6 +716,8 @@ class RallyService extends Service{
         $q = $this->friendlyTable->createQuery('f');
         $q->select('count(f.id) as cnt,f.created_at');
         $q->addWhere('f.user_id = ?',$user_id);
+        
+        $q->addWhere('f.from_gold_member = 1');
         $q->addWhere('f.created_at > DATE_SUB(NOW(), INTERVAL +1 MONTH)');
         $q->groupBy('f.user_id');
         $q->orderBy('created_at');
@@ -720,6 +730,7 @@ class RallyService extends Service{
         $q->leftJoin('f.Participants p');
         $q->select('count(f.id) as cnt,f.created_at');
         $q->addWhere('p.user_id = ?',$user_id);
+        $q->addWhere('p.from_gold_member = 1');
         $q->addWhere('r.date > DATE_SUB(NOW(), INTERVAL +1 MONTH)');
         $q->groupBy('p.user_id');
         $q->orderBy('created_at');
@@ -960,6 +971,12 @@ class RallyService extends Service{
         $q->addWhere('r.date > ?',$startDate);
         $q->addWhere('r.date < ?',$finishDate);
 	return $q->fetchOneArray();
+    }
+    
+    public function saveBigAwards($values){
+        $record = $this->bigAwardsTable->getRecord();
+        $record->fromArray($values);
+        $record->save();
     }
 }
 ?>

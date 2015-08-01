@@ -87,7 +87,8 @@ class LeagueService extends Service{
     }
     
     public function appendTeamToLeague($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
-	// check if there is any not full league
+	
+// check if there is any not full league
         $q = $this->seasonTable->createQuery('s');
 	$q->groupBy('s.league_name');
 	$q->having('count(s.league_name) < ?',$this->maxTeamsInLeague);
@@ -104,8 +105,8 @@ class LeagueService extends Service{
 	    $league = $result;
 	}
         
-        $this->checkLeagueRallies($league['league_name']);
-	// save team to league
+        $this->checkLeagueRallies($league);
+// save team to league
 	$newTeamData = array(
 	  'team_id' => $team_id,
 	  'league_name' => $league->get('league_name'),
@@ -245,13 +246,14 @@ class LeagueService extends Service{
     
     public function checkLeagueRallies($league){
         $seasonInfo = $this->getSeasonInfo();
-        $hasRallies = RallyService::getInstance()->hasLeagueRallies($league,$seasonInfo['start_date'],$seasonInfo['finish_date']);
-//        echo "good";exit;
+        
+            $hasRallies = RallyService::getInstance()->hasLeagueRallies($league['league_name'],$seasonInfo['season_start'],$seasonInfo['season_finish']);
+        
         $weeks = TK_Text::datediff('ww', date('Y-m-d H:i:s'),$seasonInfo['season_finish'], false);
        
         if(!$hasRallies){
             for($i=2;$i<=$weeks+1;$i++):
-                RallyService::getInstance()->createOneLeagueRally($league,$i);
+                RallyService::getInstance()->createOneLeagueRally($league['league_name'],$i);
             endfor;
         }
         
@@ -260,7 +262,6 @@ class LeagueService extends Service{
     
     public function getSeasonInfo(){
         $season = $this->getCurrentSeason();
-        
         $q = $this->seasonInfoTable->createQuery('s');
         $q->addWhere('s.season = ?',$season);
         return $q->fetchOneArray();

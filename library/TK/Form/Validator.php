@@ -30,7 +30,7 @@ class Validator{
         return $response;
     }
     
-    public static function notEmpty($var) {
+    public static function validateNotEmpty($var) {
         if(strlen($var)>0):
             $response['result'] = true;
         else:

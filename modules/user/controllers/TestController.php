@@ -67,11 +67,11 @@ class User_Test extends Controller{
             $message = "Użytkownik już aktywowany";
         }
         else{
-            
             $peopleService = parent::getService('people','people');
             $teamService = parent::getService('team','team');
             $carService = parent::getService('car','car');
             $leagueService = parent::getService('league','league');
+	    $rallyService = parent::getService('rally','rally');
 	    
             $data = array();
             $data['user_id'] = $user['id'];

@@ -14,7 +14,7 @@
             
             <?php endif; ?>
             <br />
-            <?= $this->translate('Your account balance'); ?>: <?= $authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png">
+            <?= $this->translate('Your account balance'); ?>: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png">
         </div>
         <div class="addMorePremium">
             <?= $this->translate('Add more'); ?> <img class="coin" src="/images/layout/coin.png" />

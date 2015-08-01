@@ -86,12 +86,9 @@ class PeopleService extends Service{
     
     public function getTeamDrivers($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	$q = $this->peopleTable->createQuery('p');
-	$q->select('p.*,CONCAT(p.last_name," ",p.first_name) as name');
+	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name');
 	$q->leftJoin('p.Team t');
         // to display if the guy is in any team
-        $q->leftJoin('p.Driver1Team d1t');
-        $q->leftJoin('p.Driver2Team d2t');
-        $q->addSelect('d1t.id,d2t.id');
         $q->addWhere('p.job = "driver"');
 	$q->addWhere('t.id = ?',$team_id);
 	return $q->execute(array(),$hydrationMode);
@@ -108,12 +105,9 @@ class PeopleService extends Service{
     
     public function getTeamPilots($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	$q = $this->peopleTable->createQuery('p');
-	$q->select('p.*,CONCAT(p.last_name," ",p.first_name) as name');
+	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name');
 	$q->leftJoin('p.Team t');
         // to display if the guy is in any team
-        $q->leftJoin('p.Pilot1Team p1t');
-        $q->leftJoin('p.Pilot2Team p2t');
-        $q->addSelect('p1t.id,p2t.id');
         $q->addWhere('p.job = "pilot"');
 	$q->addWhere('t.id = ?',$team_id);
 	return $q->execute(array(),$hydrationMode);
@@ -164,11 +158,9 @@ class PeopleService extends Service{
         $q->addWhere("p.job like 'driver'");
 	$q->addWhere('t.id = ?',$team['id']);
         
+        
         if(!empty($busyDrivers)){
-            if(!is_array($busyDrivers)&&strlen($busyDrivers)>3){
-                $busyDrivers = array($busyDrivers);
-            }
-            $q->addWhere('p.id NOT IN ?',$busyDrivers);
+            $q->whereNotIn('p.id',$busyDrivers);
         }
 	return $q->execute(array(),$hydrationMode);
     }
@@ -199,12 +191,11 @@ class PeopleService extends Service{
 	$q->leftJoin('p.Team t');
         $q->addWhere("p.job like 'pilot'");
 	$q->addWhere('t.id = ?',$team['id']);
-         if(!empty($busyDrivers)){
-            if(!is_array($busyDrivers)&&strlen($busyDrivers)>3){
-                $busyDrivers = array($busyDrivers);
-            }
-            $q->addWhere('p.id NOT IN ?',$busyDrivers);
+        
+        if(!empty($busyDrivers)){
+            $q->whereNotIn('p.id',$busyDrivers);
         }
+        
 	return $q->execute(array(),$hydrationMode);
     }
     
@@ -212,7 +203,7 @@ class PeopleService extends Service{
         $q = $this->peopleTable->createQuery('p');
 	$q->select('p.id');
 	$q->leftJoin('p.Team t');
-	$q->leftJoin('p.DriverRallies dr');
+	$q->leftJoin('p.PilotRallies dr');
 	$q->leftJoin('dr.Rally r');
         $q->addWhere("p.job like 'pilot'");
         $q->addWhere('r.friendly = 1');
@@ -220,6 +211,7 @@ class PeopleService extends Service{
 	$q->addWhere('r.date like ?',substr($date,0,10)."%");
         $q->groupBy('p.id');
 	return $q->execute(array(),$hydrationMode);
+        
     }
     
     /* create people section */

@@ -40,7 +40,7 @@ class Radio extends Element {
                 $this->elementDisplay .= "<span class='radioElemWrapper'>";
                 $this->elementDisplay .= "<label for=".$this->name.'_'.$option['value'].">".$option['label']."</label>";
 //                echo "good";exit;
-                $this->elementDisplay .= "<input ".$this->isSelected($option['value'],$submitElem)." value='".$option['value']."' ".$this->renderParams()." name='".$this->name."' id='".$this->name."'  type='".$this->type."' />";
+                $this->elementDisplay .= "<input ".$this->isSelected($option['value'],$submitElem)." value='".$option['value']."' ".$this->renderParams()." name='".$this->name."' id='".$this->name.'_'.$option['value']."'  type='".$this->type."' />";
                 $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
                 $this->elementDisplay .= "</span>";
             }

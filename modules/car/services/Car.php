@@ -42,9 +42,6 @@ class CarService extends Service{
         return $this->carModelTable->findOneBy($field,$id,$hydrationMode);
     }
     
-    public function getAllDrivers(){
-        return $this->carTable->findAll();
-    }
     
     public function getTeamCars($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	$q = $this->carTable->createQuery('c');
@@ -59,6 +56,15 @@ class CarService extends Service{
         $result = array();
         foreach($cars as $car):
             $result[$car['id']] = $car['id']." ".$car['name']." - ".$car['Model']['name'];
+        endforeach;
+        return $result;
+    }
+    
+    public function prepareTeamCarsShort($team_id){
+        $cars = $this->getTeamCars($team_id);
+        $result = array();
+        foreach($cars as $car):
+            $result[$car['id']] = $car['name'];
         endforeach;
         return $result;
     }
@@ -97,11 +103,9 @@ class CarService extends Service{
 	$q->leftJoin('c.CarRallies cr');
 	$q->leftJoin('cr.Rally r');
 	$q->addWhere('t.id = ?',$team['id']);
+        
         if(!empty($busyCars)){
-            if(!is_array($busyCars)&&strlen($busyCars)>3){
-                $busyCars = array($busyCars);
-            }
-            $q->addWhere('c.id NOT IN ?',$busyCars);
+            $q->whereNotIn('c.id',$busyCars);
         }
 	return $q->execute(array(),$hydrationMode);
     }
@@ -280,6 +284,16 @@ class CarService extends Service{
             $car->set('last_season_value_id',$season);
             $car->save();
         endforeach;
+    }
+    
+    public function prepareCarModels(){
+        $result = $this->carModelTable->findAll(Doctrine_Core::HYDRATE_ARRAY);
+        
+        $formArray = array();
+        foreach($result as $row):
+            $formArray[$row['id']] = $row['name'];
+        endforeach;
+	return $formArray;
     }
 }
 ?>

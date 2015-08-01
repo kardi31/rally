@@ -206,6 +206,8 @@ class Cron_Admin extends Controller{
         endforeach;
         
         $rallyToFinish = $rallyService->getRalliesToFinish();
+        
+//            var_dump($rallyToFinish->toArray());exit;
         foreach($rallyToFinish as $rally):
             $rallyService->calculateRallyResult($rally);
         endforeach;

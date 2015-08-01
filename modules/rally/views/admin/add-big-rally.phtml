@@ -1,0 +1,178 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box purple">
+            <div class="portlet-title">
+                    <div class="caption">
+                            <i class="fa fa-gift"></i>Add rally
+                    </div>
+                    <div class="tools">
+                            <a href="javascript:;" class="collapse" data-original-title="" title="">
+                            </a>
+                    </div>
+            </div>
+            <div class="portlet-body form">
+                <form id="form_sample_1" class="form-horizontal" method="POST">
+                        <div class="form-body">
+                            <div class="formElemWrapper form-group">
+                                <label class="control-label col-md-3" for="name" id="nameLabel">Nazwa</label>
+                                <div class="col-md-4">
+                                    <?php echo $form->getElement('name')->renderElement(); ?>
+                                </div>
+                            </div>
+                            <div class="formElemWrapper form-group">
+                                <label class="control-label col-md-3" for="date" id="dateLabel">Data</label>
+                                <div class="col-md-4">
+                                    <div class="input-group date form_datetime">
+                                        <?php echo $form->getElement('date')->renderElement(); ?>
+                                        <span class="input-group-btn">
+                                            <button class="btn default date-set" type="button">
+                                                <i class="fa fa-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formElemWrapper form-group">
+                                <label class="control-label col-md-3" for="description" id="descriptionLabel">Opis</label>
+                                <div class="col-md-4">
+                                    <?php echo $form->getElement('description')->renderElement(); ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="surface1">Nawierzchnia 1</label>
+                                <div class="col-md-2">
+                                    <?php echo $form->getElement('surface1')->renderElement(); ?>
+                                </div>
+                                <div class="col-md-4">
+                                    <?php echo $form->getElement('percent1')->renderElement(); ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="surface2">Nawierzchnia 2</label>
+                                <div class="col-md-2">
+                                    <?php echo $form->getElement('surface2')->renderElement(); ?>
+                                </div>
+                                <div class="col-md-4">
+                                    <?php echo $form->getElement('percent2')->renderElement(); ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="surface3">Nawierzchnia 3</label>
+                                <div class="col-md-2">
+                                    <?php echo $form->getElement('surface3')->renderElement(); ?>
+                                </div>
+                                <div class="col-md-4">
+                                    <?php echo $form->getElement('percent3')->renderElement(); ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="award1">Nagroda 1</label>
+                                <div class="col-md-2">
+                                    <?php echo $form->getElement('award1')->renderElement(); ?>
+                                </div>
+                                <div class="col-md-4">
+                                    <?php echo $form->getElement('award_premium1')->renderElement(); ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="award2">Nagroda 2</label>
+                                <div class="col-md-2">
+                                    <?php echo $form->getElement('award2')->renderElement(); ?>
+                                </div>
+                                <div class="col-md-4">
+                                    <?php echo $form->getElement('award_premium2')->renderElement(); ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="award3">Nagroda 3</label>
+                                <div class="col-md-2">
+                                    <?php echo $form->getElement('award3')->renderElement(); ?>
+                                </div>
+                                <div class="col-md-4">
+                                    <?php echo $form->getElement('award_premium3')->renderElement(); ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="active">Liga</label>
+                                <div class="col-md-4">
+                                    <input type="text" name="league" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="active">Aktywny</label>
+                                <div class="col-md-4">
+                                    <div class="checkbox-list">
+                                        <label class="checkbox-inline">
+                                           <?php echo $form->getElement('active')->renderElement(); ?>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="total_length">Total length</label>
+                                <div class="col-md-4" id="totalRallyLength">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group text-center col-md-9">
+                                <button class="btn btn-primary" type="button" id="generateRandStageName" name="generateRandStageName">Random stage name</button>
+                                <button class="btn yellow" type="button" id="generateRandStageLength" name="generateRandStageLength">Random stage length</button>
+                            </div>
+                            <?php for($i=0;$i<18;$i++): ?>
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <label class="control-label col-md-3" for="active">Stage name</label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="stage_name[]" class="stage_name form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="control-label col-md-3" for="active">Stage length</label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="stage_length[]" class="stage_length form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endfor; ?>
+                            <input type="hidden" name="league_rally" value="1" />
+                            <input type="hidden" name="form_send" value="1" />
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" name="submit" class="btn green">Submit</button>
+                                    <button type="submit" name="saveAndAddNew" class="btn blue"><i class="fa fa-plus"></i> Save and add new </button>
+                                    <button type="submit" name="saveAndStay" class="btn purple"><i class="fa fa-edit"></i> Save and stay</button>
+                                    <button type="button" class="btn default">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('#generateRandStageLength').click(function(){
+            var min = 5,
+            max = 32;
+            var counter = 0;
+            $('.stage_length').each(function(){
+                var highlightedNumber = Math.random() * (max - min) + min;
+                $(this).val(highlightedNumber.toFixed(2));
+                counter += parseFloat(highlightedNumber.toFixed(2));
+            });
+            $('#totalRallyLength').html(counter);
+        });
+        
+        $('#generateRandStageName').click(function(){
+            
+            var counter = 0;
+            $('.stage_name').each(function(){
+               counter++;
+                $(this).val('SS '+counter);
+            });
+        });
+    });
+</script>
