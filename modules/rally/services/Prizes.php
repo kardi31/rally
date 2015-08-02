@@ -184,7 +184,7 @@
         }
         elseif($prize['award_type']=='premium'){
             $team = TeamService::getInstance()->getTeam($team_id);
-            UserService::getInstance()->addPremium($team['user_id'],$prize['premium']);
+            UserService::getInstance()->addPremium($team['user_id'],$prize['premium'],'Won in rally '.$rally['name']);
         }
         
     }

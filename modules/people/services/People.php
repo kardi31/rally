@@ -391,11 +391,10 @@ class PeopleService extends Service{
 	
         // for training
         $stageLength = $stage['length'];
-        
 	foreach($crews as $key => $crew):
 	    $stageResults = array();
 	    $late = array();
-	    if(in_array($crew['id'],$crewsWithResults))
+	    if(in_array($crew['id'],$crewsWithResults)||!is_array($crewsWithResults))
 		continue;
 	    
 	    $late['Driver'][$key] = $this->getDriverLate($crew['Driver']);

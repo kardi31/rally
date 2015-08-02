@@ -649,17 +649,20 @@ class RallyService extends Service{
             $rallyResultRecord->fromArray($result);
             $rallyResultRecord->save();
 	    if(!$alreadyCalculated){
-                if(!$rally['big_awards']){
-                    $cashEarned = $this->getPrizesHelper()->calculatePrizeForPlace($result['position'],$leagueLevel,$participants);
-                    $teamService->addTeamMoney($result['Crew']['team_id'],$cashEarned,1,'For '.TK_Text::addOrdinalNumberSuffix($result['position']).' place in rally '.$rally['name']);
-                    if($rally['league_rally']){
-                        if($result['position']<=10){
-                            $leagueService->addTeamPoints($result['Crew']['team_id'],$result['position']);
+                if(!$result['out_of_race']>0)
+                {
+                    if(!$rally['big_awards']){
+                        $cashEarned = $this->getPrizesHelper()->calculatePrizeForPlace($result['position'],$leagueLevel,$participants);
+                        $teamService->addTeamMoney($result['Crew']['team_id'],$cashEarned,1,'For '.TK_Text::addOrdinalNumberSuffix($result['position']).' place in rally '.$rally['name']);
+                        if($rally['league_rally']){
+                            if($result['position']<=10){
+                                $leagueService->addTeamPoints($result['Crew']['team_id'],$result['position']);
+                            }
                         }
                     }
-                }
-                else{
-                    $this->getPrizesHelper()->handleBigAwardForPlace($result['position'],$result['Crew']['team_id'],$rally,$bigAwardsCount);
+                    else{
+                        $this->getPrizesHelper()->handleBigAwardForPlace($result['position'],$result['Crew']['team_id'],$rally,$bigAwardsCount);
+                    }
                 }
             }
         endforeach;

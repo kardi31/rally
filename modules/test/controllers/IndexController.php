@@ -204,5 +204,25 @@ class Test_Index extends Controller{
         $peopleService->createRandomDriver(3);
         echo "dd";exit;
     }
+    
+    public function changeRallyNow(){
+        
+        $rallyService = parent::getService('rally','rally');
+//            die('213');
+        $rally = $rallyService->getRally($GLOBALS['urlParams']['slug'],'slug');
+   
+        $newDate = date('Y-m-d H:i:s',strtotime('- 5 hours'));
+        
+        $rally->set('finished',0);
+        $rally->set('date',$newDate);
+        
+        foreach($rally->get('Stages') as $stage){
+            $stage->set('finished',0);
+            $stage->set('date',$newDate);
+            $stage->save();
+        }
+        $rally->save();
+        echo "good";exit;
+    }
 }
 ?>

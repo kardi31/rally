@@ -162,6 +162,7 @@ class Cron_Admin extends Controller{
         Service::loadModels('car', 'car');
         $rallyService = parent::getService('rally','rally');
         $teamService = parent::getService('team','team');
+        parent::getService('car','car');
         $leagueService = parent::getService('league','league');
         $userService = parent::getService('user','user');
         $notificationService = parent::getService('user','notification');

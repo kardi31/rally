@@ -49,15 +49,9 @@ class Rally_Index extends Controller{
         $startDate = new DateTime($rally['date']);
         $signUpFinish = clone $startDate;
         $signUpFinish->sub(new DateInterval('PT15M'));
-	
         if($user){
             if(!$rally['league_rally']||$rally['league']==$user['Team']['league_name']){
                 
-                
-                if($signUpFinish->getTimestamp()<time()){
-                    TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=signup+finish');
-                    exit;
-                }
                 
                 if(!$rally['big_awards']){
                     $freeDrivers = $peopleService->getFreeDrivers($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
@@ -71,6 +65,8 @@ class Rally_Index extends Controller{
 
                     if($form->isSubmit()){
                         if($form->isValid()){
+                            
+                            
                             Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                             if($signUpFinish->getTimestamp()<time()){
                                 TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=signup+finish');
