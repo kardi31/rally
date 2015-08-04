@@ -26,6 +26,14 @@
             elseif($_GET['msg']=="car bought"){
                 $this->showSuccess($this->translate("You have successfully bought a car. You can now see it in your garage."));
             }
+            
+            elseif($_GET['msg']=="in rally"){
+                $this->showError($this->translate("Sorry. You can't sell car who is signed up for rally."));
+            }
+            
+            elseif($_GET['msg']=="name changed"){
+                $this->showSuccess($this->translate("Car name successfully changed."));
+            }
         }
     ?>
     <div class="myCars">

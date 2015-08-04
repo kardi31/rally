@@ -8,6 +8,9 @@
             elseif($_GET['msg']=="no cash"){
                 $this->showError($this->translate("Sorry. You don't have enough money to pay selling fee."));
             }
+            elseif($_GET['msg']=="in rally"){
+                $this->showError($this->translate("Sorry. You can't sell player who is signed up for rally."));
+            }
         }
     ?>
     <div class="myPeople">

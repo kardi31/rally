@@ -52,8 +52,13 @@ class Car_Index extends Controller{
         if($form->isSubmit()){
             if($form->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
-                
                 $values = $_POST;
+                
+                if($carService->carInRally($car)){
+                    TK_Helper::redirect('/account/my-cars?msg=in+rally');
+                    exit;
+                }
+                
                 $values['team_id'] = $user['Team']['id'];
                 
                 $result = $marketService->addCarOnMarket($values,$car);
@@ -133,6 +138,7 @@ class Car_Index extends Controller{
                 
 	if($form->isSubmit()){
             if($form->isValid()){
+                die('141');
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 $values = $_POST;
 		
@@ -163,7 +169,7 @@ class Car_Index extends Controller{
                     $car->set('name',$values['name']);
                     $car->set('last_name_change',date('Y-m-d H:i:s'));
                     $car->save();
-		    TK_Helper::redirect('/account/my-cars/');
+		    TK_Helper::redirect('/account/my-cars?msg=name+changed');
 		}
 		
 		

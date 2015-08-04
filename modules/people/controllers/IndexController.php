@@ -65,10 +65,12 @@ class People_Index extends Controller{
             if($form->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
+                if($peopleService->playerInRally($player)){
+                    TK_Helper::redirect('/account/my-people?msg=in+rally');
+                    exit;
+                }
                 $values = $_POST;
                 $values['team_id'] = $user['Team']['id'];
-//                var_dump($values);exit;
-//                echo "pp";exit;
                 $result = $marketService->addPlayerOnMarket($values,$player);
                 
                 if($result['status']!== false){

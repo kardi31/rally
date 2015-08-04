@@ -52,6 +52,7 @@ class PeopleService extends Service{
 	$q->leftJoin('p.Team t');
         $q->addWhere("p.job like 'driver'");
 	$q->addWhere('t.id = ?',$team['id']);
+        $q->addWhere('p.on_market = 0');
         if(!empty($busyDrivers)){
             $q->whereNotIn('p.id',$busyDrivers);
         }
@@ -129,6 +130,7 @@ class PeopleService extends Service{
 	$q->leftJoin('p.Team t');
         $q->addWhere("p.job like 'pilot'");
 	$q->addWhere('t.id = ?',$team['id']);
+        $q->addWhere('p.on_market = 0');
         if(!empty($busyDrivers)){
             $q->whereNotIn('p.id',$busyDrivers);
         }
@@ -156,6 +158,8 @@ class PeopleService extends Service{
 	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name,dr.*,r.*');
 	$q->leftJoin('p.Team t');
         $q->addWhere("p.job like 'driver'");
+        
+        $q->addWhere('p.on_market = 0');
 	$q->addWhere('t.id = ?',$team['id']);
         
         
@@ -192,6 +196,7 @@ class PeopleService extends Service{
         $q->addWhere("p.job like 'pilot'");
 	$q->addWhere('t.id = ?',$team['id']);
         
+        $q->addWhere('p.on_market = 0');
         if(!empty($busyDrivers)){
             $q->whereNotIn('p.id',$busyDrivers);
         }
@@ -212,6 +217,24 @@ class PeopleService extends Service{
         $q->groupBy('p.id');
 	return $q->execute(array(),$hydrationMode);
         
+    }
+    
+    public function playerInRally($player){
+        $q = $this->peopleTable->createQuery('p');
+	$q->select('p.id,dr.id,r.*');
+        $q->addSelect('dr.*');
+	$q->leftJoin('p.Team t');
+        if($player['job'] == 'driver'){
+            $q->leftJoin('p.DriverRallies dr');
+        }
+        else{
+            $q->leftJoin('p.PilotRallies dr');
+        }
+	$q->leftJoin('dr.Rally r');
+	$q->addWhere('p.id = ?',$player['id']);
+	$q->addWhere('r.date > NOW()');
+        $q->addWhere('r.active = 1');
+	return $q->fetchOneArray();
     }
     
     /* create people section */

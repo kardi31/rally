@@ -69,6 +69,20 @@ class CarService extends Service{
         return $result;
     }
     
+    
+    public function carInRally($car){
+        $q = $this->carTable->createQuery('c');
+	$q->select('c.id,cr.id,r.*');
+	$q->leftJoin('c.Team t');
+        $q->leftJoin('c.CarRallies cr');
+	$q->leftJoin('cr.Rally r');
+	$q->addWhere('c.id = ?',$car['id']);
+	$q->addWhere('r.date > NOW()');
+        $q->addWhere('r.active = 1');
+        
+	return $q->fetchOneArray();
+    }
+    
     public function getFreeCars(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	$busyCars = $this->getBusyCars($team, $date,Doctrine_Core::HYDRATE_SINGLE_SCALAR);
         $q = $this->carTable->createQuery('c');
@@ -77,12 +91,15 @@ class CarService extends Service{
 	$q->leftJoin('c.CarRallies cr');
 	$q->leftJoin('cr.Rally r');
 	$q->addWhere('t.id = ?',$team['id']);
+        $q->addWhere('c.on_market = 0');
         
         if(!empty($busyCars)){
             $q->whereNotIn('c.id',$busyCars);
         }
 	return $q->execute(array(),$hydrationMode);
     }
+    
+    
     
     public function getBusyCars(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	$q = $this->carTable->createQuery('c');
@@ -104,6 +121,7 @@ class CarService extends Service{
 	$q->leftJoin('cr.Rally r');
 	$q->addWhere('t.id = ?',$team['id']);
         
+        $q->addWhere('c.on_market = 0');
         if(!empty($busyCars)){
             $q->whereNotIn('c.id',$busyCars);
         }

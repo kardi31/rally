@@ -15,6 +15,7 @@
             <file>file:/C:/xampp/htdocs/ral/modules/forum/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/form/Thread.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-cars.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/car/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/admin/list-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/form/CreateFriendly.php</file>
@@ -22,6 +23,7 @@
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/admin/list-car-illegal-transfer.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/View.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/library/DataTables/CarOffer.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-people.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Element.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/account/controllers/IndexController.php</file>
@@ -80,6 +82,7 @@
             <file>file:/C:/xampp/htdocs/ral/library/TK/Text.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/TestController.php</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Form.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/views/index/change-name.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/library/DataTables/Thread.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-friendly-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Prizes.php</file>
@@ -113,6 +116,7 @@
             <file>file:/C:/xampp/htdocs/ral/views/_footer_main.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/data/schema/schema.yml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/views/mail/template.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/form/NameChange.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-market.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/views/admin/list-thread.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/car/controllers/IndexController.php</file>

@@ -40,7 +40,7 @@ if(isset($_GET['msg'])&&$_GET['msg']=="car bought"){
                     <?php if(!$nextDateChange): 
                        echo $this->translate("You still have")." <b>1</b> ".$this->translate("name change left.");
                    else:
-                       echo $this->translate("You can change car name on")."<b>".$nextDateChange->format('d/m/Y H:i')."</b>.";
+                       echo $this->translate("You can change car name on")." <b>".$nextDateChange->format('d/m/Y H:i')."</b>.";
                    endif;
                    ?>
                    <br />
