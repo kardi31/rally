@@ -104,7 +104,6 @@ class LeagueService extends Service{
 	else{
 	    $league = $result;
 	}
-        
         $this->checkLeagueRallies($league);
 // save team to league
 	$newTeamData = array(
@@ -148,10 +147,10 @@ class LeagueService extends Service{
         // if there's just one league
         if(!is_array($full_league_list)||empty($full_league_list)){
             if(!strlen($full_league_list)){
-                $league['league_name'] = key(self::$leagues);
-                $league['league_level'] = (int)key(self::$leagues);
+                $leagueData['league_name'] = key(self::$leagues);
+                $leagueData['league_level'] = (int)key(self::$leagues);
                 if(!$league = $this->getLeague(key(self::$leagues),'league_name')){
-                    $league = $this->saveLeagueFromArray($league);
+                    $league = $this->saveLeagueFromArray($leagueData);
                 }
                 return $league;
                 

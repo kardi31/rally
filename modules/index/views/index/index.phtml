@@ -40,6 +40,7 @@
             <?= $form->getElement('password2')->renderElement(); ?>
             <label for="login"><?= $this->translate('E-mail address'); ?><sup>*</sup></label>
             <?= $form->getElement('email')->renderElement(); ?>
+            <?= $form->getElement('invite')->renderElement(); ?>
             <span class="acceptRules">
                 <input type="checkbox" required name="rules" id='acceptRules'/> 
                 <label for='acceptRules'><?= $this->translate('I accept'); ?> <a href="#"><?= $this->translate('rules'); ?></a></label>

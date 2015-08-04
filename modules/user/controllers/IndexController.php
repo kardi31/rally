@@ -21,10 +21,10 @@ class User_Index extends Controller{
         $userService = parent::getService('user','user');
         
         $mailService = parent::getService('user','mail');
+        $inviteService = parent::getService('user','invite');
         
         if(isset($_GET['ref'])&&is_numeric($_GET['ref'])){
             $ref = true;
-            $inviteService = parent::getService('user','invite');
             if(!$invite = $inviteService->getFullInvite((int)$_GET['ref'],Doctrine_Core::HYDRATE_ARRAY)){
                 $ref = false;
             }
@@ -37,8 +37,8 @@ class User_Index extends Controller{
         $form = $this->getForm('user','register');
         if($ref){
             $form->getElement('email')->setValue($invite['email']);
+            $form->getElement('invite')->setValue($invite['id']);
         }
-        
         if($form->isSubmit()){
             if($form->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
@@ -55,6 +55,16 @@ class User_Index extends Controller{
                     $values['token'] = TK_Text::createUniqueToken();
                     $values['password'] = TK_Text::encode($values['password'], $values['salt']);
                     $values['role'] = "user";
+                    $ref = true;
+                    
+                    if(!$invite = $inviteService->getFullInvite((int)$values['invite'],Doctrine_Core::HYDRATE_ARRAY)){
+                        $ref = false;
+                    }
+                    else{
+                        if($invite['email']!=trim($values['email'])){
+                            $ref = false;
+                        }
+                    }
                     if($ref){
                         $values['referer'] = $invite['user_id'];
                         $values['referer_paid'] = 0;
@@ -276,6 +286,7 @@ class User_Index extends Controller{
         
         $id = filter_var($_POST['id'],FILTER_VALIDATE_INT);
         
+        
         $friendsService->inviteUser($id,$user['id']);
         
         TK_Helper::redirect($_SERVER['HTTP_REFERER']);
@@ -288,6 +299,7 @@ class User_Index extends Controller{
         
         $userService = parent::getService('user','user');
         $inviteService = parent::getService('user','invite');
+        $mailService = parent::getService('user','mail');
         
         $user = $userService->getAuthenticatedUser();
         
@@ -313,6 +325,7 @@ class User_Index extends Controller{
                 }
                 else{
                     $invite = $inviteService->saveInviteFromArray($email,$user['id']);
+                    $mailService->sendMail($email,'You have been invited to FastRally',$mailService::prepareInvitationMail($email,$user,$invite));
 
                     TK_Helper::redirect('/user/invite-to-game?msg=user+invited');
                 }

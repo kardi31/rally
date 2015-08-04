@@ -11,6 +11,7 @@ class Register extends Form{
         $password2->addClass('textInput');
         $email = $this->createElement('text','email',array('validators' => 'email'),'Adres email');
         $email->addClass('textInput');
+        $invite = $this->createElement('hidden','invite');
         $this->createElement('captcha','captcha',array());
         $this->createElement('submit','submit');
     }

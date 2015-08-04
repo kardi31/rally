@@ -60,7 +60,6 @@ class MailService extends Service{
         $content = ob_get_contents();
         ob_end_clean();
         echo $content;
-        die('tt');
         return $content;
     }
     
@@ -79,6 +78,24 @@ class MailService extends Service{
         $content = ob_get_contents();
         ob_end_clean();
         
+        
+        return $content;
+    }
+    
+    public static function prepareInvitationMail($email,$user,$invite){
+        $text = "Hello, <br />";
+        $text .= "Your friend ".$user['username']." has invited you to play FastRally.<br />";
+        $text .= "Join FastRally today, manage your very own rally team and show your friend who is a better manager. <br />";
+        $text .= "<a style='color:#f3f3f3' href='http://".$_SERVER['SERVER_NAME']."/user/register?ref=".$invite['id']."&email=".$email."'>http://".$_SERVER['SERVER_NAME']."/user/register?ref=".$invite['id']."&email".$email."</a><br />";
+        $text .= "<br />Kind regards, <br />";
+        $text .= "FastRally Team";
+        
+        $facebookUrl = View::getInstance()->getSetting('facebookUrl');
+        $twitterUrl = View::getInstance()->getSetting('twitterUrl');
+        ob_start();
+        include(BASE_PATH."/modules/user/views/mail/template.phtml");
+        $content = ob_get_contents();
+        ob_end_clean();
         
         return $content;
     }

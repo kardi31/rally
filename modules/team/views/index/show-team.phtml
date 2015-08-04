@@ -1,35 +1,84 @@
-<table>
-    <tr>
-        <td>Team</td>
-        <td><?php echo $team['name']; ?></td>
-    </tr>
-    <tr>
-        <td>Owner</td>
-        <td><?php echo $team['User']['username']; ?></td>
-    </tr>
-    <tr>
-        <td>League</td>
-        <td><?php echo $team['league_name']; ?></td>
-    </tr>
-    
-    <tr>
-        <td>Cars</td>
-        <td>
-            <?php 
-                foreach($team['Cars'] as $car):
-                    if(strlen($car['Model']['photo'])){
-                        ?>
-                        <img src="/media/cars/<?= $car['Model']['photo']; ?>" style='max-width:150px;' />
-                        <?php
-                    }
-                    else{
-                        echo $car['Model']['name'];
-                    }
-                endforeach;
-            ?>
-        </td>
-    </tr>
-</table>
+<div class="mainUserBox">
+    <h4 class="boxHeader"><?= $this->translate('My team'); ?></h4> 
+    <?php 
+        if(isset($_GET['msg'])){
+            if($_GET['msg']=="player on market"){
+                $this->showError($this->translate('This player is already on market'));
+            }
+            elseif($_GET['msg']=="no cash"){
+                $this->showError($this->translate("Sorry. You don't have enough money to pay selling fee."));
+            }
+            elseif($_GET['msg']=="in rally"){
+                $this->showError($this->translate("Sorry. You can't sell player who is signed up for rally."));
+            }
+        }
+    ?>
+    <div class="myTeamContent"> 
+        <div class="col-md-6">
+        <table>
+            <tr>
+                <td><strong>Team: </strong><?php echo $team['name']; ?></td>
+            </tr>
+            <tr>
+                <td><strong>Owner: </strong><?php echo $team['User']['username']; ?></td>
+            </tr>
+            <tr>
+                <td><strong>League: </strong><?php echo $team['league_name']; ?></td>
+            </tr>
+            <tr>
+                <td><strong>Rank: </strong>355 <img src="/images/layout/top.png" /></td>
+            </tr>
+
+        </table>
+        <div>
+            <h3 class="h4">Rally awards</h3>
+            <table class="showcase">
+               <tr>
+                   <td class="light">
+                       <img src="/images/layout/trophy_1.gif" />
+                   </td>
+                   <td class="light">
+                       <img src="/images/layout/trophy_2.gif" />
+                   </td>
+                   <td class="light">
+                       <img src="/images/layout/trophy_3.gif" />
+                   </td>
+                   <td></td>
+               </tr>
+               <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+               </tr>
+            </table>
+        </div>
+            
+        </div>
+        <div class="col-md-6">
+            <div style="margin-top:20px;">
+
+                        <?php 
+                            foreach($team['Cars'] as $car):
+                                if(strlen($car['Model']['photo'])){
+                                    ?>
+                                    <img src="/media/cars/<?= $car['Model']['photo']; ?>" style='height:150px;width:300px;' />
+                                    <?php
+                                }
+                                else{
+                                    echo $car['Model']['name'];
+                                }
+                            endforeach;
+                      ?>
+            </div>
+            <div class="myTeamSponsor">
+                <?php if(strlen($authenticatedUser['Team']['Sponsor']['name'])): ?>
+<img src='/media/sponsor/<?= $authenticatedUser['Team']['Sponsor']['logo']; ?>' title='<?= $authenticatedUser['Team']['Sponsor']['name']; ?>' alt='<?= $authenticatedUser['Team']['Sponsor']['name']; ?>' />
+
+<?php endif; ?>
+            </div>
+        </div>
+            <div class="clearfix"></div>
 <?php 
 if($authenticatedUser['id']!=$team['User']['id']){
     if(!$friendInvited){ ?>
@@ -50,8 +99,10 @@ if($authenticatedUser['id']!=$team['User']['id']){
     } 
 }
 ?>
-<?php if(strlen($authenticatedUser['Team']['Sponsor']['name'])): ?>
-<img src='/media/sponsor/<?= $authenticatedUser['Team']['Sponsor']['logo']; ?>' title='<?= $authenticatedUser['Team']['Sponsor']['name']; ?>' alt='<?= $authenticatedUser['Team']['Sponsor']['name']; ?>' />
 
-<?php endif; ?>
+    </div>
+</div>
+
+
+
 

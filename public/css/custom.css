@@ -27,6 +27,7 @@
     3.4 Rally result
     3.5 My finances
     3.6 My people
+    3.7 My team
   4. Rallies
     4.1 List rally
     4.2 Friendly rallies
@@ -1018,6 +1019,50 @@ footer{
         margin-bottom:20px;
     }
     
+    /*
+        3.7 My team
+    */
+    .myTeamContent{
+        padding:10px 30px;
+        padding-left:10px;
+    }
+    
+    .showcase td{
+        width:60px;
+        height:60px;
+        background:#4d4d4d;
+        border:10px solid #959595;
+        border-collapse: collapse;
+        text-align:center;
+        position:relative;
+    vertical-align:bottom;
+    }
+    .showcase td.light{
+        background:url('/images/layout/light.png');
+    }
+    .showcase div:nth-of-type(1),.showcase div:nth-of-type(2),.showcase div:nth-of-type(3),.showcase div:nth-of-type(4){
+        border-bottom:0px;
+    }
+    .showcase img{
+        position:absolute;
+        bottom:0;
+        left:0;
+        right:0;
+margin-left: auto;
+margin-right: auto;
+    }
+    .nopad{
+        padding:0px;
+    }
+    .myTeamSponsor{
+        margin-top:30px;
+        text-align:right;
+    }
+    .myTeamSponsor img{
+        width:150px;
+/*        display:block;
+        margin:0 auto;*/
+    }
     /*
         4.1 List rallies
     */
