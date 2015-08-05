@@ -30,6 +30,15 @@ class Controller{
     }
     
     public function _render($elem,$viewName,$zone='index') {
+        
+        if(strpos(get_class($elem),'Admin')!==false){
+	    $userService = $this->getService('user', 'user');
+            $authenticatedUser = $userService->getAuthenticatedUser();
+            if($authenticatedUser['role']!='admin'){
+                TK_Helper::redirect('/');
+            }
+        }
+        
         $actionName = TK_Text::convertViewToActionName($viewName);
         $elem->$actionName();
         $module = explode('_',get_class($elem));
@@ -60,16 +69,12 @@ class Controller{
             foreach($this->responseSegment as $responseSegment => $details){
                 $actionName = TK_Text::convertViewToActionName($details['view']);
                 $controllerName = ucfirst($details['module'])."_".ucfirst($details['controller']);
-//                var_dump($controllerName);exit;
                 if(!class_exists($controllerName)){
                     require_once(BASE_PATH."/modules/".$details['module']."/controllers/".ucfirst($details['controller'])."Controller.php");
                 }
-                try{
+                
                 $controllerName::getInstance()->$actionName();
-                }
-                catch(Exception $e){
-                    var_dump("Error in ".$actionName);exit;
-                }
+                
                 $this->layout->responseSegment[$responseSegment] = $elem->view->render($details['module'],$details['view'],$zone);
             }
             

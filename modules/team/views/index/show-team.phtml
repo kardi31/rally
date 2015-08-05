@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="/plugins/wowslider/engine1/style.css" />
 <div class="mainUserBox">
     <h4 class="boxHeader"><?= $this->translate('My team'); ?></h4> 
     <?php 
@@ -56,21 +57,24 @@
             
         </div>
         <div class="col-md-6">
-            <div style="margin-top:20px;">
-
+            
+            <div id="wowslider-container1">
+                <div class="ws_images">
+                    <ul>
                         <?php 
                             foreach($team['Cars'] as $car):
                                 if(strlen($car['Model']['photo'])){
                                     ?>
-                                    <img src="/media/cars/<?= $car['Model']['photo']; ?>" style='height:150px;width:300px;' />
+                                    <li><img src="/media/cars/<?= $car['Model']['photo']; ?>" alt="<?= $car['name']; ?>" title="<?= $car['name']; ?>" id="wows1_1"/></li>
                                     <?php
                                 }
-                                else{
-                                    echo $car['Model']['name'];
-                                }
                             endforeach;
-                      ?>
+                        ?>
+                    </ul>
+                </div>
+                <div class="ws_shadow"></div>
             </div>
+            
             <div class="myTeamSponsor">
                 <?php if(strlen($authenticatedUser['Team']['Sponsor']['name'])): ?>
 <img src='/media/sponsor/<?= $authenticatedUser['Team']['Sponsor']['logo']; ?>' title='<?= $authenticatedUser['Team']['Sponsor']['name']; ?>' alt='<?= $authenticatedUser['Team']['Sponsor']['name']; ?>' />
@@ -80,7 +84,7 @@
         </div>
             <div class="clearfix"></div>
 <?php 
-if($authenticatedUser['id']!=$team['User']['id']){
+if($authenticatedUser['id']!=$team['User']['id']&&$user){
     if(!$friendInvited){ ?>
         <form action="/user/invite-friend" method="POST">
             <input type="hidden" value="<?= $team['User']['id']; ?>" name="id" />
@@ -101,8 +105,9 @@ if($authenticatedUser['id']!=$team['User']['id']){
 ?>
 
     </div>
+    
+    
 </div>
 
-
-
-
+<script type="text/javascript" src="/plugins/wowslider/engine1/wowslider.js"></script>
+<script type="text/javascript" src="/plugins/wowslider/engine1/script.js"></script>

@@ -60,6 +60,12 @@ class Layout{
             $this->controller->setResponseSegment('menu','index','index','menu'); 
             $this->controller->setResponseSegment('left-banner','banner','index','show-left-banner'); 
         }
+        elseif($this->layoutName == 'nolog'){
+//            $this->controller->setResponseSegment('calendar','index','index','show-calendar'); 
+//            $this->controller->setResponseSegment('friends','index','index','show-friends'); 
+//            $this->controller->setResponseSegment('menu','index','index','menu'); 
+            $this->controller->setResponseSegment('left-banner','banner','index','show-left-banner'); 
+        }
     }
     
     
