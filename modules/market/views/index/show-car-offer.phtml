@@ -19,6 +19,8 @@
                 $this->showError($this->translate('Sorry, the auction has been finished.'));
             elseif($_GET['msg']=="greater than asking")
                 $this->showError($this->translate('Offer must be greater than asking price.'));
+            elseif($_GET['msg']=="no money")
+                $this->showError($this->translate('Sorry, You don\'t have enough money.'));
             elseif($_GET['msg']=="not enough money")
                 $this->showError($this->translate('Sorry, You don\'t have enough money for all of your bids'));
 
@@ -37,6 +39,9 @@
             <strong><?= $car['name']; ?></strong>
             
             <div class="col-md-6">
+                <div class="marketTeamName">
+                    Team: <?= $car['Team']['name']; ?>
+                </div>
                 <ul>
                     <li>
                         <?= $this->translate('Mileage');?>: <?php echo $car['mileage']; ?>
@@ -103,7 +108,7 @@
 
                             if($key==0)
                                 continue;
-                            if($key>5)
+                            if($key>3)
                                 break;
 
                             echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 

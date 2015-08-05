@@ -93,7 +93,7 @@ class ForumService extends Service{
         $q->leftJoin('t.User u1');
         $q->leftJoin('p.User u2');
         $q->select('t.*,p.*,u1.username,u2.username');
-        $q->orderBy('t.created_at DESC, p.created_at DESC');
+        $q->orderBy('t.created_at DESC,p.active DESC, p.created_at DESC');
         $q->addWhere('t.category_id = ?',$category_id);
         $q->addWhere('t.active = 1');
         $q->limit($limits['limit']);
@@ -102,6 +102,20 @@ class ForumService extends Service{
     }
     
     
+    
+    public function checkLastUserThread($user){
+        $q = $this->threadTable->createQuery('p');
+        $q->addWhere('p.user_id = ?',$user['id']);
+        $q->orderBy('p.created_at DESC');
+        $result = $q->fetchOne();
+        if(!$result)
+            return true;
+        
+        if($result['created_at']>date('Y-m-d H:i:s',strtotime('-30 seconds'))){
+            return false;   
+        }
+        return true;
+    }
     
     public function checkLastUserPost($user,$thread){
         $q = $this->postTable->createQuery('p');

@@ -175,9 +175,6 @@
     <word id="Salary">
         <pl>Pensja</pl>
     </word>
-    <word id="Sell player">
-        <pl>Sprzedaj zawodnika</pl>
-    </word>
     <word id="Player is on the market">
         <pl>Zawodnik jest już na liście transferowej.</pl>
     </word>
@@ -403,9 +400,6 @@
     <word id="Crews">
         <pl>Załóg</pl>
     </word>
-    <word id="Age">
-        <pl>Wiek</pl>
-    </word>
     <word id="Results">
         <pl>Wyniki</pl>
     </word>
@@ -454,9 +448,6 @@
     <word id="no offers">
         <pl>brak ofert</pl>
     </word>
-    <word id="Players market">
-        <pl>Rynek zawodników</pl>
-    </word>
     <word id="Cars market">
         <pl>Rynek samochodów</pl>
     </word>
@@ -471,9 +462,6 @@
     </word>
     <word id="People offer">
         <pl>Oferta zawodnika</pl>
-    </word>
-    <word id="My player offers">
-        <pl>Oferty moich zawodników</pl>
     </word>
     <word id="This offer does not exist">
         <pl>Taka oferta nie istnieje</pl>
@@ -702,20 +690,5 @@
     </word>
     <word id="Other incomes">
         <pl>Pozostałe przychody</pl>
-    </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
-    </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
-    </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
-    </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
-    </word>
-    <word id="Add">
-        <pl>Doładuj</pl>
     </word>
 </root>

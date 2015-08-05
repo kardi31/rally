@@ -187,6 +187,7 @@ class Market_Index extends Controller{
         Service::loadModels('car', 'car');
         $carService = parent::getService('car','car');
         $teamService = parent::getService('team','team');
+        $marketService = parent::getService('market','market');
         
         $id = $GLOBALS['urlParams']['id'];
         $carModel = $carService->getCarModel($id,'id',Doctrine_Core::HYDRATE_RECORD);
@@ -197,14 +198,18 @@ class Market_Index extends Controller{
         if(!$user)
             TK_Helper::redirect('/user/login');
         
-        if($teamService->canAfford($user['Team'],$carModel['price'])){
+        if(!$marketService->canAffordThis($user['Team'],$carModel['price'])){
+            TK_Helper::redirect('/market/car-dealer?msg=no+money');
+        }
+        elseif(!$marketService->canAfford($user['Team'],$carModel['price'])){
+            TK_Helper::redirect('/market/car-dealer?msg=not+enough+money');
+        }
+        else{
             $carService->createNewTeamCar($carModel,$user['Team']['id']);
             $teamService->removeTeamMoney($user['Team']['id'],$carModel['price'],7,'Car '.$carModel['name'].' was bought');            
             TK_Helper::redirect('/account/my-cars?msg=car+bought');
         }
-        else{
-            TK_Helper::redirect('/market/car-dealer?msg=cant+afford');
-        }
+        
         
     }
     
@@ -280,7 +285,6 @@ class Market_Index extends Controller{
     }
     
     public function showCarOffer(){
-        
         Service::loadModels('team', 'team');
         Service::loadModels('car', 'car');
         $marketService = parent::getService('market','market');

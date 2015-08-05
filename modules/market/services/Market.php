@@ -49,9 +49,16 @@ class MarketService extends Service{
     
     public function getFinishedOffersNotMovedNoBid($hydrationMode=Doctrine_Core::HYDRATE_RECORD){
         $q = $this->offerTable->createQuery('o');
-//        $q->leftJoin('o.Bids b');
         $q->addWhere('(o.highest_bid = 0 or o.active = 0)');
         $q->addWhere('o.player_moved = 0');
+        $q->addWhere('o.finish_date < NOW()');
+        return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getFinishedCarOffersNotMovedNoBid($hydrationMode=Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->carOfferTable->createQuery('o');
+        $q->addWhere('(o.highest_bid = 0 or o.active = 0)');
+        $q->addWhere('o.car_moved = 0');
         $q->addWhere('o.finish_date < NOW()');
         return $q->execute(array(),$hydrationMode);
     }
@@ -62,7 +69,17 @@ class MarketService extends Service{
         $q->addWhere('o.highest_bid > 0 and o.active = 1');
         $q->addWhere('o.player_moved = 0');
         $q->addWhere('o.finish_date < NOW()');
-        $q->orderBy('b.value');
+        $q->orderBy('b.value DESC');
+        return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getFinishedCarOffersNotMoved($hydrationMode=Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->carOfferTable->createQuery('o');
+        $q->innerJoin('o.Bids b');
+        $q->addWhere('o.highest_bid > 0 and o.active = 1');
+        $q->addWhere('o.car_moved = 0');
+        $q->addWhere('o.finish_date < NOW()');
+        $q->orderBy('b.value DESC');
         return $q->execute(array(),$hydrationMode);
     }
     
@@ -169,7 +186,7 @@ class MarketService extends Service{
         $data = array();
         $data['people_id'] = $player['id'];
         $data['start_date'] = date('Y-m-d H:i:s');
-        $data['finish_date'] = date('Y-m-d H:i:s', strtotime('+ '.($values['days']+1).' days'));
+        $data['finish_date'] = date('Y-m-d H:i:s', strtotime('+ '.($values['days']).' days'));
         $data['asking_price'] = $values['asking_price'];
         $data['highest_bid'] = 0;
         $data['team_id'] = $values['team_id'];
@@ -254,8 +271,9 @@ class MarketService extends Service{
         $q->leftJoin('p.Team t');
         $q->leftJoin('b.Team bt');
         $q->addWhere('o.finish_date > NOW()');
-        $q->addWhere('b.team_id = ?',$team_id);
         $q->orderBy('o.finish_date,b.value DESC');
+        
+        $q->addWhere('o.id = (SELECT so.id FROM Market_Model_Doctrine_Offer so LEFT JOIN so.Bids sb WHERE so.finish_date > NOW() AND sb.team_id = '.$team_id.')');
         return $q->fetchArray();
     }
     
@@ -285,6 +303,7 @@ class MarketService extends Service{
         $q->orderBy('o.finish_date,b.value DESC');
         return $q->fetchArray();
     }
+    
     
     public function canAfford($team,$bid){
         $team_id = $team['id'];
@@ -320,6 +339,13 @@ class MarketService extends Service{
             return true;
     }
     
+    public function canAffordThis($team,$bid){
+        if($bid>$team['cash'])
+            return false;
+        else
+            return true;
+    }
+    
     public function getAllActiveMyCars($team_id){
         $q = $this->carOfferTable->createQuery('o');
         $q->select('o.*,b.*,t.name,c.*,bt.name,m.*');
@@ -344,8 +370,9 @@ class MarketService extends Service{
         $q->leftJoin('c.Model m');
         $q->leftJoin('b.Team bt');
         $q->addWhere('o.finish_date > NOW()');
-        $q->addWhere('b.team_id = ?',$team_id);
+//        $q->addWhere('b.team_id = ?',$team_id);
         $q->orderBy('o.finish_date,b.value DESC');
+        $q->addWhere('o.id = (SELECT so.id FROM Market_Model_Doctrine_CarOffer so LEFT JOIN so.Bids sb WHERE so.finish_date > NOW() AND sb.team_id = '.$team_id.')');
         return $q->fetchArray();
     }
     
@@ -357,6 +384,10 @@ class MarketService extends Service{
         $data['team_id'] = $team_id;
         $data['user_ip'] = $_SERVER['REMOTE_ADDR'];
         
+        
+        if(!$this->canAffordThis($team,$values['bid'])){
+            return array('status' => false,'message' => 'no money');
+        }
         
         if(!$this->canAfford($team,$values['bid'])){
             return array('status' => false,'message' => 'not enough money');
@@ -397,6 +428,10 @@ class MarketService extends Service{
         $data['team_id'] = $team_id;
         $data['user_ip'] = $_SERVER['REMOTE_ADDR'];
         
+        
+        if(!$this->canAffordThis($team,$values['bid'])){
+            return array('status' => false,'message' => 'no money');
+        }
         
         if(!$this->canAfford($team,$values['bid'])){
             return array('status' => false,'message' => 'not enough money');

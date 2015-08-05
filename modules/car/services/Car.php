@@ -313,5 +313,19 @@ class CarService extends Service{
         endforeach;
 	return $formArray;
     }
+    
+    
+    public function changeCarTeam($id,$team_id){
+        $car = $this->getCar($id);
+        $car->set('team_id',$team_id);
+        $car->set('on_market',0);
+        $car->save();
+    }
+    
+    public function setOffMarket($id){
+        $car = $this->getCar($id);
+        $car->set('on_market',0);
+        $car->save();
+    }
 }
 ?>

@@ -36,7 +36,14 @@ class Forum_Index extends Controller{
         $favouriteCategories = $forumService->getFavouriteCategories($user['id'],false,Doctrine_Core::HYDRATE_SINGLE_SCALAR);
         
         foreach($categories as $key=>$category):
-            $categories[$key]['last_post'] = $forumService->getLastCategoryPost($category['id'],Doctrine_Core::HYDRATE_ARRAY);
+            $lastPost = $forumService->getLastCategoryPost($category['id'],Doctrine_Core::HYDRATE_ARRAY);
+            $lastThread = $forumService->getLastCategoryThread($category['id'],Doctrine_Core::HYDRATE_ARRAY);
+            if($lastPost['created_at']>$lastThread['created_at']){
+                $categories[$key]['last_post'] = $lastPost;
+            }
+            else{
+                $categories[$key]['last_post'] = $lastThread;
+            }
             $categories[$key]['thread_count'] = $forumService->countCategoryThreads($category['id']);
             $categories[$key]['post_count'] = $forumService->countCategoryPosts($category['id']);
         endforeach;
@@ -66,6 +73,12 @@ class Forum_Index extends Controller{
                 
                 $values = $_POST;
 		
+                // user can add a post once every 30 seconds
+                if(!$forumService->checkLastUserThread($user)){
+                    TK_Helper::redirect('/forum/show-category/slug/'.$category['slug'].'?msg=too+fast');
+                    exit;
+                }
+                
 		$forumService->addThread($values,$category['id'],$user);
 		
 		TK_Helper::redirect('/forum/show-category/slug/'.$category['slug']);
@@ -197,6 +210,31 @@ class Forum_Index extends Controller{
 	$this->view->assign('form',$form);
 	$this->view->assign('user',$user);
 	$this->view->assign('thread',$thread);
+    }
+    
+    public function setThreadActive(){
+        $this->view->setNoRender();
+        Service::loadModels('forum', 'forum');
+        Service::loadModels('user', 'user');
+        Service::loadModels('team', 'team');
+	
+        $forumService = parent::getService('forum','forum');
+        if(!$thread = $forumService->getThread($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
+            echo "error";exit;
+        }
+        
+       
+        if($thread->get('active')){
+            $thread->set('active',0);
+        }
+        else{
+            $thread->set('active',1);
+        }
+            
+        $thread->save();
+        
+	TK_Helper::redirect('/forum/show-category/slug/'.$thread['Category']['slug']);
+	     
     }
     
     public function editPost(){

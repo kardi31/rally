@@ -56,7 +56,7 @@ Car name: <?php echo $car['name']; ?> <br />
     <?php foreach($offer['Bids'] as $key => $bid):
         if($key==0)
             continue;
-        if($key>5)
+        if($key>3)
             break;
         
         echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 

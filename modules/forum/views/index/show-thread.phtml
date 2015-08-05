@@ -16,8 +16,9 @@
         
     </div> 
     <div>
-        <?php if($user['role']=="admin"||$user['role']=="moderator"||$user['id']==$thread['user_id']): ?>
+        <?php if($user['role']=="admin"||$user['role']=="moderator"): ?>
         <div style='float:right;margin-right:50px;'>
+            <a href="/forum/set-thread-active/id/<?= $thread['id']; ?>">Deactivate</a>
             <a href="/forum/edit-thread/id/<?= $thread['id']; ?>">Edit</a>
             <a href="/forum/delete-thread/id/<?= $thread['id']; ?>">Remove</a>
         </div>
