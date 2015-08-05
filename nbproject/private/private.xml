@@ -60,7 +60,6 @@
             <file>file:/C:/xampp/htdocs/ral/modules/rally/form/JoinRally.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/admin/list-car-future-transfer.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/doctrine-module-win.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/invite-to-game.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/services/Market.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/car/services/Car.php</file>
@@ -69,7 +68,6 @@
             <file>file:/C:/xampp/htdocs/ral/modules/index/library/DataTables/FilterFactory.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/library/DataTables/Post.php</file>
             <file>file:/C:/xampp/htdocs/ral/layout/layout.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/league/services/League.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/form/Login.php</file>
             <file>file:/C:/xampp/htdocs/ral/layout/admin.phtml</file>

@@ -138,7 +138,6 @@ class Car_Index extends Controller{
                 
 	if($form->isSubmit()){
             if($form->isValid()){
-                die('141');
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 $values = $_POST;
 		
