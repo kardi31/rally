@@ -23,15 +23,19 @@ class Team_Index extends Controller{
         
         $season = $leagueService->getCurrentSeason();
         $user = $userService->getAuthenticatedUser();
-	
 	$team = $teamService->getTeamWithLeague($GLOBALS['urlParams']['id'],$season);
         
         $friendInvited = $friendsService->checkFriendInvited($team['User']['id'],$user['id']);
 	
 	$this->view->assign('friendInvited',$friendInvited);
 	$this->view->assign('team',$team);
+        if(!$user){
+            $this->getLayout()->setLayout('nolog');
+        }
+        else{
+            $this->getLayout()->setLayout('page');
+        }
         
-        $this->getLayout()->setLayout('page');
     }
     
     

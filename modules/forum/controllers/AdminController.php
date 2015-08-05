@@ -46,9 +46,9 @@ class Forum_Admin extends Controller{
             
              $row[] = $result['User']['username'];
              if($result['active'])
-                 $row[] = '<span class="label label-sm label-success">Aktywny</span>';
+                 $row[] = '<a href="/admin/forum/set-post-active/id/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span>';
              else
-                 $row[] = '<span class="label label-sm label-danger">Nieaktywny</span>';
+                 $row[] = '<a href="/admin/forum/set-post-active/id/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span>';
             
              $row[] = $result['moderator_notes'];
              $row[] = TK_Text::timeFormat($result['moderator_date'],'d/m/Y H:i:s');
@@ -100,9 +100,9 @@ class Forum_Admin extends Controller{
             
              $row[] = $result['User']['username'];
              if($result['active'])
-                 $row[] = '<span class="label label-sm label-success">Aktywny</span>';
+                 $row[] = '<a href="/admin/forum/set-thread-active/id/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span>';
              else
-                 $row[] = '<span class="label label-sm label-danger">Nieaktywny</span>';
+                 $row[] = '<a href="/admin/forum/set-thread-active/id/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span>';
             
              $row[] = $result['moderator_notes'];
              $row[] = TK_Text::timeFormat($result['moderator_date'],'d/m/Y H:i:s');
@@ -123,6 +123,53 @@ class Forum_Admin extends Controller{
         echo json_encode($response);
      }
      
+     public function setThreadActive(){
+        $this->view->setNoRender();
+        Service::loadModels('forum', 'forum');
+        Service::loadModels('user', 'user');
+        Service::loadModels('team', 'team');
+	
+        $forumService = parent::getService('forum','forum');
+        if(!$thread = $forumService->getThread($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
+            echo "error";exit;
+        }
+        
+       
+        if($thread->get('active')){
+            $thread->set('active',0);
+        }
+        else{
+            $thread->set('active',1);
+        }
+            
+        $thread->save();
+        
+	TK_Helper::redirect('/admin/forum/list-thread'); 
+    }
+    
+     public function setPostActive(){
+        $this->view->setNoRender();
+        Service::loadModels('forum', 'forum');
+        Service::loadModels('user', 'user');
+        Service::loadModels('team', 'team');
+	
+        $forumService = parent::getService('forum','forum');
+        if(!$post = $forumService->getPost($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
+            echo "error";exit;
+        }
+        
+       
+        if($post->get('active')){
+            $post->set('active',0);
+        }
+        else{
+            $post->set('active',1);
+        }
+            
+        $post->save();
+        
+	TK_Helper::redirect('/admin/forum/list-post'); 
+    }
 }
 
 

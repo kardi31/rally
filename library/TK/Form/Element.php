@@ -154,9 +154,14 @@ class Element{
         if(!isset($this->validators)||empty($this->validators))
             return "";
         
-        if($this->method=="POST"):
+        if($this->method=="POST"):{
+            if(!isset($_POST[$this->name]))
+                return false;
             $var = $_POST[$this->name];
+        }
         elseif($this->method=="GET"):
+            if(!isset($_GET[$this->name]))
+                return false;
             $var = $_GET[$this->name];
         endif;
         $response = "";
@@ -205,8 +210,12 @@ class Element{
             return "";
         }
         if($this->method=="POST"):
+            if(!isset($_POST[$variableName]))
+                return '';
             return $_POST[$variableName];
         elseif($this->method=="GET"):
+            if(!isset($_GET[$variableName]))
+                return '';
             return $_GET[$variableName];
         endif;
     }

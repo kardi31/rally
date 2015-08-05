@@ -127,6 +127,9 @@
             <file>file:/C:/xampp/htdocs/ral/modules/people/services/People.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/register.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/show-category.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/league/services/League.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/invite-to-game.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/views/index/show-team.phtml</file>
         </group>
     </open-files>
 </project-private>

@@ -20,15 +20,17 @@
                 </div>
                 <?= $this->translate('Number of posts'); ?>: <strong><?php echo $category['post_count']; ?></strong><br />
                 <?= $this->translate('Number of threads'); ?>: <?php echo $category['thread_count']; ?><br />
-                <?php if(is_array($favouriteCategories)&&in_array($category['id'], $favouriteCategories)){ ?>
-                    <a href="/forum/remove-favourite-forum/id/<?php echo $category['id']; ?>/"><i class="fa fa-star selected"></i></a>
-                <?php }
-                elseif(is_string($favouriteCategories)&&$favouriteCategories==$category['id']){ ?>
-                    <a href="/forum/remove-favourite-forum/id/<?php echo $category['id']; ?>/"><i class="fa fa-star selected"></i></a>
-                <?php } else { ?>
-                    <a href="/forum/add-favourite-forum/id/<?php echo $category['id']; ?>/">
-                        <i class="fa fa-star"></i>
-                    </a>
+                <?php if($user['gold_member']){ ?>
+                    <?php if(is_array($favouriteCategories)&&in_array($category['id'], $favouriteCategories)){ ?>
+                        <a href="/forum/remove-favourite-forum/id/<?php echo $category['id']; ?>/"><i class="fa fa-star selected"></i></a>
+                    <?php }
+                    elseif(is_string($favouriteCategories)&&$favouriteCategories==$category['id']){ ?>
+                        <a href="/forum/remove-favourite-forum/id/<?php echo $category['id']; ?>/"><i class="fa fa-star selected"></i></a>
+                    <?php } else { ?>
+                        <a href="/forum/add-favourite-forum/id/<?php echo $category['id']; ?>/">
+                            <i class="fa fa-star"></i>
+                        </a>
+                    <?php } ?>
                 <?php } ?>
             </div>
         </div>

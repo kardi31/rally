@@ -18,10 +18,19 @@ if(count($_GET)>0){
         for($i=0;$i<count($params);$i = $i+2):
             if(empty($params[$i+1]))
                 continue;
-            $urlParams[$params[$i]] = $params[$i+1];
+            $key = filter_var($params[$i], FILTER_SANITIZE_URL);
+            $urlParams[$key] = filter_var($params[$i+1], FILTER_SANITIZE_URL);
         endfor;
+        
         $GLOBALS['urlParams'] = $urlParams; 
 }
+
+if(!empty($_POST)){
+    foreach($_POST as $key => $value) {
+        $_POST[$key] = htmlspecialchars($value);
+      }
+}
+
         if(!isset($module))
             $module = "index";
 

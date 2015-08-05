@@ -1,6 +1,9 @@
 <?php 
-if(isset($_GET['msg'])&&$_GET['msg']=="cant afford"){
-    $this->showError($this->translate("Sorry. You don't have enough money to buy this car."));
+if(isset($_GET['msg'])){
+    if($_GET['msg']=="no money")
+        $this->showError($this->translate('Sorry, You don\'t have enough money.'));
+    elseif($_GET['msg']=="not enough money")
+        $this->showError($this->translate('Sorry, You don\'t have enough money for all of your bids'));
 }
 ?>
 <div class="mainUserBox myCarsBox">

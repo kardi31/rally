@@ -690,10 +690,12 @@ footer{
     
     .carCard ul{
         padding-left:25px;
-        margin-top:20px;
+        margin-top:10px;
         margin-bottom:20px;
     }
-    
+    .marketTeamName{
+        margin-top:10px;
+    }
     .carBtn{
         margin-top:10px;
         margin-bottom:10px;

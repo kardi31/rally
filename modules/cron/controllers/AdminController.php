@@ -110,8 +110,13 @@ class Cron_Admin extends Controller{
     public function moveTransferedPlayers(){
         
         $peopleService = parent::getService('people','people');
+        $carService = parent::getService('car','car');
         $teamService = parent::getService('team','team');
         $marketService = parent::getService('market','market');
+        
+        /*
+         * Players
+         */
         
         $offersNoBid = $marketService->getFinishedOffersNotMovedNoBid();
         foreach($offersNoBid as $offerNoBid):
@@ -127,12 +132,38 @@ class Cron_Admin extends Controller{
         // 4. Ustawienie oferty na player_moved
         foreach($offers as $offer):
             $bid = $offer['Bids'][0];
-            $teamService->removeTeamMoney($bid['team_id'],$bid['value'],6,'Arrival of player '.$offer['Player']['first_name']." ".$offer['Player']['last_name']);
-            $teamService->addTeamMoney($offer['team_id'],$bid['value'],3,'Sell of player '.$offer['Player']['first_name']." ".$offer['Player']['last_name']);
+            $teamService->removeTeamMoney($bid['team_id'],$bid['value'],6,'Bought player '.$offer['Player']['first_name']." ".$offer['Player']['last_name']);
+            $teamService->addTeamMoney($offer['team_id'],$bid['value'],3,'Sold player '.$offer['Player']['first_name']." ".$offer['Player']['last_name']);
             $peopleService->changePersonTeam($offer['Player']['id'],$bid['team_id']);
             $offer->set('player_moved',1);
             $offer->save();
         endforeach;
+        
+        /*
+         * Cars
+         */
+        
+        $caroffersNoBid = $marketService->getFinishedCarOffersNotMovedNoBid();
+        foreach($caroffersNoBid as $offerNoBid):
+            $carService->setOffMarket($offerNoBid['car_id']);
+            $offerNoBid->set('car_moved',1);
+            $offerNoBid->save();
+        endforeach;
+        
+        $caroffers = $marketService->getFinishedCarOffersNotMoved();
+        // 1. Zaplacenie za transfer przez kupujacego
+        // 2. OTrzymanie kasy przez sprzedajacego
+        // 3. Zmiana teamu przez kupujacego
+        // 4. Ustawienie oferty na player_moved
+        foreach($caroffers as $offer):
+            $bid = $offer['Bids'][0];
+            $teamService->removeTeamMoney($bid['team_id'],$bid['value'],6,'Bought car '.$offer['Car']['name']);
+            $teamService->addTeamMoney($offer['team_id'],$bid['value'],3,'Sold car '.$offer['Car']['name']);
+            $carService->changeCarTeam($offer['Car']['id'],$bid['team_id']);
+            $offer->set('car_moved',1);
+            $offer->save();
+        endforeach;
+        
         echo "done";exit;
     }
     
