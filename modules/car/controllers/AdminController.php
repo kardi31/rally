@@ -95,11 +95,10 @@ class Car_Admin extends Controller{
          
          $form = $this->getForm('car','car');
         
-         if(isset($_POST['submit'])){
+         if(isset($_POST['submit'])||isset($_POST['save_and_add_new'])||isset($_POST['save_and_stay'])){
 		Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
-               
 		$carModel = $carService->saveCarModel($values);
 		
 		if(isset($_POST['submit']))
@@ -128,11 +127,10 @@ class Car_Admin extends Controller{
          $form = $this->getForm('car','car');
          $form->populate($carModel->toArray());
         
-         if(isset($_POST['submit'])){
+         if(isset($_POST['submit'])||isset($_POST['save_and_add_new'])||isset($_POST['save_and_stay'])){
 		Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
-               
 		$carModel = $carService->saveCarModel($values);
 		
 		if(isset($_POST['submit']))

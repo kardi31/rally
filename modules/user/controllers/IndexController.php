@@ -144,7 +144,7 @@ class User_Index extends Controller{
             $message = "User has been activated";
             }
             catch(Exception $e){
-                var_dump($e->getMessage());exit;
+                error_log($e->getMessage());
             }
         }
         

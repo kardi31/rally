@@ -132,3 +132,34 @@ Stack trace:
 [05-Aug-2015 17:50:27 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\banner\views\index\show-left-banner.phtml on line 1
 [05-Aug-2015 17:50:35 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 87
 [05-Aug-2015 17:50:35 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\banner\views\index\show-left-banner.phtml on line 1
+[06-Aug-2015 11:18:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[06-Aug-2015 11:18:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[06-Aug-2015 11:18:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[06-Aug-2015 11:18:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[06-Aug-2015 11:18:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[06-Aug-2015 11:18:30 Europe/Berlin] PHP Fatal error:  Class 'TK_Exception' not found in C:\xampp\htdocs\ral\modules\forum\controllers\IndexController.php on line 61
+[06-Aug-2015 11:18:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 11:22:53 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such category
+
+  thrown in C:\xampp\htdocs\ral\modules\forum\controllers\IndexController.php on line 61
+[06-Aug-2015 11:22:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::404_php() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 11:25:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::404() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 11:25:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 11:27:09 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such category
+
+  thrown in C:\xampp\htdocs\ral\modules\forum\controllers\IndexController.php on line 61
+[06-Aug-2015 11:29:38 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\index\views\index\error404.phtml on line 6
+[06-Aug-2015 11:29:48 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\index\views\index\error404.phtml on line 6
+[06-Aug-2015 11:29:57 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\index\views\index\error404.phtml on line 6
+[06-Aug-2015 11:30:05 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\index\views\index\error404.phtml on line 6
+[06-Aug-2015 11:30:10 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\index\views\index\error404.phtml on line 6
+[06-Aug-2015 11:30:13 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\index\views\index\error404.phtml on line 6
+[06-Aug-2015 12:12:43 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 12:30:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 13:01:30 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 13:01:47 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 13:01:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 13:02:03 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 15:20:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 16:59:41 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 17:18:03 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43

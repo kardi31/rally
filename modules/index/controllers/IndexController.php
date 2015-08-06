@@ -20,6 +20,10 @@ class Index_Index extends Controller{
        return self::$instance;
     }
     
+    public function error404(){
+        $this->getLayout()->setLayout('main');
+    }
+    
     public function index(){
         $this->getLayout()->setLayout('main');
         $userService = parent::getService('user','user');
