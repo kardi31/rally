@@ -52,6 +52,7 @@ class Cron_Admin extends Controller{
         echo "good";
     }
     
+    
     public function createRalliesForAllLeagues(){
         $view= $this->view;
         $view->setNoRender();
@@ -65,6 +66,22 @@ class Cron_Admin extends Controller{
         endforeach;
         echo "create rallies for league good";
     }
+    
+    /* do it manually */
+    
+    public function calculateAllNewCarValues(){
+        $view= $this->view;
+        $view->setNoRender();
+        $carService = parent::getService('car','car');
+        $teamService = parent::getService('team','team');
+        $leagueService = parent::getService('league','league');
+        Service::loadModels('rally', 'rally');
+        $carService->calculateValuesForAllNewCars();
+        echo "good";
+    }
+    
+    /* manually over */
+    
     
     // do this every season - end
     

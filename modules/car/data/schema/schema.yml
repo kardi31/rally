@@ -29,11 +29,16 @@ CarModels:
       type: integer(11)
     price:
         type: integer(11)
+    real_value:
+        type: integer(11)
     on_market:
         type: boolean
         default: 0
     photo:
         type: string(255)
+    unique:
+        type: boolean
+        default: 0
 Car:
   tableName: car_car
   actAs: 
