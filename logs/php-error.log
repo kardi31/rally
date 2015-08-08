@@ -132,3 +132,159 @@ Stack trace:
 [05-Aug-2015 17:50:27 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\banner\views\index\show-left-banner.phtml on line 1
 [05-Aug-2015 17:50:35 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 87
 [05-Aug-2015 17:50:35 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\banner\views\index\show-left-banner.phtml on line 1
+[06-Aug-2015 11:18:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[06-Aug-2015 11:18:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[06-Aug-2015 11:18:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[06-Aug-2015 11:18:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[06-Aug-2015 11:18:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[06-Aug-2015 11:18:30 Europe/Berlin] PHP Fatal error:  Class 'TK_Exception' not found in C:\xampp\htdocs\ral\modules\forum\controllers\IndexController.php on line 61
+[06-Aug-2015 11:18:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 11:22:53 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such category
+
+  thrown in C:\xampp\htdocs\ral\modules\forum\controllers\IndexController.php on line 61
+[06-Aug-2015 11:22:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::404_php() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 11:25:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::404() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 11:25:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 11:27:09 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such category
+
+  thrown in C:\xampp\htdocs\ral\modules\forum\controllers\IndexController.php on line 61
+[06-Aug-2015 11:29:38 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\index\views\index\error404.phtml on line 6
+[06-Aug-2015 11:29:48 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\index\views\index\error404.phtml on line 6
+[06-Aug-2015 11:29:57 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\index\views\index\error404.phtml on line 6
+[06-Aug-2015 11:30:05 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\index\views\index\error404.phtml on line 6
+[06-Aug-2015 11:30:10 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\index\views\index\error404.phtml on line 6
+[06-Aug-2015 11:30:13 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\index\views\index\error404.phtml on line 6
+[06-Aug-2015 12:12:43 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 12:30:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 13:01:30 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 13:01:47 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 13:01:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 13:02:03 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 15:20:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 16:59:41 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[06-Aug-2015 17:18:03 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 10:47:16 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 13:50:42 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 13:50:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 13:51:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 13:53:28 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 13:54:32 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 13:57:20 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 13:57:37 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 13:58:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 15:08:20 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 15:09:41 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 15:10:11 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 15:13:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 15:17:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 15:19:57 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 15:20:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 15:21:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 15:22:19 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 15:22:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 15:43:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 16:11:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 16:20:31 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:20:31 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:22:44 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:22:44 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:08 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:08 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:08 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:08 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:16 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:16 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:20 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:20 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:20 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:20 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:23 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:23 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:27 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to UserService::quickAuthenticate() must be an instance of User_Model_Doctrine_User, boolean given, called in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 222 and defined in C:\xampp\htdocs\ral\modules\user\services\User.php on line 41
+[07-Aug-2015 16:23:28 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 43
+[07-Aug-2015 16:23:30 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:30 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:32 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:32 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:33 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:33 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:38 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:38 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:44 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:44 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:49 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:49 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:49 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:49 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:52 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:23:52 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:03 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:03 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:06 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:06 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:07 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:07 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:13 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:13 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:16 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:16 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:16 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:16 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:19 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:19 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:22 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:22 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:22 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:22 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:28 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:28 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:31 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:31 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:31 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:31 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:36 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:36 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:42 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:42 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:48 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:48 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:55 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:24:55 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:25:01 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:25:01 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:25:06 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:25:06 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:25:07 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:25:07 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:25:12 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:25:12 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:25:21 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:25:21 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:25:26 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:25:26 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:26:04 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:26:04 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:26:07 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:26:07 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:26:20 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:26:20 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:26:26 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:26:26 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:26:31 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:26:31 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:26:31 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:26:31 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:30:42 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:30:42 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:30:52 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:30:52 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:31:17 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:31:17 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:41:16 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:41:16 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:42:21 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:42:21 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:42:40 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:42:40 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:43:34 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[07-Aug-2015 16:43:34 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192

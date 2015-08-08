@@ -19,6 +19,7 @@ class Team_Index extends Controller{
         $userService = parent::getService('user','user');
         $friendsService = parent::getService('user','friends');
         $leagueService = parent::getService('league','league');
+        $carService = parent::getService('car','car');
         Service::loadModels('rally', 'rally');
         
         $season = $leagueService->getCurrentSeason();
@@ -27,8 +28,11 @@ class Team_Index extends Controller{
         
         $friendInvited = $friendsService->checkFriendInvited($team['User']['id'],$user['id']);
 	
+        $models = $carService->getAllModelsWithPhoto();
+        
 	$this->view->assign('friendInvited',$friendInvited);
 	$this->view->assign('team',$team);
+	$this->view->assign('models',$models);
         if(!$user){
             $this->getLayout()->setLayout('nolog');
         }

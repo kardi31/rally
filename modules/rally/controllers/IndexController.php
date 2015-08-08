@@ -303,7 +303,7 @@ class Rally_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
         
         if(!$friendly = $rallyService->getFullFriendlyRally($GLOBALS['urlParams']['slug'],'r.slug',Doctrine_Core::HYDRATE_ARRAY)){
-            echo "blad";exit;
+            throw new TK_Exception('No such rally',404);
         }
         
         if($friendly['Rally']['finished']){
@@ -513,7 +513,6 @@ class Rally_Index extends Controller{
         $result['result']['success'] = "true";
         echo json_encode($result);
         exit;
-//        var_dump('t');exit;
     }
     
     public function removeFriendlyRallyParticipant(){
@@ -526,12 +525,12 @@ class Rally_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
         
         if(!$friendly = $rallyService->getFriendlyRally($GLOBALS['urlParams']['slug'],'r.slug',Doctrine_Core::HYDRATE_ARRAY)){
-            echo "blad";exit;
+            throw new TK_Exception('No such rally',404);
         }
         
         
         if(!$invitedUser = $rallyService->getFriendlyParticipant($friendly['id'],$user['username'],Doctrine_Core::HYDRATE_RECORD)){
-            echo "blad";exit;
+            throw new TK_Exception('No such participant',404);
         }
         
         $invitedUser->get('Crew')->delete();

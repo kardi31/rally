@@ -58,7 +58,7 @@ class Forum_Index extends Controller{
 	
         $forumService = parent::getService('forum','forum');
         if(!$category = $forumService->getCategory($GLOBALS['urlParams']['slug'],'slug',Doctrine_Core::HYDRATE_ARRAY)){
-            echo "error";exit;
+            throw new TK_Exception('No such category',404);
         }
         
         $userService = parent::getService('user','user');
@@ -98,7 +98,7 @@ class Forum_Index extends Controller{
 	
         $forumService = parent::getService('forum','forum');
         if(!$thread = $forumService->getFullThread($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_ARRAY)){
-            echo "error";exit;
+            throw new TK_Exception('No such thread',404);
         }
         
         $userService = parent::getService('user','user');
@@ -141,7 +141,7 @@ class Forum_Index extends Controller{
 	
         $forumService = parent::getService('forum','forum');
         if(!$thread = $forumService->getThread($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_ARRAY)){
-            echo "error";exit;
+            throw new TK_Exception('No such thread',404);
         }
         
         $userService = parent::getService('user','user');
@@ -179,7 +179,7 @@ class Forum_Index extends Controller{
 	
         $forumService = parent::getService('forum','forum');
         if(!$thread = $forumService->getThread($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_ARRAY)){
-            echo "error";exit;
+            throw new TK_Exception('No such thread',404);
         }
         
         $userService = parent::getService('user','user');
@@ -220,7 +220,7 @@ class Forum_Index extends Controller{
 	
         $forumService = parent::getService('forum','forum');
         if(!$thread = $forumService->getThread($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
-            echo "error";exit;
+            throw new TK_Exception('No such thread',404);
         }
         
        
@@ -242,7 +242,7 @@ class Forum_Index extends Controller{
 	
         $forumService = parent::getService('forum','forum');
         if(!$post = $forumService->getPost($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
-            echo "error";exit;
+            throw new TK_Exception('No such post',404);
         }
         
         $userService = parent::getService('user','user');
@@ -279,7 +279,7 @@ class Forum_Index extends Controller{
 	
         $forumService = parent::getService('forum','forum');
         if(!$post = $forumService->getPost($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
-            echo "error";exit;
+            throw new TK_Exception('No such post',404);
         }
         
         $userService = parent::getService('user','user');
@@ -320,7 +320,7 @@ class Forum_Index extends Controller{
         
         $forumService = parent::getService('forum','forum');
         if(!$category = $forumService->getCategory($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_ARRAY)){
-            echo "error";exit;
+            throw new TK_Exception('No such forum',404);
         }
         
         $forumService->addCategoryToFavourite($category,$user);

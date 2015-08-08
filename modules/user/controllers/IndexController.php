@@ -134,7 +134,7 @@ class User_Index extends Controller{
             $car->set('team_id',$team['id']);
             $car->save();
             
-            $teamService->addTeamMoney($team['id'],50000,8,'Initial FastRally bonus');            
+            $teamService->addTeamMoney($team['id'],30000,8,'Initial FastRally bonus');            
             
             
             $user->set('active',1);
@@ -144,7 +144,7 @@ class User_Index extends Controller{
             $message = "User has been activated";
             }
             catch(Exception $e){
-                var_dump($e->getMessage());exit;
+                error_log($e->getMessage());
             }
         }
         

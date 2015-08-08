@@ -269,7 +269,7 @@ jQuery("#wowslider-container1").wowSlider({
     duration: 20 * 100,
     delay: 20 * 100,
     width: 300,
-    height: 150,
+    height: 200,
     autoPlay: false,
     autoPlayVideo: false,
     playPause: false,

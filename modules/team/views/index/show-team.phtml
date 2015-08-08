@@ -62,13 +62,19 @@
                 <div class="ws_images">
                     <ul>
                         <?php 
+                        foreach($models as $model):
+                                    ?>
+                                    <li><img src="/media/cars/<?= $model['photo']; ?>" alt="<?= $model['name']; ?>" title="<?= $model['name']; ?>" id="wows1_1"/></li>
+                                    <?php
+                        endforeach;
+                        /*
                             foreach($team['Cars'] as $car):
                                 if(strlen($car['Model']['photo'])){
                                     ?>
                                     <li><img src="/media/cars/<?= $car['Model']['photo']; ?>" alt="<?= $car['name']; ?>" title="<?= $car['name']; ?>" id="wows1_1"/></li>
                                     <?php
                                 }
-                            endforeach;
+                            endforeach; */
                         ?>
                     </ul>
                 </div>

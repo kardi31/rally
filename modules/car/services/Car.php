@@ -43,6 +43,10 @@ class CarService extends Service{
     }
     
     
+    public function getAllCarModels(){
+        return $this->carModelTable->findAll();
+    }
+    
     public function getTeamCars($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	$q = $this->carTable->createQuery('c');
 	$q->select('*');
@@ -179,6 +183,44 @@ class CarService extends Service{
 	return $record;
     }
     
+    public function calculateNewCarValue($model){
+	// get from people object 
+	// only the elements which contains 
+	// driver skills
+	$carSkills = array_intersect_key($model->toArray(), array_flip(self::$carModelSkills));
+	// get the difference between max skill(10) and people skills. Then get % of it and multiply by skill wage
+	$props = array_map(function($skills,$wages,$max){ return (1-($max-$skills)/$max)*$wages; }, $carSkills,self::$carModelSkillsWages,self::$carModelSkillsMax);
+	
+	// different calculation for acceleration because less time is better
+	// (max aceleration / acceleration) *2 (because it's too small value) * wage
+	$props[3] = (self::$carModelSkillsMax[3]/$carSkills['acceleration']) * 2 * self::$carModelSkillsWages[3];
+//	var_dump($props[3]);
+	// calculate mileage wage
+	$props[4] = 0;
+	
+	$wages = self::$carModelSkillsWages;
+	
+	// add mileage wage to wages
+	array_push($wages, self::$carMileageWage);
+	
+	// calculate weighted average
+	$weightedAverage = array_sum($props)/array_sum($wages);
+	// multiple by 2.5 because car is the most important thing
+	
+	$weightedAverage *= 2.5;
+	
+	// add random factor(+10%/-10% of time)
+	$random = TK_Text::float_rand(0.9, 1.1);
+	$result = $weightedAverage*$random;
+        
+        $value = round($this->basicCarValue*$result);
+        $upkeep = round($value*0.0531);
+        $model->set('price',$value);
+//        $car->set('upkeep',(int)$upkeep);
+        $model->save();
+	return $model;
+    }
+    
     public function calculateCarValue($car){
 	// get from people object 
 	// only the elements which contains 
@@ -188,8 +230,8 @@ class CarService extends Service{
 	$props = array_map(function($skills,$wages,$max){ return (1-($max-$skills)/$max)*$wages; }, $carSkills,self::$carModelSkillsWages,self::$carModelSkillsMax);
 	
 	// different calculation for acceleration because less time is better
-	// (1 - (min acceleration / car acceleration)) * wage
-	$props[3] = (1-((self::$carModelSkillsMax[3])/$carSkills['acceleration'])) * self::$carModelSkillsWages[3];
+	// (max aceleration / acceleration) *2 (because it's too small value) * wage
+	$props[3] = (self::$carModelSkillsMax[3]/$carSkills['acceleration']) * 2 * self::$carModelSkillsWages[3];
 	
 	// calculate mileage wage
 	$props[4] = self::calculateMileageWage($car->toArray());
@@ -228,8 +270,8 @@ class CarService extends Service{
 	$props = array_map(function($skills,$wages,$max){ return (1-($max-$skills)/$max)*$wages; }, $carSkills,self::$carModelSkillsWages,self::$carModelSkillsMax);
 	
 	// different calculation for acceleration because less time is better
-	// (1 - (min acceleration / car acceleration)) * wage
-	$props[3] = (1-((self::$carModelSkillsMax[3])/$carSkills['acceleration'])) * self::$carModelSkillsWages[3];
+	// (max aceleration / acceleration) *2 (because it's too small value) * wage
+	$props[3] = (self::$carModelSkillsMax[3]/$carSkills['acceleration']) * 2 * self::$carModelSkillsWages[3];
 	
 	// calculate mileage wage
 	$props[4] = self::calculateMileageWage($car->toArray());
@@ -295,12 +337,29 @@ class CarService extends Service{
         return $q->execute();
     }
     
+    public function getAllModelsWithPhoto(){
+        $q = $this->carModelTable->createQuery('c');
+        $q->addWhere("c.photo != ''");
+        return $q->execute();
+    }
+    
+    
     public function calculateNewValuesForAllCars($season){
         $cars = $this->getAllActiveCarsNotCalculated($season);
         foreach($cars as $car):
             $car = $this->calculateCarValue($car);
             $car->set('last_season_value_id',$season);
             $car->save();
+        endforeach;
+    }
+    
+    
+    public function calculateValuesForAllNewCars(){
+        $cars = $this->getAllCarModels();
+        foreach($cars as $car):
+//            if($car['id']!=6&&$car['id']!=11)
+//                continue;
+            $car = $this->calculateNewCarValue($car);
         endforeach;
     }
     
