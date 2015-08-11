@@ -134,6 +134,7 @@ var ComponentsPickers = function () {
             autoclose: true,
             isRTL: Metronic.isRTL(),
             format: "yyyy-mm-dd hh:ii",
+            minuteStep: 30,
             pickerPosition: (Metronic.isRTL() ? "bottom-right" : "bottom-left")
         });
 

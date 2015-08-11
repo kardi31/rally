@@ -16,7 +16,10 @@ class Rally_Index extends Controller{
         Service::loadModels('team', 'team');
         Service::loadModels('car', 'car');
         $rallyService = parent::getService('rally','rally');
-        $rally = $rallyService->getRally($GLOBALS['urlParams']['slug'],'slug');
+        
+        if(!$rally = $rallyService->getRally($GLOBALS['urlParams']['slug'],'slug')){
+            throw new TK_Exception('No such rally',404);
+        }
 	
         if($rally['friendly']){
             TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$rally['slug']);

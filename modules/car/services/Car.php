@@ -43,6 +43,10 @@ class CarService extends Service{
     }
     
     
+    public function getAllCars(){
+        return $this->carTable->findAll();
+    }
+    
     public function getAllCarModels(){
         return $this->carModelTable->findAll();
     }

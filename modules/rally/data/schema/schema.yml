@@ -322,3 +322,77 @@ FriendlyInvitations:
       type: one
       foreignAlias: Invitations
       alias: Friendly
+DataRally:
+  tableName: rally_data_rally
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    name:
+      type: string(255)
+    slug:
+      type: string(255)
+    description:
+      type: text
+    day:
+      type: integer(4)
+    week:
+      type: integer(4)
+    league_rally:
+      type: boolean
+      default: 0
+    big_awards:
+      type: boolean
+      default: 0
+DataSurface:
+  tableName: rally_data_surface
+  actAs: 
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    rally_id:
+      type: integer(4)
+    surface:
+      type: varchar(255)
+    percentage:
+      type: float(4,2)
+  relations:
+    DataRally:
+      local: rally_id
+      foreign: id
+      foreignType: many
+      type: one
+      alias: Rally
+      foreignAlias: Surfaces
+DataStage:
+  tableName: rally_data_stage
+  actAs: 
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    rally_id:
+      type: integer(4)
+    name:
+      type: string(255)
+    length:
+      type: decimal(18)
+    min_time:
+      type: time
+  relations:
+    DataRally:
+      local: rally_id
+      foreign: id
+      foreignType: many
+      type: one 
+      alias: Rally
+      foreignAlias: Stages

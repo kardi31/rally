@@ -685,6 +685,36 @@ class Rally_Admin extends Controller{
        
         echo json_encode($response,JSON_UNESCAPED_SLASHES);
     }
+    
+    public function moveRalliesToData(){
+        ini_set('max_execution_time',300000);
+        $rallyService = parent::getService('rally','rally');
+        $rallyDataService = parent::getService('rally','rallyData');
+        $rallies = $rallyService->getAllRallies();
+        foreach($rallies as $rally):
+            $rallyDataService->saveRallyDataFromRally($rally);
+        endforeach;
+        echo "good";exit;
+    }
+    
+    public function changeRallyWeekDay(){
+        ini_set('max_execution_time',300000);
+        $rallyDataService = parent::getService('rally','rallyData');
+        $rallies = $rallyDataService->getAllRallies();
+        $week = 1;
+        $day = 1;
+        foreach($rallies as $rally):
+            $rally->set('day',$day);
+            $rally->set('week',$week);
+            $rally->save();
+            $day++;
+            if($day==7){
+                $week++;
+                $day = 1;
+            }
+        endforeach;
+        echo "good";exit;
+    }
 }
 
 

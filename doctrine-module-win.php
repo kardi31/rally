@@ -12,7 +12,7 @@ $connection["library"] =
     "version"=> "1.2.3",
     "compiled"=> ""
   );
-  $connection["connection_string"]= "mysql://root:@localhost/ral";
+  $connection["connection_string"]= "mysql://switkrze_rally:r@lly123@s41.hekko.net.pl/switkrze_rally";
   $connection["connection_name"]= "doctrine";
   $connection["yaml_schema_path"]= 'C:/xampp/htdocs/ral/modules/'.$moduleName.'/data/schema';
   $connection["generate_models_options"]=

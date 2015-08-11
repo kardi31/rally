@@ -70,10 +70,10 @@ class RallyService extends Service{
         if(!$league){
             $q->addWhere('r.league_rally != 1');
         }
-        
         if(!$friendly){
             $q->addWhere('r.friendly != 1');
         }
+        $q->limit(20);
 	return $q->execute(array(),$hydrationMode);
     }
     
@@ -367,21 +367,19 @@ class RallyService extends Service{
         return $q->fetchOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
     }
     
-    public function createRalliesForLeague($league){
+    public function createRalliesForLeague($league,$start_date){
         for($i=1;$i<=12;$i++){
-            $this->createOneLeagueRally($league,$i);
+            $this->createOneLeagueRally($league,$i,$start_date);
         }
     }
     
-    public function createOneLeagueRally($league,$key){
-        
+    public function createOneLeagueRally($league,$key,$start_date){
         
         $rallyArray = array();
         
         $rallyArray['name'] = "League ".$league." Rally - #".$key;
         $rallyArray['slug'] = TK_Text::createUniqueTableSlug('Rally_Model_Doctrine_Rally',$rallyArray['name']);  
-        $rallyArray['date'] = date('Y-m-d',strtotime('+ '.($key-1).' weeks sunday'));
-        
+        $rallyArray['date'] = date('Y-m-d',strtotime($start_date.' + '.($key-1).' weeks sunday'));
         $randomHours = rand(8,14);
         if($randomHours == 8 || $randomHours == 9){
             $randomHours = "0".$randomHours;
@@ -980,6 +978,32 @@ class RallyService extends Service{
         $record = $this->bigAwardsTable->getRecord();
         $record->fromArray($values);
         $record->save();
+    }
+    
+    
+    public function saveRallyFromData($dataRally,$season_start){
+        
+        $dataArray = $dataRally->toArray();
+        $rallyDay = strtotime($season_start." + ".($dataArray['week']-1)." weeks  + ".($dataRally['day']-1)." days");
+        $dataArray['date'] = date('Y-m-d',$rallyDay)." 09:00:00";
+        $dataArray['league'] = 1;
+        
+        $rally = $this->rallyTable->getRecord();
+        $rally->fromArray($dataArray);
+        $rally->save();
+        
+        foreach($dataRally->get('Stages') as $stage):
+            $stage = $this->stageTable->getRecord();
+            $stage->fromArray($stage->toArray());
+            $stage->save();
+        endforeach;
+        
+        foreach($dataRally->get('Surfaces') as $surface):
+            $surfaceRow = $this->surfaceTable->getRecord();
+            $surfaceRow->fromArray($surface->toArray());
+            $surfaceRow->save();
+        endforeach;
+        
     }
 }
 ?>
