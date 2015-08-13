@@ -165,7 +165,7 @@ class Account_Index extends Controller{
         if(!$user)
             TK_Helper::redirect('/user/login');
         
-        $teamPeople = $peopleService->getTeamPeople($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
+        $teamPeople = $peopleService->getTeamPeopleByRole($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
         $this->view->assign('teamPeople',$teamPeople);
     }
     

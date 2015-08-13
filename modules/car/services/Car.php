@@ -22,7 +22,7 @@ class CarService extends Service{
     );
     
     protected static $carModelSkillsMax = array(
-	2000,320,200,2.3
+	2700,350,320,2.3
     );
     
     protected $basicCarValue = 20000;
@@ -187,20 +187,34 @@ class CarService extends Service{
 	return $record;
     }
     
-    public function calculateNewCarValue($model){
-	// get from people object 
+    public function getCarCore($carOrModel,$addRandom = true){
+        if($carOrModel instanceof Car_Model_Doctrine_Car){
+            $model = $carOrModel['Model']->toArray();
+            $mileage = true;
+        }
+        else{
+            // instance of Car_Model_Doctrine_Car_Model
+            $model = $carOrModel->toArray();
+            $mileage = false;
+        }
+        
+        // get from people object 
 	// only the elements which contains 
 	// driver skills
-	$carSkills = array_intersect_key($model->toArray(), array_flip(self::$carModelSkills));
+	$carSkills = array_intersect_key($model, array_flip(self::$carModelSkills));
 	// get the difference between max skill(10) and people skills. Then get % of it and multiply by skill wage
-	$props = array_map(function($skills,$wages,$max){ return (1-($max-$skills)/$max)*$wages; }, $carSkills,self::$carModelSkillsWages,self::$carModelSkillsMax);
+	$props = array_map(function($skills,$wages,$max){ return (($max-$skills)/$max)*$wages; }, $carSkills,self::$carModelSkillsWages,self::$carModelSkillsMax);
 	
 	// different calculation for acceleration because less time is better
 	// (max aceleration / acceleration) *2 (because it's too small value) * wage
-	$props[3] = (self::$carModelSkillsMax[3]/$carSkills['acceleration']) * 2 * self::$carModelSkillsWages[3];
-//	var_dump($props[3]);
+	$props[3] = (1-((self::$carModelSkillsMax[3])/$carSkills['acceleration'])) * self::$carModelSkillsWages[3];
+	
 	// calculate mileage wage
-	$props[4] = 0;
+        if($mileage)
+            $props[4] = self::calculateMileageWage($carOrModel->toArray());
+        else
+            $props[4] = 0;
+	
 	
 	$wages = self::$carModelSkillsWages;
 	
@@ -209,54 +223,35 @@ class CarService extends Service{
 	
 	// calculate weighted average
 	$weightedAverage = array_sum($props)/array_sum($wages);
+	
 	// multiple by 2.5 because car is the most important thing
 	
 	$weightedAverage *= 2.5;
 	
-	// add random factor(+10%/-10% of time)
-	$random = TK_Text::float_rand(0.9, 1.1);
-	$result = $weightedAverage*$random;
+        // do not add random for car values
+        if($addRandom){
+            // add random factor(+10%/-10% of time)
+            $random = TK_Text::float_rand(0.9, 1.1);
+            $result = $weightedAverage*$random;
+        }
+        else{
+            $result = $weightedAverage;
+        }
+        return $result;
+    }
+    
+    public function calculateNewCarValue($model){
+	$result = $this->getCarCore($model,false);
         
         $value = round($this->basicCarValue*$result);
-        $upkeep = round($value*0.0531);
-        $model->set('price',$value);
-//        $car->set('upkeep',(int)$upkeep);
+        $model->set('real_value',$value);
         $model->save();
 	return $model;
     }
     
     public function calculateCarValue($car){
-	// get from people object 
-	// only the elements which contains 
-	// driver skills
-	$carSkills = array_intersect_key($car['Model']->toArray(), array_flip(self::$carModelSkills));
-	// get the difference between max skill(10) and people skills. Then get % of it and multiply by skill wage
-	$props = array_map(function($skills,$wages,$max){ return (1-($max-$skills)/$max)*$wages; }, $carSkills,self::$carModelSkillsWages,self::$carModelSkillsMax);
 	
-	// different calculation for acceleration because less time is better
-	// (max aceleration / acceleration) *2 (because it's too small value) * wage
-	$props[3] = (self::$carModelSkillsMax[3]/$carSkills['acceleration']) * 2 * self::$carModelSkillsWages[3];
-	
-	// calculate mileage wage
-	$props[4] = self::calculateMileageWage($car->toArray());
-	
-	
-	$wages = self::$carModelSkillsWages;
-	
-	// add mileage wage to wages
-	array_push($wages, self::$carMileageWage);
-	
-	// calculate weighted average
-	$weightedAverage = array_sum($props)/array_sum($wages);
-	
-	// multiple by 2.5 because car is the most important thing
-	
-	$weightedAverage *= 2.5;
-	
-	// add random factor(+10%/-10% of time)
-	$random = TK_Text::float_rand(0.9, 1.1);
-	$result = $weightedAverage*$random;
-        
+        $result = $this->getCarCore($car);
         $value = round($this->basicCarValue*$result);
         $upkeep = round($value*0.0531);
         $car->set('value',$value);
@@ -266,36 +261,9 @@ class CarService extends Service{
     }
     
     public static function getCarLate($car){
-	// get from people object 
-	// only the elements which contains 
-	// driver skills
-	$carSkills = array_intersect_key($car['Model']->toArray(), array_flip(self::$carModelSkills));
-	// get the difference between max skill(10) and people skills. Then get % of it and multiply by skill wage
-	$props = array_map(function($skills,$wages,$max){ return (1-($max-$skills)/$max)*$wages; }, $carSkills,self::$carModelSkillsWages,self::$carModelSkillsMax);
 	
-	// different calculation for acceleration because less time is better
-	// (max aceleration / acceleration) *2 (because it's too small value) * wage
-	$props[3] = (self::$carModelSkillsMax[3]/$carSkills['acceleration']) * 2 * self::$carModelSkillsWages[3];
+	$result = self::getInstance()->getCarCore($car);
 	
-	// calculate mileage wage
-	$props[4] = self::calculateMileageWage($car->toArray());
-	
-	
-	$wages = self::$carModelSkillsWages;
-	
-	// add mileage wage to wages
-	array_push($wages, self::$carMileageWage);
-	
-	// calculate weighted average
-	$weightedAverage = array_sum($props)/array_sum($wages);
-	
-	// multiple by 2.5 because car is the most important thing
-	
-	$weightedAverage *= 2.5;
-	
-	// add random factor(+10%/-10% of time)
-	$random = TK_Text::float_rand(0.9, 1.1);
-	$result = $weightedAverage*$random;
 	return $result;
     }
     

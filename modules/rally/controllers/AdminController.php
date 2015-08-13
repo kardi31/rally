@@ -697,6 +697,22 @@ class Rally_Admin extends Controller{
         echo "good";exit;
     }
     
+    
+    public function changeRalliesDate(){
+        ini_set('max_execution_time',300000);
+        $rallyService = parent::getService('rally','rally');
+        $rallies = $rallyService->getAllRallies();
+        foreach($rallies as $rally):
+            $stages = $rally->get('Stages');
+            foreach($stages as $key => $stage):
+                $newDate = strtotime($rally['date']." +".($key*15)." mins");
+                $stage->set('date',date('Y-m-d H:i:s',$newDate));
+                $stage->save();
+            endforeach;
+        endforeach;
+        echo "good";exit;
+    }
+    
     public function changeRallyWeekDay(){
         ini_set('max_execution_time',300000);
         $rallyDataService = parent::getService('rally','rallyData');
@@ -707,13 +723,102 @@ class Rally_Admin extends Controller{
             $rally->set('day',$day);
             $rally->set('week',$week);
             $rally->save();
-            $day++;
-            if($day==7){
-                $week++;
-                $day = 1;
+            $week++;
+            if($week==13){
+                $day++;
+                $week = 1;
             }
         endforeach;
         echo "good";exit;
+    }
+    
+    public function changeStageMinTime(){
+        
+        ini_set('max_execution_time',300000);
+        $rallyService = parent::getService('rally','rally');
+        $rallyDataService = parent::getService('rally','rallyData');
+        $rallies = $rallyService->getAllRallies();
+        foreach($rallies as $rally):
+            $stages = $rally->get('Stages');
+            foreach($stages as $key => $stage):
+                $stage_length = $stage['length'];
+                $timeMin = $stage_length / 87 * 60;
+                $timeMax = $stage_length / 107 * 60;
+                $randomTime = TK_Text::float_rand($timeMin,$timeMax,2);
+                $seconds = $randomTime*60;
+                $time = gmdate("H:i:s", $seconds);
+                
+                $stage->set('min_time',"00:".$randomTime);
+                $stage->save();
+            endforeach;
+        endforeach;
+        echo "good";exit;
+        
+    }
+    
+    public function changeStageLength(){
+        
+        ini_set('max_execution_time',300000);
+        $rallyService = parent::getService('rally','rally');
+        $rallyDataService = parent::getService('rally','rallyData');
+        $rallies = $rallyService->getAllRallies();
+        foreach($rallies as $rally):
+            $stages = $rally->get('Stages');
+            foreach($stages as $key => $stage):
+                $stage_length = $stage['length'];
+                
+                if($stage2 = $rallyService->getRallyStage($rally,$stage['name']." 2")){
+                    $stage2->set('length',$stage['length']);
+                    $stage2->save();
+                }
+                
+                if($stage3 = $rallyService->getRallyStage($rally,$stage['name']." 3")){
+                    $stage3->set('length',$stage['length']);
+                    $stage3->save();
+                }
+                
+                
+                if($stage4 = $rallyService->getRallyStage($rally,$stage['name']." 4")){
+                    $stage4->set('length',$stage['length']);
+                    $stage4->save();
+                }
+                
+                
+                if($stage5 = $rallyService->getRallyStage($rally,$stage['name']." 5")){
+                    $stage5->set('length',$stage['length']);
+                    $stage5->save();
+                }
+                
+            endforeach;
+        endforeach;
+        die('1');
+        
+    }
+    
+    
+    public function notFinish(){
+        
+        ini_set('max_execution_time',300000);
+        $rallyService = parent::getService('rally','rally');
+        $rally= $rallyService->getRally($GLOBALS['urlParams']['id']);
+            $stages = $rally->get('Stages');
+            foreach($stages as $stage):
+                $stage->get('Results')->delete();
+                $stage->set('finished',0);
+                $stage->save();
+            endforeach;
+            $crews = $rally->get('Crews');
+            foreach($crews as $crew):
+                $crew->set('in_race',1);
+                $crew->save();
+            endforeach;
+            $rally->set('finished',0);
+            $rally->save();
+            $rally->get('Results')->delete();
+            $rally->save();
+        die('1good');
+        
+        
     }
 }
 

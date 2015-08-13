@@ -85,6 +85,23 @@ class PeopleService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getTeamPeopleByRole($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+	$q = $this->peopleTable->createQuery('p');
+	$q->select('p.*,CONCAT(p.last_name," ",p.first_name) as name');
+	$q->leftJoin('p.Team t');
+	$q->addWhere('t.id = ?',$team_id);
+	$queryResult = $q->execute(array(),$hydrationMode);
+        $result = array('Drivers' => array(),'Pilots' => array());
+        foreach($queryResult as $person):
+            if($person['job']=='driver')
+                array_push($result['Drivers'],$person);
+            else
+                array_push($result['Pilots'],$person);
+        endforeach;
+        
+        return $result;
+    }
+    
     public function getTeamDrivers($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	$q = $this->peopleTable->createQuery('p');
 	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name');
@@ -414,6 +431,8 @@ class PeopleService extends Service{
 	
         // for training
         $stageLength = $stage['length'];
+        
+        $res = array();
 	foreach($crews as $key => $crew):
 	    $stageResults = array();
 	    $late = array();
@@ -437,10 +456,12 @@ class PeopleService extends Service{
 	    $totalLate[$key] = ($late['Car'][$key] + $late['Driver'][$key] + $late['Pilot'][$key])/1.5;
 	    // multiply late by minimum stage time
 	    // to get the stage result in seconds
+//            var_dump(ceil($totalLate[$key] * $minTimeSeconds)+ceil($totalLate[$key] * $minTimeSeconds)*0.13);
+//            var_dump(ceil($totalLate[$key] * $minTimeSeconds));exit;
 	    $crewSeconds = ceil($totalLate[$key] * $minTimeSeconds * Rally_Model_Doctrine_Rally::getTimeRisk($crew['risk']));
-	 
+
+//            echo (ceil($totalLate[$key] * $minTimeSeconds))." - ".$crewSeconds."<br />";
 	    $accident = $rallyService->checkAccident($accidentProbability);
-	    
 	    if ($accident) {
 		if ($accident['damage']==100){
 		    $crew['in_race'] = false;
@@ -493,12 +514,11 @@ class PeopleService extends Service{
 	
 	// get the difference between max skill(10) and people skills. Then get % of it and multiply by skill wage
 	$props = array_map(function($skills,$wages){ return ((10-$skills)/10)*$wages; }, $driverSkills,$this->driverSkillsWages);
-	
+
 	// calculate weighted average
 	$weightedAverage = array_sum($props)/array_sum($this->driverSkillsWages);
-	
 	// add random factor(+10%/-10% of time)
-	$random = TK_Text::float_rand(0.9, 1.1);
+	$random = TK_Text::float_rand(0.95, 1.05);
 	$result = $weightedAverage*$random;
 	
 	return $result;

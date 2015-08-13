@@ -28,7 +28,7 @@ class UserService extends Service{
         if($enteredPassword==$user['password']):
             $_SESSION['start'] = time(); // Taking now logged in time.
             // Ending a session in 15 minutes from the starting time.
-            $_SESSION['expire'] = $_SESSION['start'] + (15 * 60);
+            $_SESSION['expire'] = $_SESSION['start'] + (60 * 60);
         
             $_SESSION['user'] = serialize($user);
             $_SESSION['role'] = $user['role'];
@@ -41,8 +41,8 @@ class UserService extends Service{
     public function quickAuthenticate(User_Model_Doctrine_User $user){
         
             $_SESSION['start'] = time(); // Taking now logged in time.
-            // Ending a session in 15 minutes from the starting time.
-            $_SESSION['expire'] = $_SESSION['start'] + (15 * 60);
+            // Ending a session in 60 minutes from the starting time.
+            $_SESSION['expire'] = $_SESSION['start'] + (60 * 60);
         
             if($user['gold_member']==1&&$user['gold_member_expire']<date('Y-m-d H:i:s')){
                 $user->set('gold_member',0);
@@ -91,7 +91,7 @@ class UserService extends Service{
             // extend session
             $_SESSION['start'] = time(); // Taking now logged in time.
             // Ending a session in 15 minutes from the starting time.
-            $_SESSION['expire'] = $_SESSION['start'] + (15 * 60);
+            $_SESSION['expire'] = $_SESSION['start'] + (60 * 60);
             
             $user = unserialize($_SESSION['user']);
             if($user['gold_member']==1&&$user['gold_member_expire']<date('Y-m-d H:i:s')){

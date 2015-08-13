@@ -52,7 +52,7 @@ Surface:
     surface:
       type: varchar(255)
     percentage:
-      type: float(4,2)
+      type: float(8,2)
   relations:
     Rally:
       local: rally_id
@@ -362,7 +362,7 @@ DataSurface:
     surface:
       type: varchar(255)
     percentage:
-      type: float(4,2)
+      type: float(8,2)
   relations:
     DataRally:
       local: rally_id

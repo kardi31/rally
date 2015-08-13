@@ -41,21 +41,18 @@ class RallyDataService extends Service{
         return $q->execute(array(),$hydrationMode);
     }
     
-    public function saveRallyDataFromRally($dataRally){
-        
-        
-        
+    public function saveRallyDataFromRally($rally){
         $dataRally = $this->rallyTable->getRecord();
-        $dataRally->fromArray($dataRally->toArray());
+        $dataRally->fromArray($rally->toArray());
         $dataRally->save();
         
-        foreach($dataRally->get('Stages') as $stage):
+        foreach($rally->get('Stages') as $stage):
             $dataStage = $this->stageTable->getRecord();
             $dataStage->fromArray($stage->toArray());
             $dataStage->save();
         endforeach;
         
-        foreach($dataRally->get('Surfaces') as $surface):
+        foreach($rally->get('Surfaces') as $surface):
             $dataSurface = $this->surfaceTable->getRecord();
             $dataSurface->fromArray($surface->toArray());
             $dataSurface->save();

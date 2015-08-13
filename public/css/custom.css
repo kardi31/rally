@@ -972,31 +972,69 @@ footer{
         background:none;
     }
     .peopleCard{
-        border-radius: 6px;
+/*        border-radius: 6px;
         border: 6px solid #fff;
-        background: #cad3e4;
+        background: #cad3e4;*/
         margin-bottom: 20px;
-        color: #7774a9;
-        padding: 0px 0px 15px;
-        position: relative;
+        /*color: #7774a9;*/
+        padding: 10px 0px 15px;
+        /*position: relative;*/
+    }
+    
+    .peopleCard .sellPlayer{
+        padding:0px 20px !important;
     }
     
     .peopleCard strong{
         display:block;
-        background:#f4e973;
+        /*background:#f4e973;*/
         padding-top:10px;
         padding-left:20px;
         font-size:18px;
         padding-bottom:10px;
     }
     
+    .peopleCard .peopleRight table tr.active td{
+        background:#8f8f8f;
+    }
+    
+    
     strong a.offerLink{
         color: #7774a9;
         
     }
     
+    .peopleList .peopleCard{
+        display:none;
+    }
+    
+    .peopleList ul{
+        list-style-type:none;
+        padding-left:0px;
+        margin-bottom:0px;
+    }
+    
+    .peopleList ul li{
+        display:inline-block;
+        font-size:18px;
+        padding:10px;
+        cursor:pointer;
+    }
+    
+    .peopleList ul li:first-of-type{
+        cursor:initial;
+    }
+    
+    .peopleList ul li.active,.peopleCard.active{
+        background: #686868;
+    }
+    
+    .peopleList .peopleCard:first-of-type{
+        display:block;
+    }
+    
     .peopleCard table tr td{
-        color:#7774a9;
+        /*color:#7774a9;*/
     }
     
     .peopleBtn{
@@ -1005,8 +1043,8 @@ footer{
     }
     .peopleBtn a{
         display:inline-block;
-        color:#7774a9;
-        border:2px solid #7774a9;
+        /*color:#7774a9;*/
+        /*border:2px solid #7774a9;*/
     }
     
     .peopleLeft table td{
