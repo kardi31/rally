@@ -353,7 +353,7 @@ class RallyService extends Service{
         $q->leftJoin('c.Driver d');
         $q->leftJoin('c.Pilot p');
 //        $q->leftJoin('r.Surfaces sf');
-        $q->addWhere('DATE(date) = CURDATE()');
+        $q->addWhere('DATE(r.date) < CURDATE()');
         $q->addWhere('c.training_done = 0');
         $q->addSelect('c.*,r.id');
         return $q->execute(array(),$hydrationMode);

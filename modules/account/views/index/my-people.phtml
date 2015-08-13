@@ -228,7 +228,6 @@
         
         $('.driverList li:not(:first-of-type)').click(function(){
             var rel = $(this).attr('data-rel');
-//            $(this).removeClass('active');
             $('.driverList li.active').removeClass('active');
             $('.driverList .peopleCard').removeClass('active');
             $('.driverList .peopleCard').hide();
@@ -236,6 +235,19 @@
             
             $('.driverList [data-id="'+rel+'"]').show();
             $('.driverList [data-id="'+rel+'"]').addClass('active');
+            $(this).addClass('active');
+        });
+        
+        
+        $('.pilotList li:not(:first-of-type)').click(function(){
+            var rel = $(this).attr('data-rel');
+            $('.pilotList li.active').removeClass('active');
+            $('.pilotList .peopleCard').removeClass('active');
+            $('.pilotList .peopleCard').hide();
+            
+            
+            $('.pilotList [data-id="'+rel+'"]').show();
+            $('.pilotList [data-id="'+rel+'"]').addClass('active');
             $(this).addClass('active');
         });
     });

@@ -29,15 +29,15 @@ class TrainingService extends Service{
        
     // dla wspolczynnika 1
     protected $trainingLevels = array(
-        2 => 100,
-        3 => 130,
-        4 => 175,
-        5 => 245,
-        6 => 355,
-        7 => 532,
-        8 => 824,
-        9 => 1318,
-        10 => 2174
+        2 => 1000,
+        3 => 1300,
+        4 => 1750,
+        5 => 2450,
+        6 => 3550,
+        7 => 5320,
+        8 => 8240,
+        9 => 13180,
+        10 => 21740
     );
      
     /*
@@ -146,15 +146,15 @@ class TrainingService extends Service{
                 $person->save();
             }
         }
-        
         $trainingSkill = $person->active_training_skill;
-//        echo "pp";exit;
         if($this->checkTodayTrainingForPerson($trainingSkill,$person['id'])){
             return false;
         }
         
+        // if skill reached its maximum level
         $skillValue = $person[$trainingSkill];
         if($skillValue>=$person['TrainingFactor'][$trainingSkill."_max"]){
+            $this->addEmptyTrainingReport($person);
             return false;
         }
         
@@ -173,7 +173,6 @@ class TrainingService extends Service{
         // multiply the km passed by % of trained surface skill 
         // to get the real value of km passed on trained surface
         if(in_array($trainingSkill,$this->dependentSkills)){
-            
             $surfaceExplode = explode('_',$trainingSkill);
             $surface = $surfaceExplode[1];
             
@@ -182,11 +181,8 @@ class TrainingService extends Service{
             $km_passed = $km_passed * ($surfacePercentage / 100);
         }
         
-        
-        
         // get factor of active training skill
         $training_factor = $person['TrainingFactor'][$trainingSkill];
-        
         $km_passed = $training_factor*$km_passed;
         
         $lastTraining = $this->getLastSkillTrainingForPerson($trainingSkill,$person['id']);
@@ -197,7 +193,6 @@ class TrainingService extends Service{
         else{
             $newKmForNextStar = $km_passed;
         }
-        
         // check how much km are required for next star
         $kmRequiredForNextStar = $this->trainingLevels[$skillValue+1];
         $returnValue = "";
@@ -215,7 +210,6 @@ class TrainingService extends Service{
         }
         
         $trainingResult['km_passed_today'] = $km_passed;
-        
         $trainingResultRow = $this->trainingTable->getRecord();
         $trainingResultRow->fromArray($trainingResult);
         
@@ -268,6 +262,25 @@ class TrainingService extends Service{
         
         $record->fromArray($pilotArray);
         $record->save();
+    }
+    
+    public function addEmptyTrainingReport($person){
+        $trainingResult = array();
+        $trainingResult['people_id'] = $person['id'];
+        $trainingResult['skill_name'] = $person['active_training_skill'];
+        $trainingResult['current_skill_level'] = $person[$person['active_training_skill']];
+        
+        $trainingResult['max_available_km_passed_today'] = 0;
+        $trainingResult['km_passed_today'] = 0;
+        $trainingResult['km_for_next_star'] = 0;
+        $trainingResult['skill_promotion'] = 0;
+        $trainingResult['training_date'] = date('Y-m-d H:i:s');
+        
+        
+        $trainingResultRow = $this->trainingTable->getRecord();
+        $trainingResultRow->fromArray($trainingResult);
+        
+        $trainingResultRow->save();
     }
 }
 ?>

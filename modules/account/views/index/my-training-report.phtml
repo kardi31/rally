@@ -28,9 +28,9 @@
                     if(substr($result['training_date'],0,10)!=$lastDate){
                         $lastDate = substr($result['training_date'],0,10);
                         ?>
-                <tr>
-                    <th><?php echo $lastDate; ?></th>
-                </tr>
+                            <tr>
+                                <th><?php echo $lastDate; ?></th>
+                            </tr>
                         
                         <?php
                         
@@ -44,7 +44,7 @@
                         <td>
                             <?php //echo round($result['max_available_km_passed_today']/$result['km_passed_today'],2);?>
                             <div class="trainingBar">
-                                <div class="innerTrainingBar" title="<?php echo round($result['max_available_km_passed_today']/$result['km_passed_today'],2);?>%" style="width:<?php echo round($result['max_available_km_passed_today']/$result['km_passed_today'],2);?>%">
+                                <div class="innerTrainingBar" title="<?php echo round($result['km_passed_today']/$result['max_available_km_passed_today'],2)*100;?>%" style="width:<?php echo round($result['km_passed_today']/$result['max_available_km_passed_today'],2)*100;?>%">
                                 </div>
                             </div>
                         </td>
