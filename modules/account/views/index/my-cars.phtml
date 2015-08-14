@@ -46,7 +46,7 @@
             <?php foreach($cars as $key => $car): ?>
             <li data-rel="<?= $car['id']; ?>"><?php echo $car['name']; ?>
             
-                y<div class="carCard" data-id="<?= $car['id']; ?>">
+                <div class="carCard" data-id="<?= $car['id']; ?>">
 
             <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
                 <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" class="carCardPhoto" />
