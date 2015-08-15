@@ -1,31 +1,34 @@
-<div class="mainUserBox myPeopleWrapper">
-    <h4 class="boxHeader"><?= $this->translate('My player offers'); ?></h4> 
+<div class="mainUserBox">
+    <h4 class="boxHeader"><?= $this->translate('Player monitor'); ?></h4> 
     <?php
         if(isset($_GET['msg'])){
             if($_GET['msg']=="no exist")
                 $this->showError($this->translate('This offer does not exist'));
         }
         ?>
-    <div class="myPeople">
+    <div class="myPeople peopleList driverList col-md-12">
         <?php foreach($marketOffers as $offer):
         $person = $offer['Player'];
         ?>
-        <div class="peopleMarketCard peopleCard col-md-8">
-            <strong>
-                <a class="offerLink" href="/market/show-car-offer/id/<?= $offer['id']; ?>"><?php echo $person['last_name']." ".$person['first_name']; ?> </a>
-                <?php if($person['Team']['id']!=$user['Team']['id']): ?>
-                <?php
-                if(strlen($offer['highest_bid'])&&$offer['highest_bid']!=0){
-                    $populateBid = (int)($offer['highest_bid']*1.1);
-                }
-                else{
-                    $populateBid = $offer['asking_price'];
-                }
-                ?>
-                
-                    <a class="btn btn-info bidPlayer" data-toggle="modal" data-target="#bidPlayer" data-bid="<?= $populateBid; ?>" data-name="<?= $person['last_name']." ".$person['first_name']; ?>" rel="<?= $offer['id']; ?>"><?= $this->translate('Bid player'); ?></a>
-                <?php endif; ?>
-            </strong><br />
+        <div class="clearfix">
+            <ul>
+                <li class="active"><?php echo $person['last_name']." ".$person['first_name']; ?> </li>
+
+                    <?php if($person['Team']['id']!=$authenticatedUser['Team']['id']): ?>
+                        <li class="bidPlayerWrapper">
+                            <?php
+                                if(strlen($offer['highest_bid'])&&$offer['highest_bid']!=0){
+                                    $populateBid = (int)($offer['highest_bid']*1.1);
+                                }
+                                else{
+                                    $populateBid = $offer['asking_price'];
+                                }
+                            ?>
+                            <a class="btn myBtn bidPlayer" data-toggle="modal" data-bid="<?= $populateBid; ?>" data-target="#bidPlayer" data-name="<?= $person['last_name']." ".$person['first_name']; ?>" rel="<?= $offer['id']; ?>"><?= $this->translate('Bid player'); ?></a>
+                        </li>
+                 <?php endif; ?>
+            </ul>
+        <div class="peopleMarketCard peopleCard col-md-8 active">
                 <div class="col-md-5 peopleLeft peopleMarketLeft">
                     <table>
                         <tr>
@@ -41,13 +44,7 @@
                                 <?= $this->translate('Job'); ?>:
                             </td>
                             <td>
-                                <?php
-                                    if($person['job']=="driver"):
-                                        echo '<img src="/images/layout/driving-wheel.png" title='.$person['job'].'  lt='.$person['job'].' />';
-                                    else:
-                                        echo '<i class="fa fa-book" title='.$person['job'].' ></i>';
-                                    endif;
-                                ?>
+                                <?=$person['job']; ?>
                             </td>
                         </tr>
                         <tr>
@@ -135,6 +132,7 @@
 <!--            <br /><br />
             Pozostałe oferty<br />-->
             
+        </div>
         </div>
         <?php endforeach; ?>
     </div>

@@ -8,13 +8,17 @@
 	       $('#changeCarName1').show(); 
 	    }
 	});
+        $('.bxslider').bxSlider();
     });
 </script>
 
+<script src="/plugins/bxslider/jquery.bxslider.js"></script>
+<!-- bxSlider CSS file -->
+<link href="/plugins/bxslider/jquery.bxslider.css" rel="stylesheet" />
 
 <?php $team = $authenticatedUser['Team']; ?>
 <div class="mainUserBox myCarsBox">
-    <h4 class="boxHeader"><?= $this->translate('My cars'); ?></h4>
+    <h4 class="boxHeader"><?= $this->translate('Garage'); ?></h4>
     <?php 
         if(isset($_GET['msg'])){
             if($_GET['msg']=="car on market"){
@@ -36,18 +40,20 @@
             }
         }
     ?>
-    <div class="myCars">
-    <?php foreach($cars as $key => $car): ?>
-        <div class="carCard">
+    <div class="myCars peopleList carList col-md-12">
+        
+        <ul class="bxslider">
+            <?php foreach($cars as $key => $car): ?>
+            <li data-rel="<?= $car['id']; ?>"><?php echo $car['name']; ?>
+            
+                <div class="carCard" data-id="<?= $car['id']; ?>">
 
             <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
                 <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" class="carCardPhoto" />
            <?php } 
                 else{ ?>
                     <img src="http://dummyimage.com/340x220&amp;text=No+photo" class="carCardPhoto" />
-            <?php } ?>
-            <strong><?= $car['name']; ?></strong>
-            
+            <?php } ?>           
            
             <div class="col-md-6">
                 
@@ -55,25 +61,38 @@
             <div class="changeCarName" id="changeCarName1">
                 <?php // echo $formCar1->renderForm(); ?>
             </div>-->
-                <ul>
-                    <li>
-                        <?= $this->translate('Mileage');?>: <?php echo $car['mileage']; ?>
-                    </li>
-                    <li>
-                        <?= $this->translate('Value');?>:<?php echo $car['value']; ?>
-                    </li>
-                    <li>
-                        <?= $this->translate('Upkeep');?>: <?php echo $car['upkeep']; ?>
-                    </li>
-                </ul>
+                <div class="carParameters">
+                    <table>
+                        <tr>
+                            <td colspan="2"><?= $this->translate('brand'); ?>: <strong><?php echo $car['Model']['name']; ?></strong></td>
+                        </tr>
+                        <tr>
+                            <td><?= $this->translate('capacity'); ?>: <strong><?php echo $car['Model']['capacity'];?></strong></td>
+                            <td><?= $this->translate('Mileage');?>: <strong><?php echo $car['mileage']; ?></strong></td>
+                        </tr>
+                        <tr>
+                            <td><?= $this->translate('horse power'); ?>: <strong><?php echo $car['Model']['horsepower'];?></strong></td>
+                            <td><?= $this->translate('Value');?>:<strong><?php echo $car['value']; ?></strong></td>
+                        </tr>
+                        <tr>
+                            <td><?= $this->translate('v-max'); ?>: <strong><?php echo $car['Model']['max_speed'];?></strong></td>
+                            <td><?= $this->translate('Upkeep');?>: <strong><?php echo $car['upkeep']; ?></strong></td>
+                        </tr>
+                        <tr>
+                            <td><?= $this->translate('acceleration'); ?>: <strong><?php echo $car['Model']['acceleration'];?></strong></td>
+                            <td></td>
+                        </tr>
+
+                    </table>
+                </div>
                 <div class="clearfix"></div>
             <div class="carBtn">
                 <?php if(!$car['on_market']): ?>
-                    <a class="btn sellCar" type="button" data-toggle="modal" data-target="#sellCar" href="javascript:void(0)" data-name="<?= $car['name']; ?>"  rel="<?php echo $car['id']; ?>"> <i class="fa fa-money"></i> <?= $this->translate('Sell car'); ?></a>
+                    <a class="btn sellPlayer myBtn sellCar" type="button" data-toggle="modal" data-target="#sellCar" href="javascript:void(0)" data-name="<?= $car['name']; ?>"  rel="<?php echo $car['id']; ?>"> <i class="fa fa-money"></i> <?= $this->translate('Sell car'); ?></a>
                 <?php else: ?>
                     <a href="#" class="btn" disabled><?= $this->translate('Car is on the market');?></a>
                 <?php endif; ?>
-                <a class="btn" href="/car/change-name/id/<?= $car['id']; ?>">
+                <a class="btn sellPlayer myBtn changeCarName" href="/car/change-name/id/<?= $car['id']; ?>">
                     <i class="fa fa-edit"></i> <?= $this->translate('Change name');?>
                 </a>
             </div>
@@ -81,34 +100,11 @@
             </div>
             <div class="col-md-6 pr0 pl0 carParametersWrapper">
 
-                <div class="carParameters">
-                 <table>
-                    <tr>
-                        <td><?= $this->translate('brand'); ?></td>
-                        <td><?php echo $car['Model']['name']; ?></td>
-                    </tr>
-                    <tr>
-                        <td><?= $this->translate('capacity'); ?></td>
-                        <td><?php echo $car['Model']['capacity'];?></td>
-                    </tr>
-                    <tr>
-                        <td><?= $this->translate('horse power'); ?></td>
-                        <td><?php echo $car['Model']['horsepower'];?></td>
-                    </tr>
-                    <tr>
-                        <td><?= $this->translate('v-max'); ?></td>
-                        <td><?php echo $car['Model']['max_speed'];?></td>
-                    </tr>
-                    <tr>
-                        <td><?= $this->translate('acceleration'); ?></td>
-                        <td><?php echo $car['Model']['acceleration'];?></td>
-                    </tr>
-
-                </table>
-            </div>
+                
             </div>
             <div class="clearfix"></div>
         </div>
+            </li>
         <?php endforeach; ?>
     </div>
 

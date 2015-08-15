@@ -23,7 +23,7 @@ class League_Index extends Controller{
         $leagueService = parent::getService('league','league');
         
         $league = TK_Text::dotDash($GLOBALS['urlParams']['id']);
-        $leagueTable = $leagueService->getLeagueTable(floatval($league));
+        $leagueTable = $leagueService->getLeagueTable($league);
 	$this->view->assign('leagueTable',$leagueTable);
 	$this->view->assign('league',$league);
     }

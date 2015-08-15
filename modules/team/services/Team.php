@@ -26,7 +26,7 @@ class TeamService extends Service{
         2 => 'Sponsor cash',
         3 => 'Transfer income',
         4 => 'Player salaries',
-        5 => 'Car costs',
+        5 => 'Car upkeep',
         6 => 'Transfer expense',
         7 => 'Car purchase',
         8 => 'Other incomes'
@@ -249,6 +249,24 @@ class TeamService extends Service{
             return true;
         else
             return false;
+    }
+    
+    public function getAllTeamPlayersSalary($team){
+        $salary = 0;
+        foreach($team->get('Players') as $player):
+            $salary += $player['salary'];
+        endforeach;
+        
+        return $salary;
+    }
+    
+    public function getAllTeamCarsUpkeep($team){
+        $upkeep = 0;
+        foreach($team->get('Cars') as $car):
+            $upkeep += $car['upkeep'];
+        endforeach;
+        
+        return $upkeep;
     }
 }
 ?>

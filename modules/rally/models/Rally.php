@@ -23,11 +23,11 @@ class Rally_Model_Doctrine_Rally extends Rally_Model_Doctrine_BaseRally
     );
     
     protected static $riskTimeFactor = array(
-	'very-small' => 1.3,
-	'small' => 1.15,
+	'very-small' => 1.10,
+	'small' => 1.042,
 	'normal' => 1,
-	'big' => 0.9,
-	'very-big' => 0.75
+	'big' => 0.956,
+	'very-big' => 0.90
     );
     
     protected static $riskAccidentFactor = array(

@@ -639,28 +639,25 @@ footer{
     3.1 My cars + sell
 */
 
-.myCarsBox{
-    background:none;
-}
 
 .carCard{
         border-radius:6px;
-        border:6px solid #fff;
-        background:#cad3e4;
+        /*border:6px solid #fff;*/
+        /*background:#cad3e4;*/
         margin-bottom:20px;
-        color:#7774a9;
+        /*color:#7774a9;*/
         padding:0px 0px 15px;
         position:relative;
     }
     
-    .carCard strong{
+/*    .carCard strong{
         display:block;
         background:#f4e973;
         padding-top:10px;
         padding-left:20px;
         font-size:18px;
         padding-bottom:10px;
-    }
+    }*/
     
     .carCardPhoto{
         height:220px;
@@ -675,7 +672,7 @@ footer{
     
     .carCard table td{
         
-        color:#7774a9;
+        /*color:#7774a9;*/
         padding:5px 20px;
     }
     
@@ -697,13 +694,13 @@ footer{
         margin-top:10px;
     }
     .carBtn{
-        margin-top:10px;
+        margin-top:30px;
         margin-bottom:10px;
+        text-align:left;
     }
     .carBtn a{
         display:inline-block;
-        color:#7774a9;
-        border:2px solid #7774a9;
+        margin:0px 10px;
     }
     .pr0{
         padding-right:0px;
@@ -972,31 +969,76 @@ footer{
         background:none;
     }
     .peopleCard{
-        border-radius: 6px;
+/*        border-radius: 6px;
         border: 6px solid #fff;
-        background: #cad3e4;
+        background: #cad3e4;*/
         margin-bottom: 20px;
-        color: #7774a9;
-        padding: 0px 0px 15px;
-        position: relative;
+        /*color: #7774a9;*/
+        padding: 10px 0px 15px;
+        /*position: relative;*/
+    }
+    
+    .peopleCard .sellPlayer{
+        padding:0px 20px !important;
     }
     
     .peopleCard strong{
         display:block;
-        background:#f4e973;
+        /*background:#f4e973;*/
         padding-top:10px;
         padding-left:20px;
         font-size:18px;
         padding-bottom:10px;
     }
     
+    .peopleCard .peopleRight table tr.active td{
+        background:#8f8f8f;
+    }
+    
+    
     strong a.offerLink{
         color: #7774a9;
         
     }
     
+    .peopleList .peopleCard{
+        display:none;
+    }
+    
+    .peopleList ul{
+        list-style-type:none;
+        padding-left:0px;
+        margin-bottom:0px;
+    }
+    
+    .peopleList ul li{
+        display:inline-block;
+        font-size:18px;
+        padding:10px;
+        cursor:pointer;
+    }
+    
+    .peopleList.carList ul li{
+        display:inline-block;
+        font-size:14px;
+        padding:10px;
+        cursor:pointer;
+    }
+    
+    .peopleList ul li:first-of-type{
+        cursor:initial;
+    }
+    
+    .peopleList ul li.active,.peopleCard.active{
+        background: #686868;
+    }
+    
+    .peopleList .peopleCard:first-of-type{
+        display:block;
+    }
+    
     .peopleCard table tr td{
-        color:#7774a9;
+        /*color:#7774a9;*/
     }
     
     .peopleBtn{
@@ -1005,8 +1047,8 @@ footer{
     }
     .peopleBtn a{
         display:inline-block;
-        color:#7774a9;
-        border:2px solid #7774a9;
+        /*color:#7774a9;*/
+        /*border:2px solid #7774a9;*/
     }
     
     .peopleLeft table td{
@@ -1224,23 +1266,31 @@ margin-right: auto;
       .peopleMarketSmallCard table{
           width:100%;
       }
+      
+      .bidPlayer{
+          margin:0px !important;
+          /*padding:0px !important;*/
+          border:0px;
+          display:inline-block;
+      }
+      
+      ul li.bidPlayerWrapper{
+          float:right;
+          padding-top:0px;
+      }
+      
       .peopleMarketSmallCard{
           
-        background: #cad3e4;
+        background: #686868;
         margin-bottom: 20px;
-        color: #7774a9;
         padding: 0px 0px 15px;
         position: relative;
-        margin-left:10px;
+        margin-left:15px;
         width:30%;
       }
       
-      .peopleMarketSmallCard td{
-          color:#7774a9
-      }
       
       .peopleMarketSmallCard th{
-          color:#7774a9;
           padding:0px;
           padding-bottom:5px;
           padding-top:5px;
@@ -1277,7 +1327,25 @@ margin-right: auto;
     /*
     5.2 Car market
     */
+    .carList .carCard{
+        display:none;
+        padding-top:10px;
+    }
+    .carList ul li{
+        text-align:center;
+    }
     
+/*    .carList ul{
+        width:100000%;
+        overflow: hidden;
+    }*/
+    .carList ul li,.carCard{
+        background: #686868;
+    }
+    
+    .carList .carCard:first-of-type{
+        display:block;
+    }
     
     .carMarketCard .carCardPhoto{
         width:200px;

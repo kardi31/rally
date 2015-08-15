@@ -16,6 +16,7 @@ class RallyService extends Service{
     protected $friendlyParticipantsTable;
     protected $accidentTable;
     protected $surfaces = array('tarmac','gravel','rain','snow');
+    protected $leagueSurfaces = array('tarmac','gravel','snow');
     protected $minsArray = array('00','15','30','45');
     
     
@@ -70,10 +71,10 @@ class RallyService extends Service{
         if(!$league){
             $q->addWhere('r.league_rally != 1');
         }
-        
         if(!$friendly){
             $q->addWhere('r.friendly != 1');
         }
+        $q->limit(20);
 	return $q->execute(array(),$hydrationMode);
     }
     
@@ -331,7 +332,6 @@ class RallyService extends Service{
 	// count random numer (0-100)
 	// and check if it's greater than the probability
 	$randomNumber = rand(0,100);
-	
 	// there was an accident
 	if ( $randomNumber<=$accidentProbability){
 	    $q = $this->accidentTable->createQuery('acc');
@@ -353,7 +353,7 @@ class RallyService extends Service{
         $q->leftJoin('c.Driver d');
         $q->leftJoin('c.Pilot p');
 //        $q->leftJoin('r.Surfaces sf');
-        $q->addWhere('DATE(date) = CURDATE()');
+        $q->addWhere('DATE(r.date) < CURDATE()');
         $q->addWhere('c.training_done = 0');
         $q->addSelect('c.*,r.id');
         return $q->execute(array(),$hydrationMode);
@@ -367,21 +367,19 @@ class RallyService extends Service{
         return $q->fetchOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
     }
     
-    public function createRalliesForLeague($league){
+    public function createRalliesForLeague($league,$start_date){
         for($i=1;$i<=12;$i++){
-            $this->createOneLeagueRally($league,$i);
+            $this->createOneLeagueRally($league,$i,$start_date);
         }
     }
     
-    public function createOneLeagueRally($league,$key){
-        
+    public function createOneLeagueRally($league,$key,$start_date){
         
         $rallyArray = array();
         
         $rallyArray['name'] = "League ".$league." Rally - #".$key;
         $rallyArray['slug'] = TK_Text::createUniqueTableSlug('Rally_Model_Doctrine_Rally',$rallyArray['name']);  
-        $rallyArray['date'] = date('Y-m-d',strtotime('+ '.($key-1).' weeks sunday'));
-        
+        $rallyArray['date'] = date('Y-m-d',strtotime($start_date.' + '.($key-1).' weeks sunday'));
         $randomHours = rand(8,14);
         if($randomHours == 8 || $randomHours == 9){
             $randomHours = "0".$randomHours;
@@ -391,17 +389,29 @@ class RallyService extends Service{
         
         $rallyArray['active'] = 1;
         
-        $randomSurfaces = array_rand($this->surfaces,2);
+        $randomSurfaces = array_rand($this->leagueSurfaces,rand(1,2));
         $randomSurfacePercentage = TK_Text::float_rand(10,90,2);
-        foreach($randomSurfaces as $key => $randomSurfaceId):
-            $rallyArray['Surfaces'][$key]['surface'] = $this->surfaces[$randomSurfaceId];
-            if($key == 0){
-                $rallyArray['Surfaces'][$key]['percentage'] = 100 - $randomSurfacePercentage;
-            }
-            else{
-                $rallyArray['Surfaces'][$key]['percentage'] = $randomSurfacePercentage;
-            }
-        endforeach;
+        $key = 0;
+        if(is_array($randomSurfaces)){
+            foreach($randomSurfaces as $key => $randomSurfaceId):
+                $rallyArray['Surfaces'][$key]['surface'] = $this->leagueSurfaces[$randomSurfaceId];
+                if($key == 0){
+                    $rallyArray['Surfaces'][$key]['percentage'] = 100 - $randomSurfacePercentage;
+                }
+                else{
+                    $rallyArray['Surfaces'][$key]['percentage'] = $randomSurfacePercentage;
+                }
+            endforeach;
+        }
+        else{
+            $rallyArray['Surfaces'][$key]['surface'] = $this->leagueSurfaces[$randomSurfaces];
+            $rallyArray['Surfaces'][$key]['percentage'] = 100;
+        }
+        $ifRain = rand(0,1);
+        if($ifRain==1){
+            $rallyArray['Surfaces'][$key+1]['surface'] = 'rain';
+            $rallyArray['Surfaces'][$key+1]['percentage'] = TK_Text::float_rand(10,70,2);
+        }
         
         $rallyArray['league_rally'] = 1;
         $rallyArray['league'] = $league;
@@ -533,8 +543,8 @@ class RallyService extends Service{
         
         // rally min time generator
         
-        $timeMin = $stage_length / 65 * 60;
-        $timeMax = $stage_length / 90 * 60;
+        $timeMin = $stage_length / 95 * 60;
+        $timeMax = $stage_length / 115 * 60;
         $timeMinUnix = strtotime((int)$timeMin." minutes");
         $timeMaxUnix = strtotime((int)$timeMax." minutes");
         $randomTimeUnix = mt_rand($timeMaxUnix,$timeMinUnix);
@@ -560,11 +570,11 @@ class RallyService extends Service{
         
         
         // rally min time generator
-        $timeMin = "00:02:50";
-        $timeMax = "00:30:15";
-        $timeMinUnix = strtotime($timeMin);
-        $timeMaxUnix = strtotime($timeMax);
-        $randomTimeUnix = mt_rand($timeMinUnix,$timeMaxUnix);
+        $timeMin = $stageArray['length'] / 95 * 60;
+        $timeMax = $stageArray['length'] / 115 * 60;
+        $timeMinUnix = strtotime((int)$timeMin." minutes");
+        $timeMaxUnix = strtotime((int)$timeMax." minutes");
+        $randomTimeUnix = mt_rand($timeMaxUnix,$timeMinUnix);
         $stageArray['min_time'] = date('H:i:s',$randomTimeUnix);
         
         $date = new DateTime($rally['date']);
@@ -586,6 +596,15 @@ class RallyService extends Service{
         $q->addWhere('r.'.$field.' = ?',$id);
         $q->select('s.*,r.id');
         return $q->execute(array(),$hydrationMode);
+    }
+    
+    
+    public function getRallyStage($rally,$name){
+        $q = $this->stageTable->createQuery('s');
+        $q->leftJoin('s.Rally r');
+        $q->addWhere('r.id = ?',$rally['id']);
+        $q->addWhere('LOWER(s.name) = ?',strtolower($name));
+        return $q->fetchOne();
     }
     
     public function calculatePartialRallyResult(Rally_Model_Doctrine_Rally $rally){		
@@ -980,6 +999,37 @@ class RallyService extends Service{
         $record = $this->bigAwardsTable->getRecord();
         $record->fromArray($values);
         $record->save();
+    }
+    
+    
+    public function saveRallyFromData($dataRally,$season_start){
+        
+        $dataArray = $dataRally->toArray();
+        $rallyDay = strtotime($season_start." + ".($dataArray['week']-1)." weeks  + ".($dataRally['day']-1)." days");
+        $dataArray['date'] = date('Y-m-d',$rallyDay)." 09:00:00";
+        $dataArray['league'] = 1;
+        
+        $rally = $this->rallyTable->getRecord();
+        $rally->fromArray($dataArray);
+        $rally->save();
+        
+        foreach($dataRally->get('Stages') as $key => $stage):
+            $stageArray = $stage->toArray();
+            $newDate = strtotime($dataArray['date']." + ".($key*15)." minutes");
+            
+            $stageArray['date'] = date('Y-m-d H:i:s',$newDate);
+            $stageArray['finished'] = 0;
+            $stageRow = $this->stageTable->getRecord();
+            $stageRow->fromArray($stageArray);
+            $stageRow->save();
+        endforeach;
+        
+        foreach($dataRally->get('Surfaces') as $surface):
+            $surfaceRow = $this->surfaceTable->getRecord();
+            $surfaceRow->fromArray($surface->toArray());
+            $surfaceRow->save();
+        endforeach;
+        
     }
 }
 ?>

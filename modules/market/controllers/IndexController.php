@@ -144,7 +144,7 @@ class Market_Index extends Controller{
         $this->view->assign('marketOffers',$marketOffers);
     }
     
-    public function myPlayerOffers(){
+    public function playerMonitor(){
         $userService = parent::getService('user','user');
         
         $user = $userService->getAuthenticatedUser();
@@ -159,8 +159,18 @@ class Market_Index extends Controller{
         $marketService = parent::getService('market','market');
         $teamService = parent::getService('team','team');
         $marketOffers = $marketService->getAllActiveMyPlayerOffers($user['Team']['id']);
+        $myPlayers = $marketService->getAllActiveMyPlayers($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
+        $offers = array_merge($myPlayers,$marketOffers);
+        
+        function ordbydate($a, $b)
+        {
+            return ($a["finish_date"] < $b["finish_date"])?-1:1;
+        }        
+        
+        usort($offers,'ordbydate');
+        
         $this->view->assign('user',$user);
-        $this->view->assign('marketOffers',$marketOffers);
+        $this->view->assign('marketOffers',$offers);
     }
     
     /*
@@ -335,7 +345,7 @@ class Market_Index extends Controller{
         $this->view->assign('marketOffers',$marketOffers);
     }
     
-    public function myCarOffers(){
+    public function carMonitor(){
         $userService = parent::getService('user','user');
         
         $user = $userService->getAuthenticatedUser();
@@ -376,5 +386,6 @@ class Market_Index extends Controller{
         
         $this->getLayout()->setLayout('layout');
     }
+    
 }
 ?>

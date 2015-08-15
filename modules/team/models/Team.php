@@ -15,35 +15,14 @@ class Team_Model_Doctrine_Team extends Team_Model_Doctrine_BaseTeam
      public function setUp()
     {
         parent::setUp();
-        $this->hasOne('People_Model_Doctrine_People as Driver1', array(
-             'local' => 'driver1_id',
-             'foreign' => 'id'));
-	
-	$this->hasOne('People_Model_Doctrine_People as Driver2', array(
-             'local' => 'driver2_id',
-             'foreign' => 'id'));
-	
-	$this->hasOne('People_Model_Doctrine_People as Pilot1', array(
-             'local' => 'pilot1_id',
-             'foreign' => 'id'));
-	
-	$this->hasOne('People_Model_Doctrine_People as Pilot2', array(
-             'local' => 'pilot2_id',
-             'foreign' => 'id'));
-	
-	$this->hasOne('Car_Model_Doctrine_Car as Car1', array(
-             'local' => 'car1_id',
-             'foreign' => 'id'));
-
-	$this->hasOne('Car_Model_Doctrine_Car as Car2', array(
-             'local' => 'car2_id',
-             'foreign' => 'id'));
-	
         
 	$this->hasMany('Car_Model_Doctrine_Car as Cars', array(
              'local' => 'id',
              'foreign' => 'team_id'));
 
+	$this->hasMany('People_Model_Doctrine_People as Players', array(
+             'local' => 'id',
+             'foreign' => 'team_id'));
         
 	$this->hasOne('User_Model_Doctrine_User as User', array(
              'local' => 'user_id',

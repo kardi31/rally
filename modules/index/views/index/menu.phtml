@@ -8,11 +8,9 @@
                 $('li.selected ul').slideUp(100);
 	        $('li.selected ul').removeClass("selected");
 	        if (li.hasClass('selected')) {
-                    console.log('has');
 	            ul.slideUp(200); // hiding popups
 	            li.removeClass("selected");
 	        } else {
-                    console.log('nohas');
 	            ul.slideDown(200); // hiding popups
 	            li.addClass("selected");
 	        }
@@ -91,16 +89,10 @@
                     <a href="/market/car-dealer"><?= $this->translate('Car dealer'); ?></a>
                 </li>
                 <li>
-                    <a href="/market/my-players"><?= $this->translate('My players'); ?></a> 
+                    <a href="/market/player-monitor"><?= $this->translate('Player monitor'); ?></a> 
                 </li>
                 <li>
-                    <a href="/market/my-player-offers"><?= $this->translate('My player offers'); ?></a> 
-                </li>
-                <li>
-                    <a href="/market/my-cars"><?= $this->translate('My cars'); ?></a> 
-                </li>
-                <li>
-                    <a href="/market/my-car-offers"><?= $this->translate('My car offers'); ?></a> 
+                    <a href="/market/car-monitor"><?= $this->translate('Car monitor'); ?></a> 
                 </li>
                 
             </ul>

@@ -31,13 +31,13 @@ class Controller{
     
     public function _render($elem,$viewName,$zone='index') {
         
-        if(strpos(get_class($elem),'Admin')!==false){
-	    $userService = $this->getService('user', 'user');
-            $authenticatedUser = $userService->getAuthenticatedUser();
-            if($authenticatedUser['role']!='admin'){
-                TK_Helper::redirect('/');
-            }
-        }
+//        if(strpos(get_class($elem),'Admin')!==false){
+//	    $userService = $this->getService('user', 'user');
+//            $authenticatedUser = $userService->getAuthenticatedUser();
+//            if($authenticatedUser['role']!='admin'){
+//                TK_Helper::redirect('/');
+//            }
+//        }
         
         $actionName = TK_Text::convertViewToActionName($viewName);
         $elem->$actionName();

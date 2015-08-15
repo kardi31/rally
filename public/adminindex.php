@@ -14,7 +14,7 @@ if(is_dir("/var/www/ral/modules/'.$module.'/models/")){
 require(BASE_PATH.'/library/TK/init.php');
 
 new init();
-error_reporting(E_ALL|E_STRICT);
+error_reporting(E_ALL);
  ini_set('display_errors', 1);
  
  if(is_dir(BASE_PATH.'/modules/'.$module.'/controllers'))

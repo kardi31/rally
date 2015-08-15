@@ -16,6 +16,9 @@ class Cron_Admin extends Controller{
      * 2. Calculate new player value + salary
      * 3. Calculate new car value + upkeep
      * 4. Create rallies for all leagues
+     * 
+     * + Once a week
+     * 1. calculateWeeklyCosts - calculate and remove player salaries,car upkeep + add sponsor money
      */
     
     public function __construct(){
@@ -59,10 +62,12 @@ class Cron_Admin extends Controller{
         $leagueService = parent::getService('league','league');
         $rallyService = parent::getService('rally','rally');
         
+        $seasonInfo = $leagueService->getSeasonInfo();
+        
         $leagues = $leagueService->getAllActiveLeagues();
         foreach($leagues as $league):
             $league_name = floatval($league['league_name']);
-            $rallyService->createRalliesForLeague($league_name);
+            $rallyService->createRalliesForLeague($league_name,$seasonInfo['season_start']);
         endforeach;
         echo "create rallies for league good";
     }
@@ -79,6 +84,8 @@ class Cron_Admin extends Controller{
         $carService->calculateValuesForAllNewCars();
         echo "good";
     }
+    
+    
     
     /* manually over */
     
@@ -203,6 +210,56 @@ class Cron_Admin extends Controller{
     
     // do this every day - end
     
+    /*
+     * Do it once a week
+     * 
+     */
+    
+    public function calculateWeeklyCosts(){
+        $view = $this->view;
+        $view->setNoRender();
+        
+        
+        Service::loadModels('user', 'user');
+        Service::loadModels('team', 'team');
+        Service::loadModels('people', 'people');
+        Service::loadModels('league', 'league');
+        Service::loadModels('car', 'car');
+        $teamService = parent::getService('team','team');
+        
+        /*
+         * Wydatki : 
+         * 1. Pensje zawodnikow
+         * 2. Koszty utrzymania samochodu
+         * 
+         * Przychody : 
+         * 1. Od sponsora (5000)
+         */
+        
+        $teams = $teamService->getAllTeams();
+        foreach($teams as $team):
+            $playersValue = $teamService->getAllTeamPlayersSalary($team);
+            if($playersValue!=0)
+                $teamService->removeTeamMoney($team['id'],$playersValue,4,'Player salaries calculated on '.date('Y-m-d'));  
+            
+        
+            $carUpkeep = $teamService->getAllTeamCarsUpkeep($team);
+            if($carUpkeep!=0)
+                $teamService->removeTeamMoney($team['id'],$carUpkeep,5,'Cars upkeed calculated on '.date('Y-m-d'));  
+            
+            if(!empty($team['sponsor_id'])){
+                $teamService->addTeamMoney($team['id'],5000,2,'Money from '.$team['Sponsor']['name'].' received on '.date('Y-m-d'));  
+            }
+        endforeach;
+        
+        echo "done";exit;
+    }
+    
+    /*
+     * Do it once a week - end
+     * 
+     */
+    
     // do this every 15 min 
     
     public function calculateRallyResult(){
@@ -311,5 +368,39 @@ class Cron_Admin extends Controller{
         endforeach;
         echo "pp";exit;
     }
+    
+    public function startSeason(){
+        ini_set('max_execution_time',300000);
+        $rallyDataService = parent::getService('rally','rallyData');
+        $rallyService = parent::getService('rally','rally');
+        $leagueService = parent::getService('league','league');
+        
+        $seasonInfo = $leagueService->getSeasonInfo();
+        
+        $rallies = $rallyDataService->getAllRallies();
+        foreach($rallies as $rally):
+            $rallyService->saveRallyFromData($rally,$seasonInfo['season_start']);
+        endforeach;
+        
+        $this->createRalliesForAllLeagues();
+        echo "done";exit;
+    }
+    
+    public function calculateCarValues(){
+        ini_set('max_execution_time',300000);
+        $carService = parent::getService('car','car');
+        
+        $cars = $carService->getAllCars();
+        
+        foreach($cars as $key=>$car):
+            $car->set('value',$car['Model']['price']);
+            $car->set('upkeep',0.15*$car['Model']['price']);
+            $car->set('name',$car['Model']['name'].' #'.$key);
+            $car->save();
+        endforeach;
+        
+        echo "done";exit;
+    }
+    
 }
 ?>
