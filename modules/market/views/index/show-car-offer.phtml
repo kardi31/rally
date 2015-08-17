@@ -1,5 +1,5 @@
 <div class="mainUserBox myCarsBox">
-    <h4 class="boxHeader"><?= $this->translate('My cars'); ?></h4>
+    <h4 class="boxHeader"><?= $this->translate('Show car offer')." #7"; ?></h4>
     <?php
         if(isset($message)){
             if(!$message['status'])
@@ -28,96 +28,93 @@
            
         }
     ?>
-        <?php $car = $offer['Car']; ?>
-        <div class="carCard carMarketCard col-md-8">
-            <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
-                <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" class="carCardPhoto" />
-            <?php } 
-                else{ ?>
-                    <img src="http://dummyimage.com/340x220&amp;text=No+photo"  class="carCardPhoto" />
-            <?php } ?>
-            <strong><?= $car['name']; ?></strong>
-            
-            <div class="col-md-6">
-                <div class="marketTeamName">
-                    Team: <?= $car['Team']['name']; ?>
+    <div class='col-md-12'>
+        <div class="myPeople peopleList driverList carMarketList">
+            <?php $car = $offer['Car']; 
+            ?>
+            <ul>
+                <li class="active"><?php echo $car['name']; ?> 
+
+                    <?php if($car['Team']['id']!=$authenticatedUser['Team']['id']): ?>
+                            <a class="btn myBtn bidPlayer bidCar" data-toggle="modal" data-target="#bidPlayer" data-name="<?= $car['name']; ?>" rel="<?= $offer['id']; ?>"><?= $this->translate('Bid car'); ?></a>
+                    <?php endif; ?>
+                </li>
+            </ul>
+            <div class="carCard carMarketCard col-md-8 active peopleMarketCard mr0">
+
+                <div class="col-md-7">
+
+                    <?= TK_Helper::showCarParameters($car,$offer['Car']['Team']); ?>
+
+                    <div class="clearfix"></div>
                 </div>
-                <ul>
-                    <li>
-                        <?= $this->translate('Mileage');?>: <?php echo $car['mileage']; ?>
-                    </li>
-                    <li>
-                        <?= $this->translate('Value'); ?>: <?php echo $car['value']; ?>
-                    </li>
-                    <li>
-                        <?= $this->translate('Upkeep'); ?>: <?php echo $car['upkeep']; ?>
-                    </li>
-                </ul>
-                
-            <!--<a href="/market/bid-car/id/<?php echo $offer['id']; ?>">Zalicytuj</a>-->
-                <?php if($car['Team']['id']!=$authenticatedUser['Team']['id']): ?>
-                    <a class="btn myBtn bidCar" data-toggle="modal" data-target="#bidCar" data-name="<?= $car['name']; ?>" rel="<?= $offer['id']; ?>"><?= $this->translate('Bid car'); ?></a>
-                <?php endif; ?>
-                <div class="clearfix"></div>
-            </div>
-            
-            <div class="col-md-6 pr0 pl0 carParametersWrapper">
-                <?= TK_Helper::showCarParameters($car['Model']); ?>
-            </div>
-        <div class='clearfix'></div>
-        </div>
-        <div class="col-md-3 peopleMarketSmallCard">
-            
-            <table>
-                <tr>
-                    <th><?= $this->translate('Highest bid'); ?>: </th>
-                </tr>
-                <tr>
-                    <td>
-                        <?php
-                            if(isset($offer['Bids'][0])&&$offer['Bids'][0]['active']){
-                                echo (int)$offer['Bids'][0]['value']."$ - ".$offer['Bids'][0]['Team']['name']; 
-                            }
-                            else
-                                echo $this->translate("no offers");
-                        ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th><?= $this->translate('Asking price'); ?>:</th>
-                </tr>
-                <tr>
-                    <td><?= $offer['asking_price']; ?>$</td>
-                </tr>
-                <tr>
-                    <th><?= $this->translate('Auction finish'); ?>: </th>
-                </tr>
-                <tr>
-                    <td>
-                        <?php echo TK_Text::timeFormat($offer['finish_date'],'d/m/y H:i'); ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th><?= $this->translate('Other offers'); ?>: </th>
-                </tr>
-                <tr>
-                    <td>
-                        <?php foreach($offer['Bids'] as $key => $bid):
-                            if($bid['active']==0)
-                                continue;
 
-                            if($key==0)
-                                continue;
-                            if($key>3)
-                                break;
+                <div class='col-md-5 mr0'>
+                    <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
+                        <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" class="carCardPhoto" />
+                    <?php } 
+                        else{ ?>
+                            <img src="http://dummyimage.com/340x220&amp;text=No+photo"  class="carCardPhoto" />
+                    <?php } ?>
+                </div>
 
-                            echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 
-                        endforeach; ?>
-                    </td>
-                </tr>
-            </table>
+            <div class='clearfix'></div>
+            </div>
+            <div class='col-md-1'></div>
+            <div class="col-md-3 peopleMarketSmallCard">
+
+                <table>
+                    <tr>
+                        <th><?= $this->translate('Highest bid'); ?>: </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <?php
+                                if(isset($offer['Bids'][0])&&$offer['Bids'][0]['active']){
+                                    echo (int)$offer['Bids'][0]['value']."$ - ".$offer['Bids'][0]['Team']['name']; 
+                                }
+                                else
+                                    echo $this->translate("no offers");
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><?= $this->translate('Asking price'); ?>:</th>
+                    </tr>
+                    <tr>
+                        <td><?= $offer['asking_price']; ?>$</td>
+                    </tr>
+                    <tr>
+                        <th><?= $this->translate('Auction finish'); ?>: </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <?php echo TK_Text::timeFormat($offer['finish_date'],'d/m/y H:i'); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><?= $this->translate('Other offers'); ?>: </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <?php foreach($offer['Bids'] as $key => $bid):
+                                if($bid['active']==0)
+                                    continue;
+
+                                if($key==0)
+                                    continue;
+                                if($key>3)
+                                    break;
+
+                                echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 
+                            endforeach; ?>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class='clearfix'></div>
         </div>
-        <div class='clearfix'></div>
+    </div>
 </div>
 
 <div id="bidCar" class="modal fade" role="dialog">

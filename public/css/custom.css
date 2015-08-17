@@ -641,12 +641,11 @@ footer{
 
 
 .carCard{
-        border-radius:6px;
+        /*border-radius:6px;*/
         /*border:6px solid #fff;*/
         /*background:#cad3e4;*/
-        margin-bottom:20px;
+        /*margin-bottom:20px;*/
         /*color:#7774a9;*/
-        padding:0px 0px 15px;
         position:relative;
     }
     
@@ -1285,8 +1284,6 @@ margin-right: auto;
         margin-bottom: 20px;
         padding: 0px 0px 15px;
         position: relative;
-        margin-left:15px;
-        width:30%;
       }
       
       
@@ -1335,6 +1332,10 @@ margin-right: auto;
         text-align:center;
     }
     
+    .bidCar{
+        float:right;
+    }
+    
 /*    .carList ul{
         width:100000%;
         overflow: hidden;
@@ -1347,8 +1348,25 @@ margin-right: auto;
         display:block;
     }
     
+    .carMarketList{
+        background:#686868;
+    }
+    .mb20{
+        margin-bottom:20px;
+    }
+    .carMarketList li{
+        width:100%;
+        text-align:center;
+    }
+    .mr0{
+        margin-right:0px;
+        padding-right:0px;
+    }
+    .pt10{
+        padding-top:10px !important;
+    }
     .carMarketCard .carCardPhoto{
-        width:200px;
+        max-width:100%;
         height:auto;
     }
     .carCard table td {

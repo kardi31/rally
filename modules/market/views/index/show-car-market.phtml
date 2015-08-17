@@ -10,77 +10,51 @@
         <?php foreach($marketOffers as $offer):
         $car = $offer['Car'];
         ?>
-        <div class="carCard carMarketCard col-md-8">
-            <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
+    
+    <div class='col-md-12 mb20'>
+        <div class="myPeople peopleList driverList carMarketList">
+            <ul>
+                <li class="active">
+                    <a class="offerLink" href="/market/show-car-offer/id/<?= $offer['id']; ?>">
+                        <?php echo $car['name']; ?> 
+                    </a>
+                    <?php if($car['Team']['id']!=$authenticatedUser['Team']['id']):
+                        
+                        if(strlen($offer['highest_bid'])&&$offer['highest_bid']!=0){
+                            $populateBid = (int)($offer['highest_bid']*1.1);
+                        }
+                        else{
+                            $populateBid = $offer['asking_price'];
+                        }
+                    ?>
+                             <a class="btn myBtn bidCar" data-toggle="modal" data-bid="<?= $populateBid; ?>" data-target="#bidCar" data-name="<?= $car['name']; ?>" rel="<?= $offer['id']; ?>"><?= $this->translate('Bid car'); ?></a>
+                    <?php endif; ?>
+                </li>
+            </ul>
+                 
+        <div class="carCard carMarketCard col-md-8 active peopleMarketCard mr0">
+           
+                        
+            
+            <div class="col-md-7">
+                <?= TK_Helper::showCarParameters($car,$offer['Car']['Team']); ?>
+
+                    <div class="clearfix"></div>
+                
+                <div class="clearfix"></div>
+            </div>
+            
+            <div class="col-md-5 pr0 pl0 carParametersWrapper">
+                 <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
                 <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" class="carCardPhoto" />
             <?php } 
                 else{ ?>
                     <img src="http://dummyimage.com/340x220&amp;text=No+photo"  class="carCardPhoto" />
             <?php } ?>
-                    <strong>
-                        <a class="offerLink" href="/market/show-car-offer/id/<?= $offer['id']; ?>"><?= $car['name']; ?></a>
-                    </strong>
-            
-            <div class="col-md-6">
-                <div class="marketTeamName">
-                    Team: <?= $car['Team']['name']; ?>
-                </div>
-                <ul>
-                    <li>
-                        <?= $this->translate('Mileage');?>: <?php echo $car['mileage']; ?>
-                    </li>
-                    <li>
-                        <?= $this->translate('Value'); ?>:<?php echo $car['value']; ?>
-                    </li>
-                    <li>
-                        <?= $this->translate('Upkeep'); ?>: <?php echo $car['upkeep']; ?>
-                    </li>
-                </ul>
-                
-            <!--<a href="/market/bid-car/id/<?php echo $offer['id']; ?>">Zalicytuj</a>-->
-                <?php if($car['Team']['id']!=$authenticatedUser['Team']['id']): ?>
-                <?php
-                if(strlen($offer['highest_bid'])&&$offer['highest_bid']!=0){
-                    $populateBid = (int)($offer['highest_bid']*1.1);
-                }
-                else{
-                    $populateBid = $offer['asking_price'];
-                }
-                ?>
-                    <a class="btn myBtn bidCar" data-toggle="modal" data-bid="<?= $populateBid; ?>" data-target="#bidCar" data-name="<?= $car['name']; ?>" rel="<?= $offer['id']; ?>"><?= $this->translate('Bid car'); ?></a>
-                <?php endif; ?>
-                <div class="clearfix"></div>
-            </div>
-            
-            <div class="col-md-6 pr0 pl0 carParametersWrapper">
-                <div class="carParameters">
-                     <table>
-                        <tr>
-                            <td>brand:</td>
-                            <td><?php echo $car['Model']['name']; ?></td>
-                        </tr>
-                        <tr>
-                            <td>capacity</td>
-                            <td><?php echo $car['Model']['capacity'];?></td>
-                        </tr>
-                        <tr>
-                            <td>horse power</td>
-                            <td><?php echo $car['Model']['horsepower'];?></td>
-                        </tr>
-                        <tr>
-                            <td>v-max</td>
-                            <td><?php echo $car['Model']['max_speed'];?></td>
-                        </tr>
-                        <tr>
-                            <td>acceleration</td>
-                            <td><?php echo $car['Model']['acceleration'];?></td>
-                        </tr>
-
-                    </table>
-                </div>
             </div>
         <div class='clearfix'></div>
         </div>
+            <div class='col-md-1'></div>
         <div class="col-md-3 peopleMarketSmallCard">
             
             <table>
@@ -133,6 +107,8 @@
             </table>
         </div>
         <div class='clearfix'></div>
+        </div>
+    </div>
     <?php endforeach; ?>
 </div>
 
