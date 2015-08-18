@@ -118,11 +118,11 @@
                 <li>
                     <a class="active" rel="results" href="javascript:void(0)"><?= "Results"?></a>
                 </li>
-            <?php foreach($rallyStagesResults as $key => $stage): ?>
-                <li>
-                    <a class="<?php echo ($stage['finished']==0)?"disabled":""; ?>" rel="<?= $stage['rally_id']."_".$stage['id']; ?>" href="javascript:void(0)"><?= "Stage ".($key+1)." - ".$stage['name']; ?></a>
-                </li>
-            <?php endforeach; ?>
+                <?php foreach($rallyStagesResults as $key => $stage): ?>
+                    <li>
+                        <a class="<?php echo ($stage['finished']==0)?"disabled":""; ?>" rel="<?= $stage['rally_id']."_".$stage['id']; ?>" href="javascript:void(0)"><?= "Stage ".($key+1)." - ".$stage['name']; ?></a>
+                    </li>
+                <?php endforeach; ?>
         </ul>
     </div>
 </div>

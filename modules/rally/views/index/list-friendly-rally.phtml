@@ -1,38 +1,50 @@
 <div class="mainUserBox rallyList">
     <h4 class="boxHeader"><?= $this->translate('Friendly rallies'); ?></h4>
     <a class='createFriendly btn btn-primary' href="/rally/create-friendly-rally/"><?= $this->translate('Create friendly rally'); ?></a>
-           
-<table>
-<?php foreach($rallies as $rally): ?>
-    <tr>
-	<td>
-	    <?php echo TK_Text::timeFormat($rally['date'],'d-m-Y H:i'); ?>
-	</td>
-	<td>
-	    <a href="/rally/show-friendly-rally/slug/<?php echo $rally['slug']; ?>"><?php echo $rally['name'];?></a>
-	</td>
-	<td>
-	    <?php 
-            if($rally['Friendly']['invite_only']){
-                echo "<span class='label label-danger'>".$this->translate('Private')."</span>";
-            }
-            else{
-                echo "<span class='label label-success'>".$this->translate('Public')."</span>";
-            }
-            ?>
-	</td>
-        <td>
-            <?= count($rally['Crews'])." ".$this->translate("crews"); ?>
-        </td>
-        <td>
-            <?php if((is_array($futureTeamRallies)&&in_array($rally['id'],$futureTeamRallies))||$rally['id']==$futureTeamRallies){
-                echo "<span class='label label-info'>".$this->translate('Joined')."</span>"; 
-            } ?>
-                <?php if((is_array($myInvitations)&&in_array($rally['id'],$myInvitations))){
-                echo "<span class='label label-warning'>".$this->translate('Invited')."</span>"; 
-            } ?>
-        </td>
-    </tr>
-<?php endforeach; ?>
-</table>
+    <?php if(count($rallies)>0){ ?>
+        <table class='table'>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Date</td>
+                    <td>Time</td>
+                    <td>Participants</td>                
+                    <td>Additional info</td>
+
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($rallies as $rally): ?>
+                    <tr>
+                        <td class="rallyName">
+                            <a href="/rally/show-rally/slug/<?php echo $rally['slug']; ?>"><?php echo $rally['name'];?></a>
+
+                        </td>
+                        <td>
+                            <?php echo TK_Text::timeFormat($rally['date'],'d/m/Y'); ?>
+                        </td>
+                        <td>
+                            <?php echo TK_Text::timeFormat($rally['date'],'H:i'); ?>
+                        </td>
+                        <td>
+                            <?= count($rally['Crews'])." ".$this->translate("crews"); ?>
+                        </td>
+                        <td>
+                            <?php if($rally['finished']){ ?>
+                                <span class="label label-primary">Rally finished</span>
+                            <?php } ?>
+
+                            <?php if($rally['big_awards']==1): ?>
+                                <img src="/images/b_letter_small.gif" alt="Big awards" title="Big awards" />
+                            <?php endif; ?>
+
+                            <?php if((is_array($futureTeamRallies)&&in_array($rally['id'],$futureTeamRallies))||$rally['id']==$futureTeamRallies){
+                                echo "<span class='label label-info'>".$this->translate('Joined')."</span>"; 
+                            } ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php } ?>
 </div>

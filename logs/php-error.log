@@ -2348,3 +2348,258 @@ Stack trace:
 [17-Aug-2015 18:22:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
 [17-Aug-2015 18:22:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
 [17-Aug-2015 18:22:51 Europe/Berlin] PHP Notice:  Undefined variable: populateBid in C:\xampp\htdocs\ral\modules\market\views\index\show-car-market.phtml on line 22
+[18-Aug-2015 12:58:52 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 12:58:52 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 12:58:52 Europe/Berlin] PHP Notice:  Undefined variable: myInvitations in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 37
+[18-Aug-2015 13:11:21 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[18-Aug-2015 13:11:21 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 192
+[18-Aug-2015 13:14:17 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 209
+[18-Aug-2015 13:14:17 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 209
+[18-Aug-2015 13:14:59 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 212
+[18-Aug-2015 13:14:59 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 212
+[18-Aug-2015 13:17:05 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:17:05 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:17:35 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:17:35 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:17:42 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:17:42 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:18:06 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:18:06 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:18:21 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:18:21 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:18:29 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:18:29 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:18:43 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:18:43 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:18:57 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:18:57 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:19:09 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:19:09 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:19:16 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:19:16 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:19:21 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:19:21 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:19:42 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:19:42 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:19:49 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:19:49 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 225
+[18-Aug-2015 13:20:16 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:20:16 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:20:36 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:20:36 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:20:52 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:20:52 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:21:31 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:21:31 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:21:37 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:21:37 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:22:48 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:22:48 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:23:10 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:23:10 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:23:34 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:23:34 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:24:34 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:24:34 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:24:42 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:24:42 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:24:55 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:24:55 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:24:58 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:24:58 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 227
+[18-Aug-2015 13:27:33 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 280
+[18-Aug-2015 13:27:33 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 280
+[18-Aug-2015 13:27:52 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 281
+[18-Aug-2015 13:27:52 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 281
+[18-Aug-2015 13:28:07 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 282
+[18-Aug-2015 13:28:07 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 282
+[18-Aug-2015 13:28:16 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 282
+[18-Aug-2015 13:28:16 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 282
+[18-Aug-2015 13:29:39 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 325
+[18-Aug-2015 13:29:39 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 325
+[18-Aug-2015 13:32:38 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 291
+[18-Aug-2015 13:32:38 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 291
+[18-Aug-2015 13:33:26 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 298
+[18-Aug-2015 13:33:26 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 298
+[18-Aug-2015 13:33:58 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 298
+[18-Aug-2015 13:33:58 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 298
+[18-Aug-2015 13:34:16 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 298
+[18-Aug-2015 13:34:16 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 298
+[18-Aug-2015 13:35:20 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 297
+[18-Aug-2015 13:35:20 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 297
+[18-Aug-2015 13:35:26 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 297
+[18-Aug-2015 13:35:26 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 297
+[18-Aug-2015 13:35:46 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 297
+[18-Aug-2015 13:35:46 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 297
+[18-Aug-2015 13:36:47 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 303
+[18-Aug-2015 13:36:47 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 303
+[18-Aug-2015 13:37:19 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 303
+[18-Aug-2015 13:37:19 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 303
+[18-Aug-2015 13:38:23 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 305
+[18-Aug-2015 13:38:23 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 305
+[18-Aug-2015 13:39:03 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 315
+[18-Aug-2015 13:39:03 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 315
+[18-Aug-2015 13:39:55 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 315
+[18-Aug-2015 13:39:55 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 315
+[18-Aug-2015 13:40:11 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 316
+[18-Aug-2015 13:40:11 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 316
+[18-Aug-2015 13:40:23 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 314
+[18-Aug-2015 13:40:23 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 314
+[18-Aug-2015 13:40:39 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 315
+[18-Aug-2015 13:40:39 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 315
+[18-Aug-2015 13:41:09 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 315
+[18-Aug-2015 13:41:09 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 315
+[18-Aug-2015 13:42:15 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 317
+[18-Aug-2015 13:42:15 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 317
+[18-Aug-2015 13:42:36 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 317
+[18-Aug-2015 13:42:36 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 317
+[18-Aug-2015 13:42:46 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 317
+[18-Aug-2015 13:42:46 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 317
+[18-Aug-2015 13:43:55 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 317
+[18-Aug-2015 13:43:55 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 317
+[18-Aug-2015 13:45:19 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 324
+[18-Aug-2015 13:45:19 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 324
+[18-Aug-2015 13:46:00 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 324
+[18-Aug-2015 13:46:00 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 324
+[18-Aug-2015 13:46:17 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 324
+[18-Aug-2015 13:46:17 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 324
+[18-Aug-2015 13:47:36 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 324
+[18-Aug-2015 13:47:36 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 324
+[18-Aug-2015 13:48:10 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 324
+[18-Aug-2015 13:48:10 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 324
+[18-Aug-2015 13:50:00 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 324
+[18-Aug-2015 13:50:00 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 324
+[18-Aug-2015 17:04:27 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 299
+[18-Aug-2015 17:04:27 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 299
+[18-Aug-2015 17:04:34 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 299
+[18-Aug-2015 17:04:34 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 299
+[18-Aug-2015 17:04:42 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 299
+[18-Aug-2015 17:04:42 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 299
+[18-Aug-2015 17:05:10 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 299
+[18-Aug-2015 17:05:10 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 299
+[18-Aug-2015 17:06:54 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:06:54 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:07:43 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:07:43 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:08:08 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:08:08 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:08:15 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:08:15 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:09:13 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:09:13 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:09:37 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:09:37 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:10:03 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:10:03 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:10:23 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:10:23 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:10:56 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:10:56 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:11:23 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:11:23 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:11:43 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:11:43 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 306
+[18-Aug-2015 17:11:48 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:11:48 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:11:48 Europe/Berlin] PHP Notice:  Undefined variable: myInvitations in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 37
+[18-Aug-2015 17:18:40 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:18:40 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:18:40 Europe/Berlin] PHP Notice:  Undefined variable: myInvitations in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 37
+[18-Aug-2015 17:19:35 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:19:35 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:19:35 Europe/Berlin] PHP Notice:  Undefined variable: myInvitations in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 37
+[18-Aug-2015 17:19:57 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:19:57 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:19:57 Europe/Berlin] PHP Notice:  Undefined variable: myInvitations in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 37
+[18-Aug-2015 17:21:26 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:21:26 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:21:26 Europe/Berlin] PHP Notice:  Undefined variable: myInvitations in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 37
+[18-Aug-2015 17:26:11 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:26:11 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:26:11 Europe/Berlin] PHP Notice:  Undefined variable: myInvitations in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 37
+[18-Aug-2015 17:27:55 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:27:55 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:27:55 Europe/Berlin] PHP Notice:  Undefined variable: myInvitations in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 37
+[18-Aug-2015 17:28:00 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:28:00 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:28:00 Europe/Berlin] PHP Notice:  Undefined variable: myInvitations in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 37
+[18-Aug-2015 17:28:04 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:28:04 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 34
+[18-Aug-2015 17:28:04 Europe/Berlin] PHP Notice:  Undefined variable: myInvitations in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 37
+[18-Aug-2015 17:28:17 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[18-Aug-2015 17:28:17 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[18-Aug-2015 17:28:32 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[18-Aug-2015 17:28:32 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[18-Aug-2015 17:29:30 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[18-Aug-2015 17:29:30 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[18-Aug-2015 17:32:45 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 275
+[18-Aug-2015 17:32:45 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 275
+[18-Aug-2015 17:33:20 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 275
+[18-Aug-2015 17:33:20 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 275
+[18-Aug-2015 17:54:15 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to UserService::quickAuthenticate() must be an instance of User_Model_Doctrine_User, boolean given, called in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 222 and defined in C:\xampp\htdocs\ral\modules\user\services\User.php on line 41
+[18-Aug-2015 17:54:45 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 265
+[18-Aug-2015 17:54:45 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 265
+[18-Aug-2015 17:57:07 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 300
+[18-Aug-2015 17:57:07 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 300
+[18-Aug-2015 17:57:23 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 300
+[18-Aug-2015 17:57:23 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 300
+[18-Aug-2015 17:57:47 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 301
+[18-Aug-2015 17:57:47 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 301
+[18-Aug-2015 17:58:20 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[18-Aug-2015 17:58:20 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[18-Aug-2015 17:58:50 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[18-Aug-2015 17:58:50 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[18-Aug-2015 17:58:52 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 301
+[18-Aug-2015 17:58:52 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 301
+[18-Aug-2015 17:59:48 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 307
+[18-Aug-2015 17:59:48 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 307
+[18-Aug-2015 18:01:17 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 309
+[18-Aug-2015 18:01:17 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 309
+[18-Aug-2015 18:01:41 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 309
+[18-Aug-2015 18:01:41 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 309
+[18-Aug-2015 18:01:58 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 310
+[18-Aug-2015 18:01:58 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 310
+[18-Aug-2015 18:02:16 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 311
+[18-Aug-2015 18:02:16 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 311
+[18-Aug-2015 18:02:23 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 311
+[18-Aug-2015 18:02:23 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 311
+[18-Aug-2015 18:02:29 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 311
+[18-Aug-2015 18:02:29 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 311
+[18-Aug-2015 18:03:57 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 314
+[18-Aug-2015 18:03:57 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 314
+[18-Aug-2015 18:04:20 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 314
+[18-Aug-2015 18:04:20 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 314
+[18-Aug-2015 18:04:49 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 314
+[18-Aug-2015 18:04:49 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 314
+[18-Aug-2015 18:10:10 Europe/Berlin] PHP Notice:  Undefined variable: rallyStagesResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 221
+[18-Aug-2015 18:10:10 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 221
+[18-Aug-2015 18:10:10 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 355
+[18-Aug-2015 18:10:10 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 355
+[18-Aug-2015 18:10:45 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 355
+[18-Aug-2015 18:10:45 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 355
+[18-Aug-2015 18:12:16 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 351
+[18-Aug-2015 18:12:16 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 351
+[18-Aug-2015 18:13:55 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:13:55 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:14:08 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:14:08 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:14:18 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:14:18 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:14:36 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:14:36 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:15:01 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:15:01 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:15:12 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:15:12 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:15:34 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:15:34 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:16:04 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:16:04 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:16:25 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:16:25 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:16:34 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:16:34 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 354
+[18-Aug-2015 18:20:08 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 338
+[18-Aug-2015 18:20:08 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 338
+[18-Aug-2015 18:21:14 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 341
+[18-Aug-2015 18:21:14 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 341

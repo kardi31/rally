@@ -140,6 +140,7 @@ class Rally_Index extends Controller{
         }
         
         
+        
         $this->view->assign('isParticipant',$isParticipant);
         $this->view->assign('startDate',$startDate);
         $this->view->assign('signUpFinish',$signUpFinish);
@@ -454,6 +455,8 @@ class Rally_Index extends Controller{
             $this->view->assign('participant',true);
         }
         
+        $rallyStagesResults = $rallyService->getRallyStagesResults($rally['id']);
+        $this->view->assign('rallyStagesResults',$rallyStagesResults);
         
         $this->view->assign('isParticipant',$isParticipant);
         $this->view->assign('startDate',$startDate);

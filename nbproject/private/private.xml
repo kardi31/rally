@@ -12,7 +12,6 @@
             <file>file:/C:/xampp/htdocs/ral/modules/user/services/Notification.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/services/Settings.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/admin/add-big-rally.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/car-monitor.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Helper.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
@@ -95,7 +94,6 @@
             <file>file:/C:/xampp/htdocs/ral/modules/team/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/cron/controllers/AdminController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-car-offer.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/data/schema/schema.yml</file>
             <file>file:/C:/xampp/htdocs/ral/views/_head_main.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/show-forum.phtml</file>
@@ -161,6 +159,10 @@
             <file>file:/C:/xampp/htdocs/ral/public/css/rally-custom.css</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-offer.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-market.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/views/index/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-car-offer.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/car-monitor.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/rally-result.phtml</file>
         </group>
     </open-files>
 </project-private>

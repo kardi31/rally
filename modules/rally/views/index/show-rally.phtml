@@ -29,26 +29,61 @@
         }
     }
 ?>
-
+<?php $surfaces = $rally['Surfaces']; ?>
 <div class="mainUserBox showRallyWrapper">
     <h4 class="boxHeader"><?php  echo $rally['name']; ?></h4>
     <div class="showRallyBox <?php if(!$rally['finished']) echo "active"?> mainUserBox" id="details">
+        <div class='rallyInfo'>
         <?php if(strlen($rally['description'])) echo $rally['description']."<br /><br />"; ?>
-       
-        <?php if(!$rally['big_awards']){ ?>
-       <?= $this->translate('Prize pool');?> : <?php echo $prizePool."$"; ?><br />
-        <?php } ?>
-        <?= $this->translate('Signed crews');?> : <?php echo $crewCounter; ?><br />
-        <?= $this->translate('Race start');?> : <?php echo $startDate->format('d/m/Y H:i'); ?><br />
-        <?= $this->translate('Sign up finish');?> : <?php echo $signUpFinish->format('d/m/Y H:i'); ?><br />
-        <?= $this->translate('Surface');?> : <?php
-        foreach($rally['Surfaces'] as $key=>$surface):
-            if($key!=0)
-                echo ", ";
-          echo $surface['surface']." ".round($surface['percentage'])."%";  
-            
-        endforeach;
-        ?>
+            <table>
+                <tr>
+                    <td>
+                        <?php if(!$rally['big_awards']){ 
+                            echo $this->translate('Prize pool').": ".$prizePool."$"; 
+                            } ?>
+                    </td>
+                    <td>
+                        <?= $this->translate('Surface');?> : 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         <?= $this->translate('Signed crews'); ?> : <?php echo $crewCounter; ?>
+                    </td>
+                    <td>
+                         <?php 
+                            if(isset($surfaces[0])){
+                                echo $surfaces[0]['surface']." ".round($surfaces[0]['percentage'])."%";
+                            }
+                         ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         <?= $this->translate('Race start');?> : <?php echo $startDate->format('d/m/Y H:i'); ?>
+                    </td>
+                    <td>
+                         <?php 
+                            if(isset($surfaces[1])){
+                                echo $surfaces[1]['surface']." ".round($surfaces[1]['percentage'])."%";
+                            }
+                         ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <?= $this->translate('Sign up finish');?> : <?php echo $signUpFinish->format('d/m/Y H:i'); ?>
+                    </td>
+                    <td>
+                         <?php 
+                            if(isset($surfaces[2])){
+                                echo $surfaces[2]['surface']." ".round($surfaces[2]['percentage'])."%";
+                            }
+                         ?>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <br />
         <?php if(isset($isParticipant)&&$isParticipant): ?>
             <span class="label label-success"><?= $this->translate('You already participate in this rally.');?></span>
@@ -113,48 +148,89 @@
         endif; ?>
     </div>
     <div class="showRallyBox mainUserBox" id="stages">
-        <ul class="rallyStages">
-            <?php foreach($rally['Stages'] as $key => $stage): ?>
-            <li><?= $stage['name']." - ".$stage['length']; ?> km 
-                <br /><i class="fa fa-clock-o"></i> 
-                <?php 
-                if($key!=0){
-                    $startDate->add(new DateInterval('PT15M'));
+        <div class='stageListInfo'>
+            <div class='col-md-6'>
+                Name
+            </div>
+            <div class='col-md-3'>
+                  Length
+            </div>
+            <div class='col-md-3'>
+                Time
+            </div>
+        </div>
+        <div class='clearfix'></div>
+        <div class="stageList" id="accordion" role="tablist" aria-multiselectable="true">
+            
+            <?php foreach($rallyStagesResults as $key => $stage):
+                if(count($stage['Results'])>0){
+                    $hasResults = true;
                 }
-                echo $startDate->format("H:i"); 
+                else{
+                    $hasResults = false;
+                }
                 ?>
-            <br /><br />
-            </li>
+            <div class='stageRow <?php echo $hasResults?'':'inactive'; ?>'>
+               <div class="stageListInfo">  
+                            <div class='col-md-1'>
+                                <?= "SS".($key+1) ?>
+                            </div>
+                            <div class='col-md-5'>
+                                <?= $stage['name']; ?>
+                            </div>
+                            <div class='col-md-3'>
+                                  <?= $stage['length']; ?> km 
+                            </div>
+                            <div class='col-md-3'>
+                                <i class="fa fa-clock-o"></i> 
+                                  <?php 
+                                  if($key!=0){
+                                      $startDate->add(new DateInterval('PT15M'));
+                                  }
+                                  echo $startDate->format("H:i"); 
+                                  ?>
+                            </div>
+                            <div class='clearfix'></div>
+                        </div>
+            </div>
             <?php endforeach; ?>
-        </ul>
+          </div>
+        
+        
+        
+        
+        
     </div>
     <div class="showRallyBox mainUserBox" id="crews">
-        <table>
-            <tr>
-                <th></th>
-                <th><?= $this->translate('Crew');?></th>
-                <th><?= $this->translate('Car');?></th>
-                <th><?= $this->translate('Team');?></th>
-            </tr>
-            <?php foreach($rally['Crews'] as $key => $crew): ?>
-                    <tr>
-                        <td>
-                            <?= ($key+1)."."; ?>
-                        </td>
-                        <td>
-                            <?php echo $crew['Driver']['last_name']." ".$crew['Driver']['first_name']; ?> - 
-                            <?php echo $crew['Pilot']['last_name']." ".$crew['Pilot']['first_name']; ?>
-                        </td>
-                        <td>
-                            <?php echo $crew['Car']['name']; ?>
-                        </td>
-                        <td>
-                            <?php echo $crew['Team']['name']; ?>
-                        </td>
-                    </tr>
-            <?php endforeach; ?>
-
-            </table>
+        <table class="rallyCrews">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td><?= $this->translate('Crew');?></td>
+                    <td><?= $this->translate('Car');?></td>
+                    <td><?= $this->translate('Team');?></td>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($rally['Crews'] as $key => $crew): ?>
+                        <tr>
+                            <td>
+                                <?= ($key+1)."."; ?>
+                            </td>
+                            <td>
+                                <?php echo $crew['Driver']['last_name']." ".$crew['Driver']['first_name']; ?> - 
+                                <?php echo $crew['Pilot']['last_name']." ".$crew['Pilot']['first_name']; ?>
+                            </td>
+                            <td>
+                                <?php echo $crew['Car']['name']; ?>
+                            </td>
+                            <td>
+                                <?php echo $crew['Team']['name']; ?>
+                            </td>
+                        </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </div>
     <div class="showRallyBox mainUserBox" id="prizes">
         <?php if($rally['big_awards']): ?>
@@ -179,43 +255,139 @@
                         <?php
                 endforeach; 
             else: ?>
-                <h3><?= $this->translate('Prizes');?></h3>
-                <?php 
-                foreach($rallyPrizes as $position => $rallyPrize): 
-                    echo $this->translate('Position')." ".$position." - ";
-                    echo $rallyPrize."$ <br /><br />";
-                endforeach; 
-            endif; ?>
-    </div>
-    <div class="showRallyBox rallyResultWrapper mainUserBox <?php if($rally['finished']) echo "active"?>" id="result">
-        <table>
-                    <?php foreach($rallyResults as $result): ?>
-                        <tr>
-                            <td>
-                                <?php if($result['out_of_race']==0){
-                                    echo $result['position'];
-                                }
-                                ?>
-                            </td>
-                            <td>
-                                <?php echo $result['Crew']['Team']['name']; ?>
-                            </td>
-                            <td>
-                                <?php echo $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name']; ?> - 
-                                <?php echo $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name']; ?>
-                            </td>
-                            <td>
-                                 <?php if($result['out_of_race']==0){
-                                    echo $result['total_time'];
-                                }
-                                else{
-                                    echo $this->translate("Accident on stage no")." ".$result['stage_out_number'];
-                                }
-                                ?>
-                            </td>
-                        </tr>
+                <h3 class="h4"><?= $this->translate('Prizes');?></h3>
+                <table class="prizeTable">
+                    <?php foreach($rallyPrizes as $position => $rallyPrize): ?>
+                    <tr>
+                        <td>
+                            <?= $position; ?>.
+                        </td>
+                        <td>
+                            <?= $rallyPrize; ?> $
+                        </td>
+                    </tr>
                     <?php endforeach; ?>
                 </table>
+            <?php endif; ?>
+    </div>
+    <div class="showRallyBox rallyResultWrapper mainUserBox <?php if($rally['finished']) echo "active"?>" id="result">
+        
+        
+        <h3 class="h4">Overall results</h3>
+        <table class="mb20">
+            <?php foreach($rallyResults as $result): ?>
+                <tr>
+                    <td>
+                        <?php if($result['out_of_race']==0){
+                            echo $result['position'];
+                        }
+                        ?>
+                    </td>
+                    <td>
+                        <?php echo $result['Crew']['Team']['name']; ?>
+                    </td>
+                    <td>
+                        <?php echo $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name']; ?> - 
+                        <?php echo $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name']; ?>
+                    </td>
+                    <td>
+                         <?php if($result['out_of_race']==0){
+                            echo $result['total_time'];
+                        }
+                        else{
+                            echo $this->translate("Accident on stage no")." ".$result['stage_out_number'];
+                        }
+                        ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+        <h3 class="h4">Stage results</h3>
+        <div class='stageListInfo'>
+            <div class='col-md-6'>
+                Name
+            </div>
+            <div class='col-md-3'>
+                  Length
+            </div>
+            <div class='col-md-3'>
+                Time
+            </div>
+        </div>
+        <div class='clearfix'></div>
+        <div class="stageList" id="accordion" role="tablist" aria-multiselectable="true">
+            
+            <?php foreach($rallyStagesResults as $key => $stage):
+                if(count($stage['Results'])>0){
+                    $hasResults = true;
+                }
+                else{
+                    $hasResults = false;
+                }
+                ?>
+            <div class='stageRow <?php echo $hasResults?'':'inactive'; ?>'>
+                <div role="tab" id="stage<?= $stage['id']; ?>">
+                    <a role="button" class='showAccordion collapsed <?php echo $hasResults?'':'inactive'; ?>' data-toggle="collapse" data-parent="#accordion" href="#stage<?= $stage['id']; ?>info" aria-expanded="true" aria-controls="stage<?= $stage['id']; ?>info">
+                        <div class="stageListInfo">  
+                            <div class='col-md-1'>
+                                <?= "SS".($key+1) ?>
+                            </div>
+                            <div class='col-md-5'>
+                                <?= $stage['name']; ?>
+                            </div>
+                            <div class='col-md-3'>
+                                  <?= $stage['length']; ?> km 
+                            </div>
+                            <div class='col-md-3'>
+                                <i class="fa fa-clock-o"></i> 
+                                  <?php 
+                                  if($key!=0){
+                                      $startDate->add(new DateInterval('PT15M'));
+                                  }
+                                  echo $startDate->format("H:i"); 
+                                  ?>
+                            </div>
+                            <div class='clearfix'></div>
+                        </div>
+                    </a>
+                </div>
+                <div id="stage<?= $stage['id']; ?>info" class="panel-collapse collapse" role="tabpanel" aria-labelledby="stage<?= $stage['id']; ?>info">
+                  <div class="panel-body">
+                      <table class="rallyStages">
+                          <?php foreach($stage['Results'] as $key => $result): ?>
+                                  <tr>
+                                      <td>
+                                          <?= ($key+1)."."; ?>
+                                      </td>
+                                      <td>
+                                          <?php echo $result['Crew']['Team']['name']; ?>
+                                      </td>
+                                      <td>
+                                          <?php echo $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name']; ?> - 
+                                          <?php echo $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name']; ?>
+                                      </td>
+                                      <td>
+                                           <?php 
+                                           if($result['out_of_race']==0){
+                                              echo $result['base_time'];
+                                              if($result['Accident']){
+                                                  echo '<br /><br /><i class="fa fa-exclamation-circle"></i> '.$result['Accident']['name'];
+                                              }
+                                          }
+                                          else{
+                                              echo "Out of race - ".$result['Accident']['name'];
+                                          }
+                                          ?>
+                                      </td>
+                                  </tr>
+                          <?php endforeach; ?>
+                      </table>
+                  </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+          </div>
+        
     </div>
     <div class="rallyButtons">
         <ul>
@@ -240,3 +412,11 @@
         </ul>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+       $('.showAccordion.inactive').click(function(){
+          return false; 
+       });
+    });
+</script>

@@ -782,6 +782,18 @@ footer{
     .RallyStages li{
         display: inline-block;
     }
+    .rallyList tr td:first-of-type{
+        padding-left:10px;
+    }
+    .rallyList tbody tr:nth-child(even) td{
+        background:#868686;
+    }
+    .rallyList tbody tr:nth-child(odd) td{
+        background:#686868;
+    }
+    .rallyList .table{
+        width:auto;
+    }
     .rallyList .finished,.rallyList .finished a:not(.label){
         color:#999;
     }
@@ -789,6 +801,26 @@ footer{
         width:80%;
         margin-top:0px;
         float:left;
+    }
+    .showRallyBox table.rallyStages{
+        width:100%;
+    }
+    .showRallyBox table.rallyStages td{
+        /*width:50%;*/
+        padding:5px;
+        background:#868686;
+    }
+    
+    .showRallyBox > div.rallyInfo{
+        background:#686868;
+        padding:10px;
+        
+    }
+    div.rallyInfo table td{
+        width:50%;
+    }
+    div.rallyInfo table{
+        width:100%;
     }
     .rallyButtons{
         width:20%;
@@ -801,7 +833,22 @@ footer{
         
     }
    
+    table.rallyCrews{
+        width:100%;
+        background:#868686;
+    }
     
+    table.rallyCrews td{
+        padding:5px 10px;
+    }
+    
+    table.rallyCrews thead td{
+        background:#504f4f;
+    }
+    
+    .showAccordion a:hover,.showAccordion a:visited{
+        color:#f3f3f3;
+    }
     .rallyButtons a{
         display:block;
         padding:10px 10px;
@@ -838,9 +885,31 @@ footer{
         margin-top:0px;
         margin-bottom:20px;
     }
+    .stageList{
+        background:#686868;
+    }
+    .stageListInfo div{
+        padding-top:5px;
+        padding-bottom: 5px;
+    }
+    .sign-up-rally{
+        text-align:center;
+        width:300px;
+        margin:0 auto;
+    }
+    .sign-up-rally label{
+        text-align:left;
+    }
+    
+    .stageRow.inactive div{
+        color:#c4c4c4;
+    }
+    .stageRow:not(:last-of-type){
+        border-bottom:1px solid #868686;
+    }
     
     .sign-up-rally .formElemWrapper select{
-        width:50%;
+        width:60%;
     }
     .sign-up-rally .formElemWrapper{
         margin:15px 0px;
@@ -848,29 +917,51 @@ footer{
     .sign-up-rally .formElemWrapper .col-md-3{
         padding-left:0px;
     }
-    #crews td{
+/*    #crews td{
         padding:5px
-    }
+    }*/
     
     .prizeCar{
         max-width:110px;
+    }
+    
+    .prizeTable{
+        background:#686868;
+        width:100%;
+    }
+    .prizeTable td{
+        padding:5px;
+        border-bottom:1px solid #868686;
+    }
+    .prizeTable td:first-of-type{
+        width:50px;
     }
     
 /*
     3.4 Rally result
 */
 .rallyResultWrapper table tr td,.rallyResultWrapper table tr th{
-    padding:20px 5px;
-    min-width:20px;
+    padding:5px 5px;
     text-align:center;
+}
+
+.rallyResultWrapper table tr:nth-of-type(odd){
+    background:#686868;
+}
+
+.rallyResultWrapper table tr:nth-of-type(even){
+    background:#868686;
+}
+.rallyResultWrapper table{
+    width:100%;
 }
 .rallyResultWrapper table tr td{
     vertical-align:top;
 }
 .rallyResultWrapper table tr td:first-of-type,.rallyResultWrapper table tr th:first-of-type{
     /*padding:3px 15px;*/
-    padding:20px 0px;
-    min-width:10px;
+    /*padding:20px 0px;*/
+    /*min-width:10px;*/
     text-align:center;
 }
 
@@ -1118,7 +1209,8 @@ margin-right: auto;
         margin-left:20px;
     }
     .rallyList td:not(:first-of-type){
-        padding:5px 20px;
+        padding:0px 20px;
+    vertical-align: middle;
     }
     .rallyList td.big{
         padding-right:10px;
