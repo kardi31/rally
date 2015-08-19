@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-people.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/public/plugins/bxslider/jquery.bxslider.css</file>
             <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-cars.phtml</file>
@@ -12,10 +13,8 @@
             <file>file:/C:/xampp/htdocs/ral/modules/user/services/Notification.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/services/Settings.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/admin/add-big-rally.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/car-monitor.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Helper.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/controllers/AdminController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/form/Thread.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/car/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/admin/list-rally.phtml</file>
@@ -25,7 +24,6 @@
             <file>file:/C:/xampp/htdocs/ral/library/TK/View.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/library/DataTables/CarOffer.php</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Element.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/account/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/form/Register.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/create-friendly-rally.phtml</file>
@@ -95,7 +93,6 @@
             <file>file:/C:/xampp/htdocs/ral/modules/team/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/cron/controllers/AdminController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-car-offer.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/data/schema/schema.yml</file>
             <file>file:/C:/xampp/htdocs/ral/views/_head_main.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/show-forum.phtml</file>
@@ -161,6 +158,13 @@
             <file>file:/C:/xampp/htdocs/ral/public/css/rally-custom.css</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-offer.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-market.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/views/index/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-car-offer.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/car-monitor.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/rally-result.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/my-league-rallies.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/plugins/datatables/jquery.dataTables.css</file>
         </group>
     </open-files>
 </project-private>

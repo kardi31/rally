@@ -140,6 +140,9 @@ class Rally_Index extends Controller{
         }
         
         
+        $rallyStagesResults = $rallyService->getRallyStagesResults($rally['id']);
+        $this->view->assign('rallyStagesResults',$rallyStagesResults);
+        
         $this->view->assign('isParticipant',$isParticipant);
         $this->view->assign('startDate',$startDate);
         $this->view->assign('signUpFinish',$signUpFinish);
@@ -155,26 +158,37 @@ class Rally_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
         
         $rallyService = parent::getService('rally','rally');
-        $rallies = $rallyService->getAllFutureRallies(Doctrine_Core::HYDRATE_RECORD,false,false);
+        $rallies = $rallyService->getAllFutureRallies(Doctrine_Core::HYDRATE_ARRAY,false,false);
         
         $futureTeamRallies = $rallyService->getAllFutureTeamRallies($user['Team']['id'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        $leagueRallies = $rallyService->getAllFutureLeagueRallies($user['Team']['league_name'],Doctrine_Core::HYDRATE_ARRAY);
 
+        $rallies = array_merge($rallies,$leagueRallies);
+        
+        
+        function ordbydate($a, $b)
+        {
+            return ($a["date"] < $b["date"])?-1:1;
+        }        
+        
+        usort($rallies,'ordbydate');
+        
         $this->view->assign('rallies',$rallies);
         $this->view->assign('futureTeamRallies',$futureTeamRallies);
     }
     
-    public function myLeagueRallies(){
-        
-        Service::loadModels('team', 'team');
-        $userService = parent::getService('user','user');
-        $user = $userService->getAuthenticatedUser();
-        
-        $rallyService = parent::getService('rally','rally');
-        $rallies = $rallyService->getAllFutureLeagueRallies($user['Team']['league_name'],Doctrine_Core::HYDRATE_ARRAY);
-        $futureTeamRallies = $rallyService->getAllFutureTeamLeagueRallies($user['Team'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
-        $this->view->assign('rallies',$rallies);
-        $this->view->assign('futureTeamRallies',$futureTeamRallies);
-    }
+//    public function myLeagueRallies(){
+//        
+//        Service::loadModels('team', 'team');
+//        $userService = parent::getService('user','user');
+//        $user = $userService->getAuthenticatedUser();
+//        
+//        $rallyService = parent::getService('rally','rally');
+//        $rallies = $rallyService->getAllFutureLeagueRallies($user['Team']['league_name'],Doctrine_Core::HYDRATE_ARRAY);
+//        $futureTeamRallies = $rallyService->getAllFutureTeamLeagueRallies($user['Team'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+//        $this->view->assign('rallies',$rallies);
+//        $this->view->assign('futureTeamRallies',$futureTeamRallies);
+//    }
     
     public function myRallies(){
         
@@ -454,6 +468,8 @@ class Rally_Index extends Controller{
             $this->view->assign('participant',true);
         }
         
+        $rallyStagesResults = $rallyService->getRallyStagesResults($rally['id']);
+        $this->view->assign('rallyStagesResults',$rallyStagesResults);
         
         $this->view->assign('isParticipant',$isParticipant);
         $this->view->assign('startDate',$startDate);

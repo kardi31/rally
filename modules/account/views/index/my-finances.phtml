@@ -1,3 +1,4 @@
+
 <?php $financeTypes = TeamService::getInstance()->getFinanceTypes(); ?>
 <div class="mainUserBox ">
     <h4 class="boxHeader"><?= $this->translate('My finances'); ?></h4>
@@ -46,28 +47,69 @@
         <div class="advancedFinanceReport">
         <?php if($authenticatedUser['gold_member']): ?>
             <h5><?= $this->translate('Advanced report'); ?></h5>
-            <div class="col-md-6">
-                <h4><?= $this->translate('Incomes'); ?></h4>
-            </div>
-            <div class="col-md-6">
-                <h4><?= $this->translate('Expenses'); ?></h4>
-            </div>
-            <div>
+            <table class="table" id="advancedFinancialReport">
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Description</th>
+                        <th>Detailed type</th>
+                        <th>Type</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <?php foreach($financialReportAdvanced as $advancedReport):
                     ?>
-                    <div class="<?php echo ($advancedReport['income'])?'advancedReportIncome label label-success':'advancedReportExpense label label-danger';?>">
-                        <i class="fa fa-money" title="Amount"></i>
-                        <?php
-                        echo $advancedReport['amount']."$<br />";
-                        echo '<i class="fa fa-info-circle" title="Description"></i> '.$this->translate($advancedReport['description'])."<br />";
-                        echo '<i class="fa fa-list-alt" title="Type"></i>'.$this->translate($financeTypes[$advancedReport['detailed_type']])."<br />";
-                        echo '<i class="fa fa-calendar" title="Type"></i>'.$advancedReport['save_date']."<br />";
-                        ?>
-                    </div>
-                    <div class="clearfix"></div>
+                <tr>
+<!--                    <div class="<?php echo ($advancedReport['income'])?'advancedReportIncome label label-success':'advancedReportExpense label label-danger';?>">
+                        <i class="fa fa-money" title="Amount"></i>-->
+                        <td>
+                            <?= $advancedReport['amount']; ?>
+                        </td>
+                        <td>
+                            <?= $this->translate($advancedReport['description']); ?>
+                        </td>
+                        <td> 
+                            <?php if($advancedReport['income']){ ?>
+                                <span class="label label-success">Income</span>
+                            <?php } else { ?>
+                                <span class="label label-danger">Expense</span>
+                            <?php } ?>
+                            <?; ?>
+                        </td>
+                        <td>
+                            <?= $this->translate($financeTypes[$advancedReport['detailed_type']]); ?>
+                        </td>
+                        <td>
+                            <?= $advancedReport['save_date']; ?>
+                        </td>
+                </tr>
                 <?php endforeach; ?>
-            </div>
+            </tbody>
+            </table>
                     <div class="clearfix"></div>
+             <script src="/plugins/datatables/jquery.dataTables.js"></script>
+                <link rel="stylesheet" href="/plugins/datatables/jquery.dataTables.css">       
+                <script>
+                    $(document).ready(function(){
+                        $('#advancedFinancialReport').DataTable({
+
+                       "bLengthChange": false,
+                        "pagingType": "numbers",
+                        "lengthMenu": [[-1], ["All"]],
+        "order": [[ 3, "desc" ]],
+        
+  "columns": [
+    null,
+    null,
+    null,
+    null,
+    
+    { "width": "15%" },
+  ]
+                        });
+                    });
+                </script>
             <?php else: ?>
             <div class="noGoldAvancedReport">
                 <h5><?= $this->translate('Advanced report'); ?></h5>

@@ -1,35 +1,46 @@
 
 <div class="mainUserBox rallyList">
     <h4 class="boxHeader"><?= $this->translate('My league rallies'); ?></h4>
-    <table>
-        <?php foreach($rallies as $rally): ?>
-            <tr
-                <?php if($rally['finished'] && strtotime(date('Y-m-d H:i:s')) > strtotime($rally['date'])){
-                    echo ' class="finished" ';
-                } ?>
-                >
-                <td>
-                    <?php echo TK_Text::timeFormat($rally['date'],'d/m/Y H:i'); ?>
-                </td>
-                <td class="big">
-                    
-                    <?php if($rally['big_awards']==1): ?>
-                        <img src="/images/b_letter_small.gif" alt="Big awards" />
-                    <?php endif; ?>
-                </td>
-                <td class="rallyName">
-                    <a href="/rally/show-rally/slug/<?php echo $rally['slug']; ?>"><?php echo $rally['name'];?></a>
-                    
-                </td>
-                <td>
-                    <?= count($rally['Crews'])." ".$this->translate('crews'); ?>
-                </td>
-                <td>
-                    <?php if($rally['date']<=date('Y-m-d H:i:s')){ ?>
-                        <a href="/rally/rally-result/id/<?= $rally['id']; ?>" class="label label-primary">See results</a>
-                    <?php } ?>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
+    <?php if(count($rallies)>0){ ?>
+        <table class='table'>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Date</td>
+                    <td>Time</td>
+                    <td>Participants</td>                
+                    <td>Additional info</td>
+
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($rallies as $rally): ?>
+                    <tr>
+                        <td class="rallyName">
+                            <a href="/rally/show-rally/slug/<?php echo $rally['slug']; ?>"><?php echo $rally['name'];?></a>
+
+                        </td>
+                        <td>
+                            <?php echo TK_Text::timeFormat($rally['date'],'d/m/Y'); ?>
+                        </td>
+                        <td>
+                            <?php echo TK_Text::timeFormat($rally['date'],'H:i'); ?>
+                        </td>
+                        <td>
+                            <?= count($rally['Crews'])." ".$this->translate("crews"); ?>
+                        </td>
+                        <td>
+                            <?php if($rally['finished']){ ?>
+                                <span class="label label-primary">Rally finished</span>
+                            <?php } ?>
+
+                            <?php if((is_array($futureTeamRallies)&&in_array($rally['id'],$futureTeamRallies))||$rally['id']==$futureTeamRallies){
+                                echo "<span class='label label-info'>".$this->translate('Joined')."</span>"; 
+                            } ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php } ?>
 </div>

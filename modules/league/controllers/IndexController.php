@@ -21,8 +21,10 @@ class League_Index extends Controller{
         Service::loadModels('car', 'car');
 	
         $leagueService = parent::getService('league','league');
+        $rallyService = parent::getService('rally','rally');
         
         $league = TK_Text::dotDash($GLOBALS['urlParams']['id']);
+        $rallyService->getAllLeagueRallyResults($league);
         $leagueTable = $leagueService->getLeagueTable($league);
 	$this->view->assign('leagueTable',$leagueTable);
 	$this->view->assign('league',$league);

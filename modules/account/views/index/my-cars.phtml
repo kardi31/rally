@@ -13,7 +13,6 @@
 </script>
 
 <script src="/plugins/bxslider/jquery.bxslider.js"></script>
-<!-- bxSlider CSS file -->
 <link href="/plugins/bxslider/jquery.bxslider.css" rel="stylesheet" />
 
 <?php $team = $authenticatedUser['Team']; ?>
@@ -61,30 +60,8 @@
             <div class="changeCarName" id="changeCarName1">
                 <?php // echo $formCar1->renderForm(); ?>
             </div>-->
-                <div class="carParameters">
-                    <table>
-                        <tr>
-                            <td colspan="2"><?= $this->translate('brand'); ?>: <strong><?php echo $car['Model']['name']; ?></strong></td>
-                        </tr>
-                        <tr>
-                            <td><?= $this->translate('capacity'); ?>: <strong><?php echo $car['Model']['capacity'];?></strong></td>
-                            <td><?= $this->translate('Mileage');?>: <strong><?php echo $car['mileage']; ?></strong></td>
-                        </tr>
-                        <tr>
-                            <td><?= $this->translate('horse power'); ?>: <strong><?php echo $car['Model']['horsepower'];?></strong></td>
-                            <td><?= $this->translate('Value');?>:<strong><?php echo $car['value']; ?></strong></td>
-                        </tr>
-                        <tr>
-                            <td><?= $this->translate('v-max'); ?>: <strong><?php echo $car['Model']['max_speed'];?></strong></td>
-                            <td><?= $this->translate('Upkeep');?>: <strong><?php echo $car['upkeep']; ?></strong></td>
-                        </tr>
-                        <tr>
-                            <td><?= $this->translate('acceleration'); ?>: <strong><?php echo $car['Model']['acceleration'];?></strong></td>
-                            <td></td>
-                        </tr>
-
-                    </table>
-                </div>
+                <?= TK_Helper::showCarParameters($car); ?>
+                
                 <div class="clearfix"></div>
             <div class="carBtn">
                 <?php if(!$car['on_market']): ?>
@@ -97,10 +74,6 @@
                 </a>
             </div>
 
-            </div>
-            <div class="col-md-6 pr0 pl0 carParametersWrapper">
-
-                
             </div>
             <div class="clearfix"></div>
         </div>

@@ -32,34 +32,66 @@ class TK_Helper{
         return $result;
     }
     
-    public static function showCarParameters($car){
+    public static function showCarParameters($car,$team = false){
         $view = View::getInstance();
-        $html = '
+             $html = '
         <div class="carParameters">
                         <table>
                            <tr>
-                               <td>'.$view->translate('brand').':</td>
-                               <td>'.$car['name'].'</td>
+                               <td colspan="2">'.$view->translate('brand').': <strong>'.$car['Model']['name'].'</strong></td>
+                           </tr>
+                        ';
+             if($team){
+                 $html .= '<tr>
+                              <td class="pt10" colspan="2">'.$view->translate('team').': <strong>'.$team['name'].'</strong></td>
+                           </tr>';
+             }
+             $html .= '
+                           <tr>
+                               <td>'.$view->translate('capacity').': <strong>'.$car['Model']['capacity'].'</strong></td>
+                               <td>'.$view->translate('Mileage').': <strong>'.$car['mileage'].'</strong></td>
                            </tr>
                            <tr>
-                               <td>'.$view->translate('capacity').'</td>
-                               <td>'.$car['capacity'].'</td>
+                               <td>'.$view->translate('horse power').': <strong>'.$car['Model']['horsepower'].'</strong></td>
+                               <td>'.$view->translate('Value').': <strong>'.$car['value'].'</strong></td>
                            </tr>
                            <tr>
-                               <td>'.$view->translate('horse power').'</td>
-                               <td>'.$car['horsepower'].'</td>
+                               <td>'.$view->translate('v-max').': <strong>'.$car['Model']['max_speed'].'</strong></td>
+                               <td>'.$view->translate('Upkeep').': <strong>'.$car['upkeep'].'</strong></td>
                            </tr>
                            <tr>
-                               <td>'.$view->translate('v-max').'</td>
-                               <td>'.$car['max_speed'].'</td>
-                           </tr>
-                           <tr>
-                               <td>'.$view->translate('acceleration').'</td>
-                               <td>'.$car['acceleration'].'</td>
+                               <td>'.$view->translate('acceleration').': <strong>'.$car['Model']['acceleration'].'</strong></td>
+                               <td></td>
                            </tr>
 
                        </table>
                    </div>';
+       
+        return $html;
+    }
+    
+    public static function showCarModelParameters($model,$team = false){
+        $view = View::getInstance();
+             $html = '
+        <div class="carParameters">
+                        <table>
+                           <tr>
+                               <td colspan="2">'.$view->translate('brand').': <strong>'.$model['name'].'</strong></td>
+                           </tr>
+                        ';
+             $html .= '
+                           <tr>
+                               <td>'.$view->translate('capacity').': <strong>'.$model['capacity'].'</strong></td>
+                               <td>'.$view->translate('horse power').': <strong>'.$model['horsepower'].'</strong></td>
+                           </tr>
+                           <tr>
+                               <td>'.$view->translate('v-max').': <strong>'.$model['max_speed'].'</strong></td>
+                               <td>'.$view->translate('acceleration').': <strong>'.$model['acceleration'].'</strong></td>
+                           </tr>
+
+                       </table>
+                   </div>';
+       
         return $html;
     }
     
@@ -173,6 +205,8 @@ class TK_Helper{
         endif; 
         return $html;
     }
+    
+    
     
 }
   

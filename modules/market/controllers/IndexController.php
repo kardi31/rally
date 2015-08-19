@@ -362,6 +362,8 @@ class Market_Index extends Controller{
         $this->view->assign('form',$form);
         
         $marketOffers = $marketService->getAllActiveMyCarOffers($user['Team']['id']);
+        $myCars = $marketService->getAllActiveMyCars($user['Team']['id']);
+        $marketOffers = array_merge($marketOffers,$myCars);
         
         $this->view->assign('user',$user);
         $this->view->assign('marketOffers',$marketOffers);
