@@ -38,9 +38,14 @@
             <table>
                 <tr>
                     <td>
+                        <?php echo $this->translate('Prize pool').": "; ?>
                         <?php if(!$rally['big_awards']){ 
-                            echo $this->translate('Prize pool').": ".$prizePool."$"; 
-                            } ?>
+                                echo $prizePool."$"; 
+                            }
+                            else{
+                                echo "custom";
+                            }
+                            ?>
                     </td>
                     <td>
                         <?= $this->translate('Surface');?> : 
@@ -92,9 +97,9 @@
         <br />
          <?php if(isset($form)&&!$rally['finished']):
              if(!$rally['big_awards']||!$isParticipant){ ?>
+                <form method="POST">
             <div class="sign-up-rally">
                 <h3><?= $this->translate('Sign up');?></h3>
-                <form method="POST">
                     <div class='formElemWrapper'>
                         <label for='driver_id' class="col-md-3 control-label" type='text'><?= $this->translate('Driver');?></label>
                         <?php echo $form->getElement('driver_id')->renderElement(); ?>
@@ -111,6 +116,7 @@
                         <label for='risk' class="col-md-3 control-label"  type='text'><?= $this->translate('Risk');?></label>
                         <?php echo $form->getElement('risk')->renderElement(); ?>
                     </div>
+            </div>
                     <?php if($rally['big_awards']){ ?>
                         <div class='goldCoinBox'>
                             <h4><?= $this->translate('Join big rally'); ?></h4>
@@ -137,17 +143,19 @@
                             <?php endif; ?>
                         </div>
                     <?php } ?>
-                    <div class='formSubmitWrapper'>
-                        <?php echo $form->getElement('submit')->renderElement(); ?>
+                    <div class="sign-up-rally">
+                            <div class='formSubmitWrapper'>
+                                <?php echo $form->getElement('submit')->renderElement(); ?>
+                            </div>
                     </div>
-
                 </form>
-            </div>
+
         <?php 
              }
         endif; ?>
     </div>
     <div class="showRallyBox mainUserBox" id="stages">
+        <h3 class="h4">Stage list</h3>
         <div class='stageListInfo'>
             <div class='col-md-6'>
                 Name
@@ -202,6 +210,7 @@
         
     </div>
     <div class="showRallyBox mainUserBox" id="crews">
+        <h3 class="h4">Signed crews</h3>
         <table class="rallyCrews">
             <thead>
                 <tr>
@@ -233,29 +242,30 @@
         </table>
     </div>
     <div class="showRallyBox mainUserBox" id="prizes">
-        <?php if($rally['big_awards']): ?>
-                <img src="/images/b_letter.gif" />
-                <br />
-                <?= $this->translate('Number of crews');?> : <?php echo $crewCounter; ?><br />
-                <h3><?= $this->translate('Prizes'); ?></h3>
-                <?php 
-                foreach($rallyPrizes as $key => $rallyPrize): 
-                    $position = $key+1;
-                    echo "Position ".$position." - ";
-                    if($rallyPrize['type']=="car"):
-                        $car = $rallyPrize['value'];
-                        ?>
-                        <img class="priceCar" src="/media/cars/<?php echo $car['photo']; ?>" alt="<?php echo $car['name']; ?>" />
-                        <?php 
-                    else:
-                        echo $rallyPrize['value']." premium";
-                    endif;
-                    ?>
-                        <br />
-                        <?php
-                endforeach; 
-            else: ?>
-                <h3 class="h4"><?= $this->translate('Prizes');?></h3>
+        <h3 class="h4"><?= $this->translate('Prizes');?></h3>
+            <?php if($rally['big_awards']): ?>
+                <table class="prizeTable">
+                    <?php foreach($rallyPrizes as $key => $rallyPrize):  ?>
+                        <tr>
+                            <td>
+                                <?= $key+1; ?>.
+                            </td>
+                            <td>
+                                <?php 
+                                    if($rallyPrize['type']=="car"):
+                                        $car = $rallyPrize['value'];
+                                        ?>
+                                        <img class="priceCar" src="/media/cars/<?php echo $car['photo']; ?>" title="<?= $car['name']; ?>" alt="<?php echo $car['name']; ?>" />
+                                        <?php 
+                                    else:
+                                        echo $rallyPrize['value']." premium";
+                                    endif;
+                                ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            <?php else: ?>
                 <table class="prizeTable">
                     <?php foreach($rallyPrizes as $position => $rallyPrize): ?>
                     <tr>
@@ -270,7 +280,7 @@
                 </table>
             <?php endif; ?>
     </div>
-    <div class="showRallyBox rallyResultWrapper mainUserBox <?php if($rally['finished']) echo "active"?>" id="result">
+    <div class="showRallyBox rallyResultWrapper mainUserBox <?php if($rally['date']<=date('Y-m-d H:i:s')) echo "active"?>" id="result">
         
         
         <h3 class="h4">Overall results</h3>
@@ -392,7 +402,7 @@
     <div class="rallyButtons">
         <ul>
             
-            <?php if($rally['finished']): ?>
+            <?php if($rally['date']<=date('Y-m-d H:i:s')): ?>
                 <li>
                     <a href="#" class="active" rel="result"><?= $this->translate('Results');?></a>
                 </li>

@@ -28,6 +28,9 @@
                         <?= count($rally['Crews'])." ".$this->translate("crews"); ?>
                     </td>
                     <td>
+                        <?php if($rally['league_rally']){ ?>
+                            <span class="label label-warning">League</span>
+                        <?php } ?>
                         <?php if($rally['finished']){ ?>
                             <span class="label label-primary">Rally finished</span>
                         <?php } ?>

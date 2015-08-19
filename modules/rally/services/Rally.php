@@ -71,6 +71,8 @@ class RallyService extends Service{
         if(!$league){
             $q->addWhere('r.league_rally != 1');
         }
+        
+        
         if(!$friendly){
             $q->addWhere('r.friendly != 1');
         }
@@ -78,6 +80,20 @@ class RallyService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getAllLeagueRallyResults($league_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->rallyTable->createQuery('r');
+        $q->leftJoin('r.Results re');
+        $q->leftJoin('r.Crews c');
+        $q->groupBy('r.id');
+        $q->addGroupBy('c.team_id');
+//        die('89');
+        echo $q->getSqlQuery();exit;
+//	$q->orderBy('r.date');
+//        $q->addWhere('r.league_rally = 1');
+//        $q->addWhere('r.date > NOW()');
+//        $q->addWhere('r.league like ?',$league_id);
+	return $q->execute(array(),$hydrationMode);
+    }
     
     public function getAllFutureLeagueRallies($league_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->rallyTable->createQuery('r');
@@ -85,6 +101,7 @@ class RallyService extends Service{
         $q->leftJoin('r.Crews c');
 	$q->orderBy('r.date');
         $q->addWhere('r.league_rally = 1');
+        $q->addWhere('r.date > NOW()');
         $q->addWhere('r.league like ?',$league_id);
 	return $q->execute(array(),$hydrationMode);
     }
@@ -93,7 +110,7 @@ class RallyService extends Service{
         $q = $this->rallyTable->createQuery('r');
         $q->leftJoin('r.Crews c');
 //	$q->addWhere('r.date > NOW()');
-        $q->addWhere('r.friendly = 0');
+//        $q->addWhere('r.friendly = 0');
 	$q->orderBy('r.date DESC');
         $q->limit($limit);
         $q->addWhere('c.team_id = ?',$team_id);
@@ -895,7 +912,7 @@ class RallyService extends Service{
         
         $rally->save();
         for($i=0;$i<18;$i++){
-            $this->createRandomStage($rally,"Stage ".$i,$i);
+            $this->createRandomStage($rally,"Stage ".($i+1),$i);
         }
         
         return $rally;

@@ -2603,3 +2603,1211 @@ Stack trace:
 [18-Aug-2015 18:20:08 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 338
 [18-Aug-2015 18:21:14 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 341
 [18-Aug-2015 18:21:14 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 341
+[19-Aug-2015 12:02:36 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 138
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:42 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:46 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 138
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:49 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 12:02:51 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 12:03:04 Europe/Berlin] PHP Notice:  Undefined variable: rallyStagesResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 165
+[19-Aug-2015 12:03:04 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 165
+[19-Aug-2015 12:03:04 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 278
+[19-Aug-2015 12:03:04 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 278
+[19-Aug-2015 12:03:04 Europe/Berlin] PHP Notice:  Undefined variable: rallyStagesResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 320
+[19-Aug-2015 12:03:04 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 320
+[19-Aug-2015 12:03:04 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 341
+[19-Aug-2015 12:03:04 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 341
+[19-Aug-2015 12:04:29 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[19-Aug-2015 12:04:29 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[19-Aug-2015 12:05:20 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[19-Aug-2015 12:05:20 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[19-Aug-2015 12:05:22 Europe/Berlin] PHP Notice:  Undefined variable: rallyStagesResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 165
+[19-Aug-2015 12:05:22 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 165
+[19-Aug-2015 12:05:23 Europe/Berlin] PHP Notice:  Undefined variable: rallyStagesResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 320
+[19-Aug-2015 12:05:23 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 320
+[19-Aug-2015 12:10:24 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[19-Aug-2015 12:10:24 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[19-Aug-2015 12:10:30 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[19-Aug-2015 12:10:30 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[19-Aug-2015 12:10:32 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[19-Aug-2015 12:10:32 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[19-Aug-2015 12:10:43 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-friendly-rallies.phtml on line 41
+[19-Aug-2015 12:10:43 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-friendly-rallies.phtml on line 41
+[19-Aug-2015 12:21:36 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-friendly-rallies.phtml on line 41
+[19-Aug-2015 12:21:36 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-friendly-rallies.phtml on line 41
+[19-Aug-2015 12:27:18 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[19-Aug-2015 12:27:18 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 277
+[19-Aug-2015 12:27:18 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 277
+[19-Aug-2015 12:28:41 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[19-Aug-2015 12:28:41 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 282
+[19-Aug-2015 12:28:41 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 282
+[19-Aug-2015 12:29:15 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[19-Aug-2015 12:29:15 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[19-Aug-2015 12:29:15 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[19-Aug-2015 12:29:20 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[19-Aug-2015 12:29:20 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 284
+[19-Aug-2015 12:29:20 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 284
+[19-Aug-2015 12:32:15 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[19-Aug-2015 12:32:15 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 288
+[19-Aug-2015 12:32:15 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 288
+[19-Aug-2015 12:32:49 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[19-Aug-2015 12:32:49 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 288
+[19-Aug-2015 12:32:49 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 288
+[19-Aug-2015 12:33:05 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[19-Aug-2015 12:33:05 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 288
+[19-Aug-2015 12:33:05 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 288
+[19-Aug-2015 12:33:14 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[19-Aug-2015 12:33:14 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 288
+[19-Aug-2015 12:33:14 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 288
+[19-Aug-2015 12:33:35 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[19-Aug-2015 12:33:35 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 288
+[19-Aug-2015 12:33:35 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 288
+[19-Aug-2015 12:55:17 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-friendly-rallies.phtml on line 41
+[19-Aug-2015 12:55:17 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-friendly-rallies.phtml on line 41
+[19-Aug-2015 13:05:25 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 138
+[19-Aug-2015 13:05:25 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 138
+[19-Aug-2015 13:05:25 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 179
+[19-Aug-2015 13:05:25 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 179
+[19-Aug-2015 13:27:54 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:27:54 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:29:03 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:29:03 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:29:14 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:30:10 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:30:10 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:30:38 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:30:38 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:32:32 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:32:32 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:33:50 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:34:45 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:34:45 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:49:07 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:49:07 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:49:46 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:49:48 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:49:48 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 13:49:58 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[19-Aug-2015 17:44:21 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[19-Aug-2015 17:44:21 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 39
+[19-Aug-2015 17:44:47 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 42
+[19-Aug-2015 17:44:47 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 42
+[19-Aug-2015 17:48:51 Europe/Berlin] PHP Warning:  array_merge(): Argument #1 is not an array in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 166
+[19-Aug-2015 17:48:51 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 15
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:05 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:49:39 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[19-Aug-2015 17:49:39 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[19-Aug-2015 17:50:05 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Record_UnknownPropertyException' with message 'Unknown record property / related component "league_only" on "Rally_Model_Doctrine_Rally"' in C:\xampp\htdocs\ral\library\Doctrine\Record\Filter\Standard.php:55
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1395): Doctrine_Record_Filter_Standard->filterGet(Object(Rally_Model_Doctrine_Rally), 'league_only')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1350): Doctrine_Record->_get('league_only', true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Access.php(117): Doctrine_Record->get('league_only')
+#3 C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml(31): Doctrine_Access->offsetGet('league_only')
+#4 C:\xampp\htdocs\ral\library\TK\View.php(47): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ral\library\TK\Controller.php(61): View->render('Rally', 'my-rallies', 'index')
+#6 C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php(12): Controller->_render(Object(Rally_Index), 'my-rallies')
+#7 C:\x in C:\xampp\htdocs\ral\library\Doctrine\Record\Filter\Standard.php on line 55
+[19-Aug-2015 17:50:22 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[19-Aug-2015 17:50:22 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:25 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:50:47 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: start_date in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 171
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:35 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:51:51 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:20 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 17:52:29 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[19-Aug-2015 17:52:29 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:55:39 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 41
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 51
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: mileage in C:\xampp\htdocs\ral\library\TK\Helper.php on line 52
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 55
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Helper.php on line 56
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 59
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: upkeep in C:\xampp\htdocs\ral\library\TK\Helper.php on line 60
+[19-Aug-2015 17:56:45 Europe/Berlin] PHP Notice:  Undefined index: Model in C:\xampp\htdocs\ral\library\TK\Helper.php on line 63
+[19-Aug-2015 17:59:38 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[19-Aug-2015 17:59:38 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[19-Aug-2015 17:59:38 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[19-Aug-2015 17:59:38 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[19-Aug-2015 17:59:55 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[19-Aug-2015 17:59:55 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[19-Aug-2015 17:59:55 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[19-Aug-2015 17:59:55 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[19-Aug-2015 18:12:46 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[19-Aug-2015 18:12:46 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:12:48 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:28 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[19-Aug-2015 18:13:28 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:13:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[19-Aug-2015 18:23:20 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Table_Exception' with message 'Unknown relation alias Result' in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php:237
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(235): Doctrine_Relation_Parser->getRelation('Result', false)
+#1 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Result', true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1768): Doctrine_Table->getRelation('Result')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\From.php(88): Doctrine_Query->load('r.Result re')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(2084): Doctrine_Query_From->parse('LEFT JOIN r.Res...')
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1189): Doctrine_Query_Abstract->_processDqlQueryPart('from', Array)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php on line 237
+[19-Aug-2015 18:24:28 Europe/Berlin] PHP Fatal error:  Call to undefined method Doctrine_Query::getSql() in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 89
+[19-Aug-2015 18:24:37 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Table_Exception' with message 'Unknown relation alias Result' in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php:237
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(235): Doctrine_Relation_Parser->getRelation('Result', false)
+#1 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Result', true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1768): Doctrine_Table->getRelation('Result')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\From.php(88): Doctrine_Query->load('r.Result re')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(2084): Doctrine_Query_From->parse('LEFT JOIN r.Res...')
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1189): Doctrine_Query_Abstract->_processDqlQueryPart('from', Array)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php on line 237
+[19-Aug-2015 18:24:38 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Table_Exception' with message 'Unknown relation alias Result' in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php:237
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(235): Doctrine_Relation_Parser->getRelation('Result', false)
+#1 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Result', true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1768): Doctrine_Table->getRelation('Result')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\From.php(88): Doctrine_Query->load('r.Result re')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(2084): Doctrine_Query_From->parse('LEFT JOIN r.Res...')
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1189): Doctrine_Query_Abstract->_processDqlQueryPart('from', Array)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php on line 237
+[19-Aug-2015 18:24:39 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Table_Exception' with message 'Unknown relation alias Result' in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php:237
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(235): Doctrine_Relation_Parser->getRelation('Result', false)
+#1 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Result', true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1768): Doctrine_Table->getRelation('Result')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\From.php(88): Doctrine_Query->load('r.Result re')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(2084): Doctrine_Query_From->parse('LEFT JOIN r.Res...')
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1189): Doctrine_Query_Abstract->_processDqlQueryPart('from', Array)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php on line 237
+[19-Aug-2015 18:24:39 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Table_Exception' with message 'Unknown relation alias Result' in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php:237
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(235): Doctrine_Relation_Parser->getRelation('Result', false)
+#1 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Result', true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1768): Doctrine_Table->getRelation('Result')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\From.php(88): Doctrine_Query->load('r.Result re')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(2084): Doctrine_Query_From->parse('LEFT JOIN r.Res...')
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1189): Doctrine_Query_Abstract->_processDqlQueryPart('from', Array)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php on line 237
+[19-Aug-2015 18:25:03 Europe/Berlin] PHP Fatal error:  Call to undefined method Doctrine_Query::getSql() in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 89
+[19-Aug-2015 18:25:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Doctrine_Query::getSQL() in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 89
+[19-Aug-2015 18:25:50 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Table_Exception' with message 'Unknown relation alias Result' in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php:237
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(235): Doctrine_Relation_Parser->getRelation('Result', false)
+#1 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Result', true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1768): Doctrine_Table->getRelation('Result')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\From.php(88): Doctrine_Query->load('r.Result re')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(2084): Doctrine_Query_From->parse('LEFT JOIN r.Res...')
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1189): Doctrine_Query_Abstract->_processDqlQueryPart('from', Array)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php on line 237
+[19-Aug-2015 18:26:02 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Table_Exception' with message 'Unknown relation alias Result' in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php:237
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(235): Doctrine_Relation_Parser->getRelation('Result', false)
+#1 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Result', true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1768): Doctrine_Table->getRelation('Result')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\From.php(88): Doctrine_Query->load('r.Result re')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(2084): Doctrine_Query_From->parse('LEFT JOIN r.Res...')
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1189): Doctrine_Query_Abstract->_processDqlQueryPart('from', Array)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php on line 237
+[19-Aug-2015 18:26:13 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Table_Exception' with message 'Unknown relation alias id,c' in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php:237
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(235): Doctrine_Relation_Parser->getRelation('id,c', false)
+#1 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('id,c', true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1768): Doctrine_Table->getRelation('id,c')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Groupby.php(80): Doctrine_Query->load('r.id,c')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(2084): Doctrine_Query_Groupby->parse('r.id,c.team_id')
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1189): Doctrine_Query_Abstract->_processDqlQueryPart('groupby', Array)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false)
+#8 C:\ in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php on line 237
+[19-Aug-2015 18:26:43 Europe/Berlin] PHP Warning:  preg_split() expects parameter 2 to be string, array given in C:\xampp\htdocs\ral\library\Doctrine\Query\Tokenizer.php on line 518
+[19-Aug-2015 18:26:43 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\Doctrine\Query\Tokenizer.php on line 524
+[19-Aug-2015 18:26:43 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 370
+[19-Aug-2015 18:26:43 Europe/Berlin] PHP Warning:  preg_split() expects parameter 2 to be string, array given in C:\xampp\htdocs\ral\library\Doctrine\Query\Tokenizer.php on line 518
+[19-Aug-2015 18:26:43 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\Doctrine\Query\Tokenizer.php on line 524

@@ -224,7 +224,7 @@ label[for="rememberMe"],.topToolbarBottom a{
     background:url('/images/layout/car_background.jpg');
     background-size:100% 100%;
     display:block;
-    min-height:500px;
+    min-height:730px;
     padding-bottom:50px;
     /*border-radius:20px;*/
 }
@@ -832,6 +832,9 @@ footer{
         list-style:none;
         
     }
+    .priceCar{
+        height:200px;
+    }
    
     table.rallyCrews{
         width:100%;
@@ -1016,16 +1019,21 @@ footer{
     
     .incomeBox{
         background:#5cb85c;
+        height:150px;
     }
     .expenseBox{
         background:#d9534f;
+        height:150px;
     }
-    
-    .advancedFinanceReport h5{
-        margin-top:50px;
+    .advancedFinanceReport{
+        background:#868686;
+        padding:20px;
+        padding-top:5px;
+        margin-top:20px;
     }
     .advancedReportIncome,.advancedReportExpense{
         line-height:20px;
+        white-space:normal;
     }
     
     .advancedReportIncome i,.advancedReportExpense i{
@@ -1480,7 +1488,10 @@ margin-right: auto;
     .carDealer .carParameters{
         margin-top:10px;
     }
-    
+    .carBtn a.buyCarDealer{
+        margin:0px;
+        margin-top:40px;
+    }
     /*
     6.1 Show forum
     */

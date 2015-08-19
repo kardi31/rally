@@ -70,6 +70,31 @@ class TK_Helper{
         return $html;
     }
     
+    public static function showCarModelParameters($model,$team = false){
+        $view = View::getInstance();
+             $html = '
+        <div class="carParameters">
+                        <table>
+                           <tr>
+                               <td colspan="2">'.$view->translate('brand').': <strong>'.$model['name'].'</strong></td>
+                           </tr>
+                        ';
+             $html .= '
+                           <tr>
+                               <td>'.$view->translate('capacity').': <strong>'.$model['capacity'].'</strong></td>
+                               <td>'.$view->translate('horse power').': <strong>'.$model['horsepower'].'</strong></td>
+                           </tr>
+                           <tr>
+                               <td>'.$view->translate('v-max').': <strong>'.$model['max_speed'].'</strong></td>
+                               <td>'.$view->translate('acceleration').': <strong>'.$model['acceleration'].'</strong></td>
+                           </tr>
+
+                       </table>
+                   </div>';
+       
+        return $html;
+    }
+    
     public static function showPersonDetails($person,$showTraining = false){
         $view = View::getInstance();
         if($person['job'] == "driver"): 

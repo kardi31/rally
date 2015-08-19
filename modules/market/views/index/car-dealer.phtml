@@ -8,9 +8,9 @@ if(isset($_GET['msg'])){
 ?>
 <div class="mainUserBox myCarsBox">
     <h4 class="boxHeader"><?= $this->translate('Car dealer'); ?></h4>
-    <div class="myCars">
+    <div class="myPeople peopleList driverList col-md-12">
         <?php foreach($carsForSale as $car): ?>
-            <div class="carCard carDealer">
+            <div class="carCard carDealer mb20 clearfix">
 
                 <?php if(isset($car['photo'])&&strlen($car['photo'])){ ?>
                     <img src="/media/cars/<?php echo $car['photo']; ?>" alt="<?php echo $car['name']; ?>" class="carCardPhoto" />
@@ -18,7 +18,6 @@ if(isset($_GET['msg'])){
                     else{ ?>
                         <img src="http://dummyimage.com/340x220&amp;text=No+photo" class="carCardPhoto" />
                 <?php } ?>
-                <strong><?= $car['name']; ?></strong>
 
 
                 <div class="col-md-6">
@@ -28,12 +27,12 @@ if(isset($_GET['msg'])){
                     <?php // echo $formCar1->renderForm(); ?>
                 </div>-->
                     
-                    <?= TK_Helper::showCarParameters($car); ?>
+                    <?= TK_Helper::showCarModelParameters($car); ?>
                     
                     <div class="clearfix"></div>
                 <div class="carBtn">
-                    <?= $this->translate('Car price'); ?> : <?= $car['price']; ?>$<br />
-                    <a class='btn' href="/market/buy-car/id/<?php echo $car['id']; ?>"><i class="fa fa-shopping-cart"></i> <?= $this->translate('Buy this car'); ?></a>
+                    <?= $this->translate('Car price'); ?> : <strong><?= $car['price']; ?>$</strong><br />
+                    <a class='btn sellPlayer myBtn buyCarDealer' href="/market/buy-car/id/<?php echo $car['id']; ?>"><i class="fa fa-shopping-cart"></i> <?= $this->translate('Buy this car'); ?></a>
 
                 </div>
 
