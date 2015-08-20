@@ -8,6 +8,13 @@
                 <tr>
                     <th><?= $this->translate('Position');?></th>
                     <th><?= $this->translate('Team');?></th>
+                    <?php foreach($leagueResults as $leagueResult): ?>
+                        <th class="thVertical">
+                            <div>
+                                <?= $leagueResult['name']; ?>
+                            </div>
+                        </th>
+                    <?php endforeach; ?>
                     <th><?= $this->translate('Points');?></th>
                 </tr>
             </thead>
@@ -29,6 +36,9 @@
                         >
                         <td><?php echo $key+1; ?></td>
                         <td><?php echo $team['Team']['name']; ?></td>
+                        <?php foreach($leagueResults as $leagueResult): ?>
+                            <td><?= (int)$leagueResult['teams'][$team['Team']['id']]; ?></td>
+                        <?php endforeach; ?>
                         <td><?php echo $team['points']; ?></td>
                     </tr>
                 <?php endforeach; ?>

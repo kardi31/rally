@@ -19,7 +19,7 @@
                     <i class="fa fa-clock-o"></i> <?php echo TK_Text::timeFormat($thread['created_at'],'d/m/y H:i'); ?>
                     <i class="fa fa-user"></i>
                 '<?php echo $thread['User']['username']; ?>' <br />
-                <?php if(isset($thread['Posts'][0])&&!empty($thread['Posts'][0]&&$thread['Posts'][0]['active'])): ?>
+                <?php if(isset($thread['Posts'][0])&&!empty($thread['Posts'][0])&&$thread['Posts'][0]['active']): ?>
                     <?= $this->translate('Last post'); ?>:
                     <i class="fa fa-clock-o"></i>
                     <?php 

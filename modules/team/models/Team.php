@@ -33,6 +33,11 @@ class Team_Model_Doctrine_Team extends Team_Model_Doctrine_BaseTeam
              'local' => 'id',
              'foreign' => 'team_id'));
         
+        
+	$this->hasMany('Rally_Model_Doctrine_Crew as Crews', array(
+             'local' => 'id',
+             'foreign' => 'team_id'));
+        
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);
     }

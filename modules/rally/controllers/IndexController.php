@@ -85,9 +85,9 @@ class Rally_Index extends Controller{
                     }
                 }
                 else{
-                    $freeDrivers = $peopleService->getTeamDrivers($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
-                    $freePilots = $peopleService->getTeamPilots($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
-                    $freeCars = $carService->prepareTeamCarsShort($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
+                    $freeDrivers = $peopleService->getTeamDrivers($user['Team'],Doctrine_Core::HYDRATE_ARRAY);
+                    $freePilots = $peopleService->getTeamPilots($user['Team'],Doctrine_Core::HYDRATE_ARRAY);
+                    $freeCars = $carService->getFreeCars($user['Team'],Doctrine_Core::HYDRATE_ARRAY);
                     $form = $this->getForm('rally','JoinRally');
                     $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
                     $form->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');

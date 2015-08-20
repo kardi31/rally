@@ -18,6 +18,10 @@ class Rally_Model_Doctrine_Crew extends Rally_Model_Doctrine_BaseCrew
         $this->hasOne('Team_Model_Doctrine_Team as Team', array(
              'local' => 'team_id',
              'foreign' => 'id'));
+        
+        $this->hasOne('Rally_Model_Doctrine_RallyResult as Result', array(
+             'local' => 'id',
+             'foreign' => 'crew_id'));
 	
 	$this->hasOne('People_Model_Doctrine_People as Pilot', array(
              'local' => 'pilot_id',

@@ -81,18 +81,47 @@ class RallyService extends Service{
     }
     
     public function getAllLeagueRallyResults($league_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        
+        $seasonInfo = LeagueService::getInstance()->getSeasonInfo();
+        
         $q = $this->rallyTable->createQuery('r');
         $q->leftJoin('r.Results re');
-        $q->leftJoin('r.Crews c');
-        $q->groupBy('r.id');
-        $q->addGroupBy('c.team_id');
-//        die('89');
-        echo $q->getSqlQuery();exit;
-//	$q->orderBy('r.date');
-//        $q->addWhere('r.league_rally = 1');
-//        $q->addWhere('r.date > NOW()');
-//        $q->addWhere('r.league like ?',$league_id);
+        $q->leftJoin('re.Crew c');
+	$q->orderBy('r.date');
+        $q->addWhere('r.league_rally = 1');
+        $q->addWhere('r.date > ?',$seasonInfo['season_start']);
+        $q->addWhere('r.date < ?',$seasonInfo['season_finish']);
+        $q->addWhere('r.league like ?',$league_id);
 	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function prepareResultsForLeague($league_id){
+        $results = $this->getAllLeagueRallyResults($league_id,Doctrine_Core::HYDRATE_ARRAY);
+        $ralliesResults = array();
+        
+        // for every rally
+        foreach($results as $key=>$result){
+            $ralliesResults[$result['id']] = array();
+            $ralliesResults[$result['id']]['name'] = "Rally ".($key+1);
+            $ralliesResults[$result['id']]['teams'] = array();
+            // for every rally result row
+            foreach($result['Results'] as $ralResult):
+                $crew = $ralResult['Crew'];
+                $position = $ralResult['position'];
+                // calculate points for place
+                $points = $this->getPrizesHelper()->calculatePointsForPlace($position);
+                // teams can sign up multiple crews
+                // so if more than 1 crew, sum points
+                if(isset($ralliesResults[$result['id']]['teams'][$crew['team_id']])){
+                    $ralliesResults[$result['id']]['teams'][$crew['team_id']] += $points;
+                }
+                else{
+                    $ralliesResults[$result['id']]['teams'][$crew['team_id']] = $points;
+                }
+            endforeach;
+        }
+//        Zend_Debug::dump($ralliesResults);exit;
+        return $ralliesResults;
     }
     
     public function getAllFutureLeagueRallies($league_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){

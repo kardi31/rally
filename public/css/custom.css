@@ -380,7 +380,7 @@ footer{
 #tMenu li ul{display:none;position:absolute;z-index:9999;padding:0;margin:0;list-style:none;width:100% !important; 
 }
 /*#tMenu li:first-of-type ul{display:block !important;}*/
-#tMenu li ul li{background-color:#fff;display:block;max-width:200px;border-bottom:1px solid #484548;padding:0px;list-style:none;position:relative;vertical-align: top;}
+#tMenu li ul li{background-color:#f3f3f3;display:block;max-width:200px;border-bottom:1px solid #484548;padding:0px;list-style:none;position:relative;vertical-align: top;}
 #tMenu li ul li a{font-size:11px;color:#322f32;text-transform:none;display:block;padding:7px 17px;border-top:1px solid transparent;border-bottom:1px solid transparent;font-size:14px;}
 #tMenu li ul li a.isParent{background-color:#3a3a3a}
 #tMenu li ul li a:hover{background-color:#514c52;border-top:1px solid #322f32;border-bottom:1px solid #322f32}
@@ -1018,13 +1018,21 @@ footer{
     }
     
     .incomeBox{
-        background:#5cb85c;
         height:150px;
+    }
+    
+    .expenseBox .financeSubHeader{
+        background:#d9534f;
+        text-align:center;
+    }
+    .incomeBox .financeSubHeader{
+        background:#5cb85c;
+        text-align:center;
     }
     .expenseBox{
-        background:#d9534f;
         height:150px;
     }
+    
     .advancedFinanceReport{
         background:#868686;
         padding:20px;
@@ -1339,13 +1347,30 @@ margin-right: auto;
         padding:20px; 
     }
     .showLeagueTable table{
-        margin-left:20px;
+        /*margin-left:20px;*/
     }
-    
+    .showLeagueTable th{
+        text-align:center;
+        height:70px;
+        position:relative;
+    }
     .showLeagueTableWrapper tr td{
-        padding:15px 30px;
+        padding:5px 10px;
+    }
+    .thVertical div{
+        position:absolute;
     }
     
+    .thVertical{
+        width:40px;
+        font-size:14px;
+        white-space: nowrap;
+        padding:10px 5px;
+        -webkit-transform: rotate(-75deg);
+        -moz-transform: rotate(-75deg);   
+        -o-transform: rotate(-75deg);
+
+    }
     /*
     5.1 People market
     */

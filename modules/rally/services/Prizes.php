@@ -153,7 +153,6 @@
     }
     
     public function calculatePointsForPlace($place){
-	
 	if($place > 10){
 	    return 0;
 	}

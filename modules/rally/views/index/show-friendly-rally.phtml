@@ -42,7 +42,7 @@
                 <tr>
                     <td>
                         <?php if(!$rally['big_awards']){ 
-                            echo $this->translate('Prize pool').": ".$prizePool."$"; 
+                            echo $this->translate('Prize pool').": ".number_format($prizePool)."$"; 
                             } ?>
                     </td>
                     <td>
@@ -330,7 +330,7 @@
                     <?= $position; ?>.
                 </td>
                 <td>
-                    <?= $rallyPrize; ?> $
+                    <?= number_format($rallyPrize); ?> $
                 </td>
             </tr>
             <?php endforeach; ?>

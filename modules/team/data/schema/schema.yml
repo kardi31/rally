@@ -34,6 +34,11 @@ Team:
       type: float(10,2)
     cash:
       type: integer(11)
+    this_week_rank:
+      type: integer(11)
+      default: null
+    last_week_rank:
+      type: integer(11)
 Finance:
   tableName: team_finance
   actAs: 

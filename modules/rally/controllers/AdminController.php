@@ -697,6 +697,20 @@ class Rally_Admin extends Controller{
         echo "good";exit;
     }
     
+    public function changeRallyDate(){
+        ini_set('max_execution_time',300000);
+        $rallyService = parent::getService('rally','rally');
+        $rally = $rallyService->getRally($GLOBALS['urlParams']['slug'],'slug');
+            $stages = $rally->get('Stages');
+            foreach($stages as $key => $stage):
+                $newDate = strtotime("- 6 hours");
+                $stage->set('date',date('Y-m-d H:i:s',$newDate));
+                $stage->save();
+            endforeach;
+            $rally->set('date',date('Y-m-d H:i:s',$newDate));
+            $rally->save();
+        echo "good";exit;
+    }
     
     public function changeRalliesDate(){
         ini_set('max_execution_time',300000);

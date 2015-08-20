@@ -27,7 +27,24 @@
                 <td><strong>League: </strong><?php echo $team['league_name']; ?></td>
             </tr>
             <tr>
-                <td><strong>Rank: </strong>355 <img src="/images/layout/top.png" /></td>
+                <td>
+                    <strong>Rank: </strong>
+                    <?php 
+                    if($team['this_week_rank']>0){
+                        echo $team['this_week_rank'];
+                        if($team['this_week_rank']>$team['last_week_rank']){ 
+                        ?> 
+                            <img src="/images/layout/top.png" />
+                        <?php } else { ?>
+
+                            <img src="/images/layout/bottom.png" />
+                        <?php } 
+                    }
+                    else{
+                        echo "Not ranked";
+                    }
+                    ?>
+                </td>
             </tr>
 
         </table>

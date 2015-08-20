@@ -17,6 +17,8 @@
  * @property integer $sponsor_id
  * @property float $league_name
  * @property integer $cash
+ * @property integer $this_week_rank
+ * @property integer $last_week_rank
  * @property Doctrine_Collection $Team
  * @property Team_Model_Doctrine_SponsorList $Sponsor
  * 
@@ -78,6 +80,14 @@ abstract class Team_Model_Doctrine_BaseTeam extends Doctrine_Record
              'scale' => '2',
              ));
         $this->hasColumn('cash', 'integer', 11, array(
+             'type' => 'integer',
+             'length' => '11',
+             ));
+        $this->hasColumn('this_week_rank', 'integer', 11, array(
+             'type' => 'integer',
+             'length' => '11',
+             ));
+        $this->hasColumn('last_week_rank', 'integer', 11, array(
              'type' => 'integer',
              'length' => '11',
              ));
