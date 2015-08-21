@@ -1,0 +1,21 @@
+<?php
+if(isset($_GET['msg'])){
+        if($_GET['msg']=="too fast"){
+            $this->showError($this->translate('You can post once every 30 seconds'));
+        }
+    }
+    ?>
+<div class="mainUserBox showForumWrapper ">
+    
+    <div class="boxHeader">
+        <h4>Send message to <?= $user['username']; ?></h4>
+        
+    </div> 
+    <div class="addThreadWrapper replyThreadWrapper">
+        <form method="POST">
+            <?php echo $form->getElement('content')->renderElement(); ?>
+            <?php // echo $form->getElement('active')->renderElement(); ?>
+            <?php echo $form->getElement('submit')->renderElement(); ?>
+        </form>
+    </div>
+</div>

@@ -17,6 +17,18 @@
             <file>file:/C:/xampp/htdocs/ral/modules/car/services/Car.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/league/views/index/show-table.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/services/Team.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/models/Team.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/Crew.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/Rally.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/RallyResult.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/data/schema/schema.yml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/views/index/show-team.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/data/schema/schema.yml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/my-rallies.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/BaseRally.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/db.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/controllers/IndexController.php</file>
         </group>
     </open-files>
 </project-private>

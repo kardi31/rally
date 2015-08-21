@@ -17,6 +17,7 @@
  * @property boolean $finished
  * @property boolean $friendly
  * @property Doctrine_Collection $Surfaces
+ * @property Rally_Model_Doctrine_Award $Award
  * @property Doctrine_Collection $Crews
  * @property Doctrine_Collection $Stages
  * @property Doctrine_Collection $Results
@@ -88,6 +89,10 @@ abstract class Rally_Model_Doctrine_BaseRally extends Doctrine_Record
     {
         parent::setUp();
         $this->hasMany('Rally_Model_Doctrine_Surface as Surfaces', array(
+             'local' => 'id',
+             'foreign' => 'rally_id'));
+
+        $this->hasOne('Rally_Model_Doctrine_Award as Award', array(
              'local' => 'id',
              'foreign' => 'rally_id'));
 

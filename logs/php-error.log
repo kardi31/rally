@@ -7496,3 +7496,662 @@ Stack trace:
 [20-Aug-2015 17:17:15 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
 [20-Aug-2015 18:00:51 Europe/Berlin] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 45
 [20-Aug-2015 18:00:59 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 104
+[21-Aug-2015 12:26:07 Europe/Berlin] PHP Fatal error:  Class 'Media_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[21-Aug-2015 12:26:08 Europe/Berlin] PHP Fatal error:  Class 'Media_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[21-Aug-2015 12:26:08 Europe/Berlin] PHP Fatal error:  Class 'Media_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[21-Aug-2015 12:26:08 Europe/Berlin] PHP Fatal error:  Class 'Media_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[21-Aug-2015 12:26:17 Europe/Berlin] PHP Fatal error:  Class 'Media_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[21-Aug-2015 12:26:17 Europe/Berlin] PHP Fatal error:  Class 'Media_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[21-Aug-2015 12:26:17 Europe/Berlin] PHP Fatal error:  Class 'Media_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[21-Aug-2015 12:26:17 Europe/Berlin] PHP Fatal error:  Class 'Media_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[21-Aug-2015 12:26:38 Europe/Berlin] PHP Fatal error:  Class 'Media_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[21-Aug-2015 12:29:11 Europe/Berlin] PHP Fatal error:  Class 'Media_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[21-Aug-2015 12:30:09 Europe/Berlin] PHP Fatal error:  Class 'Media_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[21-Aug-2015 12:30:09 Europe/Berlin] PHP Fatal error:  Class 'Media_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[21-Aug-2015 12:31:30 Europe/Berlin] PHP Fatal error:  Class 'Media_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[21-Aug-2015 12:31:44 Europe/Berlin] PHP Fatal error:  Class 'Media_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[21-Aug-2015 13:06:43 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:06:43 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:06:43 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:06:43 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:06:44 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:07:24 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:07:30 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:07:30 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:07:39 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:07:39 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:08:49 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:08:56 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:08:56 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:08:58 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:02 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:03 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:05 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:09 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:10 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:12 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:22 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:26 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:27 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:29 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:32 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:33 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:35 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:40 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:41 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:43 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:48 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:52 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:52 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:55 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:59 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:09:59 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:10:02 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:10:06 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:10:07 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:12:06 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:12:11 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:12:11 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:12:13 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:12:18 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:12:22 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:12:22 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:13:56 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 104
+[21-Aug-2015 13:13:58 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:13:58 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:13:58 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:13:58 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:13:58 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:13:58 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:13:58 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:13:58 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:04 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:22 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 13:14:23 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:23 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:23 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:23 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:23 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:23 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:23 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:23 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:37 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:37 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:37 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:37 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:37 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:37 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:37 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:37 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:42 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:42 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:42 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:42 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:42 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:42 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:42 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:42 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:44 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such rally
+
+  thrown in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 323
+[21-Aug-2015 13:14:46 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:46 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:46 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:46 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:46 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:46 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:46 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:14:46 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:15:07 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:15:07 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:15:07 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:15:07 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:15:07 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:15:07 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:15:07 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:15:07 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:32 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:32 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:32 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:32 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:32 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:32 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:33 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:33 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:33 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:33 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:43 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:43 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:44 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:44 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:44 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:44 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:44 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:44 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:44 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:44 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 13:22:52 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 13:23:23 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 15:27:57 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 117
+[21-Aug-2015 15:27:57 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\banner\views\index\show-left-banner.phtml on line 1
+[21-Aug-2015 15:28:24 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 117
+[21-Aug-2015 15:29:23 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 117
+[21-Aug-2015 15:29:42 Europe/Berlin] PHP Notice:  Undefined index: name in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 73
+[21-Aug-2015 15:29:52 Europe/Berlin] PHP Notice:  Undefined index: name in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 71
+[21-Aug-2015 15:30:59 Europe/Berlin] PHP Notice:  Undefined index: name in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 71
+[21-Aug-2015 15:31:05 Europe/Berlin] PHP Notice:  Undefined index: name in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 71
+[21-Aug-2015 15:31:05 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 151
+[21-Aug-2015 15:31:40 Europe/Berlin] PHP Notice:  Undefined index: Rally in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 71
+[21-Aug-2015 15:31:40 Europe/Berlin] PHP Notice:  Undefined index: Rally in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 71
+[21-Aug-2015 15:31:40 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 151
+[21-Aug-2015 15:32:34 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 151
+[21-Aug-2015 15:33:30 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 151
+[21-Aug-2015 15:38:23 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[21-Aug-2015 15:38:23 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[21-Aug-2015 15:38:23 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[21-Aug-2015 15:38:23 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[21-Aug-2015 15:38:23 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[21-Aug-2015 16:52:50 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 16:52:50 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 16:53:01 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Record_UnknownPropertyException' with message 'Unknown record property / related component "0" on "Car_Model_Doctrine_Car"' in C:\xampp\htdocs\ral\library\Doctrine\Record\Filter\Standard.php:55
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1395): Doctrine_Record_Filter_Standard->filterGet(Object(Car_Model_Doctrine_Car), 0)
+#1 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1350): Doctrine_Record->_get(0, true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Access.php(117): Doctrine_Record->get(0)
+#3 C:\xampp\htdocs\ral\library\TK\Form\Select.php(119): Doctrine_Access->offsetGet(0)
+#4 C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php(94): Select->addMultiOptions(Object(Doctrine_Collection), 'Select car')
+#5 C:\xampp\htdocs\ral\library\TK\Controller.php(43): Rally_Index->showRally()
+#6 C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php(12): Controller->_render(Object(Rally_Index), 'show-rally')
+#7 C:\xampp\htdocs\ral\public\index.php(25): Ra in C:\xampp\htdocs\ral\library\Doctrine\Record\Filter\Standard.php on line 55
+[21-Aug-2015 16:53:47 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Record_UnknownPropertyException' with message 'Unknown record property / related component "0" on "Car_Model_Doctrine_Car"' in C:\xampp\htdocs\ral\library\Doctrine\Record\Filter\Standard.php:55
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1395): Doctrine_Record_Filter_Standard->filterGet(Object(Car_Model_Doctrine_Car), 0)
+#1 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1350): Doctrine_Record->_get(0, true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Access.php(117): Doctrine_Record->get(0)
+#3 C:\xampp\htdocs\ral\library\TK\Form\Select.php(119): Doctrine_Access->offsetGet(0)
+#4 C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php(95): Select->addMultiOptions(Object(Doctrine_Collection), 'Select car')
+#5 C:\xampp\htdocs\ral\library\TK\Controller.php(43): Rally_Index->showRally()
+#6 C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php(12): Controller->_render(Object(Rally_Index), 'show-rally')
+#7 C:\xampp\htdocs\ral\public\index.php(25): Ra in C:\xampp\htdocs\ral\library\Doctrine\Record\Filter\Standard.php on line 55
+[21-Aug-2015 16:54:51 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 16:54:51 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 16:55:30 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 16:55:30 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 16:55:54 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 16:55:54 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 16:56:05 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 16:56:05 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 16:56:05 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 16:56:05 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 16:57:12 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 16:57:12 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 16:58:02 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 16:58:47 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 16:58:47 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:02:25 Europe/Berlin] PHP Fatal error:  Call to undefined method CarService::getFreeCarsBig() in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 90
+[21-Aug-2015 17:02:54 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:02:54 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:03:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[21-Aug-2015 17:03:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[21-Aug-2015 17:03:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[21-Aug-2015 17:03:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[21-Aug-2015 17:03:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[21-Aug-2015 17:03:09 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:03:09 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:06:16 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:06:16 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:06:57 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:06:57 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:07:00 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[21-Aug-2015 17:07:00 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[21-Aug-2015 17:07:00 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[21-Aug-2015 17:07:00 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[21-Aug-2015 17:07:00 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[21-Aug-2015 17:07:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[21-Aug-2015 17:07:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[21-Aug-2015 17:07:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[21-Aug-2015 17:07:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[21-Aug-2015 17:07:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[21-Aug-2015 17:08:42 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:08:42 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:09:00 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:09:00 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:09:00 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:09:00 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:09:08 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:09:08 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:09:17 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:09:17 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:09:17 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:09:17 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:09:20 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:09:20 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:09:24 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:09:24 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:09:50 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:09:50 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:09:55 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:09:55 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:09:56 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:09:56 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:10:02 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:10:02 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:10:06 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:10:07 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:11:02 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:11:02 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:11:04 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:11:05 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:11:05 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:11:05 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:11:11 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:11:11 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:11:15 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:11:15 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:11:17 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:11:17 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:11:23 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:11:23 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:30 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:31 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:11:31 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:11:36 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:11:36 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:11:36 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:11:36 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:11:38 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:12:53 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:21 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:50 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:13:52 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:13:52 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:14:01 Europe/Berlin] PHP Notice:  Undefined index: Crews in C:\xampp\htdocs\ral\modules\rally\views\index\list-rally.phtml on line 28
+[21-Aug-2015 17:17:04 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'Couldn't find class c' in C:\xampp\htdocs\ral\library\Doctrine\Table.php:299
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Table.php(256): Doctrine_Table->initDefinition()
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1124): Doctrine_Table->__construct('c', Object(Doctrine_Connection_Mysql), true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1967): Doctrine_Connection->getTable('c')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1764): Doctrine_Query->loadRoot('c', 'c')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query.php(742): Doctrine_Query->load('c')
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query.php(850): Doctrine_Query->parseClause('c.*')
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(726): Doctrine_Query->parseFunctionExpression('count(c.*)')
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query.php(653): Doctrine_Query->parseClause('count(c.*)')
+#8 C:\xampp\htdocs\ral\library\Doctrine\Query\Select.php(37): Doctrine_Query->parseSelect( in C:\xampp\htdocs\ral\library\Doctrine\Table.php on line 299
+[21-Aug-2015 17:17:20 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Query_Exception' with message 'Unknown column ' in C:\xampp\htdocs\ral\library\Doctrine\Query.php:758
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Query.php(850): Doctrine_Query->parseClause('c.*')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Query.php(726): Doctrine_Query->parseFunctionExpression('count(c.*)')
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query.php(653): Doctrine_Query->parseClause('count(c.*)')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Select.php(37): Doctrine_Query->parseSelect('count(c.*) as c...')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(2084): Doctrine_Query_Select->parse('count(c.*) as c...')
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1189): Doctrine_Query_Abstract->_processDqlQueryPart('select', Array)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false)
+#8 C:\xampp\htdocs\ral\library in C:\xampp\htdocs\ral\library\Doctrine\Query.php on line 758
+[21-Aug-2015 17:17:26 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Query_Exception' with message 'The root class of the query (alias r)  must have at least one field selected.' in C:\xampp\htdocs\ral\library\Doctrine\Query.php:454
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1246): Doctrine_Query->processPendingFields('r')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false)
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1113): Doctrine_Query_Abstract->_getDqlCallbackComponents(Array)
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1008): Doctrine_Query_Abstract->_preQuery(Array)
+#5 C:\xampp\htdocs\ral\modules\rally\services\Rally.php(84): Doctrine_Query_Abstract->execute(Array, 3)
+#6 C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php(161): RallyService->getAllFutureRallies(3, false, false)
+#7 C:\xampp\htdocs\ral\library\TK\Controller.php(43): R in C:\xampp\htdocs\ral\library\Doctrine\Query.php on line 454
+[21-Aug-2015 17:17:27 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Query_Exception' with message 'The root class of the query (alias r)  must have at least one field selected.' in C:\xampp\htdocs\ral\library\Doctrine\Query.php:454
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1246): Doctrine_Query->processPendingFields('r')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false)
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1113): Doctrine_Query_Abstract->_getDqlCallbackComponents(Array)
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1008): Doctrine_Query_Abstract->_preQuery(Array)
+#5 C:\xampp\htdocs\ral\modules\rally\services\Rally.php(84): Doctrine_Query_Abstract->execute(Array, 3)
+#6 C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php(161): RallyService->getAllFutureRallies(3, false, false)
+#7 C:\xampp\htdocs\ral\library\TK\Controller.php(43): R in C:\xampp\htdocs\ral\library\Doctrine\Query.php on line 454
+[21-Aug-2015 17:17:40 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Query_Exception' with message 'The root class of the query (alias r)  must have at least one field selected.' in C:\xampp\htdocs\ral\library\Doctrine\Query.php:454
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1246): Doctrine_Query->processPendingFields('r')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false)
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1113): Doctrine_Query_Abstract->_getDqlCallbackComponents(Array)
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1008): Doctrine_Query_Abstract->_preQuery(Array)
+#5 C:\xampp\htdocs\ral\modules\rally\services\Rally.php(84): Doctrine_Query_Abstract->execute(Array, 3)
+#6 C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php(161): RallyService->getAllFutureRallies(3, false, false)
+#7 C:\xampp\htdocs\ral\library\TK\Controller.php(43): R in C:\xampp\htdocs\ral\library\Doctrine\Query.php on line 454
+[21-Aug-2015 17:17:53 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Query_Exception' with message 'The root class of the query (alias r)  must have at least one field selected.' in C:\xampp\htdocs\ral\library\Doctrine\Query.php:454
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1246): Doctrine_Query->processPendingFields('r')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false)
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1113): Doctrine_Query_Abstract->_getDqlCallbackComponents(Array)
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1008): Doctrine_Query_Abstract->_preQuery(Array)
+#5 C:\xampp\htdocs\ral\modules\rally\services\Rally.php(83): Doctrine_Query_Abstract->execute(Array, 3)
+#6 C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php(161): RallyService->getAllFutureRallies(3, false, false)
+#7 C:\xampp\htdocs\ral\library\TK\Controller.php(43): R in C:\xampp\htdocs\ral\library\Doctrine\Query.php on line 454
+[21-Aug-2015 17:18:15 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Query_Exception' with message 'The root class of the query (alias r)  must have at least one field selected.' in C:\xampp\htdocs\ral\library\Doctrine\Query.php:454
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1246): Doctrine_Query->processPendingFields('r')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false)
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1113): Doctrine_Query_Abstract->_getDqlCallbackComponents(Array)
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1008): Doctrine_Query_Abstract->_preQuery(Array)
+#5 C:\xampp\htdocs\ral\modules\rally\services\Rally.php(83): Doctrine_Query_Abstract->execute(Array, 3)
+#6 C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php(161): RallyService->getAllFutureRallies(3, false, false)
+#7 C:\xampp\htdocs\ral\library\TK\Controller.php(43): R in C:\xampp\htdocs\ral\library\Doctrine\Query.php on line 454
+[21-Aug-2015 17:19:01 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 17:19:01 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 17:19:01 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 17:19:01 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 17:19:01 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 17:19:01 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 17:19:01 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 17:19:01 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[21-Aug-2015 17:19:14 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:19:14 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:19:20 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:19:20 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:19:27 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:19:27 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:19:32 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:19:32 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:19:32 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:19:32 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:19:35 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:19:35 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:19:41 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:19:41 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:19:44 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:19:44 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:19:53 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:19:53 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:19:53 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:19:53 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:19:58 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:19:58 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:20:02 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:20:03 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:20:08 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:20:08 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:20:08 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:20:08 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:20:11 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:20:11 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:20:18 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:20:18 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:20:22 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:20:22 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:20:30 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:20:30 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:20:30 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:20:30 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:36:08 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:36:08 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:36:13 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[21-Aug-2015 17:36:13 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[21-Aug-2015 17:40:40 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 151
+[21-Aug-2015 17:42:11 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 151
+[21-Aug-2015 17:42:22 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 151
+[21-Aug-2015 17:49:08 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:49:08 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:50:01 Europe/Berlin] PHP Notice:  Undefined variable: forumService in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 354
+[21-Aug-2015 17:50:01 Europe/Berlin] PHP Fatal error:  Call to a member function getAllThreadPosts() on null in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 354
+[21-Aug-2015 17:53:47 Europe/Berlin] PHP Notice:  Undefined variable: posts in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 376
+[21-Aug-2015 17:53:47 Europe/Berlin] PHP Notice:  Undefined variable: thread in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 377
+[21-Aug-2015 17:53:47 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:53:47 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:54:26 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:54:26 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:54:35 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:54:35 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:55:04 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:55:04 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:55:18 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:55:18 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:55:28 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:55:28 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:55:39 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:55:39 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:55:56 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:55:56 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/user/views/index/add-message.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[21-Aug-2015 17:56:25 Europe/Berlin] PHP Notice:  Undefined variable: thread in C:\xampp\htdocs\ral\modules\user\views\index\add-message.phtml on line 15
+[21-Aug-2015 17:56:25 Europe/Berlin] PHP Notice:  Undefined variable: posts in C:\xampp\htdocs\ral\modules\user\views\index\add-message.phtml on line 18
+[21-Aug-2015 17:56:25 Europe/Berlin] PHP Notice:  Undefined variable: posts in C:\xampp\htdocs\ral\modules\user\views\index\add-message.phtml on line 19
+[21-Aug-2015 17:56:25 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\user\views\index\add-message.phtml on line 19
+[21-Aug-2015 18:18:25 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::addMessage() in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 370
+[21-Aug-2015 18:18:33 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::addMessage() in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 370
+[21-Aug-2015 18:18:53 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::addMessage() in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 370
+[21-Aug-2015 18:19:33 Europe/Berlin] PHP Fatal error:  Class 'FriendsService' not found in C:\xampp\htdocs\ral\modules\user\services\Message.php on line 12
+[21-Aug-2015 18:19:38 Europe/Berlin] PHP Fatal error:  Class 'FriendsService' not found in C:\xampp\htdocs\ral\modules\user\services\Message.php on line 12
+[21-Aug-2015 18:19:54 Europe/Berlin] PHP Fatal error:  Class 'FriendsService' not found in C:\xampp\htdocs\ral\modules\user\services\Message.php on line 12
+[21-Aug-2015 18:20:13 Europe/Berlin] PHP Notice:  Undefined index: Team in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 371
+[21-Aug-2015 18:20:13 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\team\controllers\IndexController.php on line 27
+[21-Aug-2015 18:20:13 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 129
+[21-Aug-2015 18:20:32 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 350
+[21-Aug-2015 18:20:32 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? AND (u.deleted_at IS NULL)) LIMIT 1' at line 1. Failing Query: "SELECT u.id AS u__id, u.first_name AS u__first_name, u.last_name AS u__last_name, u.email AS u__email, u.username AS u__username, u.salt AS u__salt, u.password AS u__password, u.role AS u__role, u.token AS u__token, u.active AS u__active, u.gold_member_expire AS u__gold_member_expire, u.gold_member AS u__gold_member, u.premium AS u__premium, u.referer AS u__referer, u.referer_paid AS u__referer_paid, u.last_active AS u__last_active, u.created_at AS u__created_at, u.updated_at AS u__updated_at, u.deleted_at AS u__deleted_at FROM user_user u WHERE (u.id = ? AND (u.deleted_at IS NULL)) LIMIT 1"' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\ in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[21-Aug-2015 18:20:34 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\team\controllers\IndexController.php on line 27
+[21-Aug-2015 18:20:34 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml on line 129
+[21-Aug-2015 18:20:39 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
+[21-Aug-2015 18:21:18 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'Couldn't find class Team_Model_Doctrine_Team' in C:\xampp\htdocs\ral\library\Doctrine\Table.php:299
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Table.php(256): Doctrine_Table->initDefinition()
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1124): Doctrine_Table->__construct('Team_Model_Doct...', Object(Doctrine_Connection_Mysql), true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(278): Doctrine_Connection->getTable('Team_Model_Doct...')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(404): Doctrine_Relation_Parser->getImpl('Team_Model_Doct...')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(207): Doctrine_Relation_Parser->completeDefinition(Array)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Team', true)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1379): Doctrine_Table->getRelation('Team')
+#7 C:\xampp\htdocs\ral\library\Doctrine\Record.php(135 in C:\xampp\htdocs\ral\library\Doctrine\Table.php on line 299
+[21-Aug-2015 18:21:27 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'Couldn't find class Team_Model_Doctrine_Team' in C:\xampp\htdocs\ral\library\Doctrine\Table.php:299
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Table.php(256): Doctrine_Table->initDefinition()
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1124): Doctrine_Table->__construct('Team_Model_Doct...', Object(Doctrine_Connection_Mysql), true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(278): Doctrine_Connection->getTable('Team_Model_Doct...')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(404): Doctrine_Relation_Parser->getImpl('Team_Model_Doct...')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(207): Doctrine_Relation_Parser->completeDefinition(Array)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Team', true)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1379): Doctrine_Table->getRelation('Team')
+#7 C:\xampp\htdocs\ral\library\Doctrine\Record.php(135 in C:\xampp\htdocs\ral\library\Doctrine\Table.php on line 299
+[21-Aug-2015 18:21:42 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'Couldn't find class Team_Model_Doctrine_Team' in C:\xampp\htdocs\ral\library\Doctrine\Table.php:299
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Table.php(256): Doctrine_Table->initDefinition()
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1124): Doctrine_Table->__construct('Team_Model_Doct...', Object(Doctrine_Connection_Mysql), true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(278): Doctrine_Connection->getTable('Team_Model_Doct...')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(404): Doctrine_Relation_Parser->getImpl('Team_Model_Doct...')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(207): Doctrine_Relation_Parser->completeDefinition(Array)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Team', true)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1379): Doctrine_Table->getRelation('Team')
+#7 C:\xampp\htdocs\ral\library\Doctrine\Record.php(135 in C:\xampp\htdocs\ral\library\Doctrine\Table.php on line 299
+[21-Aug-2015 18:21:49 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'Couldn't find class Team_Model_Doctrine_Team' in C:\xampp\htdocs\ral\library\Doctrine\Table.php:299
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Table.php(256): Doctrine_Table->initDefinition()
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1124): Doctrine_Table->__construct('Team_Model_Doct...', Object(Doctrine_Connection_Mysql), true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(278): Doctrine_Connection->getTable('Team_Model_Doct...')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(404): Doctrine_Relation_Parser->getImpl('Team_Model_Doct...')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(207): Doctrine_Relation_Parser->completeDefinition(Array)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Team', true)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1379): Doctrine_Table->getRelation('Team')
+#7 C:\xampp\htdocs\ral\library\Doctrine\Record.php(135 in C:\xampp\htdocs\ral\library\Doctrine\Table.php on line 299
+[21-Aug-2015 18:21:54 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'Couldn't find class Team_Model_Doctrine_Team' in C:\xampp\htdocs\ral\library\Doctrine\Table.php:299
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Table.php(256): Doctrine_Table->initDefinition()
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1124): Doctrine_Table->__construct('Team_Model_Doct...', Object(Doctrine_Connection_Mysql), true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(278): Doctrine_Connection->getTable('Team_Model_Doct...')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(404): Doctrine_Relation_Parser->getImpl('Team_Model_Doct...')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(207): Doctrine_Relation_Parser->completeDefinition(Array)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Team', true)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1379): Doctrine_Table->getRelation('Team')
+#7 C:\xampp\htdocs\ral\library\Doctrine\Record.php(135 in C:\xampp\htdocs\ral\library\Doctrine\Table.php on line 299

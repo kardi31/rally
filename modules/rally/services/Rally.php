@@ -11,6 +11,7 @@ class RallyService extends Service{
     protected $stageTable;
     protected $bigAwardsTable;
     protected $surfaceTable;
+    protected $awardTable;
     protected $friendlyTable;
     protected $friendlyInvitationsTable;
     protected $friendlyParticipantsTable;
@@ -34,6 +35,7 @@ class RallyService extends Service{
         $this->surfaceTable = parent::getTable('rally','surface');
         $this->crewTable = parent::getTable('rally','crew');
         $this->stageTable = parent::getTable('rally','stage');
+        $this->awardTable = parent::getTable('rally','award');
         $this->stageResultTable = parent::getTable('rally','stageResult');
         $this->resultTable = parent::getTable('rally','result');
         $this->friendlyTable = parent::getTable('rally','friendly');
@@ -66,12 +68,13 @@ class RallyService extends Service{
     
     public function getAllFutureRallies($hydrationMode = Doctrine_Core::HYDRATE_RECORD,$league = true,$friendly = true){
         $q = $this->rallyTable->createQuery('r');
+        $q->leftJoin('r.Crews c');
+        $q->addSelect('r.*,c.*');
 	$q->addWhere('r.date > NOW()');
 	$q->orderBy('r.date');
         if(!$league){
             $q->addWhere('r.league_rally != 1');
         }
-        
         
         if(!$friendly){
             $q->addWhere('r.friendly != 1');
@@ -126,7 +129,8 @@ class RallyService extends Service{
     
     public function getAllFutureLeagueRallies($league_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->rallyTable->createQuery('r');
-        $q->addSelect('r.*,c.*');
+        $q->addSelect('r.*');
+        $q->addSelect('c.*');
         $q->leftJoin('r.Crews c');
 	$q->orderBy('r.date');
         $q->addWhere('r.league_rally = 1');
@@ -150,6 +154,8 @@ class RallyService extends Service{
     public function getAllFutureTeamRallies($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->rallyTable->createQuery('r');
         $q->leftJoin('r.Crews c');
+        $q->addSelect('r.*');
+        $q->addSelect('c.*');
 	$q->addWhere('r.date > NOW()');
 	$q->orderBy('r.date');
         $q->addWhere('c.team_id = ?',$team_id);
@@ -724,9 +730,16 @@ class RallyService extends Service{
                                 $leagueService->addTeamPoints($result['Crew']['team_id'],$result['position']);
                             }
                         }
+                        if($result['position']==1){
+                            $this->addAward($rally['id'], $result['Crew']['team_id']);
+                        }
                     }
                     else{
                         $this->getPrizesHelper()->handleBigAwardForPlace($result['position'],$result['Crew']['team_id'],$rally,$bigAwardsCount);
+                        
+                        if($result['position']==1){
+                            $this->addAward($rally['id'], $result['Crew']['team_id'],'big');
+                        }
                     }
                 }
             }
@@ -1076,6 +1089,30 @@ class RallyService extends Service{
             $surfaceRow->save();
         endforeach;
         
+    }
+    
+    
+    
+    public function addAward($rally_id,$team_id,$type = 'normal'){
+        $award = $this->awardTable->getRecord();
+        
+        $award->set('team_id',$team_id);
+        $award->set('rally_id',$rally_id);
+        $award->set('type',$type);
+        $award->save();
+        
+        return $award;
+    }
+    
+    
+    public function getTeamAwards($team_id){
+        $q = $this->awardTable->createQuery('a');
+        $q->leftJoin('a.Rally r');
+        $q->addWhere('a.team_id = ?',$team_id);
+        $q->orderBy('a.created_at DESC');
+        $q->select('a.*,r.name');
+        
+        return $q->fetchArray();
     }
 }
 ?>

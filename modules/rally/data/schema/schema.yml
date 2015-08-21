@@ -61,6 +61,29 @@ Surface:
       type: one
       alias: Rally
       foreignAlias: Surfaces
+Award:
+  tableName: rally_award
+  actAs: 
+    Timestampable: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    rally_id:
+      type: integer(4)
+    team_id:
+      type: integer(4)
+    type:
+      type: varchar(255)
+  relations:
+    Rally:
+      local: rally_id
+      foreign: id
+      foreignType: one
+      type: one
+      alias: Rally
+      foreignAlias: Award
 Crew:
   tableName: rally_crew
   actAs: 
