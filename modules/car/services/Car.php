@@ -149,6 +149,35 @@ class CarService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getFreeCarsBig(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+	$busyCars = $this->getBusyCarsBig($team, $date,Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        $q = $this->carTable->createQuery('c');
+	$q->select('c.id,c.name');
+	$q->leftJoin('c.Team t');
+	$q->leftJoin('c.CarRallies cr');
+	$q->leftJoin('cr.Rally r');
+	$q->addWhere('t.id = ?',$team['id']);
+        
+        $q->addWhere('c.on_market = 0');
+        if(!empty($busyCars)){
+            $q->whereNotIn('c.id',$busyCars);
+        }
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+     public function getBusyCarsBig(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+	$q = $this->carTable->createQuery('c');
+	$q->select('c.id');
+	$q->leftJoin('c.Team t');
+	$q->leftJoin('c.CarRallies cr');
+	$q->leftJoin('cr.Rally r');
+	$q->addWhere('t.id = ?',$team['id']);
+        $q->addWhere('r.big_awards = 1');
+	$q->addWhere('r.date like ?',substr($date,0,10)."%");
+        $q->groupBy('c.id');
+	return $q->execute(array(),$hydrationMode);
+    }
+    
     public function getRandomCarModel($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->carModelTable->createQuery('cm');
         $q->orderBy('rand()');

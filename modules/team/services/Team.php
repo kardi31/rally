@@ -76,6 +76,15 @@ class TeamService extends Service{
         return $record;
     }
     
+    public function getAllTeamsResults($hydrationMode = Doctrine_Core::HYDRATE_ARRAY){
+        $q = $this->teamTable->createQuery('t');
+        $q->select('group_concat(r.position) as group_position, t.id');
+        $q->leftJoin('t.Crews c');
+        $q->leftJoin('c.Result r');
+        $q->groupBy('t.id');
+	return $q->execute(array(),$hydrationMode);
+    }
+    
     public function selectRandomTeams($quantity,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->teamTable->createQuery('t');
         $q->innerJoin('t.User u');

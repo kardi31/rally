@@ -35,9 +35,9 @@ abstract class Rally_Model_Doctrine_BaseSurface extends Doctrine_Record
              'type' => 'varchar',
              'length' => '255',
              ));
-        $this->hasColumn('percentage', 'float', 4, array(
+        $this->hasColumn('percentage', 'float', 8, array(
              'type' => 'float',
-             'length' => '4',
+             'length' => '8',
              'scale' => '2',
              ));
 

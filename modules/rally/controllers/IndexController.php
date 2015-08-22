@@ -85,9 +85,9 @@ class Rally_Index extends Controller{
                     }
                 }
                 else{
-                    $freeDrivers = $peopleService->getTeamDrivers($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
-                    $freePilots = $peopleService->getTeamPilots($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
-                    $freeCars = $carService->prepareTeamCarsShort($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
+                    $freeDrivers = $peopleService->getFreeDriversBig($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
+                    $freePilots = $peopleService->getFreePilotsBig($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
+                    $freeCars = $carService->getFreeCarsBig($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
                     $form = $this->getForm('rally','JoinRally');
                     $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
                     $form->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
@@ -164,7 +164,6 @@ class Rally_Index extends Controller{
         $leagueRallies = $rallyService->getAllFutureLeagueRallies($user['Team']['league_name'],Doctrine_Core::HYDRATE_ARRAY);
 
         $rallies = array_merge($rallies,$leagueRallies);
-        
         
         function ordbydate($a, $b)
         {
@@ -319,10 +318,12 @@ class Rally_Index extends Controller{
         $notificationService = parent::getService('user','notification');
         $user = $userService->getAuthenticatedUser();
         
+        
         if(!$friendly = $rallyService->getFullFriendlyRally($GLOBALS['urlParams']['slug'],'r.slug',Doctrine_Core::HYDRATE_ARRAY)){
+            die('error');
             throw new TK_Exception('No such rally',404);
         }
-        
+        var_dump('in');exit;
         if($friendly['Rally']['finished']){
             $rallyResults = $rallyService->getRallyResults($friendly['Rally']['id'],'rally_id');
             $this->view->assign('rallyResults',$rallyResults);

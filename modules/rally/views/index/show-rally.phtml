@@ -32,7 +32,7 @@
 <?php $surfaces = $rally['Surfaces']; ?>
 <div class="mainUserBox showRallyWrapper">
     <h4 class="boxHeader"><?php  echo $rally['name']; ?></h4>
-    <div class="showRallyBox <?php if(!$rally['finished']) echo "active"?> mainUserBox" id="details">
+    <div class="showRallyBox <?php if($rally['date']>date('Y-m-d H:i:s')) echo "active"?> mainUserBox" id="details">
         <div class='rallyInfo'>
         <?php if(strlen($rally['description'])) echo $rally['description']."<br /><br />"; ?>
             <table>
@@ -40,7 +40,7 @@
                     <td>
                         <?php echo $this->translate('Prize pool').": "; ?>
                         <?php if(!$rally['big_awards']){ 
-                                echo $prizePool."$"; 
+                                echo number_format($prizePool)."$"; 
                             }
                             else{
                                 echo "custom";
@@ -96,7 +96,7 @@
         <br />
         <br />
          <?php if(isset($form)&&!$rally['finished']):
-             if(!$rally['big_awards']||!$isParticipant){ ?>
+//             if(!$rally['big_awards']||!$isParticipant){ ?>
                 <form method="POST">
             <div class="sign-up-rally">
                 <h3><?= $this->translate('Sign up');?></h3>
@@ -151,7 +151,7 @@
                 </form>
 
         <?php 
-             }
+//             }
         endif; ?>
     </div>
     <div class="showRallyBox mainUserBox" id="stages">
@@ -273,7 +273,7 @@
                             <?= $position; ?>.
                         </td>
                         <td>
-                            <?= $rallyPrize; ?> $
+                            <?= number_format($rallyPrize); ?> $
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -282,7 +282,7 @@
     </div>
     <div class="showRallyBox rallyResultWrapper mainUserBox <?php if($rally['date']<=date('Y-m-d H:i:s')) echo "active"?>" id="result">
         
-        
+        <?php if(count($rallyResults)>0){ ?>
         <h3 class="h4">Overall results</h3>
         <table class="mb20">
             <?php foreach($rallyResults as $result): ?>
@@ -312,6 +312,7 @@
                 </tr>
             <?php endforeach; ?>
         </table>
+        <?php } ?>
         <h3 class="h4">Stage results</h3>
         <div class='stageListInfo'>
             <div class='col-md-6'>
@@ -408,7 +409,7 @@
                 </li>
             <?php endif ; ?>
             <li>
-                <a class="<?php if(!$rally['finished']) echo "active"?>" rel="details" href="#"><?= $this->translate('Details'); ?></a>
+                <a class="<?php if($rally['date']>date('Y-m-d H:i:s')) echo "active"?>" rel="details" href="#"><?= $this->translate('Details'); ?></a>
             </li>
             <li>
                 <a href="#" rel="stages"><?= $this->translate('Stages');?></a>

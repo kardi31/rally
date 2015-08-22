@@ -27,31 +27,95 @@
                 <td><strong>League: </strong><?php echo $team['league_name']; ?></td>
             </tr>
             <tr>
-                <td><strong>Rank: </strong>355 <img src="/images/layout/top.png" /></td>
+                <td>
+                    <strong>Rank: </strong>
+                    <?php 
+                    if($team['this_week_rank']>0){
+                        echo $team['this_week_rank'];
+                        if($team['this_week_rank']>$team['last_week_rank']){ 
+                        ?> 
+                            <img src="/images/layout/top.png" />
+                        <?php } else { ?>
+
+                            <img src="/images/layout/bottom.png" />
+                        <?php } 
+                    }
+                    else{
+                        echo "Not ranked";
+                    }
+                    ?>
+                </td>
             </tr>
 
         </table>
         <div>
             <h3 class="h4">Rally awards</h3>
+            
+            <?php 
+                $awardsCount = count($awards);
+                if($awardsCount<5){
+                    $rows = 2;
+                }
+                else{
+                    $rows = ceil($awardsCount/4);
+                }
+            ?>
             <table class="showcase">
-               <tr>
-                   <td class="light">
-                       <img src="/images/layout/trophy_1.gif" />
-                   </td>
-                   <td class="light">
-                       <img src="/images/layout/trophy_2.gif" />
-                   </td>
-                   <td class="light">
-                       <img src="/images/layout/trophy_3.gif" />
-                   </td>
-                   <td></td>
-               </tr>
-               <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-               </tr>
+                <?php for($i=0;$i<$rows;$i++): ?>
+                <tr>
+                    <?php if(isset($awards[$i])){ ?>
+                        <td class="light">
+                            <?php if($awards[$i]['type']=='big'){ ?>
+                                <img title="1st place in <?= $awards[$i]['Rally']['name']; ?>" alt="1st place in <?= $awards[$i]['Rally']['name']; ?>" src="/images/layout/trophy_1.gif" />
+                            <?php } else { ?>
+                                <img title="1st place in <?= $awards[$i]['Rally']['name']; ?>" alt="1st place in <?= $awards[$i]['Rally']['name']; ?>" src="/images/layout/trophy_2.gif" />
+                            <?php } ?>
+                        </td>
+                    <?php }
+                    else{ ?> 
+                        <td></td>
+                    <?php } ?>
+                        
+                    <?php if(isset($awards[$i+1])){ ?>
+                        <td class="light">
+                            <?php if($awards[$i+1]['type']=='big'){ ?>
+                                <img title="1st place in <?= $awards[$i+1]['Rally']['name']; ?>" alt="1st place in <?= $awards[$i+1]['Rally']['name']; ?>" src="/images/layout/trophy_1.gif" />
+                            <?php } else { ?>
+                                <img title="1st place in <?= $awards[$i+1]['Rally']['name']; ?>" alt="1st place in <?= $awards[$i+1]['Rally']['name']; ?>" src="/images/layout/trophy_2.gif" />
+                            <?php } ?>
+                        </td>
+                    <?php }
+                    else{ ?> 
+                        <td></td>
+                    <?php } ?>
+                        
+                    <?php if(isset($awards[$i+2])){ ?>
+                        <td class="light">
+                            <?php if($awards[$i+2]['type']=='big'){ ?>
+                                <img alt="1st place in <?= $awards[$i+2]['Rally']['name']; ?>" alt="1st place in <?= $awards[$i+2]['Rally']['name']; ?>" src="/images/layout/trophy_1.gif" />
+                            <?php } else { ?>
+                                <img alt="1st place in <?= $awards[$i+2]['Rally']['name']; ?>" alt="1st place in <?= $awards[$i+2]['Rally']['name']; ?>" src="/images/layout/trophy_2.gif" />
+                            <?php } ?>
+                        </td>
+                    <?php }
+                    else{ ?> 
+                        <td></td>
+                    <?php } ?>
+                        
+                    <?php if(isset($awards[$i+3])){ ?>
+                        <td class="light">
+                            <?php if($awards[$i+3]['type']=='big'){ ?>
+                                <img title="1st place in <?= $awards[$i+3]['Rally']['name']; ?>" alt="1st place in <?= $awards[$i+3]['Rally']['name']; ?>" src="/images/layout/trophy_1.gif" />
+                            <?php } else { ?>
+                                <img title="1st place in <?= $awards[$i+3]['Rally']['name']; ?>" alt="1st place in <?= $awards[$i+3]['Rally']['name']; ?>" src="/images/layout/trophy_2.gif" />
+                            <?php } ?>
+                        </td>
+                    <?php }
+                    else{ ?> 
+                        <td></td>
+                    <?php } ?>
+                </tr>
+               <?php endfor; ?>
             </table>
         </div>
             
@@ -83,26 +147,31 @@
             </div>
         </div>
             <div class="clearfix"></div>
-<?php 
-if($authenticatedUser['id']!=$team['User']['id']&&$user){
-    if(!$friendInvited){ ?>
-        <form action="/user/invite-friend" method="POST">
-            <input type="hidden" value="<?= $team['User']['id']; ?>" name="id" />
-            <input type="submit" name="submit" value="Invite to friend list" />
-        </form>
-    <?php } 
-    else{
+            <?php 
+            if($authenticatedUser&&$authenticatedUser['id']!=$team['User']['id']){
+                if(!$friendInvited){ ?>
+            <br />
+                    <form action="/user/invite-friend" method="POST">
+                        <input type="hidden" value="<?= $team['User']['id']; ?>" name="id" />
+                        <input type="submit" class="btn myBtn" name="submit" value="Invite to friend list" />
+                    </form>
+                <?php } 
+                else{
 
-        if($friendInvited=="invited"){
-            echo 'This user has already been invited to your friend list.';
-        }
-        else{
-            echo 'This user is in your friend list';
-        }
+                    if($friendInvited=="invited"){
+                        echo '<br />This user has already been invited to your friend list.';
+                    }
+                    else{
+                        echo '<br />This user is in your friend list';
+                    }
 
-    } 
-}
-?>
+                } 
+                ?>
+            <br /><br />
+                <a class="btn btn-danger" href="/user/add-message/id/<?= $team['User']['id']; ?>"><i class="fa fa-envelope-o"></i> Message user</a>
+            <?php
+            }
+            ?>
 
     </div>
     

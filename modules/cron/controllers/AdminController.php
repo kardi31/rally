@@ -240,12 +240,12 @@ class Cron_Admin extends Controller{
         foreach($teams as $team):
             $playersValue = $teamService->getAllTeamPlayersSalary($team);
             if($playersValue!=0)
-                $teamService->removeTeamMoney($team['id'],$playersValue,4,'Player salaries calculated on '.date('Y-m-d'));  
+                $teamService->removeTeamMoney($team['id'],$playersValue,4,'Player salaries ');  
             
         
             $carUpkeep = $teamService->getAllTeamCarsUpkeep($team);
             if($carUpkeep!=0)
-                $teamService->removeTeamMoney($team['id'],$carUpkeep,5,'Cars upkeed calculated on '.date('Y-m-d'));  
+                $teamService->removeTeamMoney($team['id'],$carUpkeep,5,'Cars upkeep');  
             
             if(!empty($team['sponsor_id'])){
                 $teamService->addTeamMoney($team['id'],5000,2,'Money from '.$team['Sponsor']['name'].' received on '.date('Y-m-d'));  
@@ -253,6 +253,63 @@ class Cron_Admin extends Controller{
         endforeach;
         
         echo "done";exit;
+    }
+    
+    // on tuesdays
+    
+    public function calculateTeamRanking(){
+        ini_set('max_execution_time',300000);
+        Service::loadModels('car', 'car');
+        Service::loadModels('people', 'people');
+        Service::loadModels('user', 'user');
+        Service::loadModels('rally', 'rally');
+        Service::loadModels('league', 'league');
+        $teamService = parent::getService('team','team');
+        $rallyService = parent::getService('rally','rally');
+        
+        $teamResults = $teamService->getAllTeamsResults();
+        
+        $teamOrder = array();
+        foreach($teamResults as $teamResult):
+            $positionExplode = explode(',',$teamResult['group_position']);
+            foreach($positionExplode as $position):
+                if(!strlen($position)){
+                    $teamOrder[$teamResult['id']] = '';
+                }
+                else{
+                    $points = $rallyService->getPrizesHelper()->calculatePointsForPlace($position);
+                    if(isset($teamOrder[$teamResult['id']])){
+                        $teamOrder[$teamResult['id']] += $points;
+                    }
+                    else{
+                        $teamOrder[$teamResult['id']] = $points;
+                    }
+                }
+            endforeach;
+        endforeach;
+        arsort($teamOrder);
+        
+        $key = 1;
+        foreach($teamOrder as $team_id => $points){
+            $team = $teamService->getTeam($team_id);
+            
+            if(strlen($team->get('this_week_rank'))){
+                $team->set('last_week_rank',$team->get('this_week_rank'));
+            }
+            
+            if($points > 0){
+                $team->set('this_week_rank',$key);
+            }
+            else{
+                $team->set('this_week_rank',null);
+            }
+            $team->save();
+            
+            $key++;
+        }
+        
+        Zend_Debug::dump($teamOrder);exit;
+        
     }
     
     /*
@@ -401,6 +458,9 @@ class Cron_Admin extends Controller{
         
         echo "done";exit;
     }
+    
+   
+    
     
 }
 ?>

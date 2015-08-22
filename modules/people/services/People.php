@@ -167,6 +167,43 @@ class PeopleService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getFreeDriversBig(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        if(!$date)
+            return array();
+        $busyDrivers = $this->getTeamBusyDriversBig($team,$date,Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        
+	$q = $this->peopleTable->createQuery('p');
+	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name,dr.*,r.*');
+	$q->leftJoin('p.Team t');
+        $q->addWhere("p.job like 'driver'");
+        
+        $q->addWhere('p.on_market = 0');
+	$q->addWhere('t.id = ?',$team['id']);
+        
+        
+        if(!empty($busyDrivers)){
+            $q->whereNotIn('p.id',$busyDrivers);
+        }
+        
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getTeamBusyDriversBig(Team_Model_Doctrine_Team $team,$date,$hydrationMode){
+        $q = $this->peopleTable->createQuery('p');
+	$q->select('*');
+        $q->addSelect('dr.*');
+        $q->addSelect('r.*');
+	$q->leftJoin('p.Team t');
+	$q->leftJoin('p.DriverRallies dr');
+	$q->leftJoin('dr.Rally r');
+        $q->addWhere('r.big_awards = 1');
+        $q->addWhere("p.job like 'driver'");
+	$q->addWhere('t.id = ?',$team['id']);
+	$q->addWhere('r.date like ?',substr($date,0,10)."%");
+        $q->groupBy('p.id');
+	return $q->execute(array(),$hydrationMode);
+    }
+    
     public function getFreeDriversFriendly(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         if(!$date)
             return array();
@@ -229,6 +266,39 @@ class PeopleService extends Service{
 	$q->leftJoin('dr.Rally r');
         $q->addWhere("p.job like 'pilot'");
         $q->addWhere('r.friendly = 1');
+	$q->addWhere('t.id = ?',$team['id']);
+	$q->addWhere('r.date like ?',substr($date,0,10)."%");
+        $q->groupBy('p.id');
+	return $q->execute(array(),$hydrationMode);
+        
+    }
+    
+    public function getFreePilotsBig(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        if(!$date)
+            return array();
+        $busyDrivers = $this->getTeamBusyPilotsBig($team,$date,Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+	$q = $this->peopleTable->createQuery('p');
+	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name,dr.*,r.*');
+	$q->leftJoin('p.Team t');
+        $q->addWhere("p.job like 'pilot'");
+	$q->addWhere('t.id = ?',$team['id']);
+        
+        $q->addWhere('p.on_market = 0');
+        if(!empty($busyDrivers)){
+            $q->whereNotIn('p.id',$busyDrivers);
+        }
+        
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getTeamBusyPilotsBig(Team_Model_Doctrine_Team $team,$date,$hydrationMode){
+        $q = $this->peopleTable->createQuery('p');
+	$q->select('p.id');
+	$q->leftJoin('p.Team t');
+	$q->leftJoin('p.PilotRallies dr');
+	$q->leftJoin('dr.Rally r');
+        $q->addWhere("p.job like 'pilot'");
+        $q->addWhere('r.big_awards = 1');
 	$q->addWhere('t.id = ?',$team['id']);
 	$q->addWhere('r.date like ?',substr($date,0,10)."%");
         $q->groupBy('p.id');

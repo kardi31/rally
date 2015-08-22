@@ -11,6 +11,7 @@ class RallyService extends Service{
     protected $stageTable;
     protected $bigAwardsTable;
     protected $surfaceTable;
+    protected $awardTable;
     protected $friendlyTable;
     protected $friendlyInvitationsTable;
     protected $friendlyParticipantsTable;
@@ -34,6 +35,7 @@ class RallyService extends Service{
         $this->surfaceTable = parent::getTable('rally','surface');
         $this->crewTable = parent::getTable('rally','crew');
         $this->stageTable = parent::getTable('rally','stage');
+        $this->awardTable = parent::getTable('rally','award');
         $this->stageResultTable = parent::getTable('rally','stageResult');
         $this->resultTable = parent::getTable('rally','result');
         $this->friendlyTable = parent::getTable('rally','friendly');
@@ -66,12 +68,13 @@ class RallyService extends Service{
     
     public function getAllFutureRallies($hydrationMode = Doctrine_Core::HYDRATE_RECORD,$league = true,$friendly = true){
         $q = $this->rallyTable->createQuery('r');
+        $q->leftJoin('r.Crews c');
+        $q->addSelect('r.*,c.*');
 	$q->addWhere('r.date > NOW()');
 	$q->orderBy('r.date');
         if(!$league){
             $q->addWhere('r.league_rally != 1');
         }
-        
         
         if(!$friendly){
             $q->addWhere('r.friendly != 1');
@@ -81,23 +84,53 @@ class RallyService extends Service{
     }
     
     public function getAllLeagueRallyResults($league_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        
+        $seasonInfo = LeagueService::getInstance()->getSeasonInfo();
+        
         $q = $this->rallyTable->createQuery('r');
         $q->leftJoin('r.Results re');
-        $q->leftJoin('r.Crews c');
-        $q->groupBy('r.id');
-        $q->addGroupBy('c.team_id');
-//        die('89');
-        echo $q->getSqlQuery();exit;
-//	$q->orderBy('r.date');
-//        $q->addWhere('r.league_rally = 1');
-//        $q->addWhere('r.date > NOW()');
-//        $q->addWhere('r.league like ?',$league_id);
+        $q->leftJoin('re.Crew c');
+	$q->orderBy('r.date');
+        $q->addWhere('r.league_rally = 1');
+        $q->addWhere('r.date > ?',$seasonInfo['season_start']);
+        $q->addWhere('r.date < ?',$seasonInfo['season_finish']);
+        $q->addWhere('r.league like ?',$league_id);
 	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function prepareResultsForLeague($league_id){
+        $results = $this->getAllLeagueRallyResults($league_id,Doctrine_Core::HYDRATE_ARRAY);
+        $ralliesResults = array();
+        
+        // for every rally
+        foreach($results as $key=>$result){
+            $ralliesResults[$result['id']] = array();
+            $ralliesResults[$result['id']]['name'] = "Rally ".($key+1);
+            $ralliesResults[$result['id']]['teams'] = array();
+            // for every rally result row
+            foreach($result['Results'] as $ralResult):
+                $crew = $ralResult['Crew'];
+                $position = $ralResult['position'];
+                // calculate points for place
+                $points = $this->getPrizesHelper()->calculatePointsForPlace($position);
+                // teams can sign up multiple crews
+                // so if more than 1 crew, sum points
+                if(isset($ralliesResults[$result['id']]['teams'][$crew['team_id']])){
+                    $ralliesResults[$result['id']]['teams'][$crew['team_id']] += $points;
+                }
+                else{
+                    $ralliesResults[$result['id']]['teams'][$crew['team_id']] = $points;
+                }
+            endforeach;
+        }
+//        Zend_Debug::dump($ralliesResults);exit;
+        return $ralliesResults;
     }
     
     public function getAllFutureLeagueRallies($league_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->rallyTable->createQuery('r');
-        $q->addSelect('r.*,c.*');
+        $q->addSelect('r.*');
+        $q->addSelect('c.*');
         $q->leftJoin('r.Crews c');
 	$q->orderBy('r.date');
         $q->addWhere('r.league_rally = 1');
@@ -121,6 +154,8 @@ class RallyService extends Service{
     public function getAllFutureTeamRallies($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->rallyTable->createQuery('r');
         $q->leftJoin('r.Crews c');
+        $q->addSelect('r.*');
+        $q->addSelect('c.*');
 	$q->addWhere('r.date > NOW()');
 	$q->orderBy('r.date');
         $q->addWhere('c.team_id = ?',$team_id);
@@ -695,9 +730,16 @@ class RallyService extends Service{
                                 $leagueService->addTeamPoints($result['Crew']['team_id'],$result['position']);
                             }
                         }
+                        if($result['position']==1){
+                            $this->addAward($rally['id'], $result['Crew']['team_id']);
+                        }
                     }
                     else{
                         $this->getPrizesHelper()->handleBigAwardForPlace($result['position'],$result['Crew']['team_id'],$rally,$bigAwardsCount);
+                        
+                        if($result['position']==1){
+                            $this->addAward($rally['id'], $result['Crew']['team_id'],'big');
+                        }
                     }
                 }
             }
@@ -1047,6 +1089,30 @@ class RallyService extends Service{
             $surfaceRow->save();
         endforeach;
         
+    }
+    
+    
+    
+    public function addAward($rally_id,$team_id,$type = 'normal'){
+        $award = $this->awardTable->getRecord();
+        
+        $award->set('team_id',$team_id);
+        $award->set('rally_id',$rally_id);
+        $award->set('type',$type);
+        $award->save();
+        
+        return $award;
+    }
+    
+    
+    public function getTeamAwards($team_id){
+        $q = $this->awardTable->createQuery('a');
+        $q->leftJoin('a.Rally r');
+        $q->addWhere('a.team_id = ?',$team_id);
+        $q->orderBy('a.created_at DESC');
+        $q->select('a.*,r.name');
+        
+        return $q->fetchArray();
     }
 }
 ?>
