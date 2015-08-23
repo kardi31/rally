@@ -148,12 +148,18 @@
         </div>
             <div class="clearfix"></div>
             <?php 
-            if($authenticatedUser&&$authenticatedUser['id']!=$team['User']['id']){
+            if($authenticatedUser&&$authenticatedUser['id']!=$team['User']['id']){ ?>
+            
+            <div class="inviteFriendWrapper">
+            <?php
                 if(!$friendInvited){ ?>
             <br />
                     <form action="/user/invite-friend" method="POST">
                         <input type="hidden" value="<?= $team['User']['id']; ?>" name="id" />
-                        <input type="submit" class="btn myBtn" name="submit" value="Invite to friend list" />
+                        <button type="submit" class="btn myBtn" name="submit">
+                            <i class="fa fa-user"></i>
+                            Invite to friend list 
+                        </button>
                     </form>
                 <?php } 
                 else{
@@ -167,8 +173,8 @@
 
                 } 
                 ?>
-            <br /><br />
-                <a class="btn btn-danger" href="/user/add-message/id/<?= $team['User']['id']; ?>"><i class="fa fa-envelope-o"></i> Message user</a>
+            </div>
+                <a class="btn myBtn" href="/user/show-message-box/id/<?= $team['User']['id']; ?>#sendMessage"><i class="fa fa-envelope-o"></i> Message user</a>
             <?php
             }
             ?>

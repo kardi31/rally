@@ -112,6 +112,7 @@ class Index_Index extends Controller{
         
         
         $userService = parent::getService('user','user');
+        $messageService = parent::getService('user','message');
         
         $user = $userService->getAuthenticatedUser();
         if(!$user)
@@ -120,10 +121,12 @@ class Index_Index extends Controller{
         $hasRallyNow = $rallyService->hasRallyNow($user['Team']['id']);
         $hasFriendlyInvitation = $rallyService->hasFriendlyInvitation($user['id']);
         $notifications = $notificationService->getAllUserNotifications($user['id'],10,Doctrine_Core::HYDRATE_ARRAY);
+        $notReadedMessages = $messageService->getUserMessagesNotReaded($user['id'],Doctrine_Core::HYDRATE_ARRAY);
         
         $this->view->assign('hasFriendlyInvitation',$hasFriendlyInvitation);
         $this->view->assign('hasRallyNow',$hasRallyNow);
         $this->view->assign('notifications',$notifications);
+        $this->view->assign('notReadedMessages',$notReadedMessages);
         
     }
     

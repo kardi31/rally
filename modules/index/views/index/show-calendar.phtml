@@ -55,7 +55,7 @@
         </a>
     <?php endif; ?>
     <a href='javascript:void(0)' class='messageIconWrapper' rel='mainNotificationMessageBox' title='Notification'>
-        <i class='fa fa-envelope-o'></i>
+        <i class='fa fa-info-circle'></i>
     </a>
     <?php if($hasFriendlyInvitation): ?>
         <a href='/rally/list-friendly-rally/' class='messageIconWrapper active' title='<?= $this->translate('Pending friendly invitations');?>'>
@@ -66,6 +66,9 @@
             <i class='fa fa-user-plus'></i>
         </a>
     <?php endif; ?>
+    <a href='/user/show-message-box/id/<?= $authenticatedUser['Team']['id']; ?>' class='messageIconWrapper <?php echo count($notReadedMessages)>0?'active':''; ?>'>
+        <i class='fa fa-envelope-o'></i>
+    </a>
     <a href='#' class='messageIconWrapper premiumIconWrapper'>
         <?= (int)$authenticatedUser['premium']; ?> <img class="coin" src="/images/layout/coin.png">
     </a>

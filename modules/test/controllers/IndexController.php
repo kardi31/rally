@@ -18,10 +18,10 @@ class Test_Index extends Controller{
         require_once(BASE_PATH."/modules/user/controllers/TestController.php");
         $trainingService = parent::getService('people','training');
         $userContr = new User_Test();
-        for($i=1;$i<=15;$i++):
+        for($i=1;$i<=60;$i++):
         $randomNumber = rand(1000000,1200000);
         $_POST['password'] = "portal";
-        $_POST['email'] = "peop".$randomNumber."@kardimobile.pl";
+        $_POST['email'] = "peop_".$randomNumber."@kardimobile.pl";
         $_POST['username'] = "peop_".$randomNumber;
         $user = $userContr->register();
         $GLOBALS['urlParams']['token'] = $user['token'];

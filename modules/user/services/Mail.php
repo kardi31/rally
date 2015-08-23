@@ -15,13 +15,7 @@ class MailService extends Service{
     public function __construct(){
     }
     
-    public function getAllRallys(){
-        return $this->userTable->findAll();
-    }
     
-    public function getUser($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
-        return $this->userTable->findOneBy($field,$id,$hydrationMode);
-    }
     
     public function sendMail($mailTo, $title, $content){
         $mail = new PHPMailer;

@@ -1,0 +1,51 @@
+<?php 
+if(isset($_GET['msg'])){
+        if($_GET['msg']=="too fast"){
+            $this->showError($this->translate('You can post once every 30 seconds'));
+        }
+        elseif($_GET['msg']=="message sent"){
+            $this->showSuccess($this->translate('Your message has been sent.'));
+        }
+    }
+    ?>
+<div class="mainUserBox showForumWrapper ">
+    
+    <div class="boxHeader">
+        <h4><?= $user['username']; ?> message box</h4>
+    </div>
+    <div class="threadContent">
+            <?php 
+            $messageCount = count($messages);
+                foreach($messages as $key => $message):  ?>
+                <?php if(isset($message)&&!empty($message)): ?>
+                    <span class="threadInfo">
+                        <i class="fa fa-clock-o"></i> <?php echo TK_Text::timeFormat($message['created_at'],'d/m/Y H:i'); ?> <br />
+                        <a href="/team/show-team/id/<?= $message['Writer']['Team']['id']; ?>"><i class="fa fa-user"></i> <?php echo $message['Writer']['username']; ?></a>
+                    </span>
+                    <div class="postContent" data-id="<?= $message['id']; ?>">
+                        <?php echo $message['message']; ?>
+                        <div class="mt10">
+                            <a href="/user/show-message-box/id/<?= $message['Writer']['id']; ?>">
+                                <i class="fa fa-reply"></i> Reply
+                            </a>
+                        </div>
+                    </div>
+                    
+                <?php endif; ?>
+                
+                <div class="clearfix"></div>
+                <?php if($key!=$messageCount-1): ?>
+                    <hr />
+                <?php endif; ?>
+            <?php endforeach; ?>
+    </div>
+    <?php if($authenticatedUser && $authenticatedUser['id'] != $user['id']){ ?>
+        <div class="addThreadWrapper replyThreadWrapper" id="sendMessage">
+            <h5><i class="fa fa-pencil"></i> <?= $this->translate('Send message to ').$user['username']; ?></h5>
+            <form method="POST">
+                <?php echo $form->getElement('content')->renderElement(); ?>
+                <?php echo $form->getElement('submit')->renderElement(); ?>
+            </form>
+        </div>
+    <?php } ?>
+</div>

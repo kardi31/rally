@@ -1,0 +1,123 @@
+<script>
+    $(document).ready(function(){
+        var grid = new Datatable();
+            grid.init({
+                src: $("#datatable_ajax"),
+                dataTable: {  // here you can define a typical datatable settings from http://datatables.net/usage/options 
+                   "aoColumns": [
+                        { sWidth: '5%' },
+                        { sWidth: '5%' },
+                        { sWidth: '15%' },
+                        { sWidth: '15%' },
+                        { sWidth: '15%' },
+                        { sWidth: '10%' },
+                        { "bSortable": false, sWidth: '10%' }
+                    ],
+                     "bFilter": true,
+                    "bDestroy": true,
+                    "bProcessing": true,
+                    "bServerSide": true,
+                    "bLengthChange": false,
+                    "aLengthMenu": [
+                        [20, 50, 100, 150, -1],
+                        [20, 50, 100, 150, "All"] // change per page values here
+                    ],
+                    "iDisplayLength": 20, // default record count per page
+                    "sAjaxSource": "/admin/user/list-message-data", // ajax source
+                    "aaSorting": [[ 1, "desc" ]] // set first column as a default sort by asc
+                }
+            });
+               grid.getDataTable().yadcf([
+                    {
+                      column_number: 1,
+                      filter_type: "text"
+                    },
+                    {
+                      column_number: 2,
+                      filter_type: "text"
+                    },
+                    {
+                      column_number: 3,
+                      filter_type: "text"
+                    },
+                    {
+                        column_number: 4,
+                      filter_type: "text"
+                    },
+                    {
+                        column_number: 5,
+                      filter_type: "range_date"
+                    }
+        ]);
+                
+                customDataTableFunctions();
+       
+        
+            
+    });
+</script>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="page-title">
+        List message
+        </h3>
+        <ul class="page-breadcrumb breadcrumb">
+                <li>
+                        <i class="fa fa-home"></i>
+                        <a href="/admin">
+                        Home </a>
+                        <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                        <a href="#">List Message</a>
+                </li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <!-- Begin: life time stats -->
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                    <div class="caption">
+                            <i class="fa fa-envelope-o"></i>List message
+                    </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-container">
+                    <table class="table table-striped table-bordered table-hover" id="datatable_ajax">
+                        <thead>
+                            <tr role="row" class="heading">
+                                <th><input type="checkbox" class="group-checkable"></th>
+                                <th>Id</th>
+                                <th>User</th>
+                                <th>Writer</th>
+                                <th>Message</th>
+                                <th>Created at</th>
+                                <th>Options</th>
+                            </tr>
+                            <tr role="row" class="filter">
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th>
+                                    <div class="margin-bottom-5">
+                                            <button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> Search</button>
+                                    </div>
+                                    <button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Reset</button>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+            <!-- End: life time stats -->
+    </div>
+</div>

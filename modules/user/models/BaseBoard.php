@@ -7,6 +7,7 @@
  * 
  * @property integer $id
  * @property integer $user_id
+ * @property boolean $readed
  * @property integer $writer_id
  * @property text $message
  * 
@@ -29,6 +30,10 @@ abstract class User_Model_Doctrine_BaseBoard extends Doctrine_Record
         $this->hasColumn('user_id', 'integer', 11, array(
              'type' => 'integer',
              'length' => '11',
+             ));
+        $this->hasColumn('readed', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
              ));
         $this->hasColumn('writer_id', 'integer', 11, array(
              'type' => 'integer',

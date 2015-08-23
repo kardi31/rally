@@ -6,11 +6,11 @@ class LeagueService extends Service{
     protected $seasonTable;
     protected $seasonInfoTable;
     
-    protected $maxTeamsInLeague = 12;
+    protected $maxTeamsInLeague = 16;
     protected $season = 1;
     
     private static $leagues = array(
-        '1' => 1,
+        '1.0' => 1,
         '2.1' => 2,
         '2.2' => 2,
         '2.3' => 2,
@@ -49,7 +49,24 @@ class LeagueService extends Service{
         '4.24' => 4,
         '4.25' => 4,
         '4.26' => 4,
-        '4.27' => 4
+        '4.27' => 4,
+        '5.1' => 5,
+        '5.2' => 5,
+        '5.3' => 5,
+        '5.4' => 5,
+        '5.5' => 5,
+        '5.6' => 5,
+        '5.7' => 5,
+        '5.8' => 5,
+        '5.9' => 5,
+        '5.10' => 5,
+        '5.11' => 5,
+        '5.12' => 5,
+        '5.13' => 5,
+        '5.14' => 5,
+        '5.15' => 5,
+        '5.16' => 5
+        
     );
     
     
@@ -115,6 +132,7 @@ class LeagueService extends Service{
 	$save_query->fromArray($newTeamData);
 	$save_query->save();
 	
+        
         return $save_query;
     }
     
@@ -213,6 +231,155 @@ class LeagueService extends Service{
             $season = $this->season;
         else
             $season = (int)$current_season;
+        $q = $this->seasonTable->createQuery('s');
+        $q->leftJoin('s.League l');
+        $q->leftJoin('s.Team t');
+        $q->select('s.league_name');
+        $q->addSelect('t.*');
+	$q->where('s.league_name = ?',$league_name);
+        $q->addWhere('s.season = ?',$season);
+        if($limit)
+            $q->limit($limit);
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    
+    public function selectTeamsForPromotion($current_season = true,$hydrationMode = Doctrine_Core::HYDRATE_RECORD,$limit = false){
+        // get league from current season by default
+        // otherwise use season that is passed as a param
+	if($current_season)
+            $season = $this->season;
+        else
+            $season = (int)$current_season;
+        
+        $teamStatusArray = array();
+        foreach(self::$leagues as $league => $league_level):
+            $q = $this->seasonTable->createQuery('s');
+            $q->leftJoin('s.Team t');
+            $q->leftJoin('t.User u');
+            $q->select('s.*,t.id,u.created_at,u.last_active');
+            $q->where('s.league_name = ?',$league);
+            $q->addWhere('s.season = ?',$season);
+            $q->orderBy('s.points DESC');
+            $result = $q->fetchArray();
+            
+            $teamNo = sizeOf($result);
+            
+            if($teamNo==0)
+                continue;
+            
+            foreach($result as $key=>$teamSeasonRow){
+//                
+//                    if($key<2){
+                        // if user wasn't active during last 5 weeks
+                        // add team to demoted
+                        if($teamSeasonRow['Team']['User']['created_at']<date('Y-m-d H:i:s',strtotime('- 5 weeks'))
+                                && $teamSeasonRow['Team']['User']['last_active'] < date('Y-m-d H:i:s',strtotime('- 5 weeks'))
+                                )
+                        {
+                            $teamStatusArray[$league_level]['demoted'][$teamSeasonRow['team_id']] = 'inactive';
+                            continue;
+                        }
+                        // if top 2 position and league is not first - promote
+                        // aposition because when sorting later we need to put those teams
+                        // above inactive teams
+                        if($league_level!=1&&$key<2){
+                            $teamStatusArray[$league_level]['promoted'][$teamSeasonRow['team_id']] = "aposition";
+                            continue;
+                        }
+                        
+                        // elseif bottom 6 position - demote
+                        elseif($key>=$teamNo-6){
+                            $teamStatusArray[$league_level]['demoted'][$teamSeasonRow['team_id']] = 'aposition';
+                            continue;
+                        }
+                        else{
+                            // else if team not top 2 and not bottom 6
+                            // put it into stay table
+                            // array key = positions in league
+                            $teamStatusArray[$league_level]['stay'][$teamSeasonRow['team_id']] = $key+1;
+                        }
+                        // else
+                        // add team to promoted
+//                        else{
+//                            $teamStatusArray[$league_level]['promoted'][] = $teamSeasonRow['team_id'];
+//                        }
+//                    }
+//                }
+            }
+        endforeach;
+//        Zend_Debug::dump($teamStatusArray);exit;
+        $newLeaguesArray = array();
+        
+        $newLeaguesArray[1] = $teamStatusArray[1]['stay']+$teamStatusArray[2]['promoted'];
+        
+        $newLeaguesArray[2] = $teamStatusArray[1]['demoted']+$teamStatusArray[2]['stay']+$teamStatusArray[3]['promoted'];
+        
+        $newLeaguesArray[3] = $teamStatusArray[2]['demoted']+$teamStatusArray[3]['stay']+(array)$teamStatusArray[4]['promoted'];
+        
+        $newLeaguesArray[4] = (array)$teamStatusArray[3]['demoted']+(array)$teamStatusArray[4]['stay']+(array)$teamStatusArray[5]['promoted'];
+//        Zend_Debug::dump($newLeaguesArray);exit;
+        if(count($newLeaguesArray[1])<$this->maxTeamsInLeague){
+            
+            asort($newLeaguesArray[2],SORT_NATURAL);
+            do{
+                $k = key($newLeaguesArray[2]);
+                $element = $newLeaguesArray[2][$k];
+                $newLeaguesArray[1][$k] = $element;
+                unset($newLeaguesArray[2][$k]);
+            }
+            while(count($newLeaguesArray[1])<$this->maxTeamsInLeague);
+        }
+        
+        if(count($newLeaguesArray[2])<$this->maxTeamsInLeague*3 && isset($newLeaguesArray[3])){
+            
+            // if in league 2 not enough teams but in league 3 also not enough to fill league 2
+            // do this to avoid stack in while loop
+            if(count($newLeaguesArray[2])+count($newLeaguesArray[3])<$this->maxTeamsInLeague*3){
+                $newLeaguesArray[2] = $newLeaguesArray[2]+(array)$newLeaguesArray[3];
+                unset($newLeaguesArray[3]);
+            }
+            else{
+                // sort to get teams with top position as first
+                asort($newLeaguesArray[3],SORT_NATURAL);
+                // promote teams with best position to higher league
+                // until there's enough teams
+                do{
+                    $k = key($newLeaguesArray[3]);
+                    $element = $newLeaguesArray[3][$k];
+                    $newLeaguesArray[2][$k] = $element;
+                    unset($newLeaguesArray[3][$k]);
+                }
+                while(count($newLeaguesArray[2])<$this->maxTeamsInLeague*3);
+            }
+        }
+//        Zend_Debug::dump($newLeaguesArray[3]);exit;
+        if(count($newLeaguesArray[3])<$this->maxTeamsInLeague*9 && isset($newLeaguesArray[4])){
+            
+            // if in league 2 not enough teams but in league 3 also not enough to fill league 2
+            // do this to avoid stack in while loop
+            if(count($newLeaguesArray[3])+count($newLeaguesArray[4])<$this->maxTeamsInLeague*9){
+                $newLeaguesArray[3] = $newLeaguesArray[3]+(array)$newLeaguesArray[4];
+                unset($newLeaguesArray[4]);
+            }
+            else{
+                // sort to get teams with top position as first
+                asort($newLeaguesArray[4],SORT_NATURAL);
+
+                // promote teams with best position to higher league
+                // until there's enough teams
+                do{
+                    $k = key($newLeaguesArray[4]);
+                    $element = $newLeaguesArray[4][$k];
+                    $newLeaguesArray[3][$k] = $element;
+                    unset($newLeaguesArray[4][$k]);
+                }
+                while(count($newLeaguesArray[3])<$this->maxTeamsInLeague*9);
+            }
+        }
+        
+            Zend_Debug::dump($newLeaguesArray);exit;
+        
         $q = $this->seasonTable->createQuery('s');
         $q->leftJoin('s.League l');
         $q->leftJoin('s.Team t');

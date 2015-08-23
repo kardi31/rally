@@ -122,6 +122,9 @@ Board:
       type: integer(4)
     user_id:
       type: integer(11)
+    readed:
+      type: boolean
+      default: 0
     writer_id:
       type: integer(11)
     message:

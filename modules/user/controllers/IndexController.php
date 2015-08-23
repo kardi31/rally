@@ -340,7 +340,44 @@ class User_Index extends Controller{
         $this->view->disableLayout();
     }
     
-    public function addMessage(){
+//    public function addMessage(){
+//        Service::loadModels('team', 'team');
+//        $this->getLayout()->setLayout('page');
+//	
+//        $userService = parent::getService('user','user');
+//        $messageService = parent::getService('user','message');
+//        if(!$user = $userService->getUser($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
+//            throw new TK_Exception('No such thread',404);
+//        }
+//        
+//        $authenticatedUser = $userService->getAuthenticatedUser();
+//        
+//        $form = $this->getForm('user','message');
+//       
+//        if($form->isSubmit()){
+//            if($form->isValid()){
+//                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+//                
+////                // user can add a post once every 30 seconds
+////                if(!$forumService->checkLastUserPost($user,$thread)){
+////                    TK_Helper::redirect('/forum/show-thread/id/'.$thread['id'].'?msg=too+fast');
+////                    exit;
+////                }
+////                
+//                $values = $_POST;
+////		
+//		$messageService->addMessage($user['id'],$authenticatedUser['id'],$values);
+//		TK_Helper::redirect('/team/show-team/id/'.$user['Team']['id']."?msg=message+sent");
+////		
+//                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+//            }
+//        }
+//        
+//	$this->view->assign('user',$user);
+//	$this->view->assign('form',$form);
+//    }
+    
+    public function showMessageBox(){
         Service::loadModels('team', 'team');
         $this->getLayout()->setLayout('page');
 	
@@ -352,6 +389,12 @@ class User_Index extends Controller{
         
         $authenticatedUser = $userService->getAuthenticatedUser();
         
+        $messages = $messageService->getUserMessages($user['id'],Doctrine_Core::HYDRATE_ARRAY);
+        
+        if($authenticatedUser['id']==$user['id']){
+            $messageService->setMessagesReaded($user['id']);
+        }
+        
         $form = $this->getForm('user','message');
        
         if($form->isSubmit()){
@@ -359,21 +402,20 @@ class User_Index extends Controller{
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
 //                // user can add a post once every 30 seconds
-//                if(!$forumService->checkLastUserPost($user,$thread)){
-//                    TK_Helper::redirect('/forum/show-thread/id/'.$thread['id'].'?msg=too+fast');
-//                    exit;
-//                }
+                if(!$messageService->checkLastUserMessage($authenticatedUser['id'],$user['id'])){
+                    TK_Helper::redirect('/user/show-message-box/id/'.$user['Team']['id'].'?msg=too+fast');
+                    exit;
+                }
 //                
                 $values = $_POST;
-//		
 		$messageService->addMessage($user['id'],$authenticatedUser['id'],$values);
-		TK_Helper::redirect('/team/show-team/id/'.$user['Team']['id']."?msg=message+sent");
+		TK_Helper::redirect('/user/show-message-box/id/'.$user['Team']['id']."?msg=message+sent");
 //		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
         }
-        
 	$this->view->assign('user',$user);
+	$this->view->assign('messages',$messages);
 	$this->view->assign('form',$form);
     }
 }

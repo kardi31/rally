@@ -459,6 +459,14 @@ class Cron_Admin extends Controller{
         echo "done";exit;
     }
     
+    public function promoteTeams(){
+        
+        Service::loadModels('team', 'team');
+        Service::loadModels('user', 'user');
+        $leagueService = parent::getService('league','league');
+        
+        $leagueService->selectTeamsForPromotion();
+    }
    
     
     

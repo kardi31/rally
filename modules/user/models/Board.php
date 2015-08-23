@@ -12,5 +12,19 @@
  */
 class User_Model_Doctrine_Board extends User_Model_Doctrine_BaseBoard
 {
-
+    
+    public function setUp()
+    {
+        parent::setUp();
+	$this->hasOne('User_Model_Doctrine_User as Writer', array(
+             'local' => 'writer_id',
+             'foreign' => 'id'));
+        
+	
+	$this->hasOne('User_Model_Doctrine_User as User', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
+        
+	
+    }
 }

@@ -40,7 +40,6 @@ class User_Test extends Controller{
                     $values['token'] = TK_Text::createUniqueToken();
                     $values['password'] = TK_Text::encode($values['password'], $values['salt']);
                     $values['role'] = "user";
-                    
                     $user = $userService->saveUserFromArray($values,false);
                     
 //                    $mailService->sendMail($values['email'],'Rejestracja w Tomek CMS przebiegła pomyślnie',$mailService::prepareRegistrationMail($values['token']));
@@ -82,8 +81,8 @@ class User_Test extends Controller{
 	    $team->set('league_name',$league['league_name']);
 	    $team->save();
 	    
-            
 	    $carModel = $carService->getRandomLeagueCar($league_level);
+            
 	    $car = $carService->createNewTeamCar($carModel,$team['id']);
             $driver = $peopleService->createRandomDriver($league_level,$team['id']);
             $pilot = $peopleService->createRandomPilot($league_level,$team['id']);

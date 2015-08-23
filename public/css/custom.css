@@ -28,6 +28,7 @@
     3.5 My finances
     3.6 My people
     3.7 My team
+    3.8 User message
   4. Rallies
     4.1 List rally
     4.2 Friendly rallies
@@ -1172,6 +1173,11 @@ footer{
     /*
         3.7 My team
     */
+    
+    .inviteFriendWrapper{
+        width:200px;
+        display:inline-block;
+    }
     .myTeamContent{
         padding:10px 30px;
         padding-left:10px;
@@ -1213,6 +1219,15 @@ margin-right: auto;
 /*        display:block;
         margin:0 auto;*/
     }
+    
+    /*
+        3.8 User message
+    */
+    
+    .mt10{
+        margin-top:10px;
+    }
+    
     /*
         4.1 List rallies
     */
