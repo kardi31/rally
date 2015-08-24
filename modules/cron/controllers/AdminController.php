@@ -460,12 +460,18 @@ class Cron_Admin extends Controller{
     }
     
     public function promoteTeams(){
-        
+        ini_set('max_execution_time',300000);
         Service::loadModels('team', 'team');
         Service::loadModels('user', 'user');
+        Service::loadModels('rally', 'rally');
         $leagueService = parent::getService('league','league');
+        parent::getService('rally','rally');
+        parent::getService('team','team');
         
-        $leagueService->selectTeamsForPromotion();
+        
+        $leagueTeamsArray =  $leagueService->selectTeamsForPromotion(1);
+        
+        $leagueService->promoteTeams($leagueTeamsArray);
     }
    
     

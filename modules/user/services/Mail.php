@@ -53,7 +53,6 @@ class MailService extends Service{
         include(BASE_PATH."/modules/user/views/mail/template.phtml");
         $content = ob_get_contents();
         ob_end_clean();
-        echo $content;
         return $content;
     }
     

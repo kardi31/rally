@@ -1,7 +1,18 @@
 <div class="mainUserBox showLeagueTable">
     <h4 class="boxHeader"><?= $this->translate('League')." ".$league; ?></h4> 
    <div class="showLeagueTableWrapper"> 
-       <div><?= $this->translate('Top 3 teams are promoted to league 3, bottom 3 teams are relegated to league 5.'); ?></div>
+       <div>
+            <?php
+                $leagueExpl = explode('.',$league);
+                $leagueLevel = $leagueExpl[0];
+                if($leagueLevel!=1){
+                    echo $this->translate('Top 2 teams are promoted to league ').($leagueLevel-1);
+                }
+                else{
+                    echo $this->translate('Last 6 teams are downgraded to league ').($leagueLevel+1);
+                }
+            ?>
+       </div>
        <br />
         <table>
             <thead>

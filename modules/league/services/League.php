@@ -7,7 +7,7 @@ class LeagueService extends Service{
     protected $seasonInfoTable;
     
     protected $maxTeamsInLeague = 16;
-    protected $season = 1;
+    protected $season = 2;
     
     private static $leagues = array(
         '1.0' => 1,
@@ -108,9 +108,9 @@ class LeagueService extends Service{
 // check if there is any not full league
         $q = $this->seasonTable->createQuery('s');
 	$q->groupBy('s.league_name');
+        $q->addWhere('s.season = ?',$this->season);
 	$q->having('count(s.league_name) < ?',$this->maxTeamsInLeague);
 	$q->limit(1);
-	
 	$result = $q->fetchOne(array(),$hydrationMode);
 	// if not, then get next free league
 	if(!$result){
@@ -122,7 +122,7 @@ class LeagueService extends Service{
 	    $league = $result;
 	}
         $this->checkLeagueRallies($league);
-// save team to league
+        // save team to league
 	$newTeamData = array(
 	  'team_id' => $team_id,
 	  'league_name' => $league->get('league_name'),
@@ -133,7 +133,7 @@ class LeagueService extends Service{
 	$save_query->save();
 	
         
-        return $save_query;
+        return $league;
     }
     
     public function getRandomLeague(){
@@ -157,14 +157,17 @@ class LeagueService extends Service{
 	return $q->fetchArray();
     }
     
+    
     public function getNextEmptyLeague($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->seasonTable->createQuery('s');
 	$q->select('s.league_name');
         $q->groupBy('s.league_name');
+        $q->addWhere('s.season = ?',$this->season);
 	$full_league_list = $q->execute(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
         // if there's just one league
         if(!is_array($full_league_list)||empty($full_league_list)){
             if(!strlen($full_league_list)){
+                reset(self::$leagues);
                 $leagueData['league_name'] = key(self::$leagues);
                 $leagueData['league_level'] = (int)key(self::$leagues);
                 if(!$league = $this->getLeague(key(self::$leagues),'league_name')){
@@ -178,7 +181,6 @@ class LeagueService extends Service{
             $full_league_list = array();
             $full_league_list[] = $league_id;
         }
-        
         $full_league_list_query = join(',',$full_league_list);
         
 	$league_query = $this->leagueTable->createQuery('l');
@@ -244,14 +246,53 @@ class LeagueService extends Service{
     }
     
     
+    public function addTeamPoints($team_id,$position){
+        $rallyService = RallyService::getInstance();
+        $season = $this->getCurrentSeason();
+        
+        $points = $rallyService->getPrizesHelper()->calculatePointsForPlace($position);
+        
+	$q = $this->seasonTable->createQuery('s');
+        $q->addWhere('s.season = ?',$season);
+        $q->addWhere('s.team_id = ?',$team_id);
+        $teamSeasonTable = $q->fetchOne(array());
+        
+        $currentPoints = $teamSeasonTable->get('points');
+        $newPoints = $currentPoints + $points;
+        $teamSeasonTable->set('points',$newPoints);
+        $teamSeasonTable->save();
+    }
+    
+    public function checkLeagueRallies($league){
+        $seasonInfo = $this->getSeasonInfo();
+//        var_dump($league['league_name']);exit;
+            $hasRallies = RallyService::getInstance()->hasLeagueRallies($league['league_name'],$seasonInfo['season_start'],$seasonInfo['season_finish']);
+        $weeks = TK_Text::datediff('ww', $seasonInfo['season_start'],$seasonInfo['season_finish'], false);
+        if(!$hasRallies){
+            for($i=1;$i<=$weeks;$i++):
+                RallyService::getInstance()->createOneLeagueRally($league['league_name'],$i,$seasonInfo['season_start']);
+            endfor;
+        }
+        
+        
+    }
+    
+    public function getSeasonInfo(){
+        $season = $this->getCurrentSeason();
+        $q = $this->seasonInfoTable->createQuery('s');
+        $q->addWhere('s.season = ?',$season);
+        return $q->fetchOneArray();
+    }
+    
+    
+    
     public function selectTeamsForPromotion($current_season = true,$hydrationMode = Doctrine_Core::HYDRATE_RECORD,$limit = false){
         // get league from current season by default
         // otherwise use season that is passed as a param
-	if($current_season)
+	if(is_bool($current_season))
             $season = $this->season;
         else
             $season = (int)$current_season;
-        
         $teamStatusArray = array();
         foreach(self::$leagues as $league => $league_level):
             $q = $this->seasonTable->createQuery('s');
@@ -262,7 +303,6 @@ class LeagueService extends Service{
             $q->addWhere('s.season = ?',$season);
             $q->orderBy('s.points DESC');
             $result = $q->fetchArray();
-            
             $teamNo = sizeOf($result);
             
             if($teamNo==0)
@@ -308,7 +348,6 @@ class LeagueService extends Service{
 //                }
             }
         endforeach;
-//        Zend_Debug::dump($teamStatusArray);exit;
         $newLeaguesArray = array();
         
         $newLeaguesArray[1] = $teamStatusArray[1]['stay']+$teamStatusArray[2]['promoted'];
@@ -378,59 +417,19 @@ class LeagueService extends Service{
             }
         }
         
-            Zend_Debug::dump($newLeaguesArray);exit;
-        
-        $q = $this->seasonTable->createQuery('s');
-        $q->leftJoin('s.League l');
-        $q->leftJoin('s.Team t');
-        $q->select('s.league_name');
-        $q->addSelect('t.*');
-	$q->where('s.league_name = ?',$league_name);
-        $q->addWhere('s.season = ?',$season);
-        if($limit)
-            $q->limit($limit);
-	return $q->execute(array(),$hydrationMode);
+        return $newLeaguesArray;
     }
     
-    
-    public function addTeamPoints($team_id,$position){
-        $rallyService = RallyService::getInstance();
-        $season = $this->getCurrentSeason();
-        
-        $points = $rallyService->getPrizesHelper()->calculatePointsForPlace($position);
-        
-	$q = $this->seasonTable->createQuery('s');
-        $q->addWhere('s.season = ?',$season);
-        $q->addWhere('s.team_id = ?',$team_id);
-        $teamSeasonTable = $q->fetchOne(array());
-        
-        $currentPoints = $teamSeasonTable->get('points');
-        $newPoints = $currentPoints + $points;
-        $teamSeasonTable->set('points',$newPoints);
-        $teamSeasonTable->save();
-    }
-    
-    public function checkLeagueRallies($league){
-        $seasonInfo = $this->getSeasonInfo();
-        
-            $hasRallies = RallyService::getInstance()->hasLeagueRallies($league['league_name'],$seasonInfo['season_start'],$seasonInfo['season_finish']);
-        
-        $weeks = TK_Text::datediff('ww', date('Y-m-d H:i:s'),$seasonInfo['season_finish'], false);
-       
-        if(!$hasRallies){
-            for($i=2;$i<=$weeks+1;$i++):
-                RallyService::getInstance()->createOneLeagueRally($league['league_name'],$i);
-            endfor;
+    public function promoteTeams($leagueTeamsArray){
+        foreach($leagueTeamsArray as $league_level => $leagueTeam){
+            foreach($leagueTeam as $team_id => $info){
+                $league = $this->appendTeamToLeague($team_id);
+                $team = TeamService::getInstance()->getTeam($team_id);
+                $team->set('league_name',$league->get('league_name'));
+                $team->save();
+            }
         }
-        
-        
-    }
-    
-    public function getSeasonInfo(){
-        $season = $this->getCurrentSeason();
-        $q = $this->seasonInfoTable->createQuery('s');
-        $q->addWhere('s.season = ?',$season);
-        return $q->fetchOneArray();
+        Zend_Debug::dump($leagueTeamsArray);exit;
     }
 }
 ?>

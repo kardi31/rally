@@ -1051,6 +1051,8 @@ class RallyService extends Service{
         $q->addWhere('r.league like ?',$league_id);
         $q->addWhere('r.date > ?',$startDate);
         $q->addWhere('r.date < ?',$finishDate);
+//        var_dump($q->fetchOne());exit;
+        
 	return $q->fetchOneArray();
     }
     

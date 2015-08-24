@@ -167,7 +167,7 @@ class User_Index extends Controller{
                 $values = $_POST;
                 $user = $userService->getUser($values['login'], 'username');
                 if ($user && !$user->get('active')):
-                    $this->view->messages()->add($this->view->translate('User is not active'), 'error');
+                        TK_Helper::redirect('/user/login?msg=not+active');
                 else:
 
                     if($user && $userService->authenticate($user,$values['password'])):
