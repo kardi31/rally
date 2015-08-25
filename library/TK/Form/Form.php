@@ -67,46 +67,46 @@ class Form extends Element{
     }
     
     
-    public function validateElement($name,$validators = null){
-        if(!$this->isSubmit())
-            return "";
-        
-        if($this->method=="POST"):
-            $var = $_POST[$name];
-        elseif($this->method=="GET"):
-            $var = $_GET[$name];
-        endif;
-	
-        $response = "";
-        // dla kilku validatorow
-        if(is_array($validators)):
-            foreach($validators as $key => $validator):
-            // gdy validator ma jakies opcje to klucz jest nazwa validatora a wartosc to opcje
-            if(is_array($validator)):
-                $options = $validator;
-                $validator = $key;
-            endif;
-                // wywolywanie odpowiedniego validatora
-                $response = $this->callValidator($validator,$var,$options);
-                
-                // jeżeli już został wykryty błąd kończymy pętle
-                if(is_array($response)&&array_key_exists('result',$response))
-                        break;
-            endforeach; 
-        else:
-            // dla pojedynczego validatora
-                $response = $this->callValidator($validators,$var);
-        endif; 
-        
-        // zwracamy wartość formularza
-        if(is_array($response)&&array_key_exists('result',$response)&&$response['result']==false):
-            $this->valid = false;
-            $view = View::getInstance();
-            return $view->showError($view->translate($response['errorMessage']));
-        endif;
-        
-        
-    }
+//    public function validateElement($name,$validators = null){
+//        if(!$this->isSubmit())
+//            return "";
+//        
+//        if($this->method=="POST"):
+//            $var = $_POST[$name];
+//        elseif($this->method=="GET"):
+//            $var = $_GET[$name];
+//        endif;
+//	
+//        $response = "";
+//        // dla kilku validatorow
+//        if(is_array($validators)):
+//            foreach($validators as $key => $validator):
+//            // gdy validator ma jakies opcje to klucz jest nazwa validatora a wartosc to opcje
+//            if(is_array($validator)):
+//                $options = $validator;
+//                $validator = $key;
+//            endif;
+//                // wywolywanie odpowiedniego validatora
+//                $response = $this->callValidator($validator,$var,$options);
+//                
+//                // jeżeli już został wykryty błąd kończymy pętle
+//                if(is_array($response)&&array_key_exists('result',$response))
+//                        break;
+//            endforeach; 
+//        else:
+//            // dla pojedynczego validatora
+//                $response = $this->callValidator($validators,$var);
+//        endif; 
+//        
+//        // zwracamy wartość formularza
+//        if(is_array($response)&&array_key_exists('result',$response)&&$response['result']==false):
+//            $this->valid = false;
+//            $view = View::getInstance();
+//            return $view->showError($view->translate($response['errorMessage']));
+//        endif;
+//        
+//        
+//    }
     
     public function getMethodVariable($variableName){
         if(!$this->isSubmit())
@@ -194,17 +194,17 @@ class Form extends Element{
         $this->error = $message;
     }
     
-    public function addClass($class){
-	$this->classes[] = $class;
-    }
+//    public function addClass($class){
+//	$this->classes[] = $class;
+//    }
     
-    public function renderClasses(){
-        if(empty($this->classes))
-            return "";
-	$classes = array_keys($this->classes);
-	$classList = implode(' ',$classes);
-	
-	return $classList;
-    }
+//    public function renderClasses(){
+//        if(empty($this->classes))
+//            return "";
+//	$classes = array_keys($this->classes);
+//	$classList = implode(' ',$classes);
+//	
+//	return $classList;
+//    }
     
 }

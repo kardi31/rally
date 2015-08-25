@@ -52,11 +52,40 @@ class FriendsService extends Service{
         return $friends;
     }
     
+    public function acceptInviteUser($id,$friend_id){
+        $q = $this->friendsTable->createQuery('f');
+        $q->select('f.*');
+        $q->addWhere("f.id = ?",$id);
+        $q->addWhere("f.friend_id = ?",$friend_id);
+        $result = $q->fetchOne(array(),Doctrine_Core::HYDRATE_RECORD);
+        if($result){
+            $result->set('accepted',1);
+            $result->save();
+        }
+        else{
+            return false;
+        }
+    }
+    
+    public function rejectInviteUser($id,$friend_id){
+        $q = $this->friendsTable->createQuery('f');
+        $q->select('f.*');
+        $q->addWhere("f.id = ?",$id);
+        $q->addWhere("f.friend_id = ?",$friend_id);
+        $result = $q->fetchOne(array(),Doctrine_Core::HYDRATE_RECORD);
+        if($result){
+            $result->delete();
+        }
+        else{
+            return false;
+        }
+    }
+    
     public function checkFriendInvited($friend_id,$user_id){
         $q = $this->friendsTable->createQuery('f');
         $q->select('f.*');
-        $q->addWhere("f.user_id = ?",$user_id);
-        $q->addWhere("f.friend_id = ?",$friend_id);
+        $q->addWhere("f.user_id = ? and f.friend_id = ?",array($user_id,$friend_id));
+        $q->orWhere("f.user_id = ? and f.friend_id = ?",array($friend_id,$user_id));
         $result = $q->fetchOne(array(),Doctrine_Core::HYDRATE_ARRAY);
         if($result){
             if($result['accepted']){
@@ -91,7 +120,10 @@ class FriendsService extends Service{
     public function getUserFriends($user_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->friendsTable->createQuery('f');
         $q->leftJoin('f.UserFriends uf');
-        $q->select('uf.*,f.*'); 
+        $q->leftJoin('uf.Team t');
+        $q->leftJoin('f.User u');
+        $q->leftJoin('u.Team t2');
+        $q->select('uf.*,f.*,t.id,u.id,u.username,t2.id'); 
         $q->addWhere('f.accepted = 1');
         $q->addWhere("f.user_id = ? or f.friend_id = ?",array($user_id,$user_id));
         return $q->execute(array(),$hydrationMode);

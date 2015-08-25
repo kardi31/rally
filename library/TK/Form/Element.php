@@ -287,6 +287,8 @@ class Element{
     }
     
     public function renderClasses($element = 'element'){
+        if(empty($this->classes))
+            return "";
 	$classes = $this->classes[$element];
 	$classList = implode(' ',$classes);
 	

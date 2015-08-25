@@ -65,7 +65,7 @@ class Index_Index extends Controller{
         
         $user = $userService->getAuthenticatedUser();
         if($user){
-            $friends = $friendsService->getUserFriends($user['id']);
+            $friends = $friendsService->getUserFriends($user['id'],Doctrine_Core::HYDRATE_ARRAY);
             $this->view->assign('friends',$friends);
         }
         
@@ -121,12 +121,14 @@ class Index_Index extends Controller{
         $hasRallyNow = $rallyService->hasRallyNow($user['Team']['id']);
         $hasFriendlyInvitation = $rallyService->hasFriendlyInvitation($user['id']);
         $notifications = $notificationService->getAllUserNotifications($user['id'],10,Doctrine_Core::HYDRATE_ARRAY);
+        $notReadedNotifications = $notificationService->countNotReadedNotifications($user['id']);
         $notReadedMessages = $messageService->getUserMessagesNotReaded($user['id'],Doctrine_Core::HYDRATE_ARRAY);
         
         $this->view->assign('hasFriendlyInvitation',$hasFriendlyInvitation);
         $this->view->assign('hasRallyNow',$hasRallyNow);
         $this->view->assign('notifications',$notifications);
         $this->view->assign('notReadedMessages',$notReadedMessages);
+        $this->view->assign('notReadedNotifications',$notReadedNotifications);
         
     }
     

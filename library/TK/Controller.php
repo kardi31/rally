@@ -36,9 +36,10 @@ class Controller{
 //            $authenticatedUser = $userService->getAuthenticatedUser();
 //            if($authenticatedUser['role']!='admin'){
 //                TK_Helper::redirect('/');
+//                exit;
 //            }
 //        }
-        
+//        
         $actionName = TK_Text::convertViewToActionName($viewName);
         $elem->$actionName();
         $module = explode('_',get_class($elem));

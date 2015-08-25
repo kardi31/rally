@@ -420,7 +420,7 @@ footer{
 .subboxFriends{
     height:120px;
     overflow-y:scroll;
-
+    padding-left:20px;
 }
 .boxFriends li{
     margin-bottom:10px;
@@ -634,6 +634,11 @@ footer{
 .boxNotificationInner div span{
     font-size:11px;
     display:block;
+}
+.boxNotificationInner div:after{
+    display:block;
+    clear:both;
+    content:" ";
 }
 
 /*
@@ -1747,11 +1752,11 @@ margin-right: auto;
         padding:15px;
     }
     
-    .red{        
+    .red,.red:hover{        
         color:#d9534f;
     }
     
-    .green{
+    .green,.green:hover{
         color:#5cb85c;
     }
     

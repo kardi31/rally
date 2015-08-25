@@ -36,13 +36,31 @@ class Radio extends Element {
         $this->elementDisplay .= '<span class="radioWrapper">';
         if(count($this->multiOptions)>0){
             foreach($this->multiOptions as $option){
-//                var_dump($option);exit;
                 $this->elementDisplay .= "<span class='radioElemWrapper'>";
                 $this->elementDisplay .= "<label for=".$this->name.'_'.$option['value'].">".$option['label']."</label>";
-//                echo "good";exit;
                 $this->elementDisplay .= "<input ".$this->isSelected($option['value'],$submitElem)." value='".$option['value']."' ".$this->renderParams()." name='".$this->name."' id='".$this->name.'_'.$option['value']."'  type='".$this->type."' />";
                 $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
                 $this->elementDisplay .= "</span>";
+            }
+        }
+        $this->elementDisplay .= '</span>';
+        return $this->elementDisplay;
+    }
+    
+    public function renderElementFromMulti($img = false,$submitElem = 'submit'){
+        $this->elementDisplay .= '<span class="radioWrapper">';
+        if(count($this->multiOptions)>0){
+            foreach($this->multiOptions[$this->name] as $option => $label){
+                $this->elementDisplay .= "<div class='radio'>";
+                $this->elementDisplay .= "<label for=".$this->name.'_'.$option.">";
+                $this->elementDisplay .= "<input ".$this->isSelected($option,$submitElem)." value='".$option."' ".$this->renderParams()." name='".$this->name."' id='".$this->name.'_'.$option."'  type='".$this->type."' />";
+                $this->elementDisplay .= $label;
+                if($img){
+                    $this->elementDisplay .= $img;
+                }
+                $this->elementDisplay .= "</label>";
+                $this->elementDisplay .= "<div class='formError'>".$this->validateElement()."</div>";
+                $this->elementDisplay .= "</div>";
             }
         }
         $this->elementDisplay .= '</span>';
@@ -82,4 +100,26 @@ class Radio extends Element {
         $this->value = $value;
     }
     
+    public function addMultiOptions($options){
+	
+	if(count($options)==0)
+	    return ;
+	
+	// set pointer to begining of array
+	reset($options);
+	$first_value = current($options);
+        
+	// if as a value we get an array then first col is a key and second is a value
+	if(is_array($first_value)):
+	    $keys = array_keys($first_value);
+	    foreach($options as $key => $value):
+		$this->multiOptions[$this->name][$value[$keys[0]]] = $value[$keys[1]];
+	    endforeach;
+	else:
+	    foreach($options as $key => $value):
+		$this->multiOptions[$this->name][$key] = $value;
+	    endforeach;
+	endif;    
+	
+    }
 }

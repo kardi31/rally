@@ -135,6 +135,7 @@ class RallyService extends Service{
 	$q->orderBy('r.date');
         $q->addWhere('r.league_rally = 1');
         $q->addWhere('r.date > NOW()');
+        $q->limit(4);
         $q->addWhere('r.league like ?',$league_id);
 	return $q->execute(array(),$hydrationMode);
     }

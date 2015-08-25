@@ -80,6 +80,24 @@ class NotificationService extends Service{
         return $q->execute(array(),$hydrationMode);
     }
     
+    
+    public function countNotReadedNotifications($user_id){
+        $q = $this->notificationTable->createQuery('n');
+        $q->select('count(n.id) as cnt'); 
+        $q->addWhere('n.user_id = ?',$user_id);
+        $q->addWhere('n.readed = 0');
+        return $q->execute(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+    }
+    
+    public function readNotifications($user_id){
+        $q = $this->notificationTable->createQuery();
+        $q->update('User_Model_Doctrine_Notification n')
+                ->set(array('n.readed' => 1,'n.updated_at' => date('Y-m-d H:i:s')));
+        $q->addWhere('n.readed = 0');
+        $q->addWhere("n.user_id = ?",$user_id);
+        $q->execute();
+    }
+    
     public function removeNotification($id){
         $notification = $this->getNotification($id);
         $notification->delete();

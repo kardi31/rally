@@ -13,9 +13,10 @@
                         echo "<li>";
                     }
 
-                    echo '<img src="http://placehold.it/20x20" />';
-                    echo TK_Text::truncate($friend['UserFriends']['username'],15); 
+//                    echo '<img src="http://placehold.it/20x20" />';
+                    echo '<a href="/team/show-team/id/'.$friend['UserFriends']['Team']['id'].'">'.TK_Text::truncate($friend['UserFriends']['username'],15).'</a>'; 
                     echo "<i class='fa fa-circle-thin'></i>";
+                    echo '<a href="/user/show-message-box/id/'.$friend['UserFriends']['id'].'#sendMessage"><i class="fa fa-envelope-o"></i></a>';
                 }
                 else{
                     if(strtotime($friend['User']['last_active'])>strtotime("-2 minutes")){
@@ -24,10 +25,11 @@
                     else{
                         echo "<li>";
                     }
-                    echo '<img src="http://placehold.it/20x20" />';
+//                    echo '<img src="http://placehold.it/20x20" />';
 
-                    echo TK_Text::truncate($friend['User']['username'],15); 
+                    echo '<a href="/team/show-team/id/'.$friend['User']['Team']['id'].'">'.TK_Text::truncate($friend['User']['username'],15).'</a>'; 
                     echo "<i class='fa fa-circle-thin'></i>";
+                    echo '<a href="/user/show-message-box/id/'.$friend['User']['id'].'#sendMessage"><i class="fa fa-envelope-o"></i></a>';
                 }
                 ?>
             </li>

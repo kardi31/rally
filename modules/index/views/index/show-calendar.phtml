@@ -39,9 +39,21 @@
                     $('#'+element).fadeIn(1000);
                 }
                
+               if(element == 'mainNotificationMessageBox'){
+                   $.ajax({
+                       url: "/user/read-notifications"
+                   });
+               }
                
            });
            
+           $('.inviteLink').click(function(){
+               var element = $(this).attr('rel');
+                   $.ajax({
+                       url: "/user/delete-notification/id/"+element
+                   });
+               
+           });
         });
     </script>
 <div class='messageIcons'>
@@ -54,7 +66,7 @@
             <i class='fa fa-car'></i>
         </a>
     <?php endif; ?>
-    <a href='javascript:void(0)' class='messageIconWrapper' rel='mainNotificationMessageBox' title='Notification'>
+    <a href='javascript:void(0)' class='messageIconWrapper <?= ($notReadedNotifications>0)?"active":""; ?>' rel='mainNotificationMessageBox' title='Notification'>
         <i class='fa fa-info-circle'></i>
     </a>
     <?php if($hasFriendlyInvitation): ?>
@@ -82,6 +94,14 @@
         <div>
             <span><?= TK_Text::timeFormat($notification['created_at'], 'd/m/y'); ?></span>
             <?= $notification['message']; ?>
+            <div class="clearfix"></div>
+            <?php // user friend invite
+            if($notification['type']==2&&!empty($notification['link'])){ ?>
+                <a href="/user/accept-invite/id/<?= $notification['link']; ?>" class="pull-left green inviteLink" rel="<?= $notification['id']; ?>">Accept <i class="fa fa-thumbs-up"></i></a>
+                <a href="/user/reject-invite/id/<?= $notification['link']; ?>" class="pull-right red inviteLink" rel="<?= $notification['id']; ?>">Reject <i class="fa fa-thumbs-down"></i></a>
+            <?php
+            }
+            ?>
         </div>
          <?php endforeach; ?>
     </div>

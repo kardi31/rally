@@ -24,7 +24,7 @@ if(isset($_GET['msg'])){
                     <tr>
                         <td><?= $this->translate('Creating friendly rally'); ?></td>
                         <td>10 <img class="coin" src="/images/layout/coin.png" /></td>
-                        <td><?= $this->translate('2 rallies every month for free. Every next costs 5'); ?> <img class="coin" src="/images/layout/coin.png" /></td>
+                        <td><?= $this->translate('3 rallies every month for free. Every next costs 5'); ?> <img class="coin" src="/images/layout/coin.png" /></td>
                     </tr>
                     <tr>
                         <td colspan="3" class="gmFeatureDesc">
@@ -34,7 +34,7 @@ if(isset($_GET['msg'])){
                     <tr>
                         <td><?= $this->translate('Joining friendly rally'); ?></td>
                         <td>10 <img class="coin" src="/images/layout/coin.png" /></td>
-                        <td><?= $this->translate('2 rallies every month for free. Every next costs 5');?> <img class="coin" src="/images/layout/coin.png" /></td>
+                        <td><?= $this->translate('3 rallies every month for free. Every next costs 5');?> <img class="coin" src="/images/layout/coin.png" /></td>
                     </tr>
                     <tr>
                         <td colspan="3" class="gmFeatureDesc">
@@ -102,8 +102,9 @@ if(isset($_GET['msg'])){
             
             <form class="form-horizontal" method="POST">
                 <div class='form-group'>
-                    <label for='gold'><?= $this->translate('Add more');?> <img class="coin" src="/images/layout/coin.png" /></label>
-                    <?php echo $form->getElement('gold')->renderElement(); ?>
+                    <label for='gold'><?= $this->translate('Buy');?>  <img src="/images/layout/gc_small.png"> <?= $this->translate('Package'); ?> <br />
+                        <!--<img class="coin" src="/images/layout/coin.png" /></label>-->
+                    <?php echo $form->getElement('gold')->renderElementFromMulti('<img src="/images/layout/coin.png" />'); ?>
                     
                 </div>
                 <?php echo $form->getElement('submit')->renderElement(); ?>

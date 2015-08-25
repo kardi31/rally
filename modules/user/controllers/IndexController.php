@@ -278,6 +278,7 @@ class User_Index extends Controller{
         $view = $this->view;
         $view->setNoRender();
         $userService = parent::getService('user','user');
+        $notificationService = parent::getService('user','notification');
         $user = $userService->getAuthenticatedUser();
         if(!$user)
             TK_Helper::redirect('/user/login');
@@ -287,11 +288,92 @@ class User_Index extends Controller{
         $id = filter_var($_POST['id'],FILTER_VALIDATE_INT);
         
         
-        $friendsService->inviteUser($id,$user['id']);
+        $invite = $friendsService->inviteUser($id,$user['id']);
+        
+        
+        $notificationService->addNotification('You have been invited to friend list by '.$user['username'],2,$id,$invite['id']);
         
         TK_Helper::redirect($_SERVER['HTTP_REFERER']);
     }
     
+    
+    public function readNotifications(){
+        $view = $this->view;
+        $view->setNoRender();
+        $userService = parent::getService('user','user');
+        $notificationService = parent::getService('user','notification');
+        try{
+            $user = $userService->getAuthenticatedUser();
+            
+            $notificationService->readNotifications($user['id']);
+            
+            echo "ok";
+        } catch (Exception $ex) {
+            var_dump($ex->getMessage());
+        }
+        
+    }
+    
+    public function deleteNotification(){
+        $view = $this->view;
+        $view->setNoRender();
+        $userService = parent::getService('user','user');
+        $notificationService = parent::getService('user','notification');
+        $id = filter_var($GLOBALS['urlParams']['id'],FILTER_VALIDATE_INT);
+        try{
+            $user = $userService->getAuthenticatedUser();
+            
+            $notification = $notificationService->getNotification($id);
+            if($user['id']==$notification['user_id']){
+                $notification->delete();
+            }
+            else{
+                echo "wrong user";
+            }
+            echo "ok";
+        } catch (Exception $ex) {
+            var_dump($ex->getMessage());
+        }
+        
+    }
+    
+    public function acceptInvite(){
+        $view = $this->view;
+        $view->setNoRender();
+        $userService = parent::getService('user','user');
+        $notificationService = parent::getService('user','notification');
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        $friendsService = parent::getService('user','friends');
+        
+        $id = filter_var($GLOBALS['urlParams']['id'],FILTER_VALIDATE_INT);
+        
+        $friendsService->acceptInviteUser($id,$user['id']);
+        
+        
+        TK_Helper::redirect($_SERVER['HTTP_REFERER']);
+    }
+    
+    public function rejectInvite(){
+        $view = $this->view;
+        $view->setNoRender();
+        $userService = parent::getService('user','user');
+        $notificationService = parent::getService('user','notification');
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        $friendsService = parent::getService('user','friends');
+        
+        $id = filter_var($GLOBALS['urlParams']['id'],FILTER_VALIDATE_INT);
+        
+        $friendsService->rejectInviteUser($id,$user['id']);
+        
+        
+        TK_Helper::redirect($_SERVER['HTTP_REFERER']);
+    }
     
     public function inviteToGame(){
         Service::loadModels('team', 'team');

@@ -10,6 +10,7 @@
  * @property integer $type
  * @property string $link
  * @property text $message
+ * @property boolean $readed
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -41,6 +42,10 @@ abstract class User_Model_Doctrine_BaseNotification extends Doctrine_Record
              ));
         $this->hasColumn('message', 'text', null, array(
              'type' => 'text',
+             ));
+        $this->hasColumn('readed', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
              ));
 
         $this->option('type', 'MyISAM');

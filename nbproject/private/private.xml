@@ -42,6 +42,30 @@
             <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/TestController.php</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Text.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/privacy-policy.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/services/Mail.php</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_footer_main.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/services/Friends.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/services/Notification.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/show-friends.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/show-calendar.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/search-users.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/data/schema/schema.yml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/gold-membership.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/layout/layout.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/banner/views/index/show-left-banner.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/models/User.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/banner/views/index/show-right-banner.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Gold.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Form.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Radio.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/premium.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/public/adminindex.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/index.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Element.php</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_head_main.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_header.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_header_main.phtml</file>
         </group>
     </open-files>
 </project-private>

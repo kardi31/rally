@@ -110,6 +110,9 @@ Notification:
       type: string(255)
     message:
       type: text
+    readed:
+      type: boolean
+      default: 0
 Board:
   tableName: user_board
   actAs: 

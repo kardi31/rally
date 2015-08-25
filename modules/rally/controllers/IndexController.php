@@ -268,7 +268,7 @@ class Rally_Index extends Controller{
                 $values = $_POST;
 
                 if($user['gold_member']){
-                    if($recentUserFriendlies['cnt']<2){
+                    if($recentUserFriendlies['cnt']<3){
                         $friendly = $rallyService->saveFriendlyRally($values,$user);
                         $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
                         $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
@@ -320,10 +320,9 @@ class Rally_Index extends Controller{
         
         
         if(!$friendly = $rallyService->getFullFriendlyRally($GLOBALS['urlParams']['slug'],'r.slug',Doctrine_Core::HYDRATE_ARRAY)){
-            die('error');
             throw new TK_Exception('No such rally',404);
         }
-        var_dump('in');exit;
+        
         if($friendly['Rally']['finished']){
             $rallyResults = $rallyService->getRallyResults($friendly['Rally']['id'],'rally_id');
             $this->view->assign('rallyResults',$rallyResults);
@@ -422,7 +421,7 @@ class Rally_Index extends Controller{
                     }
                     
                     if($user['gold_member']){
-                        if($recentUserFriendlies['cnt']<2){
+                        if($recentUserFriendlies['cnt']<3){
                             $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
                             $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id'],true);
     //                        $rallyService->removeFriendlyInvite($friendly['id'],$user['username']);

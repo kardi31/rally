@@ -7,7 +7,7 @@ class LeagueService extends Service{
     protected $seasonInfoTable;
     
     protected $maxTeamsInLeague = 16;
-    protected $season = 2;
+    protected $season = 1;
     
     private static $leagues = array(
         '1.0' => 1,
