@@ -41,7 +41,7 @@ class News_Index extends Controller{
         $newsService = parent::getService('news','news');
         $teamService = parent::getService('team','team');
         
-        $id = $GLOBALS['urlParams']['id'];
+        $id = $GLOBALS['urlParams'][1];
         $news = $newsService->getNews($id,'id',Doctrine_Core::HYDRATE_RECORD);
         
         

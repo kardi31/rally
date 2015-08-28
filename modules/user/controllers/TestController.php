@@ -59,7 +59,7 @@ class User_Test extends Controller{
                
         $userService = parent::getService('user','user');
         $mailService = parent::getService('user','mail');
-        if(!$user = $userService->getUser($GLOBALS['urlParams']['token'],'token')){
+        if(!$user = $userService->getUser($GLOBALS['urlParams'][1],'token')){
             $message = "brak użytkownika";
         }
         elseif($user->get('active')){

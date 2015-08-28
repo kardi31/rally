@@ -62,5 +62,13 @@ class RallyDataService extends Service{
         
     }
     
+    public function getRallyStage($rally,$name){
+        $q = $this->stageTable->createQuery('s');
+        $q->leftJoin('s.Rally r');
+        $q->addWhere('r.id = ?',$rally['id']);
+        $q->addWhere('LOWER(s.name) = ?',strtolower($name));
+        return $q->fetchOne();
+    }
+    
 }
 ?>

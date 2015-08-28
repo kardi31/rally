@@ -13,10 +13,15 @@
                         echo "<li>";
                     }
 
-//                    echo '<img src="http://placehold.it/20x20" />';
-                    echo '<a href="/team/show-team/id/'.$friend['UserFriends']['Team']['id'].'">'.TK_Text::truncate($friend['UserFriends']['username'],15).'</a>'; 
-                    echo "<i class='fa fa-circle-thin'></i>";
-                    echo '<a href="/user/show-message-box/id/'.$friend['UserFriends']['id'].'#sendMessage"><i class="fa fa-envelope-o"></i></a>';
+                    echo '<a href="/team/show-team/'.$friend['UserFriends']['Team']['id'].'">'.TK_Text::truncate($friend['UserFriends']['username'],15).'</a>'; 
+                    
+                    if(strtotime($friend['UserFriends']['last_active'])>strtotime("-2 minutes")){
+                        echo "<img src='/images/layout/user-active.png' alt='User active' title='User active' />";
+                    }
+                    else{
+                        echo "<img src='/images/layout/user-inactive.png' alt='User inactive' title='User inactive' />";
+                    }
+                    echo '<a href="/user/show-message-box/'.$friend['UserFriends']['id'].'#sendMessage"><i class="fa fa-envelope-o"></i></a>';
                 }
                 else{
                     if(strtotime($friend['User']['last_active'])>strtotime("-2 minutes")){
@@ -27,9 +32,16 @@
                     }
 //                    echo '<img src="http://placehold.it/20x20" />';
 
-                    echo '<a href="/team/show-team/id/'.$friend['User']['Team']['id'].'">'.TK_Text::truncate($friend['User']['username'],15).'</a>'; 
+                    echo '<a href="/team/show-team/'.$friend['User']['Team']['id'].'">'.TK_Text::truncate($friend['User']['username'],15).'</a>'; 
+                    
+                    if(strtotime($friend['User']['last_active'])>strtotime("-2 minutes")){
+                        echo "<img src='/images/layout/user-active.png' alt='User active' title='User active' />";
+                    }
+                    else{
+                        echo "<img src='/images/layout/user-inactive.png' alt='User inactive' title='User inactive' />";
+                    }
                     echo "<i class='fa fa-circle-thin'></i>";
-                    echo '<a href="/user/show-message-box/id/'.$friend['User']['id'].'#sendMessage"><i class="fa fa-envelope-o"></i></a>';
+                    echo '<a href="/user/show-message-box/'.$friend['User']['id'].'#sendMessage"><i class="fa fa-envelope-o"></i></a>';
                 }
                 ?>
             </li>

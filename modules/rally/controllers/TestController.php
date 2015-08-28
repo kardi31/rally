@@ -20,7 +20,7 @@ class Rally_Test extends Controller{
         
         Zend_Debug::dump($randomTeams);exit;
         
-        $rally = $rallyService->getRally($GLOBALS['urlParams']['name'],'slug');
+        $rally = $rallyService->getRally($GLOBALS['urlParams'][1],'slug');
 	
 	
         $peopleService = parent::getService('people','people');
@@ -51,7 +51,7 @@ class Rally_Test extends Controller{
 		
 		$rallyService->saveRallyCrew($values,$rally,$user['Team']);
 		
-		TK_Helper::redirect('/rally/show-rally/name/'.$rally['slug']);
+		TK_Helper::redirect('/rally/show-rally/'.$rally['slug']);
 		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }

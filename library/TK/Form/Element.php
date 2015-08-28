@@ -21,6 +21,7 @@ class Element{
 	 protected $classes;
 	 protected $params;
 	 protected $validators;
+	 protected $filters = array();
 
 
     public function __construct($type,$name,$options,$label = false){
@@ -164,6 +165,9 @@ class Element{
                 return false;
             $var = $_GET[$this->name];
         endif;
+        
+        $var = $this->filterVar($var);
+        
         $response = "";
         // dla kilku validatorow
         if(is_array($this->validators)):
@@ -250,6 +254,9 @@ class Element{
                 break;
             case "alnum":
                 $response = Validator::validateAlnum($var);
+                break;
+            case "alpha":
+                $response = Validator::validateAlphanum($var);
                 break;
             case "notEmpty":
                 $response = Validator::validateNotEmpty($var);
@@ -353,4 +360,30 @@ class Element{
             return '';
         }
     }
+    
+    public function filterVar($var){
+        if(empty($this->filters)){
+            return $var;
+        }
+        
+        foreach($this->filters as $filter){
+            switch($filter):
+                case 'trim':
+                    $var = trim($var);
+                    break;
+                case 'lower':
+                    $var = strtolower($var);
+                    break;
+                case 'specialchars':
+                    $var = TK_Text::filterSpecialChars($var);
+            endswitch;
+        }
+        
+        return $var;
+    }
+    
+    public function addFilter($name){
+        array_push($this->filters,$name);
+    }
+    
 }

@@ -17,12 +17,12 @@ class Rally_Index extends Controller{
         Service::loadModels('car', 'car');
         $rallyService = parent::getService('rally','rally');
         
-        if(!$rally = $rallyService->getRally($GLOBALS['urlParams']['slug'],'slug')){
+        if(!$rally = $rallyService->getRally($GLOBALS['urlParams'][1],'slug')){
             throw new TK_Exception('No such rally',404);
         }
 	
         if($rally['friendly']){
-            TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$rally['slug']);
+            TK_Helper::redirect('/rally/show-friendly-rally/'.$rally['slug']);
         }
         
         $peopleService = parent::getService('people','people');
@@ -72,13 +72,13 @@ class Rally_Index extends Controller{
                             
                             Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                             if($signUpFinish->getTimestamp()<time()){
-                                TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=signup+finish');
+                                TK_Helper::redirect('/rally/show-rally/'.$rally['slug'].'?msg=signup+finish');
                                 exit;
                             }
                             $values = $_POST;
 
                             $rallyService->saveRallyCrew($values,$rally,$user['Team']);
-                            TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=joined');
+                            TK_Helper::redirect('/rally/show-rally/'.$rally['slug'].'?msg=joined');
 
                             Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
                         }
@@ -98,7 +98,7 @@ class Rally_Index extends Controller{
                         if($form->isValid()){
                             Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                             if($signUpFinish->getTimestamp()<time()){
-                                TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=signup+finish');
+                                TK_Helper::redirect('/rally/show-rally/'.$rally['slug'].'?msg=signup+finish');
                                 exit;
                             }
                             $values = $_POST;
@@ -114,7 +114,7 @@ class Rally_Index extends Controller{
                                     unset($_POST);
                                     Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
 
-                                    TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=joined');
+                                    TK_Helper::redirect('/rally/show-rally/'.$rally['slug'].'?msg=joined');
                                 }
                             }
                              elseif(!$userService->checkUserPremium($user['id'],15)){
@@ -127,7 +127,7 @@ class Rally_Index extends Controller{
                                  
                                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
 
-                                TK_Helper::redirect('/rally/show-rally/slug/'.$rally['slug'].'?msg=joined');
+                                TK_Helper::redirect('/rally/show-rally/'.$rally['slug'].'?msg=joined');
 
                             }
                             
@@ -272,7 +272,7 @@ class Rally_Index extends Controller{
                         $friendly = $rallyService->saveFriendlyRally($values,$user);
                         $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
                         $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
-                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
+                        TK_Helper::redirect('/rally/show-friendly-rally/'.$friendly['Rally']['slug']);
                     }
                     elseif(!$userService->checkUserPremium($user['id'],5)){
                         $this->view->assign('message','You do not have enough premium. Please buy more premium');
@@ -283,7 +283,7 @@ class Rally_Index extends Controller{
                         $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
                         
                         $userService->removePremium($user,5,'Creation of friendly rally '.$friendly['Rally']['name']);
-                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
+                        TK_Helper::redirect('/rally/show-friendly-rally/'.$friendly['Rally']['slug']);
                     }
                 }
                 elseif(!$userService->checkUserPremium($user['id'],10)){
@@ -296,7 +296,7 @@ class Rally_Index extends Controller{
                     
                     $userService->removePremium($user,10,'Creation of friendly rally '.$friendly['Rally']['name']);
                     
-                    TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug']);
+                    TK_Helper::redirect('/rally/show-friendly-rally/'.$friendly['Rally']['slug']);
                 }
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
@@ -319,7 +319,7 @@ class Rally_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
         
         
-        if(!$friendly = $rallyService->getFullFriendlyRally($GLOBALS['urlParams']['slug'],'r.slug',Doctrine_Core::HYDRATE_ARRAY)){
+        if(!$friendly = $rallyService->getFullFriendlyRally($GLOBALS['urlParams'][1],'r.slug',Doctrine_Core::HYDRATE_ARRAY)){
             throw new TK_Exception('No such rally',404);
         }
         
@@ -368,7 +368,7 @@ class Rally_Index extends Controller{
                     $values = $_POST;
                     
                     if($signUpFinish->getTimestamp()<time()){
-                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$rally['slug'].'?msg=signup+finish');
+                        TK_Helper::redirect('/rally/show-friendly-rally/'.$rally['slug'].'?msg=signup+finish');
                         exit;
                     }
                     if(!$friendlyUser = $userService->getUser($values['name'],'username',Doctrine_Core::HYDRATE_ARRAY)){
@@ -383,7 +383,7 @@ class Rally_Index extends Controller{
                         $notificationService->addNotification('You have been invited to friendly rally '.$friendly['Rally']['name'],1,$friendlyUser['id']);
                         unset($_POST);
                         
-                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$GLOBALS['urlParams']['slug']."?msg=user+invited");
+                        TK_Helper::redirect('/rally/show-friendly-rally/'.$GLOBALS['urlParams'][1]."?msg=user+invited");
                     }
 
 
@@ -416,7 +416,7 @@ class Rally_Index extends Controller{
                     
                     
                     if($signUpFinish->getTimestamp()<time()){
-                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$rally['slug'].'?msg=signup+finish');
+                        TK_Helper::redirect('/rally/show-friendly-rally/'.$rally['slug'].'?msg=signup+finish');
                         exit;
                     }
                     
@@ -429,7 +429,7 @@ class Rally_Index extends Controller{
                             unset($_POST);
                             Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
 
-                            TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug'].'?msg=joined');
+                            TK_Helper::redirect('/rally/show-friendly-rally/'.$friendly['Rally']['slug'].'?msg=joined');
                         }
                          elseif(!$userService->checkUserPremium($user['id'],5)){
                             $this->view->assign('message',array('status' => false,'message' => 'You do not have enough premium. Please buy more premium'));
@@ -458,7 +458,7 @@ class Rally_Index extends Controller{
                         unset($_POST);
                         Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
                         
-                        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$friendly['Rally']['slug'].'?msg=joined');
+                        TK_Helper::redirect('/rally/show-friendly-rally/'.$friendly['Rally']['slug'].'?msg=joined');
                     }
 
                 }
@@ -543,7 +543,7 @@ class Rally_Index extends Controller{
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
         
-        if(!$friendly = $rallyService->getFriendlyRally($GLOBALS['urlParams']['slug'],'r.slug',Doctrine_Core::HYDRATE_ARRAY)){
+        if(!$friendly = $rallyService->getFriendlyRally($GLOBALS['urlParams'][1],'r.slug',Doctrine_Core::HYDRATE_ARRAY)){
             throw new TK_Exception('No such rally',404);
         }
         
@@ -555,7 +555,7 @@ class Rally_Index extends Controller{
         $invitedUser->get('Crew')->delete();
         $invitedUser->delete();
          
-        TK_Helper::redirect('/rally/show-friendly-rally/slug/'.$GLOBALS['urlParams']['slug']);
+        TK_Helper::redirect('/rally/show-friendly-rally/'.$GLOBALS['urlParams'][1]);
 
         $this->view->assign('friendly',$friendly);
         
@@ -567,8 +567,8 @@ class Rally_Index extends Controller{
         Service::loadModels('people', 'people');
         Service::loadModels('car', 'car');
         $rallyService = parent::getService('rally','rally');
-        $rally = $rallyService->getRallyWithCrews($GLOBALS['urlParams']['name'],'slug');
-        $stage = $rallyService->getStageWithResults($GLOBALS['urlParams']['stage'],Doctrine_Core::HYDRATE_ARRAY);
+        $rally = $rallyService->getRallyWithCrews($GLOBALS['urlParams'][1],'slug');
+        $stage = $rallyService->getStageWithResults($GLOBALS['urlParams'][2],Doctrine_Core::HYDRATE_ARRAY);
         $peopleService = parent::getService('people','people');
         $carService = parent::getService('car','car');
 	$peopleService->getCrewLate($stage,$rally);
@@ -586,7 +586,7 @@ class Rally_Index extends Controller{
         Service::loadModels('people', 'people');
         
         $rallyService = parent::getService('rally','rally');
-        $rally = $rallyService->getRally($GLOBALS['urlParams']['id'],'id');
+        $rally = $rallyService->getRally($GLOBALS['urlParams'][1],'id');
         if($rally['finished']){
             $rallyResults = $rallyService->getRallyResults($rally['id'],'rally_id');
         }

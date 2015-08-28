@@ -43,9 +43,9 @@ class User_Admin extends Controller{
              $row[] = $result['email'];
              $row[] = $result['role'];
              if($result['active'])
-                 $row[] = '<a href="/admin/user/set-active/id/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
+                 $row[] = '<a href="/admin/user/set-active/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
              else
-                 $row[] = '<a href="/admin/user/set-active/id/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
+                 $row[] = '<a href="/admin/user/set-active/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
              $row[] = $result['created_at'];
              $row[] = $result['last_active'];
              $options = '<a href="javascript:;" class="btn btn-xs default"><i class="fa fa-search"></i> View</a>';
@@ -67,7 +67,7 @@ class User_Admin extends Controller{
      public function setActive(){
          $userService = parent::getService('user','user');
         
-        if(!$user = $userService->getUser($GLOBALS['urlParams']['id'],'id')){
+        if(!$user = $userService->getUser($GLOBALS['urlParams'][1],'id')){
             echo "brak użytkownika";exit;
         }
         
@@ -107,7 +107,7 @@ class User_Admin extends Controller{
              $row[] = $result['Writer']['username'];
              $row[] = $result['message'];
              $row[] = $result['created_at'];
-             $options = '<a href="/admin/user/delete-message/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-times"></i> Delete</a>';
+             $options = '<a href="/admin/user/delete-message/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-times"></i> Delete</a>';
 //             $options .= '<a href="javascript:;" class="btn btn-xs default"><i class="fa fa-search"></i> View</a>';
              $row[] = $options;
              $rows[] = $row;
@@ -127,7 +127,7 @@ class User_Admin extends Controller{
      public function deleteMessage(){
          $messageService = parent::getService('user','message');
         
-        if(!$message = $messageService->getMessage($GLOBALS['urlParams']['id'],'id')){
+        if(!$message = $messageService->getMessage($GLOBALS['urlParams'][1],'id')){
             echo "brak wiadomosc";exit;
         }
         
@@ -136,6 +136,15 @@ class User_Admin extends Controller{
         $message->save();
         
         TK_Helper::redirect('/admin/user/list-message');
+     }
+     
+     public function sendActivationEmail(){
+        $mailService = parent::getService('user','mail');
+        $userService = parent::getService('user','user');
+         $user = $userService->getUser($GLOBALS['urlParams'][1],'id');
+         
+        $mailService->sendMail($user['email'],'Your FastRally registration',$mailService::prepareRegistrationMail($user['token']));
+         echo "good";exit;
      }
 }
 ?>

@@ -14,7 +14,7 @@ class Market_DataTables_OfferIllegal{
         $q->leftJoin('p.Team t');
         $q->leftJoin('o.Bids b');
         $q->leftJoin('b.Team bt');
-        if(isset($GLOBALS['urlParams']['future'])){
+        if(isset($GLOBALS['urlParams'][1])){
             $q->addWhere('o.finish_date > NOW()');
         }
         $q->addSelect('o.*,p.*,t.*,b.*,bt.*');

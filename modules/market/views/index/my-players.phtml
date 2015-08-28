@@ -12,7 +12,7 @@
         ?>
         <div class="peopleMarketCard peopleCard col-md-8">
             <strong>
-                <a class="offerLink" href="/market/show-offer/id/<?= $offer['id']; ?>"><?php echo $person['last_name']." ".$person['first_name']; ?> </a>
+                <a class="offerLink" href="/market/show-offer/<?= $offer['id']; ?>"><?php echo $person['last_name']." ".$person['first_name']; ?> </a>
                 <?php if($person['Team']['id']!=$user['Team']['id']): ?>
                 <?php
                 if(strlen($offer['highest_bid'])&&$offer['highest_bid']!=0){
@@ -93,7 +93,7 @@
                     <td>
                         <?php
                             if(isset($offer['Bids'][0])&&$offer['Bids'][0]['active']){
-                                echo (int)$offer['Bids'][0]['value']."$ - ".$offer['Bids'][0]['Team']['name']; 
+                                echo "$".(int)$offer['Bids'][0]['value']." - ".$offer['Bids'][0]['Team']['name']; 
                             }
                             else
                                 echo $this->translate("no offers");
@@ -128,7 +128,7 @@
                             if($key>3)
                                 break;
 
-                            echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 
+                            echo "$".$bid['value']." - ".$bid['Team']['name']."<br />"; 
                         endforeach; ?>
                     </td>
                 </tr>

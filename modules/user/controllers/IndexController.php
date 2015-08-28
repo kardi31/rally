@@ -95,7 +95,7 @@ class User_Index extends Controller{
         $userService = parent::getService('user','user');
         $mailService = parent::getService('user','mail');
         parent::getService('rally','rally');
-        if(!$user = $userService->getUser($GLOBALS['urlParams']['token'],'token')){
+        if(!$user = $userService->getUser($GLOBALS['urlParams'][1],'token')){
             $message = "No user";
         }
         elseif($user->get('active')){
@@ -319,7 +319,7 @@ class User_Index extends Controller{
         $view->setNoRender();
         $userService = parent::getService('user','user');
         $notificationService = parent::getService('user','notification');
-        $id = filter_var($GLOBALS['urlParams']['id'],FILTER_VALIDATE_INT);
+        $id = filter_var($GLOBALS['urlParams'][1],FILTER_VALIDATE_INT);
         try{
             $user = $userService->getAuthenticatedUser();
             
@@ -348,7 +348,7 @@ class User_Index extends Controller{
         
         $friendsService = parent::getService('user','friends');
         
-        $id = filter_var($GLOBALS['urlParams']['id'],FILTER_VALIDATE_INT);
+        $id = filter_var($GLOBALS['urlParams'][1],FILTER_VALIDATE_INT);
         
         $friendsService->acceptInviteUser($id,$user['id']);
         
@@ -367,7 +367,7 @@ class User_Index extends Controller{
         
         $friendsService = parent::getService('user','friends');
         
-        $id = filter_var($GLOBALS['urlParams']['id'],FILTER_VALIDATE_INT);
+        $id = filter_var($GLOBALS['urlParams'][1],FILTER_VALIDATE_INT);
         
         $friendsService->rejectInviteUser($id,$user['id']);
         
@@ -428,7 +428,7 @@ class User_Index extends Controller{
 //	
 //        $userService = parent::getService('user','user');
 //        $messageService = parent::getService('user','message');
-//        if(!$user = $userService->getUser($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
+//        if(!$user = $userService->getUser($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_RECORD)){
 //            throw new TK_Exception('No such thread',404);
 //        }
 //        
@@ -465,7 +465,7 @@ class User_Index extends Controller{
 	
         $userService = parent::getService('user','user');
         $messageService = parent::getService('user','message');
-        if(!$user = $userService->getUser($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
+        if(!$user = $userService->getUser($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_RECORD)){
             throw new TK_Exception('No such thread',404);
         }
         
@@ -485,13 +485,13 @@ class User_Index extends Controller{
                 
 //                // user can add a post once every 30 seconds
                 if(!$messageService->checkLastUserMessage($authenticatedUser['id'],$user['id'])){
-                    TK_Helper::redirect('/user/show-message-box/id/'.$user['Team']['id'].'?msg=too+fast');
+                    TK_Helper::redirect('/user/show-message-box/'.$user['Team']['id'].'?msg=too+fast');
                     exit;
                 }
 //                
                 $values = $_POST;
 		$messageService->addMessage($user['id'],$authenticatedUser['id'],$values);
-		TK_Helper::redirect('/user/show-message-box/id/'.$user['Team']['id']."?msg=message+sent");
+		TK_Helper::redirect('/user/show-message-box/'.$user['id']."?msg=message+sent");
 //		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }

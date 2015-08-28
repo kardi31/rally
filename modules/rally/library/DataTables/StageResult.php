@@ -16,7 +16,7 @@ class Rally_DataTables_StageResult{
 	$q->leftJoin('cr.Driver d');
 	$q->leftJoin('cr.Pilot p');
         $q->addSelect('sr.*,a.*,c.name,cr.id,cr.risk,d.last_name,t.name,d.first_name,p.last_name,p.first_name');
-	$q->addWhere('sr.stage_id = ?',$GLOBALS['urlParams']['stage-id']);
+	$q->addWhere('sr.stage_id = ?',$GLOBALS['urlParams'][1]);
         return $q;
     }
 }

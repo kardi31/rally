@@ -39,6 +39,8 @@ Team:
       default: null
     last_week_rank:
       type: integer(11)
+    last_name_change:
+      type: timestamp
 Finance:
   tableName: team_finance
   actAs: 

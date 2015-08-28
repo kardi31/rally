@@ -4,7 +4,7 @@
     <h4 class="boxHeader"><?= $this->translate('My finances'); ?></h4>
     <div class="myFinances">
         <div class="accountBalance">
-            <?= $this->translate('Account balance'); ?>:  <strong><?php echo $team['cash'];?>$ </strong>
+            <?= $this->translate('Account balance'); ?>:  $<strong><?php echo $team['cash'];?></strong>
         </div>
         <br /><br />
 
@@ -14,7 +14,7 @@
             <br />
             <?php 
             foreach($financialReportSimple['income'] as $simpleReport): 
-                echo $financeTypes[$simpleReport['detailed_type']]." - ".$simpleReport['amount']; ?>$<br />
+                echo $financeTypes[$simpleReport['detailed_type']]." - $".$simpleReport['amount']; ?><br />
 
             <?php endforeach; ?>
         </div>
@@ -22,7 +22,7 @@
             <span class="financeSubHeader"><?= $this->translate('Expenses'); ?></span> <br />
             <?php 
             foreach($financialReportSimple['expense'] as $simpleReport2): 
-                echo $financeTypes[$simpleReport2['detailed_type']]." - ".$simpleReport2['amount']; ?>$<br />
+                echo $financeTypes[$simpleReport2['detailed_type']]." - $".$simpleReport2['amount']; ?><br />
             <?php endforeach; ?>
         </div>
         <div class="clearfix"></div>
@@ -32,7 +32,7 @@
             <br />
             <?php 
             foreach($financialReportSimpleLastWeek['income'] as $simpleReport): 
-                echo $this->translate($financeTypes[$simpleReport['detailed_type']])." - ".$simpleReport['amount']; ?>$<br />
+                echo $this->translate($financeTypes[$simpleReport['detailed_type']])." - $".$simpleReport['amount']; ?><br />
 
             <?php endforeach; ?>
         </div>
@@ -40,7 +40,7 @@
             <span class="financeSubHeader"><?= $this->translate('Expenses'); ?></span> <br />
             <?php 
             foreach($financialReportSimpleLastWeek['expense'] as $simpleReport2): 
-                echo $financeTypes[$simpleReport2['detailed_type']]." - ".$simpleReport2['amount']; ?>$<br />
+                echo $financeTypes[$simpleReport2['detailed_type']]." - $".$simpleReport2['amount']; ?><br />
             <?php endforeach; ?>
         </div>
         <div class="clearfix"></div>

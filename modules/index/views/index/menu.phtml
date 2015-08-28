@@ -1,12 +1,12 @@
 <script type="text/javascript">
   $(document).ready(function(){
  
-        $("#tMenu > li > a").click(function (e) { // binding onclick
+        $("#tMenu > li > a").on('mouseenter',function (e) { // binding onclick
                 var li = $(this).parent();
                 var ul = $(this).next('ul');
                 
-                $('li.selected ul').slideUp(100);
-	        $('li.selected ul').removeClass("selected");
+                $('#tMenu li.selected ul').slideUp(100);
+	        $('#tMenu li.selected').removeClass("selected");
 	        if (li.hasClass('selected')) {
 	            ul.slideUp(200); // hiding popups
 	            li.removeClass("selected");
@@ -14,8 +14,12 @@
 	            ul.slideDown(200); // hiding popups
 	            li.addClass("selected");
 	        }
-	        e.stopPropagation();
 	    });
+            $("#tMenu").on('mouseleave',function(){
+                $('#tMenu li.selected ul').slideUp(100);
+	        $('#tMenu li.selected').removeClass("selected");
+//	        e.stopPropagation();
+            })
 
   });
   
@@ -27,7 +31,7 @@
             <a href="javascript:void(0)"><?= $this->translate('Office'); ?></a>
             <ul>
                 <li>
-                    <a href="/team/show-team/id/<?= $authenticatedUser['Team']['id']; ?>"><?= $this->translate('My team'); ?></a>
+                    <a href="/team/show-team/<?= $authenticatedUser['Team']['id']; ?>"><?= $this->translate('My team'); ?></a>
                 </li>
                 <li>
                     <a href="/account/my-account"><?= $this->translate('Account'); ?></a>
@@ -68,7 +72,7 @@
                     <a href="/rally/list-friendly-rally"><?= $this->translate('Friendly rallies'); ?></a>
                 </li>
                 <li>
-                    <a href="/league/show-table/id/<?= TK_Text::dotDash($user['Team']['league_name']); ?>"><?= $this->translate('League'); ?></a> 
+                    <a href="/league/show-table/<?= TK_Text::dotDash($user['Team']['league_name']); ?>"><?= $this->translate('League'); ?></a> 
                 </li>
 <!--                <li>
                     <a href="/rally/my-league-rallies"><?= $this->translate('My league rallies'); ?></a>
@@ -93,6 +97,9 @@
                 </li>
                 <li>
                     <a href="/market/car-monitor"><?= $this->translate('Car monitor'); ?></a> 
+                </li>
+                <li>
+                    <a href="/market/free-agency"><?= $this->translate('Free agency'); ?></a> 
                 </li>
                 
             </ul>

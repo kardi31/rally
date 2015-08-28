@@ -102,7 +102,7 @@
                     <td>
                         <?php
                             if(isset($offer['Bids'][0])&&$offer['Bids'][0]['active']){
-                                echo (int)$offer['Bids'][0]['value']."$ - ".$offer['Bids'][0]['Team']['name']; 
+                                echo "$".(int)$offer['Bids'][0]['value']." - ".$offer['Bids'][0]['Team']['name']; 
                             }
                             else
                                 echo $this->translate("no offers");
@@ -137,7 +137,7 @@
                             if($key>3)
                                 break;
 
-                            echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 
+                            echo "$".$bid['value']." - ".$bid['Team']['name']."<br />"; 
                         endforeach; ?>
                     </td>
                 </tr>

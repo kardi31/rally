@@ -68,13 +68,13 @@ class Rally_Admin extends Controller{
                  $row[] = '<span class="label label-sm label-danger">Nie</span>';
              
              
-             $options = '<a href="/admin/rally/show-rally-crews/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
-             $options .='<a href="/admin/rally/show-rally-stages/id/'.$result['id'].'" class="btn default btn-xs blue"><i class="fa fa-list"></i> Stages </a>';
+             $options = '<a href="/admin/rally/show-rally-crews/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
+             $options .='<a href="/admin/rally/show-rally-stages/'.$result['id'].'" class="btn default btn-xs blue"><i class="fa fa-list"></i> Stages </a>';
              if($result['finished']){
-                $options .='<a href="/admin/rally/show-rally-result/id/'.$result['id'].'" class="btn default btn-xs green"><i class="fa fa-list"></i> Results </a>';
-                $options .='<a href="/admin/rally/show-rally-detailed-result/id/'.$result['id'].'" class="btn default btn-xs red"><i class="fa fa-list"></i> Detailed results </a>';
+                $options .='<a href="/admin/rally/show-rally-result/'.$result['id'].'" class="btn default btn-xs green"><i class="fa fa-list"></i> Results </a>';
+                $options .='<a href="/admin/rally/show-rally-detailed-result/'.$result['id'].'" class="btn default btn-xs red"><i class="fa fa-list"></i> Detailed results </a>';
              }
-             $options .='<a href="/admin/rally/edit-rally/id/'.$result['id'].'" class="btn default btn-xs purple"><i class="fa fa-edit"></i> Edit </a>';
+             $options .='<a href="/admin/rally/edit-rally/'.$result['id'].'" class="btn default btn-xs purple"><i class="fa fa-edit"></i> Edit </a>';
 	     
 	     $row[] = $options;
 	     
@@ -120,7 +120,7 @@ class Rally_Admin extends Controller{
              $row[] = $result['Pilot']['last_name']." ".$result['Pilot']['first_name'];
              $row[] = $result['Car']['Model']['name'];
              $row[] = TK_Text::timeFormat($result['created_at'],'d/m/Y H:i');
-             $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
+             $options = '<a href="/admin/rally/show-rally-crew-details/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
             
 	     $row[] = $options;
 	     
@@ -139,7 +139,7 @@ class Rally_Admin extends Controller{
      
      public function showStageResult(){
 	 
-	$stage_id = $GLOBALS['urlParams']['id'];
+	$stage_id = $GLOBALS['urlParams'][1];
         $rallyService = parent::getService('rally','rally');
 	$stage = $rallyService->getStageWithRally($stage_id,'id',Doctrine_Core::HYDRATE_ARRAY);
         
@@ -208,7 +208,7 @@ class Rally_Admin extends Controller{
      
      public function showRallyResult(){
 	 
-	$rally_id = $GLOBALS['urlParams']['id'];
+	$rally_id = $GLOBALS['urlParams'][1];
         $rallyService = parent::getService('rally','rally');
 	$rally = $rallyService->getRally($rally_id,'id',Doctrine_Core::HYDRATE_RECORD);
         
@@ -247,7 +247,7 @@ class Rally_Admin extends Controller{
                  $row[] = $result['stage_out_number'];
              }
              
-             $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
+             $options = '<a href="/admin/rally/show-rally-crew-details/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
             
 	     $row[] = $options;
 	     
@@ -267,7 +267,7 @@ class Rally_Admin extends Controller{
      
      public function showRallyDetailedResult(){
 	 
-	$rally_id = $GLOBALS['urlParams']['id'];
+	$rally_id = $GLOBALS['urlParams'][1];
         $rallyService = parent::getService('rally','rally');
 	$rally = $rallyService->getRally($rally_id,'id',Doctrine_Core::HYDRATE_RECORD);
         
@@ -338,7 +338,7 @@ class Rally_Admin extends Controller{
              
              
              
-             $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
+             $options = '<a href="/admin/rally/show-rally-crew-details/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
             
 	     $row[] = $options;
 	     
@@ -359,7 +359,7 @@ class Rally_Admin extends Controller{
      public function showRallyStages(){
 	 
         $rallyService = parent::getService('rally','rally');
-        $rally = $rallyService->getRally($GLOBALS['urlParams']['id'],'id');
+        $rally = $rallyService->getRally($GLOBALS['urlParams'][1],'id');
 	
 	$this->view->assign('rally',$rally);
      }
@@ -385,8 +385,8 @@ class Rally_Admin extends Controller{
              $row[] = $result['name'];
              $row[] = $result['length'];
              $row[] = $result['min_time'];
-             $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
-            $options .= '<a href="/admin/rally/calculate-stage-time/rally-id/'.$result['rally_id'].'/stage-id/'.$result['id'].'" class="btn btn-xs blue"><i class="fa fa-users"></i> Calculate</a>';
+             $options = '<a href="/admin/rally/show-rally-crew-details/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
+            $options .= '<a href="/admin/rally/calculate-stage-time/'.$result['rally_id'].'/'.$result['id'].'" class="btn btn-xs blue"><i class="fa fa-users"></i> Calculate</a>';
             
 	     $row[] = $options;
 	     
@@ -406,7 +406,7 @@ class Rally_Admin extends Controller{
      public function addStage(){
 	 
         $rallyService = parent::getService('rally','rally');
-        $rally = $rallyService->getRally($GLOBALS['urlParams']['rally-id'],'id');
+        $rally = $rallyService->getRally($GLOBALS['urlParams'][1],'id');
 	
 	
 	$form = new Form();
@@ -590,11 +590,11 @@ class Rally_Admin extends Controller{
         Service::loadModels('people', 'people');
         Service::loadModels('car', 'car');
         $rallyService = parent::getService('rally','rally');
-        $crews = $rallyService->getRallyCrews($GLOBALS['urlParams']['rally-id'],'rally_id',Doctrine_Core::HYDRATE_RECORD);
-	$stage = $rallyService->getStageShort($GLOBALS['urlParams']['stage-id'],'id',Doctrine_Core::HYDRATE_ARRAY);
+        $crews = $rallyService->getRallyCrews($GLOBALS['urlParams'][1],'rally_id',Doctrine_Core::HYDRATE_RECORD);
+	$stage = $rallyService->getStageShort($GLOBALS['urlParams'][2],'id',Doctrine_Core::HYDRATE_ARRAY);
 	// get array with id of crews which's time hasn't been calculated yet
 	$crewsWithResults = $rallyService->getCrewsWithoutResults($stage['id'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
-	$surfaces = $rallyService->getRallySurfaces($GLOBALS['urlParams']['rally-id'],Doctrine_Core::HYDRATE_ARRAY);
+	$surfaces = $rallyService->getRallySurfaces($GLOBALS['urlParams'][1],Doctrine_Core::HYDRATE_ARRAY);
         
         $carService = parent::getService('car','car');
         $trainingService = parent::getService('people','training');
@@ -700,7 +700,7 @@ class Rally_Admin extends Controller{
     public function changeRallyDate(){
         ini_set('max_execution_time',300000);
         $rallyService = parent::getService('rally','rally');
-        $rally = $rallyService->getRally($GLOBALS['urlParams']['slug'],'slug');
+        $rally = $rallyService->getRally($GLOBALS['urlParams'][1],'slug');
             $stages = $rally->get('Stages');
             foreach($stages as $key => $stage):
                 $newDate = strtotime("- 6 hours");
@@ -716,8 +716,8 @@ class Rally_Admin extends Controller{
     public function changeRallyToDate(){
         ini_set('max_execution_time',300000);
         $rallyService = parent::getService('rally','rally');
-        $rally = $rallyService->getRally($GLOBALS['urlParams']['slug'],'slug');
-        $date = $GLOBALS['urlParams']['date']." 09:00:00";
+        $rally = $rallyService->getRally($GLOBALS['urlParams'][1],'slug');
+        $date = $GLOBALS['urlParams'][2]." 09:00:00";
             $stages = $rally->get('Stages');
             $rally->set('date',$date);
 //            var_dump($date);exit;
@@ -790,6 +790,30 @@ class Rally_Admin extends Controller{
         
     }
     
+    public function changeStageDataMinTime(){
+        
+        ini_set('max_execution_time',300000);
+        $rallyService = parent::getService('rally','rally');
+        $rallyDataService = parent::getService('rally','rallyData');
+        $rallies = $rallyDataService->getAllRallies();
+        foreach($rallies as $rally):
+            $stages = $rally->get('Stages');
+            foreach($stages as $key => $stage):
+                $stage_length = $stage['length'];
+                $timeMin = $stage_length / 87 * 60;
+                $timeMax = $stage_length / 107 * 60;
+                $randomTime = TK_Text::float_rand($timeMin*60,$timeMax*60,2);
+                $newDate = gmdate("H:i:s", $randomTime);
+//                $newDate = date('i:s', strtotime(ceil($randomTime)." seconds"));
+                
+                $stage->set('min_time',$newDate);
+                $stage->save();
+            endforeach;
+        endforeach;
+        echo "good";exit;
+        
+    }
+    
     public function changeStageLength(){
         
         ini_set('max_execution_time',300000);
@@ -829,12 +853,77 @@ class Rally_Admin extends Controller{
         
     }
     
+    public function updateRallyStageFromData(){
+        
+        ini_set('max_execution_time',300000);
+        $rallyService = parent::getService('rally','rally');
+        $rallyDataService = parent::getService('rally','rallyData');
+        $rallies = $rallyDataService->getAllRallies();
+        foreach($rallies as $rally):
+            $stages = $rally->get('Stages');
+            foreach($stages as $key => $stage):
+                
+                if($stage2 = $rallyService->getRallyStage($rally,$stage['name'])){
+                    $stage2->set('min_time',$stage['min_time']);
+                    $stage2->save();
+                }
+                
+                
+            endforeach;
+        endforeach;
+        die('1');
+        
+    }
+    
+    
+    public function changeStageDataLength(){
+        
+        ini_set('max_execution_time',300000);
+        $rallyService = parent::getService('rally','rally');
+        $rallyDataService = parent::getService('rally','rallyData');
+        $rallies = $rallyDataService->getAllRallies();
+        foreach($rallies as $rally):
+            $stages = $rally->get('Stages');
+            foreach($stages as $key => $stage):
+                $stage_min_time = $stage['min_time'];
+                if($stage2 = $rallyDataService->getRallyStage($rally,$stage['name']." 2")){
+                    $stage2->set('min_time',$stage_min_time);
+                    $stage2->save();
+                }
+                
+                if($stage3 = $rallyDataService->getRallyStage($rally,$stage['name']." 3")){
+                    $stage3->set('min_time',$stage_min_time);
+                    $stage3->save();
+                }
+                
+                
+                if($stage4 = $rallyDataService->getRallyStage($rally,$stage['name']." 4")){
+                    $stage4->set('min_time',$stage_min_time);
+                    $stage4->save();
+                }
+                
+                
+                if($stage5 = $rallyDataService->getRallyStage($rally,$stage['name']." 5")){
+                    $stage5->set('min_time',$stage_min_time);
+                    $stage5->save();
+                }
+                
+                if($stage6 = $rallyDataService->getRallyStage($rally,$stage['name']." II")){
+                    $stage6->set('min_time',$stage_min_time);
+                    $stage6->save();
+                }
+                
+            endforeach;
+        endforeach;
+        die('1');
+        
+    }
     
     public function notFinish(){
         
         ini_set('max_execution_time',300000);
         $rallyService = parent::getService('rally','rally');
-        $rally= $rallyService->getRally($GLOBALS['urlParams']['id']);
+        $rally= $rallyService->getRally($GLOBALS['urlParams'][1]);
             $stages = $rally->get('Stages');
             foreach($stages as $stage):
                 $stage->get('Results')->delete();

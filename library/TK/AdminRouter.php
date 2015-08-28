@@ -10,8 +10,8 @@ $keys = array_keys($_GET);
         // filter to remove empty values
         $params = array_filter(array_values($params));
         $urlParams = array();
-        for($i=0;$i<count($params);$i = $i+2):
-            $urlParams[$params[$i]] = $params[$i+1];
+        for($i=0;$i<count($params);$i++):
+            $urlParams[$i+1] = filter_var($params[$i], FILTER_SANITIZE_URL);
         endfor;
         $GLOBALS['urlParams'] = $urlParams; 
 }

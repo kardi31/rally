@@ -46,9 +46,9 @@ class Forum_Admin extends Controller{
             
              $row[] = $result['User']['username'];
              if($result['active'])
-                 $row[] = '<a href="/admin/forum/set-post-active/id/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span>';
+                 $row[] = '<a href="/admin/forum/set-post-active/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span>';
              else
-                 $row[] = '<a href="/admin/forum/set-post-active/id/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span>';
+                 $row[] = '<a href="/admin/forum/set-post-active/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span>';
             
              $row[] = $result['moderator_notes'];
              $row[] = TK_Text::timeFormat($result['moderator_date'],'d/m/Y H:i:s');
@@ -100,9 +100,9 @@ class Forum_Admin extends Controller{
             
              $row[] = $result['User']['username'];
              if($result['active'])
-                 $row[] = '<a href="/admin/forum/set-thread-active/id/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span>';
+                 $row[] = '<a href="/admin/forum/set-thread-active/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span>';
              else
-                 $row[] = '<a href="/admin/forum/set-thread-active/id/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span>';
+                 $row[] = '<a href="/admin/forum/set-thread-active/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span>';
             
              $row[] = $result['moderator_notes'];
              $row[] = TK_Text::timeFormat($result['moderator_date'],'d/m/Y H:i:s');
@@ -130,7 +130,7 @@ class Forum_Admin extends Controller{
         Service::loadModels('team', 'team');
 	
         $forumService = parent::getService('forum','forum');
-        if(!$thread = $forumService->getThread($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
+        if(!$thread = $forumService->getThread($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_RECORD)){
             echo "error";exit;
         }
         
@@ -154,7 +154,7 @@ class Forum_Admin extends Controller{
         Service::loadModels('team', 'team');
 	
         $forumService = parent::getService('forum','forum');
-        if(!$post = $forumService->getPost($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
+        if(!$post = $forumService->getPost($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_RECORD)){
             echo "error";exit;
         }
         

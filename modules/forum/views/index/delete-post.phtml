@@ -21,8 +21,8 @@
 <h3>Forum</h3>
 <ul class="breadcrumbs">
     <li><a href="/forum/show-forum">Forum</a></li>
-    <li><a href="/forum/show-category/slug/<?php echo $post['Thread']['Category']['slug']; ?>"><?php echo $post['Thread']['Category']['name']; ?></a></li>
-    <li><a href="/forum/show-thread/id/<?php echo $post['Thread']['id']; ?>"><?php echo $post['Thread']['title']; ?></a></li>
+    <li><a href="/forum/show-category/<?php echo $post['Thread']['Category']['slug']; ?>"><?php echo $post['Thread']['Category']['name']; ?></a></li>
+    <li><a href="/forum/show-thread/<?php echo $post['Thread']['id']; ?>"><?php echo $post['Thread']['title']; ?></a></li>
     <li>Delete post #<?php echo $post['id']; ?></li>
 </ul>
 

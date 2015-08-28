@@ -42,12 +42,26 @@ class Validator{
     }
     
     public static function validateAlnum($var){
-	$pattern = '/^[A-Za-zążśźęćńółĄŻŚŹĘĆŃÓŁ0-9\s]+$/';
-	if(preg_match($pattern,$var)==1):
+//	$pattern = '/^[A-Za-zążśźęćńółĄŻŚŹĘĆŃÓŁ0-9\s]+$/';
+        if(filter_var($var,FILTER_SANITIZE_STRING)):
             $response['result'] = true;
         else:
             $response['result'] = false;
             $response['errorMessage'] = "This field may contain only letters,numbers and spaces";
+        endif;
+        
+        return $response;
+    }
+    
+    
+    public static function validateAlphanum($var){
+	$pattern = '/^[A-Za-zążśźęćńółĄŻŚŹĘĆŃÓŁ0-9\s\-\#]+$/';
+        var_dump(preg_match($pattern,$var));exit;
+	if(preg_match($pattern,$var)==1):
+            $response['result'] = true;
+        else:
+            $response['result'] = false;
+            $response['errorMessage'] = "This field contain forbidden characters.";
         endif;
         
         return $response;

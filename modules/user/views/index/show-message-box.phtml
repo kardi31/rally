@@ -20,12 +20,12 @@ if(isset($_GET['msg'])){
                 <?php if(isset($message)&&!empty($message)): ?>
                     <span class="threadInfo">
                         <i class="fa fa-clock-o"></i> <?php echo TK_Text::timeFormat($message['created_at'],'d/m/Y H:i'); ?> <br />
-                        <a href="/team/show-team/id/<?= $message['Writer']['Team']['id']; ?>"><i class="fa fa-user"></i> <?php echo $message['Writer']['username']; ?></a>
+                        <a href="/team/show-team/<?= $message['Writer']['Team']['id']; ?>"><i class="fa fa-user"></i> <?php echo $message['Writer']['username']; ?></a>
                     </span>
                     <div class="postContent" data-id="<?= $message['id']; ?>">
                         <?php echo $message['message']; ?>
                         <div class="mt10">
-                            <a href="/user/show-message-box/id/<?= $message['Writer']['id']; ?>">
+                            <a href="/user/show-message-box/<?= $message['Writer']['id']; ?>">
                                 <i class="fa fa-reply"></i> Reply
                             </a>
                         </div>

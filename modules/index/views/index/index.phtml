@@ -28,6 +28,9 @@
                 elseif($_GET['msg']=="wrong password"){
                     $this->showError($this->translate('Incorrect password'));
                 }
+                elseif($_GET['msg']=="not active"){
+                    $this->showError('Your account is not active. Check your mail and spam box. In case of problems, write to activate@fast-rally.com');
+                }
             }
         ?>
         <h2>REGISTRATION</h2>
@@ -43,7 +46,7 @@
             <?= $form->getElement('invite')->renderElement(); ?>
             <span class="acceptRules">
                 <input type="checkbox" required name="rules" id='acceptRules'/> 
-                <label for='acceptRules'><?= $this->translate('I accept'); ?> <a href="#"><?= $this->translate('rules'); ?></a></label>
+                <label for='acceptRules'><?= $this->translate('I accept'); ?> <a href="/rules" target='_blank'><?= $this->translate('rules'); ?></a></label>
             </span>
 
             <button type="submit" name="submit" class='logIn btn'>REGISTER</button>

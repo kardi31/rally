@@ -1,6 +1,4 @@
-<div class="mainUserBox">
-    <h4 class="boxHeader"><?= $this->translate('My people'); ?></h4> 
-    <?php 
+<?php 
         if(isset($_GET['msg'])){
             if($_GET['msg']=="player on market"){
                 $this->showError($this->translate('This player is already on market'));
@@ -11,8 +9,14 @@
             elseif($_GET['msg']=="in rally"){
                 $this->showError($this->translate("Sorry. You can't sell player who is signed up for rally."));
             }
+            elseif($_GET['msg']=="free agent acquired"){
+                $this->showSuccess($this->translate("Free agent has been acquired."));
+            }
         }
     ?>
+<div class="mainUserBox">
+    <h4 class="boxHeader"><?= $this->translate('My people'); ?></h4> 
+    
     <div class="myPeople peopleList driverList col-md-12">
         <ul>
             <li>Drivers</li>

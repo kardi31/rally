@@ -16,7 +16,7 @@ class Rally_DataTables_RallyResult{
 	$q->leftJoin('cr.Pilot p');
 	$q->addSelect('total_time');
         $q->addSelect('r.*,c.name,cr.id,cr.risk,rally_time,d.last_name,t.name,d.first_name,p.last_name,p.first_name');
-	$q->addWhere('r.rally_id = ?',$GLOBALS['urlParams']['id']);
+	$q->addWhere('r.rally_id = ?',$GLOBALS['urlParams'][1]);
 	$q->groupBy('cr.id');
         return $q;
     }

@@ -94,7 +94,7 @@ class Index_Index extends Controller{
         $view->setNoRender();
         $langs = array('pl','gb');
         
-        $lang = $GLOBALS['urlParams']['id'];
+        $lang = $GLOBALS['urlParams'][1];
         if(in_array($lang,$langs)){
             setcookie('lang',$lang,time() + (86400 * 30),'/');
         }

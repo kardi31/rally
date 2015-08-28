@@ -183,57 +183,57 @@ class Account_Index extends Controller{
         
 	$form = $this->getForm('market','offer');
         
-	$formCar1 = new Form();
-	
-        $formCar1->createElement('text','car1_name',array('validators' => 'alnum'),'Nowa nazwa(dozwolona 1 zmiana na miesiąc)');
-        $formCar1->createElement('submit','submit_car1',array(),'Change');
-	
-	if($formCar1->isSubmit()){
-            if($formCar1->isValid()){
-                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
-                
-                $values = $_POST;
-		
-		$last_name_change_date = $user['Team']['Car1']['last_name_change'];
-		if($last_name_change_date!= "0000-00-00 00:00:00"){
-		    
-		    // last name change date
-		    $date1 = new DateTime($last_name_change_date);
-		    
-		    // now date
-		    $date2 = new DateTime();
-		    
-		    // calculate diff between dates
-		    $diff = $date2->diff($date1)->format("%a");
-		    
-		    
-		    if( $diff > 30){
-			$user['Team']['Car1']['name'] = $values['car1_name'];
-			$user['Team']['Car1']['last_name_change'] = date('Y-m-d H:i:s');
-			TK_Helper::redirect('/account/my-cars/');
-		    }
-		    else{
-			$formCar1->setError('Można dokonać 1 zmiany nazwy na 30 dni');
-		    }
-		}
-		else{
-		    $user['Team']['Car1']['name'] = $values['car1_name'];
-		    $user['Team']['Car1']['last_name_change'] = date('Y-m-d H:i:s');
-		    TK_Helper::redirect('/account/my-cars/');
-		}
-		
-		
-		
-		
-		$user->save();
+//	$formCar1 = new Form();
+//	
+//        $formCar1->createElement('text','car1_name',array('validators' => 'alphanum'),'Nowa nazwa(dozwolona 1 zmiana na miesiąc)');
+//        $formCar1->createElement('submit','submit_car1',array(),'Change');
+//	
+//	if($formCar1->isSubmit()){
+//            if($formCar1->isValid()){
+//                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+//                
+//                $values = $_POST;
 //		
-                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
-            }
-        }
+//		$last_name_change_date = $user['Team']['Car1']['last_name_change'];
+//		if($last_name_change_date!= "0000-00-00 00:00:00"){
+//		    
+//		    // last name change date
+//		    $date1 = new DateTime($last_name_change_date);
+//		    
+//		    // now date
+//		    $date2 = new DateTime();
+//		    
+//		    // calculate diff between dates
+//		    $diff = $date2->diff($date1)->format("%a");
+//		    
+//		    
+//		    if( $diff > 30){
+//			$user['Team']['Car1']['name'] = $values['car1_name'];
+//			$user['Team']['Car1']['last_name_change'] = date('Y-m-d H:i:s');
+//			TK_Helper::redirect('/account/my-cars/');
+//		    }
+//		    else{
+//			$formCar1->setError('Można dokonać 1 zmiany nazwy na 30 dni');
+//		    }
+//		}
+//		else{
+//		    $user['Team']['Car1']['name'] = $values['car1_name'];
+//		    $user['Team']['Car1']['last_name_change'] = date('Y-m-d H:i:s');
+//		    TK_Helper::redirect('/account/my-cars/');
+//		}
+//		
+//		
+//		
+//		
+//		$user->save();
+////		
+//                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+//            }
+//        }
 	
 	$this->view->assign('cars',$cars);
 	$this->view->assign('form',$form);
-	$this->view->assign('formCar1',$formCar1);
+//	$this->view->assign('formCar1',$formCar1);
     }
     
     public function premium(){

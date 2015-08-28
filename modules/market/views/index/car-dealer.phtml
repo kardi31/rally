@@ -32,7 +32,7 @@ if(isset($_GET['msg'])){
                     <div class="clearfix"></div>
                 <div class="carBtn">
                     <?= $this->translate('Car price'); ?> : <strong><?= $car['price']; ?>$</strong><br />
-                    <a class='btn sellPlayer myBtn buyCarDealer' href="/market/buy-car/id/<?php echo $car['id']; ?>"><i class="fa fa-shopping-cart"></i> <?= $this->translate('Buy this car'); ?></a>
+                    <a class='btn sellPlayer myBtn buyCarDealer' href="/market/buy-car/<?php echo $car['id']; ?>"><i class="fa fa-shopping-cart"></i> <?= $this->translate('Buy this car'); ?></a>
 
                 </div>
 

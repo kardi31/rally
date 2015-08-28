@@ -42,15 +42,15 @@ class Car_Admin extends Controller{
              $row[] = $result['league'];
              
              if($result['on_market'])
-                 $row[] = '<a href="/admin/car/put-on-market/id/'.$result['id'].'"><span class="label label-sm label-success">Tak</span></a>';
+                 $row[] = '<a href="/admin/car/put-on-market/'.$result['id'].'"><span class="label label-sm label-success">Tak</span></a>';
              else
-                 $row[] = '<a href="/admin/car/put-on-market/id/'.$result['id'].'"><span class="label label-sm label-danger">Nie</span></a>';
+                 $row[] = '<a href="/admin/car/put-on-market/'.$result['id'].'"><span class="label label-sm label-danger">Nie</span></a>';
              
              $row[] = $result['price'];
              
 //	     
-             $options = '<a href="/admin/car/edit-car/id/'.$result['id'].'" class="btn btn-xs blue"><i class="fa fa-edit"></i> Edit</a>';
-             $options .='<a href="/admin/car/remove-car/id/'.$result['id'].'" class="btn default btn-xs red"><i class="fa fa-times"></i> Remove </a>';
+             $options = '<a href="/admin/car/edit-car/'.$result['id'].'" class="btn btn-xs blue"><i class="fa fa-edit"></i> Edit</a>';
+             $options .='<a href="/admin/car/remove-car/'.$result['id'].'" class="btn default btn-xs red"><i class="fa fa-times"></i> Remove </a>';
 //             if($result['finished']){
 //                $options .='<a href="/admin/rally/show-rally-result/id/'.$result['id'].'" class="btn default btn-xs green"><i class="fa fa-list"></i> Results </a>';
 //                $options .='<a href="/admin/rally/show-rally-detailed-result/id/'.$result['id'].'" class="btn default btn-xs red"><i class="fa fa-list"></i> Detailed results </a>';
@@ -74,7 +74,7 @@ class Car_Admin extends Controller{
      public function putOnMarket(){
          $carService = parent::getService('car','car');
         
-        if(!$carModel = $carService->getCarModel($GLOBALS['urlParams']['id'],'id')){
+        if(!$carModel = $carService->getCarModel($GLOBALS['urlParams'][1],'id')){
             echo "brak modelu";exit;
         }
         
@@ -108,7 +108,7 @@ class Car_Admin extends Controller{
 		    TK_Helper::redirect('/admin/car/add-car/');
 		
 		if(isset($_POST['save_and_stay']))
-		    TK_Helper::redirect('/admin/car/car-sponsor/id/'.$carModel['id']);
+		    TK_Helper::redirect('/admin/car/car-sponsor/'.$carModel['id']);
 		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
 	    
@@ -120,7 +120,7 @@ class Car_Admin extends Controller{
      public function editCar(){
          $carService = parent::getService('car','car');
          
-         if(!$carModel = $carService->getCarModel($GLOBALS['urlParams']['id'])){
+         if(!$carModel = $carService->getCarModel($GLOBALS['urlParams'][1])){
              echo "nie istnieje model";exit;
          }
          
@@ -140,7 +140,7 @@ class Car_Admin extends Controller{
 		    TK_Helper::redirect('/admin/car/add-car/');
 		
 		if(isset($_POST['save_and_stay']))
-		    TK_Helper::redirect('/admin/car/car-sponsor/id/'.$carModel['id']);
+		    TK_Helper::redirect('/admin/car/car-sponsor/'.$carModel['id']);
 		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
 	    
@@ -153,7 +153,7 @@ class Car_Admin extends Controller{
      public function removeCar(){
          $carService = parent::getService('car','car');
          
-         if(!$carModel = $carService->getCarModel($GLOBALS['urlParams']['id'])){
+         if(!$carModel = $carService->getCarModel($GLOBALS['urlParams'][1])){
              echo "nie istnieje model";exit;
          }
          

@@ -46,8 +46,8 @@ class Team_Admin extends Controller{
              else
                  $row[] = '<span class="label label-sm label-danger">Nieaktywny</span>';
 	     
-	     $options ='<a href="/admin/rally/edit-sponsor/id/'.$result['id'].'" class="btn default btn-xs purple"><i class="fa fa-edit"></i> Edit </a>';
-             $options .='<a href="/admin/team/delete-sponsor/id/'.$result['id'].'" class="btn default btn-xs blue"><i class="fa fa-list"></i> Delete </a>';
+	     $options ='<a href="/admin/rally/edit-sponsor/'.$result['id'].'" class="btn default btn-xs purple"><i class="fa fa-edit"></i> Edit </a>';
+             $options .='<a href="/admin/team/delete-sponsor/'.$result['id'].'" class="btn default btn-xs blue"><i class="fa fa-list"></i> Delete </a>';
 	     
 	     $row[] = $options;
 	     
@@ -100,7 +100,7 @@ class Team_Admin extends Controller{
 		    TK_Helper::redirect('/admin/team/add-sponsor/');
 		
 		if(isset($_POST['save_and_stay']))
-		    TK_Helper::redirect('/admin/team/edit-sponsor/id/'.$stage['id']);
+		    TK_Helper::redirect('/admin/team/edit-sponsor/'.$stage['id']);
 		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
 	    
@@ -146,7 +146,7 @@ class Team_Admin extends Controller{
                  $row[] = '<span class="label label-sm label-danger">Poza trasą</span>';
 	     
 	     $row[] = $result['risk'];
-             $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
+             $options = '<a href="/admin/rally/show-rally-crew-details/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
             
 	     $row[] = $options;
 	     
@@ -169,7 +169,7 @@ class Team_Admin extends Controller{
      
      public function showStageResult(){
 	 
-	$stage_id = $GLOBALS['urlParams']['id'];
+	$stage_id = $GLOBALS['urlParams'][1];
         $rallyService = parent::getService('rally','rally');
 	$stage = $rallyService->getStageWithRally($stage_id,'id',Doctrine_Core::HYDRATE_ARRAY);
         
@@ -215,7 +215,7 @@ class Team_Admin extends Controller{
              else
                  $row[] = '<span class="label label-sm label-danger">Poza trasą</span>';
 	     
-             $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
+             $options = '<a href="/admin/rally/show-rally-crew-details/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
             
 	     $row[] = $options;
 	     
@@ -238,7 +238,7 @@ class Team_Admin extends Controller{
      
      public function showRallyResult(){
 	 
-	$rally_id = $GLOBALS['urlParams']['id'];
+	$rally_id = $GLOBALS['urlParams'][1];
         $rallyService = parent::getService('rally','rally');
 	$rally = $rallyService->getRally($rally_id,'id',Doctrine_Core::HYDRATE_ARRAY);
         
@@ -284,7 +284,7 @@ class Team_Admin extends Controller{
              else
                  $row[] = '<span class="label label-sm label-danger">Poza trasą</span>';
 	     
-             $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
+             $options = '<a href="/admin/rally/show-rally-crew-details/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
             
 	     $row[] = $options;
 	     
@@ -308,7 +308,7 @@ class Team_Admin extends Controller{
      public function showRallyStages(){
 	 
         $rallyService = parent::getService('rally','rally');
-        $rally = $rallyService->getRally($GLOBALS['urlParams']['id'],'id');
+        $rally = $rallyService->getRally($GLOBALS['urlParams'][1],'id');
 	
 	$this->view->assign('rally',$rally);
      }
@@ -334,8 +334,8 @@ class Team_Admin extends Controller{
              $row[] = $result['name'];
              $row[] = $result['length'];
              $row[] = $result['min_time'];
-             $options = '<a href="/admin/rally/show-rally-crew-details/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
-            $options .= '<a href="/admin/rally/calculate-stage-time/rally-id/'.$result['rally_id'].'/stage-id/'.$result['id'].'" class="btn btn-xs blue"><i class="fa fa-users"></i> Calculate</a>';
+             $options = '<a href="/admin/rally/show-rally-crew-details/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
+            $options .= '<a href="/admin/rally/calculate-stage-time/'.$result['rally_id'].'/'.$result['id'].'" class="btn btn-xs blue"><i class="fa fa-users"></i> Calculate</a>';
             
 	     $row[] = $options;
 	     
@@ -359,7 +359,7 @@ class Team_Admin extends Controller{
      public function addStage(){
 	 
         $rallyService = parent::getService('rally','rally');
-        $rally = $rallyService->getRally($GLOBALS['urlParams']['rally-id'],'id');
+        $rally = $rallyService->getRally($GLOBALS['urlParams'][1],'id');
 	
 	
 	$form = new Form();
@@ -380,13 +380,13 @@ class Team_Admin extends Controller{
 		$stage = $rallyService->saveStage($values);
 		
 		if(isset($_POST['submit']))
-		    TK_Helper::redirect('/admin/rally/show-rally-stages/id/'.$rally['id']);
+		    TK_Helper::redirect('/admin/rally/show-rally-stages/'.$rally['id']);
 		
 		if(isset($_POST['save_and_add_new']))
-		    TK_Helper::redirect('/admin/rally/add-stage/id/'.$rally['id']);
+		    TK_Helper::redirect('/admin/rally/add-stage/'.$rally['id']);
 		
 		if(isset($_POST['save_and_stay']))
-		    TK_Helper::redirect('/admin/rally/edit-stage/id/'.$rally['id'].'/stage-id/'.$stage['id']);
+		    TK_Helper::redirect('/admin/rally/edit-stage/'.$rally['id'].'/stage-id/'.$stage['id']);
 		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
 	    
@@ -451,7 +451,7 @@ class Team_Admin extends Controller{
 		    TK_Helper::redirect('/admin/rally/add-rally');
 		
 		if(isset($_POST['save_and_stay']))
-		    TK_Helper::redirect('/admin/rally/edit-rally/id/'.$rally['id']);
+		    TK_Helper::redirect('/admin/rally/edit-rally/'.$rally['id']);
 		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
 	    
@@ -469,11 +469,11 @@ class Team_Admin extends Controller{
         Service::loadModels('people', 'people');
         Service::loadModels('car', 'car');
         $rallyService = parent::getService('rally','rally');
-        $crews = $rallyService->getRallyCrews($GLOBALS['urlParams']['rally-id'],'rally_id',Doctrine_Core::HYDRATE_RECORD);
-	$stage = $rallyService->getStageShort($GLOBALS['urlParams']['stage-id'],'id',Doctrine_Core::HYDRATE_ARRAY);
+        $crews = $rallyService->getRallyCrews($GLOBALS['urlParams'][1],'rally_id',Doctrine_Core::HYDRATE_RECORD);
+	$stage = $rallyService->getStageShort($GLOBALS['urlParams'][2],'id',Doctrine_Core::HYDRATE_ARRAY);
 	// get array with id of crews which's time hasn't been calculated yet
 	$crewsWithResults = $rallyService->getCrewsWithoutResults($stage['id'],Doctrine_Core::HYDRATE_SINGLE_SCALAR);
-	$surfaces = $rallyService->getRallySurfaces($GLOBALS['urlParams']['rally-id'],Doctrine_Core::HYDRATE_ARRAY);
+	$surfaces = $rallyService->getRallySurfaces($GLOBALS['urlParams'][1],Doctrine_Core::HYDRATE_ARRAY);
         
         $carService = parent::getService('car','car');
         $trainingService = parent::getService('people','training');
@@ -483,7 +483,7 @@ class Team_Admin extends Controller{
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
         
-	TK_Helper::redirect('/admin/rally/show-stage-result/id/'.$stage['id']);
+	TK_Helper::redirect('/admin/rally/show-stage-result/'.$stage['id']);
     }
     
     public function calculateTraining(){

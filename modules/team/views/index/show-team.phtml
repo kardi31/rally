@@ -12,13 +12,27 @@
             elseif($_GET['msg']=="in rally"){
                 $this->showError($this->translate("Sorry. You can't sell player who is signed up for rally."));
             }
+            elseif($_GET['msg']=="name changed"){
+                $this->showSuccess($this->translate("Team name successfully changed."));
+            }
         }
+        
+        
     ?>
     <div class="myTeamContent"> 
         <div class="col-md-6">
         <table>
             <tr>
-                <td><strong>Team: </strong><?php echo $team['name']; ?></td>
+                <td>
+                    <strong>Team: </strong><?php echo $team['name']; ?>
+                    <?php 
+                    if($authenticatedUser&&$authenticatedUser['id']==$team['User']['id']){ 
+                    ?> 
+                    <a href="/team/change-name" class="changeTeamNameBtn">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </a>
+                    <?php } ?>
+                </td>
             </tr>
             <tr>
                 <td><strong>Owner: </strong><?php echo $team['User']['username']; ?></td>
@@ -174,7 +188,7 @@
                 } 
                 ?>
             </div>
-                <a class="btn myBtn" href="/user/show-message-box/id/<?= $team['User']['id']; ?>#sendMessage"><i class="fa fa-envelope-o"></i> Message user</a>
+                <a class="btn myBtn" href="/user/show-message-box/<?= $team['User']['id']; ?>#sendMessage"><i class="fa fa-envelope-o"></i> Message user</a>
             <?php
             }
             ?>

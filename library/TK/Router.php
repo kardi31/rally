@@ -15,13 +15,9 @@ if(count($_GET)>0){
         }
         $params = array_values($params);
         $urlParams = array();
-        for($i=0;$i<count($params);$i = $i+2):
-            if(empty($params[$i+1]))
-                continue;
-            $key = filter_var($params[$i], FILTER_SANITIZE_URL);
-            $urlParams[$key] = filter_var($params[$i+1], FILTER_SANITIZE_URL);
+        for($i=0;$i<count($params);$i++):
+            $urlParams[$i+1] = filter_var($params[$i], FILTER_SANITIZE_URL);
         endfor;
-        
         $GLOBALS['urlParams'] = $urlParams; 
 }
 

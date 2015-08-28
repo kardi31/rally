@@ -20,7 +20,7 @@
                     ],
                     "iDisplayLength": 20, // default record count per page
                     "bServerSide": true, // server side processing
-                    "sAjaxSource": "/admin/rally/show-rally-crews-data/id/<?= $GLOBALS['urlParams']['id']; ?>", // ajax source
+                    "sAjaxSource": "/admin/rally/show-rally-crews-data/<?= $GLOBALS['urlParams'][1]; ?>", // ajax source
                     "aaSorting": [[ 1, "desc" ]] // set first column as a default sort by asc
                 }
             });
@@ -58,7 +58,7 @@
 <div class="row">
     <div class="col-md-12">
         <h3 class="page-title">
-            Lista załóg rajdu #<?= $GLOBALS['urlParams']['id']; ?>
+            Lista załóg rajdu #<?= $GLOBALS['urlParams'][1]; ?>
         </h3>
         <ul class="page-breadcrumb breadcrumb">
                 <li>
@@ -73,7 +73,7 @@
                         <i class="fa fa-angle-right"></i>
                 </li>
                 <li>
-                        <a href="#">Lista załóg rajdu #<?= $GLOBALS['urlParams']['id']; ?></a>
+                        <a href="#">Lista załóg rajdu #<?= $GLOBALS['urlParams'][1]; ?></a>
                 </li>
         </ul>
     </div>

@@ -129,6 +129,7 @@ table tr td{
     .flagSelect ul{
         padding:0px;
         list-style-type:none;
+        margin-bottom:0px;
     }
     .flagSelect li{
         display:none;
@@ -214,7 +215,7 @@ label[for="rememberMe"],.topToolbarBottom a{
 }
     
 .topToolbarBottom{
-    margin-top:8px;
+    /*margin-top:8px;*/
 }
 
 /*
@@ -362,6 +363,14 @@ footer{
     /*background-size:100;*/
 }
 
+.logOut{
+    display:block;
+    font-size:12px;
+    margin-left:50px;  
+    float: right;
+    clear: right;
+}
+
 /* 
     2.2 Menu
 */
@@ -378,7 +387,7 @@ footer{
 }
 #tMenu li a:hover{background-color:#3a3a3a; text-decoration:none;color:#FFCC00;}
 #tMenu li:hover>a{background-color:#3a3a3a}
-#tMenu li ul{display:none;position:absolute;z-index:9999;padding:0;margin:0;list-style:none;width:100% !important; 
+#tMenu li ul{display:none;position:absolute;z-index:9999;padding:0;margin:0;list-style:none;width:160px !important; 
 }
 /*#tMenu li:first-of-type ul{display:block !important;}*/
 #tMenu li ul li{background-color:#f3f3f3;display:block;max-width:200px;border-bottom:1px solid #484548;padding:0px;list-style:none;position:relative;vertical-align: top;}
@@ -426,11 +435,12 @@ footer{
     margin-bottom:10px;
 }
 .boxFriends li img{
-    margin-left:20px;
-    margin-right:7px;
+    margin-left:7px;
+    margin-top:-1px;
+    /*margin-right:7px;*/
 }
 .boxFriends li.active i{
-    background: green;
+    /*background: green;*/
 }
 .boxFriends ul{
     list-style:none;
@@ -714,6 +724,10 @@ footer{
         padding-left:0px;
     }
     
+    .pt20{
+        padding-top:20px;
+    }
+    
      #sellCar label,#sellPlayer label{
         width:200px;
         float:left;
@@ -737,6 +751,11 @@ footer{
     .notifyInfo{
         color:#333;
     }
+    
+    .notifyInfo2{
+        color:#f3f3f3;
+    }
+    
     
 /*
     3.2. Sponsor list
@@ -1134,7 +1153,7 @@ footer{
         display:inline-block;
         font-size:14px;
         padding:10px;
-        cursor:pointer;
+        cursor:default;
     }
     
     .peopleList ul li:first-of-type{
@@ -1223,6 +1242,10 @@ margin-right: auto;
         width:150px;
 /*        display:block;
         margin:0 auto;*/
+    }
+    
+    .changeTeamNameBtn{
+        margin-left:20px;
     }
     
     /*
@@ -1394,6 +1417,15 @@ margin-right: auto;
     /*
     5.1 People market
     */
+    .cashInfo{
+        float:right;
+        margin-top:15px;
+        margin-right:35px;
+    }
+    
+    .cashInfo strong{
+        margin-left:5px;
+    }
     
     .peopleMarketCard .col-md-5{
         padding-right:0px;

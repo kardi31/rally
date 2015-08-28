@@ -1,0 +1,33 @@
+<?php 
+if(isset($_GET['msg'])){
+    if($_GET['msg']=="no money")
+        $this->showError($this->translate('Sorry, You don\'t have enough money.'));
+    elseif($_GET['msg']=="not enough money")
+        $this->showError($this->translate('Sorry, You don\'t have enough money for all of your bids'));
+}
+?>
+<div class="mainUserBox myCarsBox">
+    <span class="cashInfo">
+        Balance: <strong><?= "$".$authenticatedUser['Team']['cash']; ?></strong>
+    </span>
+    <h4 class="boxHeader"><?= $this->translate('Free agency'); ?></h4>
+    <div class="myPeople peopleList driverList col-md-12">
+        In this section you have a chance to hire a free agent driver or pilot. The level of acquired player is random. You can get league 1 driver for very low cost, but you can highly overpay league 5 driver.
+        <br />
+        This operation will cost you $10000. 
+        <br /><br />
+        <div class="carCard carDealer mb20 clearfix pt20">
+            <div class="col-md-12">
+                <form method="POST">
+                        <div class="form-group">
+                            <label for="name" class="control-label"><?= $this->translate('Select free agent you wanted to hire'); ?></label>
+                            <?php echo $form->getElement('job')->renderElementFromMulti(); ?>
+                        </div>
+                        <?php echo $form->getElement('submit')->renderElement(); ?>
+                    </form>
+                
+
+            </div>
+        </div>
+    </div>
+</div>

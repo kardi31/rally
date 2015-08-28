@@ -36,8 +36,8 @@ class People_Index extends Controller{
         $teamService = parent::getService('team','team');
         $userService = parent::getService('user','user');
         
-        $id = $GLOBALS['urlParams']['id'];
-        $skill = $GLOBALS['urlParams']['skill'];
+        $id = $GLOBALS['urlParams'][1];
+        $skill = $GLOBALS['urlParams'][2];
         $player = $peopleService->getPerson($id,'id',Doctrine_Core::HYDRATE_RECORD);
         $player->set('active_training_skill',$skill);
         $player->save();
@@ -79,7 +79,7 @@ class People_Index extends Controller{
                     }
                     $player_seller[$player['id']] = $user['id'];
                     setcookie('player_seller',serialize($player_seller),time()+(86400 * 4),'/');
-                    TK_Helper::redirect('/market/show-offer/id/'.$result['element']['id']);
+                    TK_Helper::redirect('/market/show-offer/'.$result['element']['id']);
                     exit;
                 }
                 else{

@@ -7,33 +7,22 @@
     }
 </style>
 
-<?php 
-if(isset($_GET['msg'])&&$_GET['msg']=="car bought"){
-    $this->showSuccess($this->translate("You have successfully bought a car. You can now see it in your garage."));
-}
-?>
 
 <?php $team = $authenticatedUser['Team']; ?>
 <div class="mainUserBox myCarsBox">
-    <?php 
-        if(isset($_GET['msg'])){
-            if($_GET['msg']=="car on market"){
-                $this->showError($this->translate("This car is already on market"));
-            }
-//            elseif($_GET['msg']=="car added"){
-//                $this->showSuccess("Sorry. You don't have enough money to buy this car.");
-//            }
-        }
-    ?>
     
     <h4 class="boxHeader"><?= $this->translate('Change car name'); ?></h4>
-        <div class="carCard">
+    
+    <div class="col-md-12">
+        <div class="myPeople peopleList driverList carMarketList">
 
-            <strong><?= $car['name']; ?></strong>
-            <div class="clearfix"></div>
-            <div class="col-md-6">
-               <br />
-               <div class="notifyInfo">
+            <ul>
+                <li class="active">
+                    <?php echo $car['name']; ?> 
+                </li>
+            </ul>
+            <div class="carCard carMarketCard active peopleMarketCard col-md-6">
+               <div class="notifyInfo2">
                    <?= $this->translate('You are allowed to change name of your car every 30 days.');?>
                         <img src="/images/layout/gc_small.png" class=""> <?= $this->translate('members can change car name every 7 days.'); ?>
                         <br /><br />
@@ -57,7 +46,9 @@ if(isset($_GET['msg'])&&$_GET['msg']=="car bought"){
                     </form>
                 </div>
             </div>
-           <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
+          
+            <div class="carCard col-md-6 pr0 pl0">
+                 <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
                 <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" class="carCardPhoto" />
            <?php } 
                 else{ ?>
@@ -65,35 +56,11 @@ if(isset($_GET['msg'])&&$_GET['msg']=="car bought"){
                 <?php
                 }
                 ?>
-            <div class="col-md-6 pr0 pl0">
-
-            <div class="carParameters">
-                 <table>
-                    <tr>
-                    <td><?= $this->translate('brand'); ?>:</td>
-                    <td><?php echo $car['Model']['name']; ?></td>
-                </tr>
-                    <tr>
-                        <td><?= $this->translate('capacity'); ?></td>
-                        <td><?php echo $car['Model']['capacity'];?></td>
-                    </tr>
-                    <tr>
-                        <td><?= $this->translate('horse power'); ?></td>
-                        <td><?php echo $car['Model']['horsepower'];?></td>
-                    </tr>
-                    <tr>
-                        <td><?= $this->translate('v-max'); ?></td>
-                        <td><?php echo $car['Model']['max_speed'];?></td>
-                    </tr>
-                    <tr>
-                        <td><?= $this->translate('acceleration'); ?></td>
-                        <td><?php echo $car['Model']['acceleration'];?></td>
-                    </tr>
-
-                </table>
-            </div>
+            <div class="clearfix"></div>
+                    <?= TK_Helper::showCarParameters($car); ?>
             </div>
             <div class="clearfix"></div>
         </div>
+    </div>
 
 </div>

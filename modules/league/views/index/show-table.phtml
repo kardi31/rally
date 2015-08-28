@@ -32,8 +32,13 @@
             <tbody>
                 <?php 
                 $rows = count($leagueTable);
-                $green = array(0,1,2);
-                $red = array($rows-1,$rows-2,$rows-3);
+                if($leagueLevel!=1){
+                    $green = array(0,1,2);
+                }
+                else{
+                    $green = array();
+                }
+                $red = array($rows-1,$rows-2,$rows-3,$rows-4,$rows-5,$rows-6);
                 foreach($leagueTable as $key => $team): ?>
                     <tr
                         class="

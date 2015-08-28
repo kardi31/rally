@@ -1,0 +1,47 @@
+<style>
+    .changeCarName .formSubmitWrapper{
+        display:inline-block;
+    }
+    .nameBack{
+        float:right;
+    }
+</style>
+
+
+<?php $team = $authenticatedUser['Team']; ?>
+<div class="mainUserBox myCarsBox">
+    
+    <h4 class="boxHeader"><?= $this->translate('Change team name'); ?></h4>
+    
+    <div class="col-md-12">
+        <div class="myPeople peopleList driverList carMarketList">
+
+            <div class="carCard carMarketCard active peopleMarketCard col-md-12 pt20">
+               <div class="notifyInfo2 col-md-6">
+                   <?= $this->translate('You are allowed to change your team name every 90 days.');?>
+                    <?php if(!$nextDateChange): 
+                       echo $this->translate("You still have")." <b>1</b> ".$this->translate("name change left.");
+                   else:
+                       echo $this->translate("You can change car name on")." <b>".$nextDateChange->format('d/m/Y H:i')."</b>.";
+                   endif;
+                   ?>
+                   <br />
+                   <br />
+               </div>
+                <div class="changeCarName col-md-6" id="changeCarName1">
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="name" class="control-label"><?= $this->translate('New name'); ?></label>
+                            <?php echo $form->getElement('name')->renderElement(); ?>
+                        </div>
+                        <?php echo $form->getElement('submit')->renderElement(); ?>
+                        <a href="/team/show-team/id/<?= $authenticatedUser['Team']['id']; ?>" class="btn btn-default nameBack"><i class="fa fa-level-up"></i> <?=  $this->translate('Go back'); ?></a>
+                    </form>
+                </div>
+            </div>
+          
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+</div>

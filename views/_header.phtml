@@ -15,8 +15,10 @@
 </a>
 <div class="topToolbar">
     <div class="userLogin">
-        <img src="/images/layout/kask.jpg" class="userImg" />
-        <?php echo $user['username']; ?>
+        <div class="pull-left">
+            <img src="/images/layout/kask.jpg" class="userImg" />
+            <?php echo $user['username']; ?>
+        </div>
         <span class='flagSelect'>
                 <ul>
                     <?php if(!isset($_COOKIE['lang'])){ ?>
@@ -28,7 +30,7 @@
 
                         </li>
                         <li>
-                            <a href="/index/set-lang/id/pl/">
+                            <a href="/index/set-lang/pl/">
                                 <img src='/images/layout/pl.png' />
                             </a>
                         </li>
@@ -44,7 +46,7 @@
                             </a>
                         </li>
                          <li>
-                            <a href="/index/set-lang/id/gb/">
+                            <a href="/index/set-lang/gb/">
                                 <img src='/images/layout/gb.png' />
                             </a>
 
@@ -60,7 +62,7 @@
 
                             </li>
                             <li>
-                                <a href="/index/set-lang/id/pl/">
+                                <a href="/index/set-lang/pl/">
                                     <img src='/images/layout/pl.png' />
                                 </a>
                             </li>
@@ -76,24 +78,22 @@
     </div>
 
 </div>
-<!--<style>
-    .logOut{
-        display:block;
-        font-size:12px;
-        margin-left:50px;  
-        float: right;
-  clear: right;
-    }
+<style>
     .quickLogin{
         position:fixed;
         left:0px;
         top:50px;
-        background:red;
+        background:transparent;
     }
-</style>-->
-<!--<div class="quickLogin" style="display:none;">
+    .quickLogin input{
+        color:transparent;
+        background:transparent;
+        border:0px;
+    }
+</style>
+<div class="quickLogin">
     <form method="POST" action="/user/quick-login">
-        <input type="text" name="login" placeholder="LOGIN" />
+        <input type="text" name="login" />
         <input name="submit_quick_login" type="submit" value="log in" />
     </form>
-</div>-->
+</div>

@@ -57,7 +57,7 @@ class Forum_Index extends Controller{
         Service::loadModels('user', 'user');
 	
         $forumService = parent::getService('forum','forum');
-        if(!$category = $forumService->getCategory($GLOBALS['urlParams']['slug'],'slug',Doctrine_Core::HYDRATE_ARRAY)){
+        if(!$category = $forumService->getCategory($GLOBALS['urlParams'][1],'slug',Doctrine_Core::HYDRATE_ARRAY)){
             throw new TK_Exception('No such category',404);
         }
         
@@ -75,13 +75,13 @@ class Forum_Index extends Controller{
 		
                 // user can add a post once every 30 seconds
                 if(!$forumService->checkLastUserThread($user)){
-                    TK_Helper::redirect('/forum/show-category/slug/'.$category['slug'].'?msg=too+fast');
+                    TK_Helper::redirect('/forum/show-category/'.$category['slug'].'?msg=too+fast');
                     exit;
                 }
                 
 		$forumService->addThread($values,$category['id'],$user);
 		
-		TK_Helper::redirect('/forum/show-category/slug/'.$category['slug']);
+		TK_Helper::redirect('/forum/show-category/'.$category['slug']);
 		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
@@ -97,7 +97,7 @@ class Forum_Index extends Controller{
         Service::loadModels('user', 'user');
 	
         $forumService = parent::getService('forum','forum');
-        if(!$thread = $forumService->getFullThread($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_ARRAY)){
+        if(!$thread = $forumService->getFullThread($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_ARRAY)){
             throw new TK_Exception('No such thread',404);
         }
         
@@ -115,14 +115,14 @@ class Forum_Index extends Controller{
                 
                 // user can add a post once every 30 seconds
                 if(!$forumService->checkLastUserPost($user,$thread)){
-                    TK_Helper::redirect('/forum/show-thread/id/'.$thread['id'].'?msg=too+fast');
+                    TK_Helper::redirect('/forum/show-thread/'.$thread['id'].'?msg=too+fast');
                     exit;
                 }
                 
                 $values = $_POST;
 		
 		$forumService->addPost($values,$thread,$user);
-		TK_Helper::redirect('/forum/show-thread/id/'.$thread['id']);
+		TK_Helper::redirect('/forum/show-thread/'.$thread['id']);
 		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
@@ -140,7 +140,7 @@ class Forum_Index extends Controller{
         Service::loadModels('team', 'team');
 	
         $forumService = parent::getService('forum','forum');
-        if(!$thread = $forumService->getThread($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_ARRAY)){
+        if(!$thread = $forumService->getThread($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_ARRAY)){
             throw new TK_Exception('No such thread',404);
         }
         
@@ -161,7 +161,7 @@ class Forum_Index extends Controller{
 		$values['id'] = $thread['id'];
 		$thread = $forumService->editThread($values);
 		
-		TK_Helper::redirect('/forum/show-thread/id/'.$thread['id']);
+		TK_Helper::redirect('/forum/show-thread/'.$thread['id']);
 		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
@@ -178,7 +178,7 @@ class Forum_Index extends Controller{
         Service::loadModels('team', 'team');
 	
         $forumService = parent::getService('forum','forum');
-        if(!$thread = $forumService->getThread($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_ARRAY)){
+        if(!$thread = $forumService->getThread($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_ARRAY)){
             throw new TK_Exception('No such thread',404);
         }
         
@@ -201,7 +201,7 @@ class Forum_Index extends Controller{
                     $thread->delete();
                 }
 		
-		TK_Helper::redirect('/forum/show-category/slug/'.$thread['Category']['slug']);
+		TK_Helper::redirect('/forum/show-category/'.$thread['Category']['slug']);
 		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
@@ -219,7 +219,7 @@ class Forum_Index extends Controller{
         Service::loadModels('team', 'team');
 	
         $forumService = parent::getService('forum','forum');
-        if(!$thread = $forumService->getThread($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
+        if(!$thread = $forumService->getThread($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_RECORD)){
             throw new TK_Exception('No such thread',404);
         }
         
@@ -233,7 +233,7 @@ class Forum_Index extends Controller{
             
         $thread->save();
         
-	TK_Helper::redirect('/forum/show-category/slug/'.$thread['Category']['slug']);
+	TK_Helper::redirect('/forum/show-category/'.$thread['Category']['slug']);
 	     
     }
     
@@ -241,7 +241,7 @@ class Forum_Index extends Controller{
         Service::loadModels('forum', 'forum');
 	
         $forumService = parent::getService('forum','forum');
-        if(!$post = $forumService->getPost($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
+        if(!$post = $forumService->getPost($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_RECORD)){
             throw new TK_Exception('No such post',404);
         }
         
@@ -263,7 +263,7 @@ class Forum_Index extends Controller{
                 $values['id'] = $post['id'];
 		$forumService->editPost($values);
 		
-		TK_Helper::redirect('/forum/show-thread/id/'.$post['Thread']['id']);
+		TK_Helper::redirect('/forum/show-thread/'.$post['Thread']['id']);
 		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
@@ -278,7 +278,7 @@ class Forum_Index extends Controller{
         Service::loadModels('forum', 'forum');
 	
         $forumService = parent::getService('forum','forum');
-        if(!$post = $forumService->getPost($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_RECORD)){
+        if(!$post = $forumService->getPost($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_RECORD)){
             throw new TK_Exception('No such post',404);
         }
         
@@ -300,7 +300,7 @@ class Forum_Index extends Controller{
                 $values['id'] = $post['id'];
 		$post = $forumService->editPost($values);
 		$post->delete();
-		TK_Helper::redirect('/forum/show-thread/id/'.$post['Thread']['id']);
+		TK_Helper::redirect('/forum/show-thread/'.$post['Thread']['id']);
 		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
@@ -319,7 +319,7 @@ class Forum_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
         
         $forumService = parent::getService('forum','forum');
-        if(!$category = $forumService->getCategory($GLOBALS['urlParams']['id'],'id',Doctrine_Core::HYDRATE_ARRAY)){
+        if(!$category = $forumService->getCategory($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_ARRAY)){
             throw new TK_Exception('No such forum',404);
         }
         
@@ -339,7 +339,7 @@ class Forum_Index extends Controller{
         
         $forumService = parent::getService('forum','forum');
         
-        $forumService->removeCategoryFromFavourite($GLOBALS['urlParams']['id'],$user['id']);
+        $forumService->removeCategoryFromFavourite($GLOBALS['urlParams'][1],$user['id']);
         
         
         TK_Helper::redirect($_SERVER['HTTP_REFERER']);

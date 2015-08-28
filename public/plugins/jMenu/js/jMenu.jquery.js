@@ -24,7 +24,7 @@
             TimeBeforeClosing: 100,
             animatedText:      true,
             paddingLeft:       7,
-            openClick:         true,
+            openClick:         false,
             effects: {
                 effectSpeedOpen:  150,
                 effectSpeedClose: 150,
@@ -44,16 +44,14 @@
 
             // Set global width of the sub-menus links
             if(opts.ulWidth == 'auto')
-                $width = $('.fNiv').outerWidth(false);
+                $width = $(this).children('ul').outerWidth(true); // width the largest sub menu
             else
                 $width = opts.ulWidth;
 
 
 
             $(".jMenu li").each(function() {
-                var
-                    $thisChild = $(this).find('a:first'),
-                    $allUl = $(this).find('ul');
+                var $thisChild = $(this).find('a:first');
 
                 if($.jMenu._IsParent($thisChild))
                 {
@@ -93,8 +91,7 @@
                                 $.jMenu._closeList($ul);
                             }
                         });
-                    else{
-                        console.log($(this));
+                    else
                         $(this).bind({
                             click:function(e) {
                                 e.preventDefault();
@@ -104,7 +101,6 @@
                                 $.jMenu._closeList($ul);
                             }
                         });
-                    }
                 }
             });
         },

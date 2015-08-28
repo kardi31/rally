@@ -24,7 +24,7 @@ class Test_Index extends Controller{
         $_POST['email'] = "peop_".$randomNumber."@kardimobile.pl";
         $_POST['username'] = "peop_".$randomNumber;
         $user = $userContr->register();
-        $GLOBALS['urlParams']['token'] = $user['token'];
+        $GLOBALS['urlParams'][1] = $user['token'];
         $userContr->activate();
         
         endfor;
@@ -100,8 +100,8 @@ class Test_Index extends Controller{
         $leagueService = parent::getService('league','league');
         $userService = parent::getService('user','user');
 	
-        $rally = $rallyService->getRally($GLOBALS['urlParams']['slug'],'slug');
-        $rallyStages = $rallyService->getRallyStages($GLOBALS['urlParams']['slug'],'slug',Doctrine_Core::HYDRATE_ARRAY);
+        $rally = $rallyService->getRally($GLOBALS['urlParams'][1],'slug');
+        $rallyStages = $rallyService->getRallyStages($GLOBALS['urlParams'][1],'slug',Doctrine_Core::HYDRATE_ARRAY);
         
         foreach($rallyStages as $stage):
             $testObj->calculateStageTime($stage['Rally']['id'],$stage['id']);
@@ -208,7 +208,7 @@ class Test_Index extends Controller{
         
         $rallyService = parent::getService('rally','rally');
 //            die('213');
-        $rally = $rallyService->getRally($GLOBALS['urlParams']['slug'],'slug');
+        $rally = $rallyService->getRally($GLOBALS['urlParams'][1],'slug');
    
         $newDate = date('Y-m-d H:i:s',strtotime('- 5 hours'));
         

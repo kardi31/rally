@@ -42,9 +42,9 @@ class Market_Admin extends Controller{
              $row[] = $result['highest_bid'];
              
              if($result['active'])
-                 $row[] = '<a href="/admin/market/set-active/id/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-active/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
              else
-                 $row[] = '<a href="/admin/market/set-active/id/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-active/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
              
              $row[] = TK_Text::timeFormat($result['created_at'],'d/m/Y H:i');
              $row[] = TK_Text::timeFormat($result['start_date'],'d/m/Y H:i');
@@ -62,9 +62,9 @@ class Market_Admin extends Controller{
              $row[] = $bids;
              
              if($result['player_moved'])
-                 $row[] = '<a href="/admin/market/cancel-transfer/id/'.$result['id'].'"><span class="label label-sm label-success">Tak</span></a>';
+                 $row[] = '<a href="/admin/market/cancel-transfer/'.$result['id'].'"><span class="label label-sm label-success">Tak</span></a>';
              else
-                 $row[] = '<a href="/admin/market/cancel-transfer/id/'.$result['id'].'"><span class="label label-sm label-danger">Nie</span></a>';
+                 $row[] = '<a href="/admin/market/cancel-transfer/'.$result['id'].'"><span class="label label-sm label-danger">Nie</span></a>';
              
              if($result['canceled']){
                  $row[] = '<span class="label label-sm label-success">Canceled</span></a>';
@@ -105,7 +105,7 @@ class Market_Admin extends Controller{
      public function setActive(){
          $marketService = parent::getService('market','market');
         
-        if(!$offer = $marketService->getOffer($GLOBALS['urlParams']['id'],'id')){
+        if(!$offer = $marketService->getOffer($GLOBALS['urlParams'][1],'id')){
             echo "brak oferty";exit;
         }
         
@@ -163,17 +163,17 @@ class Market_Admin extends Controller{
              $row[] = $result['Bid']['user_ip'];
              
              if($result['solved'])
-                 $row[] = '<a href="/admin/market/set-people-duplicate-solved/id/'.$result['id'].'"><span class="label label-sm label-success">Solved</span></a>';
+                 $row[] = '<a href="/admin/market/set-people-duplicate-solved/'.$result['id'].'"><span class="label label-sm label-success">Solved</span></a>';
              else
-                 $row[] = '<a href="/admin/market/set-people-duplicate-solved/id/'.$result['id'].'"><span class="label label-sm label-danger">Unsolved</span></a>';
+                 $row[] = '<a href="/admin/market/set-people-duplicate-solved/'.$result['id'].'"><span class="label label-sm label-danger">Unsolved</span></a>';
              
              
              $row[] = TK_Text::timeFormat($result['created_at'],'d/m/Y H:i');
              
               if($result['Bid']['active'])
-                 $row[] = '<a href="/admin/market/set-bid-active/id/'.$result['Bid']['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-bid-active/'.$result['Bid']['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
              else
-                 $row[] = '<a href="/admin/market/set-bid-active/id/'.$result['Bid']['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-bid-active/'.$result['Bid']['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
            
              
 	     $rows[] = $row;
@@ -192,7 +192,7 @@ class Market_Admin extends Controller{
      public function setPeopleDuplicateSolved(){
          $duplicateService = parent::getService('market','duplicate');
         
-        if(!$duplicate = $duplicateService->getDuplicatePeople($GLOBALS['urlParams']['id'],'id')){
+        if(!$duplicate = $duplicateService->getDuplicatePeople($GLOBALS['urlParams'][1],'id')){
             echo "brak duplikatu zawodnika";exit;
         }
         
@@ -239,9 +239,9 @@ class Market_Admin extends Controller{
              $row[] = $result['highest_bid'];
              
              if($result['active'])
-                 $row[] = '<a href="/admin/market/set-active/id/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-active/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
              else
-                 $row[] = '<a href="/admin/market/set-active/id/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-active/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
              
              $row[] = TK_Text::timeFormat($result['created_at'],'d/m/Y H:i');
              $row[] = TK_Text::timeFormat($result['start_date'],'d/m/Y H:i');
@@ -260,9 +260,9 @@ class Market_Admin extends Controller{
              $row[] = $bids;
              
              if($result['Bids'][0]['active'])
-                 $row[] = '<a href="/admin/market/set-bid-active/id/'.$result['Bids'][0]['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-bid-active/'.$result['Bids'][0]['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
              else
-                 $row[] = '<a href="/admin/market/set-bid-active/id/'.$result['Bids'][0]['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-bid-active/'.$result['Bids'][0]['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
              
 //             $options = '<a href="/admin/rally/show-rally-crews/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
 //             $options .='<a href="/admin/rally/show-rally-stages/id/'.$result['id'].'" class="btn default btn-xs blue"><i class="fa fa-list"></i> Stages </a>';
@@ -290,7 +290,7 @@ class Market_Admin extends Controller{
       public function setBidActive(){
          $marketService = parent::getService('market','market');
         
-        if(!$bid = $marketService->getBid($GLOBALS['urlParams']['id'],'id')){
+        if(!$bid = $marketService->getBid($GLOBALS['urlParams'][1],'id')){
             echo "brak ofery zawodnika";exit;
         }
         
@@ -318,7 +318,7 @@ class Market_Admin extends Controller{
         $teamService = parent::getService('team','team');
         $marketService = parent::getService('market','market');
         
-        $offer = $marketService->getFullOfferAndBid($GLOBALS['urlParams']['id']);
+        $offer = $marketService->getFullOfferAndBid($GLOBALS['urlParams'][1]);
             $bid = $offer['Bids'][0];
             $teamService->removePreviousTeamMoney($bid['team_id'],$bid['value'],'Arrival of player '.$offer['Player']['first_name']." ".$offer['Player']['last_name']);
             $teamService->removePreviousTeamMoney($offer['team_id'],$bid['value'],'Sell of player '.$offer['Player']['first_name']." ".$offer['Player']['last_name']);
@@ -367,9 +367,9 @@ class Market_Admin extends Controller{
              $row[] = $result['highest_bid'];
              
              if($result['active'])
-                 $row[] = '<a href="/admin/market/set-car-active/id/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-car-active/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
              else
-                 $row[] = '<a href="/admin/market/set-car-active/id/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-car-active/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
              
              $row[] = TK_Text::timeFormat($result['created_at'],'d/m/Y H:i');
              $row[] = TK_Text::timeFormat($result['start_date'],'d/m/Y H:i');
@@ -387,9 +387,9 @@ class Market_Admin extends Controller{
              $row[] = $bids;
              
              if($result['car_moved'])
-                 $row[] = '<a href="/admin/market/cancel-car-transfer/id/'.$result['id'].'"><span class="label label-sm label-success">Tak</span></a>';
+                 $row[] = '<a href="/admin/market/cancel-car-transfer/'.$result['id'].'"><span class="label label-sm label-success">Tak</span></a>';
              else
-                 $row[] = '<a href="/admin/market/cancel-car-transfer/id/'.$result['id'].'"><span class="label label-sm label-danger">Nie</span></a>';
+                 $row[] = '<a href="/admin/market/cancel-car-transfer/'.$result['id'].'"><span class="label label-sm label-danger">Nie</span></a>';
              
              if($result['canceled']){
                  $row[] = '<span class="label label-sm label-success">Canceled</span></a>';
@@ -414,7 +414,7 @@ class Market_Admin extends Controller{
      public function setCarActive(){
          $marketService = parent::getService('market','market');
         
-        if(!$offer = $marketService->getCarOffer($GLOBALS['urlParams']['id'],'id')){
+        if(!$offer = $marketService->getCarOffer($GLOBALS['urlParams'][1],'id')){
             echo "brak oferty";exit;
         }
         
@@ -472,17 +472,17 @@ class Market_Admin extends Controller{
              $row[] = $result['Bid']['user_ip'];
              
              if($result['solved'])
-                 $row[] = '<a href="/admin/market/set-car-duplicate-solved/id/'.$result['id'].'"><span class="label label-sm label-success">Solved</span></a>';
+                 $row[] = '<a href="/admin/market/set-car-duplicate-solved/'.$result['id'].'"><span class="label label-sm label-success">Solved</span></a>';
              else
-                 $row[] = '<a href="/admin/market/set-car-duplicate-solved/id/'.$result['id'].'"><span class="label label-sm label-danger">Unsolved</span></a>';
+                 $row[] = '<a href="/admin/market/set-car-duplicate-solved/'.$result['id'].'"><span class="label label-sm label-danger">Unsolved</span></a>';
              
              
              $row[] = TK_Text::timeFormat($result['created_at'],'d/m/Y H:i');
              
               if($result['Bid']['active'])
-                 $row[] = '<a href="/admin/market/set-car-bid-active/id/'.$result['Bid']['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-car-bid-active/'.$result['Bid']['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
              else
-                 $row[] = '<a href="/admin/market/set-car-bid-active/id/'.$result['Bid']['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-car-bid-active/'.$result['Bid']['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
            
              
 	     $rows[] = $row;
@@ -501,7 +501,7 @@ class Market_Admin extends Controller{
      public function setCarDuplicateSolved(){
          $duplicateService = parent::getService('market','duplicate');
         
-        if(!$duplicate = $duplicateService->getDuplicateCar($GLOBALS['urlParams']['id'],'id')){
+        if(!$duplicate = $duplicateService->getDuplicateCar($GLOBALS['urlParams'][1],'id')){
             echo "brak duplikatu zawodnika";exit;
         }
         
@@ -548,9 +548,9 @@ class Market_Admin extends Controller{
              $row[] = $result['highest_bid'];
              
              if($result['active'])
-                 $row[] = '<a href="/admin/market/set-car-active/id/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-car-active/'.$result['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
              else
-                 $row[] = '<a href="/admin/market/set-car-active/id/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-car-active/'.$result['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
              
              $row[] = TK_Text::timeFormat($result['created_at'],'d/m/Y H:i');
              $row[] = TK_Text::timeFormat($result['start_date'],'d/m/Y H:i');
@@ -569,9 +569,9 @@ class Market_Admin extends Controller{
              $row[] = $bids;
              
              if($result['Bids'][0]['active'])
-                 $row[] = '<a href="/admin/market/set-car-bid-active/id/'.$result['Bids'][0]['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-car-bid-active/'.$result['Bids'][0]['id'].'"><span class="label label-sm label-success">Aktywny</span></a>';
              else
-                 $row[] = '<a href="/admin/market/set-car-bid-active/id/'.$result['Bids'][0]['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
+                 $row[] = '<a href="/admin/market/set-car-bid-active/'.$result['Bids'][0]['id'].'"><span class="label label-sm label-danger">Nieaktywny</span></a>';
              
 //             $options = '<a href="/admin/rally/show-rally-crews/id/'.$result['id'].'" class="btn btn-xs default"><i class="fa fa-users"></i> Crews</a>';
 //             $options .='<a href="/admin/rally/show-rally-stages/id/'.$result['id'].'" class="btn default btn-xs blue"><i class="fa fa-list"></i> Stages </a>';
@@ -600,7 +600,7 @@ class Market_Admin extends Controller{
          Service::loadModels('team', 'team');
          $marketService = parent::getService('market','market');
         
-        if(!$bid = $marketService->getCarBid($GLOBALS['urlParams']['id'],'id')){
+        if(!$bid = $marketService->getCarBid($GLOBALS['urlParams'][1],'id')){
             echo "brak ofery zawodnika";exit;
         }
         
@@ -628,7 +628,7 @@ class Market_Admin extends Controller{
         $teamService = parent::getService('team','team');
         $marketService = parent::getService('market','market');
         
-        $offer = $marketService->getFullOfferAndBid($GLOBALS['urlParams']['id']);
+        $offer = $marketService->getFullOfferAndBid($GLOBALS['urlParams'][1]);
             $bid = $offer['Bids'][0];
             $teamService->removePreviousTeamMoney($bid['team_id'],$bid['value'],'Arrival of player '.$offer['Player']['first_name']." ".$offer['Player']['last_name']);
             $teamService->removePreviousTeamMoney($offer['team_id'],$bid['value'],'Sell of player '.$offer['Player']['first_name']." ".$offer['Player']['last_name']);

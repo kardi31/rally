@@ -199,6 +199,7 @@ class UserService extends Service{
         $q->select('u.username,t.name');
         $q->addWhere("u.username like ?",$username."%");
         $q->orderBy('u.username ASC');
+        $q->addWhere('u.active = 1');
         $q = TK_Paginator::paginate($q,10);
         return $q->execute(array(),$hydrationMode);
     }

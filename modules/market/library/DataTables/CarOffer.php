@@ -15,7 +15,7 @@ class Market_DataTables_CarOffer{
         $q->leftJoin('c.Team t');
         $q->leftJoin('o.Bids b');
         $q->leftJoin('b.Team bt');
-        if(isset($GLOBALS['urlParams']['future'])){
+        if(isset($GLOBALS['urlParams'][1])){
             $q->addWhere('o.finish_date > NOW()');
         }
         $q->addSelect('o.*,c.*,t.*,b.*,bt.*,m.*');

@@ -46,7 +46,7 @@ Car name: <?php echo $car['name']; ?> <br />
     Najwyższa oferta 
     <strong><?php
     if(isset($offer['Bids'][0]))
-        echo (int)$offer['Bids'][0]['value']."$ - ".$offer['Bids'][0]['Team']['name']."<br />"; 
+        echo "$".(int)$offer['Bids'][0]['value']." - ".$offer['Bids'][0]['Team']['name']."<br />"; 
     else
         echo "no offers";
     ?></strong>
@@ -59,11 +59,11 @@ Car name: <?php echo $car['name']; ?> <br />
         if($key>3)
             break;
         
-        echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 
+        echo "$".$bid['value']." - ".$bid['Team']['name']."<br />"; 
     endforeach; ?>
     <br />
     <?php if($car['Team']['id']!=$user['Team']['id']): ?>
-    <a href="/market/bid-car/id/<?php echo $offer['id']; ?>">Zalicytuj</a>
+    <a href="/market/bid-car/<?php echo $offer['id']; ?>">Zalicytuj</a>
     <?php endif; ?>
 </div>
 <div class='clearfix'></div>

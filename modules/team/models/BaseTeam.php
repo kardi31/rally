@@ -19,6 +19,7 @@
  * @property integer $cash
  * @property integer $this_week_rank
  * @property integer $last_week_rank
+ * @property timestamp $last_name_change
  * @property Doctrine_Collection $Team
  * @property Team_Model_Doctrine_SponsorList $Sponsor
  * 
@@ -90,6 +91,9 @@ abstract class Team_Model_Doctrine_BaseTeam extends Doctrine_Record
         $this->hasColumn('last_week_rank', 'integer', 11, array(
              'type' => 'integer',
              'length' => '11',
+             ));
+        $this->hasColumn('last_name_change', 'timestamp', null, array(
+             'type' => 'timestamp',
              ));
 
         $this->option('type', 'MyISAM');

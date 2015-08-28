@@ -18,7 +18,7 @@
                         if(!$thread) continue;
                         ?>
                         <br />
-                        <span class="category"><i class="fa fa-envelope-o" title="Thread with last post"></i>  <a href="/forum/show-thread/id/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a></span>
+                        <span class="category"><i class="fa fa-envelope-o" title="Thread with last post"></i>  <a href="/forum/show-thread/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a></span>
 
                         <?php if(isset($thread['Posts'][0])&&!empty($thread['Posts'][0])): ?>
                         <br />

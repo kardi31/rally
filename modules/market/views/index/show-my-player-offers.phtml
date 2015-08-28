@@ -14,7 +14,7 @@
                 <a href="#"><?php echo $player['last_name']." ".$player['first_name']; ?></a>
                 <?php
                 if(isset($offer['Bids'][0]))
-                    echo '<i class="fa fa-money"></i> '.(int)$offer['Bids'][0]['value']."$ - <span class='transferTeam'>".$offer['Bids'][0]['Team']['name']."</span><br />"; 
+                    echo '<i class="fa fa-money"></i> $'.(int)$offer['Bids'][0]['value']." - <span class='transferTeam'>".$offer['Bids'][0]['Team']['name']."</span><br />"; 
                 else
                     echo "no offers";
                 ?>
@@ -25,7 +25,7 @@
             </div>
         <?php endforeach; ?>
         <div class="bottom">
-            <a href="#" class="logIn btn seeAllTransfer"><?= $this->translate('SEE ALL'); ?></a>
+            <a href="/market/player-monitor" class="logIn btn seeAllTransfer"><?= $this->translate('SEE ALL'); ?></a>
         </div>
     <?php } ?>
 </div>

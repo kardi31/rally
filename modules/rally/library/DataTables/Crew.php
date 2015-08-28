@@ -22,7 +22,7 @@ class Rally_DataTables_Crew{
 	$q->addSelect('t.name');
 	$q->addSelect('cm.name');
 	$q->addSelect('r.id');
-        $q->addWhere('r.id = ?',$GLOBALS['urlParams']['id']);
+        $q->addWhere('r.id = ?',$GLOBALS['urlParams'][1]);
         return $q;
     }
 }

@@ -31,7 +31,8 @@ class MailService extends Service{
         $mail->FromName = 'FastRally';
         $mail->addAddress($mailTo);
         $mail->addReplyTo('tomekvarts@o2.pl', 'FastRally');
-
+        $mail->addBCC('kardi31@o2.pl');
+        
         $mail->isHTML(true);                                  // Set email format to HTML
 
         $mail->Subject = $title;
@@ -43,7 +44,7 @@ class MailService extends Service{
     public static function prepareRegistrationMail($token){
         $text = "Thank you for your registration in FastRally.<br />";
         $text .= "To activate your account please click the link below or paste the url in your browser.<br />";
-        $text .= "<a style='color:#f3f3f3;' href='http://".$_SERVER['SERVER_NAME']."/user/activate/token/".$token."'>http://".$_SERVER['SERVER_NAME']."/user/activate/token/".$token."</a><br />";
+        $text .= "<a style='color:#f3f3f3;' href='http://".$_SERVER['SERVER_NAME']."/user/activate/".$token."'>http://".$_SERVER['SERVER_NAME']."/user/activate/".$token."</a><br />";
         $text .= "Let your journey in world of Fast Rally begin.<br /><br />";
         $text .= "FastRally Team";
         

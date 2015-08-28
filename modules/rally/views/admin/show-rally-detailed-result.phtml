@@ -23,7 +23,7 @@
                     ],
                     "iDisplayLength": 20, // default record count per page
                     "bServerSide": true, // server side processing
-                    "sAjaxSource": "/admin/rally/show-rally-detailed-result-data/id/<?php echo $rally['id']; ?>", // ajax source
+                    "sAjaxSource": "/admin/rally/show-rally-detailed-result-data/<?php echo $rally['id']; ?>", // ajax source
                     "aaSorting": [[ 7, "asc" ]] // set first column as a default sort by asc
                 }
             });

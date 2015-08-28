@@ -23,7 +23,7 @@ class League_Index extends Controller{
         $leagueService = parent::getService('league','league');
         $rallyService = parent::getService('rally','rally');
         
-        $league = TK_Text::dotDash($GLOBALS['urlParams']['id']);
+        $league = TK_Text::dotDash($GLOBALS['urlParams'][1]);
         $leagueResults =  $rallyService->prepareResultsForLeague($league);
         $leagueTable = $leagueService->getLeagueTable($league);
         

@@ -69,7 +69,7 @@ class Car_Index extends Controller{
                     }
                     $car_seller[$car['id']] = $user['id'];
                     setcookie('car_seller',serialize($car_seller),time()+(86400 * 4),'/');
-                    TK_Helper::redirect('/market/show-car-offer/id/'.$result['element']['id']);
+                    TK_Helper::redirect('/market/show-car-offer/'.$result['element']['id']);
                 }
                 else{
                     TK_Helper::redirect('/account/my-cars?msg='.$result['message']);
@@ -95,7 +95,7 @@ class Car_Index extends Controller{
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
         
-        $id = $GLOBALS['urlParams']['id'];
+        $id = $GLOBALS['urlParams'][1];
 //        $id = $_POST['car_id'];
         $car = $carService->getCar($id,'id',Doctrine_Core::HYDRATE_RECORD);
         

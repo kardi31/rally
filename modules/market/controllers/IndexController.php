@@ -78,10 +78,10 @@ class Market_Index extends Controller{
                         }
                     }
                     
-                    TK_Helper::redirect('/market/show-offer/id/'.$offer['id'].'?msg=bid+placed');
+                    TK_Helper::redirect('/market/show-offer/'.$offer['id'].'?msg=bid+placed');
                 }
                 else{
-                    TK_Helper::redirect('/market/show-offer/id/'.$offer['id'].'?msg='.urlencode($result['message']));
+                    TK_Helper::redirect('/market/show-offer/'.$offer['id'].'?msg='.urlencode($result['message']));
                 }
                 
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
@@ -103,7 +103,7 @@ class Market_Index extends Controller{
         $form = $this->getForm('market','bidPlayer');
         $this->view->assign('form',$form);
         
-        $id = $GLOBALS['urlParams']['id'];
+        $id = $GLOBALS['urlParams'][1];
         $offer = $marketService->getFullOffer($id,'id',Doctrine_Core::HYDRATE_RECORD);
         
         if(strlen($offer['highest_bid'])&&$offer['highest_bid']!=0){
@@ -191,6 +191,56 @@ class Market_Index extends Controller{
         $this->getLayout()->setLayout('page');
     }
     
+    
+    public function freeAgency(){
+        
+        Service::loadModels('team', 'team');
+        Service::loadModels('rally', 'rally');
+        $marketService = parent::getService('market','market');
+        $userService = parent::getService('user','user');
+        $peopleService = parent::getService('people','people');
+        $teamService = parent::getService('team','team');
+        parent::getService('people','training');
+        
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        $form = $this->getForm('market','freeAgent');
+        $this->view->assign('form',$form);
+        
+        if($form->isSubmit()){
+            if($form->isValid()){                
+                $values = $_POST;
+                    
+                if(!$marketService->canAffordThis($user['Team'],10000)){
+                    TK_Helper::redirect('/market/free-agency?msg=no+money');
+                }
+                elseif(!$marketService->canAfford($user['Team'],10000)){
+                    TK_Helper::redirect('/market/free-agency?msg=not+enough+money');
+                }
+                else{
+                    Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                    $league_level = rand(1,5);
+                    
+                    if($values['job']=='driver')
+                        $person = $peopleService->createRandomDriver($league_level,$user['Team']['id']);
+                    elseif($values['job']=='pilot')
+                        $person = $peopleService->createRandomPilot($league_level,$user['Team']['id']);
+                    
+                    
+                    $teamService->removeTeamMoney($user['Team']['id'],10000,7,'Free agent player '.$person['first_name']." ".$person['last_name']." has been acquired.");    
+                    
+                    Doctrine_Manager::getInstance()->getCurrentConnection()->commit();           
+                    TK_Helper::redirect('/account/my-people?msg=free+agent+acquired');
+                }
+                
+            }
+        }
+        
+        $this->getLayout()->setLayout('page');
+    }
+    
     public function buyCar(){
         
         Service::loadModels('team', 'team');
@@ -199,7 +249,7 @@ class Market_Index extends Controller{
         $teamService = parent::getService('team','team');
         $marketService = parent::getService('market','market');
         
-        $id = $GLOBALS['urlParams']['id'];
+        $id = $GLOBALS['urlParams'][1];
         $carModel = $carService->getCarModel($id,'id',Doctrine_Core::HYDRATE_RECORD);
         
         $userService = parent::getService('user','user');
@@ -280,10 +330,10 @@ class Market_Index extends Controller{
                             $duplicateService->saveCarDuplicate($offer['id'],$result['element']['id']);
                         }
                     }
-                    TK_Helper::redirect('/market/show-car-offer/id/'.$offer['id'].'?msg=bid+placed');
+                    TK_Helper::redirect('/market/show-car-offer/'.$offer['id'].'?msg=bid+placed');
                 }
                 else{
-                    TK_Helper::redirect('/market/show-car-offer/id/'.$offer['id'].'?msg='.urlencode($result['message']));
+                    TK_Helper::redirect('/market/show-car-offer/'.$offer['id'].'?msg='.urlencode($result['message']));
                 }
                 
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
@@ -299,7 +349,7 @@ class Market_Index extends Controller{
         Service::loadModels('car', 'car');
         $marketService = parent::getService('market','market');
         
-        $id = $GLOBALS['urlParams']['id'];
+        $id = $GLOBALS['urlParams'][1];
         $offer = $marketService->getFullCarOffer($id,'id',Doctrine_Core::HYDRATE_RECORD);
         
         $userService = parent::getService('user','user');

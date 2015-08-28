@@ -10,7 +10,7 @@ class Rally_DataTables_Stage{
         
         $q = $table->createQuery('s');
         $q->addSelect('s.*');
-	$q->addWhere('s.rally_id = ?',$GLOBALS['urlParams']['id']);
+	$q->addWhere('s.rally_id = ?',$GLOBALS['urlParams'][1]);
         return $q;
     }
 }
