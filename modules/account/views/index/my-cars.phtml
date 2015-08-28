@@ -40,7 +40,7 @@
             }
             
             elseif($_GET['msg']=="in rally"){
-                $this->showError($this->translate("Sorry. You can't sell car which is signed up for rally."));
+                $this->showError($this->translate("Sorry. You can't sell a car which is signed up for rally."));
             }
             
             elseif($_GET['msg']=="name changed"){
@@ -71,7 +71,7 @@
                 <?php if(!$car['on_market']): ?>
                     <a class="btn sellPlayer myBtn sellCar" type="button" data-toggle="modal" data-target="#sellCar" href="javascript:void(0)" data-name="<?= $car['name']; ?>"  rel="<?php echo $car['id']; ?>"> <i class="fa fa-money"></i> <?= $this->translate('Sell car'); ?></a>
                 <?php else: ?>
-                    <a href="#" class="btn" disabled><?= $this->translate('Car is on the market');?></a>
+                    <a href="#" class="btn sellPlayer myBtn sellCar" disabled><?= $this->translate('Car on market');?></a>
                 <?php endif; ?>
                 <a class="btn sellPlayer myBtn changeCarName" href="/car/change-name/<?= $car['id']; ?>">
                     <i class="fa fa-edit"></i> <?= $this->translate('Change name');?>
