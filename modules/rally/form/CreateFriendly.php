@@ -7,12 +7,15 @@ class CreateFriendly extends Form{
         $name->addValidator('alnum');
         $name->addValidator('stringLength',array('min' => 5));
         $name->addClass('form-control');
+        $name->addFilter('trim');
         
         $description = $this->createElement('textarea','description',array(),'Opis');
         $description->addValidator('alnum');
         $description->addParam('rows',4);
         $description->addParam('cols',70);
         $description->addParam('required');
+        $description->addFilter('trim');
+        $description->addValidator('stringLength',array('min' => 5));
         $description->addClass('form-control');
         
         $date = $this->createElement('text','date',array(),'Data');

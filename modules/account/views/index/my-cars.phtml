@@ -26,6 +26,15 @@
             elseif($_GET['msg']=="no cash"){
                 $this->showError($this->translate("Sorry. You don't have enough money to pay selling fee."));
             }
+            elseif($_GET['msg']=="no money"){
+                $this->showError($this->translate("Sorry. You don't have enough money to pay scrapping fee."));
+            }
+            elseif($_GET['msg']=="no money"){
+                $this->showError($this->translate("Sorry. You can't scrap car which is on the market."));
+            }
+            elseif($_GET['msg']=="not enough money"){
+                $this->showError($this->translate("Sorry. You don't have enough money to pay scrapping fee and all your bids"));
+            }
             elseif($_GET['msg']=="car bought"){
                 $this->showSuccess($this->translate("You have successfully bought a car. You can now see it in your garage."));
             }
@@ -36,6 +45,9 @@
             
             elseif($_GET['msg']=="name changed"){
                 $this->showSuccess($this->translate("Car name successfully changed."));
+            }
+            elseif($_GET['msg']=="car scrapped"){
+                $this->showSuccess($this->translate("Car has successfully been scrapped."));
             }
         }
     ?>
@@ -71,6 +83,11 @@
                 <?php endif; ?>
                 <a class="btn sellPlayer myBtn changeCarName" href="/car/change-name/<?= $car['id']; ?>">
                     <i class="fa fa-edit"></i> <?= $this->translate('Change name');?>
+                </a>
+                    
+                    <br />
+                <a class="btn2 scrapCar" onclick="if(!confirm('Are you sure you want to scrap this car? \r\n This will cost you 1% of car value')){return false;}" href="/car/scrap-car/<?= $car['id']; ?>">
+                    <i class="fa fa-trash-o"></i> <?= $this->translate('Scrap this car');?>
                 </a>
             </div>
 

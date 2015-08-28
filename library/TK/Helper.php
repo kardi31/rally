@@ -26,7 +26,7 @@ class TK_Helper{
                 $result .= '<a class="trainingChange" title="This skill is currently trained by your player" href="#">In progress</a>';
             }
             else{
-                $result .= '<a class="trainingChange" title="Set this skill to be trained by your player" href="/people/set-active-training-skill/id/'.$person['id'].'/skill/'.$skill.'/">Improve</a>';
+                $result .= '<a class="trainingChange" title="Set this skill to be trained by your player" href="/people/set-active-training-skill/'.$person['id'].'/'.$skill.'/">Improve</a>';
             }
         }
         return $result;

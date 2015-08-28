@@ -273,7 +273,7 @@ class MarketService extends Service{
         $q->addWhere('o.finish_date > NOW()');
         $q->orderBy('o.finish_date,b.value DESC');
         
-        $q->addWhere('o.id = (SELECT so.id FROM Market_Model_Doctrine_Offer so LEFT JOIN so.Bids sb WHERE so.finish_date > NOW() AND sb.team_id = '.$team_id.' GROUP BY so.id)');
+        $q->addWhere('o.id IN (SELECT so.id FROM Market_Model_Doctrine_Offer so LEFT JOIN so.Bids sb WHERE so.finish_date > NOW() AND sb.team_id = '.$team_id.' GROUP BY so.id)');
         
         return $q->fetchArray();
     }
@@ -373,7 +373,7 @@ class MarketService extends Service{
         $q->addWhere('o.finish_date > NOW()');
 //        $q->addWhere('b.team_id = ?',$team_id);
         $q->orderBy('o.finish_date,b.value DESC');
-        $q->addWhere('o.id = (SELECT so.id FROM Market_Model_Doctrine_CarOffer so LEFT JOIN so.Bids sb WHERE so.finish_date > NOW() AND sb.team_id = '.$team_id.' group by so.id)');
+        $q->addWhere('o.id IN (SELECT so.id FROM Market_Model_Doctrine_CarOffer so LEFT JOIN so.Bids sb WHERE so.finish_date > NOW() AND sb.team_id = '.$team_id.' group by so.id)');
         
         return $q->fetchArray();
     }

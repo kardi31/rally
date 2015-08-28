@@ -185,6 +185,61 @@ class Car_Index extends Controller{
 	$this->view->assign('form',$form);
     }
     
-    
+    public function scrapCar(){
+        
+        $view = $this->view;
+        $view->setNoRender();
+         
+        Service::loadModels('market', 'market');
+        Service::loadModels('car', 'car');
+        Service::loadModels('rally', 'rally');
+        $marketService = parent::getService('market','market');
+        $carService = parent::getService('car','car');
+        $teamService = parent::getService('team','team');
+        $userService = parent::getService('user','user');
+        
+        $user = $userService->getAuthenticatedUser();
+        
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+//        $id = $GLOBALS['urlParams']['id'];
+        $id = $GLOBALS['urlParams'][1];
+        if(!$car = $carService->getCar($id,'id',Doctrine_Core::HYDRATE_RECORD)){
+            throw new TK_Exception('No such car',404);
+            exit;
+        }
+        
+        if($user['Team']['id']!=$car['team_id']){
+            throw new TK_Exception('Page not exists',404);
+            exit;
+        }
+        
+        
+        if($carService->carInRally($car)){
+            TK_Helper::redirect('/account/my-cars?msg=in+rally');
+            exit;
+        }
+        
+        if($car->get('on_market')){
+            TK_Helper::redirect('/account/my-cars?msg=on+market');
+            exit;
+        }
+        
+        $scrapPrice = ceil($car['value']*0.01);
+        
+        if(!$marketService->canAffordThis($user['Team'],$scrapPrice)){
+            TK_Helper::redirect('/account/my-cars?msg=no+money');
+        }
+        elseif(!$marketService->canAfford($user['Team'],$scrapPrice)){
+            TK_Helper::redirect('/account/my-cars?msg=not+enough+money');
+        }
+        else{
+            $teamService->removeTeamMoney($user['Team']['id'],$scrapPrice,9,'Scapped car '.$car['name']);
+            $car->delete();
+            TK_Helper::redirect('/account/my-cars?msg=car+scrapped');
+        }
+        
+    }
 }
 ?>

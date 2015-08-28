@@ -3,10 +3,10 @@
 class Offer extends Form{
     public function __construct(){
         $view = View::getInstance();
-        $askingPrice = $this->createElement('text','asking_price',array('validators' => array('int')),'Cena');
+        $askingPrice = $this->createElement('number','asking_price',array('validators' => array('int')),'Cena');
         $askingPrice->addClass('form-control');
         $askingPrice->addParam('required');
-        $fee = $this->createElement('text','selling_fee',array('validators' => array('int')),'Cena');
+        $fee = $this->createElement('number','selling_fee',array('validators' => array('int')),'Cena');
         $fee->addParam('readonly','readonly');
         $fee->addClass('form-control');
         $fee->addParam('required');

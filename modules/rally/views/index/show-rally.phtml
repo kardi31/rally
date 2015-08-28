@@ -13,7 +13,7 @@
     </script>
 <!--<a href="/rally/list-rally">Powrót do listy rajdów</a>-->
 <?php
-
+$startDate2 = clone $startDate;
     if(isset($message)){
         if(!$message['status'])
             $this->showError($message['message']);
@@ -193,9 +193,9 @@
                                 <i class="fa fa-clock-o"></i> 
                                   <?php 
                                   if($key!=0){
-                                      $startDate->add(new DateInterval('PT15M'));
+                                      $startDate2->add(new DateInterval('PT15M'));
                                   }
-                                  echo $startDate->format("H:i"); 
+                                  echo $startDate2->format("H:i"); 
                                   ?>
                             </div>
                             <div class='clearfix'></div>

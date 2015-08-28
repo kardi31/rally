@@ -29,7 +29,8 @@ class TeamService extends Service{
         5 => 'Car upkeep',
         6 => 'Transfer expense',
         7 => 'Car purchase',
-        8 => 'Other incomes'
+        8 => 'Other incomes',
+        9 => 'Other expenses'
     );
     
     public function __construct(){

@@ -11,7 +11,9 @@
     });
 
 </script>
-<?php $rally = $friendly['Rally']; ?>
+<?php $rally = $friendly['Rally'];
+$startDate2 = clone $startDate;
+?>
 <?php $surfaces = $rally['Surfaces']; ?>
 <div class="mainUserBox showRallyWrapper">
     <h4 class="boxHeader"><?php echo $friendly['Rally']['name']; ?></h4> 
@@ -242,9 +244,9 @@
                                 <i class="fa fa-clock-o"></i> 
                                   <?php 
                                   if($key!=0){
-                                      $startDate->add(new DateInterval('PT15M'));
+                                      $startDate2->add(new DateInterval('PT15M'));
                                   }
-                                  echo $startDate->format("H:i"); 
+                                  echo $startDate2->format("H:i"); 
                                   ?>
                             </div>
                             <div class='clearfix'></div>

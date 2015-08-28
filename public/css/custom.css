@@ -695,6 +695,20 @@ footer{
         
     }
     
+    .btn2{
+        border:3px solid #504f4f;
+        padding:5px 10px;
+        display:block;
+    }
+    
+    .carBtn a.scrapCar{
+        margin: 0 auto;
+        display: block;
+        width: 150px;
+        text-align: center;
+        margin-top:20px;
+    }
+    
     .carParametersWrapper{
         clear:right;
         float:right;

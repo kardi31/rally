@@ -15779,3 +15779,436 @@ Stack trace:
 [28-Aug-2015 11:55:33 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such team
 
   thrown in C:\xampp\htdocs\ral\modules\team\controllers\IndexController.php on line 30
+[28-Aug-2015 16:23:04 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
+[28-Aug-2015 16:23:06 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 268
+[28-Aug-2015 16:24:54 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[28-Aug-2015 16:24:54 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[28-Aug-2015 16:24:54 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[28-Aug-2015 16:24:54 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[28-Aug-2015 16:24:56 Europe/Berlin] PHP Fatal error:  Call to a member function set() on boolean in C:\xampp\htdocs\ral\modules\people\controllers\IndexController.php on line 42
+[28-Aug-2015 16:24:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 16:25:44 Europe/Berlin] PHP Fatal error:  Call to a member function set() on boolean in C:\xampp\htdocs\ral\modules\people\controllers\IndexController.php on line 42
+[28-Aug-2015 16:25:45 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 16:25:45 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 16:25:46 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 16:25:47 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[28-Aug-2015 16:25:47 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[28-Aug-2015 16:25:47 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[28-Aug-2015 16:25:47 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[28-Aug-2015 16:25:51 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/people/views/index/set-active-training-skill.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[28-Aug-2015 16:25:51 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/people/views/index/set-active-training-skill.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[28-Aug-2015 16:25:51 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[28-Aug-2015 16:25:51 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[28-Aug-2015 16:25:51 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[28-Aug-2015 16:25:51 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[28-Aug-2015 16:25:54 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/people/views/index/set-active-training-skill.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[28-Aug-2015 16:25:54 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/people/views/index/set-active-training-skill.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[28-Aug-2015 16:25:54 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[28-Aug-2015 16:25:54 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[28-Aug-2015 16:25:54 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[28-Aug-2015 16:25:54 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[28-Aug-2015 16:42:39 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[28-Aug-2015 16:42:39 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[28-Aug-2015 16:42:42 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[28-Aug-2015 16:44:08 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[28-Aug-2015 16:44:34 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:58:36 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[28-Aug-2015 16:58:36 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[28-Aug-2015 16:58:36 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 16:59:15 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[21000]: Cardinality violation: 1242 Subquery returns more than 1 row. Failing Query: "SELECT m.id AS m__id, m.people_id AS m__people_id, m.team_id AS m__team_id, m.start_date AS m__start_date, m.finish_date AS m__finish_date, m.asking_price AS m__asking_price, m.highest_bid AS m__highest_bid, m.active AS m__active, m.player_moved AS m__player_moved, m.canceled AS m__canceled, m.user_ip AS m__user_ip, m.created_at AS m__created_at, m.updated_at AS m__updated_at, m.deleted_at AS m__deleted_at, m2.id AS m2__id, m2.offer_id AS m2__offer_id, m2.value AS m2__value, m2.team_id AS m2__team_id, m2.user_ip AS m2__user_ip, m2.active AS m2__active, m2.created_at AS m2__created_at, m2.updated_at AS m2__updated_at, m2.deleted_at AS m2__deleted_at, p.id AS p__id, p.first_name AS p__first_name, p.last_name AS p__last_name, p.job AS p__job, p.age AS p__age, p.value AS p__value, p.salary AS p__salary, p.team_id AS p__team_id, p.composure AS p__comp in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[28-Aug-2015 16:59:16 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:01:17 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[21000]: Cardinality violation: 1242 Subquery returns more than 1 row. Failing Query: "SELECT m.id AS m__id, m.people_id AS m__people_id, m.team_id AS m__team_id, m.start_date AS m__start_date, m.finish_date AS m__finish_date, m.asking_price AS m__asking_price, m.highest_bid AS m__highest_bid, m.active AS m__active, m.player_moved AS m__player_moved, m.canceled AS m__canceled, m.user_ip AS m__user_ip, m.created_at AS m__created_at, m.updated_at AS m__updated_at, m.deleted_at AS m__deleted_at, m2.id AS m2__id, m2.offer_id AS m2__offer_id, m2.value AS m2__value, m2.team_id AS m2__team_id, m2.user_ip AS m2__user_ip, m2.active AS m2__active, m2.created_at AS m2__created_at, m2.updated_at AS m2__updated_at, m2.deleted_at AS m2__deleted_at, p.id AS p__id, p.first_name AS p__first_name, p.last_name AS p__last_name, p.job AS p__job, p.age AS p__age, p.value AS p__value, p.salary AS p__salary, p.team_id AS p__team_id, p.composure AS p__comp in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[28-Aug-2015 17:01:18 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:01:18 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:04:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:04:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[28-Aug-2015 17:29:31 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[28-Aug-2015 17:29:32 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:29:32 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:29:46 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:29:46 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:32:21 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:32:21 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:32:36 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:32:36 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:33:27 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:33:27 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:33:43 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:33:43 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:33:51 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:33:51 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:34:03 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:34:03 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:34:23 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:34:23 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:34:48 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:34:48 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:35:37 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:35:37 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:36:02 Europe/Berlin] PHP Fatal error:  Call to undefined method Car_Index::scrapCar() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:36:03 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:36:06 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:36:06 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:36:09 Europe/Berlin] PHP Fatal error:  Call to undefined method Car_Index::scrapCar() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:36:09 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:36:10 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:36:12 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:36:12 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:36:17 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:36:17 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:36:46 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:36:46 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:37:06 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:37:06 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:37:22 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:37:22 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:37:39 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:37:39 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:37:56 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:37:56 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:46:51 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[28-Aug-2015 17:46:51 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[28-Aug-2015 17:47:01 Europe/Berlin] PHP Notice:  Undefined index: car_id in C:\xampp\htdocs\ral\modules\car\controllers\IndexController.php on line 207
+[28-Aug-2015 17:47:01 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? AND (c.deleted_at IS NULL)) LIMIT 1' at line 1. Failing Query: "SELECT c.id AS c__id, c.model_id AS c__model_id, c.team_id AS c__team_id, c.mileage AS c__mileage, c.name AS c__name, c.value AS c__value, c.upkeep AS c__upkeep, c.last_name_change AS c__last_name_change, c.on_market AS c__on_market, c.last_season_value_id AS c__last_season_value_id, c.created_at AS c__created_at, c.updated_at AS c__updated_at, c.deleted_at AS c__deleted_at FROM car_car c WHERE (c.id = ? AND (c.deleted_at IS NULL)) LIMIT 1"' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1025): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Mysql), 'SELECT c.id AS ...' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[28-Aug-2015 17:47:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:47:16 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\car\controllers\IndexController.php on line 207
+[28-Aug-2015 17:47:16 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? AND (c.deleted_at IS NULL)) LIMIT 1' at line 1. Failing Query: "SELECT c.id AS c__id, c.model_id AS c__model_id, c.team_id AS c__team_id, c.mileage AS c__mileage, c.name AS c__name, c.value AS c__value, c.upkeep AS c__upkeep, c.last_name_change AS c__last_name_change, c.on_market AS c__on_market, c.last_season_value_id AS c__last_season_value_id, c.created_at AS c__created_at, c.updated_at AS c__updated_at, c.deleted_at AS c__deleted_at FROM car_car c WHERE (c.id = ? AND (c.deleted_at IS NULL)) LIMIT 1"' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1025): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Mysql), 'SELECT c.id AS ...' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[28-Aug-2015 17:47:17 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:47:17 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:47:17 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:51:22 Europe/Berlin] PHP Fatal error:  Call to undefined method CarService::get() in C:\xampp\htdocs\ral\modules\car\controllers\IndexController.php on line 224
+[28-Aug-2015 17:51:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:54:59 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined index:  in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined index:  in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined index:  in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined index:  in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined index:  in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined index:  in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined index:  in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined index:  in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined index:  in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined index:  in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined index:  in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined index:  in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:07 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
