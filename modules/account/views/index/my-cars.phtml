@@ -53,19 +53,11 @@
     ?>
     <div class="myCars peopleList carList col-md-12">
         
-        <ul class="bxslider">
+        <ul class="bxslider carSlider">
             <?php foreach($cars as $key => $car): ?>
             <li data-rel="<?= $car['id']; ?>"><?php echo $car['name']; ?>
             
                 <div class="carCard" data-id="<?= $car['id']; ?>">
-
-            <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
-                <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" class="carCardPhoto" />
-           <?php } 
-                else{ ?>
-                    <img src="http://dummyimage.com/340x220&amp;text=No+photo" class="carCardPhoto" />
-            <?php } ?>           
-           
             <div class="col-md-6">
                 
         <!--    Car name: <?php echo $car['name']; ?> <a href="javascript:void(0)" id="btnChangeCarNameButton1">change name</a><br />
@@ -92,6 +84,14 @@
             </div>
 
             </div>
+                    <div class="col-md-6">
+            <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
+                <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" class="carCardPhoto" />
+           <?php } 
+                else{ ?>
+                    <img src="http://dummyimage.com/340x220&amp;text=No+photo" class="carCardPhoto" />
+            <?php } ?>           
+                    </div>
             <div class="clearfix"></div>
         </div>
             </li>

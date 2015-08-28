@@ -714,6 +714,10 @@ footer{
         float:right;
     }
     
+    .carSlider li{
+        height:330px;
+    }
+    
     .carCard ul{
         padding-left:25px;
         margin-top:10px;

@@ -16212,3 +16212,7 @@ Stack trace:
 [28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
 [28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
 [28-Aug-2015 17:55:27 Europe/Berlin] PHP Notice:  Undefined offset: 19 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 56
+[28-Aug-2015 18:00:52 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 277
+[28-Aug-2015 18:00:52 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 277
+[28-Aug-2015 18:00:58 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 277
+[28-Aug-2015 18:00:58 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 277
