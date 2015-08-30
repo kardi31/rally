@@ -119,7 +119,7 @@ class LeagueService extends Service{
 	}
 	// if yes, use this league
 	else{
-	    $league = $result;
+	    return $result;
 	}
         $this->checkLeagueRallies($league);
         // save team to league
@@ -131,9 +131,8 @@ class LeagueService extends Service{
 	$save_query = $this->seasonTable->getRecord();
 	$save_query->fromArray($newTeamData);
 	$save_query->save();
-	
         
-        return $league;
+        return $save_query;
     }
     
     public function getRandomLeague(){

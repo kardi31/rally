@@ -200,3 +200,12 @@
 
 <script type="text/javascript" src="/plugins/wowslider/engine1/wowslider.js"></script>
 <script type="text/javascript" src="/plugins/wowslider/engine1/script.js"></script>
+
+<script>
+    $(document).ready(function(){
+        var photo_no = $('.ws_list ul li').length;
+        if(photo_no<2){
+            $('.ws_next,.ws_prev').hide();
+        }
+    });
+    </script>

@@ -546,11 +546,24 @@ class PeopleService extends Service{
                     
                     
                     $prevKmPassed = $crew->get('km_passed');
+                    $car = CarService::getInstance()->getCar($crew->get('car_id'));
+                    $oldCarMileage = $car->get('mileage');
+                    $newCarMileage = (int)$oldCarMileage+$accidentKm;
+                    $car->set('mileage',$newCarMileage);
+                    $car->save();
+                    
                     $newKmPassed = $prevKmPassed+$accidentKm;
                     $crew->set('km_passed',$newKmPassed);
 		}
 		else{
 		    $crewSeconds = ($accident['damage'] + 100) * $crewSeconds / 100;
+                    
+                    
+                    $car = CarService::getInstance()->getCar($crew->get('car_id'));
+                    $oldCarMileage = $car->get('mileage');
+                    $newCarMileage = (int)$oldCarMileage+$stageLength;
+                    $car->set('mileage',$newCarMileage);
+                    $car->save();
                     
                     // for training
                     $prevKmPassed = $crew->get('km_passed');
@@ -562,6 +575,14 @@ class PeopleService extends Service{
                 $prevKmPassed = $crew->get('km_passed');
                 $newKmPassed = $stageLength+$prevKmPassed;
                 $crew->set('km_passed',$newKmPassed);
+                
+                
+                $car = CarService::getInstance()->getCar($crew->get('car_id'));
+                $oldCarMileage = $car->get('mileage');
+                $newCarMileage = (int)$oldCarMileage+$stageLength;
+                $car->set('mileage',$newCarMileage);
+                $car->save();
+                
             }
 	    // convert seconds to proper time
 	    $base_time = gmdate("H:i:s", $crewSeconds);

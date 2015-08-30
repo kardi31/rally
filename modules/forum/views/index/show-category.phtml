@@ -13,7 +13,7 @@
         <?php foreach($threads as $thread): ?>
 
             <div class="forumListElem">
-                <strong><a href="/forum/show-thread/id/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a></strong>
+                <strong><a href="/forum/show-thread/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a></strong>
                 <div>
             <?= $this->translate('Created'); ?>: 
                     <i class="fa fa-clock-o"></i> <?php echo TK_Text::timeFormat($thread['created_at'],'d/m/y H:i'); ?>

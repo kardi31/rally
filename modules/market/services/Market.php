@@ -186,6 +186,24 @@ class MarketService extends Service{
         $data = array();
         $data['people_id'] = $player['id'];
         $data['start_date'] = date('Y-m-d H:i:s');
+        
+        if(in_array($values['days'],array(1,2,3))){
+            $values['days'] = 3;
+        }
+        
+        $values['asking_price'] = (int)$values['asking_price'];
+        if($values['asking_price']<1){
+            $values['asking_price'] = 1;
+        }
+        
+        $values['selling_fee'] = ceil(0.0125*$values['asking_price']);
+        if($values['selling_fee'] > 5000){
+            $values['selling_fee'] = 5000;
+        }
+        if($values['selling_fee'] < 150){
+            $values['selling_fee'] = 150;
+        }
+        
         $data['finish_date'] = date('Y-m-d H:i:s', strtotime('+ '.($values['days']).' days'));
         $data['asking_price'] = $values['asking_price'];
         $data['highest_bid'] = 0;
@@ -212,6 +230,23 @@ class MarketService extends Service{
     
     public function addCarOnMarket($values,Car_Model_Doctrine_Car $car){
         $teamService = TeamService::getInstance();
+        
+        if(in_array($values['days'],array(1,2,3))){
+            $values['days'] = 3;
+        }
+        
+        $values['asking_price'] = (int)$values['asking_price'];
+        if($values['asking_price']<1){
+            $values['asking_price'] = 1;
+        }
+        
+        $values['selling_fee'] = ceil(0.0125*$values['asking_price']);
+        if($values['selling_fee'] > 5000){
+            $values['selling_fee'] = 5000;
+        }
+        if($values['selling_fee'] < 150){
+            $values['selling_fee'] = 150;
+        }
         
         $data = array();
         $data['car_id'] = $car['id'];
@@ -408,6 +443,10 @@ class MarketService extends Service{
         }
         
         
+        if($values['bid']<($offer['highest_bid']*1.1)){
+            return array('status' => false,'message' => '10 greater');
+        }
+        
         // make sure bid > than asking price
         if($values['bid']<$offer['asking_price']){
             return array('status' => false,'message' => 'greater than asking');
@@ -449,6 +488,10 @@ class MarketService extends Service{
         
         if($this->anyHigherBidsCar($offer['id'],$values['bid'])){
             return array('status' => false,'message' => 'not highest');
+        }
+        
+        if($values['bid']<($offer['highest_bid']*1.1)){
+            return array('status' => false,'message' => '10 greater');
         }
         
         

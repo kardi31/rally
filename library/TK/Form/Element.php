@@ -255,7 +255,7 @@ class Element{
             case "alnum":
                 $response = Validator::validateAlnum($var);
                 break;
-            case "alpha":
+            case "alphanum":
                 $response = Validator::validateAlphanum($var);
                 break;
             case "notEmpty":

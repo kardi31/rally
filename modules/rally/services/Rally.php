@@ -235,10 +235,15 @@ class RallyService extends Service{
     
     public function getRalliesToFinish($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->rallyTable->createQuery('r');
-	$q->leftJoin('r.Stages s');
-	$q->addWhere('s.finished !=0');
+	$q->innerJoin('r.Stages s');
+        $q->groupBy('r.id');
+        $q->select('count(r.id) as cnt');
+        $q->addSelect('sum(s.finished) as fin');
+        $q->addSelect('r.*,s.*');
+	$q->having('cnt = fin');
 	$q->addWhere('r.finished = 0');
-        $q->addWhere('r.date < ?',date('Y-m-d H:i:s',strtotime('-270 minutes')));
+        $q->addWhere('r.date < NOW()');
+        
 	return $q->execute(array(),$hydrationMode);
     }
     

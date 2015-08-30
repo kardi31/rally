@@ -1885,3 +1885,7 @@ margin-right: auto;
         margin-top:10px;
         display:inline-block;
     }
+    
+    .panel-custom{
+        background:#868686;
+    }

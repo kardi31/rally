@@ -23,6 +23,8 @@
                 $this->showError($this->translate('Sorry, You don\'t have enough money.'));
             elseif($_GET['msg']=="not enough money")
                 $this->showError($this->translate('Sorry, You don\'t have enough money for all of your bids'));
+            elseif($_GET['msg']=="10 greater")
+                $this->showError($this->translate('Your offer must be 10% greater than the highest offer.'));
 
             
            

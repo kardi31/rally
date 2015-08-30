@@ -7,6 +7,9 @@ if(isset($_GET['msg'])){
 }
 ?>
 <div class="mainUserBox myCarsBox">
+    <span class="cashInfo">
+        Balance: <strong><?= "$".$user['Team']['cash']; ?></strong>
+    </span>
     <h4 class="boxHeader"><?= $this->translate('Car dealer'); ?></h4>
     <div class="myPeople peopleList driverList col-md-12">
         <?php foreach($carsForSale as $car): ?>

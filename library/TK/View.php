@@ -104,7 +104,7 @@ class View{
                 $elem = self::$doc->getElementById($string);
                 if($elem){
                     $nodeElem = $elem->getElementsByTagName($lang)->item($trItem);
-                    if(strlen($nodeElem->nodeValue)){
+                    if(is_object($nodeElem)&&strlen($nodeElem->nodeValue)){
                         return $nodeElem->nodeValue;
                     }
                     else{

@@ -51,7 +51,9 @@
                             ?>"
                         >
                         <td><?php echo $key+1; ?></td>
-                        <td><?php echo $team['Team']['name']; ?></td>
+                        <td>
+                            <a href="/team/show-team/<?= $team['id']; ?>"><?php echo $team['Team']['name']; ?></a>
+                        </td>
                         <?php foreach($leagueResults as $leagueResult): ?>
                             <td><?= (int)$leagueResult['teams'][$team['Team']['id']]; ?></td>
                         <?php endforeach; ?>

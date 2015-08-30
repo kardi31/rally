@@ -41,11 +41,19 @@ if(isset($_GET['msg'])){
     </div>
     <?php if($authenticatedUser && $authenticatedUser['id'] != $user['id']){ ?>
         <div class="addThreadWrapper replyThreadWrapper" id="sendMessage">
-            <h5><i class="fa fa-pencil"></i> <?= $this->translate('Send message to ').$user['username']; ?></h5>
+            <h5><i class="fa fa-pencil"></i> <?= $this->translate('Send message to ');?> <a href="/team/show-team/<?= $user['Team']['id']; ?>"><?= $user['username']; ?></a></h5>
             <form method="POST">
                 <?php echo $form->getElement('content')->renderElement(); ?>
                 <?php echo $form->getElement('submit')->renderElement(); ?>
+                        <a href="/team/show-team/<?= $user['Team']['id']; ?>" class="pull-left btn btn-default nameBack"><i class="fa fa-level-up"></i> <?=  $this->translate('Go back'); ?></a>
+                        <div class="clearfix"></div>
             </form>
         </div>
     <?php } ?>
 </div>
+<style>
+    .formSubmitWrapper{
+        float:left;
+        margin-right:15px;
+    }
+    </style>

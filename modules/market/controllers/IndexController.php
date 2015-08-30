@@ -104,7 +104,9 @@ class Market_Index extends Controller{
         $this->view->assign('form',$form);
         
         $id = $GLOBALS['urlParams'][1];
-        $offer = $marketService->getFullOffer($id,'id',Doctrine_Core::HYDRATE_RECORD);
+        if(!$offer = $marketService->getFullOffer($id,'id',Doctrine_Core::HYDRATE_RECORD)){
+            throw new TK_Exception('Offer not exists',404);
+        }
         
         if(strlen($offer['highest_bid'])&&$offer['highest_bid']!=0){
             $form->getElement('bid')->setValue((int)($offer['highest_bid']*1.1));
@@ -182,12 +184,19 @@ class Market_Index extends Controller{
     
     public function carDealer(){
         
+        Service::loadModels('team', 'team');
         Service::loadModels('car', 'car');
         $carService = parent::getService('car','car');
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
         
         $carsForSale = $carService->getCarsForSale(Doctrine_Core::HYDRATE_ARRAY);
         
         $this->view->assign('carsForSale',$carsForSale);
+        $this->view->assign('user',$user);
         $this->getLayout()->setLayout('page');
     }
     
@@ -229,7 +238,7 @@ class Market_Index extends Controller{
                         $person = $peopleService->createRandomPilot($league_level,$user['Team']['id']);
                     
                     
-                    $teamService->removeTeamMoney($user['Team']['id'],10000,7,'Free agent player '.$person['first_name']." ".$person['last_name']." has been acquired.");    
+                    $teamService->removeTeamMoney($user['Team']['id'],10000,9,'Free agent player '.$person['first_name']." ".$person['last_name']." has been acquired.");    
                     
                     Doctrine_Manager::getInstance()->getCurrentConnection()->commit();           
                     TK_Helper::redirect('/account/my-people?msg=free+agent+acquired');
@@ -321,7 +330,7 @@ class Market_Index extends Controller{
                 if(!$offer = $marketService->getCarOffer($values['offer_id'],'id',Doctrine_Core::HYDRATE_RECORD)){
                     TK_Helper::redirect('/market/show-car-market/?msg=no+exist');
                 }
-                
+                                
                 $result = $marketService->bidCarOffer($values,$offer,$user['Team']);
                 if($result['status']!== false){
                     if(isset($_COOKIE['car_seller'])){
@@ -350,7 +359,9 @@ class Market_Index extends Controller{
         $marketService = parent::getService('market','market');
         
         $id = $GLOBALS['urlParams'][1];
-        $offer = $marketService->getFullCarOffer($id,'id',Doctrine_Core::HYDRATE_RECORD);
+        if(!$offer = $marketService->getFullCarOffer($id,'id',Doctrine_Core::HYDRATE_RECORD)){
+            throw new TK_Exception('Offer not exists',404);
+        }
         
         $userService = parent::getService('user','user');
         

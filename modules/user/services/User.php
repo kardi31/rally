@@ -69,7 +69,7 @@ class UserService extends Service{
     public function getAuthenticatedUser(){
         // if session expired, redirect to login page
         // 15 mins for session
-        if($_SESSION['expire']< time()&&!isset($_COOKIE['siteAuth'])){
+        if(isset($_SESSION['expire'])&&($_SESSION['expire']< time()&&!isset($_COOKIE['siteAuth']))){
             $this->logout();
             return false;
         }
@@ -177,7 +177,7 @@ class UserService extends Service{
     public function findUsers($query,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->userTable->createQuery('u');
         $q->select('u.username');
-        $q->addWhere("u.username like ?",$query."%");
+        $q->addWhere("LOWER(u.username) like ?",strtolower($query)."%");
         $q->limit(4);
         return $q->execute(array(),$hydrationMode);
     }

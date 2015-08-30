@@ -1,8 +1,75 @@
 <div class="mainUserBox">
     <h4 class="boxHeader"><?= $this->translate('Faq'); ?></h4>
     <div class='staticWrapper'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere mi nec nisl hendrerit fermentum. Nunc luctus est odio, convallis rhoncus dui varius blandit. Mauris dictum dui vitae massa fringilla, eget scelerisque diam placerat. Pellentesque sed lacus gravida, lacinia sem in, imperdiet orci. Phasellus cursus consequat egestas. Integer feugiat imperdiet libero. Phasellus ac libero vel diam fermentum mollis. Vestibulum fermentum vestibulum lobortis. Aenean vel placerat dolor, id scelerisque odio. Donec rutrum ligula ac interdum tempus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis viverra finibus quam, ut malesuada dui elementum venenatis. Pellentesque in elementum metus.
+        <div class="panel-group" id="accordion"> <!-- accordion 1 -->
+            <div class="panel panel-custom">
 
-Sed condimentum, purus eu euismod euismod, urna augue tempus risus, ac imperdiet felis sapien eget est. Sed lobortis gravida tincidunt. Cras nisl purus, tincidunt et pellentesque quis, volutpat at enim. Vestibulum pellentesque libero at sapien aliquet, vitae ultrices augue pulvinar. Vivamus nec mi velit. Vestibulum eget ultricies leo. Etiam eu interdum mauris, quis pellentesque nulla. Nunc interdum rutrum lorem sit amet iaculis. Quisque et semper nunc, nec mattis felis. Vestibulum urna neque, hendrerit sit amet dictum vitae, blandit vitae lorem. Fusce pulvinar faucibus nibh ac cursus.
+                 <div class="panel-heading"> <!-- panel-heading -->
+                     <h4 class="panel-title"> <!-- title 1 -->
+                     <a data-toggle="collapse" data-parent="#accordion" href="#accordionOne">
+                       Collapsible Accordion 1
+                     </a>
+                    </h4>
+                 </div>
+                         <!-- panel body -->
+                 <div id="accordionOne" class="panel-collapse collapse">
+                   <div class="panel-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                     sed do eiusmod tempor incididunt ut labore et dolore magna
+                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                     ullamco laboris nisi ut aliquip ex ea commodo consequat
+                   </div>
+                 </div>
+           </div>
+  
+            <div class="panel panel-custom" id="trainingReport">  <!-- accordion 2 -->
+
+                   <div class="panel-heading"> 
+                   <h4 class="panel-title"> <!-- title 2 -->
+                     <a data-toggle="collapse" data-parent="#accordion" href="#accordionTwo">
+                       How training report works?
+                     </a>
+                   </h4>
+                   </div>
+                          <!-- panel body -->
+                 <div id="accordionTwo" class="panel-collapse collapse">
+                   <div class="panel-body">
+                       Players can improve their skills by racing in rallies <br />
+                       In order to receive training reports, you need to choose which player skills you want to train. You can do it in my players section. <br />
+                       
+                       Graph on your training report illustrates how hard did your player train today. <br /> <br />
+                       Example : <br />
+                       Player 1 trained his 'on tarmac' skill at 91% level.<br />
+                       Player 2 trained his 'on snow' skill at 25% level <br />
+                       This means that player 1 is very talented in driving on tarmac and he will gain next star relatively quickly. <br />
+                       Unlike player 2, who is not very talented in driving on snow and this skill will not be improved quickly. 
+                   </div>
+                 </div>
+
+            </div>
+   
+            <div class="panel panel-custom">  <!-- accordion 3 -->
+
+                <div class="panel-heading">
+                  <h4 class="panel-title"> <!-- title 3 -->
+                    <a data-toggle="collapse" data-parent="#accordion" href="#accordionThree">
+                      My player did not train today. What happened?
+                    </a>
+                  </h4>
+                </div>
+
+                <div id="accordionThree" class="panel-collapse collapse">
+                  <!-- panel body -->
+                  <div class="panel-body">
+                      There might be few reasons of it. <br /><br />
+                      1. You did not sign up player for rally the previous day. <br />
+                      2. You did not choose skill which you want to train(to do so - go to my players and click button 'improve').<br />
+                      3. The skill you wanted to train has reached its maximum level. Not every player might improve his skills to 10 stars. Some of them might not be able to learn certain skill anymore. <br />
+                      In such situation you should focus on training other skills or buying a better player.
+                </div>
+
+             </div>
+
+         </div>
     </div>
 </div>

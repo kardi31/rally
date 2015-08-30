@@ -56,7 +56,6 @@ class Validator{
     
     public static function validateAlphanum($var){
 	$pattern = '/^[A-Za-zążśźęćńółĄŻŚŹĘĆŃÓŁ0-9\s\-\#]+$/';
-        var_dump(preg_match($pattern,$var));exit;
 	if(preg_match($pattern,$var)==1):
             $response['result'] = true;
         else:

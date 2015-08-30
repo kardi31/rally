@@ -261,13 +261,14 @@ class User_Index extends Controller{
         
         $query = $_GET['q'];
         
-        $users = $userService->findUsers($query,Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        $users = $userService->findUsers($query,Doctrine_Core::HYDRATE_ARRAY);
         $responseUsers = array();
         $counter = 0;
+        
         if(isset($users)){
             foreach($users as $user){
-                $responseUsers[$counter]['label'] = $user;
-                $responseUsers[$counter]['value'] = $user;
+                $responseUsers[$counter]['label'] = $user['username'];
+                $responseUsers[$counter]['value'] = $user['username'];
                 $counter++;
             }
         }

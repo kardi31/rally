@@ -18,14 +18,14 @@ class Test_Index extends Controller{
         require_once(BASE_PATH."/modules/user/controllers/TestController.php");
         $trainingService = parent::getService('people','training');
         $userContr = new User_Test();
-        for($i=1;$i<=60;$i++):
+        for($i=1;$i<=15;$i++):
         $randomNumber = rand(1000000,1200000);
         $_POST['password'] = "portal";
         $_POST['email'] = "peop_".$randomNumber."@kardimobile.pl";
         $_POST['username'] = "peop_".$randomNumber;
         $user = $userContr->register();
         $GLOBALS['urlParams'][1] = $user['token'];
-        $userContr->activate();
+//        $userContr->activate();
         
         endfor;
         echo "good";exit;
@@ -222,6 +222,13 @@ class Test_Index extends Controller{
         }
         $rally->save();
         echo "good";exit;
+    }
+    
+    public function ralliesNotFinished(){
+        
+        $rallyService = parent::getService('rally','rally');
+        $rallyToFinish = $rallyService->getRalliesToFinish();
+        var_dump($rallyToFinish->toArray());exit;
     }
 }
 ?>

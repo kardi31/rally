@@ -30,6 +30,7 @@ class People_Index extends Controller{
     public function setActiveTrainingSkill(){
         Service::loadModels('market', 'market');
         Service::loadModels('rally', 'crew');
+        Service::loadModels('team', 'team');
         
         $marketService = parent::getService('market','market');
         $peopleService = parent::getService('people','people');
@@ -38,9 +39,26 @@ class People_Index extends Controller{
         
         $id = $GLOBALS['urlParams'][1];
         $skill = $GLOBALS['urlParams'][2];
-        $player = $peopleService->getPerson($id,'id',Doctrine_Core::HYDRATE_RECORD);
+        
+        
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        
+        if(!$player = $peopleService->getPerson($id,'id',Doctrine_Core::HYDRATE_RECORD)){
+            throw new TK_Exception('Player not exists',404);
+        }
+        
+        
+        if($user['Team']['id']!=$player['team_id']){
+            throw new TK_Exception('This player is not in your team',404);
+        }
+        
         $player->set('active_training_skill',$skill);
         $player->save();
+        
+        
         
         TK_Helper::redirect($_SERVER['HTTP_REFERER']);
 	
