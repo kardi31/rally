@@ -34,6 +34,9 @@ class Index_Index extends Controller{
             TK_Helper::redirect('/account/my-account');
 
 
+        $loginForm = $this->getForm('user','login');
+        $this->view->assign('loginForm',$loginForm);
+        
         $form = $this->getForm('user','register');
         $this->view->assign('form',$form);
        

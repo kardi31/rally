@@ -21,6 +21,12 @@
                 <input required type="text" name="login" class="textInput" placeholder='<?= $this->translate('Login'); ?>'/>
                 <input required type="password" name="password" class="textInput" placeholder='<?= $this->translate('Password'); ?>' />
                 <button type="submit" name="submit" class='logIn btn'><?= $this->translate('LOGIN'); ?></button>
+                <?php
+                if($loginForm->getElement('recaptcha')){
+                    echo $loginForm->getElement('recaptcha')->renderElement();
+                }
+                ?> 
+                <div class="clearfix"></div>
             </div>
             <span class='flagSelect'>
                 <ul>
@@ -77,7 +83,7 @@
                 
             </span>
         </div>
-        <div class="clearfix"></div>
+                <div class="clearfix"></div>
         <div class='topToolbarBottom'>
             <input type="checkbox" name="rememberMe" id='rememberMe'/> 
             <label for='rememberMe'><?= $this->translate('Remember me'); ?></label>
@@ -90,3 +96,4 @@
         <option value='gb'><img src='/images/layout/pl.png' /></option>
     </select>-->
 </div>
+        <div class="clearfix"></div>

@@ -15,8 +15,8 @@ class Register extends Form{
         $email->addClass('textInput');
         $email->addFilter('trim');
         $email->addFilter('lower');
-        $invite = $this->createElement('hidden','invite');
-        $this->createElement('captcha','captcha',array());
+        $this->createElement('hidden','invite');
+//        $this->createElement('captcha','captcha',array());
         $this->createElement('submit','submit');
     }
 }

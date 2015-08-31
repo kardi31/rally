@@ -35,12 +35,14 @@ class Form extends Element{
             $element = new Select($type,$name,$options,$label);
         }elseif($type == "checkbox"){
             $element = new Checkbox($type,$name,$options,$label);
+        
+        }elseif($type == "recaptcha"){
+            $element = new Recaptcha($type,$name,$options,$label);
         }
         else{
             $element = new Element($type,$name,$options,$label);
         }
 	$this->elements[$name] = $element;
-	
 	if($type == "submit")
 	    $this->submitElem = $name;
 	

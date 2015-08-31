@@ -169,8 +169,12 @@ class User_Index extends Controller{
                 if ($user && !$user->get('active')):
                         TK_Helper::redirect('/user/login?msg=not+active');
                 else:
-
                     if($user && $userService->authenticate($user,$values['password'])):
+                        
+                        if(isset($_SESSION['wrong_pword'])){
+                            $_SESSION['wrong_pword'] = 0;
+                        }
+                        
                         // if checked rememberMe 
                         // set cookie to remember
                         // which is used in user service
@@ -189,8 +193,18 @@ class User_Index extends Controller{
                         }
                         TK_Helper::redirect('/account/my-account');
                     elseif(!$user):
+                        if(!isset($_SESSION['wrong_pword'])){
+                            $_SESSION['wrong_pword'] = 0;
+                        }
+                        $_SESSION['wrong_pword']++;
+                        
                         TK_Helper::redirect('/user/login?msg=no+user');
                     else:
+                        if(!isset($_SESSION['wrong_pword'])){
+                            $_SESSION['wrong_pword'] = 0;
+                        }
+                        $_SESSION['wrong_pword']++;
+                        
                         TK_Helper::redirect('/user/login?msg=wrong+password');
                     endif;
                 endif;

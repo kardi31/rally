@@ -35,7 +35,7 @@
                             <?php echo $form->getElement('name')->renderElement(); ?>
                         </div>
                         <?php echo $form->getElement('submit')->renderElement(); ?>
-                        <a href="/team/show-team/id/<?= $authenticatedUser['Team']['id']; ?>" class="btn btn-default nameBack"><i class="fa fa-level-up"></i> <?=  $this->translate('Go back'); ?></a>
+                        <a href="/team/show-team/<?= $authenticatedUser['Team']['id']; ?>" class="btn btn-default nameBack"><i class="fa fa-level-up"></i> <?=  $this->translate('Go back'); ?></a>
                     </form>
                 </div>
             </div>

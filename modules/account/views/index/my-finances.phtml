@@ -2,6 +2,11 @@
 <?php $financeTypes = TeamService::getInstance()->getFinanceTypes(); ?>
 <div class="mainUserBox ">
     <h4 class="boxHeader"><?= $this->translate('My finances'); ?></h4>
+    <?php 
+    if($team['cash']<0){
+        echo $this->showError('Warning! Your account balance is below 0. If you keep negative balance for 5 weeks your club will become a bankrupt.');
+    }
+    ?>
     <div class="myFinances">
         <div class="accountBalance">
             <?= $this->translate('Account balance'); ?>:  $<strong><?php echo $team['cash'];?></strong>

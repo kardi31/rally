@@ -9,6 +9,9 @@ class Login extends Form{
         $password = $this->createElement('password','password',array(),'Hasło');
         $password->addClass('textInput');
 //        $password->setAttrib('required');
+        if(isset($_SESSION['wrong_pword'])&&(int)$_SESSION['wrong_pword']>=3){
+            $this->createElement('recaptcha','recaptcha');
+        }
         
         $this->createElement('submit','submit');
     }

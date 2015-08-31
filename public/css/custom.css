@@ -172,11 +172,14 @@ body{
 header{
      background: #333;
     display:block;
-    height:110px;
+    min-height:110px;
 }
 .mainContainer{
     width:1024px;
     margin:0 auto;
+}
+.g-recaptcha{
+    margin-top:10px;
 }
 .logo{
     margin-top:28px;

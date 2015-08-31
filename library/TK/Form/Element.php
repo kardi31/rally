@@ -3,6 +3,7 @@
 require_once(BASE_PATH."/library/TK/Form/Radio.php");
 require_once(BASE_PATH."/library/TK/Form/Select.php");
 require_once(BASE_PATH."/library/TK/Form/Checkbox.php");
+require_once(BASE_PATH."/library/TK/Form/Recaptcha.php");
 
 class Element{
          protected $elementDisplay;
@@ -314,12 +315,16 @@ class Element{
     }
     
     public function renderParams(){
-	if(empty($this->params))
+	if(empty($this->params)&&$this->type!="number")
 	    return '';
 	$result = "";
 	foreach($this->params as $attribute => $value):
 	    $result .= $attribute."='".$value."' ";
 	endforeach;
+        if($this->type=="number"){
+             $result .= " min='0'";
+        }
+        
 	return $result;
     }
     
