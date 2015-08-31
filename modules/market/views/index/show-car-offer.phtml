@@ -1,5 +1,5 @@
 <div class="mainUserBox myCarsBox">
-    <h4 class="boxHeader"><?= $this->translate('Show car offer')." #7"; ?></h4>
+    <h4 class="boxHeader"><?= $this->translate('Show car offer')." #".$offer['id']; ?></h4>
     <?php
         if(isset($message)){
             if(!$message['status'])

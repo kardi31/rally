@@ -84,6 +84,11 @@
     <a href='#' class='messageIconWrapper premiumIconWrapper'>
         <?= (int)$authenticatedUser['premium']; ?> <img class="coin" src="/images/layout/coin.png">
     </a>
+    
+    <div class="clearfix"></div>
+    <span class="cashInfo">
+        Balance: <strong class="<?php echo ($authenticatedUser['Team']['cash']>=0)?'green':''; ?> <?php echo ($authenticatedUser['Team']['cash']<0)?'red':''; ?>"><?= "$".number_format($authenticatedUser['Team']['cash']); ?></strong>
+    </span>
 </div>
 
 <div class="mainUserBox boxNotification mainPageNotification" id='mainNotificationMessageBox'>

@@ -1436,9 +1436,8 @@ margin-right: auto;
     5.1 People market
     */
     .cashInfo{
-        float:right;
-        margin-top:15px;
-        margin-right:35px;
+        display:block;
+        margin-top:5px;
     }
     
     .cashInfo strong{

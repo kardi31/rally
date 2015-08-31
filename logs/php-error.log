@@ -1,0 +1,74 @@
+[31-Aug-2015 09:13:23 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\index\views\index\show-calendar.phtml on line 90
+[31-Aug-2015 09:17:19 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\index\views\index\show-calendar.phtml on line 90
+[31-Aug-2015 09:17:19 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\index\views\index\show-calendar.phtml on line 90
+[31-Aug-2015 09:17:19 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\index\views\index\show-calendar.phtml on line 90
+[31-Aug-2015 09:17:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\index\views\index\show-calendar.phtml on line 90
+[31-Aug-2015 09:17:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\index\views\index\show-calendar.phtml on line 90
+[31-Aug-2015 09:17:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\index\views\index\show-calendar.phtml on line 90
+[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[31-Aug-2015 09:18:02 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[31-Aug-2015 09:18:02 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[31-Aug-2015 09:18:02 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[31-Aug-2015 09:18:02 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
+[31-Aug-2015 09:18:08 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[31-Aug-2015 09:18:11 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[31-Aug-2015 09:18:11 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[31-Aug-2015 09:18:20 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[31-Aug-2015 09:18:20 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[31-Aug-2015 09:18:20 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[31-Aug-2015 09:18:20 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[31-Aug-2015 09:18:20 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
