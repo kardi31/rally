@@ -456,3 +456,72 @@
 [01-Sep-2015 13:22:48 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
 [01-Sep-2015 13:22:48 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
 [01-Sep-2015 13:22:48 Europe/Berlin] PHP Fatal error:  Call to undefined method User_Index::newPassword() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[01-Sep-2015 17:11:42 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[01-Sep-2015 17:11:42 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
+[01-Sep-2015 17:13:16 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[01-Sep-2015 17:13:16 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
+[01-Sep-2015 17:24:36 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[01-Sep-2015 17:24:36 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[01-Sep-2015 17:24:37 Europe/Berlin] PHP Notice:  Undefined index: info in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 74
+[01-Sep-2015 17:24:37 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 74
+[01-Sep-2015 17:24:37 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[01-Sep-2015 17:24:37 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[01-Sep-2015 17:26:40 Europe/Berlin] PHP Notice:  Undefined index: info in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
+[01-Sep-2015 17:26:40 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
+[01-Sep-2015 17:26:47 Europe/Berlin] PHP Notice:  Undefined index: info in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
+[01-Sep-2015 17:26:47 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
+[01-Sep-2015 17:27:48 Europe/Berlin] PHP Notice:  Undefined index: info in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
+[01-Sep-2015 17:27:48 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
+[01-Sep-2015 17:27:48 Europe/Berlin] PHP Fatal error:  Call to undefined method TK_Text::showError() in C:\xampp\htdocs\ral\modules\index\views\index\new-password.phtml on line 4
+[01-Sep-2015 17:28:15 Europe/Berlin] PHP Notice:  Undefined index: info in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
+[01-Sep-2015 17:28:15 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
+[01-Sep-2015 17:28:15 Europe/Berlin] PHP Fatal error:  Call to undefined method TK_Text::showError() in C:\xampp\htdocs\ral\modules\index\views\index\new-password.phtml on line 4
+[01-Sep-2015 17:29:04 Europe/Berlin] PHP Notice:  Undefined index: info in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
+[01-Sep-2015 17:29:04 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
+[01-Sep-2015 17:29:33 Europe/Berlin] PHP Notice:  Undefined index: info in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
+[01-Sep-2015 17:29:33 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
+[01-Sep-2015 17:33:43 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Transaction_Exception' with message 'Commit failed. There is no active transaction.' in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php:239
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1392): Doctrine_Transaction->commit(NULL)
+#1 C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php(59): Doctrine_Connection->commit()
+#2 C:\xampp\htdocs\ral\library\TK\Controller.php(44): Index_Index->forgotPassword()
+#3 C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php(12): Controller->_render(Object(Index_Index), 'forgot-password')
+#4 C:\xampp\htdocs\ral\public\index.php(25): Index_Index->render('forgot-password')
+#5 {main}
+  thrown in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php on line 239
+[01-Sep-2015 17:34:03 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[01-Sep-2015 17:34:03 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
+[01-Sep-2015 17:34:04 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[01-Sep-2015 17:34:04 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
+[01-Sep-2015 17:34:09 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Transaction_Exception' with message 'Commit failed. There is no active transaction.' in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php:239
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1392): Doctrine_Transaction->commit(NULL)
+#1 C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php(60): Doctrine_Connection->commit()
+#2 C:\xampp\htdocs\ral\library\TK\Controller.php(44): Index_Index->forgotPassword()
+#3 C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php(12): Controller->_render(Object(Index_Index), 'forgot-password')
+#4 C:\xampp\htdocs\ral\public\index.php(25): Index_Index->render('forgot-password')
+#5 {main}
+  thrown in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php on line 239
+[01-Sep-2015 17:34:23 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[01-Sep-2015 17:34:23 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
+[01-Sep-2015 17:34:33 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Transaction_Exception' with message 'Commit failed. There is no active transaction.' in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php:239
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1392): Doctrine_Transaction->commit(NULL)
+#1 C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php(60): Doctrine_Connection->commit()
+#2 C:\xampp\htdocs\ral\library\TK\Controller.php(44): Index_Index->forgotPassword()
+#3 C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php(12): Controller->_render(Object(Index_Index), 'forgot-password')
+#4 C:\xampp\htdocs\ral\public\index.php(25): Index_Index->render('forgot-password')
+#5 {main}
+  thrown in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php on line 239
+[01-Sep-2015 17:36:36 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[01-Sep-2015 17:36:36 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
+[01-Sep-2015 17:37:21 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[01-Sep-2015 17:37:21 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
+[01-Sep-2015 17:37:37 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[01-Sep-2015 17:37:37 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
+[01-Sep-2015 17:38:01 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[01-Sep-2015 17:38:01 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
+[01-Sep-2015 17:38:22 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[01-Sep-2015 17:38:22 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
+[01-Sep-2015 17:38:54 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[01-Sep-2015 17:38:54 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59

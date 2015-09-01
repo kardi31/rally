@@ -45,6 +45,7 @@ class Index_Index extends Controller{
                 
                 if(!$user = $userService->getReminderUser($username,$email)){
                     $this->view->assign('message','User not exists');
+                    Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
                 }
                 else{
                     $token = TK_Text::createUniqueToken();
@@ -54,8 +55,8 @@ class Index_Index extends Controller{
                     $mailService->sendMail($email,'Your FastRally password reminder',$mailService::prepareReminderMail($user,$token));
 
                     TK_Helper::redirect('/forgot-password?msg=reminder+send');
+                    Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
                 }
-                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
         }
         
@@ -68,25 +69,27 @@ class Index_Index extends Controller{
         
         $loginForm = $this->getForm('user','login');
         $this->view->assign('loginForm',$loginForm);
-        if(!$user = $userService->getNewPasswordUser($_GET['info'],$_GET['id'])){
-            $this->view->assign('message','User not exists');
-        }
-        else{
-            Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
-              
-            $newPassword = TK_Text::createRandomString();
+        if(!isset($_GET['msg'])){
+            if(!$user = $userService->getNewPasswordUser($_GET['info'],$_GET['id'])){
+                $this->view->assign('message','User not exists');
+            }
+            else{
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
 
-            $values['salt'] = TK_Text::createUniqueToken();
-            $values['token'] = TK_Text::createUniqueToken();
-            $values['password'] = TK_Text::encode($newPassword, $values['salt']);
+                $newPassword = TK_Text::createRandomString();
 
-            $user->fromArray($values);
-            $user->save();
-            $mailService->sendMail($user->get('email'),'Your FastRally password reminder',$mailService::prepareNewPasswordMail($user,$newPassword));
+                $values['salt'] = TK_Text::createUniqueToken();
+                $values['token'] = TK_Text::createUniqueToken();
+                $values['password'] = TK_Text::encode($newPassword, $values['salt']);
 
-            TK_Helper::redirect('/new-password?msg=password+send');
+                $user->fromArray($values);
+                $user->save();
+                $mailService->sendMail($user->get('email'),'Your FastRally new password',$mailService::prepareNewPasswordMail($user,$newPassword));
 
-            Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+                TK_Helper::redirect('/new-password?msg=password+send');
+
+            }
         }
         
         $this->getLayout()->setLayout('main');
