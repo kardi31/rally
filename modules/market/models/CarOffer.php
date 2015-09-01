@@ -19,5 +19,8 @@ class Market_Model_Doctrine_CarOffer extends Market_Model_Doctrine_BaseCarOffer
              'local' => 'car_id',
              'foreign' => 'id'));
 
+        $this->hasOne('Team_Model_Doctrine_Team as Team', array(
+             'local' => 'team_id',
+             'foreign' => 'id'));
     }
 }

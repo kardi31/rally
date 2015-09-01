@@ -2,7 +2,10 @@
 
 class Cron_Admin extends Controller{
  
-    /* + Do it every 15 minutes
+    /* + Do it every 5 minutes
+     * 1. Add notifications when auction is won.
+     * 
+     *  + Do it every 15 minutes
      * 1. Calculate rally results
      * 2. 
      * 
@@ -28,6 +31,80 @@ class Cron_Admin extends Controller{
     public function render($viewName) {
         parent::_render($this,$viewName,'admin');
     }
+    
+    // do this every 5 minutes - start
+    
+    public function notifyTransferedPlayers(){
+        
+        Service::loadModels('rally', 'rally');
+        $peopleService = parent::getService('people','people');
+        $carService = parent::getService('car','car');
+        $teamService = parent::getService('team','team');
+        $marketService = parent::getService('market','market');
+        $notificationService = parent::getService('user','notification');
+        
+        /*
+         * Players
+         */
+        $offersNoBid = $marketService->getFinishedOffersNotNotifiedNoBid();
+        foreach($offersNoBid as $offerNoBid):
+            $notificationService->addNotification($offerNoBid['Player']['first_name']." ".$offerNoBid['Player']['last_name']." was not sold. Player will return to your team tomorrow",3,$offerNoBid['Team']['User']['id']);
+            $offerNoBid->set('notified',1);
+            $offerNoBid->save();
+        endforeach;
+        
+        $offers = $marketService->getFinishedOffersNotNotified();
+        // 1. Zaplacenie za transfer przez kupujacego
+        
+        foreach($offers as $offer): 
+            foreach($offer['Bids'] as $key => $bid){
+                if($key==0){
+                    $notificationService->addNotification($offer['Player']['first_name']." ".$offer['Player']['last_name']." was successfully sold. Player will leave your team tomorrow",3,$offer['Team']['User']['id']);
+                    $notificationService->addNotification($offer['Player']['first_name']." ".$offer['Player']['last_name']." has been bought. Player will join your team tomorrow",3,$bid['Team']['User']['id']);
+                }
+                else{
+                    $notificationService->addNotification($offer['Player']['first_name']." ".$offer['Player']['last_name']." has not been bought.",3,$bid['Team']['User']['id']);
+                }
+            } 
+            
+        
+            $offer->set('notified',1);
+            $offer->save();
+        endforeach;
+        /*
+         * Cars
+         */
+        
+        $caroffersNoBid = $marketService->getFinishedCarOffersNotMovedNoBid();
+        foreach($caroffersNoBid as $offerNoBid):
+            $notificationService->addNotification($offerNoBid['Car']['name']." was not sold. The car will return to your team tomorrow",3,$offerNoBid['Team']['User']['id']);
+            $offerNoBid->set('notified',1);
+            $offerNoBid->save();
+        endforeach;
+        
+        $caroffers = $marketService->getFinishedCarOffersNotMoved();
+        // 1. Zaplacenie za transfer przez kupujacego
+        // 2. OTrzymanie kasy przez sprzedajacego
+        // 3. Zmiana teamu przez kupujacego
+        // 4. Ustawienie oferty na player_moved
+        foreach($caroffers as $offer):
+            foreach($offer['Bids'] as $key => $bid){
+                if($key==0){
+                    $notificationService->addNotification($offer['Car']['name']." was successfully sold. The car will leave your team tomorrow",3,$offer['Team']['User']['id']);
+                    $notificationService->addNotification($offer['Car']['name']." has been bought. The car will join your team tomorrow",3,$bid['Team']['User']['id']);
+                }
+                else{
+                    $notificationService->addNotification($offer['Car']['name']." has not been bought.",3,$bid['Team']['User']['id']);
+                }
+            }
+            $offer->set('notified',1);
+            $offer->save();
+        endforeach;
+        
+        echo "done";exit;
+    }
+    
+    // do this every 5 minutes - finish
     
     // do this every season - start
     
@@ -225,6 +302,7 @@ class Cron_Admin extends Controller{
         Service::loadModels('people', 'people');
         Service::loadModels('league', 'league');
         Service::loadModels('car', 'car');
+        Service::loadModels('rally', 'rally');
         $teamService = parent::getService('team','team');
         
         /*
@@ -250,6 +328,26 @@ class Cron_Admin extends Controller{
             if(!empty($team['sponsor_id'])){
                 $teamService->addTeamMoney($team['id'],5000,2,'Money from '.$team['Sponsor']['name'].' received on '.date('Y-m-d'));  
             }
+            
+            if($team['cash']<0){
+                $negativeFinances = (int)$team->get('negative_finances');
+                $negativeFinances++;
+                $team->set('negative_finances',$negativeFinances);
+                $team->save();
+                
+                if($negativeFinances>=5){
+                    $team->delete();
+                    $user = $team->get('User');
+                    $user->set('active',0);
+                    $user->save();
+                }
+            }
+            else{
+                $team->set('negative_finances',0);
+            }
+            
+            $team->save();
+                
         endforeach;
         
         echo "done";exit;

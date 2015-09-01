@@ -31,6 +31,7 @@
            $('.messageIcons').css('left',new_position);
            
            $('.messageIconWrapper').click(function(){
+               var button = $(this);
                var element = $(this).attr('rel');
                if($('#'+element).is(':visible')){
                     $('#'+element).fadeOut(500);
@@ -40,6 +41,7 @@
                 }
                
                if(element == 'mainNotificationMessageBox'){
+                   button.removeClass('active');
                    $.ajax({
                        url: "/user/read-notifications"
                    });

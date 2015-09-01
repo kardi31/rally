@@ -1,0 +1,180 @@
+<div class="mainUserBox myPeopleWrapper">
+    <h4 class="boxHeader"><?= $this->translate('My player offers'); ?></h4> 
+    <?php
+        if(isset($_GET['msg'])){
+            if($_GET['msg']=="no exist")
+                $this->showError($this->translate('This offer does not exist'));
+        }
+        ?>
+    <div class="myPeople">
+        <?php foreach($marketOffers as $offer):
+        $person = $offer['Player'];
+        ?>
+        <div class="peopleMarketCard peopleCard col-md-8">
+            <strong>
+                <a class="offerLink" href="/market/show-car-offer/id/<?= $offer['id']; ?>"><?php echo $person['last_name']." ".$person['first_name']; ?> </a>
+                <?php if($person['Team']['id']!=$user['Team']['id']): ?>
+                <?php
+                if(strlen($offer['highest_bid'])&&$offer['highest_bid']!=0){
+                    $populateBid = (int)($offer['highest_bid']*1.1);
+                }
+                else{
+                    $populateBid = $offer['asking_price'];
+                }
+                ?>
+                
+                    <a class="btn btn-info bidPlayer" data-toggle="modal" data-target="#bidPlayer" data-bid="<?= $populateBid; ?>" data-name="<?= $person['last_name']." ".$person['first_name']; ?>" rel="<?= $offer['id']; ?>"><?= $this->translate('Bid player'); ?></a>
+                <?php endif; ?>
+            </strong><br />
+                <div class="col-md-5 peopleLeft peopleMarketLeft">
+                    <table>
+                        <tr>
+                            <td>
+                                <?= $this->translate('Team'); ?>:
+                            </td>
+                            <td>
+                                <?php echo $person['Team']['name']; ?><br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <?= $this->translate('Job'); ?>:
+                            </td>
+                            <td>
+                                <?php
+                                    if($person['job']=="driver"):
+                                        echo '<img src="/images/layout/driving-wheel.png" title='.$person['job'].'  lt='.$person['job'].' />';
+                                    else:
+                                        echo '<i class="fa fa-book" title='.$person['job'].' ></i>';
+                                    endif;
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <?= $this->translate('Age'); ?>:
+                            </td>
+                            <td>
+                                <?php echo $person['age']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <?= $this->translate('Value'); ?>:
+                            </td>
+                            <td>
+                                <?php echo $person['value']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <?= $this->translate('Salary'); ?>:
+                            </td>
+                            <td>
+                                <?php echo $person['salary']; ?>
+                            </td>
+                        </tr>
+                    </table>
+                     
+                </div>
+            
+                <div class="col-md-7 peopleRight peopleMarketRight">
+                    <?= TK_Helper::showPersonDetails($person); ?>
+                </div>
+        </div>
+        
+        <div class="col-md-3 peopleMarketSmallCard">
+            <table>
+                <tr>
+                    <th><?= $this->translate('Highest bid');?>: </th>
+                </tr>
+                <tr>
+                    <td>
+                        <?php
+                            if(isset($offer['Bids'][0])&&$offer['Bids'][0]['active']){
+                                echo (int)$offer['Bids'][0]['value']."$ - ".$offer['Bids'][0]['Team']['name']; 
+                            }
+                            else
+                                echo "no offers";
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><?= $this->translate('Asking price'); ?>:</th>
+                </tr>
+                <tr>
+                    <td><?= $offer['asking_price']; ?>$</td>
+                </tr>
+                <tr>
+                    <th><?= $this->translate('Auction finish'); ?>: </th>
+                </tr>
+                <tr>
+                    <td>
+                        <?php echo TK_Text::timeFormat($offer['finish_date'],'d/m/y H:i'); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><?= $this->translate('Other offers'); ?>: </th>
+                </tr>
+                <tr>
+                    <td>
+                        <?php foreach($offer['Bids'] as $key => $bid):
+                            if($bid['active']==0)
+                                continue;
+
+                            if($key==0)
+                                continue;
+                            if($key>3)
+                                break;
+
+                            echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 
+                        endforeach; ?>
+                    </td>
+                </tr>
+            </table>
+<!--            <br /><br />
+            Pozostałe oferty<br />-->
+            
+        </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+
+
+<div id="bidPlayer" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <form method="POST" action="/market/bid-player">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><?= $this->translate('Bid player'); ?> <span id="bidPlayerName"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <label for="asking_price"><?= $this->translate('Your offer'); ?></label>
+                    <?php echo $form->getElement('bid')->renderElement(); ?>
+                    <?php echo $form->getElement('offer_id')->renderElement(); ?>
+                </div>
+                <div class="modal-footer">
+                    <?php echo $form->getElement('submit')->renderElement(); ?>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><?= $this->translate('Close'); ?></button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        
+        $('.bidPlayer').click(function(){
+           var rel = $(this).attr('rel');
+           $('#offer_id').val(rel);
+           $('#bid').val($(this).attr('data-bid'));
+           $('#bidPlayerName').html($(this).attr('data-name'));
+        });
+    });
+</script>

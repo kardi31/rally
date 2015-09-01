@@ -18,6 +18,10 @@ class Market_Model_Doctrine_Offer extends Market_Model_Doctrine_BaseOffer
         $this->hasOne('People_Model_Doctrine_People as Player', array(
              'local' => 'people_id',
              'foreign' => 'id'));
+        
+        $this->hasOne('Team_Model_Doctrine_Team as Team', array(
+             'local' => 'team_id',
+             'foreign' => 'id'));
 
     }
 }

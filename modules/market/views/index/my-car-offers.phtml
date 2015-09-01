@@ -1,0 +1,151 @@
+<div class="mainUserBox myCarsBox">
+    <h4 class="boxHeader"><?= $this->translate('My car offers'); ?></h4>
+    
+    <?php
+        if(isset($_GET['msg'])){
+            if($_GET['msg']=="no exist")
+                $this->showError($this->translate('This offer does not exist'));
+        }
+        ?>
+        <?php foreach($marketOffers as $offer):
+        $car = $offer['Car'];
+        ?>
+        <div class="carCard carMarketCard col-md-8">
+            <?php if(isset($car['Model']['photo'])&&strlen($car['Model']['photo'])){ ?>
+                <img src="/media/cars/<?php echo $car['Model']['photo']; ?>" alt="<?php echo $car['Model']['name']; ?>" class="carCardPhoto" />
+            <?php } 
+                else{ ?>
+                    <img src="http://dummyimage.com/340x220&amp;text=No+photo"  class="carCardPhoto" />
+            <?php } ?>
+                    <strong>
+                        <a class="offerLink" href="/market/show-car-offer/id/<?= $offer['id']; ?>"><?= $car['name']; ?></a>
+                    </strong>
+            
+            <div class="col-md-6">
+                <div class="marketTeamName">
+                    Team: <?= $car['Team']['name']; ?>
+                </div>
+                <ul>
+                    <li>
+                        <?= $this->translate('Mileage');?>: <?php echo $car['mileage']; ?>
+                    </li>
+                    <li>
+                        <?= $this->translate('Value'); ?>: <?php echo $car['value']; ?>
+                    </li>
+                    <li>
+                        <?= $this->translate('Upkeep'); ?>: <?php echo $car['upkeep']; ?>
+                    </li>
+                </ul>
+                
+            <!--<a href="/market/bid-car/id/<?php echo $offer['id']; ?>">Zalicytuj</a>-->
+                <?php if($car['Team']['id']!=$authenticatedUser['Team']['id']): ?>
+                <?php
+                if(strlen($offer['highest_bid'])&&$offer['highest_bid']!=0){
+                    $populateBid = (int)($offer['highest_bid']*1.1);
+                }
+                else{
+                    $populateBid = $offer['asking_price'];
+                }
+                ?>
+                    <a class="btn myBtn bidCar" data-toggle="modal" data-bid="<?= $populateBid; ?>" data-target="#bidCar" data-name="<?= $car['name']; ?>" rel="<?= $offer['id']; ?>"><?= $this->translate('Bid car'); ?></a>
+                <?php endif; ?>
+                <div class="clearfix"></div>
+            </div>
+            
+            <div class="col-md-6 pr0 pl0 carParametersWrapper">
+                
+                <?= TK_Helper::showCarParameters($car['Model']); ?>
+            </div>
+        <div class='clearfix'></div>
+        </div>
+        <div class="col-md-3 peopleMarketSmallCard">
+            
+            <table>
+                <tr>
+                    <th><?= $this->translate('Highest bid'); ?>: </th>
+                </tr>
+                <tr>
+                    <td>
+                        <?php
+                            if(isset($offer['Bids'][0])&&$offer['Bids'][0]['active']){
+                                echo (int)$offer['Bids'][0]['value']."$ - ".$offer['Bids'][0]['Team']['name']; 
+                            }
+                            else
+                                echo $this->translate("no offers");
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><?= $this->translate('Asking price'); ?>:</th>
+                </tr>
+                <tr>
+                    <td><?= $offer['asking_price']; ?>$</td>
+                </tr>
+                <tr>
+                    <th><?= $this->translate('Auction finish'); ?>: </th>
+                </tr>
+                <tr>
+                    <td>
+                        <?php echo TK_Text::timeFormat($offer['finish_date'],'d/m/y H:i'); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><?= $this->translate('Other offers'); ?>: </th>
+                </tr>
+                <tr>
+                    <td>
+                        <?php foreach($offer['Bids'] as $key => $bid):
+                            if($bid['active']==0)
+                                continue;
+
+                            if($key==0)
+                                continue;
+                            if($key>3)
+                                break;
+
+                            echo $bid['value']."$ - ".$bid['Team']['name']."<br />"; 
+                        endforeach; ?>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class='clearfix'></div>
+    <?php endforeach; ?>
+</div>
+
+<div id="bidCar" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <form method="POST" action="/market/bid-car">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><?= $this->translate('Bid car'); ?> <span id="bidCarName"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <label for="asking_price"><?= $this->translate('Your offer'); ?></label>
+                    <?php echo $form->getElement('bid')->renderElement(); ?>
+                    <?php echo $form->getElement('offer_id')->renderElement(); ?>
+                </div>
+                <div class="modal-footer">
+                    <?php echo $form->getElement('submit')->renderElement(); ?>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><?= $this->translate('Close'); ?></button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        
+        $('.bidCar').click(function(){
+           var rel = $(this).attr('rel');
+           $('#offer_id').val(rel);
+           $('#bid').val($(this).attr('data-bid'));
+           $('#bidCarName').html($(this).attr('data-name'));
+        });
+    });
+</script>

@@ -16,6 +16,7 @@
  * @property boolean $car_moved
  * @property boolean $canceled
  * @property string $user_ip
+ * @property boolean $notified
  * @property Doctrine_Collection $Bids
  * 
  * @package    ##PACKAGE##
@@ -71,6 +72,10 @@ abstract class Market_Model_Doctrine_BaseCarOffer extends Doctrine_Record
         $this->hasColumn('user_ip', 'string', 255, array(
              'type' => 'string',
              'length' => '255',
+             ));
+        $this->hasColumn('notified', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
              ));
 
         $this->option('type', 'MyISAM');
