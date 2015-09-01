@@ -163,9 +163,9 @@ $startDate2 = clone $startDate;
                      ?>
                      <img class="coin" src="/images/layout/coin.png" />
                <?php else: ?>
-                    <?= $this->translate('You are a');?> <img src="/images/layout/gc_small.png" /> <?= $this->translate('member. You are allowed to join 2 friendly rallies every 30 days.');?>
+                    <?= $this->translate('You are a');?> <img src="/images/layout/gc_small.png" /> <?= $this->translate('member. You are allowed to join 3 friendly rallies every 30 days.');?>
                     <?php 
-                    if($recentUserFriendlies['cnt']>=2){
+                    if($recentUserFriendlies['cnt']>=3){
                        $oldestFriendly = new DateTime($recentUserFriendlies['created_at']);
                        $oldestFriendly->add(new DateInterval('P30D'));
                        echo "<br/>".$this->translate('You have to wait until')."<strong>".$oldestFriendly->format('d/m/Y H:i')."</strong> ".$this->translate('to join another free friendly rally.'); 

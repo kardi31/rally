@@ -75,6 +75,7 @@ class NotificationService extends Service{
         $q = $this->notificationTable->createQuery('n');
         $q->select('n.*'); 
         $q->addWhere('n.user_id = ?',$user_id);
+        $q->orderBy('n.created_at DESC');
         if($limit)
             $q->limit($limit);
         return $q->execute(array(),$hydrationMode);

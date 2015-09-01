@@ -36,6 +36,9 @@ Offer:
       default: 0
     user_ip:
       type: string(255)
+    notified:
+      type: boolean
+      default: 0
 CarOffer:
   tableName: market_car_offer
   actAs: 
@@ -70,6 +73,9 @@ CarOffer:
       default: 0
     user_ip:
       type: string(255)
+    notified:
+      type: boolean
+      default: 0
 CarBid:
   tableName: market_car_bid
   actAs: 

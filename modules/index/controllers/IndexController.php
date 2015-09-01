@@ -21,6 +21,74 @@ class Index_Index extends Controller{
     }
     
     public function error404(){
+        
+        $loginForm = $this->getForm('user','login');
+        $this->view->assign('loginForm',$loginForm);
+        $this->getLayout()->setLayout('main');
+    }
+    
+    public function forgotPassword(){
+        $mailService = parent::getService('user','mail');
+        $userService = parent::getService('user','user');
+        
+        $loginForm = $this->getForm('user','login');
+        $this->view->assign('loginForm',$loginForm);
+        
+        $form = $this->getForm('user','forgotPassword');
+        $this->view->assign('form',$form);
+        if($form->isSubmit()){
+            if($form->isValid()){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                                
+                $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+                $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+                
+                if(!$user = $userService->getReminderUser($username,$email)){
+                    $this->view->assign('message','User not exists');
+                }
+                else{
+                    $token = TK_Text::createUniqueToken();
+                    
+                    $user->set('token',$token);
+                    $user->save();
+                    $mailService->sendMail($email,'Your FastRally password reminder',$mailService::prepareReminderMail($user,$token));
+
+                    TK_Helper::redirect('/forgot-password?msg=reminder+send');
+                }
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+            }
+        }
+        
+        $this->getLayout()->setLayout('main');
+    }
+    
+    public function newPassword(){
+        $mailService = parent::getService('user','mail');
+        $userService = parent::getService('user','user');
+        
+        $loginForm = $this->getForm('user','login');
+        $this->view->assign('loginForm',$loginForm);
+        if(!$user = $userService->getNewPasswordUser($_GET['info'],$_GET['id'])){
+            $this->view->assign('message','User not exists');
+        }
+        else{
+            Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+              
+            $newPassword = TK_Text::createRandomString();
+
+            $values['salt'] = TK_Text::createUniqueToken();
+            $values['token'] = TK_Text::createUniqueToken();
+            $values['password'] = TK_Text::encode($newPassword, $values['salt']);
+
+            $user->fromArray($values);
+            $user->save();
+            $mailService->sendMail($user->get('email'),'Your FastRally password reminder',$mailService::prepareNewPasswordMail($user,$newPassword));
+
+            TK_Helper::redirect('/new-password?msg=password+send');
+
+            Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+        }
+        
         $this->getLayout()->setLayout('main');
     }
     
@@ -47,7 +115,16 @@ class Index_Index extends Controller{
         
     }
     public function faq(){
-        $this->getLayout()->setLayout('page');
+        $userService = parent::getService('user','user');
+        
+        $user = $userService->getAuthenticatedUser();
+//        var_dump($user);exit;
+        if(!$user){
+            $this->getLayout()->setLayout('nolog');
+        }
+        else{
+            $this->getLayout()->setLayout('page');
+        }
         
     }
     
@@ -87,7 +164,10 @@ class Index_Index extends Controller{
             TK_Helper::redirect('/user/login');
         
         if(isset($_POST['username'])){
-            $users = $userService->searchForUsers($_POST['username'],Doctrine_Core::HYDRATE_ARRAY);
+            
+            $username = filter_var($_POST['username'],FILTER_SANITIZE_STRING);
+            
+            $users = $userService->searchForUsers($username,Doctrine_Core::HYDRATE_ARRAY);
             $this->view->assign('users',$users);
         }
     }

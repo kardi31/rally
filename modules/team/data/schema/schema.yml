@@ -41,6 +41,8 @@ Team:
       type: integer(11)
     last_name_change:
       type: timestamp
+    negative_finances:
+      type: integer(4)
 Finance:
   tableName: team_finance
   actAs: 

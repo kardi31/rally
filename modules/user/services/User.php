@@ -178,8 +178,25 @@ class UserService extends Service{
         $q = $this->userTable->createQuery('u');
         $q->select('u.username');
         $q->addWhere("LOWER(u.username) like ?",strtolower($query)."%");
+        $q->addWhere('u.active = 1');
         $q->limit(4);
         return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getReminderUser($username,$email,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->userTable->createQuery('u');
+        $q->addWhere("LOWER(u.username) like ?",strtolower($username)."%");
+        $q->addWhere("LOWER(u.email) like ?",strtolower($email)."%");
+        $q->addWhere('u.active = 1');
+        return $q->fetchOne(array(),$hydrationMode);
+    }
+    
+    public function getNewPasswordUser($id,$token,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->userTable->createQuery('u');
+        $q->addWhere("u.token like ?",$token);
+        $q->addWhere("u.id = ?",$id);
+        $q->addWhere('u.active = 1');
+        return $q->fetchOne(array(),$hydrationMode);
     }
     
     public function getUsersWithRefererNotPaid($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
@@ -197,9 +214,10 @@ class UserService extends Service{
         $q = $this->userTable->createQuery('u');
         $q->leftJoin('u.Team t');
         $q->select('u.username,t.name');
-        $q->addWhere("u.username like ?",$username."%");
+        $q->addWhere("LOWER(u.username) like ?",$username."%");
         $q->orderBy('u.username ASC');
         $q->addWhere('u.active = 1');
+        echo $q->getSqlQuery();exit;
         $q = TK_Paginator::paginate($q,10);
         return $q->execute(array(),$hydrationMode);
     }
@@ -241,5 +259,6 @@ class UserService extends Service{
         $q->addWhere("u.referer = ?",$user_id);
         return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
     }
+    
 }
 ?>

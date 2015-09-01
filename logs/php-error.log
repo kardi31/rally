@@ -342,3 +342,117 @@
 [31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
 [31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
 [31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[01-Sep-2015 10:34:49 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[01-Sep-2015 10:34:49 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[01-Sep-2015 10:34:49 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 10:34:49 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 10:34:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 10:34:58 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to UserService::quickAuthenticate() must be an instance of User_Model_Doctrine_User, boolean given, called in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 236 and defined in C:\xampp\htdocs\ral\modules\user\services\User.php on line 41
+[01-Sep-2015 10:34:59 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 10:35:09 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to UserService::quickAuthenticate() must be an instance of User_Model_Doctrine_User, boolean given, called in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 236 and defined in C:\xampp\htdocs\ral\modules\user\services\User.php on line 41
+[01-Sep-2015 10:35:12 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 10:35:14 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 10:35:49 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 10:35:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 10:41:44 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 10:42:17 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 10:42:21 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 10:42:34 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 10:42:44 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 10:42:46 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 11:06:00 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 11:06:07 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 11:06:32 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to UserService::quickAuthenticate() must be an instance of User_Model_Doctrine_User, boolean given, called in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 236 and defined in C:\xampp\htdocs\ral\modules\user\services\User.php on line 41
+[01-Sep-2015 11:06:36 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 11:06:38 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to UserService::quickAuthenticate() must be an instance of User_Model_Doctrine_User, boolean given, called in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 236 and defined in C:\xampp\htdocs\ral\modules\user\services\User.php on line 41
+[01-Sep-2015 11:06:39 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 11:06:41 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 11:07:08 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 11:07:25 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 11:07:35 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 11:08:44 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 11:09:16 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 11:09:31 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[01-Sep-2015 11:17:23 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[01-Sep-2015 11:17:23 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 11:17:23 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 11:17:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 11:17:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 11:25:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 11:25:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 11:31:17 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 11:31:17 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 11:31:20 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 11:31:20 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 11:31:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 11:31:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 11:32:06 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 11:32:06 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 11:32:09 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 11:32:09 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 11:32:19 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[01-Sep-2015 11:32:19 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 11:32:19 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 11:49:25 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[01-Sep-2015 11:49:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 11:49:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 11:49:27 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
+[01-Sep-2015 11:49:27 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 11:49:27 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 11:56:47 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
+[01-Sep-2015 11:56:47 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 11:56:47 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 11:58:49 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
+[01-Sep-2015 11:58:49 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 11:58:49 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 12:06:48 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
+[01-Sep-2015 12:06:48 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 12:06:48 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 12:07:50 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
+[01-Sep-2015 12:07:51 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 12:07:51 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 12:08:43 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 12:08:43 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 12:08:54 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 12:08:54 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 12:09:03 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[01-Sep-2015 12:09:03 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[01-Sep-2015 12:10:12 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such team
+
+  thrown in C:\xampp\htdocs\ral\modules\team\controllers\IndexController.php on line 30
+[01-Sep-2015 12:10:12 Europe/Berlin] PHP Notice:  Undefined variable: loginForm in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
+[01-Sep-2015 12:10:12 Europe/Berlin] PHP Fatal error:  Call to a member function getElement() on null in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
+[01-Sep-2015 12:11:34 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
+[01-Sep-2015 12:11:34 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[01-Sep-2015 12:11:56 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
+[01-Sep-2015 12:32:49 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/index/views/index/forgot-password.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[01-Sep-2015 12:32:49 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/index/views/index/forgot-password.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[01-Sep-2015 12:36:34 Europe/Berlin] PHP Notice:  Undefined variable: form in C:\xampp\htdocs\ral\modules\index\views\index\forgot-password.phtml on line 33
+[01-Sep-2015 12:36:34 Europe/Berlin] PHP Fatal error:  Call to a member function getElement() on null in C:\xampp\htdocs\ral\modules\index\views\index\forgot-password.phtml on line 33
+[01-Sep-2015 12:37:03 Europe/Berlin] PHP Fatal error:  Call to a member function renderElement() on null in C:\xampp\htdocs\ral\modules\index\views\index\forgot-password.phtml on line 33
+[01-Sep-2015 13:02:02 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[01-Sep-2015 13:02:02 Europe/Berlin] PHP Notice:  Undefined variable: loginForm in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
+[01-Sep-2015 13:02:02 Europe/Berlin] PHP Fatal error:  Call to a member function getElement() on null in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
+[01-Sep-2015 13:02:02 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[01-Sep-2015 13:02:02 Europe/Berlin] PHP Notice:  Undefined variable: loginForm in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
+[01-Sep-2015 13:02:02 Europe/Berlin] PHP Fatal error:  Call to a member function getElement() on null in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
+[01-Sep-2015 13:02:50 Europe/Berlin] PHP Notice:  Undefined variable: userService in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 47
+[01-Sep-2015 13:02:50 Europe/Berlin] PHP Fatal error:  Call to a member function getReminderUser() on null in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 47
+[01-Sep-2015 13:03:29 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[01-Sep-2015 13:03:29 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
+[01-Sep-2015 13:03:29 Europe/Berlin] PHP Fatal error:  Call to undefined method User_Index::reminderPassword() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[01-Sep-2015 13:05:30 Europe/Berlin] PHP Fatal error:  Class 'New-password_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[01-Sep-2015 13:08:48 Europe/Berlin] PHP Fatal error:  Class 'New-password_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[01-Sep-2015 13:11:44 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[01-Sep-2015 13:11:44 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
+[01-Sep-2015 13:14:52 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::getNewPasswordUser() in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
+[01-Sep-2015 13:19:32 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::getNewPasswordUser() in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
+[01-Sep-2015 13:19:51 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::getNewPasswordUser() in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 71
+[01-Sep-2015 13:19:55 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::getNewPasswordUser() in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 71
+[01-Sep-2015 13:21:26 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[01-Sep-2015 13:21:26 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[01-Sep-2015 13:22:22 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[01-Sep-2015 13:22:22 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
+[01-Sep-2015 13:22:48 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[01-Sep-2015 13:22:48 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[01-Sep-2015 13:22:48 Europe/Berlin] PHP Fatal error:  Call to undefined method User_Index::newPassword() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44

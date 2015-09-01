@@ -83,6 +83,43 @@ class MarketService extends Service{
         return $q->execute(array(),$hydrationMode);
     }
     
+    
+    public function getFinishedOffersNotNotified($hydrationMode=Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->offerTable->createQuery('o');
+        $q->innerJoin('o.Bids b');
+        $q->addWhere('o.highest_bid > 0 and o.active = 1');
+        $q->addWhere('o.notified = 0');
+        $q->addWhere('o.finish_date < NOW()');
+        $q->orderBy('b.value DESC');
+        return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getFinishedCarOffersNotNotified($hydrationMode=Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->carOfferTable->createQuery('o');
+        $q->innerJoin('o.Bids b');
+        $q->addWhere('o.highest_bid > 0 and o.active = 1');
+        $q->addWhere('o.notified = 0');
+        $q->addWhere('o.finish_date < NOW()');
+        $q->orderBy('b.value DESC');
+        return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getFinishedOffersNotNotifiedNoBid($hydrationMode=Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->offerTable->createQuery('o');
+        $q->addWhere('(o.highest_bid = 0 or o.active = 0)');
+        $q->addWhere('o.notified = 0');
+        $q->addWhere('o.finish_date < NOW()');
+        return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getFinishedCarOffersNotNotifiedNoBid($hydrationMode=Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->carOfferTable->createQuery('o');
+        $q->addWhere('(o.highest_bid = 0 or o.active = 0)');
+        $q->addWhere('o.notified = 0');
+        $q->addWhere('o.finish_date < NOW()');
+        return $q->execute(array(),$hydrationMode);
+    }
+    
     public function getFullOfferAndBid($id,$hydrationMode=Doctrine_Core::HYDRATE_RECORD){
         $q = $this->offerTable->createQuery('o');
         $q->innerJoin('o.Bids b');
@@ -455,6 +492,14 @@ class MarketService extends Service{
         $record->fromArray($data);
         $record->save();
         
+        $finishDate = $offer->get('finish_date');
+        
+        if(strtotime($finishDate) >= time()+300){
+            $newFinishDate = date('Y-m-d H:i:s',strtotime($finishDate.' +3 minutes'));
+            $offer->set('finish_date',$newFinishDate);
+        }
+        
+        
         $offer->set('highest_bid',$values['bid']);
         $offer->save();
         
@@ -505,6 +550,14 @@ class MarketService extends Service{
         $record = $this->carBidTable->getRecord();
         $record->fromArray($data);
         $record->save();
+        
+        
+        $finishDate = $offer->get('finish_date');
+        
+        if(strtotime($finishDate) >= time()+300){
+            $newFinishDate = date('Y-m-d H:i:s',strtotime($finishDate.' +3 minutes'));
+            $offer->set('finish_date',$newFinishDate);
+        }
         
         $offer->set('highest_bid',$values['bid']);
         $offer->save();

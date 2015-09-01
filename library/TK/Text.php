@@ -325,16 +325,22 @@ class TK_Text{
     return $datediff;
 }
 
-public function filterSpecialChars($s) {
-    $result = htmlentities($s);
-    $result = preg_replace('/^(&quot;)(.*)(&quot;)$/', "$2", $result);
-    $result = preg_replace('/^(&laquo;)(.*)(&raquo;)$/', "$2", $result);
-    $result = preg_replace('/^(&#8220;)(.*)(&#8221;)$/', "$2", $result);
-    $result = preg_replace('/^(&#39;)(.*)(&#39;)$/', "$2", $result);
-    $result = html_entity_decode($result);
-    return $result;
-}
+    public function filterSpecialChars($s) {
+        $result = htmlentities($s);
+        $result = preg_replace('/^(&quot;)(.*)(&quot;)$/', "$2", $result);
+        $result = preg_replace('/^(&laquo;)(.*)(&raquo;)$/', "$2", $result);
+        $result = preg_replace('/^(&#8220;)(.*)(&#8221;)$/', "$2", $result);
+        $result = preg_replace('/^(&#39;)(.*)(&#39;)$/', "$2", $result);
+        $result = html_entity_decode($result);
+        return $result;
+    }
+    
+    public static function createRandomString($length = 7){
+        $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
 
+        return $randomString;
+    }
+    
 }
 
 /*
