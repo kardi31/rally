@@ -65,7 +65,6 @@ class Controller{
                 $this->layout->content = $elem->view->render($this->dif_view_action,$this->dif_view_view,$zone);
             }
                 
-            
             // setting up response segments
             foreach($this->responseSegment as $responseSegment => $details){
                 $actionName = TK_Text::convertViewToActionName($details['view']);

@@ -47,7 +47,16 @@ class Index_Index extends Controller{
         
     }
     public function faq(){
-        $this->getLayout()->setLayout('page');
+        $userService = parent::getService('user','user');
+        
+        $user = $userService->getAuthenticatedUser();
+//        var_dump($user);exit;
+        if(!$user){
+            $this->getLayout()->setLayout('nolog');
+        }
+        else{
+            $this->getLayout()->setLayout('page');
+        }
         
     }
     
