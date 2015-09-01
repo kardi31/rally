@@ -557,3 +557,6 @@ Stack trace:
 =======
 >>>>>>> aad2559ea342cf881c8a54d3facc4bab331daeaa
 >>>>>>> 8bd5dc0b44bde27feac787e5b5946c55c0f4f9a2
+[01-Sep-2015 18:08:14 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such team
+
+  thrown in C:\xampp\htdocs\ral\modules\team\controllers\IndexController.php on line 30

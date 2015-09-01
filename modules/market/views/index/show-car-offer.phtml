@@ -38,7 +38,7 @@
                 <li class="active"><?php echo $car['name']; ?> 
 
                     <?php if($car['Team']['id']!=$authenticatedUser['Team']['id']): ?>
-                            <a class="btn myBtn bidPlayer bidCar" data-toggle="modal" data-target="#bidPlayer" data-name="<?= $car['name']; ?>" rel="<?= $offer['id']; ?>"><?= $this->translate('Bid car'); ?></a>
+                            <a class="btn myBtn bidPlayer bidCar" data-toggle="modal" data-target="#bidCar" data-name="<?= $car['name']; ?>" rel="<?= $offer['id']; ?>"><?= $this->translate('Bid car'); ?></a>
                     <?php endif; ?>
                 </li>
             </ul>
