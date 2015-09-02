@@ -152,3 +152,28 @@
 [02-Sep-2015 17:12:20 Europe/Berlin] PHP Fatal error:  Class 'Zend_Registry' not found in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 244
 [02-Sep-2015 17:12:20 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
 [02-Sep-2015 17:12:20 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 20:17:17 Europe/Berlin] PHP Fatal error:  Call to undefined method Account_Index::setLayout() in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 241
+[02-Sep-2015 20:17:17 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 20:17:27 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\banner\views\index\show-left-banner.phtml on line 1
+[02-Sep-2015 20:22:44 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 281
+[02-Sep-2015 20:22:51 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 281
+[02-Sep-2015 20:22:52 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.negative_finances' in 'field list'' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection\Statement.php(269): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Statement))
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1006): Doctrine_Connection_Statement->execute(Array)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(983): Doctrine_Connection->execute('SELECT t.id AS ...', Array)
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1033): Doctrine_Query_Abstract->_execute(Array)
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query.php(2187): Doctrine_Query_Abstract->execute(Array, NULL)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(897): Doctrine_Query->query('FROM Team_Model...', Array, NULL)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Relation\ForeignK in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[02-Sep-2015 20:22:52 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 20:23:25 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'm.notified' in 'field list'' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection\Statement.php(269): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Statement))
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1006): Doctrine_Connection_Statement->execute(Array)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(983): Doctrine_Connection->execute('SELECT m.id AS ...', Array)
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1033): Doctrine_Query_Abstract->_execute(Array)
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query.php(273): Doctrine_Query_Abstract->execute(Array, 3)
+#5 C:\xampp\htdocs\ral\modules\market\services\Market.php(363): Doctrine_Query->fetchArray()
+#6 C:\xampp\htdocs\ral\modules\market\controllers\IndexController.php(444): MarketService->getA in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[02-Sep-2015 20:23:25 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44

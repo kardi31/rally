@@ -1906,3 +1906,7 @@ margin-right: auto;
     .panel-custom{
         background:#868686;
     }
+    
+    .panel-body{
+        background:#504f4f;
+    }
