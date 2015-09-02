@@ -7,6 +7,7 @@ class Register extends Form{
         $username->addClass('textInput');
         $username->addFilter('trim');
         $username->addFilter('lower');
+        $username->addValidator('letterLength',array('min' => 3));
         $password = $this->createElement('password','password',array('validators' => array('stringLength' => array('min' => 4,'max' => 12))),'Hasło');
         $password->addClass('textInput');
         $password2 = $this->createElement('password','password2',array('validators' => array('match' => array('elem' => 'password'))),'Powtórz hasło');

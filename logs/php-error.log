@@ -1,562 +1,154 @@
-[31-Aug-2015 09:13:23 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\index\views\index\show-calendar.phtml on line 90
-[31-Aug-2015 09:17:19 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\index\views\index\show-calendar.phtml on line 90
-[31-Aug-2015 09:17:19 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\index\views\index\show-calendar.phtml on line 90
-[31-Aug-2015 09:17:19 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\index\views\index\show-calendar.phtml on line 90
-[31-Aug-2015 09:17:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\index\views\index\show-calendar.phtml on line 90
-[31-Aug-2015 09:17:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\index\views\index\show-calendar.phtml on line 90
-[31-Aug-2015 09:17:25 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\index\views\index\show-calendar.phtml on line 90
-[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[31-Aug-2015 09:17:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[31-Aug-2015 09:18:02 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
-[31-Aug-2015 09:18:02 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
-[31-Aug-2015 09:18:02 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
-[31-Aug-2015 09:18:02 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\views\index\my-rallies.phtml on line 46
-[31-Aug-2015 09:18:08 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
-[31-Aug-2015 09:18:11 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[31-Aug-2015 09:18:11 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:14 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:15 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
-[31-Aug-2015 09:18:20 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
-[31-Aug-2015 09:18:20 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
-[31-Aug-2015 09:18:20 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
-[31-Aug-2015 09:18:20 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
-[31-Aug-2015 09:18:20 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
-[31-Aug-2015 15:07:40 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[31-Aug-2015 15:07:40 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[31-Aug-2015 15:07:40 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[31-Aug-2015 15:07:40 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[31-Aug-2015 15:30:50 Europe/Berlin] PHP Notice:  Undefined property: View::$form in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[31-Aug-2015 15:30:50 Europe/Berlin] PHP Fatal error:  Call to a member function getElement() on null in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[31-Aug-2015 15:33:51 Europe/Berlin] PHP Fatal error:  Cannot access parent:: when current class scope has no parent in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 12
-[31-Aug-2015 15:36:05 Europe/Berlin] PHP Notice:  Undefined property: View::$form in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[31-Aug-2015 15:36:05 Europe/Berlin] PHP Fatal error:  Call to a member function getElement() on null in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[31-Aug-2015 15:36:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Recaptcha::validateElement() in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 20
-[31-Aug-2015 15:39:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Recaptcha::isSubmit() in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 26
-[31-Aug-2015 15:41:19 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$submitElem in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 70
-[31-Aug-2015 15:41:34 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$submitElem in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 70
-[31-Aug-2015 15:41:59 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$submitElem in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 70
-[31-Aug-2015 15:41:59 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$submitElem in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 70
-[31-Aug-2015 16:23:01 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$submitElem in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 70
-[31-Aug-2015 16:23:42 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$submitElem in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 70
-[31-Aug-2015 16:23:42 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$submitElem in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 70
-[31-Aug-2015 16:23:54 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$submitElem in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 70
-[31-Aug-2015 16:25:04 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$submitElem in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 71
-[31-Aug-2015 16:25:11 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$submitElem in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 71
-[31-Aug-2015 16:25:13 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$submitElem in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 71
-[31-Aug-2015 16:52:13 Europe/Berlin] PHP Fatal error:  Call to a member function toArray() on array in C:\xampp\htdocs\ral\library\TK\Form\Form.php on line 187
-[31-Aug-2015 16:53:41 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 16:53:53 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 16:56:25 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 16:56:39 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 16:57:19 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 16:58:14 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 16:58:14 Europe/Berlin] PHP Fatal error:  Cannot use object of type stdClass as array in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 51
-[31-Aug-2015 16:58:26 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 16:58:27 Europe/Berlin] PHP Fatal error:  Cannot use object of type stdClass as array in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 49
-[31-Aug-2015 16:58:36 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 16:58:41 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 16:58:41 Europe/Berlin] PHP Fatal error:  Cannot use object of type stdClass as array in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 49
-[31-Aug-2015 16:58:50 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 16:58:50 Europe/Berlin] PHP Fatal error:  Cannot use object of type stdClass as array in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 49
-[31-Aug-2015 16:58:57 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 16:59:18 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 16:59:19 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$error in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 49
-[31-Aug-2015 16:59:19 Europe/Berlin] PHP Notice:  Use of undefined constant codes - assumed 'codes' in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 49
-[31-Aug-2015 16:59:30 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 16:59:41 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 16:59:42 Europe/Berlin] PHP Fatal error:  Cannot use object of type stdClass as array in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 50
-[31-Aug-2015 17:00:05 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 17:00:05 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\views\message\short-error.phtml on line 4
-[31-Aug-2015 17:00:19 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 17:01:43 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ral\library\TK\Form\Form.php:47) in C:\xampp\htdocs\ral\library\TK\Helper.php on line 10
-[31-Aug-2015 17:03:04 Europe/Berlin] PHP Fatal error:  Call to a member function renderElement() on null in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[31-Aug-2015 17:03:25 Europe/Berlin] PHP Notice:  Undefined variable: loginForm in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[31-Aug-2015 17:03:25 Europe/Berlin] PHP Fatal error:  Call to a member function getElement() on null in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[31-Aug-2015 17:13:16 Europe/Berlin] PHP Fatal error:  Call to a member function renderElement() on null in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[31-Aug-2015 17:13:58 Europe/Berlin] PHP Fatal error:  Cannot use isset() on the result of a function call (you can use "null !== func()" instead) in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[31-Aug-2015 17:14:07 Europe/Berlin] PHP Fatal error:  Cannot use isset() on the result of a function call (you can use "null !== func()" instead) in C:\xampp\htdocs\ral\views\_header_main.phtml on line 26
-[31-Aug-2015 17:14:08 Europe/Berlin] PHP Fatal error:  Cannot use isset() on the result of a function call (you can use "null !== func()" instead) in C:\xampp\htdocs\ral\views\_header_main.phtml on line 26
-[31-Aug-2015 17:14:32 Europe/Berlin] PHP Fatal error:  Cannot use isset() on the result of a function call (you can use "null !== func()" instead) in C:\xampp\htdocs\ral\views\_header_main.phtml on line 26
-[31-Aug-2015 17:14:33 Europe/Berlin] PHP Fatal error:  Cannot use isset() on the result of a function call (you can use "null !== func()" instead) in C:\xampp\htdocs\ral\views\_header_main.phtml on line 26
-[31-Aug-2015 17:14:40 Europe/Berlin] PHP Fatal error:  Cannot use isset() on the result of a function call (you can use "null !== func()" instead) in C:\xampp\htdocs\ral\views\_header_main.phtml on line 26
-[31-Aug-2015 17:15:56 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$valid in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 82
-[31-Aug-2015 17:15:57 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[31-Aug-2015 17:15:57 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[31-Aug-2015 17:16:21 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$valid in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 82
-[31-Aug-2015 17:16:21 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[31-Aug-2015 17:16:21 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[31-Aug-2015 17:17:47 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$valid in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 83
-[31-Aug-2015 17:18:48 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$valid in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 83
-[31-Aug-2015 17:19:17 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[31-Aug-2015 17:19:17 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[31-Aug-2015 17:21:13 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[31-Aug-2015 17:21:13 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[31-Aug-2015 17:21:59 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[31-Aug-2015 17:21:59 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[31-Aug-2015 17:22:49 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$valid in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 84
-[31-Aug-2015 17:23:23 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$valid in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 85
-[31-Aug-2015 17:23:57 Europe/Berlin] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 66
-[31-Aug-2015 17:24:42 Europe/Berlin] PHP Fatal error:  Call to undefined method stdClass::toArray() in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 66
-[31-Aug-2015 17:24:48 Europe/Berlin] PHP Fatal error:  Call to undefined method stdClass::toArray() in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 51
-[31-Aug-2015 17:27:03 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$success in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 49
-[31-Aug-2015 17:27:03 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$valid in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 86
-[31-Aug-2015 17:27:38 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$valid in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 86
-[31-Aug-2015 17:29:17 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$valid in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 86
-[31-Aug-2015 17:30:30 Europe/Berlin] PHP Notice:  Undefined property: Recaptcha::$valid in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 87
-[31-Aug-2015 17:31:45 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[31-Aug-2015 17:31:45 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[31-Aug-2015 17:32:21 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[31-Aug-2015 17:32:21 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[31-Aug-2015 18:04:50 Europe/Berlin] PHP Fatal error:  Class 'TK_View' not found in C:\xampp\htdocs\ral\modules\account\views\index\my-finances.phtml on line 5
-[31-Aug-2015 18:05:23 Europe/Berlin] PHP Fatal error:  Class 'TK_View' not found in C:\xampp\htdocs\ral\modules\account\views\index\my-finances.phtml on line 7
-[31-Aug-2015 18:05:41 Europe/Berlin] PHP Fatal error:  Class 'TK_View' not found in C:\xampp\htdocs\ral\modules\account\views\index\my-finances.phtml on line 7
-[31-Aug-2015 18:05:43 Europe/Berlin] PHP Fatal error:  Class 'TK_View' not found in C:\xampp\htdocs\ral\modules\account\views\index\my-finances.phtml on line 7
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-[31-Aug-2015 18:25:12 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
-<<<<<<< HEAD
-[01-Sep-2015 09:22:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
-[01-Sep-2015 09:22:54 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/market/views/index/buy-car.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
-[01-Sep-2015 09:22:54 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/market/views/index/buy-car.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
-[01-Sep-2015 09:24:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[01-Sep-2015 09:24:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[01-Sep-2015 09:24:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[01-Sep-2015 09:24:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[01-Sep-2015 09:24:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[01-Sep-2015 09:24:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 09:24:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 09:24:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 09:24:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 09:24:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 09:24:02 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 09:27:17 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
-[01-Sep-2015 09:27:34 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 09:27:34 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 09:28:19 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
-[01-Sep-2015 09:30:45 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
-[01-Sep-2015 09:31:03 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
-[01-Sep-2015 09:32:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
-[01-Sep-2015 09:32:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
-[01-Sep-2015 09:32:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
-[01-Sep-2015 09:32:50 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
-[01-Sep-2015 09:33:00 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
-[01-Sep-2015 09:33:27 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\banner\views\index\show-left-banner.phtml on line 1
-=======
-[01-Sep-2015 10:34:49 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[01-Sep-2015 10:34:49 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[01-Sep-2015 10:34:49 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 10:34:49 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 10:34:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 10:34:58 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to UserService::quickAuthenticate() must be an instance of User_Model_Doctrine_User, boolean given, called in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 236 and defined in C:\xampp\htdocs\ral\modules\user\services\User.php on line 41
-[01-Sep-2015 10:34:59 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 10:35:09 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to UserService::quickAuthenticate() must be an instance of User_Model_Doctrine_User, boolean given, called in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 236 and defined in C:\xampp\htdocs\ral\modules\user\services\User.php on line 41
-[01-Sep-2015 10:35:12 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 10:35:14 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 10:35:49 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 10:35:53 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 10:41:44 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 10:42:17 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 10:42:21 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 10:42:34 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 10:42:44 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 10:42:46 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 11:06:00 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 11:06:07 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 11:06:32 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to UserService::quickAuthenticate() must be an instance of User_Model_Doctrine_User, boolean given, called in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 236 and defined in C:\xampp\htdocs\ral\modules\user\services\User.php on line 41
-[01-Sep-2015 11:06:36 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 11:06:38 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to UserService::quickAuthenticate() must be an instance of User_Model_Doctrine_User, boolean given, called in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 236 and defined in C:\xampp\htdocs\ral\modules\user\services\User.php on line 41
-[01-Sep-2015 11:06:39 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 11:06:41 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 11:07:08 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 11:07:25 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 11:07:35 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 11:08:44 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 11:09:16 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 11:09:31 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
-[01-Sep-2015 11:17:23 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
-[01-Sep-2015 11:17:23 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 11:17:23 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 11:17:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 11:17:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 11:25:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 11:25:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 11:31:17 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 11:31:17 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 11:31:20 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 11:31:20 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 11:31:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 11:31:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 11:32:06 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 11:32:06 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 11:32:09 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 11:32:09 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 11:32:19 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
-[01-Sep-2015 11:32:19 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 11:32:19 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 11:49:25 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
-[01-Sep-2015 11:49:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 11:49:25 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 11:49:27 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
-[01-Sep-2015 11:49:27 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 11:49:27 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 11:56:47 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
-[01-Sep-2015 11:56:47 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 11:56:47 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 11:58:49 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
-[01-Sep-2015 11:58:49 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 11:58:49 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 12:06:48 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
-[01-Sep-2015 12:06:48 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 12:06:48 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 12:07:50 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
-[01-Sep-2015 12:07:51 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 12:07:51 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 12:08:43 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 12:08:43 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 12:08:54 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 12:08:54 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 12:09:03 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
-[01-Sep-2015 12:09:03 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
-[01-Sep-2015 12:10:12 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such team
-
-  thrown in C:\xampp\htdocs\ral\modules\team\controllers\IndexController.php on line 30
-[01-Sep-2015 12:10:12 Europe/Berlin] PHP Notice:  Undefined variable: loginForm in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[01-Sep-2015 12:10:12 Europe/Berlin] PHP Fatal error:  Call to a member function getElement() on null in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[01-Sep-2015 12:11:34 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 151
-[01-Sep-2015 12:11:34 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
-[01-Sep-2015 12:11:56 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 285
-[01-Sep-2015 12:32:49 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/index/views/index/forgot-password.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
-[01-Sep-2015 12:32:49 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/index/views/index/forgot-password.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
-[01-Sep-2015 12:36:34 Europe/Berlin] PHP Notice:  Undefined variable: form in C:\xampp\htdocs\ral\modules\index\views\index\forgot-password.phtml on line 33
-[01-Sep-2015 12:36:34 Europe/Berlin] PHP Fatal error:  Call to a member function getElement() on null in C:\xampp\htdocs\ral\modules\index\views\index\forgot-password.phtml on line 33
-[01-Sep-2015 12:37:03 Europe/Berlin] PHP Fatal error:  Call to a member function renderElement() on null in C:\xampp\htdocs\ral\modules\index\views\index\forgot-password.phtml on line 33
-[01-Sep-2015 13:02:02 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
-[01-Sep-2015 13:02:02 Europe/Berlin] PHP Notice:  Undefined variable: loginForm in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[01-Sep-2015 13:02:02 Europe/Berlin] PHP Fatal error:  Call to a member function getElement() on null in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[01-Sep-2015 13:02:02 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
-[01-Sep-2015 13:02:02 Europe/Berlin] PHP Notice:  Undefined variable: loginForm in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[01-Sep-2015 13:02:02 Europe/Berlin] PHP Fatal error:  Call to a member function getElement() on null in C:\xampp\htdocs\ral\views\_header_main.phtml on line 25
-[01-Sep-2015 13:02:50 Europe/Berlin] PHP Notice:  Undefined variable: userService in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 47
-[01-Sep-2015 13:02:50 Europe/Berlin] PHP Fatal error:  Call to a member function getReminderUser() on null in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 47
-[01-Sep-2015 13:03:29 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[01-Sep-2015 13:03:29 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[01-Sep-2015 13:03:29 Europe/Berlin] PHP Fatal error:  Call to undefined method User_Index::reminderPassword() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
-[01-Sep-2015 13:05:30 Europe/Berlin] PHP Fatal error:  Class 'New-password_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
-[01-Sep-2015 13:08:48 Europe/Berlin] PHP Fatal error:  Class 'New-password_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
-[01-Sep-2015 13:11:44 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[01-Sep-2015 13:11:44 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[01-Sep-2015 13:14:52 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::getNewPasswordUser() in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
-[01-Sep-2015 13:19:32 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::getNewPasswordUser() in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
-[01-Sep-2015 13:19:51 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::getNewPasswordUser() in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 71
-[01-Sep-2015 13:19:55 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::getNewPasswordUser() in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 71
-[01-Sep-2015 13:21:26 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
-[01-Sep-2015 13:21:26 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
-[01-Sep-2015 13:22:22 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[01-Sep-2015 13:22:22 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[01-Sep-2015 13:22:48 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
-[01-Sep-2015 13:22:48 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
-[01-Sep-2015 13:22:48 Europe/Berlin] PHP Fatal error:  Call to undefined method User_Index::newPassword() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
-<<<<<<< HEAD
-[01-Sep-2015 17:11:42 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[01-Sep-2015 17:11:42 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[01-Sep-2015 17:13:16 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[01-Sep-2015 17:13:16 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[01-Sep-2015 17:24:36 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
-[01-Sep-2015 17:24:36 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
-[01-Sep-2015 17:24:37 Europe/Berlin] PHP Notice:  Undefined index: info in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 74
-[01-Sep-2015 17:24:37 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 74
-[01-Sep-2015 17:24:37 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
-[01-Sep-2015 17:24:37 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/index/views/index/new-password.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
-[01-Sep-2015 17:26:40 Europe/Berlin] PHP Notice:  Undefined index: info in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
-[01-Sep-2015 17:26:40 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
-[01-Sep-2015 17:26:47 Europe/Berlin] PHP Notice:  Undefined index: info in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
-[01-Sep-2015 17:26:47 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
-[01-Sep-2015 17:27:48 Europe/Berlin] PHP Notice:  Undefined index: info in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
-[01-Sep-2015 17:27:48 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
-[01-Sep-2015 17:27:48 Europe/Berlin] PHP Fatal error:  Call to undefined method TK_Text::showError() in C:\xampp\htdocs\ral\modules\index\views\index\new-password.phtml on line 4
-[01-Sep-2015 17:28:15 Europe/Berlin] PHP Notice:  Undefined index: info in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
-[01-Sep-2015 17:28:15 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
-[01-Sep-2015 17:28:15 Europe/Berlin] PHP Fatal error:  Call to undefined method TK_Text::showError() in C:\xampp\htdocs\ral\modules\index\views\index\new-password.phtml on line 4
-[01-Sep-2015 17:29:04 Europe/Berlin] PHP Notice:  Undefined index: info in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
-[01-Sep-2015 17:29:04 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
-[01-Sep-2015 17:29:33 Europe/Berlin] PHP Notice:  Undefined index: info in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
-[01-Sep-2015 17:29:33 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 72
-[01-Sep-2015 17:33:43 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Transaction_Exception' with message 'Commit failed. There is no active transaction.' in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php:239
-Stack trace:
-#0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1392): Doctrine_Transaction->commit(NULL)
-#1 C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php(59): Doctrine_Connection->commit()
-#2 C:\xampp\htdocs\ral\library\TK\Controller.php(44): Index_Index->forgotPassword()
-#3 C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php(12): Controller->_render(Object(Index_Index), 'forgot-password')
-#4 C:\xampp\htdocs\ral\public\index.php(25): Index_Index->render('forgot-password')
-#5 {main}
-  thrown in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php on line 239
-[01-Sep-2015 17:34:03 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[01-Sep-2015 17:34:03 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[01-Sep-2015 17:34:04 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[01-Sep-2015 17:34:04 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[01-Sep-2015 17:34:09 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Transaction_Exception' with message 'Commit failed. There is no active transaction.' in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php:239
-Stack trace:
-#0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1392): Doctrine_Transaction->commit(NULL)
-#1 C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php(60): Doctrine_Connection->commit()
-#2 C:\xampp\htdocs\ral\library\TK\Controller.php(44): Index_Index->forgotPassword()
-#3 C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php(12): Controller->_render(Object(Index_Index), 'forgot-password')
-#4 C:\xampp\htdocs\ral\public\index.php(25): Index_Index->render('forgot-password')
-#5 {main}
-  thrown in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php on line 239
-[01-Sep-2015 17:34:23 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[01-Sep-2015 17:34:23 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[01-Sep-2015 17:34:33 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Transaction_Exception' with message 'Commit failed. There is no active transaction.' in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php:239
-Stack trace:
-#0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1392): Doctrine_Transaction->commit(NULL)
-#1 C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php(60): Doctrine_Connection->commit()
-#2 C:\xampp\htdocs\ral\library\TK\Controller.php(44): Index_Index->forgotPassword()
-#3 C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php(12): Controller->_render(Object(Index_Index), 'forgot-password')
-#4 C:\xampp\htdocs\ral\public\index.php(25): Index_Index->render('forgot-password')
-#5 {main}
-  thrown in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php on line 239
-[01-Sep-2015 17:36:36 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[01-Sep-2015 17:36:36 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[01-Sep-2015 17:37:21 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[01-Sep-2015 17:37:21 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[01-Sep-2015 17:37:37 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[01-Sep-2015 17:37:37 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[01-Sep-2015 17:38:01 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[01-Sep-2015 17:38:01 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[01-Sep-2015 17:38:22 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[01-Sep-2015 17:38:22 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-[01-Sep-2015 17:38:54 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
-[01-Sep-2015 17:38:54 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
-=======
->>>>>>> aad2559ea342cf881c8a54d3facc4bab331daeaa
->>>>>>> 8bd5dc0b44bde27feac787e5b5946c55c0f4f9a2
-[01-Sep-2015 18:08:14 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such team
-
-  thrown in C:\xampp\htdocs\ral\modules\team\controllers\IndexController.php on line 30
+[02-Sep-2015 13:45:31 Europe/Berlin] PHP Warning:  require_once(Zend/Locale/Data/Translation.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Locale.php on line 370
+[02-Sep-2015 13:45:31 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Locale/Data/Translation.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Locale.php on line 370
+[02-Sep-2015 13:45:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:45:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:45:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:45:32 Europe/Berlin] PHP Warning:  require_once(Zend/Locale/Data/Translation.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Locale.php on line 370
+[02-Sep-2015 13:45:32 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Locale/Data/Translation.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Locale.php on line 370
+[02-Sep-2015 13:45:32 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:45:32 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:45:32 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:45:54 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:45:54 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:46:09 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:46:09 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:46:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:46:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:46:37 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:46:37 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:47:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:47:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:47:16 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 245
+[02-Sep-2015 13:47:16 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:47:16 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:48:58 Europe/Berlin] PHP Fatal error:  Class 'Zend_Currency' not found in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 245
+[02-Sep-2015 13:48:58 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:48:58 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:49:34 Europe/Berlin] PHP Warning:  require_once(Zend/Locale.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Currency.php on line 25
+[02-Sep-2015 13:49:34 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Locale.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Currency.php on line 25
+[02-Sep-2015 13:49:34 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:49:34 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:49:34 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:50:38 Europe/Berlin] PHP Warning:  require_once(Zend/Locale.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Locale\Data.php on line 26
+[02-Sep-2015 13:50:38 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Locale.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Locale\Data.php on line 26
+[02-Sep-2015 13:50:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:50:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:51:05 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\ral\library\Zend\Locale/Locale.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Locale\Data.php on line 26
+[02-Sep-2015 13:51:05 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\ral\library\Zend\Locale/Locale.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Locale\Data.php on line 26
+[02-Sep-2015 13:51:05 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:51:05 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:51:05 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:51:11 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\ral\library\Zend\Locale/Locale.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Locale\Data.php on line 26
+[02-Sep-2015 13:51:11 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\ral\library\Zend\Locale/Locale.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Locale\Data.php on line 26
+[02-Sep-2015 13:51:11 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:51:11 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:51:11 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:51:46 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:51:46 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:51:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:51:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:52:04 Europe/Berlin] PHP Warning:  require_once(Zend/Locale/Data.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Locale\Format.php on line 26
+[02-Sep-2015 13:52:04 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Locale/Data.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Locale\Format.php on line 26
+[02-Sep-2015 13:52:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:52:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:52:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:52:26 Europe/Berlin] PHP Warning:  require_once(Zend/Locale.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Currency.php on line 554
+[02-Sep-2015 13:52:26 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Locale.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Currency.php on line 554
+[02-Sep-2015 13:52:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:52:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:52:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:52:52 Europe/Berlin] PHP Warning:  require_once(Zend/Registry.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Locale.php on line 866
+[02-Sep-2015 13:52:52 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Registry.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Locale.php on line 866
+[02-Sep-2015 13:52:52 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:52:52 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:52:52 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:53:48 Europe/Berlin] PHP Warning:  require_once(Zend/Cache.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Locale\Data.php on line 935
+[02-Sep-2015 13:53:48 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Cache.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Locale\Data.php on line 935
+[02-Sep-2015 13:53:48 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:53:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:53:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:54:38 Europe/Berlin] PHP Warning:  require_once(Zend/Cache.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Locale\Data.php on line 935
+[02-Sep-2015 13:54:38 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Cache.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Locale\Data.php on line 935
+[02-Sep-2015 13:54:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:54:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:54:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:55:22 Europe/Berlin] PHP Warning:  require_once(Zend/Registry.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Locale.php on line 866
+[02-Sep-2015 13:55:22 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Registry.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Locale.php on line 866
+[02-Sep-2015 13:55:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:55:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:55:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:55:53 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\ral\library\ZendZend/Registry.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Locale.php on line 866
+[02-Sep-2015 13:55:53 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\ral\library\ZendZend/Registry.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Locale.php on line 866
+[02-Sep-2015 13:55:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:55:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:55:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:56:06 Europe/Berlin] PHP Warning:  require_once(Zend/Cache.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Locale\Data.php on line 935
+[02-Sep-2015 13:56:06 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Cache.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Locale\Data.php on line 935
+[02-Sep-2015 13:56:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:56:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:56:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:56:29 Europe/Berlin] PHP Warning:  require_once(Zend/Cache.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Locale\Data.php on line 935
+[02-Sep-2015 13:56:29 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Cache.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Locale\Data.php on line 935
+[02-Sep-2015 13:56:29 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:56:30 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:56:30 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:56:57 Europe/Berlin] PHP Warning:  require_once(Zend\Cache\Backend\File.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Cache.php on line 133
+[02-Sep-2015 13:56:57 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend\Cache\Backend\File.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Cache.php on line 133
+[02-Sep-2015 13:56:58 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:56:58 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:56:58 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:58:02 Europe/Berlin] PHP Warning:  require_once(Zend/Cache/Backend/ExtendedInterface.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Cache\Backend\File.php on line 26
+[02-Sep-2015 13:58:02 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Cache/Backend/ExtendedInterface.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Cache\Backend\File.php on line 26
+[02-Sep-2015 13:58:03 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:58:03 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:58:03 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:58:38 Europe/Berlin] PHP Warning:  require_once(Zend/Cache/Backend/Interface.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Cache\Backend\ExtendedInterface.php on line 26
+[02-Sep-2015 13:58:38 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Cache/Backend/Interface.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Cache\Backend\ExtendedInterface.php on line 26
+[02-Sep-2015 13:58:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:58:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:58:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:58:54 Europe/Berlin] PHP Warning:  require_once(Zend/Cache/Backend/Interface.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Cache\Backend\ExtendedInterface.php on line 26
+[02-Sep-2015 13:58:54 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Cache/Backend/Interface.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Cache\Backend\ExtendedInterface.php on line 26
+[02-Sep-2015 13:58:54 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:58:54 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:59:13 Europe/Berlin] PHP Warning:  require_once(Zend\Cache\Core.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Cache.php on line 175
+[02-Sep-2015 13:59:13 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend\Cache\Core.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Cache.php on line 175
+[02-Sep-2015 13:59:13 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:59:13 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:59:51 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\ral\library\Zend/Zend\Cache\Core.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Cache.php on line 175
+[02-Sep-2015 13:59:51 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\ral\library\Zend/Zend\Cache\Core.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Cache.php on line 175
+[02-Sep-2015 13:59:51 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:59:52 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 13:59:59 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\ral\library\ZendZend\Cache\Core.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Cache.php on line 175
+[02-Sep-2015 13:59:59 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\ral\library\ZendZend\Cache\Core.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Cache.php on line 175
+[02-Sep-2015 14:00:00 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 14:00:00 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 14:00:10 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 14:00:10 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 14:00:29 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 14:00:30 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:00:59 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:00:59 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:01:43 Europe/Berlin] PHP Fatal error:  Call to undefined method Zend_Currency::getCurrency() in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 247
+[02-Sep-2015 17:01:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:01:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:01:57 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:01:57 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:02:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:02:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:02:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:02:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:02:43 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:02:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:02:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:02:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:03:05 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:03:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:05:29 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 281
+[02-Sep-2015 17:09:06 Europe/Berlin] PHP Warning:  require_once(Zend/Locale/Math.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Locale\Format.php on line 303
+[02-Sep-2015 17:09:06 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Locale/Math.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Locale\Format.php on line 303
+[02-Sep-2015 17:09:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:09:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:12:20 Europe/Berlin] PHP Fatal error:  Class 'Zend_Registry' not found in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 244
+[02-Sep-2015 17:12:20 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[02-Sep-2015 17:12:20 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44

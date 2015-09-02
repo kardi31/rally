@@ -237,6 +237,15 @@ class Account_Index extends Controller{
     }
     
     public function premium(){
+        
+        require_once(BASE_PATH."/library/Zend/Locale.php");
+        require_once(BASE_PATH."/library/Zend/Currency.php");
+        $currency = new Zend_Currency();
+        $url = "https://currency-api.appspot.com/api/GBP/".$currency->getShortName().".json?amount=2.00";
+
+        $result = file_get_contents($url);
+        $rateRow = json_decode($result,true);
+        
         Service::loadModels('team', 'team');
 	$form = $this->getForm('user','premium');
 	
@@ -262,6 +271,8 @@ class Account_Index extends Controller{
         }
 	
 	$this->view->assign('form',$form);
+	$this->view->assign('currency',$currency);
+	$this->view->assign('rateRow',$rateRow);
     }
     
     public function goldMembership(){

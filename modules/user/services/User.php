@@ -217,7 +217,6 @@ class UserService extends Service{
         $q->addWhere("LOWER(u.username) like ?",$username."%");
         $q->orderBy('u.username ASC');
         $q->addWhere('u.active = 1');
-        echo $q->getSqlQuery();exit;
         $q = TK_Paginator::paginate($q,10);
         return $q->execute(array(),$hydrationMode);
     }

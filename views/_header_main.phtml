@@ -22,7 +22,7 @@
                 <input required type="password" name="password" class="textInput" placeholder='<?= $this->translate('Password'); ?>' />
                 <button type="submit" name="submit" class='logIn btn'><?= $this->translate('LOGIN'); ?></button>
                 <?php
-                if($loginForm->getElement('recaptcha')){
+                if(isset($loginForm)&&$loginForm->getElement('recaptcha')){
                     echo $loginForm->getElement('recaptcha')->renderElement();
                 }
                 ?> 

@@ -265,6 +265,10 @@ class User_Index extends Controller{
     }
     
     public function registerComplete(){
+        
+        $loginForm = $this->getForm('user','login');
+        $this->view->assign('loginForm',$loginForm);
+        
 	$this->getLayout()->setLayout('main');
     }
     
@@ -503,10 +507,12 @@ class User_Index extends Controller{
                     TK_Helper::redirect('/user/show-message-box/'.$user['Team']['id'].'?msg=too+fast');
                     exit;
                 }
-//                
+                
+                
                 $values = $_POST;
 		$messageService->addMessage($user['id'],$authenticatedUser['id'],$values);
-		TK_Helper::redirect('/user/show-message-box/'.$user['id']."?msg=message+sent");
+
+                TK_Helper::redirect('/user/show-message-box/'.$user['id']."?msg=message+sent");
 //		
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
