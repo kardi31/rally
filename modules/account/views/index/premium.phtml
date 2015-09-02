@@ -27,22 +27,62 @@
         <table class="table">
             <tr>
                 <td>100 <img class="coin" src="/images/layout/coin.png" /></td>
-                <td rel="2f">11,60zł</td>
+                <td rel="2f">
+                    <?php
+                    try{
+                        $currency->setValue(round(2*$rateRow['rate'],2));
+                        echo $currency;
+                    }
+                    catch(Exception $e){
+                        echo "&pound; 2.00";
+                    }
+                    ?> 
+                </td>
                 <td></td>
             </tr>
             <tr>
                 <td>315 <img class="coin" src="/images/layout/coin.png" /></td>
-                <td rel="6f">34,80zł</td>
+                <td rel="6f">
+                    <?php
+                    try{
+                        $currency->setValue(round(6*$rateRow['rate'],2));
+                        echo $currency;
+                    }
+                    catch(Exception $e){
+                        echo "&pound; 6.00";
+                    }
+                    ?> 
+                </td>
                 <td>5% more</td>
             </tr>
             <tr>
                 <td>550 <img class="coin" src="/images/layout/coin.png" /></td>
-                <td rel="10f">58,00zł</td>
+                <td rel="10f">
+                    <?php
+                    try{
+                        $currency->setValue(round(10*$rateRow['rate'],2));
+                        echo $currency;
+                    }
+                    catch(Exception $e){
+                        echo "&pound; 10.00";
+                    }
+                    ?> 
+                </td>
                 <td>10% more</td>
             </tr>
             <tr>
                 <td>1150 <img class="coin" src="/images/layout/coin.png" /></td>
-                <td rel="20f">116,00zł</td>
+                <td rel="20f">
+                    <?php
+                    try{
+                        $currency->setValue(round(20*$rateRow['rate'],2));
+                        echo $currency;
+                    }
+                    catch(Exception $e){
+                        echo "&pound; 20.00";
+                    }
+                    ?> 
+                </td>
                 <td>15% more</td>
             </tr>
         </table>

@@ -122,6 +122,8 @@ class FriendsService extends Service{
         $q->leftJoin('f.UserFriends uf');
         $q->leftJoin('uf.Team t');
         $q->leftJoin('f.User u');
+        $q->addWhere('u.active = 1');
+        $q->addWhere('uf.active = 1');
         $q->leftJoin('u.Team t2');
         $q->select('uf.*,f.*,t.id,u.id,u.username,t2.id'); 
         $q->addWhere('f.accepted = 1');

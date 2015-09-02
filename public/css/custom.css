@@ -20,6 +20,7 @@
     2.8 Transfer box
     2.9 Gold box
     2.10 Notification box
+    2.11 User message box
   3. Office
     3.1 My cars page + Sell
     3.2 Sponsor
@@ -259,7 +260,7 @@ label[for="rememberMe"],.topToolbarBottom a{
     margin-right:40px;
 }
 .rightMainPageBox label{
-    
+    max-width:220px;
     margin-top:15px;
     display:block;
 }
@@ -655,6 +656,15 @@ footer{
 }
 
 /*
+    2.11 User message box
+*/
+
+.messageBoxContent{
+    max-width:550px;
+    word-wrap: break-word;
+}
+
+/*
     3.1 My cars + sell
 */
 
@@ -812,6 +822,11 @@ footer{
 .sponsor div span{
     margin-left:15px;
     display:block;
+}
+
+.sponsorListInfo{
+    padding-left:20px;
+    margin-bottom:20px;
 }
 
 /* 

@@ -262,7 +262,10 @@ class Element{
             case "notEmpty":
                 $response = Validator::validateNotEmpty($var);
                 break;
-            case "stringLength":
+            case "letterLength":
+                $response = Validator::validateLetterLength($var,$options);
+                break;
+            case "le":
                 $response = Validator::validateStringLength($var,$options);
                 break;
             case "match":

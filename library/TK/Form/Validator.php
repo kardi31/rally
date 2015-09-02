@@ -79,6 +79,17 @@ class Validator{
         return $response;
     }
     
+    public static function validateLetterLength($var,$options) {
+        $var = preg_replace("/[^A-Za-z]/","",$var);
+        if(array_key_exists('min',$options)&&strlen($var)<$options['min']):
+            $response['result'] = false;
+            $response['errorMessage'] = "This field must contain at least ".$options['min']." letters";
+        else:
+            $response['result'] = true;
+        endif;
+        return $response;
+    }
+    
     public static function validateMatch($var,$options,$method) {
         // zmienna do której porównujemy
         if($method=="POST"):

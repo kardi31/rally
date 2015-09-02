@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/xampp/htdocs/ral/public/assets/global/plugins/bootstrap-pwstrength/GPL-LICENSE.txt</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/my-friendly-rallies.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/models/BaseRally.php</file>
@@ -37,10 +38,64 @@
             <file>file:/C:/xampp/htdocs/ral/views/message/short-error.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/list-friendly-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/show-message-box.phtml</file>
+=======
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/rules.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/my-friendly-rallies.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/services/Message.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/form/Post.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/services/Notification.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/views/index/show-team.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/admin/add-big-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/support.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/form/FreeAgent.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/admin/show-rally-stages.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Helper.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/Zend/Currency.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/activate.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/admin/list-user.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/people/views/index/sell-player.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-cars.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/form/Thread.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Router.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/my-league-rallies.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/admin/people-duplicate.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/library/DataTables/OfferIllegal.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/form/CreateFriendly.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-training-report.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/views/index/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/data/schema/schema.yml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/admin/car-duplicate.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/admin/list-car-illegal-transfer.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/View.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Gold.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-people.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-my-player-offers.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Element.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/banner/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/library/DataTables/Offer.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Register.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/create-friendly-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/services/RallyData.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/library/DataTables/Stage.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/views/admin/list-sponsor.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/new-password.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/services/Team.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/admin/list-people-illegal-transfer.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/error404.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/show-message-box.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/list-friendly-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/services/Friends.php</file>
+>>>>>>> 6cf87c52a83daed420f33c98eff3c0db23745777
             <file>file:/C:/xampp/htdocs/ral/modules/forum/views/admin/list-post.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Rally.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-offer.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/services/User.php</file>
+<<<<<<< HEAD
             <file>file:/C:/xampp/htdocs/ral/modules/forum/models/Post.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/admin/add-league-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/models/Rally.php</file>
@@ -93,10 +148,71 @@
             <file>file:/C:/xampp/htdocs/ral/modules/user/views/admin/list-message.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/team/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Layout.php</file>
+=======
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/my-players-market.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/admin/add-league-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/db.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/privacy-policy.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/banner/views/index/show-left-banner.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/public/plugins/jMenu/js/jMenu.jquery.js</file>
+            <file>file:/C:/xampp/htdocs/ral/public/css/custom.css</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/admin/show-rally-detailed-result.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/views/index/change-name.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-finances.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/show-calendar.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-car-market.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_header_main.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/AdminRouter.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/admin/login.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Validator.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/services/Mail.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/league/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/news/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/show-thread.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_header.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Radio.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/form/Bid.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/sponsor.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/invite-to-game.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/services/Market.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/people/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/register-complete.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/menu.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/test/views/index/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/login.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/ForgotPassword.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Checkbox.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Login.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/gold-membership.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/show-favourite-forums.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/delete-thread.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/people/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/list-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/admin/show-rally-crews.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/show-friends.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_header_nolog.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/TestController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/faq.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/player-monitor.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/data/schema/schema.yml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/car-dealer.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/test/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/my-cars-market.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/my-cars.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/admin/list-message.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/controllers/AdminController.php</file>
+>>>>>>> 6cf87c52a83daed420f33c98eff3c0db23745777
             <file>file:/C:/xampp/htdocs/ral/library/TK/Text.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/TestController.php</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Form.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/car/views/index/change-name.phtml</file>
+<<<<<<< HEAD
             <file>file:/C:/xampp/htdocs/ral/modules/forum/library/DataTables/Thread.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-friendly-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Prizes.php</file>
@@ -110,10 +226,28 @@
             <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Select.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/add-message.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/my-rallies.phtml</file>
+=======
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/search-users.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-friendly-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/free-agency.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/library/DataTables/CarOfferIllegal.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/admin/list-car-transfer.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/premium.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/edit-post.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Recaptcha.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/calculate-stage-time.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/form/BidPlayer.php</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_head.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/bid-player.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/add-message.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/my-rallies.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/tactics.phtml</file>
+>>>>>>> 6cf87c52a83daed420f33c98eff3c0db23745777
             <file>file:/C:/xampp/htdocs/ral/modules/team/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/cron/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-car-offer.phtml</file>
+<<<<<<< HEAD
             <file>file:/C:/xampp/htdocs/ral/modules/rally/data/schema/schema.yml</file>
             <file>file:/C:/xampp/htdocs/ral/views/_head_main.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/league/views/index/show-table.phtml</file>
@@ -147,6 +281,50 @@
             <file>file:/C:/xampp/htdocs/ral/modules/people/services/People.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/register.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/show-category.phtml</file>
+=======
+            <file>file:/C:/xampp/htdocs/ral/modules/market/models/BaseOffer.php</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_head_main.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/edit-thread.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/bid-car.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/library/DataTables/Crew.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/league/views/index/show-table.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/show-forum.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/admin/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/car-monitor.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/views/index/sell-car.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/admin/list-people-transfer.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/news/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/data/schema/schema.yml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/forgot-password.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/library/DataTables/StageResult.php</file>
+            <file>file:/C:/xampp/htdocs/ral/layout/page.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/delete-post.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/views/admin/add-sponsor.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/library/DataTables/RallyDetailedResult.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/form/Car.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/adminindex.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/models/CarOffer.php</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_footer_main.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/.gitignore</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/mail/template.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/admin/list-people-future-transfer.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Message.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/form/NameChange.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/admin/show-rally-result.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-market.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/views/admin/list-thread.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/my-players.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/models/Offer.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-account.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/form/Offer.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/people/services/People.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/library/DataTables/RallyResult.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/show-category.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/register.phtml</file>
+>>>>>>> 6cf87c52a83daed420f33c98eff3c0db23745777
         </group>
     </open-files>
 </project-private>
