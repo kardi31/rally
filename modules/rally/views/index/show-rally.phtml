@@ -282,7 +282,39 @@ $startDate2 = clone $startDate;
     </div>
     <div class="showRallyBox rallyResultWrapper mainUserBox <?php if($rally['date']<=date('Y-m-d H:i:s')) echo "active"?>" id="result">
         
-        <?php if(count($rallyResults)>0){ ?>
+        <?php if(isset($partialResults)){ ?>
+        <h3 class="h4">Results after stage <?= $partialResults[0]['number_of_stages']; ?></h3>
+        <table class="mb20">
+            <?php foreach($partialResults as $key =>  $result): ?>
+                <tr>
+                    <td>
+                        <?php if($result['out_of_race']==0){
+                            echo $key+1;
+                        }
+                        ?>
+                    </td>
+                    <td>
+                        <?php echo $result['Crew']['Team']['name']; ?>
+                    </td>
+                    <td>
+                        <?php echo $result['Crew']['Driver']['last_name']." ".$result['Crew']['Driver']['first_name']; ?> - 
+                        <?php echo $result['Crew']['Pilot']['last_name']." ".$result['Crew']['Pilot']['first_name']; ?>
+                    </td>
+                    <td>
+                         <?php if($result['out_of_race']==0){
+                            echo $result['total_time'];
+                        }
+                        else{
+                            echo $this->translate("Accident on stage no")." ".$result['stage_out_number'];
+                        }
+                        ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php } ?>
+        
+        <?php if(isset($rallyResults)&&count($rallyResults)>0){ ?>
         <h3 class="h4">Overall results</h3>
         <table class="mb20">
             <?php foreach($rallyResults as $result): ?>

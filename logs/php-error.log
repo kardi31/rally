@@ -177,3 +177,57 @@ Stack trace:
 #5 C:\xampp\htdocs\ral\modules\market\services\Market.php(363): Doctrine_Query->fetchArray()
 #6 C:\xampp\htdocs\ral\modules\market\controllers\IndexController.php(444): MarketService->getA in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
 [02-Sep-2015 20:23:25 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[03-Sep-2015 09:24:16 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 281
+[03-Sep-2015 09:24:17 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:24:17 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:24:17 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:24:17 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:24:34 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:24:34 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:24:34 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:24:34 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:24:50 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:24:50 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:24:56 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:24:56 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:25:15 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:25:15 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:25:15 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:25:15 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:25:23 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 317
+[03-Sep-2015 09:25:23 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:25:23 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:25:23 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:25:23 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:25:49 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:25:49 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:25:49 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:25:49 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:25:54 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:25:54 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:25:54 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:25:54 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:26:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[03-Sep-2015 09:26:35 Europe/Berlin] PHP Notice:  Undefined index: position in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 292
+[03-Sep-2015 09:26:35 Europe/Berlin] PHP Notice:  Undefined index: position in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 292
+[03-Sep-2015 09:26:35 Europe/Berlin] PHP Notice:  Undefined index: position in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 292
+[03-Sep-2015 09:26:35 Europe/Berlin] PHP Notice:  Undefined index: position in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 292
+[03-Sep-2015 09:26:35 Europe/Berlin] PHP Notice:  Undefined index: position in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 292
+[03-Sep-2015 09:26:35 Europe/Berlin] PHP Notice:  Undefined index: position in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 292
+[03-Sep-2015 09:26:35 Europe/Berlin] PHP Notice:  Undefined index: position in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 292
+[03-Sep-2015 09:26:35 Europe/Berlin] PHP Notice:  Undefined index: position in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 292
+[03-Sep-2015 09:26:35 Europe/Berlin] PHP Notice:  Undefined index: position in C:\xampp\htdocs\ral\modules\rally\views\index\show-rally.phtml on line 292
+[03-Sep-2015 09:26:36 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:26:36 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:26:36 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:26:36 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:27:17 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:27:17 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:27:17 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:27:17 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:27:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[03-Sep-2015 09:29:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[03-Sep-2015 09:29:15 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:29:15 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37
+[03-Sep-2015 09:29:15 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 27
+[03-Sep-2015 09:29:15 Europe/Berlin] PHP Notice:  Undefined index: last_active in C:\xampp\htdocs\ral\modules\index\views\index\show-friends.phtml on line 37

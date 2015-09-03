@@ -49,6 +49,13 @@ class Rally_Index extends Controller{
             $this->view->assign('rallyResults',$rallyResults);
         }
         
+        if($rally['date']<date('Y-m-d H:i:s')&&!$rally['finished']){
+            
+            $partialResults = $rallyService->calculatePartialRallyResult($rally);
+            $this->view->assign('partialResults',$partialResults);
+            
+        }
+        
         $startDate = new DateTime($rally['date']);
         $signUpFinish = clone $startDate;
         $signUpFinish->sub(new DateInterval('PT15M'));
