@@ -246,6 +246,7 @@ class Element{
     }
     
     public function callValidator($validator,$var,$options = null){
+        $var = strip_tags($var);
         switch($validator):
             case "int":
                 $response = Validator::validateInt($var);
@@ -265,7 +266,7 @@ class Element{
             case "letterLength":
                 $response = Validator::validateLetterLength($var,$options);
                 break;
-            case "le":
+            case "stringLength":
                 $response = Validator::validateStringLength($var,$options);
                 break;
             case "match":

@@ -50,10 +50,8 @@ class Rally_Index extends Controller{
         }
         
         if($rally['date']<date('Y-m-d H:i:s')&&!$rally['finished']){
-            
             $partialResults = $rallyService->calculatePartialRallyResult($rally);
             $this->view->assign('partialResults',$partialResults);
-            
         }
         
         $startDate = new DateTime($rally['date']);
@@ -198,17 +196,19 @@ class Rally_Index extends Controller{
     
     public function myRallies(){
         
+        Service::loadModels('people', 'people');
+        Service::loadModels('car', 'car');
         Service::loadModels('team', 'team');
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
         
         $rallyService = parent::getService('rally','rally');
-//        $rallies = $rallyService->getAllFutureRallies();
+        $rallies = $rallyService->getAllFutureRallies();
         
         $rallies = $rallyService->getAllTeamRallies($user['Team']['id'],30,Doctrine_Core::HYDRATE_RECORD);
 
         $this->view->assign('rallies',$rallies);
-//        $this->view->assign('futureTeamRallies',$futureTeamRallies);
+        $this->view->assign('futureTeamRallies',$futureTeamRallies);
     }
     
     public function listFriendlyRally(){
@@ -333,6 +333,11 @@ class Rally_Index extends Controller{
         if($friendly['Rally']['finished']){
             $rallyResults = $rallyService->getRallyResults($friendly['Rally']['id'],'rally_id');
             $this->view->assign('rallyResults',$rallyResults);
+        }
+        
+        if($friendly['Rally']['date']<date('Y-m-d H:i:s')&&!$friendly['Rally']['finished']){
+            $partialResults = $rallyService->calculatePartialRallyResult($friendly['Rally']);
+            $this->view->assign('partialResults',$partialResults);
         }
         
         $invitedUsers = $rallyService->getFriendlyInvitedUsers($friendly,Doctrine_Core::HYDRATE_ARRAY);

@@ -21,6 +21,7 @@
     2.9 Gold box
     2.10 Notification box
     2.11 User message box
+    2.12 My account
   3. Office
     3.1 My cars page + Sell
     3.2 Sponsor
@@ -367,12 +368,20 @@ footer{
     /*background-size:100;*/
 }
 
-.logOut{
+.logOutBox{
     display:block;
     font-size:12px;
     margin-left:50px;  
     float: right;
     clear: right;
+    text-align:right;
+}
+.myAccount,.logOut{
+    /*display:block;*/
+    font-size:12px;
+    margin-right:15px;
+    /*margin-left:50px;*/  
+    /*float: right;*/
 }
 
 /* 
@@ -662,6 +671,20 @@ footer{
 .messageBoxContent{
     max-width:550px;
     word-wrap: break-word;
+}
+
+/*
+    2.12 User account
+
+*/
+
+.myAccountBtns a{
+    padding:10px 5px;
+    border:1px solid #212121;
+}
+
+.myAccountBtns a:hover{
+    color:#868686;
 }
 
 /*

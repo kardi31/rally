@@ -521,5 +521,60 @@ class User_Index extends Controller{
 	$this->view->assign('messages',$messages);
 	$this->view->assign('form',$form);
     }
+    
+    public function myAccount(){
+        $this->getLayout()->setLayout('page');
+    }
+    
+    public function changePassword(){
+        $mailService = parent::getService('user','mail');
+        $userService = parent::getService('user','user');
+        
+        
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        $form = $this->getForm('user','changePassword');
+        $this->view->assign('form',$form);
+        
+        if($form->isSubmit()){
+            if($form->isValid()){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                
+                $oldPw = $_POST['oldpw'];
+                
+                $checkNewPwString = TK_Text::encode($oldPw, $user['salt']);
+                $checkNewPw = ($checkNewPwString==$user['password']);
+                
+                if(!$checkNewPw){
+                    TK_Helper::redirect('/user/change-password?msg=old+wrong');
+                }
+                elseif($_POST['password']!=$_POST['password2']){
+                    TK_Helper::redirect('/user/change-password?msg=not+match');
+                }
+                else{
+                    $newPassword = $_POST['password'];
+
+                    $salt = TK_Text::createUniqueToken();
+                    $token = TK_Text::createUniqueToken();
+                    $newPasswordEncoded = TK_Text::encode($newPassword, $salt);
+                    
+                    $user->set('salt',$salt);
+                    $user->set('token',$token);
+                    $user->set('password',$newPasswordEncoded);
+                    $user->save();
+                    
+                    $userService->authenticate($user,$newPassword);
+
+                    TK_Helper::redirect('/user/change-password?msg=changed');
+                    Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+                   
+                }
+            }
+        }
+        
+        $this->getLayout()->setLayout('page');
+    }
 }
 ?>

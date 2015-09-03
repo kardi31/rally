@@ -144,6 +144,7 @@ class Form extends Element{
     
     public function callValidator($validator,$var,$options = null){
    
+        $var = strip_tags($var);
         switch($validator):
             case "int":
                 $response = Validator::validateInt($var);

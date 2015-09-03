@@ -33,10 +33,15 @@
                             <?php if($rally['finished']){ ?>
                                 <span class="label label-primary">Rally finished</span>
                             <?php } ?>
+                                
+                            <?php if($rally['Friendly']['invite_only']){ ?>
+                                <span class="label label-success">Public</span>
+                            <?php } ?>
+                                
+                            <?php if(!$rally['Friendly']['invite_only']){ ?>
+                                <span class="label label-danger">Private</span>
+                            <?php } ?>
 
-                            <?php if($rally['big_awards']==1): ?>
-                                <img src="/images/b_letter_small.gif" alt="Big awards" title="Big awards" />
-                            <?php endif; ?>
 
                             <?php if((is_array($futureTeamRallies)&&in_array($rally['id'],$futureTeamRallies))||$rally['id']==$futureTeamRallies){
                                 echo "<span class='label label-info'>".$this->translate('Joined')."</span>"; 

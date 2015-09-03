@@ -6,7 +6,7 @@
         <?php foreach($friends as $friend): ?>
                 <?php 
                 if($friend['user_id']==$user['id']){
-                    if(strtotime($friend['UserFriends']['last_active'])>strtotime("-5 minutes")){
+                    if(!empty($friend['UserFriends']['last_active'])&&strtotime($friend['UserFriends']['last_active'])>strtotime("-5 minutes")){
                         echo "<li class='active'>";
                     }
                     else{
@@ -15,7 +15,7 @@
 
                     echo '<a href="/team/show-team/'.$friend['UserFriends']['Team']['id'].'">'.TK_Text::truncate($friend['UserFriends']['username'],15).'</a>'; 
                     
-                    if(strtotime($friend['UserFriends']['last_active'])>strtotime("-5 minutes")){
+                    if(!empty($friend['UserFriends']['last_active'])&&strtotime($friend['UserFriends']['last_active'])>strtotime("-5 minutes")){
                         echo "<img src='/images/layout/user-active.png' alt='User active' title='User active' />";
                     }
                     else{
@@ -24,7 +24,7 @@
                     echo '<a href="/user/show-message-box/'.$friend['UserFriends']['id'].'#sendMessage"><i class="fa fa-envelope-o"></i></a>';
                 }
                 else{
-                    if(strtotime($friend['User']['last_active'])>strtotime("-5 minutes")){
+                    if(!empty($friend['User']['last_active'])&&strtotime($friend['User']['last_active'])>strtotime("-5 minutes")){
                         echo "<li class='active'>";
                     }
                     else{
@@ -34,7 +34,7 @@
 
                     echo '<a href="/team/show-team/'.$friend['User']['Team']['id'].'">'.TK_Text::truncate($friend['User']['username'],15).'</a>'; 
                     
-                    if(strtotime($friend['User']['last_active'])>strtotime("-5 minutes")){
+                    if(!empty($friend['User']['last_active'])&&strtotime($friend['User']['last_active'])>strtotime("-5 minutes")){
                         echo "<img src='/images/layout/user-active.png' alt='User active' title='User active' />";
                     }
                     else{
