@@ -1,0 +1,42 @@
+<?php if(isset($_GET['msg'])){
+    if($_GET['msg']=='changed'){
+        echo $this->showSuccess('Your email has been changed.');
+    }
+    elseif($_GET['msg']=='password wrong'){
+        echo $this->showError("Entered password is not correct");
+    }
+    elseif($_GET['msg']=='old email wrong'){
+        echo $this->showError("Current email address is incorrect");
+    }
+    elseif($_GET['msg']=='email registered'){
+        echo $this->showError("This email is already registered in FastRally");
+    }
+}
+?>
+<div class="mainUserBox createFriendlyBox">
+    <h4 class="boxHeader"><?= $this->translate('Change email'); ?></h4>
+
+    <div class="staticWrapper">
+        <form  method="POST">
+            <div class='form-group'>
+                <label class='control-label col-md-4' for="oldemail"><?= $this->translate('Current email address'); ?> *</label>
+                <div class='col-md-8'>
+                    <?php echo $form->getElement('oldemail')->renderElement(); ?>
+                </div>
+            </div>
+            <div class='form-group'>
+                <label class='control-label col-md-4' for="newemail"><?= $this->translate('New email address'); ?> *</label>
+                <div class='col-md-8'>
+                    <?php echo $form->getElement('newemail')->renderElement(); ?>
+                </div>
+            </div>
+            <div class='form-group'>
+                <label class='control-label col-md-4' for="password"><?= $this->translate('Your password'); ?> *</label>
+                <div class='col-md-8'>
+                    <?php echo $form->getElement('password')->renderElement(); ?>
+                </div>
+            </div>
+                    <?php echo $form->getElement('submit')->renderElement(); ?>
+        </form>
+    </div>
+</div>

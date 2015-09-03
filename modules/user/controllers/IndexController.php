@@ -576,5 +576,61 @@ class User_Index extends Controller{
         
         $this->getLayout()->setLayout('page');
     }
+    
+    public function changeEmail(){
+        $mailService = parent::getService('user','mail');
+        $userService = parent::getService('user','user');
+        
+        
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        $form = $this->getForm('user','changeEmail');
+        $this->view->assign('form',$form);
+        
+        if($form->isSubmit()){
+            if($form->isValid()){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                
+                $oldPw = $_POST['password'];
+                $checkNewPwString = TK_Text::encode($oldPw, $user['salt']);
+                $checkNewPw = ($checkNewPwString==$user['password']);
+                
+                if(!$checkNewPw){
+                    TK_Helper::redirect('/user/change-email?msg=password+wrong');
+                }
+                
+                if(!$user2 = $userService->getUser($_POST['oldemail'],'email')){
+                    TK_Helper::redirect('/user/change-email?msg=old+email+wrong');
+                    exit;
+                }
+                
+                if($user2['id'] != $user['id']){
+                    TK_Helper::redirect('/user/change-email?msg=old+email+wrong');
+                    exit;
+                }
+                if($userService->getUser($_POST['newemail'],'email')){
+                    TK_Helper::redirect('/user/change-email?msg=email+registered');
+                    exit;
+                }      
+                
+                $newEmail = $_POST['newemail'];
+
+                
+
+                $user->set('email',$newEmail);
+                $user->save();
+
+                $userService->refreshAuthentication();
+
+                TK_Helper::redirect('/user/change-email?msg=changed');
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+                   
+            }
+        }
+        
+        $this->getLayout()->setLayout('page');
+    }
 }
 ?>
