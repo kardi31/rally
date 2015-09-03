@@ -26,6 +26,7 @@ class Team_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
         
         
+        
         if(!$team = $teamService->getTeamWithLeague($GLOBALS['urlParams'][1],$season)){
             throw new TK_Exception('No such team',404);
             exit;
@@ -33,6 +34,15 @@ class Team_Index extends Controller{
         
         $friendInvited = $friendsService->checkFriendInvited($team['User']['id'],$user['id']);
 	
+        if(strlen(TK_Helper::getRealIpAddr())&&TK_Helper::getRealIpAddr()!='::1'){
+            $realIp = TK_Helper::getRealIpAddr();
+        }
+        else{
+            $realIp = '2.218.26.230';
+        }
+        $xml = simplexml_load_file("http://www.geoplugin.net/xml.gp?ip=".$realIp);
+        
+        $this->view->assign('countryCode',$xml->geoplugin_countryCode);
         
 	$awards = $rallyService->getTeamAwards($team['id']);
         

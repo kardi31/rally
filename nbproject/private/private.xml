@@ -13,6 +13,7 @@
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/admin/add-big-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/team/views/index/show-team.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/library/Doctrine/Query/Abstract.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/rally-result.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Helper.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>

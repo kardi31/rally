@@ -408,3 +408,9 @@ Stack trace:
 [03-Sep-2015 16:30:09 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
 [03-Sep-2015 17:59:10 Europe/Berlin] PHP Fatal error:  Call to a member function renderElement() on null in C:\xampp\htdocs\ral\modules\user\views\index\edit-details.phtml on line 21
 [03-Sep-2015 17:59:10 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[03-Sep-2015 22:28:03 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[03-Sep-2015 22:29:34 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[03-Sep-2015 22:29:35 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[03-Sep-2015 22:29:46 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[03-Sep-2015 22:29:58 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[03-Sep-2015 22:30:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
