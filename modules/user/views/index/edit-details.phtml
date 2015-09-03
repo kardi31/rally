@@ -1,0 +1,39 @@
+<?php if(isset($_GET['msg'])){
+    if($_GET['msg']=='changed'){
+        echo $this->showSuccess('Your password has been changed.');
+    }
+    elseif($_GET['msg']=='old wrong'){
+        echo $this->showError("Old password is wrong");
+    }
+    elseif($_GET['msg']=='not match'){
+        echo $this->showError("Two passwords you entered don't match");
+    }
+}
+?>
+<div class="mainUserBox createFriendlyBox">
+    <h4 class="boxHeader"><?= $this->translate('Change password'); ?></h4>
+
+    <div class="staticWrapper">
+        <form  method="POST">
+            <div class='form-group'>
+                <label class='control-label col-md-4' for="first_name"><?= $this->translate('Type in your old password'); ?> *</label>
+                <div class='col-md-8'>
+                    <?php echo $form->getElement('first_name')->renderElement(); ?>
+                </div>
+            </div>
+            <div class='form-group'>
+                <label class='control-label col-md-4' for="last_name"><?= $this->translate('New password'); ?> *</label>
+                <div class='col-md-8'>
+                    <?php echo $form->getElement('last_name')->renderElement(); ?>
+                </div>
+            </div>
+            <div class='form-group'>
+                <label class='control-label col-md-4' for="country"><?= $this->translate('Repeat new password'); ?> *</label>
+                <div class='col-md-8'>
+                    <?php echo $form->getElement('country')->renderElement(); ?>
+                </div>
+            </div>
+                    <?php echo $form->getElement('submit')->renderElement(); ?>
+        </form>
+    </div>
+</div>
