@@ -414,3 +414,60 @@ Stack trace:
 [03-Sep-2015 22:29:46 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
 [03-Sep-2015 22:29:58 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
 [03-Sep-2015 22:30:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 10:31:21 Europe/Berlin] PHP Fatal error:  Call to undefined method LoginService::saveLoginArray() in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 180
+[04-Sep-2015 10:31:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 10:31:53 Europe/Berlin] PHP Fatal error:  Call to undefined method TK_Helper::getInstance() in C:\xampp\htdocs\ral\modules\user\services\Login.php on line 31
+[04-Sep-2015 10:31:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 10:31:54 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 10:32:33 Europe/Berlin] PHP Warning:  gethostbyaddr(): Address is not a valid IPv4 or IPv6 address in C:\xampp\htdocs\ral\modules\user\services\Login.php on line 32
+[04-Sep-2015 11:33:28 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\banner\views\index\show-left-banner.phtml on line 1
+[04-Sep-2015 11:39:24 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'Couldn't find class Team_Model_Doctrine_Team' in C:\xampp\htdocs\ral\library\Doctrine\Table.php:299
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Table.php(256): Doctrine_Table->initDefinition()
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1124): Doctrine_Table->__construct('Team_Model_Doct...', Object(Doctrine_Connection_Mysql), true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(278): Doctrine_Connection->getTable('Team_Model_Doct...')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(404): Doctrine_Relation_Parser->getImpl('Team_Model_Doct...')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(207): Doctrine_Relation_Parser->completeDefinition(Array)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(250): Doctrine_Relation_Parser->getRelation('Team')
+#6 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(233): Doctrine_Relation_Parser->getRelations()
+#7 C:\xampp\htdocs\ral\library\Doctrin in C:\xampp\htdocs\ral\library\Doctrine\Table.php on line 299
+[04-Sep-2015 11:39:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 11:39:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 11:39:49 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Record_UnknownPropertyException' with message 'Unknown record property / related component "country" on "User_Model_Doctrine_User"' in C:\xampp\htdocs\ral\library\Doctrine\Record\Filter\Standard.php:55
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1395): Doctrine_Record_Filter_Standard->filterGet(Object(User_Model_Doctrine_User), 'country')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1350): Doctrine_Record->_get('country', true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Access.php(117): Doctrine_Record->get('country')
+#3 C:\xampp\htdocs\ral\modules\user\views\index\edit-details.phtml(32): Doctrine_Access->offsetGet('country')
+#4 C:\xampp\htdocs\ral\library\TK\View.php(47): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ral\library\TK\Controller.php(62): View->render('User', 'edit-details', 'index')
+#6 C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php(15): Controller->_render(Object(User_Index), 'edit-details')
+#7 C:\xampp\htdocs\ral\public in C:\xampp\htdocs\ral\library\Doctrine\Record\Filter\Standard.php on line 55
+[04-Sep-2015 11:39:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 11:39:50 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 11:42:51 Europe/Berlin] PHP Fatal error:  Using $this when not in object context in C:\xampp\htdocs\ral\library\TK\Helper.php on line 232
+[04-Sep-2015 11:42:51 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 11:42:51 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 11:43:15 Europe/Berlin] PHP Fatal error:  Access to undeclared static property: TK_Helper::$countries in C:\xampp\htdocs\ral\library\TK\Helper.php on line 232
+[04-Sep-2015 11:43:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 11:43:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 11:48:49 Europe/Berlin] PHP Fatal error:  Call to a member function renderElement() on null in C:\xampp\htdocs\ral\modules\user\views\index\edit-details.phtml on line 27
+[04-Sep-2015 11:48:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 11:48:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 11:53:41 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Record_UnknownPropertyException' with message 'Unknown record property / related component "hide_details" on "Team_Model_Doctrine_Team"' in C:\xampp\htdocs\ral\library\Doctrine\Record\Filter\Standard.php:55
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1395): Doctrine_Record_Filter_Standard->filterGet(Object(Team_Model_Doctrine_Team), 'hide_details')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1350): Doctrine_Record->_get('hide_details', true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Access.php(117): Doctrine_Record->get('hide_details')
+#3 C:\xampp\htdocs\ral\modules\team\views\index\show-team.phtml(46): Doctrine_Access->offsetGet('hide_details')
+#4 C:\xampp\htdocs\ral\library\TK\View.php(47): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ral\library\TK\Controller.php(62): View->render('Team', 'show-team', 'index')
+#6 C:\xampp\htdocs\ral\modules\team\controllers\IndexController.php(10): Controller->_render(Object(Team_Index), 'show-team')
+#7 C:\xampp\h in C:\xampp\htdocs\ral\library\Doctrine\Record\Filter\Standard.php on line 55
+[04-Sep-2015 11:53:41 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 11:59:13 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 12:02:14 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 12:02:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 12:02:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 12:02:50 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::reauthenticate() in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 649
+[04-Sep-2015 12:02:50 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44

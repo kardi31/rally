@@ -1307,6 +1307,13 @@ margin-right: auto;
         margin-left:20px;
     }
     
+    .myTeamContent .col-md-6 td{
+        padding-bottom:10px;
+    }
+    .countryFlag{
+        height:16px;
+        margin-left:10px;
+    }
     /*
         3.8 User message
     */

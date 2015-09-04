@@ -21,6 +21,10 @@
  * @property integer $referer
  * @property boolean $referer_paid
  * @property timestamp $last_active
+ * @property string $register_ip
+ * @property string $register_hostname
+ * @property string $country
+ * @property boolean $hide_details
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -95,6 +99,22 @@ abstract class User_Model_Doctrine_BaseUser extends Doctrine_Record
              ));
         $this->hasColumn('last_active', 'timestamp', null, array(
              'type' => 'timestamp',
+             ));
+        $this->hasColumn('register_ip', 'string', 255, array(
+             'type' => 'string',
+             'length' => '255',
+             ));
+        $this->hasColumn('register_hostname', 'string', 255, array(
+             'type' => 'string',
+             'length' => '255',
+             ));
+        $this->hasColumn('country', 'string', 255, array(
+             'type' => 'string',
+             'length' => '255',
+             ));
+        $this->hasColumn('hide_details', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 1,
              ));
 
         $this->option('type', 'MyISAM');

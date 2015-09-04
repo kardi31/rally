@@ -45,6 +45,15 @@ User:
       default: 0
     last_active:
       type: timestamp
+    register_ip:
+      type: string(255)
+    register_hostname:
+      type: string(255)
+    country:
+      type: string(255)
+    hide_details:
+      type: boolean
+      default: 1
 PremiumLog:
   tableName: user_premium_log
   actAs: 
@@ -132,4 +141,23 @@ Board:
       type: integer(11)
     message:
       type: text
+Login:
+  tableName: user_login
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    user_id:
+      type: integer(11)
+    ip:
+      type: string(255)
+    hostname:
+      type: string(255)
+    valid:
+      type: boolean
+      default: 0
     

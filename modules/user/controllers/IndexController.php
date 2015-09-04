@@ -155,6 +155,7 @@ class User_Index extends Controller{
         $this->setDifView('index', 'index');
         $this->getLayout()->setLayout('main');
         $userService = parent::getService('user','user');
+        $loginService = parent::getService('user','login');
         
         
         $form = $this->getForm('user','register');
@@ -167,6 +168,7 @@ class User_Index extends Controller{
                 $values = $_POST;
                 $user = $userService->getUser($values['login'], 'username');
                 if ($user && !$user->get('active')):
+                        $loginService->saveLoginFromArray($user['id'],false);
                         TK_Helper::redirect('/user/login?msg=not+active');
                 else:
                     if($user && $userService->authenticate($user,$values['password'])):
@@ -174,6 +176,8 @@ class User_Index extends Controller{
                         if(isset($_SESSION['wrong_pword'])){
                             $_SESSION['wrong_pword'] = 0;
                         }
+                        
+                        $loginService->saveLoginFromArray($user['id']);
                         
                         // if checked rememberMe 
                         // set cookie to remember
@@ -198,8 +202,11 @@ class User_Index extends Controller{
                         }
                         $_SESSION['wrong_pword']++;
                         
+                        $loginService->saveLoginFromArray($user['id'],false);
+                        
                         TK_Helper::redirect('/user/login?msg=no+user');
                     else:
+                        $loginService->saveLoginFromArray($user['id'],false);
                         if(!isset($_SESSION['wrong_pword'])){
                             $_SESSION['wrong_pword'] = 0;
                         }
@@ -634,6 +641,7 @@ class User_Index extends Controller{
     }
     
     public function editDetails(){
+        Service::loadModels('team', 'team');
         $mailService = parent::getService('user','mail');
         $userService = parent::getService('user','user');
         
@@ -643,41 +651,26 @@ class User_Index extends Controller{
             TK_Helper::redirect('/user/login');
         
         $form = $this->getForm('user','editDetails');
+        
+        $populateArray = $user->toArray();
+        $populateArray['anonymous'] = $populateArray['hide_details'];
+//        $form->getElement('anonymous')->setValue($user['hide_details']);
+        $form->populate($populateArray);
         $this->view->assign('form',$form);
         
         if($form->isSubmit()){
             if($form->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
-                $oldPw = $_POST['oldpw'];
+                $values = $_POST;
                 
-                $checkNewPwString = TK_Text::encode($oldPw, $user['salt']);
-                $checkNewPw = ($checkNewPwString==$user['password']);
+                $values['hide_details'] = $values['anonymous'];
                 
-                if(!$checkNewPw){
-                    TK_Helper::redirect('/user/change-password?msg=old+wrong');
-                }
-                elseif($_POST['password']!=$_POST['password2']){
-                    TK_Helper::redirect('/user/change-password?msg=not+match');
-                }
-                else{
-                    $newPassword = $_POST['password'];
-
-                    $salt = TK_Text::createUniqueToken();
-                    $token = TK_Text::createUniqueToken();
-                    $newPasswordEncoded = TK_Text::encode($newPassword, $salt);
-                    
-                    $user->set('salt',$salt);
-                    $user->set('token',$token);
-                    $user->set('password',$newPasswordEncoded);
-                    $user->save();
-                    
-                    $userService->authenticate($user,$newPassword);
-
-                    TK_Helper::redirect('/user/change-password?msg=changed');
-                    Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
-                   
-                }
+                $user->fromArray($values);
+                $user->save();
+                
+                $userService->refreshAuthentication();
+                TK_Helper::redirect('/user/edit-details?msg=changed');
             }
         }
         

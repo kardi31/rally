@@ -1,12 +1,6 @@
 <?php if(isset($_GET['msg'])){
     if($_GET['msg']=='changed'){
-        echo $this->showSuccess('Your password has been changed.');
-    }
-    elseif($_GET['msg']=='old wrong'){
-        echo $this->showError("Old password is wrong");
-    }
-    elseif($_GET['msg']=='not match'){
-        echo $this->showError("Two passwords you entered don't match");
+        echo $this->showSuccess('Your details has been changed.');
     }
 }
 ?>
@@ -16,22 +10,40 @@
     <div class="staticWrapper">
         <form  method="POST">
             <div class='form-group'>
-                <label class='control-label col-md-4' for="first_name"><?= $this->translate('Type in your old password'); ?> *</label>
+                <label class='control-label col-md-4' for="first_name"><?= $this->translate('First name'); ?> *</label>
                 <div class='col-md-8'>
                     <?php echo $form->getElement('first_name')->renderElement(); ?>
                 </div>
             </div>
             <div class='form-group'>
-                <label class='control-label col-md-4' for="last_name"><?= $this->translate('New password'); ?> *</label>
+                <label class='control-label col-md-4' for="last_name"><?= $this->translate('Last name'); ?> *</label>
                 <div class='col-md-8'>
                     <?php echo $form->getElement('last_name')->renderElement(); ?>
                 </div>
             </div>
             <div class='form-group'>
-                <label class='control-label col-md-4' for="country"><?= $this->translate('Repeat new password'); ?> *</label>
+                <label class='control-label col-md-4' for="anonymous"><?= $this->translate('Hide my details'); ?> *</label>
                 <div class='col-md-8'>
-                    <?php echo $form->getElement('country')->renderElement(); ?>
+                    <?php echo $form->getElement('anonymous')->renderElement(); ?>
                 </div>
+            </div>
+            <div class='form-group'>
+                <label class='control-label col-md-4' for="country"><?= $this->translate('Country'); ?> *</label>
+                <div class='col-md-8'>
+                    <?php if(!strlen($authenticatedUser['country'])){
+                        echo $form->getElement('country')->renderElement();
+                    }
+                    else{
+                        echo TK_Helper::getCountry($authenticatedUser['country']);
+                    }
+                    ?>
+                </div>
+            </div>
+            <div>
+                You are allowed to use country of your residence or origin. <br />Bear in mind that <strong> you are not allowed to use false country </strong> to climb up the ranking. <br />
+                In case of any doubt FastRally Team may request proofs or your residence or origin. <br />
+                <br />
+                You are not allowed to change country. If you chose your country by mistake, contact support@fast-rally.com . <br /><br />
             </div>
                     <?php echo $form->getElement('submit')->renderElement(); ?>
         </form>

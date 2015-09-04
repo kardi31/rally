@@ -35,13 +35,26 @@
                 </td>
             </tr>
             <tr>
-                <td><strong>Owner: </strong><?php echo $team['User']['username']; ?></td>
+                <td><strong>Owner: </strong>
+                    <?php
+                    if(!$team['User']['hide_details']&&(strlen($team['User']['first_name'])||strlen($team['User']['last_name']))){
+                        echo $team['User']['first_name']." ".$team['User']['last_name'];
+                    }
+                    else{
+                        echo "Anonymous";
+                    }
+                    ?>
+                        (<?php echo $team['User']['username']; ?>)
+                </td>
             </tr>
             <tr>
-                <td><strong>League: </strong><?php echo $team['league_name']; ?></td>
-            </tr>
-            <tr>
-                <td><strong>Country: </strong> <img src="/images/flags/<?= $countryCode;?>.png" /></td>
+                <td><strong>Country: </strong>
+                    <?php if(strlen($team['User']['country'])){ ?>
+                        <img class="countryFlag" src="/images/flags/<?= strtolower($team['User']['country']);?>.png" />
+                    <?php } else { ?>
+                        Unknown
+                    <?php } ?>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -62,6 +75,9 @@
                     }
                     ?>
                 </td>
+            </tr>
+            <tr>
+                <td><strong>League: </strong><?php echo $team['league_name']; ?></td>
             </tr>
 
         </table>
