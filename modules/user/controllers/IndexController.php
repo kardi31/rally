@@ -136,7 +136,11 @@ class User_Index extends Controller{
             
             $teamService->addTeamMoney($team['id'],30000,8,'Initial FastRally bonus');            
             
+            $ip = TK_Helper::getRealIpAddr();
+            $hostname = gethostbyaddr($ip);
             
+            $user->set('register_ip',$ip);
+            $user->set('register_hostname',$hostname);
             $user->set('active',1);
             $user->save();
             $mailService->sendMail($user['email'],'Your FastRally account is now active',$mailService::prepareConfirmActivationMail($user->get('username')));

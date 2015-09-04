@@ -20,7 +20,7 @@
                 </div>
                 <?= $this->translate('Number of posts'); ?>: <strong><?php echo $category['post_count']; ?></strong><br />
                 <?= $this->translate('Number of threads'); ?>: <?php echo $category['thread_count']; ?><br />
-                <?php if($user['gold_member']){ ?>
+                <?php if($authenticatedUser['gold_member']){ ?>
                     <?php if(is_array($favouriteCategories)&&in_array($category['id'], $favouriteCategories)){ ?>
                         <a href="/forum/remove-favourite-forum/<?php echo $category['id']; ?>/"><i class="fa fa-star selected"></i></a>
                     <?php }

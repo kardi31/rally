@@ -1,7 +1,7 @@
 <script>
     $(document).ready(function(){
 	var counter = $('.sponsor').length;
-	$(document).on('click','.sponsor',function(){
+	$(document).on('click','.sponsor:not(.removeSponsor)',function(){
 	    $('.sponsor').removeClass('active');
 	    var t = $(this);
 	    var before = $(this).prevAll().length;
@@ -41,7 +41,11 @@
                             <img src="/media/sponsor/<?php echo $sponsor['logo']; ?>" alt="<?php echo $sponsor['name']; ?>" title="<?php echo $sponsor['name']; ?>" />
                             <?php if($sponsor['id']!=$user['Team']['sponsor_id']){ ?>
                                 <input type="submit" class="btn btn-primary submitSponsor" value="<?= $this->translate('Choose'); ?> <?= $sponsor['name']; ?>" name="submit_sponsor" />
-                            <?php } ?>
+                            <?php }
+                            else{ ?>
+                                <a href="/team/cancel-sponsorship" class="removeSponsor btn btn-danger">Cancel sponsorship</a>
+                            <?php }
+                            ?>
                             <input type="hidden" value="<?= $sponsor['id']; ?>" name="sponsor_id" id='sponsor_id' />
                         </div>
                         <div class="col-md-9">

@@ -1314,6 +1314,10 @@ margin-right: auto;
         height:16px;
         margin-left:10px;
     }
+    
+    .pb20{
+        padding-bottom:20px;
+    }
     /*
         3.8 User message
     */
@@ -1939,4 +1943,10 @@ margin-right: auto;
     
     .panel-body{
         background:#504f4f;
+    }
+    
+    ol.manualLinks{
+        padding-left:15px;
+        list-style-type:none;
+        border-left:1px solid #f3f3f3;
     }

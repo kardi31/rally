@@ -16,9 +16,16 @@
                         <strong><?php echo $favourite['Category']['name']; ?></strong>
                         <?php $thread = $lastThreads[$favourite['category_id']];
                         if(!$thread) continue;
+                        if(isset($thread['Thread'])){
+                            $threadItself = $thread['Thread'];
+                        }
+                        else{
+                            $threadItself = $thread;
+                        }
+                        
                         ?>
                         <br />
-                        <span class="category"><i class="fa fa-envelope-o" title="Thread with last post"></i>  <a href="/forum/show-thread/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a></span>
+                        <span class="category"><i class="fa fa-envelope-o" title="Thread with last post"></i>  <a href="/forum/show-thread/<?php echo $threadItself['id']; ?>"><?php echo $threadItself['title']; ?></a></span>
 
                         <?php if(isset($thread['Posts'][0])&&!empty($thread['Posts'][0])): ?>
                         <br />

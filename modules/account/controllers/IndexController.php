@@ -309,5 +309,17 @@ class Account_Index extends Controller{
     }
     
     
+    public function manual(){
+        $this->getLayout()->setLayout('page');
+        
+        $subpage = $GLOBALS['urlParams'][1];
+        if(!file_exists(BASE_PATH."/modules/index/views/manual/".$subpage.".phtml")){
+            throw new TK_Exception('Page not exists',404);
+            exit;
+        }
+        
+        $this->view->assign('subpage',$subpage);
+    }
+    
 }
 ?>

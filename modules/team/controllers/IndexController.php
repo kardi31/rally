@@ -152,6 +152,27 @@ class Team_Index extends Controller{
 	$this->view->assign('form',$form);
     }
     
+    public function cancelSponsorship(){
+        $this->getLayout()->setLayout('page');
+        
+        Service::loadModels('rally', 'rally');
+	
+        $teamService = parent::getService('team','team');
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        
+        if(!$user)
+            TK_Helper::redirect('/');
+        
+        
+        $team = $user->get('Team');
+        $team->set('sponsor_id',null);
+        $team->save();
+	
+        TK_Helper::redirect('/account/sponsor/?msg=canceled');
+    }
+    
     
 }
 ?>

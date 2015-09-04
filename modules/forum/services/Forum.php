@@ -67,7 +67,8 @@ class ForumService extends Service{
     public function getLastCategoryPost($category_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->postTable->createQuery('p');
         $q->leftJoin('p.User u');
-        $q->addSelect('p.*,u.*');
+        $q->leftJoin('p.Thread t');
+        $q->addSelect('p.*,u.*,t.*');
         $q->addWhere('category_id = ?',$category_id);
         $q->orderBy('p.created_at DESC');
         $q->addWhere('p.active = 1');

@@ -218,6 +218,11 @@ class Index_Index extends Controller{
         
     }
     
+    public function manual(){
+        $this->getLayout()->setLayout('page');
+        
+        
+    }
     
     
 }

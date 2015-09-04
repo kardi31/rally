@@ -471,3 +471,61 @@ Stack trace:
 [04-Sep-2015 12:02:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
 [04-Sep-2015 12:02:50 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::reauthenticate() in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 649
 [04-Sep-2015 12:02:50 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 13:17:02 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[04-Sep-2015 13:34:25 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/team/views/index/cancel-sponsorship.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[04-Sep-2015 13:34:25 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/team/views/index/cancel-sponsorship.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[04-Sep-2015 13:35:48 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/team/views/index/cancel-sponsorship.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[04-Sep-2015 13:35:48 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/team/views/index/cancel-sponsorship.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[04-Sep-2015 13:52:36 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[04-Sep-2015 13:52:36 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[04-Sep-2015 13:52:36 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[04-Sep-2015 13:52:36 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[04-Sep-2015 13:52:36 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\forum\views\index\show-forum.phtml on line 23
+[04-Sep-2015 13:53:30 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[04-Sep-2015 13:53:30 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[04-Sep-2015 13:55:59 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 13:56:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 13:56:32 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 13:58:10 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 13:58:10 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 13:58:35 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 13:58:35 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 13:59:14 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 13:59:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 13:59:32 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 13:59:33 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 14:00:22 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[04-Sep-2015 14:00:22 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[04-Sep-2015 14:00:24 Europe/Berlin] PHP Notice:  Undefined index: Thread in C:\xampp\htdocs\ral\modules\forum\views\index\show-favourite-forums.phtml on line 22
+[04-Sep-2015 14:00:24 Europe/Berlin] PHP Notice:  Undefined index: Thread in C:\xampp\htdocs\ral\modules\forum\views\index\show-favourite-forums.phtml on line 22
+[04-Sep-2015 15:35:46 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\banner\views\index\show-left-banner.phtml on line 1
+[04-Sep-2015 15:36:12 Europe/Berlin] PHP Notice:  Undefined variable: user in C:\xampp\htdocs\ral\modules\banner\views\index\show-left-banner.phtml on line 1
+[04-Sep-2015 16:07:32 Europe/Berlin] PHP Fatal error:  Class 'Manual_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[04-Sep-2015 16:07:32 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 16:10:23 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/index/views/helper/manual-menu.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\modules\index\views\index\manual.phtml on line 16
+[04-Sep-2015 16:10:23 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/index/views/helper/manual-menu.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\modules\index\views\index\manual.phtml on line 16
+[04-Sep-2015 16:10:45 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/index/views/helper/manual-menu.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\modules\index\views\index\manual.phtml on line 16
+[04-Sep-2015 16:10:45 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/index/views/helper/manual-menu.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\modules\index\views\index\manual.phtml on line 16
+[04-Sep-2015 16:14:34 Europe/Berlin] PHP Notice:  Undefined variable: subpage in C:\xampp\htdocs\ral\modules\account\views\index\manual.phtml on line 1
+[04-Sep-2015 16:14:34 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/index/views/manual/.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\modules\account\views\index\manual.phtml on line 1
+[04-Sep-2015 16:14:34 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/index/views/manual/.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\modules\account\views\index\manual.phtml on line 1
+[04-Sep-2015 16:14:53 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Page not exists
+
+  thrown in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 318
+[04-Sep-2015 16:15:20 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 16:15:41 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 16:15:41 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 16:15:47 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[04-Sep-2015 17:06:18 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[04-Sep-2015 17:06:18 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[04-Sep-2015 17:06:18 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[04-Sep-2015 17:06:18 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[04-Sep-2015 17:06:18 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[04-Sep-2015 17:06:18 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[04-Sep-2015 17:06:18 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[04-Sep-2015 17:19:44 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Page not exists
+
+  thrown in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 317
+[04-Sep-2015 17:40:40 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Page not exists
+
+  thrown in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 317

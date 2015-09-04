@@ -359,7 +359,7 @@ class Forum_Index extends Controller{
         foreach($favouriteCategories as $favourite):
             $lastThread = $forumService->getLastCategoryThread($favourite['category_id'],Doctrine_Core::HYDRATE_ARRAY);
             $lastPost = $forumService->getLastCategoryPost($favourite['category_id'],Doctrine_Core::HYDRATE_ARRAY);
-            
+
             if(isset($lastThread['created_at'])&&$lastThread['created_at']>$lastPost['created_at']){
                 $lastThreads[$favourite['category_id']] = $lastThread;
             }
