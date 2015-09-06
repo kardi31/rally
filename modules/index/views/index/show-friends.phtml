@@ -22,7 +22,7 @@
                         echo "<img src='/images/layout/user-inactive.png' alt='User inactive' title='User inactive' />";
                     }
                     echo '<a href="/user/show-message-box/'.$friend['UserFriends']['id'].'#sendMessage"><i class="fa fa-envelope-o"></i></a>';
-                }
+                    }
                 else{
                     if(!empty($friend['User']['last_active'])&&strtotime($friend['User']['last_active'])>strtotime("-5 minutes")){
                         echo "<li class='active'>";
@@ -42,7 +42,10 @@
                     }
                     echo '<a href="/user/show-message-box/'.$friend['User']['id'].'#sendMessage"><i class="fa fa-envelope-o"></i></a>';
                 }
+                
                 ?>
+                <a onclick="if(!confirm('Are you sure you want to remove this user from your friendlist?')){ return false}" href="/user/remove-friend/<?= $friend['id']; ?>"><i class="fa fa-trash-o"></i></a>
+                
             </li>
 
         <?php endforeach; ?>

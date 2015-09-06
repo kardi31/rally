@@ -174,5 +174,28 @@ class Team_Index extends Controller{
     }
     
     
+    public function nationalRanking(){
+        $this->getLayout()->setLayout('page');
+        Service::loadModels('user', 'user');
+	
+        $teamService = parent::getService('team','team');
+        
+        if(isset($GLOBALS['urlParams'][1]))
+        {
+            $this->setDifView('team', 'national-ranking-country');
+            $topCountryList = $teamService->getTopCountryList($GLOBALS['urlParams'][1],Doctrine_Core::HYDRATE_ARRAY);
+            $this->view->assign('topCountryList',$topCountryList);
+            
+            $country = TK_Helper::getCountry(strtoupper($GLOBALS['urlParams'][1]));
+            $this->view->assign('country',$country);
+            
+        }
+        else{
+            $countries = $teamService->getActiveCountries(Doctrine_Core::HYDRATE_SCALAR);
+            $this->view->assign('countries',$countries);
+        }
+        
+    }
+    
 }
 ?>

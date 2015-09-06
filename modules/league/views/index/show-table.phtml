@@ -55,7 +55,14 @@
                             <a href="/team/show-team/<?= $team['id']; ?>"><?php echo $team['Team']['name']; ?></a>
                         </td>
                         <?php foreach($leagueResults as $leagueResult): ?>
-                            <td><?= (int)$leagueResult['teams'][$team['Team']['id']]; ?></td>
+                            <td><?php
+                            if(isset($leagueResult['teams'][$team['Team']['id']])){
+                                echo (int)$leagueResult['teams'][$team['Team']['id']]; 
+                            }
+                            else{
+                                echo "0";
+                            }
+                            ?></td>
                         <?php endforeach; ?>
                         <td><?php echo $team['points']; ?></td>
                     </tr>

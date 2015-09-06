@@ -1,0 +1,46 @@
+<div class="mainUserBox">
+    <h4 class="boxHeader"><?= $this->translate('Top world list'); ?></h4>
+    <div class='staticWrapper'>
+        <table class="table rankingList">
+            <tr>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Manager</th>
+                <th>Country</th>
+                <th></th>
+            </tr>
+        <?php foreach($topList as $key => $team){ 
+            echo "<tr>";
+            echo "<td>".($key+1)."</td>";
+            echo "<td>".$team['name']." </td><td>".$team['User']['username']."</td>";
+            
+            echo "<td>";
+             if(strlen($team['User']['country'])){ ?>
+                        <img class="countryFlag" src="/images/flags/<?= strtolower($team['User']['country']);?>.png" />
+                    <?php } else { ?>
+                        Unknown
+                    <?php } 
+            echo "</td>";
+            echo "<td>";
+            if($team['this_week_rank']>$team['last_week_rank']){
+                echo "<span class='green'>".((int)$team['this_week_rank']-(int)$team['last_week_rank'])."
+                    <i class='fa fa-arrow-up green'></i>
+                        </span>";
+            }
+            elseif($team['this_week_rank']<$team['last_week_rank']){
+                echo "<span class='red'>".((int)$team['last_week_rank']-(int)$team['this_week_rank'])."
+                    <i class='fa fa-arrow-down red'></i>
+                        </span>";
+            }
+            else{
+                echo "<span class='blue'>".((int)$team['last_week_rank']-(int)$team['this_week_rank'])."
+                    <i class='fa fa-arrow-up green'></i>
+                        </span>";
+            }
+            echo "</td>";
+            echo "</tr>";
+        }
+        ?>
+        </table>
+    </div>
+</div>

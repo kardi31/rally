@@ -67,6 +67,12 @@ class FriendsService extends Service{
         }
     }
     
+    public function getInviteUser($id){
+        $q = $this->friendsTable->createQuery('f');
+        $q->select('f.*');
+        $q->addWhere("f.id = ?",$id);
+        return $q->fetchOne(array(),Doctrine_Core::HYDRATE_RECORD);
+    }
     public function rejectInviteUser($id,$friend_id){
         $q = $this->friendsTable->createQuery('f');
         $q->select('f.*');

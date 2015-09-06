@@ -98,7 +98,7 @@ class TK_Helper{
     public static function showPersonDetails($person,$showTraining = false){
         $view = View::getInstance();
         if($person['job'] == "driver"): 
-             $html .= '
+             $html = '
                     <table>
                         <tr class="'.(($person['active_training_skill']=='composure'&&$showTraining)?'active':'').'">
                             <td>'.$view->translate('Composure').'</td>
@@ -162,7 +162,7 @@ class TK_Helper{
                         </tr>
                     </table>';
         else: 
-            $html .= '
+            $html = '
         <table>
             <tr class="'.(($person['active_training_skill']=='composure'&&$showTraining)?'active':'').'">
                 <td>'.$view->translate('Composure').'</td>

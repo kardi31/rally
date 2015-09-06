@@ -45,6 +45,7 @@
     6.2 Show category
     6.3 Show thread
     6.4 Search users
+    6.5 Top ranking list
   7. Premium
     7.1 My premium
     7.2 Gold membership
@@ -1787,6 +1788,34 @@ margin-right: auto;
     .searchTable td{
         border-top:0px;
     }
+    
+    /* 
+    6.5 top world list
+    */
+    .table.rankingList tr,.table.rankingList td,.table.rankingList th{
+        border:0px;
+    }
+    .table.rankingList tbody tr:nth-child(odd) td {
+        background: #686868;
+    }
+    
+    .table.rankingList tbody tr:nth-child(even) td{
+        background:#868686;
+    }
+    
+    /*
+    6.6 national ranking
+    */
+    
+    .countryList img{
+        display:block;
+        margin:0 auto;
+    }
+    .countryList a{
+        margin-top:5px;
+        text-align:center;
+    }
+    
     /*
     7.1 My premium
     */

@@ -21,6 +21,7 @@
             <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-cars.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/models/Friends.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/car/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/manual/my-rallies.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/admin/list-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/form/CreateFriendly.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/library/DataTables/CarDuplicate.php</file>
@@ -38,6 +39,7 @@
             <file>file:/C:/xampp/htdocs/ral/views/message/short-error.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/list-friendly-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/show-message-box.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/services/Friends.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/views/admin/list-post.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Rally.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-offer.phtml</file>
@@ -52,6 +54,7 @@
             <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/models/BasePost.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-finances.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/manual/rallies.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/show-calendar.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/views/_header_main.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-car-market.phtml</file>
@@ -70,6 +73,7 @@
             <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/AdminController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/services/Market.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/car/services/Car.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/top-world-list.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/models/Board.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/menu.phtml</file>
@@ -78,12 +82,14 @@
             <file>file:/C:/xampp/htdocs/ral/layout/layout.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/league/services/League.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/manual/league.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/form/Login.php</file>
             <file>file:/C:/xampp/htdocs/ral/layout/admin.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/library/Doctrine/Table.php</file>
             <file>file:/C:/xampp/htdocs/ral/layout/main.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/list-rally.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/people/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/show-friends.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/faq.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/car-dealer.phtml</file>
@@ -129,6 +135,7 @@
             <file>file:/C:/xampp/htdocs/ral/modules/cron/services/Team.php</file>
             <file>file:/C:/xampp/htdocs/ral/public/mail-template.php</file>
             <file>file:/C:/xampp/htdocs/ral/library/Doctrine/Query.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/manual/friendly-rallies.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/models/Friendly.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/index.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/public/adminindex.php</file>

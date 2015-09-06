@@ -35,7 +35,7 @@ class User_Index extends Controller{
             }
         }
         $form = $this->getForm('user','register');
-        if($ref){
+        if(isset($ref)&$ref){
             $form->getElement('email')->setValue($invite['email']);
             $form->getElement('invite')->setValue($invite['id']);
         }
@@ -400,6 +400,32 @@ class User_Index extends Controller{
         $id = filter_var($GLOBALS['urlParams'][1],FILTER_VALIDATE_INT);
         
         $friendsService->rejectInviteUser($id,$user['id']);
+        
+        
+        TK_Helper::redirect($_SERVER['HTTP_REFERER']);
+    }
+    
+    public function removeFriend(){
+        $view = $this->view;
+        $view->setNoRender();
+        $userService = parent::getService('user','user');
+        $notificationService = parent::getService('user','notification');
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        $friendsService = parent::getService('user','friends');
+        
+        $id = filter_var($GLOBALS['urlParams'][1],FILTER_VALIDATE_INT);
+        
+        $inviteUser = $friendsService->getInviteUser($id);
+        
+        if(!($inviteUser['UserFriends']['id'] == $user['id']||$inviteUser['User']['id'] == $user['id'])){
+            TK_Helper::redirect('/');
+            exit;
+        }
+        
+        $inviteUser->delete();
         
         
         TK_Helper::redirect($_SERVER['HTTP_REFERER']);

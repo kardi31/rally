@@ -529,3 +529,781 @@ Stack trace:
 [04-Sep-2015 17:40:40 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Page not exists
 
   thrown in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 317
+[05-Sep-2015 08:59:31 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.register_ip' in 'field list'' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection\Statement.php(269): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Statement))
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1006): Doctrine_Connection_Statement->execute(Array)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(983): Doctrine_Connection->execute('SELECT u.id AS ...', Array)
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1033): Doctrine_Query_Abstract->_execute(Array)
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query.php(287): Doctrine_Query_Abstract->execute(Array, 2)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1713): Doctrine_Query->fetchOne(Array, 2)
+#6 C:\xampp\htdocs\ral\modules\user\services\User.php(23): Doctrine_Table->findOneBy('usernam in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[05-Sep-2015 08:59:32 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 09:09:56 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.gold_member_expire' in 'field list'' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection\Statement.php(269): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Statement))
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1006): Doctrine_Connection_Statement->execute(Array)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(983): Doctrine_Connection->execute('SELECT u.id AS ...', Array)
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1033): Doctrine_Query_Abstract->_execute(Array)
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query.php(287): Doctrine_Query_Abstract->execute(Array, 2)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1713): Doctrine_Query->fetchOne(Array, 2)
+#6 C:\xampp\htdocs\ral\modules\user\services\User.php(23): Doctrine_Table->findOneBy(' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[05-Sep-2015 09:09:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 09:32:16 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.gold_member_expire' in 'field list'' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection\Statement.php(269): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Statement))
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1006): Doctrine_Connection_Statement->execute(Array)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(983): Doctrine_Connection->execute('SELECT u.id AS ...', Array)
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1033): Doctrine_Query_Abstract->_execute(Array)
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query.php(287): Doctrine_Query_Abstract->execute(Array, 2)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1713): Doctrine_Query->fetchOne(Array, 2)
+#6 C:\xampp\htdocs\ral\modules\user\services\User.php(23): Doctrine_Table->findOneBy(' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[05-Sep-2015 09:32:16 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 09:44:46 Europe/Berlin] PHP Notice:  Undefined variable: futureTeamRallies in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 211
+[05-Sep-2015 09:44:46 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 7 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 5 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:06 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 3 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 9 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 15 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 16 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 8 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 11 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 12 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 13 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 14 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 17 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:07 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:08 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:08 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:08 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:08 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:08 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:08 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 17:59:08 Europe/Berlin] PHP Notice:  Undefined offset: 6 in C:\xampp\htdocs\ral\modules\league\views\index\show-table.phtml on line 58
+[05-Sep-2015 18:14:07 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[05-Sep-2015 18:14:07 Europe/Berlin] PHP Fatal error:  Using $this when not in object context in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 56
+[05-Sep-2015 18:14:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 18:15:17 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[05-Sep-2015 18:15:17 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[05-Sep-2015 18:15:18 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 18:16:32 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[05-Sep-2015 18:16:32 Europe/Berlin] PHP Fatal error:  Using $this when not in object context in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 56
+[05-Sep-2015 18:16:32 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 18:17:15 Europe/Berlin] PHP Fatal error:  Access to undeclared static property: MailService::$domain in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 18
+[05-Sep-2015 18:17:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 18:19:04 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[05-Sep-2015 18:19:04 Europe/Berlin] PHP Fatal error:  Call to undefined function getDomain() in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 49
+[05-Sep-2015 18:19:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 18:19:27 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[05-Sep-2015 18:19:27 Europe/Berlin] PHP Fatal error:  Using $this when not in object context in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 49
+[05-Sep-2015 18:19:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 18:19:55 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[05-Sep-2015 18:19:55 Europe/Berlin] PHP Notice:  Undefined variable: getDomain in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 49
+[05-Sep-2015 18:19:55 Europe/Berlin] PHP Fatal error:  Function name must be a string in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 49
+[05-Sep-2015 18:19:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 18:20:26 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[05-Sep-2015 18:21:45 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[05-Sep-2015 18:21:45 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 18:21:50 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[05-Sep-2015 18:32:18 Europe/Berlin] PHP Fatal error:  Call to undefined method User_Index::removeFriend() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 18:32:18 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 18:32:25 Europe/Berlin] PHP Fatal error:  Call to undefined method User_Index::removeFriend() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 18:32:26 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 18:36:43 Europe/Berlin] PHP Fatal error:  Call to undefined method User_Index::removeFriend() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 18:36:43 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 18:36:50 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 431
+[05-Sep-2015 18:36:50 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 21:07:32 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'Couldn't find class User_Model_Doctrine_User' in C:\xampp\htdocs\ral\library\Doctrine\Table.php:299
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Table.php(256): Doctrine_Table->initDefinition()
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1124): Doctrine_Table->__construct('User_Model_Doct...', Object(Doctrine_Connection_Mysql), true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(278): Doctrine_Connection->getTable('User_Model_Doct...')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(404): Doctrine_Relation_Parser->getImpl('User_Model_Doct...')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(207): Doctrine_Relation_Parser->completeDefinition(Array)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('User', true)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1768): Doctrine_Table->getRelation('User')
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\From.php( in C:\xampp\htdocs\ral\library\Doctrine\Table.php on line 299
+[05-Sep-2015 21:07:32 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[05-Sep-2015 21:07:50 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Query_Exception' with message 'Unknown column rank' in C:\xampp\htdocs\ral\library\Doctrine\Query.php:758
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Query\Where.php(110): Doctrine_Query->parseClause('t.rank')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Query\Where.php(98): Doctrine_Query_Where->_buildSql('t.rank', 'IS NOT', 'NULL')
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Condition.php(92): Doctrine_Query_Where->load('t.rank IS NOT N...')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(2084): Doctrine_Query_Condition->parse('t.rank IS NOT N...')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1189): Doctrine_Query_Abstract->_processDqlQueryPart('where', Array)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false)
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1113): Doctrine_Query_Abstract->_getDqlCa in C:\xampp\htdocs\ral\library\Doctrine\Query.php on line 758
+[05-Sep-2015 21:07:50 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[06-Sep-2015 19:48:43 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:57 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:57 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:57 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:57 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:57 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:57 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:57 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:57 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:57 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:57 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:49:57 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:53 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:53 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:53 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:53 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:53 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:53 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:53 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:53 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:53 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:53 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:53 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:54 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:55 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:50:56 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:17 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:18 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:19 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:20 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:22 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:28 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:28 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:28 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:28 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:28 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:28 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:28 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:28 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:28 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:29 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:30 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:31 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:39 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:40 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:41 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:41 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:41 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:41 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:41 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:41 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:41 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:41 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:41 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:41 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:41 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 19:52:41 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[06-Sep-2015 20:00:54 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[06-Sep-2015 20:01:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[06-Sep-2015 20:01:25 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Query_Exception' with message 'The root class of the query (alias t)  must have at least one field selected.' in C:\xampp\htdocs\ral\library\Doctrine\Query.php:454
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1246): Doctrine_Query->processPendingFields('t')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false)
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1113): Doctrine_Query_Abstract->_getDqlCallbackComponents(Array)
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1008): Doctrine_Query_Abstract->_preQuery(Array)
+#5 C:\xampp\htdocs\ral\modules\team\services\Team.php(116): Doctrine_Query_Abstract->execute(Array, 2)
+#6 C:\xampp\htdocs\ral\modules\team\controllers\IndexController.php(184): TeamService->getActiveCountries()
+#7 C:\xampp\htdocs\ral\library\TK\Controller.php(44): Team_Index->national in C:\xampp\htdocs\ral\library\Doctrine\Query.php on line 454
+[06-Sep-2015 20:01:25 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[06-Sep-2015 20:01:40 Europe/Berlin] PHP Fatal error:  Call to a member function toArray() on a non-object in C:\xampp\htdocs\ral\modules\team\controllers\IndexController.php on line 185
+[06-Sep-2015 20:01:40 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[06-Sep-2015 20:01:45 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[06-Sep-2015 20:01:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[06-Sep-2015 20:02:15 Europe/Berlin] PHP Notice:  Undefined variable: country in C:\xampp\htdocs\ral\modules\team\views\index\national-ranking.phtml on line 14
+[06-Sep-2015 20:23:53 Europe/Berlin] PHP Notice:  Undefined variable: topList in C:\xampp\htdocs\ral\modules\team\views\index\national-ranking-country.phtml on line 12
+[06-Sep-2015 20:23:53 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\team\views\index\national-ranking-country.phtml on line 12
+[06-Sep-2015 20:28:18 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Query_Exception' with message 'Unknown column country' in C:\xampp\htdocs\ral\library\Doctrine\Query.php:758
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Query\Where.php(110): Doctrine_Query->parseClause('t.country')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Query\Where.php(98): Doctrine_Query_Where->_buildSql('t.country', '=', '?')
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Condition.php(92): Doctrine_Query_Where->load('t.country = ?')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(2084): Doctrine_Query_Condition->parse('t.country = ?')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1189): Doctrine_Query_Abstract->_processDqlQueryPart('where', Array)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false)
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1113): Doctrine_Query_Abstract->_getDqlCallbackCom in C:\xampp\htdocs\ral\library\Doctrine\Query.php on line 758
+[06-Sep-2015 20:28:18 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[06-Sep-2015 20:28:25 Europe/Berlin] PHP Notice:  Undefined index: pl in C:\xampp\htdocs\ral\library\TK\Helper.php on line 227
+[06-Sep-2015 20:28:26 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[06-Sep-2015 21:22:18 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[06-Sep-2015 21:22:18 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[06-Sep-2015 21:22:18 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[06-Sep-2015 21:22:18 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[06-Sep-2015 21:22:18 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[06-Sep-2015 21:22:18 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[06-Sep-2015 21:22:18 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[06-Sep-2015 21:22:23 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[06-Sep-2015 21:22:23 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[06-Sep-2015 21:22:23 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[06-Sep-2015 21:22:23 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[06-Sep-2015 21:22:23 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[06-Sep-2015 21:22:23 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[06-Sep-2015 21:22:23 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 204
+[06-Sep-2015 21:22:30 Europe/Berlin] PHP Notice:  Undefined variable: html in C:\xampp\htdocs\ral\library\TK\Helper.php on line 163
+[06-Sep-2015 21:23:11 Europe/Berlin] PHP Fatal error:  Call to undefined method View::messages() in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 244
+[06-Sep-2015 21:23:12 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[06-Sep-2015 21:25:48 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to UserService::quickAuthenticate() must be an instance of User_Model_Doctrine_User, boolean given, called in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 247 and defined in C:\xampp\htdocs\ral\modules\user\services\User.php on line 41
+[06-Sep-2015 21:25:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44

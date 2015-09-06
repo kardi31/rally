@@ -1,0 +1,22 @@
+<div class="mainUserBox">
+    <h4 class="boxHeader"><?= $this->translate('Top')." ".$country." ".$this->translate('list'); ?></h4>
+    <div class='staticWrapper'>
+        <table class="table rankingList">
+            <tr>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Manager</th>
+                <th>Global ranking</th>
+            </tr>
+        <?php foreach($topCountryList as $key => $team){ 
+            echo "<tr>";
+                echo "<td>".($key+1)."</td>";
+                echo "<td>".$team['name']." </td>";
+                echo "<td>".$team['User']['username']."</td>";
+                echo "<td>".$team['this_week_rank']."</td>";
+            echo "</tr>";
+        }
+        ?>
+        </table>
+    </div>
+</div>

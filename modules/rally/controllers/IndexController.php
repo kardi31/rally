@@ -203,7 +203,7 @@ class Rally_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
         
         $rallyService = parent::getService('rally','rally');
-        $rallies = $rallyService->getAllFutureRallies();
+        $futureTeamRallies = $rallyService->getAllFutureRallies();
         
         $rallies = $rallyService->getAllTeamRallies($user['Team']['id'],30,Doctrine_Core::HYDRATE_RECORD);
 

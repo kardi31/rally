@@ -1,0 +1,26 @@
+<div class="mainUserBox">
+    <h4 class="boxHeader"><?= $this->translate('National ranking'); ?></h4>
+    <div class='staticWrapper countryList'>
+        Select active country to see its national ranking list.
+        <div class='clearfix mb20'></div>
+        <?php 
+        $key = 0;
+        foreach($countries as  $row):
+            $code = strtolower($row['u_code']);
+            if(!file_exists(BASE_PATH."/public//images/flags/".$code.".png"))
+                continue;
+            
+            ?>
+            <a class="col-md-2" href="/team/national-ranking/<?= $code; ?>">
+                <img src="/images/flags/<?= $code; ?>.png" />
+                <?= TK_Helper::getCountry(strtoupper($code)); ?>
+            </a>
+        <?php 
+        if($key%6==5){
+            echo "<div class='clearfix'></div>";
+        }
+        $key++;
+        endforeach; ?>
+        <div class='clearfix'></div>
+    </div>
+</div>

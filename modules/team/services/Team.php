@@ -97,6 +97,35 @@ class TeamService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getTopWorldList($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->teamTable->createQuery('t');
+        $q->innerJoin('t.User u');
+        $q->andWhere('t.this_week_rank IS NOT NULL');
+        $q->orderBy('t.this_week_rank');
+        $q->limit(100);
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getTopCountryList($country,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->teamTable->createQuery('t');
+        $q->innerJoin('t.User u');
+        $q->andWhere('t.this_week_rank IS NOT NULL');
+        $q->andWhere('u.country = ?',$country);
+        $q->orderBy('t.this_week_rank');
+        $q->limit(100);
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getActiveCountries($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->teamTable->createQuery('t');
+        $q->innerJoin('t.User u');
+        $q->select('t.id,u.country as code');
+        $q->groupBy('u.country');
+        $q->addWhere('u.country IS NOT NULL');
+        $q->limit(100);
+	return $q->execute(array(),$hydrationMode);
+    }
+    
     public function addTeamMoney($team_id,$amount,$moneyType,$description = false){
 	if($amount==0||empty($amount)){
 	    return ;

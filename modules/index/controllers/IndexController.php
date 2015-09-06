@@ -221,9 +221,21 @@ class Index_Index extends Controller{
     public function manual(){
         $this->getLayout()->setLayout('page');
         
-        
     }
     
+    public function topWorldList(){
+        $this->getLayout()->setLayout('page');
+        
+        Service::loadModels('user', 'user');
+	
+        $teamService = parent::getService('team','team');
+        
+        
+        $topList = $teamService->getTopWorldList();
+        
+        $this->view->assign('topList',$topList);
+        
+    }
     
 }
 ?>
