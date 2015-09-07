@@ -1,25 +1,40 @@
-<div class="mainUserBox showRallyWrapper">
+<div class="mainUserBox">
     <h4 class="boxHeader"><?= $this->translate('Forum'); ?></h4> 
-   
+    <div class='staticWrapper showForum'>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th><?= $this->translate('Categories'); ?></th>
+                <th><?= $this->translate('Number of threads'); ?></th>
+                <th><?= $this->translate('Number of posts'); ?></th>
+                <th><?= $this->translate('Last entry'); ?></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
     <?php foreach($categories as $category): ?>
-        <div class="forumGroup">
-            <h6><a href="/forum/show-category/<?php echo $category['slug']; ?>"><?php echo $category['name']; ?></a></h6>
-            <div class="forumGroupInside">
-                <div class="forumGroupRight">
-                    <?php if(isset($category['last_post'])&&!empty($category['last_post'])): ?>
-                        <?= $this->translate('Last post'); ?>: <br />
-                        <i class="fa fa-clock-o"></i>
-                        <?php 
-                        echo date(TK_Text::timeFormat($category['last_post']['created_at'],'d/m/Y H:i'));
-                        ?>
-                        <br />
-                        <i class="fa fa-user"></i>
-                        '<?php echo $category['last_post']['User']['username']; ?>'
-                        <br />
-                    <?php endif; ?>
-                </div>
-                <?= $this->translate('Number of posts'); ?>: <strong><?php echo $category['post_count']; ?></strong><br />
-                <?= $this->translate('Number of threads'); ?>: <?php echo $category['thread_count']; ?><br />
+        <tr>
+            <td>
+                <a href="/forum/show-category/<?php echo $category['slug']; ?>"><?php echo $category['name']; ?></a>
+            </td>
+            <td>
+                <?php echo $category['post_count']; ?>
+            </td>
+            <td>
+                <?php echo $category['thread_count']; ?>
+            </td>
+            
+            <td>
+                <?php if(isset($category['last_post'])&&!empty($category['last_post'])): ?>
+                    <?php 
+                    echo date(TK_Text::timeFormat($category['last_post']['created_at'],'d/m/Y H:i'));
+                    ?>
+                    <br />
+                    <?php echo $category['last_post']['User']['username']; ?>
+                    <a href='/'> >> </a>
+                <?php endif; ?>
+            </td>
+            <td>
                 <?php if($authenticatedUser['gold_member']){ ?>
                     <?php if(is_array($favouriteCategories)&&in_array($category['id'], $favouriteCategories)){ ?>
                         <a href="/forum/remove-favourite-forum/<?php echo $category['id']; ?>/"><i class="fa fa-star selected"></i></a>
@@ -32,7 +47,11 @@
                         </a>
                     <?php } ?>
                 <?php } ?>
-            </div>
-        </div>
+            </td>
+        </tr>
     <?php endforeach; ?>
+        </tbody>
+    </table>
+    </div>
+    <div class='clearfix'></div>
 </div>

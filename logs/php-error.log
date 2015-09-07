@@ -1307,3 +1307,6 @@ Stack trace:
 [06-Sep-2015 21:23:12 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
 [06-Sep-2015 21:25:48 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to UserService::quickAuthenticate() must be an instance of User_Model_Doctrine_User, boolean given, called in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 247 and defined in C:\xampp\htdocs\ral\modules\user\services\User.php on line 41
 [06-Sep-2015 21:25:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[07-Sep-2015 12:31:09 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Page not exists
+
+  thrown in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 317

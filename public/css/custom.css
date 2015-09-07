@@ -1643,44 +1643,16 @@ margin-right: auto;
     6.1 Show forum
     */
     
-    .forumGroup{
-        border-radius: 6px;
-        border: 6px solid #fff;
-        background: #cad3e4;
-        margin-bottom: 20px;
-        color: #7774a9;
-        padding: 0px 0px 15px;
-        position: relative;
+    .showForum tbody{
+        background:#686868;
     }
-
-    .forumGroup h6 a{
-        display: block;
-        background: #f4e973;
-        padding-top: 10px;
-        padding-left: 20px;
-        font-size: 18px;
-        padding-bottom: 10px;
-        color: #7774a9;
+    
+    .showForum tbody td{
+        padding-left:20px;
     }
-
-    .forumGroup h6{
-        margin:0px;
-    }
-
-    .fa-star.selected{
-        color: yellow;
-    }
-
-    .forumGroupInside{
-        padding: 10px;
-    }
-
-    .forumGroup .forumGroupRight{
-        float:right;
-    }
-
-    .forumGroup .forumGroupRight i{
-        margin-right:5px;
+    
+    .showForum thead th{
+        font-size:12px;
     }
     
     /*
