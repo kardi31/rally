@@ -9,37 +9,56 @@
         <h4><?php echo $category['name']; ?></h4>
         <small><a href="/forum/show-forum"><?= $this->translate('Forum'); ?></a></small>
     </div> 
-    <div class="forumGroup">
-        <?php foreach($threads as $thread): ?>
+    <div class='staticWrapper showForum'>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><?= $this->translate('Thread'); ?></th>
+                    <th><?= $this->translate('Responses'); ?></th>
+                    <th><?= $this->translate('Author'); ?></th>
+                    <th><?= $this->translate('Viewings'); ?></th>
+                    <th><?= $this->translate('Last entry'); ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($threads as $thread): ?>
+                <tr>
+                    <td>
+                        <a href="/forum/show-thread/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <?php echo $thread['User']['username']; ?>
+                    </td>
+                    <td>
 
-            <div class="forumListElem">
-                <strong><a href="/forum/show-thread/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a></strong>
-                <div>
-            <?= $this->translate('Created'); ?>: 
-                    <i class="fa fa-clock-o"></i> <?php echo TK_Text::timeFormat($thread['created_at'],'d/m/y H:i'); ?>
-                    <i class="fa fa-user"></i>
-                '<?php echo $thread['User']['username']; ?>' <br />
-                <?php if(isset($thread['Posts'][0])&&!empty($thread['Posts'][0])&&$thread['Posts'][0]['active']): ?>
-                    <?= $this->translate('Last post'); ?>:
-                    <i class="fa fa-clock-o"></i>
-                    <?php 
-                    echo TK_Text::timeFormat($thread['Posts'][0]['created_at'],'d/m/y H:i');
-                    ?>
-                    <i class="fa fa-user"></i>
-                    '<?php echo $thread['Posts'][0]['User']['username']; ?>'
-                    <br />
-                <?php endif; ?>
-                </div>
+                    </td>
+                        <td>
+                        <?php if(isset($thread['Posts'][0])&&!empty($thread['Posts'][0])&&$thread['Posts'][0]['active']): 
+                                echo TK_Text::timeFormat($thread['Posts'][0]['created_at'],'d/m/y H:i')."<br />";
+                                echo $thread['Posts'][0]['User']['username']; 
+                            else:
+                                echo TK_Text::timeFormat($thread['created_at'],'d/m/y H:i')."<br />";
+                                echo $thread['User']['username'];
+                            endif; ?>
+                        </td>
+                    </td>
+                    </div>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        <div>
+            <div class="addThreadWrapper">
+                <h5><?= $this->translate('Add new thread'); ?></h5>
+                <form method="POST">
+                    <?php echo $form->getElement('title')->renderElement(); ?>
+                    <?php echo $form->getElement('content')->renderElement(); ?>
+                    <?php // echo $form->getElement('active')->renderElement(); ?>
+                    <?php echo $form->getElement('submit')->renderElement(); ?>
+                </form>
             </div>
-        <?php endforeach; ?>
-        <div class="addThreadWrapper">
-            <h5><i class="fa fa-pencil"></i> <?= $this->translate('Add new thread'); ?></h5>
-            <form method="POST">
-                <?php echo $form->getElement('title')->renderElement(); ?>
-                <?php echo $form->getElement('content')->renderElement(); ?>
-                <?php // echo $form->getElement('active')->renderElement(); ?>
-                <?php echo $form->getElement('submit')->renderElement(); ?>
-            </form>
         </div>
     </div>
 </div>

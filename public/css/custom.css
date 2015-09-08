@@ -83,13 +83,16 @@ a:hover{
 .btn{
     font-family: 'Lato' !important;
 }
+input.textInput.textInput2{
+}
 input.textInput{
     background:#a1a1a1;
     border:0px;
     color:#000;
     padding:2px;
     font-size:18px;
-    text-align:center;
+    text-align:left;
+    padding-left:10px;
     width:130px;
 }
 input.textInput:focus::-webkit-input-placeholder 
@@ -1671,19 +1674,7 @@ margin-right: auto;
         line-height:25px;
         padding-bottom:5px;
     }
-    .forumListElem:first-of-type{
-        margin-top:10px;
-    }
     
-    .forumListElem{
-        margin-left:10px;
-        margin-bottom:10px;
-    }
-    
-    .forumListElem strong a{
-        color: #7774a9;
-        font-weight:bold;
-    }
     
     .addThreadWrapper{
             padding-left: 10px;
@@ -1710,44 +1701,13 @@ margin-right: auto;
     /*
     6.3 Show thread
     */
+     table.postContent {table-layout:fixed; }
+         table.postContent td {overflow:hidden;}
     
-    .threadInfo{
-        float:right;
-        display:block;
-        padding-top:5px;
-        line-height:25px;
-        font-size:85%;
-    }
-    
-    .threadContent{
-        padding:20px;
-    }
-    
-    .moderatorNotes{
-        color:#ff0000;
-        margin-top:20px;
-        display:block;
-        font-style:italic;
-    }
-    
-    .moderatorEdited{
-        color:#ff0000;
-        font-style:italic;
-    }
-    
-    .threadContent hr{
-        margin:10px 0px;
-    }
-    .threadContent .threadInfo{
-        padding-top:0px;
-    }
-    .threadMainContent{
-        margin-bottom:20px;
-    }
-    .threadMainContent{
-        margin-bottom:20px;
-    }
-    
+         .postContent small{
+             font-size:75%;
+         }
+         
     /*
     6.4 Search users
     */

@@ -8,11 +8,13 @@ class Thread extends Form{
         $title->addValidator('alnum');
         $title->addFilter('trim');
         $title->addParam('required','required');
+        $title->addClass('form-control');
         $title->addValidator('stringLength',array('min' => 4,'max' => 20));
         $content = $this->createElement('textarea','content',array(),'Opis');
         $content->addParam('rows',4);
         $content->addParam('cols',80);
         $content->addParam('placeholder',$view->translate('Thread content'));
+        $content->addClass('form-control');
         $content->addValidator('alnum');
         $content->addParam('required','required');
         $content->addFilter('trim');

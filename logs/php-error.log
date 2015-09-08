@@ -1310,3 +1310,21 @@ Stack trace:
 [07-Sep-2015 12:31:09 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Page not exists
 
   thrown in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 317
+[08-Sep-2015 15:03:59 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
+[08-Sep-2015 15:10:22 Europe/Berlin] PHP Notice:  Undefined variable: users in C:\xampp\htdocs\ral\modules\index\views\index\search-users.phtml on line 12
+[08-Sep-2015 16:09:15 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:09:30 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:10:01 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:10:16 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:10:26 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:10:32 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:10:42 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:10:42 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:10:53 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:10:53 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:11:08 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:11:08 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:11:56 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:11:56 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:12:39 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 16:12:48 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38

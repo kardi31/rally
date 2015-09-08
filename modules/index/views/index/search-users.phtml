@@ -9,7 +9,7 @@
             <div class="clearfix"></div>
             <input class="btn myBtn searchUsersBtn" type="submit" value="Search" name="submit" />
         </form>
-        <?php if(count($users)>0){ ?>
+        <?php if(isset($users)&&count($users)>0){ ?>
         <table class="table searchTable">
             <thead>
                 <tr>

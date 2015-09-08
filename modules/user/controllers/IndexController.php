@@ -35,7 +35,7 @@ class User_Index extends Controller{
             }
         }
         $form = $this->getForm('user','register');
-        if(isset($ref)&$ref){
+        if(isset($ref)&$ref==true){
             $form->getElement('email')->setValue($invite['email']);
             $form->getElement('invite')->setValue($invite['id']);
         }

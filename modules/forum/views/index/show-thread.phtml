@@ -4,17 +4,48 @@
         }
     }
     ?>
-<div class="mainUserBox showForumWrapper ">
+<div class="mainUserBox showForumWrapper">
     
     <div class="boxHeader">
-        <span class="threadInfo">
-            <i class="fa fa-clock-o"></i> <?php echo TK_Text::timeFormat($thread['created_at'],'d/m/y H:i'); ?> <br />
-            <i class="fa fa-user"></i> '<?php echo $thread['User']['username']; ?>'
-        </span>
         <h4><?php echo $thread['title']; ?></h4>
         <small><a href="/forum/show-forum">Forum</a> / <a href="/forum/show-category/<?php echo $thread['Category']['slug']; ?>"><?php echo $thread['Category']['name']; ?></a></small>
         
     </div> 
+    <div class='staticWrapper showForum'>
+        <table class="table postContent">
+            <thead>
+                <tr>
+                    <th class='col-md-3'><?= $this->translate('Author'); ?></th>
+                    <th class='col-md-9'><?= $this->translate('Content'); ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class='col-md-3'><?php echo $thread['User']['username']; ?></td>
+                    <td class='col-md-9'>
+                        <small><?php echo TK_Text::timeFormat($thread['created_at'],'d/m/y H:i'); ?></small><br /><br />
+                        <?=  $thread['content']; ?>
+                    </td>
+                </tr>
+                <?php foreach($posts as $key => $post): ?>
+                    <tr>
+                        <td class='col-md-3'><?php echo $post['User']['username']; ?></td>
+                        <td class='col-md-9'>
+                            <small><?php echo TK_Text::timeFormat($post['created_at'],'d/m/Y H:i'); ?></small> <br /><br />
+                            <?php
+                            if(strlen($post['content'])>400){
+                                echo "<span class='postContent' id='content".$post['id']."'>". substr($post['content'],0,400)."<br /><a class='showFullPost' rel='".$post['id']."' href='javascript:void(0)'>Show full post</a></span>";
+                                echo "<span class='hide fullPost' id='post".$post['id']."'>". substr($post['content'],400)."</span>";
+                            }
+                            else{
+                                echo $post['content'];
+                            }
+                            ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     <div>
         <?php if($user['role']=="admin"||$user['role']=="moderator"): ?>
         <div style='float:right;margin-right:50px;'>
@@ -24,60 +55,24 @@
         </div>
         <?php endif; ?>
     </div>
-    <div class="threadContent">
-        <div class="postContent threadMainContent"><?php echo $thread['content']; ?></div>
-        <?php 
-            if(strlen($thread['moderator_notes'])){
-                echo "<span class='moderatorNotes'>".$thread['moderator_notes']."</span>";
-            }
-
-            if($thread['created_at']!=$thread['updated_at']): 
-                if(strlen($thread['moderator_name'])){
-                    echo "<span class='moderatorEdited'>Last edited by ".$thread['moderator_name']." on ".TK_Text::timeFormat($thread['moderator_date'], 'd/m/Y H:i')."</span>";
-                }
-            endif; ?>
-            <hr />
-            <?php 
-            $postCount = count($posts);
-                foreach($posts as $key => $post): ?>
-                <?php if(isset($post)&&!empty($post)): ?>
-                    <span class="threadInfo">
-                        <i class="fa fa-clock-o"></i> <?php echo TK_Text::timeFormat($post['created_at'],'d/m/Y H:i'); ?> <br />
-                        <i class="fa fa-user"></i> '<?php echo $post['User']['username']; ?>'
-                    </span>
-                    <div class="postContent">
-                        <?php echo $post['content']; ?>
-                    </div>
-                    <?php if($user['role']=="admin"||$user['role']=="moderator"): //||$user['id']==$post['user_id'] ?>
-                        <div style='float:right;margin-right:50px;'>
-                            <a href="/forum/edit-post/<?= $post['id']; ?>">Edit</a>
-                            <a href="/forum/delete-post/<?= $post['id']; ?>">Remove</a>
-                        </div>
-                    <?php endif; ?>
-                <?php endif; ?>
-                <?php 
-                    if(strlen($post['moderator_notes'])){
-                        echo "<span class='moderatorNotes'>".$post['moderator_notes']."</span><br />";
-                    }
-
-                    if($post['created_at']!=$post['updated_at']): 
-                        if(strlen($post['moderator_name'])){
-                            echo "<span class='moderatorEdited'>Last edited by ".$post['moderator_name']." on ".TK_Text::timeFormat($post['moderator_date'], 'd/m/Y H:i')."</span>";
-                        }
-                    endif; 
-                ?>
-                <div class="clearfix"></div>
-                <?php if($key!=$postCount-1): ?>
-                    <hr />
-                <?php endif; ?>
-            <?php endforeach; ?>
-    </div>
     <div class="addThreadWrapper replyThreadWrapper">
-        <h5><i class="fa fa-pencil"></i> <?= $this->translate('Respond to this thread'); ?></h5>
+        <h5><?= $this->translate('Respond to this thread'); ?></h5>
         <form method="POST">
             <?php echo $form->getElement('content')->renderElement(); ?>
             <?php // echo $form->getElement('active')->renderElement(); ?>
             <?php echo $form->getElement('submit')->renderElement(); ?>
         </form>
     </div>
+    </div>
 </div>
+<script>
+    $(document).ready(function(){
+                $('.showFullPost').on('click',function(){
+                    $(this).remove();
+                    var rel = $(this).attr('rel');
+                    var fullContent = $('.fullPost#post'+rel).html();
+                    $('#content'+rel).append(fullContent);
+                    $('.fullPost#post'+rel).remove();
+                }); 
+    });
+</script>
