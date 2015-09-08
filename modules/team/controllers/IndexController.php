@@ -26,7 +26,6 @@ class Team_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
         
         
-        
         if(!$team = $teamService->getTeamWithLeague($GLOBALS['urlParams'][1],$season)){
             throw new TK_Exception('No such team',404);
             exit;

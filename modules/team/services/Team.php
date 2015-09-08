@@ -64,9 +64,9 @@ class TeamService extends Service{
 	return $q->fetchOne(array(),$hydrationMode);
     }
     
-    public function createRandomTeam($values,$user_id = null){
-        if($user_id)
-            $values['name'] = "Team_".$user_id;
+    public function createRandomTeam($values,$user = null){
+        if($user)
+            $values['name'] = $user['username']." team";
         else
             $values['name'] = $this->generateRandomString();
         

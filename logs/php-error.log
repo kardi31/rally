@@ -1328,3 +1328,47 @@ Stack trace:
 [08-Sep-2015 16:11:56 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
 [08-Sep-2015 16:12:39 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
 [08-Sep-2015 16:12:48 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:16:48 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:17:38 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:17:57 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:18:14 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:18:14 Europe/Berlin] PHP Notice:  Undefined index: name in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 385
+[08-Sep-2015 17:18:20 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:18:40 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:21:17 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:28:44 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:28:44 Europe/Berlin] PHP Fatal error:  Call to undefined method MailService::getDomain() in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 55
+[08-Sep-2015 17:29:34 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:29:34 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:39:31 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:39:31 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:39:45 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:39:46 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 17:52:07 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such team
+
+  thrown in C:\xampp\htdocs\ral\modules\team\controllers\IndexController.php on line 31
+[08-Sep-2015 17:55:52 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[08-Sep-2015 18:24:17 Europe/Berlin] PHP Fatal error:  Class 'RallyService' not found in C:\xampp\htdocs\ral\modules\user\views\mail\template.phtml on line 1
+[08-Sep-2015 18:25:17 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::getNextBigRallyWithAwards() in C:\xampp\htdocs\ral\modules\user\views\mail\template.phtml on line 5
+[08-Sep-2015 18:25:25 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Table_Exception' with message 'Unknown relation alias Awards' in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php:237
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(235): Doctrine_Relation_Parser->getRelation('Awards', false)
+#1 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Awards', true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1768): Doctrine_Table->getRelation('Awards')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\From.php(88): Doctrine_Query->load('r.Awards a')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(2084): Doctrine_Query_From->parse('LEFT JOIN r.Awa...')
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1189): Doctrine_Query_Abstract->_processDqlQueryPart('from', Array)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false) in C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php on line 237
+[08-Sep-2015 18:25:51 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Query_Exception' with message 'Unknown column big_rally' in C:\xampp\htdocs\ral\library\Doctrine\Query.php:758
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Query\Where.php(110): Doctrine_Query->parseClause('r.big_rally')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Query\Where.php(98): Doctrine_Query_Where->_buildSql('r.big_rally', '=', '1')
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Condition.php(92): Doctrine_Query_Where->load('r.big_rally = 1')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(2084): Doctrine_Query_Condition->parse('r.big_rally = 1')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1189): Doctrine_Query_Abstract->_processDqlQueryPart('where', Array)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1144): Doctrine_Query->getSqlQuery(Array, false)
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1113): Doctrine_Query_Abstract->_getDqlC in C:\xampp\htdocs\ral\library\Doctrine\Query.php on line 758
+[08-Sep-2015 18:26:02 Europe/Berlin] PHP Notice:  Undefined variable: text in C:\xampp\htdocs\ral\modules\user\views\mail\template.phtml on line 17
+[08-Sep-2015 18:27:41 Europe/Berlin] PHP Notice:  Undefined variable: text in C:\xampp\htdocs\ral\modules\user\views\mail\template.phtml on line 17

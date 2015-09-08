@@ -378,12 +378,15 @@ class Element{
         foreach($this->filters as $filter){
             switch($filter):
                 case 'trim':
+                    $_POST[$this->name] = trim($_POST[$this->name]);
                     $var = trim($var);
                     break;
                 case 'lower':
+                    $_POST[$this->name] = strtolower($_POST[$this->name]);
                     $var = strtolower($var);
                     break;
                 case 'specialchars':
+                    $_POST[$this->name] = TK_Text::filterSpecialChars($_POST[$this->name]);
                     $var = TK_Text::filterSpecialChars($var);
             endswitch;
         }

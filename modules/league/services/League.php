@@ -119,7 +119,7 @@ class LeagueService extends Service{
 	}
 	// if yes, use this league
 	else{
-	    return $result;
+	    $league = $result;
 	}
         $this->checkLeagueRallies($league);
         // save team to league

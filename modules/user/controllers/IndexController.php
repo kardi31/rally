@@ -16,6 +16,12 @@ class User_Index extends Controller{
     }
     
     public function register(){
+        ob_start();
+        include(BASE_PATH."/modules/user/views/mail/template.phtml");
+        $content = ob_get_contents();
+        ob_end_clean();
+        echo $content;
+        exit;
         $this->setDifView('index', 'index');
         $this->getLayout()->setLayout('main');
         $userService = parent::getService('user','user');
@@ -96,10 +102,10 @@ class User_Index extends Controller{
         $mailService = parent::getService('user','mail');
         parent::getService('rally','rally');
         if(!$user = $userService->getUser($GLOBALS['urlParams'][1],'token')){
-            $message = "No user";
+            throw new TK_Exception('No user',404);
         }
         elseif($user->get('active')){
-            $message = "User already activated";
+            throw new TK_Exception('User already activated',404);
         }
         else{
             
@@ -113,11 +119,10 @@ class User_Index extends Controller{
             $data = array();
             $data['user_id'] = $user['id'];
 	    
-            $team = $teamService->createRandomTeam($data,$user['id']);
+            $team = $teamService->createRandomTeam($data,$user);
 	    
 	    $league = $leagueService->appendTeamToLeague($team['id']);
 	    $league_level = $league['League']['league_level'];
-	    
 	    $team->set('league_name',$league['league_name']);
 	    $team->save();
 	    

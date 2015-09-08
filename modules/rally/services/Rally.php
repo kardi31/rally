@@ -775,6 +775,16 @@ class RallyService extends Service{
         return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
     }
     
+    public function getNextBigRallyWithAwards(){
+        $q = $this->rallyTable->createQuery('r');
+        $q->addSelect('r.*,a.*');
+        $q->leftJoin('r.BigAwards a');
+        $q->addWhere('r.big_awards = 1');
+        $q->addWhere('r.date > NOW()');
+        $q->limit(1);
+        return $q->fetchOne(array(),Doctrine_Core::HYDRATE_ARRAY);
+    }
+    
     public function getRallyResults($id,$field='id'){
         $q = $this->resultTable->createQuery('re');
         $q->addSelect('re.*');

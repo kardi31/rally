@@ -1,6 +1,14 @@
+<?php 
+
+Service::loadModels('rally', 'rally');
+$rallyService = Controller::getService('rally','rally'); 
+$nextBigRally = $rallyService->getNextBigRallyWithAwards();
+var_dump($nextBigRally);exit;
+?>
+
 <table style="background:#333;width:600px;margin:0 auto;">
     <tr>
-        <td style="padding:15px;"><img src="http://<?= $domain;?>/images/layout/logo-fastrally.png" /></td>
+        <td style="padding:15px;"><img src="http://<?= $_SERVER['SERVER_NAME'];?>/images/layout/logo-fastrally.png" alt="FastRally Logo" title="FastRally Logo" /></td>
         <td>
             
         </td>
@@ -16,12 +24,12 @@
             Follow us for latest promotions and contests.
             <br />
             <div style="margin:0 auto;display:block;text-align:center;margin-top:10px;">
-            <a href="<?php $facebookUrl; ?>" class="fb social_icon_link">
-                <img src="http://<?= $domain;?>/images/layout/fb.png" />
-            </a>
-            <a href="<?php $twitterUrl; ?>" class="twitter social_icon_link">
-                <img src="http://<?= $domain;?>/images/layout/tw.png" />
-            </a>
+                <a href="<?php $facebookUrl; ?>" class="fb social_icon_link">
+                    <img src="http://<?= $_SERVER['SERVER_NAME'];?>/images/layout/fb.png" alt="FastRally Facebook" title="FastRally Facebook" />
+                </a>
+                <a href="<?php $twitterUrl; ?>" class="twitter social_icon_link" alt="FastRally Twitter" title="FastRally Twitter">
+                    <img src="http://<?= $_SERVER['SERVER_NAME'];?>/images/layout/tw.png" />
+                </a>
             </div>
         </td>
     </tr>
