@@ -28,13 +28,10 @@ class People_Index extends Controller{
     }
     
     public function setActiveTrainingSkill(){
-        Service::loadModels('market', 'market');
         Service::loadModels('rally', 'crew');
         Service::loadModels('team', 'team');
         
-        $marketService = parent::getService('market','market');
         $peopleService = parent::getService('people','people');
-        $teamService = parent::getService('team','team');
         $userService = parent::getService('user','user');
         
         $id = $GLOBALS['urlParams'][1];
@@ -55,12 +52,16 @@ class People_Index extends Controller{
             throw new TK_Exception('This player is not in your team',404);
         }
         
+        if(!in_array($skill,$peopleService->getAllPeopleSkills())){
+            throw new TK_Exception('Wrong player skill chosen',404);
+        }
+        
         $player->set('active_training_skill',$skill);
         $player->save();
         
         
         
-        TK_Helper::redirect($_SERVER['HTTP_REFERER']);
+        TK_Helper::redirect('/account/my-people');
 	
     }
     

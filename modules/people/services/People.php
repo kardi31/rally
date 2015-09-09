@@ -19,12 +19,20 @@ class PeopleService extends Service{
         'composure', 'speed','regularity','reflex','on_gravel' ,'on_tarmac','on_snow','in_rain','form','talent'
     );
        
+    protected $trainableDriverSkills = array(
+        'composure', 'speed','regularity','reflex','on_gravel' ,'on_tarmac','on_snow','in_rain'
+    );
+    
     protected $driverSkillsWages = array(
         3,5,4,4,6,6,6,6,8,0
     );
      
     protected $pilotSkills = array(
         'composure', 'dictate_rhytm','diction','route_description','form','talent'
+    );
+    
+    protected $trainablePilotSkills = array(
+        'composure', 'dictate_rhytm','diction','route_description'
     );
     
     protected $pilotSkillsWages = array(
@@ -737,6 +745,11 @@ class PeopleService extends Service{
         $person = $this->getPerson($id);
         $person->set('on_market',0);
         $person->save();
+    }
+    
+    public function getAllPeopleSkills(){
+        // get trainable skills
+        return array_unique(array_merge($this->trainableDriverSkills,$this->trainablePilotSkills));
     }
     
 }

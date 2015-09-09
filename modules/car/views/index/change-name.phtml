@@ -13,8 +13,8 @@
     
     <h4 class="boxHeader"><?= $this->translate('Change car name'); ?></h4>
     
-    <div class="col-md-12">
-        <div class="myPeople peopleList driverList carMarketList">
+    <div class="col-md-12 pb20">
+        <div class="myPeople peopleList driverList carMarketList pb20">
 
             <ul>
                 <li class="active">
@@ -42,7 +42,7 @@
                             <?php echo $form->getElement('name')->renderElement(); ?>
                         </div>
                         <?php echo $form->getElement('submit')->renderElement(); ?>
-                        <a href="/account/my-cars" class="btn btn-default nameBack"><i class="fa fa-level-up"></i> <?=  $this->translate('Go back'); ?></a>
+                        <a href="/account/my-cars" class="btn btn-default nameBack"><?=  $this->translate('Go back'); ?></a>
                     </form>
                 </div>
             </div>

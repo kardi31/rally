@@ -16,12 +16,6 @@ class User_Index extends Controller{
     }
     
     public function register(){
-        ob_start();
-        include(BASE_PATH."/modules/user/views/mail/template.phtml");
-        $content = ob_get_contents();
-        ob_end_clean();
-        echo $content;
-        exit;
         $this->setDifView('index', 'index');
         $this->getLayout()->setLayout('main');
         $userService = parent::getService('user','user');

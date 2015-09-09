@@ -74,7 +74,7 @@ class User_Test extends Controller{
 	    
             $data = array();
             $data['user_id'] = $user['id'];
-            $team = $teamService->createRandomTeam($data,$user['id']);
+            $team = $teamService->createRandomTeam($data,$user);
 	    $league = $leagueService->appendTeamToLeague($team['id']);
 	    $league_level = $league['League']['league_level'];
 	    

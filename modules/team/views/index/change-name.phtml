@@ -13,7 +13,7 @@
     
     <h4 class="boxHeader"><?= $this->translate('Change team name'); ?></h4>
     
-    <div class="col-md-12">
+    <div class="col-md-12 pb20">
         <div class="myPeople peopleList driverList carMarketList">
 
             <div class="carCard carMarketCard active peopleMarketCard col-md-12 pt20">
@@ -29,13 +29,14 @@
                    <br />
                </div>
                 <div class="changeCarName col-md-6" id="changeCarName1">
+                    <i class="fa fa-info-circle pull-right" title="Allowed characters are letters,numbers, spaces, # and -. Allowed length is 4-30 characters."></i>
                     <form method="POST">
                         <div class="form-group">
                             <label for="name" class="control-label"><?= $this->translate('New name'); ?></label>
                             <?php echo $form->getElement('name')->renderElement(); ?>
                         </div>
                         <?php echo $form->getElement('submit')->renderElement(); ?>
-                        <a href="/team/show-team/<?= $authenticatedUser['Team']['id']; ?>" class="btn btn-default nameBack"><i class="fa fa-level-up"></i> <?=  $this->translate('Go back'); ?></a>
+                        <a href="/team/show-team/<?= $authenticatedUser['Team']['id']; ?>" class="btn btn-default nameBack"><?=  $this->translate('Go back'); ?></a>
                     </form>
                 </div>
             </div>

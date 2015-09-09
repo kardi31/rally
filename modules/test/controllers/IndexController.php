@@ -25,7 +25,7 @@ class Test_Index extends Controller{
         $_POST['username'] = "peop_".$randomNumber;
         $user = $userContr->register();
         $GLOBALS['urlParams'][1] = $user['token'];
-//        $userContr->activate();
+        $userContr->activate();
         
         endfor;
         echo "good";exit;

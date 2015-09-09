@@ -1,9 +1,9 @@
 <?php 
 
+Service::loadModels('car', 'car');
 Service::loadModels('rally', 'rally');
 $rallyService = Controller::getService('rally','rally'); 
 $nextBigRally = $rallyService->getNextBigRallyWithAwards();
-var_dump($nextBigRally);exit;
 ?>
 
 <table style="background:#333;width:600px;margin:0 auto;">
@@ -35,8 +35,10 @@ var_dump($nextBigRally);exit;
     </tr>
     <tr>
         <td colspan="2" style="padding:15px 10px;border-top:1px solid #f3f3f3;margin-bottom:10px;color:#f3f3f3;">
-            Did you know that in Big Rallies you can win unique cars? <a style="color:#f3f3f3;" href="#">Sign up for next big rally</a> on 24/07/2015 and 
-            give yourself a chance to win unique and only Ferrari 650 Quatro. 
+            <?php if($nextBigRally){ ?>
+            Did you know that in Big Rallies you can win unique cars? <a style="color:#f3f3f3;" href="/rally/show-rally/<?= $nextBigRally['slug']; ?>/">Sign up for next big rally</a> on <?= TK_Text::timeFOrmat($nextBigRally['date'],'d/m/Y'); ?> and 
+            give yourself a chance to win unique and only <?= $nextBigRally['BigAwards'][0]['Car']['name']; ?>. 
+            <?php } ?>
         </td>
     </tr>
 </table>

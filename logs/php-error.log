@@ -1372,3 +1372,55 @@ Stack trace:
 #7 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(1113): Doctrine_Query_Abstract->_getDqlC in C:\xampp\htdocs\ral\library\Doctrine\Query.php on line 758
 [08-Sep-2015 18:26:02 Europe/Berlin] PHP Notice:  Undefined variable: text in C:\xampp\htdocs\ral\modules\user\views\mail\template.phtml on line 17
 [08-Sep-2015 18:27:41 Europe/Berlin] PHP Notice:  Undefined variable: text in C:\xampp\htdocs\ral\modules\user\views\mail\template.phtml on line 17
+[09-Sep-2015 11:16:05 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such team
+
+  thrown in C:\xampp\htdocs\ral\modules\team\controllers\IndexController.php on line 30
+[09-Sep-2015 11:19:54 Europe/Berlin] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\ral\modules\user\views\mail\template.phtml on line 41
+[09-Sep-2015 11:20:17 Europe/Berlin] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\ral\modules\user\views\mail\template.phtml on line 41
+[09-Sep-2015 11:24:21 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'Couldn't find class Car_Model_Doctrine_CarModels' in C:\xampp\htdocs\ral\library\Doctrine\Table.php:299
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Table.php(256): Doctrine_Table->initDefinition()
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1124): Doctrine_Table->__construct('Car_Model_Doctr...', Object(Doctrine_Connection_Mysql), true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(278): Doctrine_Connection->getTable('Car_Model_Doctr...')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(404): Doctrine_Relation_Parser->getImpl('Car_Model_Doctr...')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(207): Doctrine_Relation_Parser->completeDefinition(Array)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Car', true)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1768): Doctrine_Table->getRelation('Car')
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\From.ph in C:\xampp\htdocs\ral\library\Doctrine\Table.php on line 299
+[09-Sep-2015 11:24:50 Europe/Berlin] PHP Notice:  Undefined variable: text in C:\xampp\htdocs\ral\modules\user\views\mail\template.phtml on line 18
+[09-Sep-2015 12:43:05 Europe/Berlin] PHP Notice:  Undefined variable: text in C:\xampp\htdocs\ral\modules\user\views\mail\template.phtml on line 18
+[09-Sep-2015 12:43:19 Europe/Berlin] PHP Fatal error:  Class 'Show-rally_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[09-Sep-2015 12:43:22 Europe/Berlin] PHP Notice:  Undefined variable: text in C:\xampp\htdocs\ral\modules\user\views\mail\template.phtml on line 18
+[09-Sep-2015 12:43:28 Europe/Berlin] PHP Notice:  Undefined variable: text in C:\xampp\htdocs\ral\modules\user\views\mail\template.phtml on line 18
+[09-Sep-2015 12:43:31 Europe/Berlin] PHP Notice:  Undefined variable: prizePool in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 156
+[09-Sep-2015 13:02:07 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:02:11 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:02:17 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:02:21 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:02:25 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:02:30 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:02:35 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:02:36 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php on line 426
+[09-Sep-2015 13:04:00 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:04:04 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:04:07 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:04:11 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:04:15 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:04:29 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php on line 418
+[09-Sep-2015 13:05:04 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:05:08 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:05:12 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:05:15 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:05:19 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:05:23 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:05:27 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:05:30 Europe/Berlin] PHP Warning:  Illegal string offset 'username' in C:\xampp\htdocs\ral\modules\team\services\Team.php on line 69
+[09-Sep-2015 13:05:33 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\library\Doctrine\Connection\Statement.php on line 257
+[09-Sep-2015 13:09:27 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php on line 426
+[09-Sep-2015 13:17:34 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\library\Doctrine\Transaction.php on line 426
+[09-Sep-2015 13:18:40 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\library\Doctrine\Connection\Statement.php on line 257
+[09-Sep-2015 16:55:42 Europe/Berlin] PHP Notice:  Undefined variable: person in C:\xampp\htdocs\ral\modules\account\views\index\my-people.phtml on line 193
+[09-Sep-2015 16:57:05 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/people/views/index/set-active-training-skill.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[09-Sep-2015 16:57:05 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/people/views/index/set-active-training-skill.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[09-Sep-2015 17:04:01 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/people/views/index/set-active-training-skill.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[09-Sep-2015 17:04:01 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/people/views/index/set-active-training-skill.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47

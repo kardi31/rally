@@ -777,10 +777,12 @@ class RallyService extends Service{
     
     public function getNextBigRallyWithAwards(){
         $q = $this->rallyTable->createQuery('r');
-        $q->addSelect('r.*,a.*');
+        $q->addSelect('r.*,a.*,c.*');
         $q->leftJoin('r.BigAwards a');
+        $q->leftJoin('a.Car c');
         $q->addWhere('r.big_awards = 1');
         $q->addWhere('r.date > NOW()');
+        $q->orderBy('(CASE WHEN a.car_model_id IS NOT NULL THEN 0 ELSE 1 END),a.id ASC');
         $q->limit(1);
         return $q->fetchOne(array(),Doctrine_Core::HYDRATE_ARRAY);
     }

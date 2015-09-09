@@ -224,7 +224,7 @@ class MarketService extends Service{
         $data['people_id'] = $player['id'];
         $data['start_date'] = date('Y-m-d H:i:s');
         
-        if(in_array($values['days'],array(1,2,3))){
+        if(!in_array($values['days'],array(1,2,3))){
             $values['days'] = 3;
         }
         
@@ -268,7 +268,7 @@ class MarketService extends Service{
     public function addCarOnMarket($values,Car_Model_Doctrine_Car $car){
         $teamService = TeamService::getInstance();
         
-        if(in_array($values['days'],array(1,2,3))){
+        if(!in_array($values['days'],array(1,2,3))){
             $values['days'] = 3;
         }
         

@@ -189,6 +189,7 @@ class CarService extends Service{
         $q = $this->carModelTable->createQuery('cm');
 	$q->addWhere('cm.league = ?',$league_id);
         $q->orderBy('rand()');
+        $q->addWhere('cm.unique != 1');
 	$q->limit(1);
         return $q->fetchOne(array(),$hydrationMode);
     }

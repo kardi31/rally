@@ -57,6 +57,28 @@
             <file>file:/C:/xampp/htdocs/ral/modules/index/views/manual/national-ranking.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/views/manual/search-user.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/search-users.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Register.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/services/Mail.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/mail/template.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Element.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/db.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/league/services/League.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Rally.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/Rally.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/services/Car.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/TestController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/test/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/cron/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/news/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/people/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/people/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/views/index/change-name.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/form/NameChange.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Validator.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/people/services/People.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/services/Market.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/views/index/change-name.phtml</file>
         </group>
     </open-files>
 </project-private>

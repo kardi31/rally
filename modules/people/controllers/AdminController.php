@@ -18,8 +18,6 @@ class People_Admin extends Controller{
         $peopleService->calculateNewValuesForAllPlayers($season);
         echo "good";exit;
         
-        
-        $teamService->createRandomTeam($data);
     }
     
     

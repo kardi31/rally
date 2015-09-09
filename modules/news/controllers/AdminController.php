@@ -18,8 +18,6 @@ class Market_Admin extends Controller{
         $marketService->calculateNewValuesForAllPlayers($season);
         echo "good";exit;
         
-        
-        $teamService->createRandomTeam($data);
     }
     
     
