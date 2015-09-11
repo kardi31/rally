@@ -42,7 +42,9 @@
             elseif($_GET['msg']=="in rally"){
                 $this->showError($this->translate("Sorry. You can't sell a car which is signed up for rally."));
             }
-            
+            elseif($_GET['msg']=="scrap in rally"){
+                $this->showError($this->translate("Sorry. You can't scrap a car which is signed up for rally."));
+            }
             elseif($_GET['msg']=="name changed"){
                 $this->showSuccess($this->translate("Car name successfully changed."));
             }
@@ -78,8 +80,8 @@
                 </a>
                     
                     <br />
-                <a class="btn2 scrapCar" onclick="if(!confirm('Are you sure you want to scrap this car? \r\n This will cost you 1% of car value')){return false;}" href="/car/scrap-car/<?= $car['id']; ?>">
-                    <i class="fa fa-trash-o"></i> <?= $this->translate('Scrap this car');?>
+                <a class="scrapCar" onclick="if(!confirm('Are you sure you want to scrap this car? \r\n This will cost you 1% of car value')){return false;}" href="/car/scrap-car/<?= $car['id']; ?>" title="Scrap your car. This will cost you 1% of its value">
+                    <i class="fa fa-trash-o"></i> <?= $this->translate('Scrap this car');?> 
                 </a>
             </div>
 

@@ -42,6 +42,10 @@ class Rally_Model_Doctrine_Rally extends Rally_Model_Doctrine_BaseRally
 	return self::$risks;
     }
     
+    public static function getRiskValues(){
+	return array_keys(self::$risks);
+    }
+    
     // we must hide the risk numbers
     // so the people won't find out how we calculate the results of the race
     // we use text value as both keys and values

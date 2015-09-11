@@ -156,6 +156,25 @@ class Element{
         if(!isset($this->validators)||empty($this->validators))
             return "";
         
+        // if the element not exists
+        // check if has not empty validator
+        // if so,that would mean the validation failed  
+        // previously it crashed on checking if value existed
+        if(in_array('notEmpty',$this->validators)){
+                if(!isset($_POST[$this->name])){
+                    $var = '';
+                }
+                else{
+                    $var = $_POST[$this->name];
+                }
+                $response = $this->callValidator('notEmpty',$var);
+                if(is_array($response)&&array_key_exists('result',$response)&&$response['result']==false):
+                    $this->valid = false;
+                    $view = View::getInstance();
+                    return $view->showShortError($view->translate($response['errorMessage']));
+                endif;
+        }
+        
         if($this->method=="POST"):{
             if(!isset($_POST[$this->name]))
                 return false;
@@ -198,8 +217,6 @@ class Element{
             $view = View::getInstance();
             return $view->showShortError($view->translate($response['errorMessage']));
         endif;
-        
-        
     }
     
     public function getValid(){
@@ -396,6 +413,14 @@ class Element{
     
     public function addFilter($name){
         array_push($this->filters,$name);
+    }
+    
+    public function setName($name){
+        $this->name = $name;
+    }
+    
+    public function getName(){
+        return $this->name;
     }
     
 }

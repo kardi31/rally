@@ -108,6 +108,12 @@ class CarService extends Service{
     }
     
     
+    public function getTeamCar($car_id,$team_id){
+	$q = $this->carTable->createQuery('c');
+	$q->addWhere('c.id = ?',$car_id);
+	$q->addWhere('c.team_id = ?',$team_id);
+	return $q->fetchOne(array(),Doctrine_Core::HYDRATE_RECORD);
+    }
     
     public function getBusyCars(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	$q = $this->carTable->createQuery('c');

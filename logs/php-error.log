@@ -1424,3 +1424,297 @@ Stack trace:
 [09-Sep-2015 16:57:05 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/people/views/index/set-active-training-skill.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
 [09-Sep-2015 17:04:01 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/people/views/index/set-active-training-skill.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
 [09-Sep-2015 17:04:01 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/people/views/index/set-active-training-skill.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[10-Sep-2015 13:08:49 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:09:15 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:09:40 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:09:40 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:09:47 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:10:02 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:10:38 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:10:39 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:11:50 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:12:09 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:12:22 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:12:56 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:12:58 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:12:59 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:13:18 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:13:18 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:13:26 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:13:28 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:13:35 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:14:51 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:17:10 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:17:23 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:17:34 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:17:47 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:18:06 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:18:22 Europe/Berlin] PHP Fatal error:  Class 'Js_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 24
+[10-Sep-2015 13:32:30 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/team/views/index/cancel-sponsorship.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[10-Sep-2015 13:32:30 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/team/views/index/cancel-sponsorship.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[10-Sep-2015 16:21:24 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Hacking attempt
+
+  thrown in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 305
+[10-Sep-2015 17:23:50 Europe/Berlin] PHP Notice:  Undefined index: driver_id in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 302
+[10-Sep-2015 17:23:50 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Hacking attempt
+
+  thrown in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 303
+[10-Sep-2015 17:24:27 Europe/Berlin] PHP Notice:  Undefined index: driver_id in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 302
+[10-Sep-2015 17:24:27 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Hacking attempt
+
+  thrown in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 303
+[10-Sep-2015 17:25:09 Europe/Berlin] PHP Notice:  Undefined index: driver_id in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 302
+[10-Sep-2015 17:25:09 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Hacking attempt
+
+  thrown in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 303
+[10-Sep-2015 17:27:38 Europe/Berlin] PHP Notice:  Undefined variable: var in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 159
+[10-Sep-2015 17:27:50 Europe/Berlin] PHP Notice:  Undefined variable: var in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 159
+[10-Sep-2015 17:32:16 Europe/Berlin] PHP Warning:  Illegal string offset 'driver_id' in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 160
+[10-Sep-2015 17:32:25 Europe/Berlin] PHP Notice:  Undefined index: driver_id in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 160
+[10-Sep-2015 17:33:16 Europe/Berlin] PHP Notice:  Undefined index: driver_id in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 160
+[10-Sep-2015 17:35:31 Europe/Berlin] PHP Notice:  Undefined index: driver_id in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[10-Sep-2015 17:36:18 Europe/Berlin] PHP Notice:  Undefined index: driver_id in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[10-Sep-2015 17:36:18 Europe/Berlin] PHP Notice:  Undefined index: pilot_id in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[10-Sep-2015 17:36:18 Europe/Berlin] PHP Notice:  Undefined index: car_id in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[10-Sep-2015 18:25:04 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 378
+[10-Sep-2015 18:25:04 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 378
+[10-Sep-2015 18:25:58 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 378
+[10-Sep-2015 18:25:58 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 378
+[11-Sep-2015 11:53:53 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 163
+[11-Sep-2015 12:00:56 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 378
+[11-Sep-2015 12:00:56 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 378
+[11-Sep-2015 12:01:11 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 378
+[11-Sep-2015 12:01:11 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 378
+[11-Sep-2015 12:02:02 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 378
+[11-Sep-2015 12:02:02 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 378
+[11-Sep-2015 12:03:25 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:03:25 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:03:38 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:03:38 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:04:01 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:04:01 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:04:14 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:04:14 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:04:29 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:04:29 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:04:41 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:04:41 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:04:59 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:04:59 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:05:15 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:05:15 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:05:23 Europe/Berlin] PHP Fatal error:  Call to undefined method Rally_Index::rejectInvite() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[11-Sep-2015 12:09:27 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such rally
+
+  thrown in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 331
+[11-Sep-2015 12:09:48 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:09:48 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[11-Sep-2015 12:09:54 Europe/Berlin] PHP Fatal error:  Call to undefined method RallyService::getInvitedUser() in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 334
+[11-Sep-2015 12:11:15 Europe/Berlin] PHP Fatal error:  Cannot redeclare RallyService::getFriendlyInvitedUser() in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 1039
+[11-Sep-2015 12:11:29 Europe/Berlin] PHP Fatal error:  Cannot redeclare RallyService::getFriendlyInvitedUser() in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 1039
+[11-Sep-2015 12:12:04 Europe/Berlin] PHP Fatal error:  Call to undefined method RallyService::getInvitedUser() in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 334
+[11-Sep-2015 12:12:16 Europe/Berlin] PHP Fatal error:  Call to a member function delete() on array in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 336
+[11-Sep-2015 12:12:24 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/rally/views/index/reject-invite.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[11-Sep-2015 12:12:24 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/rally/views/index/reject-invite.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[11-Sep-2015 13:53:51 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 163
+[11-Sep-2015 13:55:54 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: League not exists
+
+  thrown in C:\xampp\htdocs\ral\modules\league\controllers\IndexController.php on line 29
+[11-Sep-2015 15:13:44 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 163
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:07 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:51:11 Europe/Berlin] PHP Notice:  Undefined variable: person in C:\xampp\htdocs\ral\modules\account\views\index\my-people.phtml on line 193
+[11-Sep-2015 17:52:16 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 163
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:53:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:54:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:56:37 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE so.finish_date > NOW() AND sb.team_id = '.9.' group by so.id' at line 1. Failing Query: "SELECT so.id FROM Market_Model_Doctrine_CarOffer so LEFT JOIN so.Bids sb WHERE so.finish_date > NOW() AND sb.team_id = '.9.' group by so.id"' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1025): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Mysql), 'SELECT so.id FR...')
+#1 C:\xampp\htdocs\ral\modules\market\services\Market.php(439): Doctrine_Connection->execute('SELECT so.id FR...')
+#2 C:\xampp\htdocs\ral\modules\market\controllers\IndexController.php(439): MarketService->getAllActiveMyCarOffers('9')
+#3 C:\xampp\htdocs\ral\library\TK\Cont in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[11-Sep-2015 17:56:58 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE so.finish_date > NOW() AND sb.team_id = 9 group by so.id' at line 1. Failing Query: "SELECT so.id FROM Market_Model_Doctrine_CarOffer so LEFT JOIN so.Bids sb WHERE so.finish_date > NOW() AND sb.team_id = 9 group by so.id"' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1025): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Mysql), 'SELECT so.id FR...')
+#1 C:\xampp\htdocs\ral\modules\market\services\Market.php(439): Doctrine_Connection->execute('SELECT so.id FR...')
+#2 C:\xampp\htdocs\ral\modules\market\controllers\IndexController.php(439): MarketService->getAllActiveMyCarOffers('9')
+#3 C:\xampp\htdocs\ral\library\TK\Controller.p in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 17:58:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:15 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/market/views/index/buy-car.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[11-Sep-2015 18:09:15 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/market/views/index/buy-car.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\modules\market\services\Market.php on line 448
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:09:56 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:10:35 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\modules\market\services\Market.php on line 448
+[11-Sep-2015 18:10:35 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'where clause'. Failing Query: "SELECT m.id AS m__id, m.car_id AS m__car_id, m.team_id AS m__team_id, m.start_date AS m__start_date, m.finish_date AS m__finish_date, m.asking_price AS m__asking_price, m.highest_bid AS m__highest_bid, m.active AS m__active, m.car_moved AS m__car_moved, m.canceled AS m__canceled, m.user_ip AS m__user_ip, m.notified AS m__notified, m.created_at AS m__created_at, m.updated_at AS m__updated_at, m.deleted_at AS m__deleted_at, m2.id AS m2__id, m2.offer_id AS m2__offer_id, m2.value AS m2__value, m2.team_id AS m2__team_id, m2.user_ip AS m2__user_ip, m2.active AS m2__active, m2.created_at AS m2__created_at, m2.updated_at AS m2__updated_at, m2.deleted_at AS m2__deleted_at, c.id AS c__id, c.model_id AS c__model_id, c.team_id AS c__team_id, c.mileage AS c__mileage, c.name AS c__name, c.value AS c__value, c.upkeep AS c__upkeep, c.last_name_change AS c__la in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[11-Sep-2015 18:10:50 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\modules\market\services\Market.php on line 448
+[11-Sep-2015 18:11:22 Europe/Berlin] PHP Warning:  join(): Invalid arguments passed in C:\xampp\htdocs\ral\modules\market\services\Market.php on line 448
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:14:25 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[11-Sep-2015 18:20:19 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'Couldn't find class Car_Model_Doctrine_Car' in C:\xampp\htdocs\ral\library\Doctrine\Table.php:299
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Table.php(256): Doctrine_Table->initDefinition()
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1124): Doctrine_Table->__construct('Car_Model_Doctr...', Object(Doctrine_Connection_Mysql), true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(278): Doctrine_Connection->getTable('Car_Model_Doctr...')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(404): Doctrine_Relation_Parser->getImpl('Car_Model_Doctr...')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(207): Doctrine_Relation_Parser->completeDefinition(Array)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Car', true)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1768): Doctrine_Table->getRelation('Car')
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query\From.php(88): in C:\xampp\htdocs\ral\library\Doctrine\Table.php on line 299
+[11-Sep-2015 18:21:04 Europe/Berlin] PHP Warning:  usort() expects parameter 2 to be a valid callback, function 'ordbydate' not found or invalid function name in C:\xampp\htdocs\ral\modules\market\controllers\IndexController.php on line 474
+[11-Sep-2015 18:21:20 Europe/Berlin] PHP Warning:  usort() expects parameter 2 to be a valid callback, function 'ordbydate' not found or invalid function name in C:\xampp\htdocs\ral\modules\market\controllers\IndexController.php on line 476
+[11-Sep-2015 18:21:40 Europe/Berlin] PHP Warning:  usort() expects parameter 2 to be a valid callback, function 'ordbydate2' not found or invalid function name in C:\xampp\htdocs\ral\modules\market\controllers\IndexController.php on line 476
+[11-Sep-2015 18:22:41 Europe/Berlin] PHP Notice:  Undefined index: Player in C:\xampp\htdocs\ral\modules\market\views\index\show-my-player-offers.phtml on line 13
+[11-Sep-2015 18:22:41 Europe/Berlin] PHP Notice:  Undefined index: Player in C:\xampp\htdocs\ral\modules\market\views\index\show-my-player-offers.phtml on line 13
+[11-Sep-2015 18:22:41 Europe/Berlin] PHP Notice:  Undefined index: Player in C:\xampp\htdocs\ral\modules\market\views\index\show-my-player-offers.phtml on line 13

@@ -1,28 +1,28 @@
 <script>
-    $(document).ready(function(){
-	var counter = $('.sponsor').length;
-	$(document).on('click','.sponsor:not(.removeSponsor)',function(){
-	    $('.sponsor').removeClass('active');
-	    var t = $(this);
-	    var before = $(this).prevAll().length;
-	    var top = (before)*250;
-	    
-	    $(this).prevAll().animate({top: '270px'}, {duration:700,queue:false});
-	    t.animate({top: '-' + top + 'px'},{duration:700,queue:false,complete:function(){
-		    t.insertBefore('.sponsor:first-of-type');
-                    $('.sponsor').css('top', '0px');
-		    t.addClass('active');
-	    }})
-	});
-        
-        $('form').submit(function (e) {
-            var form = this;
-            e.preventDefault();
-            setTimeout(function () {
-                form.submit();
-            }, 1000); // in milliseconds
-        });
-    });
+//    $(document).ready(function(){
+//	var counter = $('.sponsor').length;
+//	$(document).on('click','.sponsor a',function(){
+//	    $('.sponsor').removeClass('active');
+//	    var t = $(this).closest('.sponsor');
+//	    var before = t.prevAll().length;
+//	    var top = (before)*250;
+//	    
+//	    $(this).prevAll().animate({top: '270px'}, {duration:700,queue:false});
+//	    t.animate({top: '-' + top + 'px'},{duration:700,queue:false,complete:function(){
+//		    t.insertBefore('.sponsor:first-of-type');
+//                    $('.sponsor').css('top', '0px');
+//		    t.addClass('active');
+//	    }})
+//	});
+//        
+//        $('form').submit(function (e) {
+//            var form = this;
+//            e.preventDefault();
+//            setTimeout(function () {
+//                form.submit();
+//            }, 1000); // in milliseconds
+//        });
+//    });
 </script>
 
 <div class="mainUserBox myCarsBox">

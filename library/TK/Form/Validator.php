@@ -54,13 +54,29 @@ class Validator{
     }
     
     
+    public static function validateSelect($var,$multioptions){
+        if(in_array($var,$multioptions)):
+            $response['result'] = true;
+        else:
+            $response['result'] = false;
+            $response['errorMessage'] = "This field has incorrect value";
+        endif;
+        
+        return $response;
+    }
+    
     public static function validateAlphanum($var){
+        if(strlen($var)==0){
+            $response['result'] = true;
+            return $response;
+        }
+        
 	$pattern = '/^[A-Za-zążśźęćńółĄŻŚŹĘĆŃÓŁ0-9\s\-\#]+$/';
 	if(preg_match($pattern,$var)==1):
             $response['result'] = true;
         else:
             $response['result'] = false;
-            $response['errorMessage'] = "This field contain forbidden characters.";
+            $response['errorMessage'] = "This field contain forbidden characters. We allow only letters,numbers, # and -.";
         endif;
         
         return $response;

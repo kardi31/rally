@@ -38,6 +38,7 @@
                 <div class="changeCarName" id="changeCarName1">
                     <form method="POST">
                         <div class="form-group">
+                            <i class="fa fa-info-circle pull-right" title="Allowed characters are letters,numbers, spaces, # and -. Allowed length is 4-30 characters."></i>
                             <label for="name" class="control-label"><?= $this->translate('New name'); ?></label>
                             <?php echo $form->getElement('name')->renderElement(); ?>
                         </div>

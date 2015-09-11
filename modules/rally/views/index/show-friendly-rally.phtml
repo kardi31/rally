@@ -123,7 +123,9 @@ $startDate2 = clone $startDate;
 <?php if(isset($joinForm)){ 
     if($friendly['User']['id']!=$authenticatedUser['id']){ 
     ?>
-        <span class="label label-warning bigLabel"><?= $this->translate('You have been invited to this rally.'); ?></span>
+        <a class="pull-right" href="/rally/reject-invite/<?= $friendly['id']; ?>"><i class="fa fa-times"></i> <?= $this->translate('Reject invite'); ?></a>
+        <span class="label label-warning bigLabel"><?= $this->translate('You have been invited to this rally.'); ?>
+        </span>
         <br /><br />
     <?php } ?>
         <div class="clearfix mb20"></div>

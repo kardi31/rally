@@ -69,6 +69,10 @@ class Market_Index extends Controller{
                     TK_Helper::redirect('/market/show-market/?msg=no+exist');
                 }
                 
+                if($offer['finish_date']>date('Y-m-d H:i:s')){
+                    TK_Helper::redirect('/market/show-market/?msg=offer+expired');
+                }
+                
                 $result = $marketService->bidOffer($values,$offer,$user['Team']);
                 if($result['status']!== false){
                     if(isset($_COOKIE['player_seller'])){
@@ -163,17 +167,19 @@ class Market_Index extends Controller{
         $marketOffers = $marketService->getAllActiveMyPlayerOffers($user['Team']['id']);
         $myPlayers = $marketService->getAllActiveMyPlayers($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
         $offers = array_merge($myPlayers,$marketOffers);
-        
-        function ordbydate($a, $b)
-        {
-            return ($a["finish_date"] < $b["finish_date"])?-1:1;
-        }        
+              
         
         usort($offers,'ordbydate');
         
         $this->view->assign('user',$user);
         $this->view->assign('marketOffers',$offers);
     }
+    
+    
+        function ordbydate($a, $b)
+        {
+            return ($a["finish_date"] < $b["finish_date"])?-1:1;
+        }  
     
     /*
      * End of player part
@@ -259,7 +265,13 @@ class Market_Index extends Controller{
         $marketService = parent::getService('market','market');
         
         $id = $GLOBALS['urlParams'][1];
-        $carModel = $carService->getCarModel($id,'id',Doctrine_Core::HYDRATE_RECORD);
+        if(!$carModel = $carService->getCarModel($id,'id',Doctrine_Core::HYDRATE_RECORD)){
+            throw new TK_Exception('Car not exists',404);
+        }
+        
+        if(!$carModel['on_market']){
+            throw new TK_Exception('Hacking attempt',404);
+        }
         
         $userService = parent::getService('user','user');
         
@@ -329,6 +341,10 @@ class Market_Index extends Controller{
                 
                 if(!$offer = $marketService->getCarOffer($values['offer_id'],'id',Doctrine_Core::HYDRATE_RECORD)){
                     TK_Helper::redirect('/market/show-car-market/?msg=no+exist');
+                }
+                
+                if($offer['finish_date']>date('Y-m-d H:i:s')){
+                    TK_Helper::redirect('/market/show-car-market/?msg=offer+expired');
                 }
                                 
                 $result = $marketService->bidCarOffer($values,$offer,$user['Team']);
@@ -423,7 +439,9 @@ class Market_Index extends Controller{
         $this->view->assign('form',$form);
         
         $marketOffers = $marketService->getAllActiveMyCarOffers($user['Team']['id']);
+        
         $myCars = $marketService->getAllActiveMyCars($user['Team']['id']);
+        
         $marketOffers = array_merge($marketOffers,$myCars);
         
         $this->view->assign('user',$user);
@@ -438,13 +456,34 @@ class Market_Index extends Controller{
             TK_Helper::redirect('/user/login');
         
         Service::loadModels('people', 'people');
+        Service::loadModels('car', 'car');
         $marketService = parent::getService('market','market');
         $teamService = parent::getService('team','team');
         $data = array();
         $marketOffers = $marketService->getAllActiveMyOffers($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
         
+        
+        $myPlayers = $marketService->getAllActiveMyPlayers($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
+        $marketOffers = array_merge($myPlayers,$marketOffers);
+        
+        $carMarketOffers = $marketService->getAllActiveMyCarOffers($user['Team']['id']);
+        
+        $myCars = $marketService->getAllActiveMyCars($user['Team']['id']);
+        
+        $carMarketOffers = array_merge($carMarketOffers,$myCars);
+        
+        $allOffers = array_merge($marketOffers,$carMarketOffers);    
+        
+        function ordbydate2($a, $b)
+        {
+            return ($a["finish_date"] < $b["finish_date"])?-1:1;
+        }  
+        
+        usort($allOffers,'ordbydate2');
+        
+        
         $this->view->assign('user',$user);
-        $this->view->assign('marketOffers',$marketOffers);
+        $this->view->assign('marketOffers',$allOffers);
         
         
         $this->getLayout()->setLayout('layout');

@@ -292,9 +292,30 @@ class RallyService extends Service{
     public function saveRallyCrew($values,$rally,$team){
         $record = $this->crewTable->getRecord();
 	
-	// we must encode risk to get float value, not a string
-//	$riskArray = Rally_Model_Doctrine_Rally::getRisks();
 	
+        $peopleService = Controller::getService('people','people');
+        $carService = Controller::getService('car','car');
+        
+        // if someone entered player/car id by firebug
+        // we check if player/car actually belongs to the team
+        
+        if(!$peopleService->getTeamPlayer($values['driver_id'],$team['id'])){
+            throw new TK_Exception('Hacking attempt',404);
+        }
+        
+        if(!$peopleService->getTeamPlayer($values['pilot_id'],$team['id'])){
+            throw new TK_Exception('Hacking attempt',404);
+        }
+        
+        if(!$carService->getTeamCar($values['car_id'],$team['id'])){
+            throw new TK_Exception('Hacking attempt',404);
+        }
+        
+        // check if someone did not change risk value with firebug
+        if(!in_array($values['risk'],Rally_Model_Doctrine_Rally::getRiskValues())){
+            throw new TK_Exception('Hacking attempt',404);
+        }
+        
 	$values['risk'] = $values['risk'];
 	$values['rally_id'] = $rally['id'];
 	$values['team_id'] = $team['id'];
@@ -817,7 +838,7 @@ class RallyService extends Service{
         $q->addWhere('f.user_id = ?',$user_id);
         
         $q->addWhere('f.from_gold_member = 1');
-        $q->addWhere('f.created_at > DATE_SUB(NOW(), INTERVAL +1 MONTH)');
+//        $q->addWhere('f.created_at > DATE_SUB(NOW(), INTERVAL +1 MONTH)');
         $q->groupBy('f.user_id');
         $q->orderBy('created_at');
 	return $q->fetchOne(array(),Doctrine_Core::HYDRATE_ARRAY);
@@ -843,6 +864,7 @@ class RallyService extends Service{
 	$q->addWhere('r.date > NOW()');
 	$q->addWhere('r.friendly = 1');
         $q->addWhere('r.finished = 0');
+        $q->orderBy('r.date');
 	return $q->execute(array(),$hydrationMode);
     }
     
@@ -986,7 +1008,6 @@ class RallyService extends Service{
         $q->addWhere('fi.deleted_at IS NULL');
 	return $q->execute(array(),$hydrationMode);
     }
-    
     
     public function hasFriendlyInvitation($user_id){
         $q = $this->friendlyInvitationsTable->createQuery('fi');

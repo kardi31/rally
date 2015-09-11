@@ -1,3 +1,10 @@
+<?php 
+    if(isset($_GET['msg'])){
+        if($_GET['msg']=="invite rejected"){
+            $this->showError($this->translate('You have rejected your invite.'));
+        }
+    }
+?>
 <div class="mainUserBox rallyList">
     <h4 class="boxHeader"><?= $this->translate('Friendly rallies'); ?></h4>
     <a class='createFriendly btn btn-primary' href="/rally/create-friendly-rally/"><?= $this->translate('Create friendly rally'); ?></a>
@@ -35,13 +42,15 @@
                             <?php } ?>
                                 
                             <?php if($rally['Friendly']['invite_only']){ ?>
-                                <span class="label label-success">Public</span>
+                                <span class="label label-danger">Private</span>
                             <?php } ?>
                                 
                             <?php if(!$rally['Friendly']['invite_only']){ ?>
-                                <span class="label label-danger">Private</span>
+                                <span class="label label-success">Public</span>
                             <?php } ?>
-
+                            <?php if((is_array($myInvitations)&&in_array($rally['id'],$myInvitations))){
+                                echo "<span class='label label-warning'>".$this->translate('Invited')."</span>"; 
+                            } ?>
 
                             <?php if((is_array($futureTeamRallies)&&in_array($rally['id'],$futureTeamRallies))||$rally['id']==$futureTeamRallies){
                                 echo "<span class='label label-info'>".$this->translate('Joined')."</span>"; 

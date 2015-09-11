@@ -64,6 +64,7 @@ class Rally_Index extends Controller{
                 if(!$rally['big_awards']){
                     $freeDrivers = $peopleService->getFreeDrivers($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
                     $freePilots = $peopleService->getFreePilots($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
+                    var_dump($freePilots);exit;
                     $freeCars = $carService->getFreeCars($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
                     $form = $this->getForm('rally','JoinRally');
                     $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
@@ -269,13 +270,14 @@ class Rally_Index extends Controller{
         $this->view->assign('joinForm',$joinForm);
         
         if($form->isSubmit()){
-            if($form->isValid()){
+            if($form->isValid()&&$joinForm->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
 
                 if($user['gold_member']){
                     if($recentUserFriendlies['cnt']<3){
+                        $values['from_gold_member'] = 1;
                         $friendly = $rallyService->saveFriendlyRally($values,$user);
                         $crew = $rallyService->saveRallyCrew($values,$friendly['Rally'],$user['Team']);
                         $rallyService->saveCrewToFriendlyRally($friendly['id'],$crew['id'],$user['id']);
@@ -313,6 +315,29 @@ class Rally_Index extends Controller{
         $this->view->assign('recentUserFriendlies',$recentUserFriendlies);
         $this->view->assign('form',$form);
         
+    }
+    
+    public function rejectInvite(){
+        
+        Service::loadModels('team', 'team');
+        Service::loadModels('car', 'car');
+        Service::loadModels('people', 'people');
+        $rallyService = parent::getService('rally','rally');
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        
+        
+        if(!$friendly = $rallyService->getFullFriendlyRally($GLOBALS['urlParams'][1],'f.id',Doctrine_Core::HYDRATE_ARRAY)){
+            throw new TK_Exception('No such rally',404);
+        }
+        
+        $invitedUser = $rallyService->getFriendlyInvitedUser($friendly['id'],$user['username'],Doctrine_Core::HYDRATE_RECORD);
+        if($invitedUser){
+            $invitedUser->delete();
+            TK_Helper::redirect('/rally/list-friendly-rally/?msg=invite+removed');
+        }
+        
+        TK_Helper::redirect('/rally/list-friendly-rally/');
     }
     
     public function showFriendlyRally(){

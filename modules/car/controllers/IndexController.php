@@ -77,6 +77,10 @@ class Car_Index extends Controller{
                 
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
+            
+            else{
+                    TK_Helper::redirect('/account/my-people');
+            }
         }
         
         $this->view->assign('form',$form);
@@ -203,7 +207,6 @@ class Car_Index extends Controller{
         if(!$user)
             TK_Helper::redirect('/user/login');
         
-//        $id = $GLOBALS['urlParams']['id'];
         $id = $GLOBALS['urlParams'][1];
         if(!$car = $carService->getCar($id,'id',Doctrine_Core::HYDRATE_RECORD)){
             throw new TK_Exception('No such car',404);
@@ -217,7 +220,7 @@ class Car_Index extends Controller{
         
         
         if($carService->carInRally($car)){
-            TK_Helper::redirect('/account/my-cars?msg=in+rally');
+            TK_Helper::redirect('/account/my-cars?msg=scrap+in+rally');
             exit;
         }
         

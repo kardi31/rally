@@ -24,7 +24,10 @@ class SponsorService extends Service{
     public function getAllSponsorList($sponsor_id = null){
         $q = $this->sponsorTable->createQuery('s');
         if($sponsor_id!=null){
-            $q->orderBy('id = '.$sponsor_id.' DESC');
+            $q->orderBy('id = '.$sponsor_id.' DESC, rand()');
+        }
+        else{
+            $q->orderBy('rand()');
         }
         return $q->fetchArray();
     }

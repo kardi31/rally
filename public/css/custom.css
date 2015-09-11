@@ -742,9 +742,8 @@ footer{
     }
     
     .carBtn a.scrapCar{
-        margin: 0 auto;
-        display: block;
-        width: 150px;
+        margin-left:15px;
+        display: inline-block;
         text-align: center;
         margin-top:20px;
     }
@@ -1371,7 +1370,7 @@ margin-right: auto;
     .createFriendlyBox .radioWrapper{
         display:block;
         margin:0 auto;
-        max-width:400px;
+        max-width:460px;
     }
     
     .createFriendlyBox .radioWrapper label{

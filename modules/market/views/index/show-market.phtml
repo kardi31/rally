@@ -2,8 +2,12 @@
     <h4 class="boxHeader"><?= $this->translate('Players market'); ?></h4> 
     <?php
         if(isset($_GET['msg'])){
-            if($_GET['msg']=="no exist")
+            if($_GET['msg']=="no exist"){
                 $this->showError($this->translate('This offer does not exist'));
+            }
+            elseif($_GET['msg']=="offer expired"){
+                $this->showError('This offer has expired');
+            }
         }
         ?>
     <div class="myPeople peopleList driverList col-md-12">

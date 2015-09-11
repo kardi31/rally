@@ -107,10 +107,14 @@ class People_Index extends Controller{
                 
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
+            else{
+                    TK_Helper::redirect('/account/my-people');
+            }
         }
         
         $this->view->assign('form',$form);
         $this->view->assign('player',$player);
+        $this->view->setNoRender();
     }
     
     

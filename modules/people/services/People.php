@@ -79,6 +79,13 @@ class PeopleService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getTeamPlayer($player_id,$team_id){
+	$q = $this->peopleTable->createQuery('p');
+	$q->addWhere('p.id = ?',$player_id);
+	$q->addWhere('p.team_id = ?',$team_id);
+	return $q->fetchOne(array(),Doctrine_Core::HYDRATE_RECORD);
+    }
+    
     public function getTeamPeople($team_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
 	$q = $this->peopleTable->createQuery('p');
 	$q->select('p.*,CONCAT(p.last_name," ",p.first_name) as name');

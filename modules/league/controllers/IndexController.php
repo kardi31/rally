@@ -22,10 +22,14 @@ class League_Index extends Controller{
 	
         $leagueService = parent::getService('league','league');
         $rallyService = parent::getService('rally','rally');
-        
         $league = TK_Text::dotDash($GLOBALS['urlParams'][1]);
-        $leagueResults =  $rallyService->prepareResultsForLeague($league);
         $leagueTable = $leagueService->getLeagueTable($league);
+        // limitation for php below 5.5
+        $leagueTableArray = $leagueTable->toArray();
+        if(empty($leagueTableArray)){
+            throw new TK_Exception('League not exists',404);
+        }
+        $leagueResults =  $rallyService->prepareResultsForLeague($league);
         
 	$this->view->assign('leagueTable',$leagueTable);
 	$this->view->assign('leagueResults',$leagueResults);

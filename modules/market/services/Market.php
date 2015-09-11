@@ -336,6 +336,24 @@ class MarketService extends Service{
     }
     
     public function getAllActiveMyPlayerOffers($team_id){
+        
+        $cq = $this->offerTable->createQuery('co');
+        $cq->select('co.id');
+        $cq->leftJoin('co.Bids cb');
+        $cq->addWhere('co.finish_date>NOW()');
+        $cq->addWhere('cb.team_id = ?',$team_id);
+        $cq->groupBy('co.id');
+        $subqueryResult = $cq->execute(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        if(empty($subqueryResult))
+            return array();
+        
+        if(is_array($subqueryResult)){
+            $offerIds = join(',',$subqueryResult);
+        }
+        else{
+            $offerIds = $subqueryResult;
+        }
+        
         $q = $this->offerTable->createQuery('o');
         $q->select('o.*,b.*,t.name,p.*,bt.name');
         $q->leftJoin('o.Bids b');
@@ -435,6 +453,23 @@ class MarketService extends Service{
     
     
     public function getAllActiveMyCarOffers($team_id){
+        $cq = $this->carOfferTable->createQuery('co');
+        $cq->select('co.id');
+        $cq->leftJoin('co.Bids cb');
+        $cq->addWhere('co.finish_date>NOW()');
+        $cq->addWhere('cb.team_id = ?',$team_id);
+        $cq->groupBy('co.id');
+        $subqueryResult = $cq->execute(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        if(empty($subqueryResult))
+            return array();
+        
+        if(is_array($subqueryResult)){
+            $offerIds = join(',',$subqueryResult);
+        }
+        else{
+            $offerIds = $subqueryResult;
+        }
+        
         $q = $this->carOfferTable->createQuery('o');
         $q->select('o.*,b.*,t.name,c.*,bt.name,m.*');
         $q->leftJoin('o.Bids b');
@@ -445,7 +480,7 @@ class MarketService extends Service{
         $q->addWhere('o.finish_date > NOW()');
 //        $q->addWhere('b.team_id = ?',$team_id);
         $q->orderBy('o.finish_date,b.value DESC');
-        $q->addWhere('o.id IN (SELECT so.id FROM Market_Model_Doctrine_CarOffer so LEFT JOIN so.Bids sb WHERE so.finish_date > NOW() AND sb.team_id = '.$team_id.' group by so.id)');
+        $q->addWhere('o.id IN ('.$offerIds.')');
         
         return $q->fetchArray();
     }
