@@ -10,13 +10,14 @@
         <small><a href="/forum/show-forum"><?= $this->translate('Forum'); ?></a></small>
     </div> 
     <div class='staticWrapper showForum'>
+        <?php if(count($threads)>0){ ?>
         <table class="table">
             <thead>
                 <tr>
                     <th><?= $this->translate('Thread'); ?></th>
                     <th><?= $this->translate('Responses'); ?></th>
                     <th><?= $this->translate('Author'); ?></th>
-                    <th><?= $this->translate('Viewings'); ?></th>
+                    <!--<th><?php // $this->translate('Viewings'); ?></th>-->
                     <th><?= $this->translate('Last entry'); ?></th>
                 </tr>
             </thead>
@@ -27,13 +28,14 @@
                         <a href="/forum/show-thread/<?php echo $thread['id']; ?>"><?php echo $thread['title']; ?></a>
                     </td>
                     <td>
+                        <?= count($thread['Posts']); ?>
                     </td>
                     <td>
                         <?php echo $thread['User']['username']; ?>
                     </td>
-                    <td>
+<!--                    <td>
 
-                    </td>
+                    </td>-->
                         <td>
                         <?php if(isset($thread['Posts'][0])&&!empty($thread['Posts'][0])&&$thread['Posts'][0]['active']): 
                                 echo TK_Text::timeFormat($thread['Posts'][0]['created_at'],'d/m/y H:i')."<br />";
@@ -49,6 +51,7 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <?php } ?>
         <div>
             <div class="addThreadWrapper">
                 <h5><?= $this->translate('Add new thread'); ?></h5>

@@ -363,7 +363,7 @@ class MarketService extends Service{
         $q->addWhere('o.finish_date > NOW()');
         $q->orderBy('o.finish_date,b.value DESC');
         
-        $q->addWhere('o.id IN (SELECT so.id FROM Market_Model_Doctrine_Offer so LEFT JOIN so.Bids sb WHERE so.finish_date > NOW() AND sb.team_id = '.$team_id.' GROUP BY so.id)');
+        $q->addWhere('o.id IN ('.$offerIds.')');
         
         return $q->fetchArray();
     }

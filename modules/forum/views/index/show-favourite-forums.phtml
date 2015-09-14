@@ -3,7 +3,7 @@
     <h4 class="boxHeader">Forum</h4>
     <?php if(!$authenticatedUser['gold_member']){ ?>
         <div class="goldOverlay">
-            <a href="#">
+            <a href="/gold-membership">
                 <img src="/images/layout/gc_big.png" />
             </a>
         </div>
@@ -13,7 +13,7 @@
             <ul>
                 <?php foreach($favouriteCategories as $favourite): ?>
                     <li>
-                        <strong><?php echo $favourite['Category']['name']; ?></strong>
+                        <a href="/forum/show-category/<?= $favourite['Category']['slug']; ?>" class="bold"><?php echo $favourite['Category']['name']; ?></a>
                         <?php $thread = $lastThreads[$favourite['category_id']];
                         if(!$thread) continue;
                         if(isset($thread['Thread'])){

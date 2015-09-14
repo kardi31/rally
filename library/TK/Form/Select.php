@@ -146,7 +146,6 @@ class Select extends Element {
                 return $view->showShortError($view->translate($response['errorMessage']));
             endif;
         }
-//        die('134');
     }
 }
 

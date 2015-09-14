@@ -186,6 +186,9 @@ class Team_Index extends Controller{
             $this->view->assign('topCountryList',$topCountryList);
             
             $country = TK_Helper::getCountry(strtoupper($GLOBALS['urlParams'][1]));
+            if(!$country){
+                throw new TK_Exception('No such page',404);
+            }
             $this->view->assign('country',$country);
             
         }

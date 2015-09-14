@@ -1,6 +1,4 @@
-<div class="mainUserBox">
-    <h4 class="boxHeader"><?= $this->translate('People offer'); ?></h4> 
-    <?php
+<?php
         if(isset($message)){
             if(!$message['status'])
                 $this->showError($message['message']);
@@ -30,6 +28,9 @@
            
         }
     ?>
+<div class="mainUserBox">
+    <h4 class="boxHeader"><?= $this->translate('People offer'); ?></h4> 
+    
     <div class="myPeople peopleList driverList col-md-12">
         
         <?php $person = $offer['Player']; ?>

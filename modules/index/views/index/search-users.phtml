@@ -4,10 +4,13 @@
         
         <form action="/search-users" method="POST">
             <div class="col-md-6">
-                <input class="form-control" type="text" name="username" id="searchUsername" placeholder="Enter user name" />
+                <?= $form->getElement('username')->renderElement(); ?>
+                <!--<input class="form-control" type="text" name="username" id="searchUsername" placeholder="Enter user name" />-->
             </div>
             <div class="clearfix"></div>
-            <input class="btn myBtn searchUsersBtn" type="submit" value="Search" name="submit" />
+            
+                <?= $form->getElement('submit')->renderElement(); ?>
+            <!--<input class="btn myBtn searchUsersBtn" type="submit" value="Search" name="submit" />-->
         </form>
         <?php if(isset($users)&&count($users)>0){ ?>
         <table class="table searchTable">
@@ -28,7 +31,10 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-        <?php } ?>
+        <?php }
+        else{
+            echo "No results found";
+        }?>
     </div>
 </div>
  <script>
@@ -40,7 +46,7 @@
           dataType: "json",
           type: "get",
           data: {
-            q: request.term
+            q: request.term,
           },
           success: function( data ) {
             response( data );

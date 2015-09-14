@@ -1,6 +1,4 @@
-<div class="mainUserBox myCarsBox">
-    <h4 class="boxHeader"><?= $this->translate('Show car offer')." #".$offer['id']; ?></h4>
-    <?php
+<?php
         if(isset($message)){
             if(!$message['status'])
                 $this->showError($message['message']);
@@ -30,6 +28,9 @@
            
         }
     ?>
+<div class="mainUserBox myCarsBox">
+    <h4 class="boxHeader"><?= $this->translate('Show car offer')." #".$offer['id']; ?></h4>
+    
     <div class='col-md-12 pb20'>
         <div class="myPeople peopleList driverList carMarketList">
             <?php $car = $offer['Car']; 

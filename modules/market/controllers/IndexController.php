@@ -130,6 +130,7 @@ class Market_Index extends Controller{
     }
     
     
+         
     public function myPlayers(){
         $userService = parent::getService('user','user');
         
@@ -169,17 +170,16 @@ class Market_Index extends Controller{
         $offers = array_merge($myPlayers,$marketOffers);
               
         
-        usort($offers,'ordbydate');
+        usort($offers,function ($a, $b)
+        {
+            return ($a["finish_date"] < $b["finish_date"])?-1:1;
+        });
         
         $this->view->assign('user',$user);
         $this->view->assign('marketOffers',$offers);
     }
     
     
-        function ordbydate($a, $b)
-        {
-            return ($a["finish_date"] < $b["finish_date"])?-1:1;
-        }  
     
     /*
      * End of player part

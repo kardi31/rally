@@ -113,7 +113,7 @@ input.textInput::-moz-placeholder { /* Mozilla Firefox 19+ */
 input.textInput:-ms-input-placeholder { /* Internet Explorer 10+ */
    color:    #000;
 }
-a{
+a,a:hover,a:focus{
     color:#f3f3f3;
 }
 
@@ -158,6 +158,9 @@ table tr td{
     }
     .flagSelect a,.flagSelect a:active,.flagSelect a:focus,.flagSelect a:hover{
         text-decoration:none;
+    }
+    .bold{
+        font-weight:bold;
     }
 
 /*
@@ -513,7 +516,7 @@ footer{
 }
 
 .boxForum li span{
-    margin-left:20px;
+    margin-left:2px;
     display:block;
     line-height:22px;
 }
@@ -575,7 +578,7 @@ footer{
 .boxTransfer a{
     font-weight: bold;
     display:block;
-    padding-left:25px;
+    /*padding-left:25px;*/
 }
 
 .myBtn{
@@ -1647,6 +1650,10 @@ margin-right: auto;
     
     .showForum tbody{
         background:#686868;
+    }
+    
+    .showForum .fa-star.selected{
+        color:yellow;
     }
     
     .showForum tbody td{

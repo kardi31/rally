@@ -8,24 +8,48 @@
         </div>
     <?php }
     else{ ?>
-        <?php foreach($marketOffers as $offer):?>
+        <?php foreach($marketOffers as $offer):
+            if(isset($offer['Player'])){
+                $player = true;
+                $element = $offer['Player'];
+            }
+            else{
+                $player = false;
+                $element = $offer['Car'];
+            }
+            ?>
             <div class="item">
-                <?php $player = $offer['Player']; ?>
-                <a href="#"><?php echo $player['last_name']." ".$player['first_name']; ?></a>
+                <a href="/market/show-<?php echo ($player?'':'car-');?>offer/<?= $offer['id']; ?>">
+                    <?php 
+                    if($player){
+                        echo '<i class="fa fa-user" title="Player"></i>';
+                        echo $element['last_name']." ".$element['first_name']; 
+                    }
+                    else{
+                        echo '<i class="fa fa-car" title="Car"></i>';
+                        echo $element['name'];
+                    }
+                    ?>
+                </a>
                 <?php
                 if(isset($offer['Bids'][0]))
-                    echo '<i class="fa fa-money"></i> $'.(int)$offer['Bids'][0]['value']." - <span class='transferTeam'>".$offer['Bids'][0]['Team']['name']."</span><br />"; 
+                    echo '<i title="Highest bid" class="fa fa-money"></i> $'.(int)$offer['Bids'][0]['value']." - <span class='transferTeam'>".$offer['Bids'][0]['Team']['name']."</span><br />"; 
                 else
-                    echo "no offers";
+                    echo "no offers<br />";
                 ?>
                 <span>
-                    <i class="fa fa-clock-o"></i>
+                    <i class="fa fa-clock-o" title="Auction finish"></i>
                     <?php echo TK_Text::timeFormat($offer['finish_date'],'d/m/Y H:i'); ?>
                 </span>
             </div>
         <?php endforeach; ?>
         <div class="bottom">
-            <a href="/market/player-monitor" class="logIn btn seeAllTransfer"><?= $this->translate('SEE ALL'); ?></a>
+            <?php if($player)
+                $link = "/market/player-monitor";
+            else
+                $link = "/market/car-monitor";
+            ?>
+            <a href="<?= $link; ?>" class="logIn btn seeAllTransfer"><?= $this->translate('SEE ALL'); ?></a>
         </div>
     <?php } ?>
 </div>

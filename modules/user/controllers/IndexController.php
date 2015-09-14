@@ -289,15 +289,18 @@ class User_Index extends Controller{
         
         $query = filter_var($_GET['q'],FILTER_SANITIZE_STRING);
             
-        $users = $userService->findUsers($query,Doctrine_Core::HYDRATE_ARRAY);
         $responseUsers = array();
         $counter = 0;
         
-        if(isset($users)){
-            foreach($users as $user){
-                $responseUsers[$counter]['label'] = $user['username'];
-                $responseUsers[$counter]['value'] = $user['username'];
-                $counter++;
+        if(strlen($query)>=3){
+            $users = $userService->findUsers($query,Doctrine_Core::HYDRATE_ARRAY);
+
+            if(isset($users)){
+                foreach($users as $user){
+                    $responseUsers[$counter]['label'] = $user['username'];
+                    $responseUsers[$counter]['value'] = $user['username'];
+                    $counter++;
+                }
             }
         }
         echo json_encode($responseUsers);

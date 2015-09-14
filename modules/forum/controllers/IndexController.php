@@ -323,10 +323,14 @@ class Forum_Index extends Controller{
             throw new TK_Exception('No such forum',404);
         }
         
+        if(!($user['gold_member']&&$user['gold_member_expire']>date('Y-m-d H:i:s'))){
+            throw new TK_Exception('You are not a gold member',404);
+        }
+        
         $forumService->addCategoryToFavourite($category,$user);
         
         
-        TK_Helper::redirect($_SERVER['HTTP_REFERER']);
+        TK_Helper::redirect('/forum/show-forum');
         
     }
     
@@ -339,10 +343,19 @@ class Forum_Index extends Controller{
         
         $forumService = parent::getService('forum','forum');
         
-        $forumService->removeCategoryFromFavourite($GLOBALS['urlParams'][1],$user['id']);
+        
+        if(!$category = $forumService->getCategory($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_ARRAY)){
+            throw new TK_Exception('No such forum',404);
+        }
+        
+        if(!($user['gold_member']&&$user['gold_member_expire']>date('Y-m-d H:i:s'))){
+            throw new TK_Exception('You are not a gold member',404);
+        }
+        
+        $forumService->removeCategoryFromFavourite($category['id'],$user['id']);
         
         
-        TK_Helper::redirect($_SERVER['HTTP_REFERER']);
+        TK_Helper::redirect('/forum/show-forum');
     }
     
     public function showFavouriteForums(){

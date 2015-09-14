@@ -376,6 +376,7 @@ class Element{
     }
     
     public function prepareFieldValue(){
+//        var_dump($this->getMethodVariable($this->name));exit;
         if(strlen($this->getMethodVariable($this->name))){
             return $this->getMethodVariable($this->name);
         }

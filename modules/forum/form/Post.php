@@ -6,7 +6,8 @@ class Post extends Form{
         $content = $this->createElement('textarea','content',array(),'Opis');
         $content->addParam('rows',4);
         $content->addParam('cols',80);
-//        $content->addValidator('alnum');
+        $content->addValidator('alnum');
+        $content->addValidator('letterLength',array('min' => 3));
         $content->addFilter('specialchars');
         $content->addFilter('trim');
         $content->addClass('form-control');

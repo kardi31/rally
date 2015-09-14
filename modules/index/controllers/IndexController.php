@@ -24,7 +24,14 @@ class Index_Index extends Controller{
         
         $loginForm = $this->getForm('user','login');
         $this->view->assign('loginForm',$loginForm);
-        $this->getLayout()->setLayout('main');
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            $this->getLayout()->setLayout('main');
+        else{
+            $this->getLayout()->setLayout('page');
+        }
     }
     
     public function forgotPassword(){
@@ -172,12 +179,19 @@ class Index_Index extends Controller{
         if(!$user)
             TK_Helper::redirect('/user/login');
         
-        if(isset($_POST['username'])){
+        
+        $form = $this->getForm('user','searchUser');
+        $this->view->assign('form',$form);
+        
+        
+        if($form->isSubmit()){
+            if($form->isValid()){
             
             $username = filter_var($_POST['username'],FILTER_SANITIZE_STRING);
             
             $users = $userService->searchForUsers($username,Doctrine_Core::HYDRATE_ARRAY);
             $this->view->assign('users',$users);
+            }
         }
     }
     

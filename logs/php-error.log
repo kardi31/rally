@@ -1718,3 +1718,122 @@ Stack trace:
 [11-Sep-2015 18:22:41 Europe/Berlin] PHP Notice:  Undefined index: Player in C:\xampp\htdocs\ral\modules\market\views\index\show-my-player-offers.phtml on line 13
 [11-Sep-2015 18:22:41 Europe/Berlin] PHP Notice:  Undefined index: Player in C:\xampp\htdocs\ral\modules\market\views\index\show-my-player-offers.phtml on line 13
 [11-Sep-2015 18:22:41 Europe/Berlin] PHP Notice:  Undefined index: Player in C:\xampp\htdocs\ral\modules\market\views\index\show-my-player-offers.phtml on line 13
+[12-Sep-2015 10:17:33 Europe/Berlin] PHP Notice:  Undefined index: Player in C:\xampp\htdocs\ral\modules\market\views\index\show-my-player-offers.phtml on line 13
+[12-Sep-2015 10:17:33 Europe/Berlin] PHP Notice:  Undefined index: Player in C:\xampp\htdocs\ral\modules\market\views\index\show-my-player-offers.phtml on line 13
+[12-Sep-2015 10:28:47 Europe/Berlin] PHP Warning:  usort() expects parameter 2 to be a valid callback, function 'ordbydate' not found or invalid function name in C:\xampp\htdocs\ral\modules\market\controllers\IndexController.php on line 172
+[12-Sep-2015 10:28:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[12-Sep-2015 10:29:23 Europe/Berlin] PHP Warning:  usort() expects parameter 2 to be a valid callback, function 'ordbydate' not found or invalid function name in C:\xampp\htdocs\ral\modules\market\controllers\IndexController.php on line 176
+[12-Sep-2015 10:29:25 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:26 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:31:28 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:33 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:35 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:33:59 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php on line 1152
+[12-Sep-2015 10:34:00 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[12-Sep-2015 10:34:19 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[12-Sep-2015 10:34:42 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[12-Sep-2015 10:43:23 Europe/Berlin] PHP Notice:  Undefined variable: person in C:\xampp\htdocs\ral\modules\market\controllers\IndexController.php on line 247
+[12-Sep-2015 10:43:23 Europe/Berlin] PHP Notice:  Undefined variable: person in C:\xampp\htdocs\ral\modules\market\controllers\IndexController.php on line 247
+[12-Sep-2015 10:49:31 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such forum
+
+  thrown in C:\xampp\htdocs\ral\modules\forum\controllers\IndexController.php on line 323
+[12-Sep-2015 10:51:33 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\forum\controllers\IndexController.php on line 333
+[12-Sep-2015 10:51:34 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[12-Sep-2015 10:51:34 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[12-Sep-2015 10:51:35 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[12-Sep-2015 10:51:53 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\forum\controllers\IndexController.php on line 333
+[12-Sep-2015 10:51:53 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[12-Sep-2015 10:51:53 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[12-Sep-2015 10:51:54 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[12-Sep-2015 10:52:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[12-Sep-2015 10:52:28 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[12-Sep-2015 10:52:46 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: You are not a gold member
+
+  thrown in C:\xampp\htdocs\ral\modules\forum\controllers\IndexController.php on line 327
+[12-Sep-2015 10:53:06 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[12-Sep-2015 10:53:06 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[12-Sep-2015 10:55:00 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/forum/views/index/remove-favourite-forum.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[12-Sep-2015 10:55:00 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/forum/views/index/remove-favourite-forum.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[12-Sep-2015 10:56:52 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such forum
+
+  thrown in C:\xampp\htdocs\ral\modules\forum\controllers\IndexController.php on line 348
+[12-Sep-2015 22:31:53 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[12-Sep-2015 22:31:53 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[12-Sep-2015 22:31:59 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[12-Sep-2015 22:31:59 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[12-Sep-2015 22:33:38 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such category
+
+  thrown in C:\xampp\htdocs\ral\modules\forum\controllers\IndexController.php on line 61
+[12-Sep-2015 22:34:11 Europe/Berlin] PHP Warning:  Illegal string offset 'id' in C:\xampp\htdocs\ral\modules\forum\services\Forum.php on line 181
+[12-Sep-2015 22:40:34 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[12-Sep-2015 22:40:54 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[12-Sep-2015 22:41:22 Europe/Berlin] PHP Warning:  Illegal string offset 'id' in C:\xampp\htdocs\ral\modules\forum\services\Forum.php on line 181
+[13-Sep-2015 09:14:27 Europe/Berlin] PHP Notice:  Undefined index: slug in C:\xampp\htdocs\ral\modules\forum\views\index\show-favourite-forums.phtml on line 16
+[13-Sep-2015 09:14:27 Europe/Berlin] PHP Notice:  Undefined index: slug in C:\xampp\htdocs\ral\modules\forum\views\index\show-favourite-forums.phtml on line 16
+[13-Sep-2015 09:17:10 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such thread
+
+  thrown in C:\xampp\htdocs\ral\modules\forum\controllers\IndexController.php on line 101
+[13-Sep-2015 09:17:34 Europe/Berlin] PHP Notice:  Undefined index: UK in C:\xampp\htdocs\ral\library\TK\Helper.php on line 227
+[13-Sep-2015 09:17:35 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[13-Sep-2015 09:19:20 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such page
+
+  thrown in C:\xampp\htdocs\ral\modules\team\controllers\IndexController.php on line 190
+[13-Sep-2015 09:44:20 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[13-Sep-2015 09:45:54 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44

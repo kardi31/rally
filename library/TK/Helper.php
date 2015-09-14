@@ -224,7 +224,10 @@ class TK_Helper{
     }
     
     public static function getCountry($country){
-        return self::$countries[$country];
+        if(isset(self::$countries[$country])){
+            return self::$countries[$country];
+        }
+        return false;
     }
     
     

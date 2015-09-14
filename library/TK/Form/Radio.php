@@ -122,4 +122,22 @@ class Radio extends Element {
 	endif;    
 	
     }
+    
+    public function validateElement(){
+        if(!parent::isSubmit())
+            return "";
+        
+        $var = $_POST[parent::getName()];
+        $response = Validator::validateSelect($var,array_values($this->multiOptions[parent::getName()]));
+        if($response['result']){
+            parent::validateElement();
+        }
+        else{
+            if(is_array($response)&&array_key_exists('result',$response)&&$response['result']==false):
+                $this->valid = false;
+                $view = View::getInstance();
+                return $view->showShortError($view->translate($response['errorMessage']));
+            endif;
+        }
+    }
 }
