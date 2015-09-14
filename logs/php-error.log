@@ -1837,3 +1837,85 @@ Stack trace:
   thrown in C:\xampp\htdocs\ral\modules\team\controllers\IndexController.php on line 190
 [13-Sep-2015 09:44:20 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
 [13-Sep-2015 09:45:54 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 12:52:46 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 163
+[14-Sep-2015 12:56:29 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 40
+[14-Sep-2015 12:56:29 Europe/Berlin] PHP Notice:  Undefined index: label in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 40
+[14-Sep-2015 12:56:29 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 12:56:29 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 12:56:29 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 12:58:31 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 40
+[14-Sep-2015 12:58:31 Europe/Berlin] PHP Notice:  Undefined index: label in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 40
+[14-Sep-2015 12:58:31 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 12:58:31 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 12:58:31 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 12:59:22 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 40
+[14-Sep-2015 12:59:22 Europe/Berlin] PHP Notice:  Undefined index: label in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 40
+[14-Sep-2015 12:59:22 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 12:59:22 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 12:59:22 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 12:59:42 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 13:00:46 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 40
+[14-Sep-2015 13:00:46 Europe/Berlin] PHP Notice:  Undefined index: label in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 40
+[14-Sep-2015 13:00:46 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 13:00:46 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 13:00:46 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 13:01:21 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 40
+[14-Sep-2015 13:01:21 Europe/Berlin] PHP Notice:  Undefined index: label in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 40
+[14-Sep-2015 13:01:21 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 13:01:21 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 13:01:21 Europe/Berlin] PHP Notice:  Undefined index: value in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 41
+[14-Sep-2015 16:20:34 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 163
+[14-Sep-2015 16:33:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::order() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 16:33:23 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 16:33:37 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 16:33:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 16:34:00 Europe/Berlin] PHP Fatal error:  Call to undefined method Order_Index::order() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 16:34:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 16:34:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 16:34:36 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 16:35:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 16:35:26 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 16:39:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:00:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:04:40 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ral\public/..//modules/user/form/Transferuj.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\Controller.php on line 106
+[14-Sep-2015 17:04:40 Europe/Berlin] PHP Fatal error:  require(): Failed opening required 'C:\xampp\htdocs\ral\public/..//modules/user/form/Transferuj.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\Controller.php on line 106
+[14-Sep-2015 17:04:40 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:04:55 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 45
+[14-Sep-2015 17:04:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:05:17 Europe/Berlin] PHP Notice:  Undefined variable: amount in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 45
+[14-Sep-2015 17:05:17 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:05:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:05:40 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:08:49 Europe/Berlin] PHP Fatal error:  Call to undefined method View::getElement() in C:\xampp\htdocs\ral\modules\order\views\index\transferuj.phtml on line 2
+[14-Sep-2015 17:08:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:28:32 Europe/Berlin] PHP Notice:  Undefined index: provider in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 17
+[14-Sep-2015 17:28:32 Europe/Berlin] PHP Notice:  Undefined index: premium in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 44
+[14-Sep-2015 17:28:34 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:51:26 Europe/Berlin] PHP Notice:  Undefined index: amount in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 19
+[14-Sep-2015 17:51:26 Europe/Berlin] PHP Fatal error:  Class 'PremiumService' not found in C:\xampp\htdocs\ral\library\TK\Controller.php on line 101
+[14-Sep-2015 17:51:26 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:51:52 Europe/Berlin] PHP Notice:  Undefined index: amount in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 19
+[14-Sep-2015 17:51:52 Europe/Berlin] PHP Fatal error:  Class 'UserService' not found in C:\xampp\htdocs\ral\modules\order\services\Premium.php on line 26
+[14-Sep-2015 17:51:52 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:52:07 Europe/Berlin] PHP Notice:  Undefined index: amount in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 19
+[14-Sep-2015 17:52:07 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Incorrect amount - error processing request
+
+  thrown in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 30
+[14-Sep-2015 17:53:09 Europe/Berlin] PHP Notice:  Undefined index: amount in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 19
+[14-Sep-2015 17:53:09 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Incorrect amount - error processing request
+
+  thrown in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 30
+[14-Sep-2015 17:53:29 Europe/Berlin] PHP Notice:  Undefined index: amount in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 19
+[14-Sep-2015 17:53:30 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:53:54 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:54:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:54:07 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:54:48 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:54:52 Europe/Berlin] PHP Warning:  require_once(Zend/Currency/Exception.php): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\Zend\Currency.php on line 560
+[14-Sep-2015 17:54:52 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'Zend/Currency/Exception.php' (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\Zend\Currency.php on line 560
+[14-Sep-2015 17:54:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:55:33 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 17:55:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 18:07:19 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 18:17:16 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[14-Sep-2015 18:17:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44

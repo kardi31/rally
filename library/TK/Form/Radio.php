@@ -116,11 +116,13 @@ class Radio extends Element {
 		$this->multiOptions[$this->name][$value[$keys[0]]] = $value[$keys[1]];
 	    endforeach;
 	else:
-	    foreach($options as $key => $value):
-		$this->multiOptions[$this->name][$key] = $value;
+	    foreach($options as $value => $label):
+                $counter = count($this->multiOptions)+1;
+		$this->multiOptions[$counter]['label'] = $label;
+                $this->multiOptions[$counter]['value'] = $value;
 	    endforeach;
-	endif;    
-	
+	endif;
+        
     }
     
     public function validateElement(){

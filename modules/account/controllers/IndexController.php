@@ -275,35 +275,6 @@ class Account_Index extends Controller{
 	$this->view->assign('rateRow',$rateRow);
         
 
-//transferuj.code = YhV3KQ87oLs4aM68
-//        $options = $this->getInvokeArg('bootstrap')->getOptions();
-//    if(!array_key_exists('transferuj', $options)) {
-//       throw new Zend_Controller_Action_Exception('An error occured');
-//    }
-//    $code = $options['transferuj']['code'];
-//    $orderId = $this->getRequest()->getParam('id');
-//    $orderService = $this->_service->getService('Order_Service_Order');
-//    if(!$order = $orderService->getOrder($orderId)){
-//        throw new Zend_Exception('Order not found');
-//    }
-//    
-//    $form = new Order_Form_Transferuj();
-//    $crc = 'tomCrC56';
-//    $payuId = 18717;
-//    $md5sum = md5($payuId.$order['total_cost'].$crc.$code);
-//    $form->getElement('md5sum')->setValue($md5sum);
-//    $form->getElement('id')->setValue($payuId);
-//    $form->getElement('crc')->setValue($crc);
-//    $form->getElement('opis')->setValue('To jest ttestowy opis');
-//    $form->getElement('kwota')->setValue($order['total_cost']);
-//        
-//    $form->getElement('wyn_url')->setValue($this->view->url(array('id'=> $orderId),'domain-transferuj-new'));
-//    $form->getElement('pow_url')->setValue($this->view->url(array('payment' => $payment['id'], 'order' => $order->getId()), 'domain-i18n:order-complete'));
-////    $form->getElement('pow_url')->setValue($this->view->url(array('id'=> $orderId),'domain-transferuj-new'));
-//    $form->setAction('https://secure.transferuj.pl');
-//    $form->setMethod('POST');
-//    $this->view->assign('form',$form);
-        
         
     }
     

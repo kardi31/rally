@@ -7,7 +7,8 @@
 ?>
 <div class="mainUserBox">
         <h4 class="boxHeader"><?= $this->translate('My premium'); ?></h4>
-        <div class="goldCoinBox">
+        <div class="staticWrapper">
+        <div class="goldCoinBox goldCoinBoxInfo">
             <?php if($authenticatedUser['gold_member']): ?>
                 <?= $this->translate('You are currently a'); ?> <img src="/images/layout/gc_small.png"> <?= $this->translate('member. Your membership expires at');?> <?= TK_Text::timeFormat($authenticatedUser['gold_member_expire'],'d/m/y H:i'); ?>
             <?php else: ?>
@@ -16,13 +17,7 @@
             <br />
             <?= $this->translate('Your account balance'); ?>: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png">
         </div>
-        <div class="addMorePremium">
-            <?= $this->translate('Add more'); ?> <img class="coin" src="/images/layout/coin.png" />
-            <form class="form-horizontal" method="POST">
-                <?php echo $form->getElement('premium')->renderElement(); ?>
-                <?php echo $form->getElement('submit')->renderElement(); ?>
-            </form>
-        </div>
+
         <h6 class="h4">Premium prices</h6>
         <table class="table">
             <tr>
@@ -86,22 +81,53 @@
                 <td>15% more</td>
             </tr>
         </table>
+        <div class="addMorePremium">
+            <h2> <?= $this->translate('Add more'); ?> <img class="coin" src="/images/layout/coin.png" /></h2>
+                    
+            <form class="form-horizontal" method="POST" action="/order/process">
+               
+                <div class="buyPremiumBox">
+                    <div class="amountBox">
+                        <strong>1. Select amount</strong>
+                        <hr />
+                        <div class="clearfix"></div>
+                        <?php echo $form->getElement('premium')->renderElement(); ?>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="providerBox">
+                        <strong>2. Choose payment option</strong>
+                        <hr />
+                        <div class="clearfix"></div>
+                        <?php echo $form->getElement('provider')->renderElement(); ?>
+                    </div>
+                    <?php echo $form->getElement('submit')->renderElement(); ?>
+                </div>
+            </form>
+        </div>
+        </div>
+        
 		
-		<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="TYLEQLX6DV4D8">
-<table>
-<tr><td><input type="hidden" name="on0" value="Amount">Amount</td></tr><tr><td>
-	<input type="radio" name="os0" value="100 points -" />100 points - £2.00 GBP
-	<input type="radio" name="os0" value="315 points -" />315 points - £6.00 GBP
-	<input type="radio" name="os0" value="550 points -" />550 points - £10.00 GBP
-	<input type="radio" name="os0" value="1150 points" />1150 points £20.00 GBP
- </td></tr>
-</table>
-<input type="hidden" name="currency_code" value="GBP">
-<input type="image" src="https://www.sandbox.paypal.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
-<img alt="" border="0" src="https://www.sandbox.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-</form>
 
 
 </div>
+<script>
+    $(document).ready(function(){
+        $('.providerBox .radioElemWrapper').on('click',function(){
+            var input = $(this).find('input');
+//            var wrapper = input.parent();
+            var wrapper = $(this);
+            input.attr('checked',true);
+            $('.providerBox .radioElemWrapper').removeClass('active');
+            wrapper.addClass('active');
+        });
+        
+        $('.amountBox .radioElemWrapper input').on('click',function(){
+            var input = $(this);
+            var wrapper = input.parent();
+            if(input.is(':checked')){
+                $('.amountBox .radioElemWrapper').removeClass('active');
+                wrapper.addClass('active');
+            }
+        });
+    });
+</script>
