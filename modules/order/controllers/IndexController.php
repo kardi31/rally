@@ -129,6 +129,9 @@ class Order_Index extends Controller{
         $form->getElement('amount')->setValue($totalCost);
         $form->getElement('currency_code')->setValue($rateRow['target']);
         $form->getElement('quantity')->setValue(1);
+        $form->getElement('rm')->setValue(2);
+        $form->getElement('return')->setValue('http://'.$_SERVER['SERVER_NAME'].'/account/premium');
+        
         $this->view->assign('form',$form);
     }
     public function transferujFinish(){
@@ -138,6 +141,24 @@ class Order_Index extends Controller{
         $this->disableLayout();
         echo "TRUE";
         if($_POST['tr_status']=='TRUE'){
+            $orderService = parent::getService('order','order');
+            $order = $orderService->getOrder($_POST['tr_crc']);
+            $orderService->setOrderPaid($order['id']);
+            $userService->addPremium($order['user_id'],$order['amount'],'Bought '.$order['amount']." premium points");
+            $userService->refreshAuthentication();
+        }
+        exit;
+    }
+    
+    public function paypalFinish(){
+        
+        $userService = parent::getService('user','user');
+        $orderService = parent::getService('order','order');
+        
+        $this->view->setNoRender();
+	
+        $this->disableLayout();
+        if($orderService->VerifyPaypalIPN()){
             $orderService = parent::getService('order','order');
             $order = $orderService->getOrder($_POST['tr_crc']);
             $orderService->setOrderPaid($order['id']);
