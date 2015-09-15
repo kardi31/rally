@@ -105,12 +105,23 @@
             <file>file:/C:/xampp/htdocs/ral/modules/market/views/index/show-market.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/library/Doctrine/Manager.php</file>
             <file>file:/C:/xampp/htdocs/ral/library/Doctrine/Connection.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/order/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/premium.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/order/views/index/transferuj.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/order/views/index/paypal.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/form/Premium.php</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Radio.php</file>
+            <file>file:/C:/xampp/htdocs/ral/config/config.ini</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/order/views/index/paypal.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/order/form/Paypal.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/order/views/index/order.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/order/services/Order.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/order/form/Transferuj.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/order/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/order/services/Premium.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/Zend/Currency.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/order/data/schema/schema.yml</file>
+            <file>file:/C:/xampp/htdocs/ral/index.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/index.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/order/views/index/transferuj-finish.phtml</file>
         </group>
     </open-files>
 </project-private>

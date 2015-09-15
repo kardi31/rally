@@ -244,14 +244,20 @@ class Account_Index extends Controller{
         $url = "https://currency-api.appspot.com/api/GBP/".$currency->getShortName().".json?amount=2.00";
 
         $result = file_get_contents($url);
-        $rateRow = json_decode($result,true);
+        $rateRow = json_decode($result,true)
+                ;
         
         Service::loadModels('team', 'team');
 	$form = $this->getForm('user','premium');
 	
+        
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
-	
+        
+        if(strpos($_SERVER['REQUEST_URI'],'account/premium?')!==false){
+            $userService->refreshAuthentication();
+        }
+        
 	if($form->isSubmit()){
             if($form->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();

@@ -1,0 +1,8 @@
+<?php echo "TRUE"; 
+$height = 15;
+if(isset($_POST['tr_status'])){
+    $height = 1000;
+}
+?>
+<div style="width:1000px;border:1px solid red;height:<?= $height; ?>px">
+</div>

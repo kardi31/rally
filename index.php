@@ -1,7 +1,15 @@
 <?php
 session_start();
+$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 
- 
+
+if (strpos($url,'transferuj-finish') !== false) {
+    var_dump('fafa');exit;
+    echo "TRUE";
+    var_dump($_POST);exit;
+} 
+var_dump('dd');exit; 
+
 DEFINE(BASE_PATH,realpath(__DIR__));
 include(BASE_PATH.'/library/TK/Router.php'); 
 require_once 'library/Doctrine/Core.php';

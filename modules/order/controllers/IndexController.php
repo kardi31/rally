@@ -15,6 +15,11 @@ class Order_Index extends Controller{
     
     public function process(){
         
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
         $provider = $_POST['provider'];
         $amount = $_POST['premium'];
         
@@ -46,6 +51,12 @@ class Order_Index extends Controller{
     
     public function transferuj(){
         
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
         require_once(BASE_PATH."/library/Zend/Locale.php");
         require_once(BASE_PATH."/library/Zend/Currency.php");
         $currency = new Zend_Currency('pl_PL');
@@ -61,9 +72,15 @@ class Order_Index extends Controller{
         
         $lang = isset($_COOKIE['lang'])?strtoupper($_COOKIE['lang']):'PL';
         
+        $orderService = parent::getService('order','order');
+        $order = $orderService->addOrder($user['id'],'transferuj',$amount,false);
         $totalCost = $rateRow['rate']*($amount/100);
-        $crc = 'tomCrC56';
+        $crc = $order['id'];
         $payuId = 18717;
+        
+        
+        
+        
         $md5sum = md5($payuId.$totalCost.$crc.$code);
         $form->getElement('md5sum')->setValue($md5sum);
         $form->getElement('id')->setValue($payuId);
@@ -71,12 +88,22 @@ class Order_Index extends Controller{
         $form->getElement('crc')->setValue($crc);
         $form->getElement('opis')->setValue($amount." premium points in FastRally");
         $form->getElement('kwota')->setValue($totalCost);
+        $form->getElement('wyn_url')->setValue('http://'.$_SERVER['SERVER_NAME'].'/order/transferuj-finish');
+        $form->getElement('pow_url')->setValue('http://'.$_SERVER['SERVER_NAME'].'/account/premium');
+        
+        
         
         $this->view->assign('form',$form);
     }
     
     
     public function paypal(){
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
         require_once(BASE_PATH."/library/Zend/Locale.php");
         require_once(BASE_PATH."/library/Zend/Currency.php");
         $currency = new Zend_Currency('de_DE');
@@ -84,7 +111,7 @@ class Order_Index extends Controller{
 
         $result = file_get_contents($url);
         $rateRow = json_decode($result,true);
-//        var_dump($rateRow);exit;
+        
         $form = $this->getForm('order','paypal');
         $amount = (int)$_POST['premium'];
         if($amount==1150){
@@ -94,17 +121,30 @@ class Order_Index extends Controller{
             $os0Val = $amount.' points -';
         }
         
+        $totalCost = round($rateRow['rate']*($amount/100),2);
         
-        $paypalBtnId = View::getInstance()->getSetting('paypalBtnId');
-        $form->getElement('cmd')->setValue('_s-xclick');
-        $form->getElement('hosted_button_id')->setValue($paypalBtnId);
-        $form->getElement('on0')->setValue('Amount');
-        $form->getElement('os0')->setValue($os0Val);
+        $form->getElement('cmd')->setValue('_xclick');
+        $form->getElement('business')->setValue('biuro@kardimobile.pl');
+        $form->getElement('item_name')->setValue($amount.' premium points at FastRally');
+        $form->getElement('amount')->setValue($totalCost);
         $form->getElement('currency_code')->setValue($rateRow['target']);
+        $form->getElement('quantity')->setValue(1);
         $this->view->assign('form',$form);
-//        $this->getLayout()->setLayout('page');
-        
     }
-    
+    public function transferujFinish(){
+        $this->view->setNoRender();
+        $userService = parent::getService('user','user');
+	
+        $this->disableLayout();
+        echo "TRUE";
+        if($_POST['tr_status']=='TRUE'){
+            $orderService = parent::getService('order','order');
+            $order = $orderService->getOrder($_POST['tr_crc']);
+            $orderService->setOrderPaid($order['id']);
+            $userService->addPremium($order['user_id'],$order['amount'],'Bought '.$order['amount']." premium points");
+            $userService->refreshAuthentication();
+        }
+        exit;
+    }
 }
 ?>

@@ -10,6 +10,8 @@ class Transferuj extends Form{
         $this->createElement('hidden','wyn_url');
         $this->createElement('hidden','pow_url');
         $this->createElement('hidden','jezyk');
+        $this->createElement('hidden','wyn_url');
+        $this->createElement('hidden','pow_url');
         $submit = $this->createElement('submit','submit',array(),View::getInstance()->translate('Submit request'));
         $submit->addClass('btn myBtn');
     }

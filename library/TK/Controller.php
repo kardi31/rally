@@ -8,6 +8,7 @@ class Controller{
 	protected $dif_view_view;
 	protected $dif_view_action;
         protected $dif_view = 0;
+        protected $disableLayout = false;
  
     public function __construct(){
         $this->view = View::getInstance();
@@ -64,23 +65,29 @@ class Controller{
             else{
                 $this->layout->content = $elem->view->render($this->dif_view_action,$this->dif_view_view,$zone);
             }
+            
+            if(!$this->disableLayout){
                 
-            // setting up response segments
-            foreach($this->responseSegment as $responseSegment => $details){
-                $actionName = TK_Text::convertViewToActionName($details['view']);
-                $controllerName = ucfirst($details['module'])."_".ucfirst($details['controller']);
-                if(!class_exists($controllerName)){
-                    require_once(BASE_PATH."/modules/".$details['module']."/controllers/".ucfirst($details['controller'])."Controller.php");
+                // setting up response segments
+                foreach($this->responseSegment as $responseSegment => $details){
+                    $actionName = TK_Text::convertViewToActionName($details['view']);
+                    $controllerName = ucfirst($details['module'])."_".ucfirst($details['controller']);
+                    if(!class_exists($controllerName)){
+                        require_once(BASE_PATH."/modules/".$details['module']."/controllers/".ucfirst($details['controller'])."Controller.php");
+                    }
+
+                    $controllerName::getInstance()->$actionName();
+
+                    $this->layout->responseSegment[$responseSegment] = $elem->view->render($details['module'],$details['view'],$zone);
                 }
-                
-                $controllerName::getInstance()->$actionName();
-                
-                $this->layout->responseSegment[$responseSegment] = $elem->view->render($details['module'],$details['view'],$zone);
+
+
+
+                $this->layout->render();
             }
-            
-            
-            
-            $this->layout->render();
+            else{
+                echo $this->layout->content;
+            }
         }
         
     }
@@ -125,6 +132,11 @@ class Controller{
     
     public function getLayout(){
         return $this->layout;
+    }
+    
+    
+    public function disableLayout(){
+        $this->disableLayout = true;
     }
     
     public function setDifView($action,$view){

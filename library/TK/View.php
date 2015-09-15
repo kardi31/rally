@@ -76,6 +76,8 @@ class View{
         $this->render = 0;
     }
     
+    
+    
     public function requireDTFactory(){
         require_once(BASE_PATH.'/modules/index/library/DataTables/Factory.php');
     }

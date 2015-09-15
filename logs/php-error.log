@@ -1919,3 +1919,43 @@ Stack trace:
 [14-Sep-2015 18:07:19 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
 [14-Sep-2015 18:17:16 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
 [14-Sep-2015 18:17:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[15-Sep-2015 11:03:27 Europe/Berlin] PHP Notice:  Undefined index: provider in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 18
+[15-Sep-2015 11:03:27 Europe/Berlin] PHP Notice:  Undefined index: premium in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 19
+[15-Sep-2015 11:03:27 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Error processing request
+
+  thrown in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 25
+[15-Sep-2015 11:10:21 Europe/Berlin] PHP Notice:  Undefined variable: form in C:\xampp\htdocs\ral\modules\order\views\index\paypal.phtml on line 2
+[15-Sep-2015 11:10:21 Europe/Berlin] PHP Fatal error:  Call to a member function getElement() on null in C:\xampp\htdocs\ral\modules\order\views\index\paypal.phtml on line 2
+[15-Sep-2015 11:10:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[15-Sep-2015 11:17:46 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[15-Sep-2015 11:19:22 Europe/Berlin] PHP Fatal error:  Call to a member function setValue() on null in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 100
+[15-Sep-2015 11:19:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[15-Sep-2015 11:19:30 Europe/Berlin] PHP Fatal error:  Call to a member function renderElement() on null in C:\xampp\htdocs\ral\modules\order\views\index\paypal.phtml on line 3
+[15-Sep-2015 11:19:30 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[15-Sep-2015 11:33:11 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'switkrze_rally.order_order' doesn't exist' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection\Statement.php(269): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Statement))
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1042): Doctrine_Connection_Statement->execute(Array)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(687): Doctrine_Connection->exec('INSERT INTO ord...', Array)
+#3 C:\xampp\htdocs\ral\library\Doctrine\Connection\UnitOfWork.php(647): Doctrine_Connection->insert(Object(Order_Model_Doctrine_OrderTable), Array)
+#4 C:\xampp\htdocs\ral\library\Doctrine\Connection\UnitOfWork.php(571): Doctrine_Connection_UnitOfWork->processSingleInsert(Object(Order_Model_Doctrine_Order))
+#5 C:\xampp\htdocs\ral\library\Doctrine\Connection\UnitOfWork.php(81): Doctr in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[15-Sep-2015 11:33:11 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[15-Sep-2015 11:37:09 Europe/Berlin] PHP Notice:  Undefined index: provider in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 23
+[15-Sep-2015 11:37:09 Europe/Berlin] PHP Notice:  Undefined index: premium in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 24
+[15-Sep-2015 11:37:09 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Error processing request
+
+  thrown in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 30
+[15-Sep-2015 11:42:17 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[15-Sep-2015 11:45:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[15-Sep-2015 12:26:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[15-Sep-2015 12:27:40 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[15-Sep-2015 12:41:29 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[15-Sep-2015 12:51:55 Europe/Berlin] PHP Fatal error:  Call to undefined method View::disableLayout() in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 131
+[15-Sep-2015 12:51:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[15-Sep-2015 12:52:49 Europe/Berlin] PHP Notice:  Undefined index: tr_status in C:\xampp\htdocs\ral\modules\order\views\index\transferuj-finish.phtml on line 3
+[15-Sep-2015 12:52:51 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 44
+[15-Sep-2015 12:56:13 Europe/Berlin] PHP Notice:  Undefined variable: disableLayout in C:\xampp\htdocs\ral\library\TK\Controller.php on line 69
+[15-Sep-2015 12:56:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[15-Sep-2015 12:56:33 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[15-Sep-2015 12:58:09 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45

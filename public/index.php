@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+
+
+
 ini_set('display_errors', 1);
 DEFINE('BASE_PATH',realpath(__DIR__)."/../");
 include(BASE_PATH.'/library/TK/Router.php'); 

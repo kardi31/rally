@@ -2,8 +2,8 @@ options:
   type: MyISAM
   collate: utf8_general_ci
   charset: utf8
-User:
-  tableName: user_user
+Order:
+  tableName: order_order
   actAs: 
     Timestampable: ~
     SoftDelete: ~
@@ -12,22 +12,14 @@ User:
       primary: true
       autoincrement: true
       type: integer(4)
-    first_name:
+    user_id:
+      type: integer(4)
+    provider:
       type: string(255)
-    last_name:
-      type: string(255)
-    email:
-      type: string(255)
-    username:
-      type: string(255)
-    salt:
-      type: string(255)
-    password:
-      type: string(255)
-    role:
-      type: string(255)
-    token:
-      type: string(255)
-    active:
+    paid:
       type: boolean
-      default: 1
+      default: 0
+    amount:
+      type: integer(4)
+    paid_date:
+      type: datetime
