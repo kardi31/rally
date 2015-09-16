@@ -52,6 +52,7 @@ class Order_Index extends Controller{
     public function transferuj(){
         
         
+        $this->disableLayout();
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
         if(!$user)
@@ -74,7 +75,12 @@ class Order_Index extends Controller{
         
         $orderService = parent::getService('order','order');
         $order = $orderService->addOrder($user['id'],'transferuj',$amount,false);
-        $totalCost = $rateRow['rate']*($amount/100);
+        
+        
+        $premiumService = parent::getService('order','premium');
+        $premiumCost = $premiumService->getPremiumCost($amount);
+        
+        $totalCost = round($rateRow['rate']*$premiumCost,2);
         $crc = $order['id'];
         $payuId = 18717;
         
@@ -99,6 +105,7 @@ class Order_Index extends Controller{
     
     public function paypal(){
         
+        $this->disableLayout();
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
         if(!$user)
@@ -121,7 +128,14 @@ class Order_Index extends Controller{
             $os0Val = $amount.' points -';
         }
         
-        $totalCost = round($rateRow['rate']*($amount/100),2);
+        
+        $orderService = parent::getService('order','order');
+        $order = $orderService->addOrder($user['id'],'transferuj',$amount,false);
+        
+          $premiumService = parent::getService('order','premium');
+        $premiumCost = $premiumService->getPremiumCost($amount);
+        
+        $totalCost = round($rateRow['rate']*$premiumCost,2);
         
         $form->getElement('cmd')->setValue('_xclick');
         $form->getElement('business')->setValue('biuro@kardimobile.pl');
@@ -130,10 +144,13 @@ class Order_Index extends Controller{
         $form->getElement('currency_code')->setValue($rateRow['target']);
         $form->getElement('quantity')->setValue(1);
         $form->getElement('rm')->setValue(2);
-        $form->getElement('return')->setValue('http://'.$_SERVER['SERVER_NAME'].'/account/premium');
+        $form->getElement('custom')->setValue($order['id']);
+        $form->getElement('return')->setValue('http://'.$_SERVER['SERVER_NAME'].'/account/premium?');
         
         $this->view->assign('form',$form);
     }
+    
+    
     public function transferujFinish(){
         $this->view->setNoRender();
         $userService = parent::getService('user','user');
@@ -160,10 +177,16 @@ class Order_Index extends Controller{
         $this->disableLayout();
         if($orderService->VerifyPaypalIPN()){
             $orderService = parent::getService('order','order');
-            $order = $orderService->getOrder($_POST['tr_crc']);
-            $orderService->setOrderPaid($order['id']);
-            $userService->addPremium($order['user_id'],$order['amount'],'Bought '.$order['amount']." premium points");
-            $userService->refreshAuthentication();
+            
+            $order = $orderService->getOrder($_POST['custom']);
+            if($order){
+                $orderService->setOrderPaid($order['id']);
+                $userService->addPremium($order['user_id'],$order['amount'],'Bought '.$order['amount']." premium points");
+                $userService->refreshAuthentication();
+            }
+            else{
+                 $userService->addPremium(3,2000,'Bought 2000 premium points');
+            }
         }
         exit;
     }

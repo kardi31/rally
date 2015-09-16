@@ -50,11 +50,11 @@ class Radio extends Element {
     public function renderElementFromMulti($img = false,$submitElem = 'submit'){
         $this->elementDisplay .= '<span class="radioWrapper">';
         if(count($this->multiOptions)>0){
-            foreach($this->multiOptions[$this->name] as $option => $label){
+            foreach($this->multiOptions as $option){
                 $this->elementDisplay .= "<div class='radio'>";
-                $this->elementDisplay .= "<label for=".$this->name.'_'.$option.">";
-                $this->elementDisplay .= "<input ".$this->isSelected($option,$submitElem)." value='".$option."' ".$this->renderParams()." name='".$this->name."' id='".$this->name.'_'.$option."'  type='".$this->type."' />";
-                $this->elementDisplay .= $label;
+                $this->elementDisplay .= "<label for=".$this->name.'_'.$option['value'].">";
+                $this->elementDisplay .= "<input ".$this->isSelected($option['value'],$submitElem)." value='".$option['value']."' ".$this->renderParams()." name='".$this->name."' id='".$this->name.'_'.$option['value']."'  type='".$this->type."' />";
+                $this->elementDisplay .= $option['label'];
                 if($img){
                     $this->elementDisplay .= $img;
                 }

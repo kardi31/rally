@@ -59,6 +59,22 @@ class MailService extends Service{
         return $content;
     }
     
+    public static function prepareSupportMail($user,$content){
+        $text = "You have new enquiry by ".$user['username'].",<br /><br />";
+        $text .= $content;
+        $text .= "<br /><br />";
+        $text .= "Enquiry was received on ".date("d/m/Y H:i");
+        
+        $facebookUrl = View::getInstance()->getSetting('facebookUrl');
+        $twitterUrl = View::getInstance()->getSetting('twitterUrl');
+        
+        ob_start();
+        include(BASE_PATH."/modules/user/views/mail/template.phtml");
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+    
      public static function prepareConfirmActivationMail($username){
         $text = "Dear ".$username.",<br /><br />";
         $text .= "Congratulations! Your account in FastRally is now active <br />";

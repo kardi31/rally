@@ -3,6 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/ral/modules/order/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_head.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/views/_header_main.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/views/manual/people.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/cron/controllers/AdminController.php</file>
@@ -115,13 +117,11 @@
             <file>file:/C:/xampp/htdocs/ral/modules/order/views/index/order.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/order/services/Order.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/order/form/Transferuj.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/order/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/order/services/Premium.php</file>
             <file>file:/C:/xampp/htdocs/ral/library/Zend/Currency.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/order/data/schema/schema.yml</file>
             <file>file:/C:/xampp/htdocs/ral/index.php</file>
             <file>file:/C:/xampp/htdocs/ral/public/index.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/order/views/index/transferuj-finish.phtml</file>
         </group>
     </open-files>
 </project-private>

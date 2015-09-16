@@ -9,14 +9,18 @@ class Premium extends Form{
             550 => '550 premium points',
             1150 => '1150 premium points',
         ));
+//        $premium->addParam('required');
+        $premium->addValidator('notEmpty');
         $provider = $this->createElement('radio','provider');
         $provider->addMultiOptions(array(
             'paypal' => '<img src="https://www.sandbox.paypal.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" />',
             'transferuj' => '<img src="/images/layout/transferuj_logo.jpg" />',
         ));
+//        $provider->addParam('required');
+        $provider->addValidator('notEmpty');
 //        $premium->addParam('placeholder','Enter requested amount');
 //        $premium->setValue(100);
-        $submit = $this->createElement('submit','submit',array(),View::getInstance()->translate('Submit request'));
+        $submit = $this->createElement('submit','submit',array(),View::getInstance()->translate('Buy premium'));
         $submit->addClass('btn myBtn');
     }
 }

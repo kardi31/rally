@@ -84,8 +84,10 @@
         <div class="addMorePremium">
             <h2> <?= $this->translate('Add more'); ?> <img class="coin" src="/images/layout/coin.png" /></h2>
                     
-            <form class="form-horizontal" method="POST" action="/order/process">
-               
+            <form class="form-horizontal" method="POST" action="/order/process" id='processPayment'>
+                <div id='premiumMessage' style='display:none;'>
+                    <?php View::getInstance()->showError(''); ?>
+                </div>
                 <div class="buyPremiumBox">
                     <div class="amountBox">
                         <strong>1. Select amount</strong>
@@ -112,6 +114,28 @@
 </div>
 <script>
     $(document).ready(function(){
+        $('#processPayment').on('submit',function(){
+            var message = '';
+            var valid = true;
+            if(!$('input[name="premium"]:checked').val()){
+                valid = false;
+                message += 'Select premium points you want to buy.<br />';
+            }
+            
+            if(!$('input[name="provider"]:checked').val()){
+                valid = false;
+                message += 'Select provider you want to use.<br />';
+            }
+            if(!valid){
+                $('#premiumMessage .alert').append(message);
+                $('#premiumMessage').show();
+            }
+            else{
+                $('#premiumMessage').hide();
+            }
+            return valid;
+        });
+        
         $('.providerBox .radioElemWrapper').on('click',function(){
             var input = $(this).find('input');
 //            var wrapper = input.parent();

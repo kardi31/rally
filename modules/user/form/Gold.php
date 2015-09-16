@@ -12,7 +12,7 @@ class Gold extends Form{
             
             ));
         $gold->addClass('form-control');
-        $submit = $this->createElement('submit','submit',array(),$view->translate('Submit request'));
+        $submit = $this->createElement('submit','submit',array(),$view->translate('Buy package'));
         $submit->addClass('btn myBtn');
     }
 }

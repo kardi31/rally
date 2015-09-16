@@ -9,7 +9,8 @@ class Paypal extends Form{
         $this->createElement('hidden','quantity');
         $this->createElement('hidden','currency_code');
         $this->createElement('hidden','rm');
-        $this->createElement('hidden','quantity');
+        $this->createElement('hidden','return');
+        $this->createElement('hidden','custom');
         $submit = $this->createElement('submit','submit',array(),View::getInstance()->translate('Submit request'));
         $submit->addClass('btn myBtn');
     }

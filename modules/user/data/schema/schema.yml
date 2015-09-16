@@ -160,4 +160,22 @@ Login:
     valid:
       type: boolean
       default: 0
-    
+Support:
+  tableName: user_support
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    user_id:
+      type: integer(11)
+    section:
+      type: string(255)
+    content:
+      type: text
+    solved:
+      type: boolean
+      default: 0

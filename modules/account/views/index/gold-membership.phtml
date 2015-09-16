@@ -89,25 +89,39 @@ if(isset($_GET['msg'])){
             <?php if($authenticatedUser['gold_member']): ?>
                 <div class="goldCoinBox">
                     <?= $this->translate('You are currently a');?> <img src="/images/layout/gc_small.png"> <?= $this->translate('member. Your membership expires at'); ?> <?= TK_Text::timeFormat($authenticatedUser['gold_member_expire'],'d/m/y H:i'); ?>
+                    <br />
+                    <?= $this->translate('Your account balance');?>: <?= $authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png">
                 </div>
             <?php else: ?>
                 <div class="notGoldCoinBox label-danger">
                     <?= $this->translate('You are not a');?> <img src="/images/layout/gc_small.png"> <?= $this->translate('member. Buy your package now.'); ?>
+                    <br />
+                    <?= $this->translate('Your account balance');?>: <?= $authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png">
                 </div>
             <?php endif; ?>
-            <br />
-            <?= $this->translate('Your account balance');?>: <?= $authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png">
-        </div>
-        <div class="addMoreGold">
+            </div>
+        <div class="buyGoldBox">
             
             <form class="form-horizontal" method="POST">
-                <div class='form-group'>
-                    <label for='gold'><?= $this->translate('Buy');?>  <img src="/images/layout/gc_small.png"> <?= $this->translate('Package'); ?> <br />
+                    <h3 for='gold'><?= $this->translate('Buy');?>  <img src="/images/layout/gc_big.png"> <?= $this->translate('Package'); ?></h3> <br />
                         <!--<img class="coin" src="/images/layout/coin.png" /></label>-->
                     <?php echo $form->getElement('gold')->renderElementFromMulti('<img src="/images/layout/coin.png" />'); ?>
                     
-                </div>
+                    <div class='clearfix'></div>
                 <?php echo $form->getElement('submit')->renderElement(); ?>
             </form>
         </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('.buyGoldBox .radio input').on('click',function(){
+            var input = $(this);
+            var wrapper = input.parent().parent();
+            console.log(wrapper);
+            if(input.is(':checked')){
+                $('.buyGoldBox .radio').removeClass('active');
+                wrapper.addClass('active');
+            }
+        });
+    });
+</script>

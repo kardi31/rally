@@ -1959,3 +1959,119 @@ Stack trace:
 [15-Sep-2015 12:56:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
 [15-Sep-2015 12:56:33 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
 [15-Sep-2015 12:58:09 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 10:47:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 10:47:48 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 10:48:00 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 10:48:10 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 10:48:16 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 10:48:28 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 10:48:41 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 12:09:04 Europe/Berlin] PHP Notice:  Undefined index: provider in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 23
+[16-Sep-2015 12:09:04 Europe/Berlin] PHP Notice:  Undefined index: premium in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 24
+[16-Sep-2015 12:09:04 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Error processing request
+
+  thrown in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 30
+[16-Sep-2015 12:13:30 Europe/Berlin] PHP Notice:  Undefined index: provider in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 23
+[16-Sep-2015 12:13:30 Europe/Berlin] PHP Notice:  Undefined index: premium in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 24
+[16-Sep-2015 12:13:30 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Error processing request
+
+  thrown in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 30
+[16-Sep-2015 12:13:58 Europe/Berlin] PHP Notice:  Undefined index: provider in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 23
+[16-Sep-2015 12:13:58 Europe/Berlin] PHP Notice:  Undefined index: premium in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 24
+[16-Sep-2015 12:13:58 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Error processing request
+
+  thrown in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 30
+[16-Sep-2015 12:37:27 Europe/Berlin] PHP Notice:  Undefined index: provider in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 23
+[16-Sep-2015 12:37:27 Europe/Berlin] PHP Notice:  Undefined index: premium in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 24
+[16-Sep-2015 12:37:27 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Error processing request
+
+  thrown in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 30
+[16-Sep-2015 12:37:35 Europe/Berlin] PHP Notice:  Undefined index: provider in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 23
+[16-Sep-2015 12:37:35 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Error processing request
+
+  thrown in C:\xampp\htdocs\ral\modules\order\controllers\IndexController.php on line 30
+[16-Sep-2015 12:43:53 Europe/Berlin] PHP Warning:  Missing argument 1 for View::showError(), called in C:\xampp\htdocs\ral\modules\account\views\index\premium.phtml on line 89 and defined in C:\xampp\htdocs\ral\library\TK\View.php on line 94
+[16-Sep-2015 12:43:53 Europe/Berlin] PHP Notice:  Undefined variable: message in C:\xampp\htdocs\ral\views\message\error.phtml on line 4
+[16-Sep-2015 12:44:08 Europe/Berlin] PHP Warning:  Missing argument 1 for View::showError(), called in C:\xampp\htdocs\ral\modules\account\views\index\premium.phtml on line 89 and defined in C:\xampp\htdocs\ral\library\TK\View.php on line 94
+[16-Sep-2015 12:44:08 Europe/Berlin] PHP Notice:  Undefined variable: message in C:\xampp\htdocs\ral\views\message\error.phtml on line 4
+[16-Sep-2015 12:54:43 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 12:58:46 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Page not exists
+
+  thrown in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 325
+[16-Sep-2015 13:05:48 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 13:13:10 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:13:10 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:25:15 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:25:15 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:25:30 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:25:30 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:25:55 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:25:55 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:26:07 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:26:07 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:26:21 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:26:21 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:26:39 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:26:39 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:27:12 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:27:12 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:27:21 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:27:21 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:27:36 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:27:36 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:28:01 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:28:01 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:28:09 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:28:09 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:28:30 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:28:30 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:28:43 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:28:43 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:29:20 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:29:20 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:30:02 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:30:02 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:30:21 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:30:21 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:31:11 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:31:11 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:38:58 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:38:58 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:39:17 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:39:17 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:39:47 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:39:47 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:40:15 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:40:15 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:40:48 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:40:48 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:41:16 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:41:16 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:42:25 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:42:25 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:42:58 Europe/Berlin] PHP Notice:  Undefined index: gold in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:42:58 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 53
+[16-Sep-2015 13:49:30 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 57
+[16-Sep-2015 13:49:30 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 57
+[16-Sep-2015 13:49:30 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 57
+[16-Sep-2015 13:49:30 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 57
+[16-Sep-2015 13:50:43 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 55
+[16-Sep-2015 13:50:43 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 55
+[16-Sep-2015 13:50:43 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 55
+[16-Sep-2015 13:50:43 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\ral\library\TK\Form\Radio.php on line 55
+[16-Sep-2015 13:54:12 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 29
+[16-Sep-2015 17:30:07 Europe/Berlin] PHP Notice:  Undefined variable: threads in C:\xampp\htdocs\ral\modules\index\views\index\support.phtml on line 4
+[16-Sep-2015 17:30:07 Europe/Berlin] PHP Fatal error:  Call to a member function renderElement() on null in C:\xampp\htdocs\ral\modules\index\views\index\support.phtml on line 50
+[16-Sep-2015 17:30:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 17:30:32 Europe/Berlin] PHP Fatal error:  Call to a member function renderElement() on null in C:\xampp\htdocs\ral\modules\index\views\index\support.phtml on line 8
+[16-Sep-2015 17:30:33 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 17:52:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 17:52:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 17:53:05 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Sep-2015 18:12:20 Europe/Berlin] PHP Warning:  Missing argument 1 for Select::addMultiOptions(), called in C:\xampp\htdocs\ral\modules\user\form\Support.php on line 8 and defined in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 99
+[16-Sep-2015 18:12:20 Europe/Berlin] PHP Notice:  Undefined variable: options in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 108
+[16-Sep-2015 18:12:20 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 138
+[16-Sep-2015 18:12:20 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, null given in C:\xampp\htdocs\ral\library\TK\Form\Validator.php on line 58
+[16-Sep-2015 18:12:20 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 138
+[16-Sep-2015 18:12:20 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, null given in C:\xampp\htdocs\ral\library\TK\Form\Validator.php on line 58
+[16-Sep-2015 18:12:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45

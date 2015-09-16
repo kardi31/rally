@@ -135,7 +135,7 @@ class Select extends Element {
             return "";
         
         $var = $_POST[parent::getName()];
-        $response = Validator::validateSelect($var,array_values($this->multiOptions[parent::getName()]));
+        $response = Validator::validateSelect($var,array_keys($this->multiOptions[parent::getName()]));
         if($response['result']){
             parent::validateElement();
         }

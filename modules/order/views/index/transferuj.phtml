@@ -1,3 +1,12 @@
+<style>
+    #submitPayment{
+        background:aqua;
+        width:100%;
+        font-size:18px;
+        padding:10px;
+    }
+</style>
+<script src="/js/jquery-2.1.3.min.js"></script>
 <form action="https://secure.transferuj.pl" method="post" target="_top">
     <?= $form->getElement('md5sum')->renderElement(); ?>
     <?= $form->getElement('id')->renderElement(); ?>
@@ -7,5 +16,11 @@
     <?= $form->getElement('wyn_url')->renderElement(); ?>
     <?= $form->getElement('pow_url')->renderElement(); ?>
     <?= $form->getElement('jezyk')->renderElement(); ?>
-    <?= $form->getElement('submit')->renderElement(); ?>
+    <button id='submitPayment' type='submit' class='btn btn-primary'>Processing to payment provider</button>
 </form>
+
+<script>
+    $(document).ready(function(){
+       $('#submitPayment').click(); 
+    });
+</script>

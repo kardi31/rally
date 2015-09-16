@@ -1,8 +1,25 @@
-<div class="mainUserBox">
+<?php if(isset($_GET['msg'])){
+        if($_GET['msg']=="too fast"){
+            $this->showError($this->translate('You can post once every 30 seconds'));
+        }
+        elseif($_GET['msg']=="enquiry send"){
+            $this->showSuccess($this->translate('Your enquiry has been sent to support. We will reply as soon as possible.'));
+        }
+    }
+    ?>
+<div class="mainUserBox showForumWrapper">
     <h4 class="boxHeader"><?= $this->translate('Support'); ?></h4>
     <div class='staticWrapper'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere mi nec nisl hendrerit fermentum. Nunc luctus est odio, convallis rhoncus dui varius blandit. Mauris dictum dui vitae massa fringilla, eget scelerisque diam placerat. Pellentesque sed lacus gravida, lacinia sem in, imperdiet orci. Phasellus cursus consequat egestas. Integer feugiat imperdiet libero. Phasellus ac libero vel diam fermentum mollis. Vestibulum fermentum vestibulum lobortis. Aenean vel placerat dolor, id scelerisque odio. Donec rutrum ligula ac interdum tempus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis viverra finibus quam, ut malesuada dui elementum venenatis. Pellentesque in elementum metus.
-
-Sed condimentum, purus eu euismod euismod, urna augue tempus risus, ac imperdiet felis sapien eget est. Sed lobortis gravida tincidunt. Cras nisl purus, tincidunt et pellentesque quis, volutpat at enim. Vestibulum pellentesque libero at sapien aliquet, vitae ultrices augue pulvinar. Vivamus nec mi velit. Vestibulum eget ultricies leo. Etiam eu interdum mauris, quis pellentesque nulla. Nunc interdum rutrum lorem sit amet iaculis. Quisque et semper nunc, nec mattis felis. Vestibulum urna neque, hendrerit sit amet dictum vitae, blandit vitae lorem. Fusce pulvinar faucibus nibh ac cursus.
+        <div class="supportWrapper">
+            <h5>Please fill in the contact form to get our support.</h5>
+            <form method="POST">
+                <label>Choose support category</label>
+                <?php echo $form->getElement('section')->renderElement(); ?>
+                <label>Please provide a clear description of your issue</label>
+                <?php echo $form->getElement('content')->renderElement(); ?>
+                <?php // echo $form->getElement('active')->renderElement(); ?>
+                <?php echo $form->getElement('submit')->renderElement(); ?>
+            </form>
+        </div>
     </div>
 </div>

@@ -149,6 +149,40 @@ class Index_Index extends Controller{
         
     }
     public function support(){
+        
+        $mailService = parent::getService('user','mail');
+        $supportService = parent::getService('user','support');
+        
+        $form = $this->getForm('user','support');
+        $this->view->assign('form',$form);
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        if(!$user)
+            TK_Helper::redirect('/user/login');
+        
+        if($form->isSubmit()){
+            if($form->isValid()){
+                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                
+                $values = $_POST;
+                // user can add a post once every 30 seconds
+                if(!$supportService->checkLastUserSupportEnquiry($user)){
+                    TK_Helper::redirect('/support?msg=too+fast');
+                    exit;
+                }
+                
+                $contactEmail = View::getInstance()->getSetting('contactEmail');
+                
+		$supportService->addSupportEnquiry($values,$user['id']);
+		$mailService->sendMail($contactEmail,'You have new support enquiry - '.$supportService->getSupportCategory($values['section']),$mailService::prepareSupportMail($user,$values['content']));
+
+		TK_Helper::redirect('/support?msg=enquiry+send');
+		
+                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+            }
+        }
+        
         $this->getLayout()->setLayout('page');
         
     }

@@ -40,6 +40,14 @@ class PremiumService extends Service{
         return $this->premium;
     }
     
+    
+    public function getPremiumCost($amount){
+        if(isset($this->premium[$amount])){
+            return $this->premium[$amount];
+        }
+        return 20;
+    }
+    
     public function getProviders(){
         return $this->providers;
     }

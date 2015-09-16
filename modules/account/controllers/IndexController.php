@@ -244,8 +244,7 @@ class Account_Index extends Controller{
         $url = "https://currency-api.appspot.com/api/GBP/".$currency->getShortName().".json?amount=2.00";
 
         $result = file_get_contents($url);
-        $rateRow = json_decode($result,true)
-                ;
+        $rateRow = json_decode($result,true);
         
         Service::loadModels('team', 'team');
 	$form = $this->getForm('user','premium');
@@ -258,23 +257,23 @@ class Account_Index extends Controller{
             $userService->refreshAuthentication();
         }
         
-	if($form->isSubmit()){
-            if($form->isValid()){
-                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
-                
-                $values = $_POST;
-                $result = $userService->addPremium($user,$values['premium']);
-		
-                if($result!== false){
-                    TK_Helper::redirect('/account/premium?msg=success&amount='.$values['premium']);
-                }
-                else{
-                    $this->view->assign('message','Error');
-                }
-                
-                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
-            }
-        }
+//	if($form->isSubmit()){
+//            if($form->isValid()){
+//                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+//                
+//                $values = $_POST;
+//                $result = $userService->addPremium($user,$values['premium']);
+//		
+//                if($result!== false){
+//                    TK_Helper::redirect('/account/premium?msg=success&amount='.$values['premium']);
+//                }
+//                else{
+//                    $this->view->assign('message','Error');
+//                }
+//                
+//                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
+//            }
+//        }
 	
 	$this->view->assign('form',$form);
 	$this->view->assign('currency',$currency);
