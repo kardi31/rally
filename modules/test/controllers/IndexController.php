@@ -55,8 +55,7 @@ class Test_Index extends Controller{
             $values['risk'] = $risks[array_rand($risks)];
             $rallyService->saveRallyCrew($values,$randomRally,$randomTeam);
         endforeach;
-        var_dump($randomRally->toArray());
-        Zend_Debug::dump($randomTeams);exit;
+        var_dump($randomRally->toArray());exit;
         
     }
     
@@ -99,10 +98,8 @@ class Test_Index extends Controller{
         $teamService = parent::getService('team','team');
         $leagueService = parent::getService('league','league');
         $userService = parent::getService('user','user');
-	
         $rally = $rallyService->getRally($GLOBALS['urlParams'][1],'slug');
         $rallyStages = $rallyService->getRallyStages($GLOBALS['urlParams'][1],'slug',Doctrine_Core::HYDRATE_ARRAY);
-        
         foreach($rallyStages as $stage):
             $testObj->calculateStageTime($stage['Rally']['id'],$stage['id']);
         endforeach;

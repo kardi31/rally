@@ -70,7 +70,6 @@ class Rally_Test extends Controller{
     }
     
     public function calculateStageTime($rally_id,$stage_id){
-	 
         Service::loadModels('team', 'team');
         Service::loadModels('people', 'people');
         Service::loadModels('car', 'car');

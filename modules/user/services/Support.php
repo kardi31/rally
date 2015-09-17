@@ -35,7 +35,7 @@ class SupportService extends Service{
         if(!$result)
             return true;
         
-        if($result['created_at']>date('Y-m-d H:i:s',strtotime('-30 seconds'))){
+        if($result['created_at']>date('Y-m-d H:i:s',strtotime('-2 minutes'))){
             return false;   
         }
         return true;

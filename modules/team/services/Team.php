@@ -86,6 +86,10 @@ class TeamService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
+    public function getLastMonthRalliesGrouppedByWeeks(){
+        
+    }
+    
     public function selectRandomTeams($quantity,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->teamTable->createQuery('t');
         $q->innerJoin('t.User u');

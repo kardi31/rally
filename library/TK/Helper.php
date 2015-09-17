@@ -483,6 +483,46 @@ class TK_Helper{
 	'ZM' => 'Zambia',
 	'ZW' => 'Zimbabwe',
 );
+    // should rally 5 rallies a week
+             /*
+              * 7 - 40%
+              * 6 - 70%
+              * 5 - 100%
+              * 4 - 80%
+              * 3 - 60%
+              * 2 - 40%
+              * 1 - 20%
+              * 0 - 10%
+              */
+    public static function getFormPercentage($rallyCount){
+        switch($rallyCount):
+            case 7:
+                $value = 0.4;
+                break;
+            case 6:
+                $value = 0.7;
+                break;
+            case 5:
+                $value = 1;
+                break;
+            case 4:
+                $value = 0.8;
+                break;
+            case 3:
+                $value = 0.6;
+                break;
+            case 2:
+                $value = 0.4;
+                break;
+            case 1:
+                $value = 0.2;
+                break;
+            case 0:
+                $value = 0.1;
+                break;
+        endswitch;
+        return $value;
+    }
 }
   
 ?>

@@ -410,6 +410,54 @@ class Cron_Admin extends Controller{
         
     }
     
+    // do it on wednesday
+    
+    /*
+     * 1. Get all players + rallies within last month(not friendly and not big rally)
+     * 2. Group rallies by week
+     * 3. Check correct number of rallies within last week
+     */
+    
+    public function calculatePlayerForm(){
+        ini_set('max_execution_time',300000);
+        Service::loadModels('car', 'car');
+        Service::loadModels('people', 'people');
+        Service::loadModels('user', 'user');
+        Service::loadModels('rally', 'rally');
+        Service::loadModels('league', 'league');
+        $teamService = parent::getService('team','team');
+        $peopleService = parent::getService('people','people');
+        $rallyService = parent::getService('rally','rally');
+        
+        // get all player rallies from last 4 weeks
+        $playerRallies = $peopleService->getLastMonthPlayersRallies(Doctrine_Core::HYDRATE_ARRAY);
+        
+        // calculate actual form
+        $playerFormCalculatedData = $peopleService->preparePlayerRalliesWeekly($playerRallies);
+        
+        // get player ids which are already calculated
+        // this allows to get all players which has not raced within last month and set their form to 0
+        $playerIds = $playerFormCalculatedData['playerIds'];
+        
+        $teamOrder = array();
+        foreach($playerFormCalculatedData['playerList'] as $player_id => $playerRow):
+            $newForm = $playerRow['form'];
+            $player = $peopleService->getPerson($player_id);
+            $player->set('form',$newForm);
+            $player->save();
+        endforeach;
+        
+        $noRalliesPlayers = $peopleService->getPlayersNoLastMonthRallies($playerIds);
+        foreach($noRalliesPlayers as $player):
+            $newForm = 0;
+            $player->set('form',$newForm);
+            $player->save();
+        endforeach;
+        echo "done";
+        exit;
+        
+    }
+    
     /*
      * Do it once a week - end
      * 

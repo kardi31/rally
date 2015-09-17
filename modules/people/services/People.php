@@ -40,6 +40,7 @@ class PeopleService extends Service{
     );
     
     protected $basicPersonValue = 800000;
+    protected $formWage = 12;
     
     public function __construct(){
         $this->peopleTable = parent::getTable('people','people');
@@ -617,15 +618,24 @@ class PeopleService extends Service{
 	// only the elements which contains 
 	// driver skills
 	$driverSkills = array_intersect_key($driver->toArray(), array_flip($this->driverSkills));
+        $driverWages = $this->driverSkillsWages;
 	
 	// get the difference between max skill(10) and people skills. Then get % of it and multiply by skill wage
 	$props = array_map(function($skills,$wages){ return ((10-$skills)/10)*$wages; }, $driverSkills,$this->driverSkillsWages);
 
+        $formWage = $this->formWage;
+        $formSkill = $driver['form'];
+        $formWeighted = ((10-$formSkill)/10) * $formWage;
+        
+        array_push($props,$formWeighted);
+        array_push($driverWages,$formWage);
+        
 	// calculate weighted average
-	$weightedAverage = array_sum($props)/array_sum($this->driverSkillsWages);
+	$weightedAverage = array_sum($props)/array_sum($driverWages);
+        
 	// add random factor(+10%/-10% of time)
 	$random = TK_Text::float_rand(0.95, 1.05);
-	$result = $weightedAverage*$random;
+	$result = ($weightedAverage)*$random;
 	
 	return $result;
     }
@@ -635,11 +645,19 @@ class PeopleService extends Service{
 	// only the elements which contains 
 	// driver skills
 	$driverSkills = array_intersect_key($pilot->toArray(), array_flip($this->pilotSkills));
+        $pilotWages = $this->pilotSkillsWages;
 	// get the difference between max skill(10) and people skills. Then get % of it and multiply by skill wage
 	$props = array_map(function($skills,$wages){ return ((10-$skills)/10)*$wages; }, $driverSkills,$this->pilotSkillsWages);
 	
+        $formWage = $this->formWage;
+        $formSkill = $pilot['form'];
+        $formWeighted = ((10-$formSkill)/10) * $formWage;
+        
+        array_push($props,$formWeighted);
+        array_push($pilotWages,$formWage);
+        
 	// calculate weighted average
-	$weightedAverage = array_sum($props)/array_sum($this->pilotSkillsWages);
+	$weightedAverage = array_sum($props)/array_sum($pilotWages);
 	// add random factor(+10%/-10% of time)
 	$random = TK_Text::float_rand(0.9, 1.1);
 	$result = $weightedAverage*$random;
@@ -759,5 +777,97 @@ class PeopleService extends Service{
         return array_unique(array_merge($this->trainableDriverSkills,$this->trainablePilotSkills));
     }
     
+     public function getLastMonthPlayersRallies($hydrationMode){
+         $lastMonthDate = date('Y-m-d H:i:s',strtotime('-4 weeks'));
+        $q = $this->peopleTable->createQuery('p');
+	$q->select('p.id,dr.*,r1.date,pr.*,r2.date');
+	$q->leftJoin('p.Team t');
+	$q->leftJoin('p.DriverRallies dr');
+	$q->leftJoin('p.PilotRallies pr');
+	$q->leftJoin('dr.Rally r1');
+	$q->leftJoin('pr.Rally r2');
+        $q->addWhere('(r1.date < NOW() and r1.date >= ?) or (r2.date < NOW() and r2.date >= ?)',array($lastMonthDate,$lastMonthDate));
+        $q->addWhere('(r1.big_awards = 0 and r1.friendly = 0) or (r2.big_awards = 0 and r2.friendly = 0)');
+	return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function preparePlayerRalliesWeekly($allPlayerRallies){
+         $threeWeekDate = date('Y-m-d H:i:s',strtotime('-3 weeks'));
+         $twoWeekDate = date('Y-m-d H:i:s',strtotime('-2 weeks'));
+         $oneWeekDate = date('Y-m-d H:i:s',strtotime('-1 weeks'));
+         
+         
+         $playerList = array();
+         $playerIds = array();
+         foreach($allPlayerRallies as $player){
+             $playerIds[] = $player['id'];
+             
+             // check player job to get proper rallies relation
+             if($player['job']=='driver'){
+                 $reference = 'DriverRallies';
+             }
+             else{
+                 $reference = 'PilotRallies';
+             }
+             $playerList[$player['id']] = array();
+             
+             foreach($player[$reference] as $playerRallies){
+                 $rally = $playerRallies['Rally'];
+                 
+                 
+                 // group rallies by date
+                if($rally['date'] < $threeWeekDate){
+                    $playerList[$player['id']]['weekFour'][] = $rally['id'];
+                }
+                elseif($rally['date'] < $twoWeekDate){
+                    $playerList[$player['id']]['weekThree'][] = $rally['id'];
+                }
+                elseif($rally['date'] < $oneWeekDate){
+                    $playerList[$player['id']]['weekTwo'][] = $rally['id'];
+                }
+                else{
+                    $playerList[$player['id']]['weekOne'][] = $rally['id'];
+                }
+                
+             }
+             
+             // calculate percentage for each of weeks
+             $playerList[$player['id']]['weekFour']['percentage'] = TK_Helper::getFormPercentage(count($playerList[$player['id']]['weekFour']));
+             $playerList[$player['id']]['weekThree']['percentage'] = TK_Helper::getFormPercentage(count($playerList[$player['id']]['weekThree']));
+             $playerList[$player['id']]['weekTwo']['percentage'] = TK_Helper::getFormPercentage(count($playerList[$player['id']]['weekTwo']));
+             $playerList[$player['id']]['weekOne']['percentage'] = TK_Helper::getFormPercentage(count($playerList[$player['id']]['weekOne']));
+             
+             // calculate average for all weeks form
+             $playerList[$player['id']]['totalPercentage'] = ($playerList[$player['id']]['weekFour']['percentage'] + $playerList[$player['id']]['weekThree']['percentage'] +
+             $playerList[$player['id']]['weekTwo']['percentage'] + $playerList[$player['id']]['weekOne']['percentage'])/4;
+             
+             // ceil value to get true form
+             $playerList[$player['id']]['form'] = ceil($playerList[$player['id']]['totalPercentage']*10);
+             
+             
+             // should rally 5 rallies a week
+             /*
+              * 7 - 40%
+              * 6 - 70%
+              * 5 - 100%
+              * 4 - 80%
+              * 3 - 60%
+              * 2 - 40%
+              * 1 - 20%
+              * 0 - 10%
+              */
+         }
+               
+         return array('playerList' => $playerList,'playerIds' => $playerIds);
+        
+    }
+    
+    public function getPlayersNoLastMonthRallies($playerInRallies){
+        $q = $this->peopleTable->createQuery('p');
+	$q->select('p.id');
+	$q->whereNotIn('p.id',$playerInRallies);
+	return $q->execute();
+        
+    }
 }
 ?>

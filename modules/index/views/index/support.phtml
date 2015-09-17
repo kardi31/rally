@@ -1,6 +1,6 @@
 <?php if(isset($_GET['msg'])){
         if($_GET['msg']=="too fast"){
-            $this->showError($this->translate('You can post once every 30 seconds'));
+            $this->showError($this->translate('You can send enquiry once every 2 minutes'));
         }
         elseif($_GET['msg']=="enquiry send"){
             $this->showSuccess($this->translate('Your enquiry has been sent to support. We will reply as soon as possible.'));
