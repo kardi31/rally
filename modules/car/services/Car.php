@@ -204,7 +204,7 @@ class CarService extends Service{
         if(!$model instanceof Car_Model_Doctrine_CarModels){
             $model = $this->getCarModel($model);
         }
-        $upkeep = 0.15 * $model['price'];
+        $upkeep = 0.03 * $model['price'];
         
         $record = $this->carTable->getRecord();
 	

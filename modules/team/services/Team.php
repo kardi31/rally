@@ -90,14 +90,15 @@ class TeamService extends Service{
         
     }
     
-    public function selectRandomTeams($quantity,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+    public function selectRandomTeams($quantity = null,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
         $q = $this->teamTable->createQuery('t');
         $q->innerJoin('t.User u');
-        $q->where('t.driver1_id IS NOT NULL');
-        $q->andWhere('t.pilot1_id IS NOT NULL');
-        $q->andWhere('t.car1_id IS NOT NULL');
+        $q->leftJoin('t.Players p');
+        $q->leftJoin('t.Cars c');
         $q->orderBy('RAND()');
-        $q->limit($quantity);
+        if(!is_null($quantity)){
+            $q->limit($quantity);
+        }
 	return $q->execute(array(),$hydrationMode);
     }
     

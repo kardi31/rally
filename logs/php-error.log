@@ -88,3 +88,150 @@
 [17-Sep-2015 17:12:42 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
 [17-Sep-2015 17:12:46 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
 [17-Sep-2015 17:12:51 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 10:57:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:29:33 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:32:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:33:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:40 Europe/Berlin] PHP Notice:  Undefined offset: 10 in C:\xampp\htdocs\ral\modules\people\services\People.php on line 512
+[18-Sep-2015 11:40:40 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:52 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:54 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:54 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:57 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:40:57 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:43:44 Europe/Berlin] PHP Notice:  Use of undefined constant eixt - assumed 'eixt' in C:\xampp\htdocs\ral\modules\people\services\People.php on line 463
+[18-Sep-2015 11:43:44 Europe/Berlin] PHP Notice:  Use of undefined constant eixt - assumed 'eixt' in C:\xampp\htdocs\ral\modules\people\services\People.php on line 463
+[18-Sep-2015 11:43:44 Europe/Berlin] PHP Notice:  Use of undefined constant eixt - assumed 'eixt' in C:\xampp\htdocs\ral\modules\people\services\People.php on line 463
+[18-Sep-2015 11:43:44 Europe/Berlin] PHP Notice:  Use of undefined constant eixt - assumed 'eixt' in C:\xampp\htdocs\ral\modules\people\services\People.php on line 463
+[18-Sep-2015 11:43:44 Europe/Berlin] PHP Notice:  Use of undefined constant eixt - assumed 'eixt' in C:\xampp\htdocs\ral\modules\people\services\People.php on line 463
+[18-Sep-2015 11:43:44 Europe/Berlin] PHP Notice:  Use of undefined constant eixt - assumed 'eixt' in C:\xampp\htdocs\ral\modules\people\services\People.php on line 463
+[18-Sep-2015 11:43:44 Europe/Berlin] PHP Notice:  Use of undefined constant eixt - assumed 'eixt' in C:\xampp\htdocs\ral\modules\people\services\People.php on line 463
+[18-Sep-2015 11:43:44 Europe/Berlin] PHP Notice:  Use of undefined constant eixt - assumed 'eixt' in C:\xampp\htdocs\ral\modules\people\services\People.php on line 463
+[18-Sep-2015 11:43:44 Europe/Berlin] PHP Notice:  Use of undefined constant eixt - assumed 'eixt' in C:\xampp\htdocs\ral\modules\people\services\People.php on line 463
+[18-Sep-2015 11:43:44 Europe/Berlin] PHP Notice:  Use of undefined constant eixt - assumed 'eixt' in C:\xampp\htdocs\ral\modules\people\services\People.php on line 463
+[18-Sep-2015 11:43:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:44:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:44:05 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:44:05 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:44:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:44:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:44:07 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:44:07 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:44:07 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:44:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:44:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:44:09 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 11:44:09 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 12:32:47 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 12:33:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 13:46:30 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 13:52:11 Europe/Berlin] PHP Warning:  strlen() expects parameter 1 to be string, array given in C:\xampp\htdocs\ral\modules\league\services\League.php on line 168
+[18-Sep-2015 13:52:41 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\modules\people\services\helper\TrainingFactorPilotHelper.php on line 74
+[18-Sep-2015 13:52:41 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 13:58:35 Europe/Berlin] PHP Warning:  strlen() expects parameter 1 to be string, array given in C:\xampp\htdocs\ral\modules\league\services\League.php on line 168
+[18-Sep-2015 13:59:05 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\modules\people\services\helper\TrainingFactorPilotHelper.php on line 75
+[18-Sep-2015 13:59:05 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 14:00:43 Europe/Berlin] PHP Notice:  Undefined variable: talent in C:\xampp\htdocs\ral\modules\people\services\helper\TrainingFactorPilotHelper.php on line 75
+[18-Sep-2015 14:00:43 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 14:00:58 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:21:42 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:23:39 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:24:09 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:24:17 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:24:25 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:24:33 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:26:01 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\modules\people\services\helper\TrainingFactorPilotHelper.php on line 72
+[18-Sep-2015 15:26:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:27:57 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:28:12 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:28:33 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:32:23 Europe/Berlin] PHP Warning:  strlen() expects parameter 1 to be string, array given in C:\xampp\htdocs\ral\modules\league\services\League.php on line 168
+[18-Sep-2015 15:32:53 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\modules\people\services\helper\TrainingFactorPilotHelper.php on line 76
+[18-Sep-2015 15:33:11 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:51:01 Europe/Berlin] PHP Warning:  strlen() expects parameter 1 to be string, array given in C:\xampp\htdocs\ral\modules\league\services\League.php on line 168
+[18-Sep-2015 15:51:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:51:26 Europe/Berlin] PHP Warning:  strlen() expects parameter 1 to be string, array given in C:\xampp\htdocs\ral\modules\league\services\League.php on line 168
+[18-Sep-2015 15:51:56 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\library\Zend\Debug.php on line 86
+[18-Sep-2015 15:52:00 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:53:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:53:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:53:23 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:53:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:53:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:53:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:53:25 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:53:30 Europe/Berlin] PHP Warning:  strlen() expects parameter 1 to be string, array given in C:\xampp\htdocs\ral\modules\league\services\League.php on line 168
+[18-Sep-2015 15:53:46 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:54:58 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:55:05 Europe/Berlin] PHP Warning:  strlen() expects parameter 1 to be string, array given in C:\xampp\htdocs\ral\modules\league\services\League.php on line 168
+[18-Sep-2015 15:55:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:55:21 Europe/Berlin] PHP Warning:  strlen() expects parameter 1 to be string, array given in C:\xampp\htdocs\ral\modules\league\services\League.php on line 168
+[18-Sep-2015 15:55:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 15:55:34 Europe/Berlin] PHP Warning:  strlen() expects parameter 1 to be string, array given in C:\xampp\htdocs\ral\modules\league\services\League.php on line 168
+[18-Sep-2015 15:55:37 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:10:05 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:14:19 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Hacking attempt
+
+  thrown in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 303
+[18-Sep-2015 16:14:58 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Hacking attempt
+
+  thrown in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 303
+[18-Sep-2015 16:15:25 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:15:33 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:15:39 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:15:44 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Hacking attempt
+
+  thrown in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 303
+[18-Sep-2015 16:16:03 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:16:26 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:16:42 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:17:08 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Hacking attempt
+
+  thrown in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 316
+[18-Sep-2015 16:17:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:18:11 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:18:30 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:18:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:18:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:19:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:19:48 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:20:21 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 725
+[18-Sep-2015 16:20:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:23:51 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\library\Doctrine\Hydrator\Graph.php on line 300
+[18-Sep-2015 16:23:51 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:30:22 Europe/Berlin] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in C:\xampp\htdocs\ral\library\Doctrine\Record\Listener\Chain.php on line 335
+[18-Sep-2015 16:30:23 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:40:29 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:42:20 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:44:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:46:18 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:46:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:48:29 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:53:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:53:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 16:55:58 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 17:02:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 17:02:36 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 17:09:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 17:26:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 17:27:07 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 17:33:28 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 17:40:13 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 17:40:42 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 17:51:39 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 17:57:03 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 18:04:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 18:06:28 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 18:12:36 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 18:16:40 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[18-Sep-2015 18:17:39 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45

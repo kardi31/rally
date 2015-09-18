@@ -354,7 +354,7 @@ class PeopleService extends Service{
         $driverSkills['age'] = rand(18,21);
         $driverSkills['first_name'] = $this->generateRandomPeopleFirstName();
         $driverSkills['last_name'] = $this->generateRandomPeopleLastName();
-        $driverSkills['form'] = 3;
+        $driverSkills['form'] = 5;
         $driverSkills['job'] = 'driver';
         
         if($team_id){
@@ -381,7 +381,7 @@ class PeopleService extends Service{
         $driverSkills['age'] = rand(18,21);
         $driverSkills['first_name'] = $this->generateRandomPeopleFirstName();
         $driverSkills['last_name'] = $this->generateRandomPeopleLastName();
-        $driverSkills['form'] = 3;
+        $driverSkills['form'] = 5;
         $driverSkills['job'] = 'pilot';
         
         if($team_id){
@@ -407,26 +407,31 @@ class PeopleService extends Service{
                 $max = 9;
                 $min = 4;
                 $tot = 35;
+                $minTalent = 6;
                 break;
             case 2:
                 $max = 8;
                 $min = 4;
                 $tot = 31;
+                $minTalent = 5;
                 break;
             case 3:
                 $max = 7;
                 $min = 4;
                 $tot = 27;
+                $minTalent = 3;
                 break;
             case 4:
                 $max = 7;
                 $min = 3;
                 $tot = 23;
+                $minTalent = 2;
                 break;
             case 5:
                 $max = 7;
                 $min = 2;
                 $tot = 19;
+                $minTalent = 0;
                 break;
         endswitch;
         
@@ -450,6 +455,12 @@ class PeopleService extends Service{
             }
         endwhile;
         shuffle($numbers);
+        
+        
+        if($numbers[$groups-1]<$minTalent){
+            $numbers[$groups-1] = rand($minTalent,10);
+        }
+        
         return $numbers;
     }
     
@@ -459,27 +470,32 @@ class PeopleService extends Service{
             case 1:
                 $max = 9;
                 $min = 4;
-                $tot = 55;
+                $tot = 60;
+                $minTalent = 6;
                 break;
             case 2:
                 $max = 8;
                 $min = 4;
-                $tot = 48;
+                $tot = 52;
+                $minTalent = 5;
                 break;
             case 3:
                 $max = 7;
                 $min = 4;
-                $tot = 41;
+                $tot = 44;
+                $minTalent = 3;
                 break;
             case 4:
                 $max = 7;
                 $min = 3;
-                $tot = 34;
+                $tot = 36;
+                $minTalent = 2;
                 break;
             case 5:
                 $max = 7;
                 $min = 2;
-                $tot = 27;
+                $tot = 28;
+                $minTalent = 0;
                 break;
         endswitch;
         
@@ -503,6 +519,10 @@ class PeopleService extends Service{
             }
         endwhile;
         shuffle($numbers);
+        
+        if($numbers[$groups-1]<$minTalent){
+            $numbers[$groups-1] = rand($minTalent,10);
+        }
         return $numbers;
     }
       

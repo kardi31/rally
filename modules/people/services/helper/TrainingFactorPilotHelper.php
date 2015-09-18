@@ -48,20 +48,19 @@
                 $skillSum = 6.7;
                 break;
             case 10:
-                $skillSum = 7.7;
+                $skillSum = 7.6;
                 break;
         endswitch;
-        
         $values = array();
         for($i=0;$i<$skillCounter;$i++){
             $values[] = TK_Text::float_rand($min,$max,2);
         }
         
         // generate random sum of $skillCounter
-        
         if(array_sum($values)-$skillSum>=0.3){
             while(array_sum($values)-$skillSum>=0.3){
                 $randomColumn = rand(0,$skillCounter-1);
+                echo (array_sum($values)-$skillSum)." - 1<br />";
                 if($values[$randomColumn] >= 0.6){
                     $values[$randomColumn] -= 0.1;
                 }

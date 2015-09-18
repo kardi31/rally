@@ -50,8 +50,8 @@ class RallyService extends Service{
         return PrizesService::getInstance();
     }
     
-    public function getAllRallies(){
-        return $this->rallyTable->findAll();
+    public function getAllRallies($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        return $this->rallyTable->findAll($hydrationMode);
     }
     
     public function getRally($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
@@ -298,7 +298,6 @@ class RallyService extends Service{
         
         // if someone entered player/car id by firebug
         // we check if player/car actually belongs to the team
-        
         if(!$peopleService->getTeamPlayer($values['driver_id'],$team['id'])){
             throw new TK_Exception('Hacking attempt',404);
         }

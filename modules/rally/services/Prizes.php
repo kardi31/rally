@@ -12,14 +12,14 @@
      * prizes percentage for rallies with more than (or equal) 10 participants
      */
     protected $prizesOver10 = array(
-        1 => 0.33,
-        2 => 0.23,
-        3 => 0.14,
-        4 => 0.08,
-        5 => 0.07,
-        6 => 0.06,
-        7 => 0.05,
-        8 => 0.04
+        1 => 0.28,
+        2 => 0.22,
+        3 => 0.15,
+        4 => 0.09,
+        5 => 0.08,
+        6 => 0.07,
+        7 => 0.06,
+        8 => 0.05
     );
 
     protected $points = array(
@@ -46,11 +46,11 @@
     );
      
     protected $leaguePrizePool = array(
-        1 => 140000,
-        2 => 100000,
-        3 => 75000,
-        4 => 63000,
-        5 => 50000
+        1 => 70000,
+        2 => 50000,
+        3 => 45000,
+        4 => 33000,
+        5 => 25000
     );
     
     protected $leaguePerParticipantPool = array(
