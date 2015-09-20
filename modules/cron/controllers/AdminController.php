@@ -467,6 +467,15 @@ class Cron_Admin extends Controller{
     // do this every 15 min 
     
     public function calculateRallyResult(){
+        ?>
+<script type="text/javascript">
+  var timeout = setTimeout("location.reload(true);",600000);
+  function resetTimeout() {
+    clearTimeout(timeout);
+    timeout = setTimeout("location.reload(true);",600000);
+  }
+</script>
+<?php
         ini_set('max_execution_time', 300);
         Service::loadModels('people', 'people');
         Service::loadModels('car', 'car');
@@ -584,6 +593,8 @@ class Cron_Admin extends Controller{
         $rallies = $rallyDataService->getAllRallies();
         foreach($rallies as $rally):
             $rallyService->saveRallyFromData($rally,$seasonInfo['season_start']);
+            $rallyService->saveRallyFromData($rally,$seasonInfo['season_start'],2);
+            $rallyService->saveRallyFromData($rally,$seasonInfo['season_start'],3);
         endforeach;
         
         $this->createRalliesForAllLeagues();

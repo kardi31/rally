@@ -33,7 +33,7 @@ class Test_Index extends Controller{
     }
     
     public function rallyTest(){
-        ini_set('max_execution_time', 300);
+        ini_set('max_execution_time', 700);
         Service::loadModels('user', 'user');
         require_once(BASE_PATH."/modules/rally/controllers/TestController.php");
         $trainingService = parent::getService('people','training');
@@ -49,8 +49,13 @@ class Test_Index extends Controller{
         $randomTeams = $teamService->selectRandomTeams(null,Doctrine_Core::HYDRATE_ARRAY);
         $allRallies = $rallyService->getAllRallies(Doctrine_Core::HYDRATE_ARRAY);
         foreach($allRallies as $randomRally):
+            $teamKey = 0;
             foreach($randomTeams as $randomTeam):
+                $teamKey++;
                 if($randomRally['league_rally']&&$randomRally['league']!=$randomTeam['league_name']){
+                    continue;
+                }
+                if($randomTeam['league_name']>$randomRally['league']&&$teamKey%4!=1){
                     continue;
                 }
                 $values=array();

@@ -64,7 +64,7 @@ class Rally_Index extends Controller{
                 if(!$rally['big_awards']){
                     $freeDrivers = $peopleService->getFreeDrivers($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
                     $freePilots = $peopleService->getFreePilots($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
-                    var_dump($freePilots);exit;
+
                     $freeCars = $carService->getFreeCars($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
                     $form = $this->getForm('rally','JoinRally');
                     $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');

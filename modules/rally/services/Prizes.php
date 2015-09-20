@@ -21,6 +21,30 @@
         7 => 0.06,
         8 => 0.05
     );
+    
+    protected $prizesOver30 = array(
+        1 => 0.15,
+        2 => 0.12,
+        3 => 0.10,
+        4 => 0.09,
+        5 => 0.08,
+        6 => 0.07,
+        7 => 0.06,
+        8 => 0.045,
+        9 => 0.0375,
+        10 => 0.035,
+        11 => 0.0325,
+        12 => 0.03,
+        13 => 0.0275,
+        14 => 0.025,
+        15 => 0.0225,
+        16 => 0.02,
+        17 => 0.0175,
+        18 => 0.015,
+        19 => 0.0125,
+        20 => 0.01,
+        
+    );
 
     protected $points = array(
         1 => 20,
@@ -54,11 +78,11 @@
     );
     
     protected $leaguePerParticipantPool = array(
-        1 => 2000,
-        2 => 1500,
-        3 => 1000,
-        4 => 750,
-        5 => 500
+        1 => 500,
+        2 => 400,
+        3 => 300,
+        4 => 200,
+        5 => 100
     );
             
     
@@ -84,7 +108,10 @@
         
         $prizePool += $totalPrizePerParticipant;
         
-        if($participants>=10){
+        if($participants>=30){
+            $prizes = array_map( function($val) use ($prizePool) { return $val * $prizePool; }, $this->prizesOver30);
+        }
+        elseif($participants>=10){
             $prizes = array_map( function($val) use ($prizePool) { return $val * $prizePool; }, $this->prizesOver10);
         }
         else{
@@ -138,7 +165,10 @@
         
         $prizePool += $totalPrizePerParticipant;
         
-        if($participants>=10){
+        if($participants>=30){
+            $cash = round($this->prizesOver30[$place] * $prizePool);
+        }
+        elseif($participants>=10){
             $cash = round($this->prizesOver10[$place] * $prizePool);
         }
         else{

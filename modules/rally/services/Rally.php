@@ -1101,32 +1101,66 @@ class RallyService extends Service{
     }
     
     
-    public function saveRallyFromData($dataRally,$season_start){
+    public function saveRallyFromData($dataRally,$season_start,$league = 1){
         
+        $stages = $dataRally->get('Stages');
+        $surfaces = $dataRally->get('Surfaces');
+        
+        $newId = ($league-1)*1000+$dataRally['id'];
         $dataArray = $dataRally->toArray();
+        
+        unset($dataArray['Stages']);
+        unset($dataArray['Surfaces']);
+        Zend_Debug::dump($dataArray);
+        unset($dataArray['id']);
         $rallyDay = strtotime($season_start." + ".($dataArray['week']-1)." weeks  + ".($dataRally['day']-1)." days");
         $dataArray['date'] = date('Y-m-d',$rallyDay)." 09:00:00";
-        $dataArray['league'] = 1;
-        
+        $dataArray['league'] = $league;
+        if($dataArray['league']!=1){
+            $dataArray['name'] = $dataArray['name']." - level ".$league;
+        }
+        $dataArray['id'] = $newId;
         $rally = $this->rallyTable->getRecord();
         $rally->fromArray($dataArray);
-        $rally->save();
+        echo "r1 <br />";
         
-        foreach($dataRally->get('Stages') as $key => $stage):
+        try{
+            
+        $rally->save();
+        echo "r0.5";
+        $rally->set('id',$newId);
+        $rally->save();
+        } catch (Exception $ex) {
+var_dump($ex->getMessage());exit;
+        }
+        
+        echo "r2 <br />";
+        foreach($stages as $key => $stage):
             $stageArray = $stage->toArray();
             $newDate = strtotime($dataArray['date']." + ".($key*15)." minutes");
             
+        echo "s1 <br />";
+            unset($stageArray['id']);
             $stageArray['date'] = date('Y-m-d H:i:s',$newDate);
             $stageArray['finished'] = 0;
+            $stageArray['rally_id'] = $newId;
             $stageRow = $this->stageTable->getRecord();
             $stageRow->fromArray($stageArray);
             $stageRow->save();
+            
+        echo "s2 <br />";
         endforeach;
         
-        foreach($dataRally->get('Surfaces') as $surface):
+        foreach($surfaces as $surface):
+            $surfaceArray = $surface->toArray();
+            unset($surfaceArray['id']);
+            
+        echo "s1 <br />";
             $surfaceRow = $this->surfaceTable->getRecord();
-            $surfaceRow->fromArray($surface->toArray());
+            $surfaceArray['rally_id'] = $newId;
+            $surfaceRow->fromArray($surfaceArray);
             $surfaceRow->save();
+        echo "s2 <br />";
         endforeach;
         
     }

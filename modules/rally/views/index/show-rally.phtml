@@ -282,7 +282,7 @@ $startDate2 = clone $startDate;
     </div>
     <div class="showRallyBox rallyResultWrapper mainUserBox <?php if($rally['date']<=date('Y-m-d H:i:s')) echo "active"?>" id="result">
         
-        <?php if(isset($partialResults)){ ?>
+        <?php if(isset($partialResults)&&!empty($partialResults)){ ?>
         <h3 class="h4">Results after stage <?= $partialResults[0]['number_of_stages']; ?></h3>
         <table class="mb20">
             <?php foreach($partialResults as $key =>  $result): ?>
