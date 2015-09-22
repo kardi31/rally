@@ -315,7 +315,6 @@ class Cron_Admin extends Controller{
          */
         
         $teams = $teamService->getAllTeams();
-        for($i=0;$i<12;$i++){
         foreach($teams as $team):
             $playersValue = $teamService->getAllTeamPlayersSalary($team);
             if($playersValue!=0)
@@ -350,7 +349,6 @@ class Cron_Admin extends Controller{
             $team->save();
                 
         endforeach;
-        }
         echo "done";exit;
     }
     
@@ -467,15 +465,7 @@ class Cron_Admin extends Controller{
     // do this every 15 min 
     
     public function calculateRallyResult(){
-        ?>
-<script type="text/javascript">
-  var timeout = setTimeout("location.reload(true);",600000);
-  function resetTimeout() {
-    clearTimeout(timeout);
-    timeout = setTimeout("location.reload(true);",600000);
-  }
-</script>
-<?php
+       
         ini_set('max_execution_time', 300);
         Service::loadModels('people', 'people');
         Service::loadModels('car', 'car');
@@ -526,7 +516,6 @@ class Cron_Admin extends Controller{
         endforeach;
         
         $rallyToFinish = $rallyService->getRalliesToFinish();
-        
         foreach($rallyToFinish as $rally):
             $rallyService->calculateRallyResult($rally);
         endforeach;

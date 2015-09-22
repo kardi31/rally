@@ -133,7 +133,7 @@ class User_Index extends Controller{
             $car->set('team_id',$team['id']);
             $car->save();
             
-            $teamService->addTeamMoney($team['id'],30000,8,'Initial FastRally bonus');            
+            $teamService->addTeamMoney($team['id'],50000,8,'Initial FastRally bonus');            
             
             $ip = TK_Helper::getRealIpAddr();
             $hostname = gethostbyaddr($ip);

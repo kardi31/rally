@@ -875,6 +875,13 @@ footer{
     .RallyStages li{
         display: inline-block;
     }
+    .rallyList table td .label{
+        margin: 0 auto;
+        display: block;
+    }
+    .rallyList table td .label:not(:first-of-type){
+        margin-top: 5px;
+    }
     .rallyList tr td:first-of-type{
         padding-left:10px;
     }
@@ -1342,6 +1349,14 @@ margin-right: auto;
      .rallyList{
         min-height:400px;
     }
+    tr.label-danger-wrapper{
+        margin-top:15px;
+    }
+    td.label.label-danger{
+        border:5px solid transparent;
+        font-size:14px;
+        padding:7px;
+    }
     
     .rallyList table{
         margin-left:20px;
@@ -1355,6 +1370,35 @@ margin-right: auto;
     }
     .rallyList td.rallyName{
         padding-left:0px;
+    }
+    
+    .rally-level{
+        
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    }
+    .rally-level1{
+        background:#5cb85c;
+    }
+    
+    .rally-level2{
+        background:#337ab7;
+    }
+    .rally-level3{
+        background:#5bc0de;
+    }
+    .rally-level4{
+        background:#f0ad4e;
+    }
+    .rally-level5{
+        background:#d9534f;
     }
     
     /*

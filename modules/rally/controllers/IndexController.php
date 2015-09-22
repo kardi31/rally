@@ -66,40 +66,41 @@ class Rally_Index extends Controller{
                     $freePilots = $peopleService->getFreePilots($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
 
                     $freeCars = $carService->getFreeCars($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
-                    $form = $this->getForm('rally','JoinRally');
-                    $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
-                    $form->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
-                    $form->getElement('car_id')->addMultiOptions($freeCars,'Select car');
-                    $this->view->assign('form',$form);
+                    if(!$rally['level']>(int)$user['Team']['league_name']){
+                        $form = $this->getForm('rally','JoinRally');
+                        $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
+                        $form->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
+                        $form->getElement('car_id')->addMultiOptions($freeCars,'Select car');
+                        $this->view->assign('form',$form);
 
-                    if($form->isSubmit()){
-                        if($form->isValid()){
-                            
-                            
-                            Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
-                            if($signUpFinish->getTimestamp()<time()){
-                                TK_Helper::redirect('/rally/show-rally/'.$rally['slug'].'?msg=signup+finish');
-                                exit;
+                        if($form->isSubmit()){
+                            if($form->isValid()){
+
+
+                                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
+                                if($signUpFinish->getTimestamp()<time()){
+                                    TK_Helper::redirect('/rally/show-rally/'.$rally['slug'].'?msg=signup+finish');
+                                    exit;
+                                }
+                                $values = $_POST;
+
+                                $rallyService->saveRallyCrew($values,$rally,$user['Team']);
+                                TK_Helper::redirect('/rally/show-rally/'.$rally['slug'].'?msg=joined');
+
+                                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
                             }
-                            $values = $_POST;
-
-                            $rallyService->saveRallyCrew($values,$rally,$user['Team']);
-                            TK_Helper::redirect('/rally/show-rally/'.$rally['slug'].'?msg=joined');
-
-                            Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
                         }
                     }
                 }
                 else{
-                    $freeDrivers = $peopleService->getFreeDriversBig($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
-                    $freePilots = $peopleService->getFreePilotsBig($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
-                    $freeCars = $carService->getFreeCarsBig($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
-                    $form = $this->getForm('rally','JoinRally');
-                    $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
-                    $form->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
-                    $form->getElement('car_id')->addMultiOptions($freeCars,'Select car');
-                    $this->view->assign('form',$form);
-
+                        $freeDrivers = $peopleService->getFreeDriversBig($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
+                        $freePilots = $peopleService->getFreePilotsBig($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
+                        $freeCars = $carService->getFreeCarsBig($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
+                        $form = $this->getForm('rally','JoinRally');
+                        $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
+                        $form->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
+                        $form->getElement('car_id')->addMultiOptions($freeCars,'Select car');
+                        $this->view->assign('form',$form);
                     if($form->isSubmit()){
                         if($form->isValid()){
                             Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
@@ -141,7 +142,9 @@ class Rally_Index extends Controller{
                     }
                     
                 }
-                $this->view->assign('form',$form);
+                if(isset($form)){
+                    $this->view->assign('form',$form);
+                }
             }
         }
         

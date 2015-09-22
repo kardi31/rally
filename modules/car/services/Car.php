@@ -267,7 +267,7 @@ class CarService extends Service{
         // do not add random for car values
         if($addRandom){
             // add random factor(+10%/-10% of time)
-            $random = TK_Text::float_rand(0.9, 1.1);
+            $random = TK_Text::float_rand(0.8, 1.2);
             $result = $weightedAverage*$random;
         }
         else{

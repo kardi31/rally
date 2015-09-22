@@ -70,11 +70,11 @@
     );
      
     protected $leaguePrizePool = array(
-        1 => 70000,
-        2 => 50000,
-        3 => 45000,
-        4 => 33000,
-        5 => 25000
+        1 => 100000,
+        2 => 75000,
+        3 => 50000,
+        4 => 40000,
+        5 => 35000
     );
     
     protected $leaguePerParticipantPool = array(

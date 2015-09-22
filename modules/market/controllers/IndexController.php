@@ -224,14 +224,18 @@ class Market_Index extends Controller{
         $form = $this->getForm('market','freeAgent');
         $this->view->assign('form',$form);
         
+        $league_level = (int)$user['Team']['league_name'];
+        $freeAgencyPrice = (6-$league_level)*10000;
+        
         if($form->isSubmit()){
             if($form->isValid()){                
                 $values = $_POST;
-                    
-                if(!$marketService->canAffordThis($user['Team'],10000)){
+                
+                
+                if(!$marketService->canAffordThis($user['Team'],$freeAgencyPrice)){
                     TK_Helper::redirect('/market/free-agency?msg=no+money');
                 }
-                elseif(!$marketService->canAfford($user['Team'],10000)){
+                elseif(!$marketService->canAfford($user['Team'],$freeAgencyPrice)){
                     TK_Helper::redirect('/market/free-agency?msg=not+enough+money');
                 }
                 else{
@@ -244,7 +248,7 @@ class Market_Index extends Controller{
                         $person = $peopleService->createRandomPilot($league_level,$user['Team']['id']);
                     
                     
-                    $teamService->removeTeamMoney($user['Team']['id'],10000,9,'Free agent player '.$person['first_name']." ".$person['last_name']." has been acquired.");    
+                    $teamService->removeTeamMoney($user['Team']['id'],$freeAgencyPrice,9,'Free agent player '.$person['first_name']." ".$person['last_name']." has been acquired.");    
                     
                     Doctrine_Manager::getInstance()->getCurrentConnection()->commit();           
                     TK_Helper::redirect('/account/my-people?msg=free+agent+acquired');
@@ -254,6 +258,7 @@ class Market_Index extends Controller{
         }
         
         $this->getLayout()->setLayout('page');
+        $this->view->assign('freeAgencyPrice',$freeAgencyPrice);
     }
     
     public function buyCar(){

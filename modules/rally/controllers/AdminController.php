@@ -321,7 +321,7 @@ class Rally_Admin extends Controller{
              $carData .= " Acceleration: ".$result['Crew']['Car']['Model']['acceleration']."<br />";
              $carData .= " Mileage: ".$result['Crew']['Car']['mileage']."<br />";
              
-             $row[] = $result['Crew']['Team']['name']."<br />".$result['Crew']['id'];
+             $row[] = $result['Crew']['Team']['name']."<br />".$result['Crew']['team_id'];
              $row[] = $driverData;
              $row[] = $pilotData;
              $row[] = $carData;

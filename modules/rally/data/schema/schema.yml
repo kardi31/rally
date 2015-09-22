@@ -29,6 +29,9 @@ Rally:
     league:
       type: float(10,2)
       default: 5
+    level:
+      type: integer
+      default: 1
     big_awards:
       type: boolean
       default: 0

@@ -33,9 +33,9 @@ class Rally_Model_Doctrine_Rally extends Rally_Model_Doctrine_BaseRally
     protected static $riskAccidentFactor = array(
 	'very-small' => 0.5,
 	'small' => 0.8,
-	'normal' => 1,
-	'big' => 3,
-	'very-big' => 8
+	'normal' => 2,
+	'big' => 6,
+	'very-big' => 15
     );
     
     public static function getRisks(){
