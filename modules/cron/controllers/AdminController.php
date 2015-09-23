@@ -467,15 +467,7 @@ class Cron_Admin extends Controller{
     // do this every 15 min 
     
     public function calculateRallyResult(){
-        ?>
-<script type="text/javascript">
-  var timeout = setTimeout("location.reload(true);",600000);
-  function resetTimeout() {
-    clearTimeout(timeout);
-    timeout = setTimeout("location.reload(true);",600000);
-  }
-</script>
-<?php
+
         ini_set('max_execution_time', 300);
         Service::loadModels('people', 'people');
         Service::loadModels('car', 'car');
