@@ -549,10 +549,9 @@ class PeopleService extends Service{
 	    $late['Pilot'][$key] = $this->getPilotLate($crew['Pilot']);
 	    $late['Car'][$key] = CarService::getCarLate($crew['Car']);
 	    $accidentProbability = $this->calculateAccidentProbability($crew['Driver'],$crew['Pilot'],$crew['Car'],$surfaces);
-            
             $crewAccidentRisk = Rally_Model_Doctrine_Rally::getAccidentRisk($crew['risk']);
             if($accidentProbability < $crewAccidentRisk){
-                $accidentProbability = $crewAccidentRisk*0.5;
+                $accidentProbability *= $crewAccidentRisk;
             }
             else{
                 $accidentProbability *= $crewAccidentRisk;
@@ -654,7 +653,7 @@ class PeopleService extends Service{
 	$weightedAverage = array_sum($props)/array_sum($driverWages);
         
 	// add random factor(+10%/-10% of time)
-	$random = TK_Text::float_rand(0.95, 1.05);
+	$random = TK_Text::float_rand(0.8, 1.2);
 	$result = ($weightedAverage)*$random;
 	
 	return $result;
@@ -679,7 +678,7 @@ class PeopleService extends Service{
 	// calculate weighted average
 	$weightedAverage = array_sum($props)/array_sum($pilotWages);
 	// add random factor(+10%/-10% of time)
-	$random = TK_Text::float_rand(0.9, 1.1);
+	$random = TK_Text::float_rand(0.8, 1.2);
 	$result = $weightedAverage*$random;
 	
 	return $result;

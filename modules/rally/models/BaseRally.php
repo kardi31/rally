@@ -13,6 +13,7 @@
  * @property boolean $active
  * @property boolean $league_rally
  * @property float $league
+ * @property integer $level
  * @property boolean $big_awards
  * @property boolean $finished
  * @property boolean $friendly
@@ -66,6 +67,10 @@ abstract class Rally_Model_Doctrine_BaseRally extends Doctrine_Record
              'default' => 5,
              'length' => '10',
              'scale' => '2',
+             ));
+        $this->hasColumn('level', 'integer', null, array(
+             'type' => 'integer',
+             'default' => 1,
              ));
         $this->hasColumn('big_awards', 'boolean', null, array(
              'type' => 'boolean',

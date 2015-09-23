@@ -736,13 +736,11 @@ class RallyService extends Service{
                 $result['stage_out_number'] = $result['number_of_stages'];
                 $result['stage_out_id'] = $result['stage_id'];
             }
-            
             $alreadyCalculated = true;
             if(!$rallyResultRecord = $this->getCrewResult($id,$result['crew_id'])){
                 $alreadyCalculated = false;
                 $rallyResultRecord = $this->resultTable->getRecord();
             }
-            
             $rallyResultRecord->fromArray($result);
             $rallyResultRecord->save();
 	    if(!$alreadyCalculated){
@@ -1111,35 +1109,27 @@ class RallyService extends Service{
         
         unset($dataArray['Stages']);
         unset($dataArray['Surfaces']);
-        Zend_Debug::dump($dataArray);
         unset($dataArray['id']);
         $rallyDay = strtotime($season_start." + ".($dataArray['week']-1)." weeks  + ".($dataRally['day']-1)." days");
         $dataArray['date'] = date('Y-m-d',$rallyDay)." 09:00:00";
         $dataArray['league'] = $league;
         if($dataArray['league']!=1){
-            $dataArray['name'] = $dataArray['name']." - level ".$league;
+            $dataArray['slug'] = TK_Text::createSlug($dataArray['name']." - level ".$league);
         }
+        
+        $dataArray['level'] = $league;
         $dataArray['id'] = $newId;
         $rally = $this->rallyTable->getRecord();
         $rally->fromArray($dataArray);
-        echo "r1 <br />";
         
-        try{
-            
         $rally->save();
-        echo "r0.5";
         $rally->set('id',$newId);
         $rally->save();
-        } catch (Exception $ex) {
-var_dump($ex->getMessage());exit;
-        }
         
-        echo "r2 <br />";
         foreach($stages as $key => $stage):
             $stageArray = $stage->toArray();
             $newDate = strtotime($dataArray['date']." + ".($key*15)." minutes");
             
-        echo "s1 <br />";
             unset($stageArray['id']);
             $stageArray['date'] = date('Y-m-d H:i:s',$newDate);
             $stageArray['finished'] = 0;
@@ -1148,19 +1138,16 @@ var_dump($ex->getMessage());exit;
             $stageRow->fromArray($stageArray);
             $stageRow->save();
             
-        echo "s2 <br />";
         endforeach;
         
         foreach($surfaces as $surface):
             $surfaceArray = $surface->toArray();
             unset($surfaceArray['id']);
             
-        echo "s1 <br />";
             $surfaceRow = $this->surfaceTable->getRecord();
             $surfaceArray['rally_id'] = $newId;
             $surfaceRow->fromArray($surfaceArray);
             $surfaceRow->save();
-        echo "s2 <br />";
         endforeach;
         
     }

@@ -87,6 +87,38 @@ $startDate2 = clone $startDate;
                          ?>
                     </td>
                 </tr>
+                <?php if(!$rally['league_rally']){ ?>
+                <tr>
+                    <td>
+                        <span class="rally-level rally-level<?= $rally['level']; ?>">
+                            <?php 
+                            if($rally['level']==1){
+                                echo "Open";
+                            }
+                            else{
+                                echo TK_Text::numberToOrdinal($rally['level']);
+                            }
+                            ?>
+                        </span>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <?php } ?>
+                <?php if(!$rally['league_rally']&&$rally['level']>(int)$authenticatedUser['Team']['league_name']): ?>
+                
+                <tr>
+                    <td colspan="2" >
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="label label-danger">
+                        <?= $this->translate('This is ').TK_Text::numberToOrdinal($rally['level']).$this->translate(' level rally. <br />This means that only teams of league ').$rally['level'].$this->translate(' and lower can join this rally'); 
+                ?>
+                    </td>
+                </tr>
+                <?php endif; ?>
             </table>
         </div>
         <br />

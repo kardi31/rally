@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/xampp/htdocs/ral/public/assets/global/plugins/bootstrap-pwstrength/GPL-LICENSE.txt</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/my-friendly-rallies.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/rally/models/BaseRally.php</file>
@@ -166,6 +167,21 @@
             <file>file:/C:/xampp/htdocs/ral/modules/people/services/People.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/register.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/forum/views/index/show-category.phtml</file>
+=======
+            <file>file:/C:/xampp/htdocs/ral/modules/market/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/data/schema/schema.yml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/my-rallies.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/public/css/custom.css</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/cron/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/services/Rally.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/list-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/TestController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/test/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Text.php</file>
+>>>>>>> 13c86b6f3b257eac63503fa8d199967915472a2c
         </group>
     </open-files>
 </project-private>

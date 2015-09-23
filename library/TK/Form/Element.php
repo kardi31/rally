@@ -160,7 +160,7 @@ class Element{
         // check if has not empty validator
         // if so,that would mean the validation failed  
         // previously it crashed on checking if value existed
-        if(in_array('notEmpty',$this->validators)){
+        if(!empty($this->validators)&&in_array('notEmpty',$this->validators)){
                 if(!isset($_POST[$this->name])){
                     $var = '';
                 }

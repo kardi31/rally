@@ -137,7 +137,6 @@ class TeamService extends Service{
 	}
 	
         $team = $this->getTeam($team_id);
-	
 	$newCash = (int)$team['cash'] + $amount;
 	
 	$team->set('cash',$newCash);

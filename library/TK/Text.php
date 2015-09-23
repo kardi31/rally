@@ -341,6 +341,26 @@ class TK_Text{
         return $randomString;
     }
     
+    public static function numberToOrdinal($number){
+        switch($number):
+            case 1:
+                return 'First';
+                break;
+            case 2:
+                return 'Second';
+                break;
+            case 3:
+                return 'Third';
+                break;
+            case 4:
+                return 'Fourth';
+                break;
+            case 5:
+                return 'Fifth';
+                break;
+        endswitch;
+    }
+    
 }
 
 /*

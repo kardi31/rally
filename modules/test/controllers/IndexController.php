@@ -55,9 +55,11 @@ class Test_Index extends Controller{
                 if($randomRally['league_rally']&&$randomRally['league']!=$randomTeam['league_name']){
                     continue;
                 }
-                if($randomTeam['league_name']>$randomRally['league']&&$teamKey%4!=1){
+                
+                if((int)$randomTeam['league_name']!=(int)$randomRally['league']){
                     continue;
                 }
+                
                 $values=array();
                 foreach($randomTeam['Players'] as $player):
                     if($player['job']=='driver')

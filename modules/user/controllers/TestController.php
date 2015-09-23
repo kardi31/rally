@@ -95,7 +95,7 @@ class User_Test extends Controller{
             $car->save();
             
            
-            $teamService->addTeamMoney($team['id'],30000,8,'Initial FastRally bonus'); 
+            $teamService->addTeamMoney($team['id'],50000,8,'Initial FastRally bonus'); 
             
             $user->set('active',1);
             $user->save();
