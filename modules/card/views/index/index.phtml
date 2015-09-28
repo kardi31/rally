@@ -119,6 +119,12 @@ $user_colour = array_rand($colours);
                 if (websocket.bufferedAmount == 0)
                     websocket.send("Keep alive from client");
             }, 30000);
+             var msg = {
+                type: 'refreshed',
+                userid: '<?= $authenticatedUser['id']; ?>'
+            };
+            //convert and send data to server
+            websocket.send(JSON.stringify(msg));
         };
 
         $('#send-btn').click(function () { //use clicks message send button	
@@ -181,6 +187,7 @@ $user_colour = array_rand($colours);
 //		var ucolor = msg.color; //color
 
             if (type == 'requestData') {
+                console.log('189');
                 var params = {
                     type: 'joined',
                     cards: '<?= $userCards; ?>',

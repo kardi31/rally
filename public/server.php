@@ -73,15 +73,33 @@ while (true) {
                         if(is_object($tst_msg)&&$tst_msg->type=="joined"){
                             
                             if(!$players->getPlayer($tst_msg->userid)){
-                                $players->addPlayer($tst_msg->userid,$tst_msg->username,json_decode($tst_msg->cards,true));
+                                $player = $players->addPlayer($tst_msg->userid,$tst_msg->username,json_decode($tst_msg->cards,true));
                                 
                                 $found_socket = array_search($changed_socket, $clients);
                                 $userSockets[$tst_msg->userid] = $clients[$found_socket];
-                                
                             }
                             
                             refreshPlayerList($players);
                             
+                        }
+                        elseif(is_object($tst_msg)&&$tst_msg->type=='refreshed'){
+                            
+                            if($player = $players->getPlayer($tst_msg->userid)){
+                                if($player->getTable()){
+                                    $tableId = $player->getTable();
+                                    $table = $tables->getTable($tableId);
+
+                                    $passedParameters = array('type'=>'joinedTable');
+                                    $passedParameters['tableid'] = $tableId;
+                                    $passedParameters['showTable'] = $table->showTable();
+                                    $userOnTableIds = $table->getPlayerIds();
+                                    $passedParameters = array_merge($passedParameters,$userOnTableIds);
+
+                                    $response_text = mask(json_encode($passedParameters));
+                                    send_message($response_text); //send data
+
+                                }
+                            }
                         }
                         // New table created
                         elseif(is_object($tst_msg)&&$tst_msg->type=="tableJoined"){
@@ -108,7 +126,6 @@ while (true) {
                         }
                         // Existing table joined
                         elseif(is_object($tst_msg)&&$tst_msg->type=="existTableJoined"){
-                            
                             $player = $players->getPlayer($tst_msg->userid);
                             $table = $tables->getTable($tst_msg->tableid);
                             

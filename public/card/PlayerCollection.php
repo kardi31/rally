@@ -12,7 +12,7 @@ class PlayerCollection {
     public function addPlayer($userid,$username,$cards) {
         $player = new Player($userid,$username,$cards);
         $this->items[$userid] = $player;
-        
+        return $player;
     }
 
     public function removePlayer($userid,$tables) {
