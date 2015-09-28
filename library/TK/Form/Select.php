@@ -8,6 +8,8 @@ class Select extends Element {
     protected $elementDisplay;
     protected $defaultLayout = true;
     protected $value;
+    protected $validateSelect = true;
+    
     
     public function __construct($type, $name, $options, $label = false) {
         $this->value = false;
@@ -27,6 +29,10 @@ class Select extends Element {
                 return "checked";
         }
         
+    }
+    
+    public function setNoValidateSelect(){
+        $this->validateSelect = false;
     }
     
     public function renderElement($submitElem = 'submit'){
@@ -135,7 +141,9 @@ class Select extends Element {
             return "";
         
         $var = $_POST[parent::getName()];
-        $response = Validator::validateSelect($var,array_keys($this->multiOptions[parent::getName()]));
+        if($this->validateSelect){
+            $response = Validator::validateSelect($var,array_keys($this->multiOptions[parent::getName()]));
+        }
         if($response['result']){
             parent::validateElement();
         }

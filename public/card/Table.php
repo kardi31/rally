@@ -61,31 +61,58 @@ class Table {
     
     public function showTable(){
         
-//    <div class="message_box" id="cardTable">
-//        <div class="player1Cards playerCards">
-//            <div id="player1Card1">Card1</div>
-//            <div id="player1Card2">Card2</div>
-//            <div id="player1Card3">Card3</div>
-//            <div id="player1Card4">Card4</div>
-//            <div id="player1Card5">Card5</div>
-//        </div>
-//        <div class="playField"></div>
-//        <div class="player2Cards playerCards">
-//            <div id="player2Card1">Card1</div>
-//            <div id="player2Card2">Card2</div>
-//            <div id="player2Card3">Card3</div>
-//            <div id="player2Card4">Card4</div>
-//            <div id="player2Card5">Card5</div>
-//        </div>
-//    </div>
-//    <div class="message_box" id="cardTableInfo">
-//        
-//        <button type="button" class="closeTable" rel="1">X</button>
-//        <div class="playerList">
-//            <div>kk33</div>
-//            <div>kardi3</div>
-//        </div>
-//    </div>
+/*    <div class="message_box" id="cardTable">
+        <div class="player1Cards playerCards">
+            <div id="player1card1">
+                <table>
+                    <tr>
+                        <th colspan="2">
+                            <img src="/media/cars/opel_viva.jpg" alt="Opel Viva GT" class="">
+                            <strong>Suzuki Swift Sport</strong>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Acceleration</td>
+                        <td>3.5</td>
+                    </tr>
+                    <tr>
+                        <td>v-max</td>
+                        <td>210</td>
+                    </tr>
+                    <tr>
+                        <td>Capacity</td>
+                        <td>1598</td>
+                    </tr>
+                    <tr>
+                        <td>Horsepower</td>
+                        <td>208</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="player1Card2">Card2</div>
+            <div id="player1Card3">Card3</div>
+            <div id="player1Card4">Card4</div>
+            <div id="player1Card5">Card5</div>
+        </div>
+        <div class="playField"></div>
+        <div class="player2Cards playerCards">
+            <div id="player2Card1">Card1</div>
+            <div id="player2Card2">Card2</div>
+            <div id="player2Card3">Card3</div>
+            <div id="player2Card4">Card4</div>
+            <div id="player2Card5">Card5</div>
+        </div>
+    </div>
+    <div class="message_box" id="cardTableInfo">
+        
+        <button type="button" class="closeTable" rel="1">X</button>
+        <div class="playerList">
+            <div>kk33</div>
+            <div>kardi3</div>
+        </div>
+    </div>
+ * 
+ */
         $dom = new DOMDocument();
             
         $cardTableWrapper = $dom->createElement('div');
@@ -101,12 +128,28 @@ class Table {
         $player2Cards->setAttribute('class', 'player2Cards playerCards');
         
         for($i=1;$i<=5;$i++){
-            $player1card = $dom->createElement('div','Card'.$i);
+            $player1card = $dom->createElement('div');
             $player1card->setAttribute('id', 'player1card'.$i);
+            
+            if(isset($this->player1)&&$card = $this->player1->getCard($i)){
+                
+                $playerCardTable = $this->createPlayerCardTable($card,$dom);
+                
+                $player1card->appendChild($playerCardTable);
+            }
+            
             $player1Cards->appendChild($player1card);
             
-            $player2card = $dom->createElement('div','Card'.$i);
+            $player2card = $dom->createElement('div');
             $player2card->setAttribute('id', 'player2card'.$i);
+            
+            if(isset($this->player2)&&$card = $this->player2->getCard($i)){
+                
+                $playerCardTable = $this->createPlayerCardTable($card,$dom);
+                
+                $player2card->appendChild($playerCardTable);
+            }
+            
             $player2Cards->appendChild($player2card);
         }
         
@@ -178,5 +221,91 @@ class Table {
     
     public function getId(){
         return $this->id;
+    }
+    
+//     <table>
+//                    <tr>
+//                        <th colspan="2">
+//                            <img src="/media/cars/opel_viva.jpg" alt="Opel Viva GT" class="">
+//                            <strong>Suzuki Swift Sport</strong>
+//                        </th>
+//                    </tr>
+//                    <tr>
+//                        <td>Acceleration</td>
+//                        <td>3.5</td>
+//                    </tr>
+//                    <tr>
+//                        <td>v-max</td>
+//                        <td>210</td>
+//                    </tr>
+//                    <tr>
+//                        <td>Capacity</td>
+//                        <td>1598</td>
+//                    </tr>
+//                    <tr>
+//                        <td>Horsepower</td>
+//                        <td>208</td>
+//                    </tr>
+//                </table>
+    
+    public function createPlayerCardTable($card,$dom){
+        $table = $dom->createElement('table');
+        
+        // tr 1 - start
+        
+        $tr1 = $dom->createElement('tr');
+        $th1 = $dom->createElement('th');
+        $th1->setAttribute('colspan', 2);
+        $img = $dom->createElement('img');
+        $img->setAttribute('src', '/media/cars/'.$card->getPhoto());
+        
+        $strong = $dom->createElement('strong',$card->getName());
+        $th1->appendChild($img);
+        $th1->appendChild($strong);
+        $tr1->appendChild($th1);
+        
+        // tr 2 - start
+        
+        $tr2 = $dom->createElement('tr');
+        $td21 = $dom->createElement('td','Acceleration');
+        $td22 = $dom->createElement('td',$card->getAcceleration());
+        
+        $tr2->appendChild($td21);
+        $tr2->appendChild($td22);
+        
+        // tr 2 - start
+        
+        $tr3 = $dom->createElement('tr');
+        $td31 = $dom->createElement('td','V-max');
+        $td32 = $dom->createElement('td',$card->getMaxSpeed());
+        
+        $tr3->appendChild($td31);
+        $tr3->appendChild($td32);
+        
+        // tr 2 - start
+        
+        $tr4 = $dom->createElement('tr');
+        $td41 = $dom->createElement('td','Capacity');
+        $td42 = $dom->createElement('td',$card->getCapacity());
+        
+        $tr4->appendChild($td41);
+        $tr4->appendChild($td42);
+        
+        // tr 2 - start
+        
+        $tr5 = $dom->createElement('tr');
+        $td51 = $dom->createElement('td','Horsepower');
+        $td52 = $dom->createElement('td',$card->getHorsePower());
+        
+        $tr5->appendChild($td51);
+        $tr5->appendChild($td52);
+        
+        $table->appendChild($tr1);
+        $table->appendChild($tr2);
+        $table->appendChild($tr3);
+        $table->appendChild($tr4);
+        $table->appendChild($tr5);
+        
+        return $table;
     }
 }

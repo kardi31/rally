@@ -9,9 +9,10 @@ require_once(__DIR__."/Table.php");
 class PlayerCollection {
     private $items = array();
 
-    public function addPlayer($userid,$username) {
-        $player = new Player($userid,$username);
+    public function addPlayer($userid,$username,$cards) {
+        $player = new Player($userid,$username,$cards);
         $this->items[$userid] = $player;
+        
     }
 
     public function removePlayer($userid,$tables) {

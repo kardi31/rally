@@ -66,7 +66,8 @@ class Rally_Index extends Controller{
                     $freePilots = $peopleService->getFreePilots($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
 
                     $freeCars = $carService->getFreeCars($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
-                    if(!$rally['level']>(int)$user['Team']['league_name']){
+
+                    if($rally['level']<=(int)$user['Team']['league_name']){
                         $form = $this->getForm('rally','JoinRally');
                         $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
                         $form->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
@@ -270,6 +271,9 @@ class Rally_Index extends Controller{
         $joinForm->getElement('driver_id')->addParam('disabled');
         $joinForm->getElement('pilot_id')->addParam('disabled');
         $joinForm->getElement('car_id')->addParam('disabled');
+        $joinForm->getElement('driver_id')->setNoValidateSelect();
+        $joinForm->getElement('pilot_id')->setNoValidateSelect();
+        $joinForm->getElement('car_id')->setNoValidateSelect();
         $this->view->assign('joinForm',$joinForm);
         
         if($form->isSubmit()){
@@ -565,6 +569,9 @@ class Rally_Index extends Controller{
         $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
         $joinForm->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
         $joinForm->getElement('car_id')->addMultiOptions($freeCars,'Select car');
+        $joinForm->getElement('driver_id')->setNoValidateSelect();
+        $joinForm->getElement('pilot_id')->setNoValidateSelect();
+        $joinForm->getElement('car_id')->setNoValidateSelect();
         
         $result['result']['driver_id'] = $joinForm->getElement('driver_id')->renderElement();
         $result['result']['pilot_id'] = $joinForm->getElement('pilot_id')->renderElement();

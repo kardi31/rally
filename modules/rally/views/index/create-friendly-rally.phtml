@@ -53,12 +53,12 @@
         width:60px;
     }
     </style>
-    
-<div class="mainUserBox createFriendlyBox">
-    <h4 class="boxHeader"><?= $this->translate('Create friendly rally'); ?></h4>
 <?php if(isset($message)){
         echo $this->showError($message);
     } ?>
+<div class="mainUserBox createFriendlyBox">
+    <h4 class="boxHeader"><?= $this->translate('Create friendly rally'); ?></h4>
+
     <div>
         <!--Cost of this = 10 CC <br />-->
         <form  method="POST">

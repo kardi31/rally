@@ -221,10 +221,10 @@ class Index_Index extends Controller{
         if($form->isSubmit()){
             if($form->isValid()){
             
-            $username = filter_var($_POST['username'],FILTER_SANITIZE_STRING);
-            
-            $users = $userService->searchForUsers($username,Doctrine_Core::HYDRATE_ARRAY);
-            $this->view->assign('users',$users);
+                $username = filter_var($_POST['username'],FILTER_SANITIZE_STRING);
+
+                $users = $userService->searchForUsers($username,Doctrine_Core::HYDRATE_ARRAY);
+                $this->view->assign('users',$users);
             }
         }
     }

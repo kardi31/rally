@@ -73,7 +73,7 @@ while (true) {
                         if(is_object($tst_msg)&&$tst_msg->type=="joined"){
                             
                             if(!$players->getPlayer($tst_msg->userid)){
-                                $players->addPlayer($tst_msg->userid,$tst_msg->username);
+                                $players->addPlayer($tst_msg->userid,$tst_msg->username,json_decode($tst_msg->cards,true));
                                 
                                 $found_socket = array_search($changed_socket, $clients);
                                 $userSockets[$tst_msg->userid] = $clients[$found_socket];

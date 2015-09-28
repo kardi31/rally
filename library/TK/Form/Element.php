@@ -156,6 +156,7 @@ class Element{
         if(!isset($this->validators)||empty($this->validators))
             return "";
         
+        
         // if the element not exists
         // check if has not empty validator
         // if so,that would mean the validation failed  

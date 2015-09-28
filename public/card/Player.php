@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__."/Car.php");
 /**
  * Description of Player
  *
@@ -8,10 +9,14 @@ class Player {
     protected $id;
     protected $name;
     protected $table;
+    protected $cards;
     
-    public function __construct($id,$name){
+    public function __construct($id,$name,$cards){
         $this->id = $id;
         $this->name = $name;
+        foreach($cards as $cardRow){
+            $this->cards[$cardRow['id']] = new Car($cardRow['car_model_id']);
+        }
     }
     
     public function getId(){
@@ -34,6 +39,14 @@ class Player {
     
     public function removeTable(){
         unset($this->table);
+    }
+    
+    public function getCard($no){
+        $keys = array_keys($this->cards);
+        if(isset($this->cards[$keys[$no-1]]))
+            return $this->cards[$keys[$no-1]];
+        
+        return false;
     }
     
 }

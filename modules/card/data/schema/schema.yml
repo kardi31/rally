@@ -2,42 +2,8 @@ options:
   type: MyISAM
   collate: utf8_general_ci
   charset: utf8
-Category:
-  tableName: card_category
-  actAs: 
-    Timestampable: ~
-    SoftDelete: ~
-  columns:
-    id:
-      primary: true
-      autoincrement: true
-      type: integer(4)
-    name:
-      type: string(255)
-    slug:
-      type: string(255)
-    description:
-      type: text
-    active:
-      type: boolean
-      default: 1
-  relations:
-    Thread:
-      local: id
-      foreign: category_id
-      foreignType: one
-      type: many
-      alias: Threads
-      foreignAlias: Category
-    Post:
-      local: id
-      foreign: category_id
-      foreignType: one
-      type: many
-      alias: Posts
-      foreignAlias: Category
-Thread:
-  tableName: card_thread
+Card:
+  tableName: card_card
   actAs: 
     Timestampable: ~
     SoftDelete: ~
@@ -48,79 +14,5 @@ Thread:
       type: integer(4)
     user_id:
       type: integer(4)
-    category_id:
+    car_model_id:
       type: integer(4)
-    title:
-      type: string(255)
-    content:
-      type: text
-    pinned:
-      type: boolean
-      default: 0
-    active:
-      type: boolean
-      default: 1
-    moderator_notes:
-      type: text
-    moderator_date:
-      type: timestamp
-    moderator_name:
-      type: string(255)
-Post:
-  tableName: card_post
-  actAs: 
-    Timestampable: ~
-    SoftDelete: ~
-  columns:
-    id:
-      primary: true
-      autoincrement: true
-      type: integer(4)
-    category_id:
-      type: integer(4)
-    user_id:
-      type: integer(4)
-    title:
-      type: string(255)
-    content:
-      type: text
-    active:
-      type: boolean
-      default: 1
-    thread_id:
-      type: integer(4)
-    moderator_notes:
-      type: text
-    moderator_date:
-      type: timestamp
-    moderator_name:
-      type: string(255)
-  relations:
-    Thread:
-      local: thread_id
-      foreign: id
-      foreignType: many
-      type: one
-      alias: Thread
-      foreignAlias: Posts
-Favourite:
-  tableName: card_favourite
-  actAs: 
-    Timestampable: ~
-  columns:
-    id:
-      primary: true
-      autoincrement: true
-      type: integer(4)
-    user_id:
-      type: integer(11)
-    category_id:
-      type: integer(11)
-  relations:
-    Category:
-      foreign: id
-      local: category_id
-      foreignType: many
-      type: one
-      alias: Category
-      foreignAlias: Favourites

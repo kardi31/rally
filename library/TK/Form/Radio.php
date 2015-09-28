@@ -130,7 +130,13 @@ class Radio extends Element {
             return "";
         
         $var = $_POST[parent::getName()];
-        $response = Validator::validateSelect($var,array_values($this->multiOptions[parent::getName()]));
+        if(isset($this->multiOptions[parent::getName()])){
+            $response = Validator::validateSelect($var,$this->multiOptions[parent::getName()]);
+        }
+        else{
+            $response = Validator::validateRadio($var,$this->multiOptions);
+        }
+//        var_dump($response);
         if($response['result']){
             parent::validateElement();
         }

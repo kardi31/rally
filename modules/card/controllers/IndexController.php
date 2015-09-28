@@ -17,10 +17,15 @@ class Card_Index extends Controller{
         
         $this->getLayout()->setLayout('fullpage');
         
+        $cardService = parent::getService('card','card');
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
         if(!$user)
             TK_Helper::redirect('/user/login');
+        
+        $userCards = json_encode($cardService->getUserCards($user['id']));
+        $this->view->assign('userCards',$userCards);
+        
     }
     
     static public function getInstance()

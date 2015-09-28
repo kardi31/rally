@@ -65,6 +65,21 @@ class Validator{
         return $response;
     }
     
+    
+    public static function validateRadio($var,$multioptions){
+        foreach($multioptions as $multioption){
+            if($multioption['value']==$var){
+                $response['result'] = true;
+                return $response;
+            }
+        }
+        
+        $response['result'] = false;
+        $response['errorMessage'] = "This field has incorrect value";
+        
+        return $response;
+    }
+    
     public static function validateAlphanum($var){
         if(strlen($var)==0){
             $response['result'] = true;

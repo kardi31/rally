@@ -12,7 +12,9 @@
                 <?= $form->getElement('submit')->renderElement(); ?>
             <!--<input class="btn myBtn searchUsersBtn" type="submit" value="Search" name="submit" />-->
         </form>
-        <?php if(isset($users)&&count($users)>0){ ?>
+        <?php
+        if(isset($users)&&!is_null($users)){
+        if(isset($users)&&count($users)>0){ ?>
         <table class="table searchTable">
             <thead>
                 <tr>
@@ -34,7 +36,9 @@
         <?php }
         else{
             echo "No results found";
-        }?>
+        }
+        }
+        ?>
     </div>
 </div>
  <script>
