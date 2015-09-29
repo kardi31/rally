@@ -49,4 +49,14 @@ class Player {
         return false;
     }
     
+    public function openCard($no){
+        $keys = array_keys($this->cards);
+        if(!isset($this->cards[$keys[$no-1]]))
+            return false;
+        
+        $card = $this->cards[$keys[$no-1]];
+        $card->setOpened();
+        
+    }
+    
 }

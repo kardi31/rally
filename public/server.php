@@ -69,140 +69,168 @@ while (true) {
 		{
 			$received_text = unmask($buf); //unmask data
 			$tst_msg = json_decode($received_text); //json decode 
-                        
-                        if(is_object($tst_msg)&&$tst_msg->type=="joined"){
-                            
-                            if(!$players->getPlayer($tst_msg->userid)){
-                                $player = $players->addPlayer($tst_msg->userid,$tst_msg->username,json_decode($tst_msg->cards,true));
-                                
-                                $found_socket = array_search($changed_socket, $clients);
-                                $userSockets[$tst_msg->userid] = $clients[$found_socket];
+                        if(is_object($tst_msg)){
+                            // joined the game
+                            if($tst_msg->type=="joined"){
+                                echo "joined\r\n";
+                                if(!$players->getPlayer($tst_msg->userid)){
+                                    $player = $players->addPlayer($tst_msg->userid,$tst_msg->username,json_decode($tst_msg->cards,true));
+
+                                    $found_socket = array_search($changed_socket, $clients);
+                                    $userSockets[$tst_msg->userid] = $clients[$found_socket];
+                                }
+
+                                refreshPlayerList($players);
+
                             }
-                            
-                            refreshPlayerList($players);
-                            
-                        }
-                        elseif(is_object($tst_msg)&&$tst_msg->type=='refreshed'){
-                            
-                            if($player = $players->getPlayer($tst_msg->userid)){
-                                if($player->getTable()){
-                                    $tableId = $player->getTable();
+    //                        elseif($tst_msg->type=='refreshed'){
+    //                            
+    //                            echo "refreshed\r\n";
+    //                            if($player = $players->getPlayer($tst_msg->userid)){
+    //                                if($player->getTable()){
+    //                                    $tableId = $player->getTable();
+    //                                    $table = $tables->getTable($tableId);
+    //
+    //                                    $passedParameters = array('type'=>'joinedTable');
+    //                                    $passedParameters['tableid'] = $tableId;
+    //                                    $passedParameters['showTable'] = $table->showTable($tst_msg->userid);
+    //                                    $userOnTableIds = $table->getPlayerIds();
+    //                                    $passedParameters = array_merge($passedParameters,$userOnTableIds);
+    //
+    //                                    $response_text = mask(json_encode($passedParameters));
+    //                                    send_message($response_text); //send data
+    //
+    //                                }
+    //                            }
+    //                        }
+                            // New table created
+                            elseif($tst_msg->type=="tableJoined"){
+
+                                echo "tableJoined\r\n";
+                                $player = $players->getPlayer($tst_msg->userid);
+                                $passedParameters = array('type'=>'joinedTable');
+                                if(!$player->getTable()){
+                                    $tableId = $tables->addTable($player);
+
                                     $table = $tables->getTable($tableId);
 
-                                    $passedParameters = array('type'=>'joinedTable');
                                     $passedParameters['tableid'] = $tableId;
-                                    $passedParameters['showTable'] = $table->showTable();
-                                    $userOnTableIds = $table->getPlayerIds();
-                                    $passedParameters = array_merge($passedParameters,$userOnTableIds);
+                                    $passedParameters['user_id'] = $tst_msg->userid;
 
-                                    $response_text = mask(json_encode($passedParameters));
-                                    send_message($response_text); //send data
+                                    $passedParameters['showTable'] = $table->showTable($tst_msg->userid);
 
                                 }
+                                $availableTables = $tables->getAllTables();
+                                $passedParameters['message'] = $availableTables;
+
+                                $response_text = mask(json_encode($passedParameters));
+                                send_message($response_text); //send data
                             }
-                        }
-                        // New table created
-                        elseif(is_object($tst_msg)&&$tst_msg->type=="tableJoined"){
-                            
-                            $player = $players->getPlayer($tst_msg->userid);
-                            $passedParameters = array('type'=>'joinedTable');
-                                
-                            if(!$player->getTable()){
-                                $tableId = $tables->addTable($player);
-                                
-                                $table = $tables->getTable($tableId);
-                                
-                                $passedParameters['tableid'] = $tableId;
-                                $passedParameters['user_id'] = $tst_msg->userid;
-                                
-                                $passedParameters['showTable'] = $table->showTable();
-                                
+                            // Existing table joined
+                            elseif($tst_msg->type=="existTableJoined"){
+                                $player = $players->getPlayer($tst_msg->userid);
+                                $table = $tables->getTable($tst_msg->tableid);
+
+                                echo "existTableJoined - ".$tst_msg->userid."\r\n";
+                                $passedParameters = array('type'=>'getTableForPlayer');
+
+                                if(!$player->getTable()){
+                                    $tables->addPlayerToTable($player,$table);
+    //                                $passedParameters['tableid'] = $tableId;
+    //                                $passedParameters['showTable'] = $table->showTable($tst_msg->userid);
+    //                                $userOnTableIds = $table->getPlayerIds();
+    //                                $passedParameters = array_merge($passedParameters,$userOnTableIds);
+                                }
+    //                            $availableTables = $tables->getAllTables();
+
+    //                            $passedParameters['message'] = $availableTables;
+
+                                $response_text = mask(json_encode($passedParameters));
+                                send_message($response_text); //send data
                             }
-                            $availableTables = $tables->getAllTables();
-                            $passedParameters['message'] = $availableTables;
-                            
-                            $response_text = mask(json_encode($passedParameters));
-                            send_message($response_text); //send data
-                        }
-                        // Existing table joined
-                        elseif(is_object($tst_msg)&&$tst_msg->type=="existTableJoined"){
-                            $player = $players->getPlayer($tst_msg->userid);
-                            $table = $tables->getTable($tst_msg->tableid);
-                            
-                            $passedParameters = array('type'=>'joinedTable');
-                            
-                            if(!$player->getTable()){
-                                $tables->addPlayerToTable($player,$table);
-                                $passedParameters['tableid'] = $tableId;
-                                $passedParameters['showTable'] = $table->showTable();
+                            // Get table just for this player
+                            elseif($tst_msg->type=="getPlayerTable"){
+                                $player = $players->getPlayer($tst_msg->userid);
+                                $tableid = $player->getTable();
+                                $table = $tables->getTable($tableid);
+
+                                echo "showTablePlayer - ".$player->getId()."\r\n";
+                                $passedParameters = array('type'=>'showTablePlayer');
+
                                 $userOnTableIds = $table->getPlayerIds();
                                 $passedParameters = array_merge($passedParameters,$userOnTableIds);
-                                
+
+                                $passedParameters['showTable'] = $table->showTable($userOnTableIds['user_id']);
+                                $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2']);
+                                $passedParameters['tableid'] = $tableid;
+
+    //                            $availableTables = $tables->getAllTables();
+
+                                $passedParameters['message'] = $availableTables;
+    //                            var_dump($passedParameters);
+                                $response_text = mask(json_encode($passedParameters));
+                                send_message($response_text); //send data
                             }
-                            $availableTables = $tables->getAllTables();
-                            
-                            $passedParameters['message'] = $availableTables;
-                            
-                            $response_text = mask(json_encode($passedParameters));
-                            send_message($response_text); //send data
-                        }
-                        
-                        // Close table
-                        elseif(is_object($tst_msg)&&$tst_msg->type=="closeTable"){
-                            
-                            $player = $players->getPlayer($tst_msg->userid);
-                            $table = $tables->getTable($tst_msg->tableid);
-                            
-                            $tables->closeTable($player,$table);
-                            
-                            $passedParameters = array('type'=>'joinedTable');
-                            
-                            $availableTables = $tables->getAllTables();
-                            $passedParameters['message'] = $availableTables;
-                            refreshTableList($tables,$passedParameters);
-                            
-                            // if table still exists
-                            // which means has existing user on table
-                            if($tables->getTable($tst_msg->tableid)){
-                                $newParameters = array('type'=>'joinedTable');
-                                $newParameters['tableid'] = $tableId;
-                                $newParameters['showTable'] = $table->showTable();
-                                $remainingPlayerId = $table->getPlayerIds();
-                                $newParameters = array_merge($newParameters,$remainingPlayerId);
-                                $response_text = mask(json_encode($newParameters));
+                            // New table created
+                            elseif($tst_msg->type=="cardClicked"){
+                                
+                                $player = $players->getPlayer($tst_msg->userid);
+                                $tableId = $player->getTable();
+                                $table = $tables->getTable($tableId);
+                                
+                                $player->openCard($tst_msg->cardNo);
+                                
+                                $passedParameters = array('type'=>'showTablePlayer');
+                                $userOnTableIds = $table->getPlayerIds();
+                                $passedParameters = array_merge($passedParameters,$userOnTableIds);
+
+                                $passedParameters['showTable'] = $table->showTable($userOnTableIds['user_id']);
+                                $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2']);
+                                
+
+                                $passedParameters['tableid'] = $tableId;
+
+                                $response_text = mask(json_encode($passedParameters));
                                 send_message($response_text);
                             }
-                            
-                        }
-                        elseif(is_object($tst_msg)&&$tst_msg->type=="userLeft"){
-                            
-//                            $player = $players->getPlayer($tst_msg->userid);
-//                            $tables->addTable($player);
-//                            
-//                            $availableTables = $tables->getAllTables();
-                            $response_text = mask(json_encode(array('type'=>'userLeft', 'message'=>'userLeft')));
-                            send_message($response_text); //send data
-                        }
-                        elseif(is_object($tst_msg)){
-                            $user_name = $tst_msg->name; //sender name
-                            $user_message = $received_text;
-                            $user_color = $tst_msg->color; //color
+                            // Close table
+                            elseif($tst_msg->type=="closeTable"){
+                                echo "closeTable\r\n";
+                                $player = $players->getPlayer($tst_msg->userid);
+                                $table = $tables->getTable($tst_msg->tableid);
 
-                            //prepare data to be sent to client
-                            $response_text = mask(json_encode(array('type'=>'usermsg', 'name'=>$user_name, 'message'=>$user_message, 'color'=>$user_color)));
-                            send_message($response_text); //send data
-			
+                                $tables->closeTable($player,$table);
+
+                                $passedParameters = array('type'=>'joinedTable');
+
+                                $availableTables = $tables->getAllTables();
+                                $passedParameters['message'] = $availableTables;
+                                refreshTableList($tables,$passedParameters);
+
+                                // if table still exists
+                                // which means has existing user on table
+                                if($tables->getTable($tst_msg->tableid)){
+                                    $newParameters = array('type'=>'joinedTable');
+                                    $newParameters['tableid'] = $tableId;
+                                    $newParameters['showTable'] = $table->showTable($tst_msg->userid);
+                                    $remainingPlayerId = $table->getPlayerIds();
+                                    $newParameters = array_merge($newParameters,$remainingPlayerId);
+                                    $response_text = mask(json_encode($newParameters));
+                                    send_message($response_text);
+                                }
+
+                            }
+                            elseif($tst_msg->type=="userLeft"){
+                                echo "userLeft";
+    //                            $player = $players->getPlayer($tst_msg->userid);
+    //                            $tables->addTable($player);
+    //                            
+    //                            $availableTables = $tables->getAllTables();
+                                $response_text = mask(json_encode(array('type'=>'userLeft', 'message'=>'userLeft')));
+                                send_message($response_text); //send data
+                            }
                         }
                         break 2; //exist this loop
-                        
-//			$user_name = $tst_msg->name; //sender name
-//			$user_message = $tst_msg->message; //message text
-//			$user_color = $tst_msg->color; //color
-//			
-//			//prepare data to be sent to client
-//			$response_text = mask(json_encode(array('type'=>'usermsg', 'name'=>$user_name, 'message'=>$user_message, 'color'=>$user_color)));
-//			send_message($response_text); //send data
-//			break 2; //exist this loop
 		}
 		
 		$buf = @socket_read($changed_socket, 1024, PHP_NORMAL_READ);

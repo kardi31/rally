@@ -59,7 +59,7 @@ class Table {
         }
     }
     
-    public function showTable(){
+    public function showTable($user_id = null){
         
 /*    <div class="message_box" id="cardTable">
         <div class="player1Cards playerCards">
@@ -130,24 +130,68 @@ class Table {
         for($i=1;$i<=5;$i++){
             $player1card = $dom->createElement('div');
             $player1card->setAttribute('id', 'player1card'.$i);
+            $player1card->setAttribute('class', 'playerCard');
             
             if(isset($this->player1)&&$card = $this->player1->getCard($i)){
                 
-                $playerCardTable = $this->createPlayerCardTable($card,$dom);
-                
-                $player1card->appendChild($playerCardTable);
+                if($user_id==$this->player1->getId()||$card->isOpened()){
+                    $playerCardTable = $this->createPlayerCardTable($card,$dom);
+                    
+                    if($card->isOpened()){
+                        $imgDiv = $dom->createElement('div');
+                        $cardImg = $dom->createElement('img');
+                        $cardImg->setAttribute('src', '/images/card_back.png');
+
+                        $tableDiv = $dom->createElement('div');
+                        $imgDiv->appendChild($cardImg);
+                        $tableDiv->appendChild($playerCardTable);
+                        $player1card->appendChild($imgDiv);
+                        $player1card->appendChild($tableDiv);
+                        
+                        $player1card->setAttribute('class', 'playerCard flipIt');
+                    }
+                }
+                else{
+                    $playerCardTable = $dom->createElement('img');
+                    $playerCardTable->setAttribute('src', '/images/card_back.png');
+                }
+                if(!$card->isOpened()){
+                    $player1card->appendChild($playerCardTable);
+                }
             }
             
             $player1Cards->appendChild($player1card);
             
             $player2card = $dom->createElement('div');
             $player2card->setAttribute('id', 'player2card'.$i);
+            $player2card->setAttribute('class', 'playerCard');
             
             if(isset($this->player2)&&$card = $this->player2->getCard($i)){
                 
-                $playerCardTable = $this->createPlayerCardTable($card,$dom);
+                if($user_id==$this->player2->getId()||$card->isOpened()){
+                    $playerCardTable = $this->createPlayerCardTable($card,$dom);
+                    
+                    if($card->isOpened()){
+                        $imgDiv = $dom->createElement('div');
+                        $cardImg = $dom->createElement('img');
+                        $cardImg->setAttribute('src', '/images/card_back.png');
+
+                        $tableDiv = $dom->createElement('div');
+                        $imgDiv->appendChild($cardImg);
+                        $tableDiv->appendChild($playerCardTable);
+                        $player2card->appendChild($imgDiv);
+                        $player2card->appendChild($tableDiv);
+                        $player2card->setAttribute('class', 'playerCard flipIt');
+                    }
+                }
+                else{
+                    $playerCardTable = $dom->createElement('img');
+                    $playerCardTable->setAttribute('src', '/images/card_back.png');
+                }
                 
-                $player2card->appendChild($playerCardTable);
+                if(!$card->isOpened()){
+                    $player2card->appendChild($playerCardTable);
+                }
             }
             
             $player2Cards->appendChild($player2card);
@@ -177,11 +221,13 @@ class Table {
         $playerList->setAttribute('class', 'playerList');
         
         if(isset($this->player1)){
+            $player1Cards->setAttribute('data-id', $this->player1->getId());
             $player1 = $dom->createElement('div',$this->player1->getUsername());
             $playerList->appendChild($player1);
         }
         
         if(isset($this->player2)){
+            $player2Cards->setAttribute('data-id', $this->player2->getId());
             $player2 = $dom->createElement('div',$this->player2->getUsername());
             $playerList->appendChild($player2);
         }
@@ -255,6 +301,10 @@ class Table {
         
         $tr1 = $dom->createElement('tr');
         $th1 = $dom->createElement('th');
+        if($card->isOpened()){
+            $tr1->setAttribute('class','opened');
+        }
+        
         $th1->setAttribute('colspan', 2);
         $img = $dom->createElement('img');
         $img->setAttribute('src', '/media/cars/'.$card->getPhoto());

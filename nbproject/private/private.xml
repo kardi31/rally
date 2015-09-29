@@ -3,20 +3,43 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ral/modules/card/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/layout/nolog.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/public/server.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/card/PlayerCollection.php</file>
             <file>file:/C:/xampp/htdocs/ral/public/card/TableCollection.php</file>
-            <file>file:/C:/xampp/htdocs/ral/layout/page.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/public/card/Player.php</file>
             <file>file:/C:/xampp/htdocs/ral/public/client.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/card/controllers/AdminController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/public/card/PlayerCollection.php</file>
-            <file>file:/C:/xampp/htdocs/ral/public/card/Table.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/card/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/card/views/index/index.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/library/TK/Layout.php</file>
-            <file>file:/C:/xampp/htdocs/ral/public/server.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/card/Table.php</file>
             <file>file:/C:/xampp/htdocs/ral/layout/layout.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/layout/page.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/layout/nolog.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/layout/fullpage.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Layout.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Element.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Radio.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Validator.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Form.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Select.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/form/JoinRally.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/create-friendly-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/search-users.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/manual.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/manual/my-rallies.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/manual.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/card/Car.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/card/CarModels.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/card/data/schema/schema.yml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/card/services/Card.php</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_head.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_head_main.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/public/js/flip.js</file>
         </group>
     </open-files>
 </project-private>

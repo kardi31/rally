@@ -1,7 +1,241 @@
+<script src="/js/flip.js"></script>
+
+
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        //create a new WebSocket object.
+        var wsUri = "ws://ral.localhost:9000/server.php";
+        websocket = new WebSocket(wsUri);
+        var user_id = '<?= $authenticatedUser['id']; ?>';
+
+        websocket.onopen = function (ev) { // connection is open 
+            setInterval(function () {
+                if (websocket.bufferedAmount == 0)
+                    websocket.send("Keep alive from client");
+            }, 30000);
+//             var msg = {
+//                type: 'refreshed',
+//                userid: '<?= $authenticatedUser['id']; ?>'
+//            };
+//            //convert and send data to server
+//            websocket.send(JSON.stringify(msg));
+        };
+
+        // create tables
+        $('#join-table').click(function () {
+            var msg = {
+                type: 'tableJoined',
+                userid: '<?= $authenticatedUser['id']; ?>'
+            };
+            //convert and send data to server
+            websocket.send(JSON.stringify(msg));
+        });
+
+
+
+
+        //#### Message received from server
+        websocket.onmessage = function (ev) {
+            var msg = JSON.parse(ev.data); //PHP sends Json data
+            var type = msg.type; //message type
+
+            // request all needed data on first connection
+            if (type == 'requestData') {
+                var params = {
+                    type: 'joined',
+                    cards: '<?= $userCards; ?>',
+                    username: '<?= $authenticatedUser['username']; ?>',
+                    userid: '<?= $authenticatedUser['id']; ?>'
+                }
+                websocket.send(JSON.stringify(params));
+            }
+            // when player on table
+            // request display table for player
+            // so opponent cards are hidden
+            if (type == 'getTableForPlayer')
+            {
+                var msg = {
+                    type: 'getPlayerTable',
+                    userid: '<?= $authenticatedUser['id']; ?>'
+                };
+                websocket.send(JSON.stringify(msg));
+            }
+
+            // when player on table
+            // show table for player
+            // so opponent cards are hidden
+            if (type == 'showTablePlayer')
+            {
+                var message = msg.message;
+                if (typeof (msg.tableid) !== 'undefined') {
+
+                }
+                if (typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id) {
+
+                    var tableid = msg.tableid;
+                    window.location.hash = tableid;
+                    $('.cardTableWrapper').html(msg.showTable);
+                    $('.playerCards div.playerCard.flipIt').flip({
+                       trigger: 'manual'
+                    });
+                    var bottom = 'auto';
+                    var top = 175;
+                }
+                if (typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id) {
+
+                    var tableid = msg.tableid;
+                    window.location.hash = tableid;
+                    $('.cardTableWrapper').html(msg.showTable2);
+                    $('.playerCards div.playerCard.flipIt').flip({
+                        trigger: 'manual'
+                    });
+                    
+                    var top = 'auto';
+                    var bottom = 175;
+                }
+  
+                var element = $('.playerCards div.playerCard.flipIt');
+                element.before( "<div></div>" );
+                element.css({"position": "absolute"});
+                element.animate({
+                  top: top,
+                  bottom: bottom,
+                  left: 325     
+                },function(){
+                  $(this).flip(true);
+                });
+//setTimeout(function(){
+//    
+//                $('.playerCards div.playerCard.flipIt').flip(true);
+//}, 500);
+//                $('#cardTableList').html(message);
+            }
+
+            // if you join table - show table
+            if (type == 'joinedTable')
+            {
+                var message = msg.message;
+                if (typeof (msg.tableid) !== 'undefined' && typeof (msg.user_id) !== 'undefined') {
+                    if (msg.user_id == user_id || (typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)) {
+                        var tableid = msg.tableid;
+                        window.location.hash = tableid;
+                        $('.cardTableWrapper').html(msg.showTable);
+                    }
+                }
+                $('#cardTableList').html(message);
+            }
+            // user left table
+            if (type == 'userLeft')
+            {
+                var message = msg.message;
+                $('#message_box').append("<div><span class=\"joined\" >" + message + " </span>");
+            }
+            // join the game,
+            // ur name is displayed on player list
+            if (type == 'joined')
+            {
+
+                var message = msg.message;
+                $('#cardUserList').html(message);
+            }
+
+
+            /*
+             *  Buttons which appear later in game
+             */
+
+
+            $('.playerCards div').click(function () {
+                var cardNo = $(this).index() + 1;
+                var parent = $(this).parent();
+                var cardUserId = parent.attr('data-id');
+                console.log(cardUserId);
+                console.log(user_id);
+                console.log('clicked');
+                if (cardUserId == user_id) {
+                    console.log('good');
+                    var msg = {
+                        type: 'cardClicked',
+                        cardNo: cardNo,
+                        userid: '<?= $authenticatedUser['id']; ?>'
+                    };
+                    console.log(msg);
+                    websocket.send(JSON.stringify(msg));
+                }
+            });
+
+
+            // when you join existing table
+            $('.joinSingleTable').click(function () {
+                var tableid = $(this).attr('rel');
+                var msg = {
+                    type: 'existTableJoined',
+                    tableid: tableid,
+                    userid: '<?= $authenticatedUser['id']; ?>'
+                };
+                websocket.send(JSON.stringify(msg));
+            });
+
+            // quit ur table
+            $('.closeTable').click(function () {
+                var tableid = $(this).attr('rel');
+                var msg = {
+                    type: 'closeTable',
+                    tableid: tableid,
+                    userid: '<?= $authenticatedUser['id']; ?>'
+                };
+                websocket.send(JSON.stringify(msg));
+                // remove hastag from the end
+                history.pushState("", document.title, window.location.pathname);
+            });
+
+            
+//        $('.playerCards > div.playerCard').flip({
+//            trigger: 'manual'
+//          });
+//          $('.playerCards > div.playerCard').on('click',function(){
+//              var element = $(this);
+//              element.before( "<div></div>" );
+//              element.css({"position": "absolute"});
+//              element.animate({
+//                top: 175,
+//                left: 325     
+//              },function(){
+//                $(this).flip(true);
+//              });
+//          });
+
+            if (window.location.href.indexOf("#") > -1) {
+                $('.cardUserBoxWrapper').hide();
+                $('.cardTableWrapper').show();
+            }
+            else {
+                $('.cardUserBoxWrapper').show();
+                $('.cardTableWrapper').hide();
+            }
+
+            $('#message').val(''); //reset text
+
+        };
+
+        websocket.onerror = function (ev) {
+            $('#message_box').append("<div class=\"system_error\">Error Occurred - " + ev.data + "</div>");
+        };
+        websocket.onclose = function (ev) {
+
+            var msg = {
+                type: 'userLeft',
+                userid: '<?= $authenticatedUser['id']; ?>'
+            };
+            websocket.send(JSON.stringify(msg));
+        };
+    });
+</script>
 
 <style>
     .cardTableWrapper{
-        height:500px;
+        height:700px;
         width:810px;
     }
     .playerCards{
@@ -22,24 +256,28 @@
         font-size:12px;
     }
     .playerCards td{
-        
+
         font-size:12px;
     }
-    
+
     .playerCards img{
         max-width:100%;
     }
     .playerCards div{
         width:160px;
         float:left;
+        height:175px;
+    }
+    .playCard{
+        width:160px;
+        border:1px solid red;
+        height:175px;
+        margin:0 auto;
     }
     .playField{
-        height:290px;
+        height:340px;
         border:1px solid red;
     }
-
-</style>
-<style type="text/css">
     .chat_wrapper {
         width: 700px;
         margin-right: auto;
@@ -98,212 +336,6 @@
         padding: 10px;
         border: 1px solid #999999;
     }
-
-</style>
-<?php 
-$colours = array('007AFF', 'FF7000', 'FF7000', '15E25F', 'CFC700', 'CFC700', 'CF1100', 'CF00BE', 'F00');
-$user_colour = array_rand($colours);
-?>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-
-<script language="javascript" type="text/javascript">
-    $(document).ready(function () {
-        //create a new WebSocket object.
-        var wsUri = "ws://ral.localhost:9000/server.php";
-        websocket = new WebSocket(wsUri);
-        var user_id = '<?= $authenticatedUser['id']; ?>';
-
-        websocket.onopen = function (ev) { // connection is open 
-            setInterval(function () {
-                if (websocket.bufferedAmount == 0)
-                    websocket.send("Keep alive from client");
-            }, 30000);
-             var msg = {
-                type: 'refreshed',
-                userid: '<?= $authenticatedUser['id']; ?>'
-            };
-            //convert and send data to server
-            websocket.send(JSON.stringify(msg));
-        };
-
-        $('#send-btn').click(function () { //use clicks message send button	
-            var mymessage = $('#message').val(); //get message text
-            var myname = $('#name').val(); //get user name
-
-            if (myname == "") { //empty name?
-                alert("Enter your Name please!");
-                return;
-            }
-            if (mymessage == "") { //emtpy message?
-                alert("Enter Some message Please!");
-                return;
-            }
-
-            //prepare json data
-            var msg = {
-                message: mymessage,
-                name: myname,
-                color: '<?php echo $colours[$user_colour]; ?>'
-            };
-            //convert and send data to server
-            websocket.send(JSON.stringify(msg));
-        });
-
-        $('#join-table').click(function () { //use clicks message send button	
-//		var mymessage = $('#message').val(); //get message text
-//		var myname = $('#name').val(); //get user name
-//		
-//		if(myname == ""){ //empty name?
-//			alert("Enter your Name please!");
-//			return;
-//		}
-//		if(mymessage == ""){ //emtpy message?
-//			alert("Enter Some message Please!");
-//			return;
-//		}
-            //prepare json data
-            var msg = {
-                type: 'tableJoined',
-                userid: '<?= $authenticatedUser['id']; ?>'
-            };
-            //convert and send data to server
-            websocket.send(JSON.stringify(msg));
-        });
-
-
-
-
-        //#### Message received from server?
-        websocket.onmessage = function (ev) {
-
-
-
-
-            var msg = JSON.parse(ev.data); //PHP sends Json data
-            var type = msg.type; //message type
-//		var umsg = msg.message; //message text
-//		var uname = msg.name; //user name
-//		var ucolor = msg.color; //color
-
-            if (type == 'requestData') {
-                console.log('189');
-                var params = {
-                    type: 'joined',
-                    cards: '<?= $userCards; ?>',
-                    username: '<?= $authenticatedUser['username']; ?>',
-                    userid: '<?= $authenticatedUser['id']; ?>'
-                }
-                websocket.send(JSON.stringify(params));
-                $('#message_box').append("<div class=\"system_msg\">Data requested!</div>"); //notify user
-
-            }
-            if (type == 'joinedTable')
-            {
-                var message = msg.message;
-                if (typeof (msg.tableid) !== 'undefined' && typeof (msg.user_id) !== 'undefined') {
-                    if (msg.user_id == user_id || (typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)) {
-                        var tableid = msg.tableid;
-                        window.location.hash = tableid;
-                        $('.cardTableWrapper').html(msg.showTable);
-                    }
-                }
-
-                if (window.location.href.indexOf("#") > -1) {
-                    $('.cardUserBoxWrapper').hide();
-                    $('.cardTableWrapper').show();
-                }
-                else {
-                    $('.cardUserBoxWrapper').show();
-                    $('.cardTableWrapper').hide();
-                }
-                $('#cardTableList').html(message);
-            }
-            if (type == 'userLeft')
-            {
-                var message = msg.message;
-                $('#message_box').append("<div><span class=\"joined\" >" + message + " </span>");
-            }
-            if (type == 'joined')
-            {
-                var message = msg.message;
-                $('#cardUserList').html(message);
-            }
-            if (type == 'usermsg')
-            {
-                $('#message_box').append("<div><span class=\"user_name\" style=\"color:#" + ucolor + "\">" + uname + "</span> : <span class=\"user_message\">" + umsg + "</span></div>");
-            }
-            if (type == 'system')
-            {
-                var umsg = msg.message
-                $('#message_box').append("<div class=\"system_msg\">" + umsg + "</div>");
-            }
-
-            $('.joinSingleTable').click(function () { //use clicks message send button	
-                var tableid = $(this).attr('rel');
-                //prepare json data
-                var msg = {
-                    type: 'existTableJoined',
-                    tableid: tableid,
-                    userid: '<?= $authenticatedUser['id']; ?>'
-                };
-                //convert and send data to server
-                websocket.send(JSON.stringify(msg));
-            });
-
-            $('.closeTable').click(function () { //use clicks message send button	
-                var tableid = $(this).attr('rel');
-//                    //prepare json data
-                var msg = {
-                    type: 'closeTable',
-                    tableid: tableid,
-                    userid: '<?= $authenticatedUser['id']; ?>'
-                };
-//                    //convert and send data to server
-                websocket.send(JSON.stringify(msg));
-                history.pushState("", document.title, window.location.pathname);
-
-            });
-
-            if (window.location.href.indexOf("#") > -1) {
-                $('.cardUserBoxWrapper').hide();
-                $('.cardTableWrapper').show();
-            }
-            else {
-                $('.cardUserBoxWrapper').show();
-                $('.cardTableWrapper').hide();
-            }
-
-
-            $('#message').val(''); //reset text
-
-        };
-
-        websocket.onerror = function (ev) {
-            $('#message_box').append("<div class=\"system_error\">Error Occurred - " + ev.data + "</div>");
-        };
-        websocket.onclose = function (ev) {
-
-            var msg = {
-                type: 'userLeft',
-                userid: '<?= $authenticatedUser['id']; ?>'
-            };
-            websocket.send(JSON.stringify(msg));
-//            $('#message_box').append("<div class=\"system_msg\">Connection Closed</div>");
-        };
-    });
-</script>
-<!--<div class="chat_wrapper">
-    <button id="join-table">Join table</button>
-<div class="message_box" id="message_box"></div>
-<div class="panel">
-<input type="text" name="name" id="name" placeholder="Your Name" maxlength="10" style="width:20%"  />
-<input type="text" name="message" id="message" placeholder="Message" maxlength="80" style="width:60%" />
-<button id="send-btn">Send</button>
-</div>
-</div>-->
-
-<style>
     .cardTableWrapper{
         display:none;
     }

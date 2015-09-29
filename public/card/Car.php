@@ -12,6 +12,7 @@ class Car {
     protected $horsepower;
     protected $capacity;
     protected $playerid;
+    protected $opened = 0;
     
     public function __construct($id){
         $carModel = $this->getCarModel($id);
@@ -24,6 +25,18 @@ class Car {
         }
         $this->id = $id;
         
+    }
+    
+    
+    public function isOpened(){
+        if($this->opened==1){
+            return true;
+        }
+        return false;
+    }
+    
+    public function setOpened(){
+        $this->opened = 1;
     }
     
     public function getId(){
