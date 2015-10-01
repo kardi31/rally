@@ -10,12 +10,32 @@ class Table {
     protected $player1;
     protected $player2;
     protected $id;
+    protected $moves = array(
+        'player1' => array(),
+        'player2' => array(),
+        'won' => array()
+    );
+    protected $starting_player;
+    protected $current_skill_playing;
+    protected $skillOrder = array('acceleration','max_speed','capacity','horsepower');
+    protected $round = 1;
+    protected $next_move_first_player = false;
     
     public function __construct($player,$id){
         $this->player1 = $player;
         $this->id = $id;
     }
     
+    private function isGameJustStarted(){
+        
+        if(isset($this->player2)&& isset($this->player1)){
+            if(empty($this->moves['player1'])&&empty($this->moves['player2'])){
+                return true;
+            }
+        }
+        
+        return false;
+    }
     
     public function getPlayersInfo($dom,$cardTablePlayers){
         if(isset($this->player1)){
@@ -33,8 +53,24 @@ class Table {
     
     public function addPlayer($player){
         $this->player2 = $player;
+        $this->setStartingPlayer();
     }
     
+    public function setStartingPlayer(){
+//        $playerNo = rand(1,2);
+        $playerNo = 1;
+        $this->starting_player = 'player'.$playerNo;
+    }
+    
+    // skill which one of players has chosen
+    // and second player must respond to it using exactly the same skill
+    public function setCurrentSkillPlaying($skillId){
+        $this->current_skill_playing = $this->skillOrder[$skillId-1];
+    }
+    
+    public function getCurrentSkillPlaying(){
+        return $this->current_skill_playing;
+    }
     
     public function hasPlayer($player){
         if(isset($this->player2)&&$this->player2 == $player || isset($this->player1)&&$this->player1 == $player){
@@ -59,7 +95,92 @@ class Table {
         }
     }
     
-    public function showTable($user_id = null){
+    
+    public function getSkill($skillId){
+        return $this->skillOrder[$skillId-1];
+    }
+    
+    public function makeAMove($player,$cardOrderNo,$skillId){
+        
+        // check first move
+        
+        if($this->isGameJustStarted()){
+                echo "just started - 0 \r\n";
+            if($player==$this->{$this->starting_player}){
+                echo "just started - 1 \r\n";
+                $card = $player->getCard($cardOrderNo);
+                $this->moves[$this->starting_player][] = $card->getId();
+                $this->setCurrentSkillPlaying($skillId);
+                return true;
+            }
+        }
+        elseif(isset($this->next_move_first_player)&&$this->next_move_first_player&&$player==$this->{$this->next_move_first_player}){
+                echo "nextmove first player \r\n";
+            $card = $player->getCard($cardOrderNo);
+            $this->moves[$this->next_move_first_player][] = $card->getId();
+            $this->setCurrentSkillPlaying($skillId);
+            return true;
+        }
+        else{
+                     echo "else \r\n";
+            // check first move from 2nd player
+            if(($this->round==1&&$this->starting_player == 'player1')||$this->next_move_first_player=='player1'){
+                $secondPlayer = 'player2';
+            }
+            elseif(($this->round==1&&$this->starting_player == 'player2')||$this->next_move_first_player=='player2'){
+                $secondPlayer = 'player1';
+            }
+            var_dump($secondPlayer);
+            if($player==$this->{$secondPlayer}){
+                
+                
+                     echo "else - in \r\n";
+                $requestedSkill = $this->getSkill($skillId);
+                if($this->current_skill_playing==$requestedSkill){
+                    
+                    // when both players chosen their cards
+                    // open both cards at once
+                    if($this->round==1){
+                        $this->{$this->starting_player}->openCard($this->moves[$this->starting_player][$this->round-1],$skillId);
+                    }
+                    else{
+                        $this->{$this->next_move_first_player}->openCard($this->moves[$this->next_move_first_player][$this->round-1],$skillId);
+                    }
+                    $card = $player->getCard($cardOrderNo);
+                    $player->openCard($card->getId(),$skillId);
+                    
+                    
+                    $this->moves[$secondPlayer][] = $card->getId();
+                    $this->checkCardWon($this->round);
+                }
+            }
+        }
+        
+        if(isset($this->starting_player)&&isset($secondPlayer)){
+            $countPlayer1Moves = count($this->moves[$secondPlayer]);
+            $countPlayer2Moves = count($this->moves[$this->starting_player]);
+
+            if($countPlayer1Moves>0&&$countPlayer1Moves=$countPlayer2Moves){
+                return true;
+            }
+        }
+        
+        if(isset($this->next_move_first_player)&&isset($secondPlayer)){
+            if($this->next_move_first_player){
+                $countPlayer1Moves = count($this->moves[$secondPlayer]);
+                $countPlayer2Moves = count($this->moves[$this->next_move_first_player]);
+
+                if($countPlayer1Moves>0&&$countPlayer1Moves=$countPlayer2Moves){
+                    return true;
+                }
+            }
+        }
+        return false;
+        
+        
+    }
+    
+    public function showTable($user_id = null,$refreshPoints = false){
         
 /*    <div class="message_box" id="cardTable">
         <div class="player1Cards playerCards">
@@ -113,6 +234,10 @@ class Table {
     </div>
  * 
  */
+        if($refreshPoints){
+            $this->refreshPoints();
+        }
+        
         $dom = new DOMDocument();
             
         $cardTableWrapper = $dom->createElement('div');
@@ -129,68 +254,77 @@ class Table {
         
         for($i=1;$i<=5;$i++){
             $player1card = $dom->createElement('div');
-            $player1card->setAttribute('id', 'player1card'.$i);
-            $player1card->setAttribute('class', 'playerCard');
-            
             if(isset($this->player1)&&$card = $this->player1->getCard($i)){
-                
-                if($user_id==$this->player1->getId()||$card->isOpened()){
-                    $playerCardTable = $this->createPlayerCardTable($card,$dom);
-                    
-                    if($card->isOpened()){
-                        $imgDiv = $dom->createElement('div');
-                        $cardImg = $dom->createElement('img');
-                        $cardImg->setAttribute('src', '/images/card_back.png');
+                if(!$card->isDone()){
+                    $player1card->setAttribute('id', 'player1card'.$i);
+                    $player1card->setAttribute('data-rel', $i);
+                    $player1card->setAttribute('class', 'playerCard');
 
-                        $tableDiv = $dom->createElement('div');
-                        $imgDiv->appendChild($cardImg);
-                        $tableDiv->appendChild($playerCardTable);
-                        $player1card->appendChild($imgDiv);
-                        $player1card->appendChild($tableDiv);
-                        
-                        $player1card->setAttribute('class', 'playerCard flipIt');
+
+                    if($user_id==$this->player1->getId()||$card->isOpened()){
+                        $playerCardTable = $this->createPlayerCardTable($card,$dom,'player1');
+
+                        if($card->isOpened()){
+                            $imgDiv = $dom->createElement('div');
+                            $cardImg = $dom->createElement('img');
+                            $cardImg->setAttribute('src', '/images/card_back.png');
+
+                            $tableDiv = $dom->createElement('div');
+                            $imgDiv->appendChild($cardImg);
+                            $tableDiv->appendChild($playerCardTable);
+                            $player1card->appendChild($imgDiv);
+                            $player1card->appendChild($tableDiv);
+
+                            $player1card->setAttribute('class', 'playerCard flipIt');
+                        }
                     }
-                }
-                else{
-                    $playerCardTable = $dom->createElement('img');
-                    $playerCardTable->setAttribute('src', '/images/card_back.png');
-                }
-                if(!$card->isOpened()){
-                    $player1card->appendChild($playerCardTable);
+                    else{
+                        $playerCardTable = $dom->createElement('img');
+                        $playerCardTable->setAttribute('src', '/images/card_back.png');
+                    }
+                    if(!$card->isOpened()){
+                        $player1card->appendChild($playerCardTable);
+                    }
                 }
             }
             
             $player1Cards->appendChild($player1card);
             
             $player2card = $dom->createElement('div');
-            $player2card->setAttribute('id', 'player2card'.$i);
-            $player2card->setAttribute('class', 'playerCard');
+            
             
             if(isset($this->player2)&&$card = $this->player2->getCard($i)){
                 
-                if($user_id==$this->player2->getId()||$card->isOpened()){
-                    $playerCardTable = $this->createPlayerCardTable($card,$dom);
-                    
-                    if($card->isOpened()){
-                        $imgDiv = $dom->createElement('div');
-                        $cardImg = $dom->createElement('img');
-                        $cardImg->setAttribute('src', '/images/card_back.png');
+                if(!$card->isDone()){
+                    $player2card->setAttribute('id', 'player2card'.$i);
+                    $player2card->setAttribute('data-rel', $i);
+                    $player2card->setAttribute('class', 'playerCard');
 
-                        $tableDiv = $dom->createElement('div');
-                        $imgDiv->appendChild($cardImg);
-                        $tableDiv->appendChild($playerCardTable);
-                        $player2card->appendChild($imgDiv);
-                        $player2card->appendChild($tableDiv);
-                        $player2card->setAttribute('class', 'playerCard flipIt');
+
+                    if($user_id==$this->player2->getId()||$card->isOpened()){
+                        $playerCardTable = $this->createPlayerCardTable($card,$dom,'player2');
+
+                        if($card->isOpened()){
+                            $imgDiv = $dom->createElement('div');
+                            $cardImg = $dom->createElement('img');
+                            $cardImg->setAttribute('src', '/images/card_back.png');
+
+                            $tableDiv = $dom->createElement('div');
+                            $imgDiv->appendChild($cardImg);
+                            $tableDiv->appendChild($playerCardTable);
+                            $player2card->appendChild($imgDiv);
+                            $player2card->appendChild($tableDiv);
+                            $player2card->setAttribute('class', 'playerCard flipIt');
+                        }
                     }
-                }
-                else{
-                    $playerCardTable = $dom->createElement('img');
-                    $playerCardTable->setAttribute('src', '/images/card_back.png');
-                }
-                
-                if(!$card->isOpened()){
-                    $player2card->appendChild($playerCardTable);
+                    else{
+                        $playerCardTable = $dom->createElement('img');
+                        $playerCardTable->setAttribute('src', '/images/card_back.png');
+                    }
+
+                    if(!$card->isOpened()){
+                        $player2card->appendChild($playerCardTable);
+                    }
                 }
             }
             
@@ -199,6 +333,17 @@ class Table {
         
         $playField = $dom->createElement('div');
         $playField->setAttribute('class', 'playField');
+        if($this->isGameJustStarted()){
+            $whoStartInfo = $dom->createElement('div',ucfirst($this->starting_player." starts the game"));
+            $whoStartInfo->setAttribute('class', 'label label-danger');
+            $playField->appendChild($whoStartInfo);
+        }
+        
+        if($this->next_move_first_player){
+            $whoStartInfo = $dom->createElement('div',ucfirst($this->next_move_first_player." do next move"));
+            $whoStartInfo->setAttribute('class', 'label label-danger');
+            $playField->appendChild($whoStartInfo);
+        }
         
         $cardTable->appendChild($player1Cards);
         $cardTable->appendChild($playField);
@@ -223,21 +368,32 @@ class Table {
         if(isset($this->player1)){
             $player1Cards->setAttribute('data-id', $this->player1->getId());
             $player1 = $dom->createElement('div',$this->player1->getUsername());
+            
+            $player1Points = $dom->createElement('div',$this->player1->getPoints());
+            
+            $player1->appendChild($player1Points);
             $playerList->appendChild($player1);
         }
         
         if(isset($this->player2)){
             $player2Cards->setAttribute('data-id', $this->player2->getId());
             $player2 = $dom->createElement('div',$this->player2->getUsername());
+            
+            
+            $player2Points = $dom->createElement('div',$this->player2->getPoints());
+            
+            $player2->appendChild($player2Points);
+            
             $playerList->appendChild($player2);
         }
         
+        $cardTableInfo->appendChild($closeTable);
         if(isset($tableId)){
             $tableIdBox = $dom->createElement('div','Table '.$tableId);
+            $tableIdBox->setAttribute('class', 'tableName');
             $cardTableInfo->appendChild($tableIdBox);
         }
         
-        $cardTableInfo->appendChild($closeTable);
         $cardTableInfo->appendChild($playerList);
         
         $dom->appendChild($cardTable);
@@ -294,7 +450,7 @@ class Table {
 //                    </tr>
 //                </table>
     
-    public function createPlayerCardTable($card,$dom){
+    public function createPlayerCardTable($card,$dom,$whichPlayer){
         $table = $dom->createElement('table');
         
         // tr 1 - start
@@ -350,6 +506,24 @@ class Table {
         $tr5->appendChild($td51);
         $tr5->appendChild($td52);
         
+        $currentPlayingSkillId = $this->findCurrentPlayingSkillId();
+        if(is_int($currentPlayingSkillId)){ // &&$card->isOpened()
+            // if it is a player who just clicked on card
+            if(isset($this->moves[$whichPlayer][$this->round-1])){
+                // get the card which was just clicked
+                // and apply styles just to this card
+                if($card->getId()==$this->moves[$whichPlayer][$this->round-1]){
+                    ${"tr".($currentPlayingSkillId+2)}->setAttribute('class','currentPlayingSkill');
+                    $table->setAttribute('class','selectedCard');
+                }
+            }
+            // for player who not clicked anything
+            // mark skills which need to be chosen
+            else{
+                ${"tr".($currentPlayingSkillId+2)}->setAttribute('class','currentPlayingSkill');
+            }
+        }
+        
         $table->appendChild($tr1);
         $table->appendChild($tr2);
         $table->appendChild($tr3);
@@ -357,5 +531,74 @@ class Table {
         $table->appendChild($tr5);
         
         return $table;
+    }
+    
+    
+    public function findCurrentPlayingSkillId(){
+        if(!isset($this->current_skill_playing))
+            return false;
+        $key = array_search($this->current_skill_playing,$this->skillOrder);
+        return $key;
+    }
+    
+    public function checkCardWon(){
+        $round = $this->round;
+        $card1Id = $this->moves['player1'][$round-1];
+        $card1 = $this->player1->getCardById($card1Id);
+        
+        $card2Id = $this->moves['player2'][$round-1];
+        $card2 = $this->player2->getCardById($card2Id);
+        
+        $skillCard1 = $card1->get($this->current_skill_playing);
+        $skillCard2 = $card2->get($this->current_skill_playing);
+        
+        if($this->current_skill_playing!='acceleration'){
+            if($skillCard1>$skillCard2){
+                $this->moves['won'][$round-1] = 'player1';
+                $this->next_move_first_player = 'player1';
+                $this->player1->addPointToAdd();
+            }
+            elseif($skillCard1<$skillCard2){
+                $this->moves['won'][$round-1] = 'player2';
+                $this->next_move_first_player = 'player2';
+                $this->player2->addPointToAdd();
+            }
+        }
+        else{
+            if($skillCard1<$skillCard2){
+                $this->moves['won'][$round-1] = 'player1';
+                $this->next_move_first_player = 'player1';
+                $this->player1->addPointToAdd();
+            }
+            elseif($skillCard1>$skillCard2){
+                $this->moves['won'][$round-1] = 'player2';
+                $this->next_move_first_player = 'player2';
+                $this->player2->addPointToAdd();
+            }
+        }
+        
+        unset($this->current_skill_playing);
+        $this->round++;
+    }
+    
+    public function swipeCardsToWonPlayer(){
+        $round = $this->round;
+        if(!isset($this->current_skill_playing)&&isset($this->moves['player1'][$round-2])&&isset($this->moves['player2'][$round-2])){
+            
+            $player1CardId = $this->moves['player1'][$round-2];
+            $player2CardId = $this->moves['player2'][$round-2];
+
+            $this->player1->setCardDone($player1CardId);
+            $this->player2->setCardDone($player2CardId);
+            
+            
+            return $this->moves['won'][$round-2];
+        }
+        return false;
+    }
+    
+    public function refreshPoints(){
+        $this->player1->refreshPoints();
+        $this->player2->refreshPoints();
     }
 }

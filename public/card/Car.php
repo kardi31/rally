@@ -6,16 +6,20 @@
  */
 class Car {
     protected $id;
+    protected $car_model_id;
     protected $name;
     protected $acceleration;
     protected $max_speed;
-    protected $horsepower;
     protected $capacity;
+    protected $horsepower;
     protected $playerid;
+    protected $chosenSkill;
     protected $opened = 0;
+    protected $done = 0;
+    protected $skillOrder = array('acceleration','max_speed','capacity','horsepower');
     
-    public function __construct($id){
-        $carModel = $this->getCarModel($id);
+    public function __construct($car_model_id,$id){
+        $carModel = $this->getCarModel($car_model_id);
         foreach($carModel as $skill=>$value){
             
             if($skill=='id'){
@@ -23,6 +27,7 @@ class Car {
             }
             $this->{$skill} = $value;
         }
+        $this->car_model_id = $car_model_id;
         $this->id = $id;
         
     }
@@ -35,9 +40,30 @@ class Car {
         return false;
     }
     
-    public function setOpened(){
-        $this->opened = 1;
+    public function isDone(){
+        if($this->done==1){
+            return true;
+        }
+        return false;
     }
+    
+    public function setOpened($skillId){
+        $this->opened = 1;
+        $this->setChosenSkill($skillId);
+    }
+    
+    public function setChosenSkill($skillId){
+        $this->chosenSkill = $this->skillOrder[$skillId-1];
+    }
+    
+    public function setCardDone(){
+        $this->done = 1;
+    }
+    
+    public function getChosenSkill(){
+        return $this->chosenSkill;
+    }
+    
     
     public function getId(){
         return $this->id;
@@ -80,6 +106,10 @@ class Car {
     
     public function removeTable(){
         unset($this->table);
+    }
+    
+    public function get($skill){
+        return $this->{$skill};
     }
     
     public function getCarModel($id){

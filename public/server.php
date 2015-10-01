@@ -160,8 +160,8 @@ while (true) {
                                 $userOnTableIds = $table->getPlayerIds();
                                 $passedParameters = array_merge($passedParameters,$userOnTableIds);
 
-                                $passedParameters['showTable'] = $table->showTable($userOnTableIds['user_id']);
-                                $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2']);
+                                $passedParameters['showTable'] = $table->showTable($userOnTableIds['user_id'],$tst_msg->refreshPoints);
+                                $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2'],$tst_msg->refreshPoints);
                                 $passedParameters['tableid'] = $tableid;
 
     //                            $availableTables = $tables->getAllTables();
@@ -171,27 +171,31 @@ while (true) {
                                 $response_text = mask(json_encode($passedParameters));
                                 send_message($response_text); //send data
                             }
-                            // New table created
+                            // Card clicked
                             elseif($tst_msg->type=="cardClicked"){
                                 
                                 $player = $players->getPlayer($tst_msg->userid);
                                 $tableId = $player->getTable();
                                 $table = $tables->getTable($tableId);
                                 
-                                $player->openCard($tst_msg->cardNo);
-                                
-                                $passedParameters = array('type'=>'showTablePlayer');
-                                $userOnTableIds = $table->getPlayerIds();
-                                $passedParameters = array_merge($passedParameters,$userOnTableIds);
+                                $moveAccepted = $table->makeAMove($player,$tst_msg->cardNo,$tst_msg->skillNo);
+                                if($moveAccepted){
+                                    $passedParameters = array('type'=>'showTablePlayer');
+                                    $userOnTableIds = $table->getPlayerIds();
+                                    $passedParameters = array_merge($passedParameters,$userOnTableIds);
 
-                                $passedParameters['showTable'] = $table->showTable($userOnTableIds['user_id']);
-                                $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2']);
-                                
+                                    $passedParameters['showTable'] = $table->showTable($userOnTableIds['user_id']);
+                                    $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2']);
 
-                                $passedParameters['tableid'] = $tableId;
+                                    $passedParameters['tableid'] = $tableId;
+                                    
+                                    if($wonPlayer = $table->swipeCardsToWonPlayer()){
+                                        $passedParameters['wonPlayer'] = $wonPlayer;
+                                    }
 
-                                $response_text = mask(json_encode($passedParameters));
-                                send_message($response_text);
+                                    $response_text = mask(json_encode($passedParameters));
+                                    send_message($response_text);
+                                }
                             }
                             // Close table
                             elseif($tst_msg->type=="closeTable"){
