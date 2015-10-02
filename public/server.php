@@ -157,15 +157,25 @@ while (true) {
                                 $table = $tables->getTable($tableid);
 
                                 echo "showTablePlayer - ".$player->getId()."\r\n";
+                                
+                                
                                 $passedParameters = array('type'=>'showTablePlayer');
 
                                 $userOnTableIds = $table->getPlayerIds();
                                 $passedParameters = array_merge($passedParameters,$userOnTableIds);
-
-                                $passedParameters['showTable'] = $table->showTable($userOnTableIds['user_id'],$tst_msg->refreshPoints);
-                                $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2'],$tst_msg->refreshPoints);
+                                $refreshPoints = false;
+                                if(isset($tst_msg->refreshPoints)){
+                                    $refreshPoints = $tst_msg->refreshPoints;
+                                }
+                                $passedParameters['showTable'] = $table->showTable($userOnTableIds['user_id'],$refreshPoints);
+                                $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2'],$refreshPoints);
                                 $passedParameters['tableid'] = $tableid;
 
+                                
+                                if($table->isFinished()){
+                                    $passedParameters['type'] = 'playerWon';
+                                }
+                                
     //                            $availableTables = $tables->getAllTables();
 
                                 $passedParameters['message'] = $availableTables;
@@ -186,18 +196,17 @@ while (true) {
                                     $userOnTableIds = $table->getPlayerIds();
                                     $passedParameters = array_merge($passedParameters,$userOnTableIds);
 
+                                    
+                                    
                                     $passedParameters['showTable'] = $table->showTable($userOnTableIds['user_id']);
                                     $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2']);
 
                                     $passedParameters['tableid'] = $tableId;
                                     
+                                    
                                     if($wonPlayer = $table->swipeCardsToWonPlayer()){
                                         $passedParameters['wonPlayer'] = $wonPlayer;
                                     }
-                                    
-//                                    if($table->isFinished()){
-//                                        $passedParameters = array('type'=>'playerWon');
-//                                    }
                                     
                                         $response_text = mask(json_encode($passedParameters));
                                         send_message($response_text);

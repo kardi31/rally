@@ -1,5 +1,4 @@
 <script src="/js/flip.js"></script>
-<a id="stop" href="javascript:void(0)" style="width:200px;height:50px;display:block;">Stop</a>
 
 
 <script language="javascript" type="text/javascript">
@@ -62,13 +61,29 @@
                 websocket.send(JSON.stringify(msg));
             }
 
+            
+            if (type == 'playerWon')
+            {
+                
+                if (typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id) {
+                    var tableid = msg.tableid;
+                    window.location.hash = tableid;
+                    $('.cardTableWrapper').html(msg.showTable);
+                }
+                
+                if (typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id) {
+                    var tableid = msg.tableid;
+                    window.location.hash = tableid;
+                    $('.cardTableWrapper').html(msg.showTable2);
+                }
+            }
+
             // when player on table
             // show table for player
             // so opponent cards are hidden
             if (type == 'showTablePlayer')
             {
                 var message = msg.message;
-                console.log(msg);
                 if (typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id) {
 
                     var tableid = msg.tableid;
@@ -120,7 +135,7 @@
                     $(this).flip(true);
     //                  elementPlayer2.css({'bottom':175,'left':325});
                 });
-                
+                console.log(msg.wonPlayer);
                  if (typeof (msg.wonPlayer) !== 'undefined'){
                     window.setTimeout(function(){
                         if(msg.wonPlayer=='player1'){
@@ -142,6 +157,8 @@
                                         userid: '<?= $authenticatedUser['id']; ?>'
                                     };
                                     websocket.send(JSON.stringify(msg));
+                                    elementPlayer1.remove();
+                                    elementPlayer2.remove();
                                     
                                 });
                                 
@@ -161,13 +178,14 @@
                                 left:0,
                                 duration: 2000
                             },function(){
-                                    console.log('innn');
                                     var msg = {
                                         type: 'getPlayerTable',
                                         refreshPoints: true,
                                         userid: '<?= $authenticatedUser['id']; ?>'
                                     };
                                     websocket.send(JSON.stringify(msg));
+                                    elementPlayer1.remove();
+                                    elementPlayer2.remove();
                                 });
                         });
                     }
@@ -221,7 +239,7 @@
              */
 
 
-            $('.playerCards div table tr:not(:first-of-type)').click(function () {
+            $('.playerCards:not(.done) div table tr:not(:first-of-type)').click(function () {
                 var skillNo = $(this).index();
                 var parentPlayerCards = $(this).parents('.playerCards');
 
@@ -361,18 +379,19 @@
         width:1020px;
     }
     #cardTable{
-        width:810px;
+        width:802px;
         float:left;
         height:700px;
         position:relative;
     }
     #cardTableInfo{
-        width:200px;
-        float:left;
+        width:210px;
+        clear: right;
+        float: right;
     }
     .playerCards{
         height:175px;
-        width:810px;
+        width:100%;
         border:1px solid grey;
     }
     .playerCards th{
@@ -391,7 +410,9 @@
 
         font-size:12px;
     }
-
+    .playerCards th{
+        background:#504f4f;
+    }
     .playerCards img{
         max-width:100%;
     }
@@ -411,7 +432,7 @@
     }
     .playField{
         height:350px;
-        border:1px solid red;
+        background: #686868;
     }
     .chat_wrapper {
         width: 700px;
@@ -456,7 +477,22 @@
         margin-left:10px;
         font: 12px 'lucida grande',tahoma,verdana,arial,sans-serif;
     }
-
+    .gameInformation{
+        background:#212121;
+        display: inline-block;
+        padding: .2em .6em .3em;
+        font-weight: bold;
+        color: #ffffff;
+        text-align: center;
+        vertical-align: baseline;
+        width:25%;
+        font-size:20px;
+        margin-top:10%;
+    }
+    .gameInformation span{
+        font-size:15px;
+        display:block;
+    }
     .cardUserListWrapper #cardUserList {
         background: #FFFFFF;
         min-height: 150px;
@@ -494,4 +530,171 @@
     </div>
     <div class="clearfix"></div>
 </span>
-<div class="cardTableWrapper"></div>
+<div class="cardTableWrapper">
+</div>
+<!--<div class="cardTableWrapper" style="display: block;">
+   <div id="cardTable">
+      <div class="player1Cards playerCards" data-id="28">
+         <div id="player1card1" data-rel="1" class="playerCard">
+            <table>
+               <tbody>
+                  <tr>
+                     <th colspan="2"><img src="/media/cars/suzuki_swift.JPG"><strong>Suzuki Swift Sport</strong></th>
+                  </tr>
+                  <tr>
+                     <td>Acceleration</td>
+                     <td>8.7</td>
+                  </tr>
+                  <tr>
+                     <td>V-max</td>
+                     <td>195</td>
+                  </tr>
+                  <tr>
+                     <td>Capacity</td>
+                     <td>1568</td>
+                  </tr>
+                  <tr>
+                     <td>Horsepower</td>
+                     <td>136</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div id="player1card2" data-rel="2" class="playerCard">
+            <table>
+               <tbody>
+                  <tr>
+                     <th colspan="2"><img src="/media/cars/alfa_romeo_junior.png"><strong>Alfa Romeo Junior</strong></th>
+                  </tr>
+                  <tr>
+                     <td>Acceleration</td>
+                     <td>10.3</td>
+                  </tr>
+                  <tr>
+                     <td>V-max</td>
+                     <td>197</td>
+                  </tr>
+                  <tr>
+                     <td>Capacity</td>
+                     <td>1300</td>
+                  </tr>
+                  <tr>
+                     <td>Horsepower</td>
+                     <td>136</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div id="player1card3" data-rel="3" class="playerCard">
+            <table>
+               <tbody>
+                  <tr>
+                     <th colspan="2"><img src="/media/cars/triumph_tr7.jpg"><strong>Triumph TR7</strong></th>
+                  </tr>
+                  <tr>
+                     <td>Acceleration</td>
+                     <td>9.8</td>
+                  </tr>
+                  <tr>
+                     <td>V-max</td>
+                     <td>175</td>
+                  </tr>
+                  <tr>
+                     <td>Capacity</td>
+                     <td>1998</td>
+                  </tr>
+                  <tr>
+                     <td>Horsepower</td>
+                     <td>105</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div id="player1card4" data-rel="4" class="playerCard">
+            <table>
+               <tbody>
+                  <tr>
+                     <th colspan="2"><img src="/media/cars/nissan_micra.jpg"><strong>Nissan Micra Sport</strong></th>
+                  </tr>
+                  <tr>
+                     <td>Acceleration</td>
+                     <td>9.8</td>
+                  </tr>
+                  <tr>
+                     <td>V-max</td>
+                     <td>183</td>
+                  </tr>
+                  <tr>
+                     <td>Capacity</td>
+                     <td>1598</td>
+                  </tr>
+                  <tr>
+                     <td>Horsepower</td>
+                     <td>108</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div id="player1card5" data-rel="5" class="playerCard">
+            <table>
+               <tbody>
+                  <tr>
+                     <th colspan="2"><img src="/media/cars/bmw318is.png"><strong>BMW 318is</strong></th>
+                  </tr>
+                  <tr>
+                     <td>Acceleration</td>
+                     <td>9.7</td>
+                  </tr>
+                  <tr>
+                     <td>V-max</td>
+                     <td>212</td>
+                  </tr>
+                  <tr>
+                     <td>Capacity</td>
+                     <td>1895</td>
+                  </tr>
+                  <tr>
+                     <td>Horsepower</td>
+                     <td>138</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <div class="playField">
+          <div class="gameInformation">Round 1 <span> player 1 starts the game</span></div>
+      </div>
+      <div class="player2Cards playerCards" data-id="37">
+         <div id="player2card1" data-rel="1" class="playerCard"><img src="/images/card_back.png"></div>
+         <div id="player2card2" data-rel="2" class="playerCard"><img src="/images/card_back.png"></div>
+         <div id="player2card3" data-rel="3" class="playerCard"><img src="/images/card_back.png"></div>
+         <div id="player2card4" data-rel="4" class="playerCard"><img src="/images/card_back.png"></div>
+         <div id="player2card5" data-rel="5" class="playerCard"><img src="/images/card_back.png"></div>
+      </div>
+   </div>
+   <div id="cardTableInfo">
+      <button class="closeTable" rel="1">X</button>
+      <div class="tableName">Table 1</div>
+      <div class="playerList">
+         <div>
+            peop_1155951
+            <div>0</div>
+         </div>
+         <div>
+            kk33
+            <div>0</div>
+         </div>
+      </div>
+   </div>
+</div>-->
+
+<style>
+    #cardTableInfo .tableName{
+        background:#212121;
+    }
+    
+    .cardTableWrapper{
+        background:#504f4f;
+    }
+    
+</style>

@@ -20,6 +20,7 @@ class Table {
     protected $skillOrder = array('acceleration','max_speed','capacity','horsepower');
     protected $round = 1;
     protected $next_move_first_player = false;
+    protected $old_skill_playing_id = false;
     
     public function __construct($player,$id){
         $this->player1 = $player;
@@ -130,13 +131,12 @@ class Table {
             elseif(($this->round==1&&$this->starting_player == 'player2')||$this->next_move_first_player=='player2'){
                 $secondPlayer = 'player1';
             }
-            var_dump($secondPlayer);
             if($player==$this->{$secondPlayer}){
                 
                 
                      echo "else - in \r\n";
                 $requestedSkill = $this->getSkill($skillId);
-                if($this->current_skill_playing==$requestedSkill){
+                if(isset($this->current_skill_playing)&&$this->current_skill_playing==$requestedSkill){
                     
                     // when both players chosen their cards
                     // open both cards at once
@@ -336,20 +336,35 @@ class Table {
         
         if(!$this->isFinished()){
             if($this->isGameJustStarted()){
-                $whoStartInfo = $dom->createElement('div',ucfirst($this->starting_player." starts the game"));
-                $whoStartInfo->setAttribute('class', 'label label-danger');
+                $roundInfo = $dom->createElement('span',$this->{$this->starting_player}->getUsername()." starts the game");
+                
+                $whoStartInfo = $dom->createElement('div','Round '.$this->round);
+                $whoStartInfo->setAttribute('class', 'gameInformation');
+                $whoStartInfo->appendChild($roundInfo);
                 $playField->appendChild($whoStartInfo);
             }
 
             if($this->next_move_first_player){
-                $whoStartInfo = $dom->createElement('div',ucfirst($this->next_move_first_player." do next move"));
-                $whoStartInfo->setAttribute('class', 'label label-danger');
+                
+                $whoStartInfo = $dom->createElement('div','Round '.$this->round);
+                $whoStartInfo->setAttribute('class', 'gameInformation');
+                
+                $roundInfo = $dom->createElement('span',$this->{$this->next_move_first_player}." do next move");
+                
+                $whoStartInfo->appendChild($roundInfo);
                 $playField->appendChild($whoStartInfo);
             }
         }
         else{
-            $whoWon = $dom->createElement('div',$this->isFinished());
-            $whoWon->setAttribute('class', 'label label-danger');
+            $player1Cards->setAttribute('class','playerCards done');
+            $player2Cards->setAttribute('class','playerCards done');
+            
+            
+            $whoWon = $dom->createElement('div','Round '.$this->round);
+            $roundInfo = $dom->createElement('span',$this->{$this->isFinished()}->getUsername()." has won the game");
+            $whoWon->setAttribute('class', 'gameInformation');
+            
+            $whoWon->appendChild($roundInfo);
             $playField->appendChild($whoWon);
         }
         
@@ -531,6 +546,7 @@ class Table {
                 ${"tr".($currentPlayingSkillId+2)}->setAttribute('class','currentPlayingSkill');
             }
         }
+       
         
         $table->appendChild($tr1);
         $table->appendChild($tr2);
@@ -560,6 +576,9 @@ class Table {
         $skillCard1 = $card1->get($this->current_skill_playing);
         $skillCard2 = $card2->get($this->current_skill_playing);
         
+        echo "check card won \r\n";
+        
+        
         if($this->current_skill_playing!='acceleration'){
             if($skillCard1>$skillCard2){
                 $this->moves['won'][$round-1] = 'player1';
@@ -584,23 +603,22 @@ class Table {
                 $this->player2->addPointToAdd();
             }
         }
-        
-        unset($this->current_skill_playing);
-        $this->round++;
     }
     
     public function swipeCardsToWonPlayer(){
         $round = $this->round;
-        if(!isset($this->current_skill_playing)&&isset($this->moves['player1'][$round-2])&&isset($this->moves['player2'][$round-2])){
+        if(isset($this->moves['player1'][$round-1])&&isset($this->moves['player2'][$round-1])){
             
-            $player1CardId = $this->moves['player1'][$round-2];
-            $player2CardId = $this->moves['player2'][$round-2];
+            $player1CardId = $this->moves['player1'][$round-1];
+            $player2CardId = $this->moves['player2'][$round-1];
 
             $this->player1->setCardDone($player1CardId);
             $this->player2->setCardDone($player2CardId);
             
+            unset($this->current_skill_playing);
+            $this->round++;
             
-            return $this->moves['won'][$round-2];
+            return $this->moves['won'][$round-1];
         }
         return false;
     }
