@@ -118,4 +118,10 @@ class Player {
         
     }
     
+    public function hasWon(){
+        if($this->point>2){
+            return true;
+        }
+    }
+    
 }

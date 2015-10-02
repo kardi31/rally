@@ -333,16 +333,24 @@ class Table {
         
         $playField = $dom->createElement('div');
         $playField->setAttribute('class', 'playField');
-        if($this->isGameJustStarted()){
-            $whoStartInfo = $dom->createElement('div',ucfirst($this->starting_player." starts the game"));
-            $whoStartInfo->setAttribute('class', 'label label-danger');
-            $playField->appendChild($whoStartInfo);
-        }
         
-        if($this->next_move_first_player){
-            $whoStartInfo = $dom->createElement('div',ucfirst($this->next_move_first_player." do next move"));
-            $whoStartInfo->setAttribute('class', 'label label-danger');
-            $playField->appendChild($whoStartInfo);
+        if(!$this->isFinished()){
+            if($this->isGameJustStarted()){
+                $whoStartInfo = $dom->createElement('div',ucfirst($this->starting_player." starts the game"));
+                $whoStartInfo->setAttribute('class', 'label label-danger');
+                $playField->appendChild($whoStartInfo);
+            }
+
+            if($this->next_move_first_player){
+                $whoStartInfo = $dom->createElement('div',ucfirst($this->next_move_first_player." do next move"));
+                $whoStartInfo->setAttribute('class', 'label label-danger');
+                $playField->appendChild($whoStartInfo);
+            }
+        }
+        else{
+            $whoWon = $dom->createElement('div',$this->isFinished());
+            $whoWon->setAttribute('class', 'label label-danger');
+            $playField->appendChild($whoWon);
         }
         
         $cardTable->appendChild($player1Cards);
@@ -600,5 +608,17 @@ class Table {
     public function refreshPoints(){
         $this->player1->refreshPoints();
         $this->player2->refreshPoints();
+    }
+    
+    public function isFinished(){
+        if(isset($this->player1)&&isset($this->player2)){
+            if($this->player1->hasWon())
+                return 'player1';
+            
+            if($this->player2->hasWon())
+                return 'player2';
+        }
+        
+        return false;
     }
 }

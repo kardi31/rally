@@ -60,6 +60,8 @@ while (true) {
                 $availableTables = $tables->getAllTables();
                 $response_text = mask(json_encode(array('type'=>'joinedTable', 'message'=>$availableTables)));
                 send_message($response_text);
+                
+                
 	}
 	
 	//loop through all connected sockets
@@ -192,9 +194,14 @@ while (true) {
                                     if($wonPlayer = $table->swipeCardsToWonPlayer()){
                                         $passedParameters['wonPlayer'] = $wonPlayer;
                                     }
-
-                                    $response_text = mask(json_encode($passedParameters));
-                                    send_message($response_text);
+                                    
+//                                    if($table->isFinished()){
+//                                        $passedParameters = array('type'=>'playerWon');
+//                                    }
+                                    
+                                        $response_text = mask(json_encode($passedParameters));
+                                        send_message($response_text);
+                                    
                                 }
                             }
                             // Close table

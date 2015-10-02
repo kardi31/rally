@@ -7,8 +7,13 @@ require_once(__DIR__."/Table.php");
  * @author Tomasz
  */
 class PlayerCollection {
+    private $db ;
     private $items = array();
 
+    public function __construct() {
+        $db = new PDO('mysql:host=localhost;dbname=ral;charset=utf8', 'root', '');
+    }
+    
     public function addPlayer($userid,$username,$cards) {
         $player = new Player($userid,$username,$cards);
         $this->items[$userid] = $player;
