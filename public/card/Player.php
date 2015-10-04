@@ -43,6 +43,11 @@ class Player {
         $this->table = $tableId;
     }
     
+    
+    public function setTimer($timer){
+        $this->timer = $timer;
+    }
+    
     public function getTable(){
         if(isset($this->table))
             return $this->table;

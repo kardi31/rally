@@ -226,6 +226,7 @@ while (true) {
                                 
                                 $moveAccepted = $table->makeAMove($player,$tst_msg->cardNo,$tst_msg->skillNo);
                                 if($moveAccepted){
+                                    $player->setTimer($tst_msg->timer);
                                     $passedParameters = array('type'=>'showTablePlayer');
                                     $userOnTableIds = $table->getPlayerIds();
                                     $passedParameters = array_merge($passedParameters,$userOnTableIds);
@@ -245,14 +246,13 @@ while (true) {
                                         $response_text = mask(json_encode($passedParameters));
                                         send_message($response_text);
                                         
-                                        var_dump($table->whoseNextMove());
-                                    if($table->isStarted()&&$onMove = $table->whoseNextMove(true)){
-                                        echo "onMove - ".$onMove;
-                                        $moveParameters = array('type' => 'toggleTimer');
-                                        $moveParameters['on_move'] = $onMove;
-                                        $response_text = mask(json_encode($moveParameters));
-                                        send_message($response_text);
-                                    }
+                                        if($table->isStarted()&&$onMove = $table->whoseNextMove(true)){
+                                            echo "onMove - ".$onMove;
+                                            $moveParameters = array('type' => 'toggleTimer');
+                                            $moveParameters['on_move'] = $onMove;
+                                            $response_text = mask(json_encode($moveParameters));
+                                            send_message($response_text);
+                                        }
                                     
                                 }
                             }

@@ -82,10 +82,18 @@
                 if(typeof (msg.on_move) !== 'undefined'&&msg.on_move != player_on_move){
                     console.log('onToggle - '+msg.on_move);
                     if(msg.on_move == 1)
+                    {
                         divEq = 0;
+                        var secondEq = 2;
+                    }
                     if(msg.on_move == 2)
+                    {
                         divEq = 2;
+                        var secondEq = 0;
+                    }
                     var toggleElement = $('.playerList div:eq('+divEq+') span');
+                    
+                    var secondElement = $('.playerList div:eq('+secondEq+') span');
                     window.setTimeout(function(){
                         player_on_move = msg.on_move;
                         toggleElement.html('2:00');
@@ -304,14 +312,25 @@
 
                 var cardNo = parentCard.attr('data-rel');
                 var cardUserId = parentPlayerCards.attr('data-id');
-//                console.log(cardUserId);
-//                console.log(cardNo);
-//                console.log('clicked');
+                
+                if(parentPlayerCards.hasClass('player1Cards')){
+                    var playerNo = 1;
+                    var divEq = 0;
+                }
+                if(parentPlayerCards.hasClass('player2Cards')){
+                    var playerNo = 2;
+                    var divEq = 2;
+                }
+                
+                var toggleElement = $('.playerList div:eq('+divEq+') span');
+                
                 if (cardUserId == user_id) {
                     var msg = {
                         type: 'cardClicked',
                         cardNo: cardNo,
+                        timer: toggleElement.html(),
                         skillNo: skillNo,
+                        playerNo: playerNo,
                         userid: '<?= $authenticatedUser['id']; ?>'
                     };
                     websocket.send(JSON.stringify(msg));
