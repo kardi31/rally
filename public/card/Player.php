@@ -12,6 +12,7 @@ class Player {
     protected $cards;
     protected $notDoneCards;
     protected $point = 0;
+    protected $timer = '2:00';
     
     // we must wait until animation is finished to add a point to user
     protected $pointToAdd = false;
@@ -24,6 +25,10 @@ class Player {
             $this->cards[$cardRow['id']] = $car;
             $this->notDoneCards[$cardRow['id']] = $car;
         }
+    }
+    
+    public function getTimer(){
+        return $this->timer;
     }
     
     public function getId(){

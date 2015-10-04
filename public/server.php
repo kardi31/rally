@@ -150,6 +150,31 @@ while (true) {
                                 $response_text = mask(json_encode($passedParameters));
                                 send_message($response_text); //send data
                             }
+                            
+                            elseif($tst_msg->type=="startTable"){
+                                $player = $players->getPlayer($tst_msg->userid);
+                                $table = $tables->getTable($player->getTable());
+                                $table->startTableByPlayer($player);
+                                echo "starttable - ".$tst_msg->userid."\r\n";
+                                $passedParameters = array('type'=>'getTableForPlayer');
+
+                                $userOnTableIds = $table->getPlayerIds();
+                                $passedParameters = array_merge($passedParameters,$userOnTableIds);
+                                if(!$table->isStarted()){
+                                    $passedParameters['started_user'] = $player->getId(); 
+    //                                $passedParameters['tableid'] = $tableId;
+    //                                $passedParameters['showTable'] = $table->showTable($tst_msg->userid);
+                                }
+//                                else{
+//                                    $passedParameters['next_move'] = $table->whoseMove();
+//                                }
+//                                $availableTables = $tables->getAllTables();
+
+    //                            $passedParameters['message'] = $availableTables;
+
+                                $response_text = mask(json_encode($passedParameters));
+                                send_message($response_text); //send data
+                            }
                             // Get table just for this player
                             elseif($tst_msg->type=="getPlayerTable"){
                                 $player = $players->getPlayer($tst_msg->userid);
@@ -172,6 +197,7 @@ while (true) {
                                 $passedParameters['tableid'] = $tableid;
 
                                 
+                                
                                 if($table->isFinished()){
                                     $passedParameters['type'] = 'playerWon';
                                 }
@@ -182,6 +208,14 @@ while (true) {
     //                            var_dump($passedParameters);
                                 $response_text = mask(json_encode($passedParameters));
                                 send_message($response_text); //send data
+                                
+                                
+                                if($table->isStarted()&&$onMove = $table->whoseNextMove(true)){
+                                    $moveParameters = array('type' => 'toggleTimer');
+                                    $moveParameters['on_move'] = $onMove;
+                                    $response_text = mask(json_encode($moveParameters));
+                                    send_message($response_text);
+                                }
                             }
                             // Card clicked
                             elseif($tst_msg->type=="cardClicked"){
@@ -210,6 +244,15 @@ while (true) {
                                     
                                         $response_text = mask(json_encode($passedParameters));
                                         send_message($response_text);
+                                        
+                                        var_dump($table->whoseNextMove());
+                                    if($table->isStarted()&&$onMove = $table->whoseNextMove(true)){
+                                        echo "onMove - ".$onMove;
+                                        $moveParameters = array('type' => 'toggleTimer');
+                                        $moveParameters['on_move'] = $onMove;
+                                        $response_text = mask(json_encode($moveParameters));
+                                        send_message($response_text);
+                                    }
                                     
                                 }
                             }

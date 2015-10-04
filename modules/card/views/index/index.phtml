@@ -1,4 +1,5 @@
 <script src="/js/flip.js"></script>
+<a id="stop" href="javascript:void(0)" style="width:200px;height:50px;display:block;">Stop</a>
 
 
 <script language="javascript" type="text/javascript">
@@ -7,7 +8,8 @@
         var wsUri = "ws://ral.localhost:9000/server.php";
         websocket = new WebSocket(wsUri);
         var user_id = '<?= $authenticatedUser['id']; ?>';
-
+        var player_on_move;
+        
         websocket.onopen = function (ev) { // connection is open 
             setInterval(function () {
                 if (websocket.bufferedAmount == 0)
@@ -39,6 +41,7 @@
             var msg = JSON.parse(ev.data); //PHP sends Json data
             var type = msg.type; //message type
 
+        console.log(msg);
             // request all needed data on first connection
             if (type == 'requestData') {
                 var params = {
@@ -54,13 +57,64 @@
             // so opponent cards are hidden
             if (type == 'getTableForPlayer')
             {
-                var msg = {
+            console.log('getTableForPlayer');
+                var msg2 = {
                     type: 'getPlayerTable',
                     userid: '<?= $authenticatedUser['id']; ?>'
                 };
-                websocket.send(JSON.stringify(msg));
+                websocket.send(JSON.stringify(msg2));
+                if(typeof (msg.started_user) !== 'undefined' && msg.started_user != user_id){
+                    console.log(msg.started_user);
+                    var timerValue = 10;
+                    var interval = setInterval(function() {
+                        
+                        $('.startGame').html('Start the game <br />' + timerValue);
+                        timerValue--;
+                        if(timerValue<0){
+                            clearInterval(interval);
+                        }
+                    }, 1000);
+                }
             }
-
+            
+            if(type == 'toggleTimer'){
+                console.log(player_on_move);
+                if(typeof (msg.on_move) !== 'undefined'&&msg.on_move != player_on_move){
+                    console.log('onToggle - '+msg.on_move);
+                    if(msg.on_move == 1)
+                        divEq = 0;
+                    if(msg.on_move == 2)
+                        divEq = 2;
+                    var toggleElement = $('.playerList div:eq('+divEq+') span');
+                    window.setTimeout(function(){
+                        player_on_move = msg.on_move;
+                        toggleElement.html('2:00');
+                        var countdown = 2 * 60 * 1000;
+                        var interval = setInterval(function() {
+                            
+                            countdown -= 1000;
+                            var min = Math.floor(countdown / (60 * 1000));
+                            //var sec = Math.floor(countdown - (min * 60 * 1000));  // wrong
+                            var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
+                            toggleElement.html(min + " : " + sec);
+//                            if(timerValue<0){
+//                                clearInterval(interval);
+//                            }
+                        }, 1000);
+                    },500);
+//                    var timerValue = 10;
+//                    var interval = setInterval(function() {
+//
+//                        $('.startGame').html('Start the game <br />' + timerValue);
+//                        timerValue--;
+//                        if(timerValue<0){
+//                            clearInterval(interval);
+//                        }
+//                    }, 1000);
+                }
+                
+//                    $('.playerList div:nth-of-type('+playerInfo+') div').html('01:00');
+            }
             
             if (type == 'playerWon')
             {
@@ -83,6 +137,7 @@
             // so opponent cards are hidden
             if (type == 'showTablePlayer')
             {
+            console.log('showTablePlayer');
                 var message = msg.message;
                 if (typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id) {
 
@@ -120,7 +175,7 @@
                 elementPlayer1.css({"position": "absolute"});
                 elementPlayer1.animate({
                         top: 175,
-                        left: 325
+                        left: 320
                     },function(){
                         $(this).flip(true);
     //                  elementPlayer1.css({'top':175,'left':325});
@@ -130,12 +185,11 @@
                 elementPlayer2.css({"position": "absolute","top":525});
                 elementPlayer2.animate({
                     top: 350,
-                    left: 325     
+                    left: 320     
                 },function(){
                     $(this).flip(true);
     //                  elementPlayer2.css({'bottom':175,'left':325});
                 });
-                console.log(msg.wonPlayer);
                  if (typeof (msg.wonPlayer) !== 'undefined'){
                     window.setTimeout(function(){
                         if(msg.wonPlayer=='player1'){
@@ -150,7 +204,6 @@
                                     left:0,
                                     duration: 2000
                                 },function(){
-                                    console.log('innn');
                                     var msg = {
                                         type: 'getPlayerTable',
                                         refreshPoints: true,
@@ -170,7 +223,7 @@
                         elementPlayer2.css({'z-index':10});
                         elementPlayer1.animate({
                             top: 350,
-                            left: 325,
+                            left: 320,
                             duration: 5000
                         },function(){
                             $('.playerCards div.playerCard.flipIt').animate({
@@ -194,10 +247,14 @@
                 }
                 
                 $("#stop").click(function(){
-    $('.playerCards div.playerCard.flipIt').stop();
-});
+                    $('.playerCards div.playerCard.flipIt').stop();
+                });
                 
-                
+                var gameInformation = $('.gameInformation');
+                if(gameInformation.hasClass('startsGame')){
+                    var playerInfo = $(this).attr('data-rel');
+//                    $('.playerList div:nth-of-type('+playerInfo+') div').html('01:00');
+                }
 //setTimeout(function(){
 //    
 //                $('.playerCards div.playerCard.flipIt').flip(true);
@@ -251,7 +308,6 @@
 //                console.log(cardNo);
 //                console.log('clicked');
                 if (cardUserId == user_id) {
-                    console.log('good');
                     var msg = {
                         type: 'cardClicked',
                         cardNo: cardNo,
@@ -262,6 +318,20 @@
                 }
             });
 
+
+            // when you want to start the game
+            $('.startGame').click(function () {
+                var msg = {
+                    type: 'startTable',
+                    userid: '<?= $authenticatedUser['id']; ?>'
+                };
+                websocket.send(JSON.stringify(msg));
+                console.log('clickedStart');
+                for (var i = 1; i < 99999; i++) {
+                    window.clearInterval(i);
+                    window.clearTimeout(i);
+                }
+            });
 
             // when you join existing table
             $('.joinSingleTable').click(function () {
@@ -297,7 +367,7 @@
 //              element.css({"position": "absolute"});
 //              element.animate({
 //                top: 175,
-//                left: 325     
+//                left: 320     
 //              },function(){
 //                $(this).flip(true);
 //              });
@@ -368,6 +438,17 @@
         font-size:16px;
     }
     
+    
+    .playerList div span{
+        background:#868686;
+        width:40px;
+        float:right;
+        margin-right:10px;
+        text-align:center;
+        font-size:16px;
+        display:block;
+    }
+    
     .selectedCard{
         background:blue;
     }
@@ -390,7 +471,7 @@
         float: right;
     }
     .playerCards{
-        height:175px;
+        height:177px;
         width:100%;
         border:1px solid grey;
     }

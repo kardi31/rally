@@ -13,7 +13,8 @@ class Table {
     protected $moves = array(
         'player1' => array(),
         'player2' => array(),
-        'won' => array()
+        'won' => array(),
+        'wantStart' => array()
     );
     protected $starting_player;
     protected $current_skill_playing;
@@ -21,6 +22,7 @@ class Table {
     protected $round = 1;
     protected $next_move_first_player = false;
     protected $old_skill_playing_id = false;
+    protected $is_started = false;
     
     public function __construct($player,$id){
         $this->player1 = $player;
@@ -59,7 +61,7 @@ class Table {
     
     public function setStartingPlayer(){
 //        $playerNo = rand(1,2);
-        $playerNo = 1;
+        $playerNo = 2;
         $this->starting_player = 'player'.$playerNo;
     }
     
@@ -181,7 +183,7 @@ class Table {
     }
     
     public function showTable($user_id = null,$refreshPoints = false){
-        
+        $this->whoseNextMove();
 /*    <div class="message_box" id="cardTable">
         <div class="player1Cards playerCards">
             <div id="player1card1">
@@ -334,26 +336,35 @@ class Table {
         $playField = $dom->createElement('div');
         $playField->setAttribute('class', 'playField');
         
-        if(!$this->isFinished()){
+        if(!$this->isFinished()&&$this->isStarted()){
             if($this->isGameJustStarted()){
                 $roundInfo = $dom->createElement('span',$this->{$this->starting_player}->getUsername()." starts the game");
                 
                 $whoStartInfo = $dom->createElement('div','Round '.$this->round);
-                $whoStartInfo->setAttribute('class', 'gameInformation');
+                $whoStartInfo->setAttribute('class', 'gameInformation startGame');
+                $whoStartInfo->setAttribute('data-rel', $this->starting_player);
                 $whoStartInfo->appendChild($roundInfo);
                 $playField->appendChild($whoStartInfo);
             }
 
-            if($this->next_move_first_player){
+            if($this->next_move_first_player&&!$this->isRoundFinished()){
                 
                 $whoStartInfo = $dom->createElement('div','Round '.$this->round);
                 $whoStartInfo->setAttribute('class', 'gameInformation');
                 
-                $roundInfo = $dom->createElement('span',$this->{$this->next_move_first_player}." do next move");
+                $roundInfo = $dom->createElement('span',$this->{$this->next_move_first_player}->getUsername()." do next move");
                 
                 $whoStartInfo->appendChild($roundInfo);
                 $playField->appendChild($whoStartInfo);
             }
+        }
+        elseif(!$this->isStarted()){
+            $startGameBtn = $dom->createElement('button','Start the game');
+//            $roundInfo = $dom->createElement('span',$this->{$this->isFinished()}->getUsername()." has won the game");
+            $startGameBtn->setAttribute('class', 'startGame');
+            
+//            $whoWon->appendChild($roundInfo);
+            $playField->appendChild($startGameBtn);
         }
         else{
             $player1Cards->setAttribute('class','playerCards done');
@@ -394,6 +405,9 @@ class Table {
             
             $player1Points = $dom->createElement('div',$this->player1->getPoints());
             
+            $player1Timer = $dom->createElement('span',$this->player1->getTimer());
+            
+            $player1->appendChild($player1Timer);
             $player1->appendChild($player1Points);
             $playerList->appendChild($player1);
         }
@@ -405,6 +419,9 @@ class Table {
             
             $player2Points = $dom->createElement('div',$this->player2->getPoints());
             
+            $player2Timer = $dom->createElement('span',$this->player2->getTimer());
+            
+            $player2->appendChild($player2Timer);
             $player2->appendChild($player2Points);
             
             $playerList->appendChild($player2);
@@ -623,6 +640,14 @@ class Table {
         return false;
     }
     
+    public function isRoundFinished(){
+        $round = $this->round;
+        if(isset($this->moves['player1'][$round-1])&&isset($this->moves['player2'][$round-1])){
+            return true;
+        }
+        return false;
+    }
+    
     public function refreshPoints(){
         $this->player1->refreshPoints();
         $this->player2->refreshPoints();
@@ -635,6 +660,60 @@ class Table {
             
             if($this->player2->hasWon())
                 return 'player2';
+        }
+        
+        return false;
+    }
+    
+    public function isStarted(){
+        return $this->is_started;
+    }
+    
+    public function startTableByPlayer($player){
+        if($player==$this->player1){
+            array_push($this->moves['wantStart'],'player1');
+        echo "668";
+        }
+        elseif($player==$this->player2){
+            array_push($this->moves['wantStart'],'player2');
+        }
+        if(isset($this->moves['wantStart'][0])&&isset($this->moves['wantStart'][1])){
+            if(in_array('player1',$this->moves['wantStart'])&&in_array('player2',$this->moves['wantStart'])){
+                $this->is_started = true;
+                unset($this->moves['wantStart'][0]);
+                unset($this->moves['wantStart'][1]);
+            }
+        }
+    }
+    
+    public function whoseNextMove($short=false){
+        if($this->isGameJustStarted()){
+            echo "691 \n";
+            $nextMove = $this->starting_player;
+        }
+        elseif(isset($this->next_move_first_player)&&$this->next_move_first_player){
+            $nextMove = $this->next_move_first_player;
+        }
+        else{
+            
+            $countPlayer1Moves = count($this->moves['player1']);
+            $countPlayer2Moves = count($this->moves['player2']);
+            echo "count1 - ".$countPlayer1Moves;
+            echo "count2 - ".$countPlayer2Moves;
+            if($countPlayer1Moves>$countPlayer2Moves){
+                $nextMove = 'player2';
+            }
+            elseif($countPlayer1Moves<$countPlayer2Moves){
+                $nextMove = 'player1';
+            }
+        }
+        
+        var_dump($nextMove);
+        if(isset($nextMove)){
+            if($short)
+                $nextMove = substr($nextMove,6);
+            
+            return $nextMove;
         }
         
         return false;
