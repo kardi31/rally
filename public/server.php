@@ -138,14 +138,7 @@ while (true) {
 
                                 if(!$player->getTable()){
                                     $tables->addPlayerToTable($player,$table);
-    //                                $passedParameters['tableid'] = $tableId;
-    //                                $passedParameters['showTable'] = $table->showTable($tst_msg->userid);
-    //                                $userOnTableIds = $table->getPlayerIds();
-    //                                $passedParameters = array_merge($passedParameters,$userOnTableIds);
                                 }
-    //                            $availableTables = $tables->getAllTables();
-
-    //                            $passedParameters['message'] = $availableTables;
 
                                 $response_text = mask(json_encode($passedParameters));
                                 send_message($response_text); //send data
@@ -155,23 +148,13 @@ while (true) {
                                 $player = $players->getPlayer($tst_msg->userid);
                                 $table = $tables->getTable($player->getTable());
                                 $table->startTableByPlayer($player);
-                                echo "starttable - ".$tst_msg->userid."\r\n";
                                 $passedParameters = array('type'=>'getTableForPlayer');
 
                                 $userOnTableIds = $table->getPlayerIds();
                                 $passedParameters = array_merge($passedParameters,$userOnTableIds);
                                 if(!$table->isStarted()){
                                     $passedParameters['started_user'] = $player->getId(); 
-    //                                $passedParameters['tableid'] = $tableId;
-    //                                $passedParameters['showTable'] = $table->showTable($tst_msg->userid);
                                 }
-//                                else{
-//                                    $passedParameters['next_move'] = $table->whoseMove();
-//                                }
-//                                $availableTables = $tables->getAllTables();
-
-    //                            $passedParameters['message'] = $availableTables;
-
                                 $response_text = mask(json_encode($passedParameters));
                                 send_message($response_text); //send data
                             }
@@ -182,7 +165,6 @@ while (true) {
                                 $table = $tables->getTable($tableid);
 
                                 echo "showTablePlayer - ".$player->getId()."\r\n";
-                                
                                 
                                 $passedParameters = array('type'=>'showTablePlayer');
 
@@ -196,22 +178,19 @@ while (true) {
                                 $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2'],$refreshPoints);
                                 $passedParameters['tableid'] = $tableid;
 
-                                
-                                
                                 if($table->isFinished()){
                                     $passedParameters['type'] = 'playerWon';
                                 }
-                                
-    //                            $availableTables = $tables->getAllTables();
 
                                 $passedParameters['message'] = $availableTables;
-    //                            var_dump($passedParameters);
                                 $response_text = mask(json_encode($passedParameters));
                                 send_message($response_text); //send data
                                 
                                 
-                                if($table->isStarted()&&$onMove = $table->whoseNextMove(true)){
+                                if($table->isStarted()&&$onMove = $table->whoseNextMove()){
                                     $moveParameters = array('type' => 'toggleTimer');
+                                    
+                                        echo "get table \r\n";
                                     $moveParameters['on_move'] = $onMove;
                                     $response_text = mask(json_encode($moveParameters));
                                     send_message($response_text);
@@ -243,16 +222,23 @@ while (true) {
                                         $passedParameters['wonPlayer'] = $wonPlayer;
                                     }
                                     
-                                        $response_text = mask(json_encode($passedParameters));
-                                        send_message($response_text);
+                                    $response_text = mask(json_encode($passedParameters));
+                                    send_message($response_text);
+
+                                    if($table->isStarted()&&!$table->isFinished()&&$onMove = $table->whoseNextMove()){
                                         
-                                        if($table->isStarted()&&$onMove = $table->whoseNextMove(true)){
-                                            echo "onMove - ".$onMove;
-                                            $moveParameters = array('type' => 'toggleTimer');
-                                            $moveParameters['on_move'] = $onMove;
-                                            $response_text = mask(json_encode($moveParameters));
-                                            send_message($response_text);
+                                        $isFirstMoveInRound = $table->isFirstMoveInRound();
+//                                        echo "onMove - ".$onMove['who']." \r\n";
+                                        $moveParameters = array('type' => 'toggleTimer');
+                                        echo "card clicked \r\n";
+                                        
+                                        if($isFirstMoveInRound){
+                                            $moveParameters['no_move_clock'] = true;
                                         }
+                                        $moveParameters['on_move'] = $onMove;
+                                        $response_text3 = mask(json_encode($moveParameters));
+                                        send_message($response_text3);
+                                    }
                                     
                                 }
                             }

@@ -16,13 +16,15 @@ class Table {
         'won' => array(),
         'wantStart' => array()
     );
-    protected $starting_player;
     protected $current_skill_playing;
     protected $skillOrder = array('acceleration','max_speed','capacity','horsepower');
     protected $round = 1;
-    protected $next_move_first_player = false;
     protected $old_skill_playing_id = false;
     protected $is_started = false;
+    
+    protected $started_moves = array();
+    protected $finished_moves = array();
+    
     
     public function __construct($player,$id){
         $this->player1 = $player;
@@ -61,8 +63,9 @@ class Table {
     
     public function setStartingPlayer(){
 //        $playerNo = rand(1,2);
-        $playerNo = 2;
-        $this->starting_player = 'player'.$playerNo;
+       
+        $playerNo = 1;
+        $this->started_moves[0][] = 'player'.$playerNo;
     }
     
     // skill which one of players has chosen
@@ -107,76 +110,61 @@ class Table {
         
         // check first move
         
-        if($this->isGameJustStarted()){
-                echo "just started - 0 \r\n";
-            if($player==$this->{$this->starting_player}){
-                echo "just started - 1 \r\n";
+        $round = $this->round;
+        
+        // 1 ruch w danej kolejce
+        if(count($this->started_moves[$round-1])==1&&!isset($this->finished_moves[$round-1]))
+        {
+            var_dump('pierwszy ruch');
+            $playerWhoMove = $this->{$this->started_moves[$round-1][0]};
+            $playerWhoMovePlayerName = $this->started_moves[$round-1][0];
+            if($player==$playerWhoMove){
                 $card = $player->getCard($cardOrderNo);
-                $this->moves[$this->starting_player][] = $card->getId();
+                $this->moves[$playerWhoMovePlayerName][] = $card->getId();
+                $this->finished_moves[$round-1][] = $playerWhoMovePlayerName;
+                var_dump($playerWhoMovePlayerName);
+                if($playerWhoMovePlayerName=='player1'){
+                    $this->started_moves[$round-1][] = 'player2';
+                }
+                elseif($playerWhoMovePlayerName=='player2'){
+                    $this->started_moves[$round-1][] = 'player1';
+                }
                 $this->setCurrentSkillPlaying($skillId);
                 return true;
             }
         }
-        elseif(isset($this->next_move_first_player)&&$this->next_move_first_player&&$player==$this->{$this->next_move_first_player}){
-                echo "nextmove first player \r\n";
-            $card = $player->getCard($cardOrderNo);
-            $this->moves[$this->next_move_first_player][] = $card->getId();
-            $this->setCurrentSkillPlaying($skillId);
-            return true;
-        }
-        else{
-                     echo "else \r\n";
-            // check first move from 2nd player
-            if(($this->round==1&&$this->starting_player == 'player1')||$this->next_move_first_player=='player1'){
-                $secondPlayer = 'player2';
-            }
-            elseif(($this->round==1&&$this->starting_player == 'player2')||$this->next_move_first_player=='player2'){
-                $secondPlayer = 'player1';
-            }
-            if($player==$this->{$secondPlayer}){
-                
-                
-                     echo "else - in \r\n";
+        // ruch drugiego gracza w danej kolejce
+        elseif(count($this->started_moves[$round-1])==2&&isset($this->finished_moves[$round-1])&&count($this->finished_moves[$round-1])==1)
+        {
+            var_dump('drugi ruch');
+            $playerWhoMove = $this->{$this->started_moves[$round-1][1]};
+            $playerWhoMovePlayerName = $this->started_moves[$round-1][1];
+            if($player==$playerWhoMove){
                 $requestedSkill = $this->getSkill($skillId);
                 if(isset($this->current_skill_playing)&&$this->current_skill_playing==$requestedSkill){
+                    $previousPlayer = $this->{$this->started_moves[$round-1][0]};
+                    $previousPlayerPlayerName = $this->started_moves[$round-1][0];
                     
                     // when both players chosen their cards
                     // open both cards at once
-                    if($this->round==1){
-                        $this->{$this->starting_player}->openCard($this->moves[$this->starting_player][$this->round-1],$skillId);
-                    }
-                    else{
-                        $this->{$this->next_move_first_player}->openCard($this->moves[$this->next_move_first_player][$this->round-1],$skillId);
-                    }
+                    $previousPlayer->openCard($this->moves[$previousPlayerPlayerName][$round-1],$skillId);
+                    
                     $card = $player->getCard($cardOrderNo);
                     $player->openCard($card->getId(),$skillId);
-                    
-                    
-                    $this->moves[$secondPlayer][] = $card->getId();
+
+                    $this->finished_moves[$round-1][] = $playerWhoMovePlayerName;
+                    $this->moves[$playerWhoMovePlayerName][] = $card->getId();
                     $this->checkCardWon($this->round);
-                }
-            }
-        }
-        
-        if(isset($this->starting_player)&&isset($secondPlayer)){
-            $countPlayer1Moves = count($this->moves[$secondPlayer]);
-            $countPlayer2Moves = count($this->moves[$this->starting_player]);
-
-            if($countPlayer1Moves>0&&$countPlayer1Moves=$countPlayer2Moves){
-                return true;
-            }
-        }
-        
-        if(isset($this->next_move_first_player)&&isset($secondPlayer)){
-            if($this->next_move_first_player){
-                $countPlayer1Moves = count($this->moves[$secondPlayer]);
-                $countPlayer2Moves = count($this->moves[$this->next_move_first_player]);
-
-                if($countPlayer1Moves>0&&$countPlayer1Moves=$countPlayer2Moves){
+                    var_dump($this->started_moves);
                     return true;
                 }
             }
         }
+        // runda zakonczona
+//        elseif(count($this->started_moves[$round-1])==count($this->finished_moves[$round-1])){
+//            
+//        }
+        
         return false;
         
         
@@ -338,21 +326,20 @@ class Table {
         
         if(!$this->isFinished()&&$this->isStarted()){
             if($this->isGameJustStarted()){
-                $roundInfo = $dom->createElement('span',$this->{$this->starting_player}->getUsername()." starts the game");
+                $roundInfo = $dom->createElement('span',$this->{$this->started_moves[0][0]}->getUsername()." starts the game");
                 
                 $whoStartInfo = $dom->createElement('div','Round '.$this->round);
                 $whoStartInfo->setAttribute('class', 'gameInformation startGame');
-                $whoStartInfo->setAttribute('data-rel', $this->starting_player);
+                $whoStartInfo->setAttribute('data-rel', $this->started_moves[0][0]);
                 $whoStartInfo->appendChild($roundInfo);
                 $playField->appendChild($whoStartInfo);
             }
-
-            if($this->next_move_first_player&&!$this->isRoundFinished()){
+            elseif(!$this->isRoundFinished()&&$this->whoseNextMove()){
                 
                 $whoStartInfo = $dom->createElement('div','Round '.$this->round);
                 $whoStartInfo->setAttribute('class', 'gameInformation');
-                
-                $roundInfo = $dom->createElement('span',$this->{$this->next_move_first_player}->getUsername()." do next move");
+                $nextMoveObject = $this->whoseNextMove();
+                $roundInfo = $dom->createElement('span',$this->{$nextMoveObject['who']}->getUsername()." do next move");
                 
                 $whoStartInfo->appendChild($roundInfo);
                 $playField->appendChild($whoStartInfo);
@@ -599,24 +586,24 @@ class Table {
         if($this->current_skill_playing!='acceleration'){
             if($skillCard1>$skillCard2){
                 $this->moves['won'][$round-1] = 'player1';
-                $this->next_move_first_player = 'player1';
+                $this->started_moves[$round][] = 'player1';
                 $this->player1->addPointToAdd();
             }
             elseif($skillCard1<$skillCard2){
                 $this->moves['won'][$round-1] = 'player2';
-                $this->next_move_first_player = 'player2';
+                $this->started_moves[$round][] = 'player2';
                 $this->player2->addPointToAdd();
             }
         }
         else{
             if($skillCard1<$skillCard2){
                 $this->moves['won'][$round-1] = 'player1';
-                $this->next_move_first_player = 'player1';
+                $this->started_moves[$round][] = 'player1';
                 $this->player1->addPointToAdd();
             }
             elseif($skillCard1>$skillCard2){
                 $this->moves['won'][$round-1] = 'player2';
-                $this->next_move_first_player = 'player2';
+                $this->started_moves[$round][] = 'player2';
                 $this->player2->addPointToAdd();
             }
         }
@@ -642,7 +629,8 @@ class Table {
     
     public function isRoundFinished(){
         $round = $this->round;
-        if(isset($this->moves['player1'][$round-1])&&isset($this->moves['player2'][$round-1])){
+        
+        if(isset($this->finished_moves[$round-1])&&count($this->finished_moves[$round-1])==2){
             return true;
         }
         return false;
@@ -672,7 +660,6 @@ class Table {
     public function startTableByPlayer($player){
         if($player==$this->player1){
             array_push($this->moves['wantStart'],'player1');
-        echo "668";
         }
         elseif($player==$this->player2){
             array_push($this->moves['wantStart'],'player2');
@@ -686,36 +673,41 @@ class Table {
         }
     }
     
-    public function whoseNextMove($short=false){
-        if($this->isGameJustStarted()){
-            echo "691 \n";
-            $nextMove = $this->starting_player;
-        }
-        elseif(isset($this->next_move_first_player)&&$this->next_move_first_player){
-            $nextMove = $this->next_move_first_player;
-        }
-        else{
-            
-            $countPlayer1Moves = count($this->moves['player1']);
-            $countPlayer2Moves = count($this->moves['player2']);
-            echo "count1 - ".$countPlayer1Moves;
-            echo "count2 - ".$countPlayer2Moves;
-            if($countPlayer1Moves>$countPlayer2Moves){
-                $nextMove = 'player2';
-            }
-            elseif($countPlayer1Moves<$countPlayer2Moves){
-                $nextMove = 'player1';
-            }
-        }
+    public function whoseNextMove(){
         
-        var_dump($nextMove);
+        $round = $this->round;
+        // 1 ruch w danej kolejce
+        if(isset($this->started_moves[$round-1])&&count($this->started_moves[$round-1])==1&&!isset($this->finished_moves[$round-1]))
+        {
+            $nextMove = $this->started_moves[$round-1][0];
+        }
+        // ruch drugiego gracza w danej kolejce
+        elseif(isset($this->started_moves[$round-1])&&count($this->started_moves[$round-1])==2&&isset($this->finished_moves[$round-1])&&count($this->finished_moves[$round-1])==1)
+        {
+            $nextMove = $this->started_moves[$round-1][1];
+        }
+        // runda zakonczona
+//        elseif(count($this->started_moves[$round-1])==count($this->finished_moves[$round-1])){
+//            
+//        }
+        
         if(isset($nextMove)){
-            if($short)
-                $nextMove = substr($nextMove,6);
-            
-            return $nextMove;
+            $result = array('who' => $nextMove,'whoShort' => substr($nextMove,6));
+            $result['ms'] = $this->{$nextMove}->getTimer(true);
+            return $result;
         }
         
         return false;
     }
+    
+    public function isFirstMoveInRound(){
+         $round = $this->round;
+        // 1 ruch w danej kolejce
+        if(isset($this->started_moves[$round-1])&&count($this->started_moves[$round-1])==1&&!isset($this->finished_moves[$round-1]))
+        {
+            return true;
+        }
+        return false;
+    }
+    
 }

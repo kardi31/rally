@@ -27,7 +27,13 @@ class Player {
         }
     }
     
-    public function getTimer(){
+    public function getTimer($miliseconds = false){
+        if($miliseconds){
+            $explode = explode(':',$this->timer);
+            $mins = (int)$explode[0];
+            $secs = (int)$explode[1];
+            return ($mins*60+$secs)*1000;
+        }
         return $this->timer;
     }
     

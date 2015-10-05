@@ -41,7 +41,6 @@
             var msg = JSON.parse(ev.data); //PHP sends Json data
             var type = msg.type; //message type
 
-        console.log(msg);
             // request all needed data on first connection
             if (type == 'requestData') {
                 var params = {
@@ -52,19 +51,21 @@
                 }
                 websocket.send(JSON.stringify(params));
             }
+            
+            
             // when player on table
             // request display table for player
             // so opponent cards are hidden
             if (type == 'getTableForPlayer')
             {
-            console.log('getTableForPlayer');
                 var msg2 = {
                     type: 'getPlayerTable',
                     userid: '<?= $authenticatedUser['id']; ?>'
                 };
                 websocket.send(JSON.stringify(msg2));
+                
+                // if second user clicked start button, show timer
                 if(typeof (msg.started_user) !== 'undefined' && msg.started_user != user_id){
-                    console.log(msg.started_user);
                     var timerValue = 10;
                     var interval = setInterval(function() {
                         
@@ -77,16 +78,16 @@
                 }
             }
             
+            
             if(type == 'toggleTimer'){
-                console.log(player_on_move);
-                if(typeof (msg.on_move) !== 'undefined'&&msg.on_move != player_on_move){
-                    console.log('onToggle - '+msg.on_move);
-                    if(msg.on_move == 1)
+                if(typeof (msg.on_move) !== 'undefined'&&msg.on_move.who != player_on_move&&typeof (msg.no_move_clock) == 'undefined'){
+                    console.log('fafa - '+msg.on_move);
+                    if(msg.on_move.whoShort == 1)
                     {
                         divEq = 0;
                         var secondEq = 2;
                     }
-                    if(msg.on_move == 2)
+                    if(msg.on_move.whoShort == 2)
                     {
                         divEq = 2;
                         var secondEq = 0;
@@ -95,35 +96,24 @@
                     
                     var secondElement = $('.playerList div:eq('+secondEq+') span');
                     window.setTimeout(function(){
-                        player_on_move = msg.on_move;
-                        toggleElement.html('2:00');
+                        player_on_move = msg.on_move.who;
                         var countdown = 2 * 60 * 1000;
+                        if(typeof(msg.on_move.ms) !== 'undefined'){
+                            console.log(msg.on_move.ms);
+                            var countdown = msg.on_move.ms;
+                        }
                         var interval = setInterval(function() {
-                            
                             countdown -= 1000;
                             var min = Math.floor(countdown / (60 * 1000));
-                            //var sec = Math.floor(countdown - (min * 60 * 1000));  // wrong
                             var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
                             toggleElement.html(min + " : " + sec);
-//                            if(timerValue<0){
-//                                clearInterval(interval);
-//                            }
                         }, 1000);
                     },500);
-//                    var timerValue = 10;
-//                    var interval = setInterval(function() {
-//
-//                        $('.startGame').html('Start the game <br />' + timerValue);
-//                        timerValue--;
-//                        if(timerValue<0){
-//                            clearInterval(interval);
-//                        }
-//                    }, 1000);
                 }
                 
-//                    $('.playerList div:nth-of-type('+playerInfo+') div').html('01:00');
             }
             
+            // if player won and table is finished
             if (type == 'playerWon')
             {
                 
@@ -145,8 +135,8 @@
             // so opponent cards are hidden
             if (type == 'showTablePlayer')
             {
-            console.log('showTablePlayer');
                 var message = msg.message;
+                // flip just my cards, not opponent cards
                 if (typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id) {
 
                     var tableid = msg.tableid;
@@ -166,18 +156,11 @@
                     $('.playerCards div.playerCard.flipIt').flip({
                         trigger: 'manual'
                     });
-                    
-//                    var parent = $('.playerCards div.playerCard.flipIt').parent();
-//                    if(parent.hasClass('player1Cards')){
-//                        var bottom = 'auto';
-//                        var top = 175;
-//                    }
-//                    else{
-//                        var top = 'auto';
-//                        var bottom = 175;
-//                    }
                 }
+                
   
+                // move cards to middle of table
+                // then flip it
                 var elementPlayer1 = $('.playerCards.player1Cards div.playerCard.flipIt');
                 elementPlayer1.before( "<div></div>" );
                 elementPlayer1.css({"position": "absolute"});
@@ -186,7 +169,6 @@
                         left: 320
                     },function(){
                         $(this).flip(true);
-    //                  elementPlayer1.css({'top':175,'left':325});
                 });
                 var elementPlayer2 = $('.playerCards.player2Cards div.playerCard.flipIt');
                 elementPlayer2.before( "<div></div>" );
@@ -196,9 +178,10 @@
                     left: 320     
                 },function(){
                     $(this).flip(true);
-    //                  elementPlayer2.css({'bottom':175,'left':325});
                 });
-                 if (typeof (msg.wonPlayer) !== 'undefined'){
+                
+                // player who won this round
+                if (typeof (msg.wonPlayer) !== 'undefined'){
                     window.setTimeout(function(){
                         if(msg.wonPlayer=='player1'){
                             elementPlayer1.css({'z-index':10});
@@ -212,33 +195,8 @@
                                     left:0,
                                     duration: 2000
                                 },function(){
-                                    var msg = {
-                                        type: 'getPlayerTable',
-                                        refreshPoints: true,
-                                        userid: '<?= $authenticatedUser['id']; ?>'
-                                    };
-                                    websocket.send(JSON.stringify(msg));
-                                    elementPlayer1.remove();
-                                    elementPlayer2.remove();
                                     
-                                });
-                                
-                                
-                            });
-                            
-                    }
-                    if(msg.wonPlayer=='player2'){
-                        elementPlayer2.css({'z-index':10});
-                        elementPlayer1.animate({
-                            top: 350,
-                            left: 320,
-                            duration: 5000
-                        },function(){
-                            $('.playerCards div.playerCard.flipIt').animate({
-                                top:525,
-                                left:0,
-                                duration: 2000
-                            },function(){
+                                    // when animation finished, refresh table
                                     var msg = {
                                         type: 'getPlayerTable',
                                         refreshPoints: true,
@@ -248,10 +206,32 @@
                                     elementPlayer1.remove();
                                     elementPlayer2.remove();
                                 });
-                        });
-                    }
-                     },3000);
-                    
+                            });
+                        }
+                        if(msg.wonPlayer=='player2'){
+                            elementPlayer2.css({'z-index':10});
+                            elementPlayer1.animate({
+                                top: 350,
+                                left: 320,
+                                duration: 5000
+                            },function(){
+                                $('.playerCards div.playerCard.flipIt').animate({
+                                    top:525,
+                                    left:0,
+                                    duration: 2000
+                                },function(){
+                                    var msg = {
+                                        type: 'getPlayerTable',
+                                        refreshPoints: true,
+                                        userid: '<?= $authenticatedUser['id']; ?>'
+                                    };
+                                    websocket.send(JSON.stringify(msg));
+                                    elementPlayer1.remove();
+                                    elementPlayer2.remove();
+                                });
+                            });
+                        }
+                    },3000);
                 }
                 
                 $("#stop").click(function(){
@@ -261,13 +241,7 @@
                 var gameInformation = $('.gameInformation');
                 if(gameInformation.hasClass('startsGame')){
                     var playerInfo = $(this).attr('data-rel');
-//                    $('.playerList div:nth-of-type('+playerInfo+') div').html('01:00');
                 }
-//setTimeout(function(){
-//    
-//                $('.playerCards div.playerCard.flipIt').flip(true);
-//}, 500);
-//                $('#cardTableList').html(message);
             }
 
             // if you join table - show table
