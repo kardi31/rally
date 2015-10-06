@@ -135,6 +135,7 @@
             // so opponent cards are hidden
             if (type == 'showTablePlayer')
             {
+            console.log('showTablePlayer');
                 var message = msg.message;
                 // flip just my cards, not opponent cards
                 if (typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id) {
@@ -161,87 +162,88 @@
   
                 // move cards to middle of table
                 // then flip it
-                var elementPlayer1 = $('.playerCards.player1Cards div.playerCard.flipIt');
-                elementPlayer1.before( "<div></div>" );
-                elementPlayer1.css({"position": "absolute"});
-                elementPlayer1.animate({
-                        top: 175,
-                        left: 320
-                    },function(){
-                        $(this).flip(true);
-                });
-                var elementPlayer2 = $('.playerCards.player2Cards div.playerCard.flipIt');
-                elementPlayer2.before( "<div></div>" );
-                elementPlayer2.css({"position": "absolute","top":525});
-                elementPlayer2.animate({
-                    top: 350,
-                    left: 320     
-                },function(){
-                    $(this).flip(true);
-                });
+//                var elementPlayer1 = $('.playerCards.player1Cards div.playerCard.flipIt');
+//                elementPlayer1.before( "<div></div>" );
+//                elementPlayer1.css({"position": "absolute"});
+//                elementPlayer1.animate({
+//                        top: 175,
+//                        left: 320
+//                    },function(){
+//                        $(this).flip(true);
+//                });
+//                var elementPlayer2 = $('.playerCards.player2Cards div.playerCard.flipIt');
+//                elementPlayer2.before( "<div></div>" );
+//                elementPlayer2.css({"position": "absolute","top":525});
+//                elementPlayer2.animate({
+//                    top: 350,
+//                    left: 320     
+//                },function(){
+//                    $(this).flip(true);
+//                });
                 
                 // player who won this round
-                if (typeof (msg.wonPlayer) !== 'undefined'){
-                    window.setTimeout(function(){
-                        if(msg.wonPlayer=='player1'){
-                            elementPlayer1.css({'z-index':10});
-                            elementPlayer2.animate({
-                                top: 175,
-                                left: 325,
-                                duration: 5000
-                            },function(){
-                                $('.playerCards div.playerCard.flipIt').animate({
-                                    top:0,
-                                    left:0,
-                                    duration: 2000
-                                },function(){
-                                    
-                                    // when animation finished, refresh table
-                                    var msg = {
-                                        type: 'getPlayerTable',
-                                        refreshPoints: true,
-                                        userid: '<?= $authenticatedUser['id']; ?>'
-                                    };
-                                    websocket.send(JSON.stringify(msg));
-                                    elementPlayer1.remove();
-                                    elementPlayer2.remove();
-                                });
-                            });
-                        }
-                        if(msg.wonPlayer=='player2'){
-                            elementPlayer2.css({'z-index':10});
-                            elementPlayer1.animate({
-                                top: 350,
-                                left: 320,
-                                duration: 5000
-                            },function(){
-                                $('.playerCards div.playerCard.flipIt').animate({
-                                    top:525,
-                                    left:0,
-                                    duration: 2000
-                                },function(){
-                                    var msg = {
-                                        type: 'getPlayerTable',
-                                        refreshPoints: true,
-                                        userid: '<?= $authenticatedUser['id']; ?>'
-                                    };
-                                    websocket.send(JSON.stringify(msg));
-                                    elementPlayer1.remove();
-                                    elementPlayer2.remove();
-                                });
-                            });
-                        }
-                    },3000);
-                }
-                
-                $("#stop").click(function(){
-                    $('.playerCards div.playerCard.flipIt').stop();
-                });
-                
-                var gameInformation = $('.gameInformation');
-                if(gameInformation.hasClass('startsGame')){
-                    var playerInfo = $(this).attr('data-rel');
-                }
+                console.log(msg.wonPlayer);
+//                if (typeof (msg.wonPlayer) !== 'undefined'){
+//                    window.setTimeout(function(){
+//                        if(msg.wonPlayer=='player1'){
+//                            elementPlayer1.css({'z-index':10});
+//                            elementPlayer2.animate({
+//                                top: 175,
+//                                left: 325,
+//                                duration: 5000
+//                            },function(){
+//                                $('.playerCards div.playerCard.flipIt').animate({
+//                                    top:0,
+//                                    left:0,
+//                                    duration: 2000
+//                                },function(){
+//                                    
+//                                    // when animation finished, refresh table
+//                                    var msg = {
+//                                        type: 'getPlayerTable',
+//                                        refreshPoints: true,
+//                                        userid: '<?= $authenticatedUser['id']; ?>'
+//                                    };
+//                                    websocket.send(JSON.stringify(msg));
+//                                    elementPlayer1.remove();
+//                                    elementPlayer2.remove();
+//                                });
+//                            });
+//                        }
+//                        if(msg.wonPlayer=='player2'){
+//                            elementPlayer2.css({'z-index':10});
+//                            elementPlayer1.animate({
+//                                top: 350,
+//                                left: 320,
+//                                duration: 5000
+//                            },function(){
+//                                $('.playerCards div.playerCard.flipIt').animate({
+//                                    top:525,
+//                                    left:0,
+//                                    duration: 2000
+//                                },function(){
+//                                    var msg = {
+//                                        type: 'getPlayerTable',
+//                                        refreshPoints: true,
+//                                        userid: '<?= $authenticatedUser['id']; ?>'
+//                                    };
+//                                    websocket.send(JSON.stringify(msg));
+//                                    elementPlayer1.remove();
+//                                    elementPlayer2.remove();
+//                                });
+//                            });
+//                        }
+//                    },3000);
+//                }
+//                
+//                $("#stop").click(function(){
+//                    $('.playerCards div.playerCard.flipIt').stop();
+//                });
+//                
+//                var gameInformation = $('.gameInformation');
+//                if(gameInformation.hasClass('startsGame')){
+//                    var playerInfo = $(this).attr('data-rel');
+//                }
             }
 
             // if you join table - show table

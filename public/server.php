@@ -219,6 +219,8 @@ while (true) {
                                     
                                     
                                     if($wonPlayer = $table->swipeCardsToWonPlayer()){
+                                        var_dump('won-player');
+                                        var_dump($wonPlayer);
                                         $passedParameters['wonPlayer'] = $wonPlayer;
                                     }
                                     

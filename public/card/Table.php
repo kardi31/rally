@@ -573,10 +573,10 @@ class Table {
         $round = $this->round;
         $card1Id = $this->moves['player1'][$round-1];
         $card1 = $this->player1->getCardById($card1Id);
-        
+        echo "card1id - ".$card1Id;
         $card2Id = $this->moves['player2'][$round-1];
         $card2 = $this->player2->getCardById($card2Id);
-        
+        echo "card2id - ".$card2Id;
         $skillCard1 = $card1->get($this->current_skill_playing);
         $skillCard2 = $card2->get($this->current_skill_playing);
         
@@ -607,6 +607,7 @@ class Table {
                 $this->player2->addPointToAdd();
             }
         }
+        var_dump($this->moves['won']);
     }
     
     public function swipeCardsToWonPlayer(){
@@ -621,7 +622,6 @@ class Table {
             
             unset($this->current_skill_playing);
             $this->round++;
-            
             return $this->moves['won'][$round-1];
         }
         return false;
@@ -637,6 +637,7 @@ class Table {
     }
     
     public function refreshPoints(){
+        var_dump('refresh-points');
         $this->player1->refreshPoints();
         $this->player2->refreshPoints();
     }
