@@ -122,7 +122,6 @@ class Table {
                 $card = $player->getCard($cardOrderNo);
                 $this->moves[$playerWhoMovePlayerName][] = $card->getId();
                 $this->finished_moves[$round-1][] = $playerWhoMovePlayerName;
-                var_dump($playerWhoMovePlayerName);
                 if($playerWhoMovePlayerName=='player1'){
                     $this->started_moves[$round-1][] = 'player2';
                 }
@@ -155,7 +154,6 @@ class Table {
                     $this->finished_moves[$round-1][] = $playerWhoMovePlayerName;
                     $this->moves[$playerWhoMovePlayerName][] = $card->getId();
                     $this->checkCardWon($this->round);
-                    var_dump($this->started_moves);
                     return true;
                 }
             }
@@ -607,7 +605,6 @@ class Table {
                 $this->player2->addPointToAdd();
             }
         }
-        var_dump($this->moves['won']);
     }
     
     public function swipeCardsToWonPlayer(){
@@ -619,6 +616,7 @@ class Table {
 
             $this->player1->setCardDone($player1CardId);
             $this->player2->setCardDone($player2CardId);
+            
             
             unset($this->current_skill_playing);
             $this->round++;

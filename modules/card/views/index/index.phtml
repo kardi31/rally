@@ -11,10 +11,10 @@
         var player_on_move;
         
         websocket.onopen = function (ev) { // connection is open 
-            setInterval(function () {
-                if (websocket.bufferedAmount == 0)
-                    websocket.send("Keep alive from client");
-            }, 30000);
+//            setInterval(function () {
+//                if (websocket.bufferedAmount == 0)
+//                    websocket.send("Keep alive from client");
+//            }, 30000);
 //             var msg = {
 //                type: 'refreshed',
 //                userid: '<?= $authenticatedUser['id']; ?>'
@@ -58,6 +58,7 @@
             // so opponent cards are hidden
             if (type == 'getTableForPlayer')
             {
+                console.log('getTableForPlayer');
                 var msg2 = {
                     type: 'getPlayerTable',
                     userid: '<?= $authenticatedUser['id']; ?>'
@@ -81,7 +82,7 @@
             
             if(type == 'toggleTimer'){
                 if(typeof (msg.on_move) !== 'undefined'&&msg.on_move.who != player_on_move&&typeof (msg.no_move_clock) == 'undefined'){
-                    console.log('fafa - '+msg.on_move);
+                    console.log('toogleTimer-in');
                     if(msg.on_move.whoShort == 1)
                     {
                         divEq = 0;
@@ -117,6 +118,7 @@
             if (type == 'playerWon')
             {
                 
+                console.log('playerWon');
                 if (typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id) {
                     var tableid = msg.tableid;
                     window.location.hash = tableid;
@@ -135,107 +137,111 @@
             // so opponent cards are hidden
             if (type == 'showTablePlayer')
             {
-            console.log('showTablePlayer');
+                console.log('showTablePlayer');
                 var message = msg.message;
                 // flip just my cards, not opponent cards
-                if (typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id) {
+                if ((typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id)||(typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)) {
 
                     var tableid = msg.tableid;
                     window.location.hash = tableid;
-                    $('.cardTableWrapper').html(msg.showTable);
+                    if(msg.user_id == user_id){
+                        $('.cardTableWrapper').html(msg.showTable);
+                    }
+                    if(msg.user_id2 == user_id){
+                        $('.cardTableWrapper').html(msg.showTable2);
+                    }
                     $('.playerCards div.playerCard.flipIt').flip({
                        trigger: 'manual'
                     });
                     
                     
-                }
-                if (typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id) {
-
-                    var tableid = msg.tableid;
-                    window.location.hash = tableid;
-                    $('.cardTableWrapper').html(msg.showTable2);
-                    $('.playerCards div.playerCard.flipIt').flip({
-                        trigger: 'manual'
-                    });
-                }
                 
   
                 // move cards to middle of table
                 // then flip it
-//                var elementPlayer1 = $('.playerCards.player1Cards div.playerCard.flipIt');
-//                elementPlayer1.before( "<div></div>" );
-//                elementPlayer1.css({"position": "absolute"});
-//                elementPlayer1.animate({
-//                        top: 175,
-//                        left: 320
-//                    },function(){
-//                        $(this).flip(true);
-//                });
-//                var elementPlayer2 = $('.playerCards.player2Cards div.playerCard.flipIt');
-//                elementPlayer2.before( "<div></div>" );
-//                elementPlayer2.css({"position": "absolute","top":525});
-//                elementPlayer2.animate({
-//                    top: 350,
-//                    left: 320     
-//                },function(){
-//                    $(this).flip(true);
-//                });
-                
+                var elementPlayer1 = $('.playerCards.player1Cards div.playerCard.flipIt');
+                elementPlayer1.before( "<div></div>" );
+                elementPlayer1.css({"position": "absolute"});
+                elementPlayer1.animate({
+                        top: 175,
+                        left: 320
+                    },function(){
+                        $(this).flip(true);
+                });
+                var elementPlayer2 = $('.playerCards.player2Cards div.playerCard.flipIt');
+                elementPlayer2.before( "<div></div>" );
+                elementPlayer2.css({"position": "absolute","top":525});
+                elementPlayer2.animate({
+                    top: 350,
+                    left: 320     
+                },function(){
+                    $(this).flip(true);
+                });
                 // player who won this round
                 console.log(msg.wonPlayer);
-//                if (typeof (msg.wonPlayer) !== 'undefined'){
-//                    window.setTimeout(function(){
-//                        if(msg.wonPlayer=='player1'){
-//                            elementPlayer1.css({'z-index':10});
-//                            elementPlayer2.animate({
-//                                top: 175,
-//                                left: 325,
-//                                duration: 5000
-//                            },function(){
+                if (typeof (msg.wonPlayer) !== 'undefined'){
+                    window.setTimeout(function(){
+                        
+                        if(msg.wonPlayer=='player1'){
+                            elementPlayer1.css({'z-index':10});
+                            elementPlayer2.animate({
+                                top: 175,
+                                left: 325,
+                                duration: 5000
+                            },function(){
 //                                $('.playerCards div.playerCard.flipIt').animate({
 //                                    top:0,
 //                                    left:0,
 //                                    duration: 2000
 //                                },function(){
 //                                    
+//                                    // unset variable for clock, so it can move on
+                                    player_on_move = false;
 //                                    // when animation finished, refresh table
-//                                    var msg = {
-//                                        type: 'getPlayerTable',
-//                                        refreshPoints: true,
-//                                        userid: '<?= $authenticatedUser['id']; ?>'
-//                                    };
-//                                    websocket.send(JSON.stringify(msg));
+                                    var msg5 = {
+                                        type: 'getPlayerTable',
+                                        refreshPoints: true,
+                                        userid: '<?= $authenticatedUser['id']; ?>'
+                                    };
+                                    websocket.send(JSON.stringify(msg5));
+                                    elementPlayer1.remove();
+                                    elementPlayer2.remove();
+//                                });
+                            });
+                        }
+                        if(msg.wonPlayer=='player2'){
+                        
+                            elementPlayer2.css({'z-index':10});
+                            elementPlayer1.animate({
+                                top: 350,
+                                left: 320,
+                                duration: 5000
+                            },function(){
+                            
+//                                    // unset variable for clock, so it can move on
+                                    player_on_move = false;
+                                    var msg6 = {
+                                        type: 'getPlayerTable',
+                                        refreshPoints: true,
+                                        userid: '<?= $authenticatedUser['id']; ?>'
+                                    };
+                                    console.log(msg6);
+                                    websocket.send(JSON.stringify(msg6));
+//                                    $('.playerCards div.playerCard.flipIt').animate({
+//                                        top:525,
+//                                        left:0,
+//                                        duration: 2000
+//                                    },function(){
+//                                  
 //                                    elementPlayer1.remove();
 //                                    elementPlayer2.remove();
 //                                });
-//                            });
-//                        }
-//                        if(msg.wonPlayer=='player2'){
-//                            elementPlayer2.css({'z-index':10});
-//                            elementPlayer1.animate({
-//                                top: 350,
-//                                left: 320,
-//                                duration: 5000
-//                            },function(){
-//                                $('.playerCards div.playerCard.flipIt').animate({
-//                                    top:525,
-//                                    left:0,
-//                                    duration: 2000
-//                                },function(){
-//                                    var msg = {
-//                                        type: 'getPlayerTable',
-//                                        refreshPoints: true,
-//                                        userid: '<?= $authenticatedUser['id']; ?>'
-//                                    };
-//                                    websocket.send(JSON.stringify(msg));
-//                                    elementPlayer1.remove();
-//                                    elementPlayer2.remove();
-//                                });
-//                            });
-//                        }
-//                    },3000);
-//                }
+                            });
+                        }
+                    },3000);
+                }
 //                
+                }
 //                $("#stop").click(function(){
 //                    $('.playerCards div.playerCard.flipIt').stop();
 //                });
@@ -249,6 +255,8 @@
             // if you join table - show table
             if (type == 'joinedTable')
             {
+                
+                console.log('joinedTable');
                 var message = msg.message;
                 if (typeof (msg.tableid) !== 'undefined' && typeof (msg.user_id) !== 'undefined') {
                     if (msg.user_id == user_id || (typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)) {
@@ -280,38 +288,7 @@
              */
 
 
-            $('.playerCards:not(.done) div table tr:not(:first-of-type)').click(function () {
-                var skillNo = $(this).index();
-                var parentPlayerCards = $(this).parents('.playerCards');
-
-                var parentCard = $(this).parents('.playerCards div.playerCard');
-
-                var cardNo = parentCard.attr('data-rel');
-                var cardUserId = parentPlayerCards.attr('data-id');
-                
-                if(parentPlayerCards.hasClass('player1Cards')){
-                    var playerNo = 1;
-                    var divEq = 0;
-                }
-                if(parentPlayerCards.hasClass('player2Cards')){
-                    var playerNo = 2;
-                    var divEq = 2;
-                }
-                
-                var toggleElement = $('.playerList div:eq('+divEq+') span');
-                
-                if (cardUserId == user_id) {
-                    var msg = {
-                        type: 'cardClicked',
-                        cardNo: cardNo,
-                        timer: toggleElement.html(),
-                        skillNo: skillNo,
-                        playerNo: playerNo,
-                        userid: '<?= $authenticatedUser['id']; ?>'
-                    };
-                    websocket.send(JSON.stringify(msg));
-                }
-            });
+            
 
 
             // when you want to start the game
@@ -392,6 +369,39 @@
             };
             websocket.send(JSON.stringify(msg));
         };
+        
+        $('.cardTableWrapper').delegate('.playerCards:not(.done) div table tr:not(:first-of-type)','click',function () {
+                var skillNo = $(this).index();
+                var parentPlayerCards = $(this).parents('.playerCards');
+
+                var parentCard = $(this).parents('.playerCards div.playerCard');
+
+                var cardNo = parentCard.attr('data-rel');
+                var cardUserId = parentPlayerCards.attr('data-id');
+                
+                if(parentPlayerCards.hasClass('player1Cards')){
+                    var playerNo = 1;
+                    var divEq = 0;
+                }
+                if(parentPlayerCards.hasClass('player2Cards')){
+                    var playerNo = 2;
+                    var divEq = 2;
+                }
+                
+                var toggleElement = $('.playerList div:eq('+divEq+') span');
+                
+                if (cardUserId == user_id) {
+                    var msg = {
+                        type: 'cardClicked',
+                        cardNo: cardNo,
+                        timer: toggleElement.html(),
+                        skillNo: skillNo,
+                        playerNo: playerNo,
+                        userid: '<?= $authenticatedUser['id']; ?>'
+                    };
+                    websocket.send(JSON.stringify(msg));
+                }
+            });
     });
 </script>
 
