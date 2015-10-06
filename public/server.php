@@ -75,13 +75,28 @@ while (true) {
                             // joined the game
                             if($tst_msg->type=="joined"){
 //                                echo "joined\r\n";
-                                if(!$players->getPlayer($tst_msg->userid)){
+                                if(!$player = $players->getPlayer($tst_msg->userid)){
                                     $player = $players->addPlayer($tst_msg->userid,$tst_msg->username,json_decode($tst_msg->cards,true));
-
-                                    $found_socket = array_search($changed_socket, $clients);
-                                    $userSockets[$tst_msg->userid] = $clients[$found_socket];
                                 }
+                                $found_socket = array_search($changed_socket, $clients);
+                                $userSockets[$tst_msg->userid] = $clients[$found_socket];
+                                
 
+                                if($tableId = $player->getTable()){
+                                    $passedParameters = array();
+                                    $table = $tables->getTable($tableId);
+
+                                    $passedParameters['tableid'] = $tableId;
+                                    $passedParameters['user_id'] = $tst_msg->userid;
+
+                                    $passedParameters['showTable'] = $table->showTable($tst_msg->userid);
+                                    $passedParameters['type'] = 'getTableForPlayer';
+                                    
+                                    
+                                    $response_text = mask(json_encode($passedParameters));
+                                    send_message($response_text);
+                                }
+                                
                                 refreshPlayerList($players);
 
                             }
@@ -166,21 +181,18 @@ while (true) {
                             // Get table just for this player
                             elseif($tst_msg->type=="getPlayerTable"){
                                 $player = $players->getPlayer($tst_msg->userid);
-                                $tableid = $player->getTable();
-                                $table = $tables->getTable($tableid);
-
-                                if(isset($userSockets[$player->getId()])&&$userSockets[$player->getId()]==$changed_socket){
+                                var_dump(isset($userSockets[$player->getId()]));
+                                var_dump($userSockets);
+                                var_dump($userSockets[$player->getId()]==$changed_socket);
+                                if(isset($userSockets[$player->getId()])&&$userSockets[$player->getId()]==$changed_socket&&$tableid = $player->getTable()){
+                                    echo '186';
 //                                echo "showTablePlayer - ".$player->getId()."\r\n";
                                 
                                     $passedParameters = array('type'=>'showTablePlayer');
 
                                     $userOnTableIds = $table->getPlayerIds();
-//                                    if($userOnTableIds['user_id']==$player->getId()){
-//                                        unset($userOnTableIds['user_id2']);
-//                                    }
-//                                    else{
-//                                        unset($userOnTableIds['user_id']);
-//                                    }
+
+                                    $table = $tables->getTable($tableid);
                                     
                                     $passedParameters = array_merge($passedParameters,$userOnTableIds);
                                     $refreshPoints = false;
@@ -188,8 +200,12 @@ while (true) {
                                         $refreshPoints = $tst_msg->refreshPoints;
                                         
                                     }
+                                    if(isset($userOnTableIds['user_id'])){
                                     $passedParameters['showTable'] = $table->showTable($userOnTableIds['user_id'],$refreshPoints);
-                                    $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2'],$refreshPoints);
+                                    }
+                                    if(isset($userOnTableIds['user_id2'])){
+                                        $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2'],$refreshPoints);
+                                    }
                                     $passedParameters['tableid'] = $tableid;
 
                                     if($table->isFinished()){
@@ -200,7 +216,7 @@ while (true) {
                                     $response_text = mask(json_encode($passedParameters));
                                     send_message($response_text); //send data
                                     
-                                    if($table->isStarted()&&$onMove = $table->whoseNextMove()){
+                                    if($table->isStarted()&&!$table->isFinished()&&$onMove = $table->whoseNextMove()){
                                         var_dump($onMove);
                                         $moveParameters = array('type' => 'toggleTimer');
 
@@ -250,9 +266,9 @@ while (true) {
                                             $moveParameters = array('type' => 'toggleTimer');
     //                                        echo "card clicked \r\n";
 
-//                                            if($isFirstMoveInRound){
-//                                                $moveParameters['no_move_clock'] = true;
-//                                            }
+                                            if(isset($passedParameters['wonPlayer'])){
+                                                $moveParameters['no_move_clock'] = true;
+                                            }
                                             $moveParameters['on_move'] = $onMove;
                                             $response_text3 = mask(json_encode($moveParameters));
                                             send_message($response_text3);

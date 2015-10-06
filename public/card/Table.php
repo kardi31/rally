@@ -356,7 +356,9 @@ class Table {
             $player2Cards->setAttribute('class','playerCards done');
             
             
-            $whoWon = $dom->createElement('div','Round '.$this->round);
+//            $startGameBtn = $dom->createElement('button','Start the game');
+//            $startGameBtn->setAttribute('class', 'startGame');
+            $whoWon = $dom->createElement('div');
             $roundInfo = $dom->createElement('span',$this->{$this->isFinished()}->getUsername()." has won the game");
             $whoWon->setAttribute('class', 'gameInformation');
             

@@ -43,6 +43,7 @@
 
             // request all needed data on first connection
             if (type == 'requestData') {
+                console.log('requestData');
                 var params = {
                     type: 'joined',
                     cards: '<?= $userCards; ?>',
@@ -118,6 +119,9 @@
             if (type == 'playerWon')
             {
                 
+                for (var i = 1; i < 99999; i++) {
+                    window.clearInterval(i);
+                }
                 console.log('playerWon');
                 if (typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id) {
                     var tableid = msg.tableid;
@@ -178,8 +182,9 @@
                     $(this).flip(true);
                 });
                 // player who won this round
-                console.log(msg.wonPlayer);
                 if (typeof (msg.wonPlayer) !== 'undefined'){
+                    
+                   
                     window.setTimeout(function(){
                         
                         if(msg.wonPlayer=='player1'){
@@ -256,7 +261,6 @@
             if (type == 'joinedTable')
             {
                 
-                console.log('joinedTable');
                 var message = msg.message;
                 if (typeof (msg.tableid) !== 'undefined' && typeof (msg.user_id) !== 'undefined') {
                     if (msg.user_id == user_id || (typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)) {
@@ -601,6 +605,18 @@
         width:25%;
         float:left;
         border:1px solid black;
+    }
+    .startGame{
+        background: #0000ff;
+        border: none;
+        box-shadow: none;
+        color: #fff;
+        padding: 10px;
+        margin: 0 auto;
+        display: block;
+        top: 125px;
+        position: relative;
+        font-size: 25px;
     }
 </style>
 <span class="cardUserBoxWrapper">
