@@ -23,10 +23,12 @@ class PlayerCollection {
     public function removePlayer($userid,$tables) {
         if(isset($this->items[$userid])){
             $player = $this->items[$userid];
-            if($player->getTable()){
-                $tables->removeTable($player->getTable());
-            }
+//            if($player->getTable()){
+//                $tables->removeTable($player->getTable());
+//            }
             unset($this->items[$userid]);
+            if($player->getTable())
+                return $player->getTable();
         }
     }
     

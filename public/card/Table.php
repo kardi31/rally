@@ -24,7 +24,8 @@ class Table {
     
     protected $started_moves = array();
     protected $finished_moves = array();
-    
+    protected $players_left_table = array();
+    protected $player_won = false;
     
     public function __construct($player,$id){
         $this->player1 = $player;
@@ -54,6 +55,11 @@ class Table {
             $player2->setAttribute('class','cardTablePlayer');
             $cardTablePlayers->appendChild($player2);
         }
+    }
+    
+    
+    public function getPlayer($position=1){
+        return $this->{'player'.$position};
     }
     
     public function addPlayer($player){
@@ -115,7 +121,6 @@ class Table {
         // 1 ruch w danej kolejce
         if(count($this->started_moves[$round-1])==1&&!isset($this->finished_moves[$round-1]))
         {
-            var_dump('pierwszy ruch');
             $playerWhoMove = $this->{$this->started_moves[$round-1][0]};
             $playerWhoMovePlayerName = $this->started_moves[$round-1][0];
             if($player==$playerWhoMove){
@@ -135,7 +140,6 @@ class Table {
         // ruch drugiego gracza w danej kolejce
         elseif(count($this->started_moves[$round-1])==2&&isset($this->finished_moves[$round-1])&&count($this->finished_moves[$round-1])==1)
         {
-            var_dump('drugi ruch');
             $playerWhoMove = $this->{$this->started_moves[$round-1][1]};
             $playerWhoMovePlayerName = $this->started_moves[$round-1][1];
             if($player==$playerWhoMove){
@@ -321,26 +325,35 @@ class Table {
         
         $playField = $dom->createElement('div');
         $playField->setAttribute('class', 'playField');
-        
         if(!$this->isFinished()&&$this->isStarted()){
-            if($this->isGameJustStarted()){
-                $roundInfo = $dom->createElement('span',$this->{$this->started_moves[0][0]}->getUsername()." starts the game");
-                
-                $whoStartInfo = $dom->createElement('div','Round '.$this->round);
-                $whoStartInfo->setAttribute('class', 'gameInformation startGame');
-                $whoStartInfo->setAttribute('data-rel', $this->started_moves[0][0]);
-                $whoStartInfo->appendChild($roundInfo);
-                $playField->appendChild($whoStartInfo);
+            if($playerLeft = $this->isTableBeenLeft()){
+
+                $playerLeftBtn = $dom->createElement('button',$this->{$playerLeft}->getUsername()." has left the table.");
+                $leftTimer = $dom->createElement('span',"00:30");
+                $playerLeftBtn->setAttribute('class', 'playerLeft');
+                $playerLeftBtn->setAttribute('disabled', 'disabled');
+                $playerLeftBtn->appendChild($leftTimer);
+                $playField->appendChild($playerLeftBtn);
             }
-            elseif(!$this->isRoundFinished()&&$this->whoseNextMove()){
-                
-                $whoStartInfo = $dom->createElement('div','Round '.$this->round);
-                $whoStartInfo->setAttribute('class', 'gameInformation');
-                $nextMoveObject = $this->whoseNextMove();
-                $roundInfo = $dom->createElement('span',$this->{$nextMoveObject['who']}->getUsername()." do next move");
-                
-                $whoStartInfo->appendChild($roundInfo);
-                $playField->appendChild($whoStartInfo);
+            else{
+                if($this->isGameJustStarted()){
+                    $roundInfo = $dom->createElement('span',$this->{$this->started_moves[0][0]}->getUsername()." starts the game");
+
+                    $whoStartInfo = $dom->createElement('div','Round '.$this->round);
+                    $whoStartInfo->setAttribute('class', 'gameInformation');
+                    $whoStartInfo->setAttribute('data-rel', $this->started_moves[0][0]);
+                    $whoStartInfo->appendChild($roundInfo);
+                    $playField->appendChild($whoStartInfo);
+                }
+                elseif(!$this->isRoundFinished()&&$this->whoseNextMove()){
+                    $whoStartInfo = $dom->createElement('div','Round '.$this->round);
+                    $whoStartInfo->setAttribute('class', 'gameInformation');
+                    $nextMoveObject = $this->whoseNextMove();
+                    $roundInfo = $dom->createElement('span',$this->{$nextMoveObject['who']}->getUsername()." do next move");
+
+                    $whoStartInfo->appendChild($roundInfo);
+                    $playField->appendChild($whoStartInfo);
+                }
             }
         }
         elseif(!$this->isStarted()){
@@ -573,14 +586,11 @@ class Table {
         $round = $this->round;
         $card1Id = $this->moves['player1'][$round-1];
         $card1 = $this->player1->getCardById($card1Id);
-        echo "card1id - ".$card1Id;
         $card2Id = $this->moves['player2'][$round-1];
         $card2 = $this->player2->getCardById($card2Id);
-        echo "card2id - ".$card2Id;
         $skillCard1 = $card1->get($this->current_skill_playing);
         $skillCard2 = $card2->get($this->current_skill_playing);
         
-        echo "check card won \r\n";
         
         
         if($this->current_skill_playing!='acceleration'){
@@ -637,20 +647,31 @@ class Table {
     }
     
     public function refreshPoints(){
-        var_dump('refresh-points');
         $this->player1->refreshPoints();
         $this->player2->refreshPoints();
     }
     
+    public function setPlayerWon($player){
+        if($player==$this->player1){
+            $this->player_won = 'player1';
+        }
+        elseif($player==$this->player2){
+            $this->player_won = 'player2';
+        }
+    }
+    
     public function isFinished(){
-        if(isset($this->player1)&&isset($this->player2)){
+        
+        if($this->player_won){
+            return $this->player_won;
+        }
+        elseif(isset($this->player1)&&isset($this->player2)){
             if($this->player1->hasWon())
                 return 'player1';
             
             if($this->player2->hasWon())
                 return 'player2';
         }
-        
         return false;
     }
     
@@ -672,6 +693,17 @@ class Table {
                 unset($this->moves['wantStart'][1]);
             }
         }
+    }
+    
+    public function getOtherPlayer($player){
+        if($player==$this->player1){
+            return $this->player2;
+        }
+        elseif($player==$this->player2){
+            return $this->player1;
+        }
+        
+        return false;
     }
     
     public function whoseNextMove(){
@@ -709,6 +741,30 @@ class Table {
             return true;
         }
         return false;
+    }
+    
+    public function setPlayerLeftTable($player){
+        if($player== $this->player1){
+            $this->players_left_table[$player->getId()] = 'player1';
+        }
+        elseif($player== $this->player2){
+            $this->players_left_table[$player->getId()] = 'player2';
+        }
+    }
+    
+    public function isTableBeenLeft(){
+        if(!empty($this->players_left_table)){
+            $key = key($this->players_left_table);
+            return $this->players_left_table[$key];
+        }
+        
+        return false;
+    }
+    
+    public function setPlayerBackOnTable($player){
+        if(isset($this->players_left_table[$player->getId()])){
+            unset($this->players_left_table[$player->getId()]);
+        }
     }
     
 }

@@ -82,8 +82,48 @@
             
             
             if(type == 'toggleTimer'){
-                if(typeof (msg.on_move) !== 'undefined'&&msg.on_move.who != player_on_move&&typeof (msg.no_move_clock) == 'undefined'){
-                    console.log('toogleTimer-in');
+            
+                if (((typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)||(typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id))) {
+                    if(typeof (msg.on_move) !== 'undefined'&&typeof (msg.no_move_clock) == 'undefined'){
+                        console.log('toogleTimer-in');
+                        console.log(msg.on_move);
+                        if(msg.on_move.whoShort == 1)
+                        {
+                            divEq = 0;
+                            var secondEq = 2;
+                        }
+                        if(msg.on_move.whoShort == 2)
+                        {
+                            divEq = 2;
+                            var secondEq = 0;
+                        }
+                        var toggleElement = $('.playerList div:eq('+divEq+') span');
+
+                        var secondElement = $('.playerList div:eq('+secondEq+') span');
+                        window.setTimeout(function(){
+                            player_on_move = msg.on_move.who;
+                            var countdown = 2 * 60 * 1000;
+                            if(typeof(msg.on_move.ms) !== 'undefined'){
+                                console.log(msg.on_move.ms);
+                                var countdown = msg.on_move.ms;
+                            }
+                            var interval = setInterval(function() {
+                                countdown -= 1000;
+                                var min = Math.floor(countdown / (60 * 1000));
+                                var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
+                                toggleElement.html(min + " : " + sec);
+                            }, 1000);
+                        },500);
+                    }
+                }
+            }
+            
+            
+            if(type == 'getTimer'){
+            console.log('getTimer');
+                if(typeof (msg.on_move) !== 'undefined'&&msg.on_move.who != player_on_move&&typeof (msg.no_move_clock) == 'undefined'&&msg.on_move.who == user_id){
+                    
+            console.log('getTimer - in');
                     if(msg.on_move.whoShort == 1)
                     {
                         divEq = 0;
@@ -95,24 +135,42 @@
                         var secondEq = 0;
                     }
                     var toggleElement = $('.playerList div:eq('+divEq+') span');
-                    
                     var secondElement = $('.playerList div:eq('+secondEq+') span');
-                    window.setTimeout(function(){
-                        player_on_move = msg.on_move.who;
-                        var countdown = 2 * 60 * 1000;
-                        if(typeof(msg.on_move.ms) !== 'undefined'){
-                            console.log(msg.on_move.ms);
-                            var countdown = msg.on_move.ms;
-                        }
-                        var interval = setInterval(function() {
-                            countdown -= 1000;
-                            var min = Math.floor(countdown / (60 * 1000));
-                            var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
-                            toggleElement.html(min + " : " + sec);
-                        }, 1000);
-                    },500);
+                    console.log(msg.on_move);
+                    console.log(toggleElement.html());
+                    console.log(secondElement.html());
+                    var msgTimer = {
+                        type: 'setTimer',
+                        timer: toggleElement.html(),
+                        userid: '<?= $authenticatedUser['id']; ?>'
+                    };
+                    websocket.send(JSON.stringify(msgTimer));
                 }
                 
+            }
+            
+            if (type == 'playerLeft')
+            {
+                console.log('playerLeft')
+                console.log(msg);
+                if (((typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)||(typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id))) {
+                
+                    for (var i = 1; i < 99999; i++) {
+                        window.clearInterval(i);
+                    }
+                                        
+                    var toggleElement = $('.playerList div:eq(0) span');
+                    var toggleElement2 = $('.playerList div:eq(2) span');
+                    console.log('174');
+                    var msgTimer = {
+                        type: 'setRunAwayTimer',
+                        timerPlayer1: toggleElement.html(),
+                        timerPlayer2: toggleElement2.html(),
+                        userid: '<?= $authenticatedUser['id']; ?>'
+                    };
+                    websocket.send(JSON.stringify(msgTimer));
+//                    var secondElement = $('.playerList div:eq('+secondEq+') span');
+                }
             }
             
             // if player won and table is finished
@@ -255,6 +313,25 @@
 //                if(gameInformation.hasClass('startsGame')){
 //                    var playerInfo = $(this).attr('data-rel');
 //                }
+
+                if (typeof (msg.leftTimer) !== 'undefined'){
+                    var leftElement = $('.playerLeft span');
+                    var countdown = 5 * 1000;
+                    var interval = setInterval(function() {
+                        countdown -= 1000;
+                        var min = Math.floor(countdown / (60 * 1000));
+                        var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
+                        leftElement.html(min + " : " + sec);
+                        
+                        if(countdown<1000){
+                            var msgExpired = {
+                                type: 'timeExpired',
+                                userid: '<?= $authenticatedUser['id']; ?>'
+                            };
+                            websocket.send(JSON.stringify(msgExpired));
+                        }
+                    }, 1000);
+                }
             }
 
             // if you join table - show table
@@ -617,6 +694,9 @@
         top: 125px;
         position: relative;
         font-size: 25px;
+    }
+    .playerLeft span{
+        display:block;
     }
 </style>
 <span class="cardUserBoxWrapper">

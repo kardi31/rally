@@ -4,10 +4,17 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/ral/public/server.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/card/views/index/index.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/public/card/Table.php</file>
-            <file>file:/C:/xampp/htdocs/ral/public/css/custom.css</file>
+            <file>file:/C:/xampp/htdocs/ral/public/card/PlayerCollection.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/card/TableCollection.php</file>
             <file>file:/C:/xampp/htdocs/ral/public/card/Player.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/client.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/card/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/card/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/card/Table.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/card/Car.php</file>
+            <file>file:/C:/xampp/htdocs/ral/layout/fullpage.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/public/css/custom.css</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/card/views/index/index.phtml</file>
         </group>
     </open-files>
 </project-private>
