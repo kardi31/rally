@@ -59,13 +59,21 @@
             // so opponent cards are hidden
             if (type == 'getTableForPlayer')
             {
+            
+                if (typeof (msg.clearInterval) !== 'undefined' ) {
+                    for (var i = 1; i < 99999; i++) {
+                        window.clearInterval(i);
+                    }
+                  }
                 console.log('getTableForPlayer');
                 var msg2 = {
                     type: 'getPlayerTable',
                     userid: '<?= $authenticatedUser['id']; ?>'
                 };
+                console.log('msg2');
+                console.log(msg2);
                 websocket.send(JSON.stringify(msg2));
-                
+                  
                 // if second user clicked start button, show timer
                 if(typeof (msg.started_user) !== 'undefined' && msg.started_user != user_id){
                     var timerValue = 10;
@@ -118,6 +126,22 @@
                 }
             }
             
+            if(type == 'getLeftTimer'){
+            console.log('getLeftTimer');
+                if(typeof (msg.user_id) !== 'undefined'&&msg.user_id == user_id){
+                    var leftElement = $('.playerLeft span');
+                    if(typeof(leftElement.html())!=='undefined'){
+                        console.log('getLeftTimerIn');
+                        var msgLeftTimer = {
+                            type: 'setLeftTimer',
+                            timer: leftElement.html(),
+                            userid: '<?= $authenticatedUser['id']; ?>'
+                        };
+                        websocket.send(JSON.stringify(msgLeftTimer));
+                    }
+                }
+                
+            }
             
             if(type == 'getTimer'){
             console.log('getTimer');
@@ -201,9 +225,10 @@
             {
                 console.log('showTablePlayer');
                 var message = msg.message;
+                console.log(msg);
                 // flip just my cards, not opponent cards
                 if ((typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id)||(typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)) {
-
+                    
                     var tableid = msg.tableid;
                     window.location.hash = tableid;
                     if(msg.user_id == user_id){
@@ -267,6 +292,8 @@
                                         userid: '<?= $authenticatedUser['id']; ?>'
                                     };
                                     websocket.send(JSON.stringify(msg5));
+                                    console.log('msg5');
+                                    console.log(msg5);
                                     elementPlayer1.remove();
                                     elementPlayer2.remove();
 //                                });
@@ -288,6 +315,7 @@
                                         refreshPoints: true,
                                         userid: '<?= $authenticatedUser['id']; ?>'
                                     };
+                                    console.log('msg6');
                                     console.log(msg6);
                                     websocket.send(JSON.stringify(msg6));
 //                                    $('.playerCards div.playerCard.flipIt').animate({
@@ -316,14 +344,14 @@
 
                 if (typeof (msg.leftTimer) !== 'undefined'){
                     var leftElement = $('.playerLeft span');
-                    var countdown = 5 * 1000;
+                    var countdown2 = 30 * 1000;
                     var interval = setInterval(function() {
-                        countdown -= 1000;
-                        var min = Math.floor(countdown / (60 * 1000));
-                        var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
+                        countdown2 -= 1000;
+                        var min = Math.floor(countdown2 / (60 * 1000));
+                        var sec = Math.floor((countdown2 - (min * 60 * 1000)) / 1000);  //correct
                         leftElement.html(min + " : " + sec);
-                        
-                        if(countdown<1000){
+                        console.log(countdown2);
+                        if(countdown2<1000){
                             var msgExpired = {
                                 type: 'timeExpired',
                                 userid: '<?= $authenticatedUser['id']; ?>'

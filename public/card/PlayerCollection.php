@@ -15,8 +15,10 @@ class PlayerCollection {
     }
     
     public function addPlayer($userid,$username,$cards) {
+        echo "addPlayer - ".count($this->items)." \r\n";
         $player = new Player($userid,$username,$cards);
         $this->items[$userid] = $player;
+        echo "addPlayer - done - ".count($this->items)." \r\n";
         return $player;
     }
 
@@ -30,6 +32,7 @@ class PlayerCollection {
             if($player->getTable())
                 return $player->getTable();
         }
+        echo "removePlayer - ".count($this->items)." \r\n";
     }
     
     public function getPlayer($key) {

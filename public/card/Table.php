@@ -761,10 +761,40 @@ class Table {
         return false;
     }
     
-    public function setPlayerBackOnTable($player){
-        if(isset($this->players_left_table[$player->getId()])){
+    public function setPlayerBackOnTable($timer){
+        $key = key($this->players_left_table);
+        if(isset($this->players_left_table[$key])){
+            
+            if($this->player1->getId()==$key){
+                $player = $this->player1;
+            }
+            elseif($this->player2->getId()==$key){
+                $player = $this->player2;
+            }
+            
+            echo "dobrze";
+            // current timer
+            $playerTimer = $player->getTimer(true);
+            
+            // how much time left on player left timer
+            $msLeftOnTimer = $player->getMilisecondsFromTime($timer);
+            
+            $sec30 = 1000*30;
+            
+            $msToTakeFromTime = $sec30 - $msLeftOnTimer;
+            
+            $newPlayerTimer = $playerTimer-$msToTakeFromTime;
+            
+            $min = floor($newPlayerTimer / (60 * 1000));
+            $sec = floor(($newPlayerTimer - ($min * 60 * 1000)) / 1000);  //correct
+            var_dump($min." : ".$sec);
+//            var_dump($timer);
+            $player->setTimer($min." : ".$sec);
+            
+            
             unset($this->players_left_table[$player->getId()]);
         }
+        echo "zle";
     }
     
 }

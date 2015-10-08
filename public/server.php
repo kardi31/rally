@@ -61,7 +61,6 @@ while (true) {
                 $response_text = mask(json_encode(array('type'=>'joinedTable', 'message'=>$availableTables)));
                 send_message($response_text);
                 
-                
 	}
 	
 	//loop through all connected sockets
@@ -74,14 +73,13 @@ while (true) {
                         if(is_object($tst_msg)){
                             // joined the game
                             if($tst_msg->type=="joined"){
-//                                echo "joined\r\n";
+                                echo "joined - ".$tst_msg->userid."\r\n";
                                 if(!$player = $players->getPlayer($tst_msg->userid)){
                                     $player = $players->addPlayer($tst_msg->userid,$tst_msg->username,json_decode($tst_msg->cards,true));
                                 }
                                 $found_socket = array_search($changed_socket, $clients);
                                 $userSockets[$tst_msg->userid] = $clients[$found_socket];
-                                var_dump($player->getTable());
-
+                                
                                 if($tableId = $player->getTable()){
                                     
                                     
@@ -96,24 +94,52 @@ while (true) {
 //                                    $timer_response_text = mask(json_encode($getTimerParameters));
 //                                    send_message($timer_response_text);
                                     
-                                    $passedParameters = array();
-                                    $table = $tables->getTable($tableId);
                                     
-                                    $table->setPlayerBackOnTable($player);
+                                     $getLeftTimerParameters = array('type' => 'getLeftTimer');
+                                    
+                                    $secondPlayer = $table->getOtherPlayer($player);
+                                    if($secondPlayer){
+                                        $getLeftTimerParameters['user_id'] = $secondPlayer->getId();
+                                    
+                                        $timer_response_text = mask(json_encode($getLeftTimerParameters));
+                                        send_message($timer_response_text);
+                                    }
+                                   
+                                    
+                                    
+                                }
+                                
+                                refreshPlayerList($players);
+                            }
+                            elseif($tst_msg->type=="setLeftTimer"){
+                                echo "setLeftTimer\r\n";
+                                
+                                $player = $players->getPlayer($tst_msg->userid);
+                                if($player->getTable()){
+                                    $tableId = $player->getTable();
+                                    $table = $tables->getTable($tableId);
+//                                    $player
+                                    $table->setPlayerBackOnTable($tst_msg->timer);
+                                    
+                                    $passedParameters = array();
+                                    
+//                                    $table->setPlayerBackOnTable($player);
                                     $passedParameters['tableid'] = $tableId;
+                                    echo "clearInterval \r\n";
+                                    $passedParameters['clearInterval'] = true;
                                     
                                     $userOnTableIds = $table->getPlayerIds();
                                     
                                     $passedParameters = array_merge($passedParameters,$userOnTableIds);
-
-                                    $passedParameters['showTable'] = $table->showTable($tst_msg->userid);
+                                    $passedParameters['showTable'] = $table->showTable($userOnTableIds['user_id']);
+                                    $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2']);
                                     $passedParameters['type'] = 'getTableForPlayer';
+                                    
+                                    
                                     
                                     $response_text = mask(json_encode($passedParameters));
                                     send_message($response_text);
                                 }
-                                
-                                refreshPlayerList($players);
                             }
                             elseif($tst_msg->type=="setRunAwayTimer"){
 //                                echo "joined\r\n";
@@ -206,6 +232,7 @@ while (true) {
                             
                             // Second player quit the table and his player left timer expired
                             elseif($tst_msg->type=="timeExpired"){
+                                echo "timeExpired";
                                 $player = $players->getPlayer($tst_msg->userid);
                                 $table = $tables->getTable($player->getTable());
                                 
@@ -242,7 +269,7 @@ while (true) {
                             // Get table just for this player
                             elseif($tst_msg->type=="getPlayerTable"){
                                 $player = $players->getPlayer($tst_msg->userid);
-                                if(isset($userSockets[$player->getId()])&&$userSockets[$player->getId()]==$changed_socket&&$tableid = $player->getTable()){
+                                if($player&&isset($userSockets[$player->getId()])&&$userSockets[$player->getId()]==$changed_socket&&$tableid = $player->getTable()){
                                 
                                     $passedParameters = array('type'=>'showTablePlayer');
 
@@ -321,7 +348,7 @@ while (true) {
                                         $response_text = mask(json_encode($passedParameters));
                                         send_message($response_text);
 
-                                        if($table->isStarted()&&!$table->isFinished()&&$onMove = $table->whoseNextMove()&&!$table->isTableBeenLeft()){
+                                        if($table->isStarted()&&!$table->isFinished()&&!$table->isTableBeenLeft()&&$onMove = $table->whoseNextMove()){
 
                                             $isFirstMoveInRound = $table->isFirstMoveInRound();
     //                                        echo "onMove - ".$onMove['who']." \r\n";
@@ -402,10 +429,9 @@ while (true) {
                         
 //                        $tableId = $players->removePlayer($userId,$tables);
                         if($player = $players->getPlayer($userId)){
-                            echo "361";
                             $tableId = $player->getTable();
                             $table = $tables->getTable($tableId);
-                            
+                            echo $player->getUsername();
                             $table->setPlayerLeftTable($player);
                             
                             $infoArray = array('type'=>'playerLeft', 'message'=>'userLeft');
