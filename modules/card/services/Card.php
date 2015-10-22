@@ -17,8 +17,8 @@ class CardService extends Service{
     }
     
     
-    public function getPost($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
-        return $this->postTable->findOneBy($field,$id,$hydrationMode);
+    public function getCard($id,$field = 'id',$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        return $this->cardTable->findOneBy($field,$id,$hydrationMode);
     }
     
     public function getAllCategories($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
@@ -30,6 +30,22 @@ class CardService extends Service{
         $q->select('id,car_model_id');
         $q->addWhere('c.user_id = ?',$user_id);
         return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getFullUserCards($user_id,$hydrationMode = Doctrine_Core::HYDRATE_ARRAY){
+        $q = $this->cardTable->createQuery('c');
+        $q->leftJoin('c.Model cm');
+        $q->addSelect('c.*,cm.*');
+        $q->addWhere('c.user_id = ?',$user_id);
+        return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function countLockedCards($user_id){
+        $q = $this->cardTable->createQuery('c');
+        $q->addSelect('c.*');
+        $q->addWhere('c.user_id = ?',$user_id);
+        $q->addWhere('c.locked = 1');
+        return $q->count();
     }
 }
     

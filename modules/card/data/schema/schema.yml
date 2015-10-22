@@ -16,3 +16,6 @@ Card:
       type: integer(4)
     car_model_id:
       type: integer(4)
+    locked:
+      type: boolean
+      default: 0

@@ -8,6 +8,7 @@
  * @property integer $id
  * @property integer $user_id
  * @property integer $car_model_id
+ * @property boolean $locked
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -32,6 +33,10 @@ abstract class Card_Model_Doctrine_BaseCard extends Doctrine_Record
         $this->hasColumn('car_model_id', 'integer', 4, array(
              'type' => 'integer',
              'length' => '4',
+             ));
+        $this->hasColumn('locked', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
              ));
 
         $this->option('type', 'MyISAM');

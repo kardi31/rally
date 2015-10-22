@@ -12,5 +12,11 @@
  */
 class Card_Model_Doctrine_Card extends Card_Model_Doctrine_BaseCard
 {
-
+    public function setUp()
+    {
+        parent::setUp();
+        $this->hasOne('Car_Model_Doctrine_CarModels as Model', array(
+             'local' => 'car_model_id',
+             'foreign' => 'id'));
+    }
 }

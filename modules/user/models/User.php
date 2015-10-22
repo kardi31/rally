@@ -20,6 +20,13 @@ class User_Model_Doctrine_User extends User_Model_Doctrine_BaseUser
         360 => 320
     );
     
+    public function isGoldMember(){
+        if($this->get('gold_member')&&$this->get('gold_member_expire')>date('Y-m-d H:i:s')){
+            return true;
+        }
+        return false;
+    }
+    
     public static function getGoldPackagePrices(){
         return self::$goldPackages;
     }

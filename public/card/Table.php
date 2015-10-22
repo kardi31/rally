@@ -25,6 +25,9 @@ class Table {
     protected $started_moves = array();
     protected $finished_moves = array();
     
+    protected $is_finished = false;
+    protected $card_won = false;
+    
     
     public function __construct($player,$id){
         $this->player1 = $player;
@@ -360,10 +363,33 @@ class Table {
 //            $startGameBtn->setAttribute('class', 'startGame');
             $whoWon = $dom->createElement('div');
             $roundInfo = $dom->createElement('span',$this->{$this->isFinished()}->getUsername()." has won the game");
-            $whoWon->setAttribute('class', 'gameInformation');
+            $whoWon->setAttribute('class', 'gameInformation wonTable');
             
             $whoWon->appendChild($roundInfo);
+            
+            
+            
+            
+            if($this->card_won){
+                $cardWon = $this->card_won;
+                $wonCardElement = $this->createPlayerCardTable($cardWon,$dom);
+                
+                $wonCardWrapper = $dom->createElement('div');
+                $wonCardWrapper->setAttribute('class', 'wonCardWrapper');
+                
+                $wonCardPreWrapper = $dom->createElement('div');
+                $wonCardPreWrapper->setAttribute('class', 'wonCardPreWrapper');
+                
+                
+                $strongCardWon = $dom->createElement('strong',$this->{$this->isFinished()}->getUsername()." has won this card.");
+                
+                $wonCardWrapper->appendChild($wonCardElement);
+                $wonCardPreWrapper->appendChild($wonCardWrapper);
+            }
+            
+            
             $playField->appendChild($whoWon);
+            $playField->appendChild($wonCardPreWrapper);
         }
         
         $cardTable->appendChild($player1Cards);
@@ -477,7 +503,7 @@ class Table {
 //                    </tr>
 //                </table>
     
-    public function createPlayerCardTable($card,$dom,$whichPlayer){
+    public function createPlayerCardTable($card,$dom,$whichPlayer = false){
         $table = $dom->createElement('table');
         
         // tr 1 - start
@@ -534,7 +560,7 @@ class Table {
         $tr5->appendChild($td52);
         
         $currentPlayingSkillId = $this->findCurrentPlayingSkillId();
-        if(is_int($currentPlayingSkillId)){ // &&$card->isOpened()
+        if(is_int($currentPlayingSkillId)&&$whichPlayer){ // &&$card->isOpened()
             // if it is a player who just clicked on card
             if(isset($this->moves[$whichPlayer][$this->round-1])){
                 // get the card which was just clicked
@@ -643,15 +669,31 @@ class Table {
     }
     
     public function isFinished(){
+        if($this->is_finished)
+            return $this->is_finished;
+        
         if(isset($this->player1)&&isset($this->player2)){
-            if($this->player1->hasWon())
+            if($this->player1->hasWon()){
+                $wonCard = $this->player1->moveLostCard($this->player2->getId());
+                $this->card_won = $wonCard;
+                $this->setFinished('player1');
                 return 'player1';
+            }
             
             if($this->player2->hasWon())
+            {
+                $wonCard = $this->player2->moveLostCard($this->player1->getId());
+                $this->card_won = $wonCard;
+                $this->setFinished('player2');
                 return 'player2';
+            }
         }
         
         return false;
+    }
+    
+    public function setFinished($playerWon){
+        $this->is_finished = $playerWon;
     }
     
     public function isStarted(){

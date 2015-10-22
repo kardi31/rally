@@ -11,7 +11,7 @@ class PlayerCollection {
     private $items = array();
 
     public function __construct() {
-        $db = new PDO('mysql:host=localhost;dbname=ral;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;dbname=ral;charset=utf8', 'root', '');
     }
     
     public function addPlayer($userid,$username,$cards) {
@@ -45,4 +45,5 @@ class PlayerCollection {
         
         return $joinedPlayers;
     }
+    
 }

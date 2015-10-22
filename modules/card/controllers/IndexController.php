@@ -64,338 +64,60 @@ class Card_Index extends Controller{
 	$this->view->assign('categories',$categories);
     }
     
-    public function showCategory(){
+    public function manageCards(){
         Service::loadModels('card', 'card');
+        Service::loadModels('car', 'car');
         Service::loadModels('user', 'user');
 	
-        $cardService = parent::getService('card','card');
-        if(!$category = $cardService->getCategory($GLOBALS['urlParams'][1],'slug',Doctrine_Core::HYDRATE_ARRAY)){
-            throw new TK_Exception('No such category',404);
-        }
         
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
         
-        $threads = $cardService->getAllCategoryThreads($category['id'],Doctrine_Core::HYDRATE_RECORD);
-        $form = $this->getForm('card','thread');
-        
-        if($form->isSubmit()){
-            if($form->isValid()){
-                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
-                
-                $values = $_POST;
-		
-                // user can add a post once every 30 seconds
-                if(!$cardService->checkLastUserThread($user)){
-                    TK_Helper::redirect('/card/show-category/'.$category['slug'].'?msg=too+fast');
-                    exit;
-                }
-                
-		$cardService->addThread($values,$category['id'],$user);
-		
-		TK_Helper::redirect('/card/show-category/'.$category['slug']);
-		
-                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
-            }
-        }
-        
-	$this->view->assign('form',$form);
-	$this->view->assign('category',$category);
-	$this->view->assign('threads',$threads);
+        $cardService = parent::getService('card','card');
+        $cards = $cardService->getFullUserCards($user['id'],Doctrine_Core::HYDRATE_ARRAY);
+	$this->view->assign('cards',$cards);
     }
     
-    public function showThread(){
+    public function lockCard(){
         Service::loadModels('card', 'card');
+        Service::loadModels('car', 'car');
         Service::loadModels('user', 'user');
 	
-        $cardService = parent::getService('card','card');
-        if(!$thread = $cardService->getFullThread($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_ARRAY)){
-            throw new TK_Exception('No such thread',404);
-        }
+        $view= $this->view;
+        $view->setNoRender();
         
+        $result = array();
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
         
-        $form = $this->getForm('card','post');
-        
-        $posts = $cardService->getAllThreadPosts($thread['id'],Doctrine_Core::HYDRATE_ARRAY);
-       
-        if($form->isSubmit()){
-            if($form->isValid()){
-                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
-                
-                
-                // user can add a post once every 30 seconds
-                if(!$cardService->checkLastUserPost($user,$thread)){
-                    TK_Helper::redirect('/card/show-thread/'.$thread['id'].'?msg=too+fast');
-                    exit;
-                }
-                
-                $values = $_POST;
-		
-		$cardService->addPost($values,$thread,$user);
-		TK_Helper::redirect('/card/show-thread/'.$thread['id']);
-		
-                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
-            }
-        }
-        
-	$this->view->assign('user',$user);
-	$this->view->assign('form',$form);
-	$this->view->assign('posts',$posts);
-	$this->view->assign('thread',$thread);
-    }
-    
-    public function editThread(){
-        Service::loadModels('card', 'card');
-        Service::loadModels('user', 'user');
-        Service::loadModels('team', 'team');
-	
         $cardService = parent::getService('card','card');
-        if(!$thread = $cardService->getThread($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_ARRAY)){
-            throw new TK_Exception('No such thread',404);
-        }
+        $card = $cardService->getCard($_POST['id']);
         
-        $userService = parent::getService('user','user');
-        $user = $userService->getAuthenticatedUser();
-       
-        $form = $this->getForm('card','thread');
-        $form->populate($thread);
-        if($form->isSubmit()){
-            if($form->isValid()){
-                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
-                $values = $_POST;
-                
-                if(in_array($user['role'],array('moderator','admin'))){
-                    $values['moderator_date'] = date('Y-m-d H:i:s');
-                    $values['moderator_name'] = $user['username'];
-                }
-		$values['id'] = $thread['id'];
-		$thread = $cardService->editThread($values);
-		
-		TK_Helper::redirect('/card/show-thread/'.$thread['id']);
-		
-                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
-            }
-        }
-        
-	$this->view->assign('form',$form);
-	$this->view->assign('user',$user);
-	$this->view->assign('thread',$thread);
-    }
-    
-    public function deleteThread(){
-        Service::loadModels('card', 'card');
-        Service::loadModels('user', 'user');
-        Service::loadModels('team', 'team');
-	
-        $cardService = parent::getService('card','card');
-        if(!$thread = $cardService->getThread($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_ARRAY)){
-            throw new TK_Exception('No such thread',404);
-        }
-        
-        $userService = parent::getService('user','user');
-        $user = $userService->getAuthenticatedUser();
-       
-        $form = $this->getForm('card','thread');
-        $form->populate($thread);
-        if($form->isSubmit()){
-            if($form->isValid()){
-                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
-                $values = $_POST;
-                
-                if(in_array($user['role'],array('moderator','admin'))){
-                    $values['moderator_date'] = date('Y-m-d H:i:s');
-                    $values['moderator_name'] = $user['username'];
-                    $values['moderator_comment'] = $user['username'];
-                    $values['id'] = $thread['id'];
-                    $thread = $cardService->editThread($values);
-                    $thread->delete();
-                }
-		
-		TK_Helper::redirect('/card/show-category/'.$thread['Category']['slug']);
-		
-                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
-            }
-        }
-        
-	$this->view->assign('form',$form);
-	$this->view->assign('user',$user);
-	$this->view->assign('thread',$thread);
-    }
-    
-    public function setThreadActive(){
-        $this->view->setNoRender();
-        Service::loadModels('card', 'card');
-        Service::loadModels('user', 'user');
-        Service::loadModels('team', 'team');
-	
-        $cardService = parent::getService('card','card');
-        if(!$thread = $cardService->getThread($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_RECORD)){
-            throw new TK_Exception('No such thread',404);
-        }
-        
-       
-        if($thread->get('active')){
-            $thread->set('active',0);
+        if($card->get('locked')){
+            $card->set('locked',0);
+            $result['msg'] = 'unlocked';
         }
         else{
-            $thread->set('active',1);
-        }
-            
-        $thread->save();
-        
-	TK_Helper::redirect('/card/show-category/'.$thread['Category']['slug']);
-	     
-    }
-    
-    public function editPost(){
-        Service::loadModels('card', 'card');
-	
-        $cardService = parent::getService('card','card');
-        if(!$post = $cardService->getPost($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_RECORD)){
-            throw new TK_Exception('No such post',404);
-        }
-        
-        $userService = parent::getService('user','user');
-        $user = $userService->getAuthenticatedUser();
-        
-        $form = $this->getForm('card','post');
-        $form->populate($post->toArray());
-        if($form->isSubmit()){
-            if($form->isValid()){
-                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
-                
-                $values = $_POST;
-		
-                if(in_array($user['role'],array('moderator','admin'))){
-                    $values['moderator_date'] = date('Y-m-d H:i:s');
-                    $values['moderator_name'] = $user['username'];
+            $countLockedCards = $cardService->countLockedCards($user['id']);
+            if($user->isGoldMember()){
+                if($countLockedCards>9){
+                    $result['error'] = 'Too many locked cards';
                 }
-                $values['id'] = $post['id'];
-		$cardService->editPost($values);
-		
-		TK_Helper::redirect('/card/show-thread/'.$post['Thread']['id']);
-		
-                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
-            }
-        }
-        
-	$this->view->assign('user',$user);
-	$this->view->assign('form',$form);
-	$this->view->assign('post',$post);
-    }
-    
-    public function deletePost(){
-        Service::loadModels('card', 'card');
-	
-        $cardService = parent::getService('card','card');
-        if(!$post = $cardService->getPost($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_RECORD)){
-            throw new TK_Exception('No such post',404);
-        }
-        
-        $userService = parent::getService('user','user');
-        $user = $userService->getAuthenticatedUser();
-        
-        $form = $this->getForm('card','post');
-        $form->populate($post->toArray());
-        if($form->isSubmit()){
-            if($form->isValid()){
-                Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
-                
-                $values = $_POST;
-		
-                if(in_array($user['role'],array('moderator','admin'))){
-                    $values['moderator_date'] = date('Y-m-d H:i:s');
-                    $values['moderator_name'] = $user['username'];
-                }
-                $values['id'] = $post['id'];
-		$post = $cardService->editPost($values);
-		$post->delete();
-		TK_Helper::redirect('/card/show-thread/'.$post['Thread']['id']);
-		
-                Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
-            }
-        }
-        
-	$this->view->assign('user',$user);
-	$this->view->assign('form',$form);
-	$this->view->assign('post',$post);
-    }
-    
-    public function addFavouriteCard(){
-        Service::loadModels('card', 'card');
-        Service::loadModels('user', 'user');
-	
-        $userService = parent::getService('user','user');
-        $user = $userService->getAuthenticatedUser();
-        
-        $cardService = parent::getService('card','card');
-        if(!$category = $cardService->getCategory($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_ARRAY)){
-            throw new TK_Exception('No such card',404);
-        }
-        
-        if(!($user['gold_member']&&$user['gold_member_expire']>date('Y-m-d H:i:s'))){
-            throw new TK_Exception('You are not a gold member',404);
-        }
-        
-        $cardService->addCategoryToFavourite($category,$user);
-        
-        
-        TK_Helper::redirect('/card/show-card');
-        
-    }
-    
-    public function removeFavouriteCard(){
-        Service::loadModels('card', 'card');
-        Service::loadModels('user', 'user');
-	
-        $userService = parent::getService('user','user');
-        $user = $userService->getAuthenticatedUser();
-        
-        $cardService = parent::getService('card','card');
-        
-        
-        if(!$category = $cardService->getCategory($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_ARRAY)){
-            throw new TK_Exception('No such card',404);
-        }
-        
-        if(!($user['gold_member']&&$user['gold_member_expire']>date('Y-m-d H:i:s'))){
-            throw new TK_Exception('You are not a gold member',404);
-        }
-        
-        $cardService->removeCategoryFromFavourite($category['id'],$user['id']);
-        
-        
-        TK_Helper::redirect('/card/show-card');
-    }
-    
-    public function showFavouriteCards(){
-        Service::loadModels('card', 'card');
-        Service::loadModels('user', 'user');
-	
-        $userService = parent::getService('user','user');
-        $user = $userService->getAuthenticatedUser();
-        
-        $cardService = parent::getService('card','card');
-        
-        $favouriteCategories = $cardService->getFavouriteCategories($user['id'],true,Doctrine_Core::HYDRATE_ARRAY);
-        $lastThreads = array();
-        foreach($favouriteCategories as $favourite):
-            $lastThread = $cardService->getLastCategoryThread($favourite['category_id'],Doctrine_Core::HYDRATE_ARRAY);
-            $lastPost = $cardService->getLastCategoryPost($favourite['category_id'],Doctrine_Core::HYDRATE_ARRAY);
-
-            if(isset($lastThread['created_at'])&&$lastThread['created_at']>$lastPost['created_at']){
-                $lastThreads[$favourite['category_id']] = $lastThread;
             }
             else{
-                $lastThreads[$favourite['category_id']] = $lastPost;
+                if($countLockedCards>4){
+                    $result['error'] = 'Too many locked cards';
+                }
             }
-        endforeach;
-        $this->view->assign('favouriteCategories',$favouriteCategories);
-        $this->view->assign('lastThreads',$lastThreads);
+            if(!isset($result['error'])){
+                    $result['msg'] = 'locked';
+                    $card->set('locked',1);
+            }
+        }
+        $card->save();
         
-        $this->getLayout()->setLayout('layout');
+        echo json_encode($result);
+        
     }
     
 }

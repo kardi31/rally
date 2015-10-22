@@ -1,11 +1,13 @@
 <?php
 require_once(__DIR__."/Car.php");
+require_once(__DIR__."/Db.php");
 /**
  * Description of Player
  *
  * @author Tomasz
  */
 class Player {
+    protected $db;
     protected $id;
     protected $name;
     protected $table;
@@ -20,6 +22,7 @@ class Player {
     public function __construct($id,$name,$cards){
         $this->id = $id;
         $this->name = $name;
+        $this->db = new Db();
         foreach($cards as $cardRow){
             $car = new Car($cardRow['car_model_id'],$cardRow['id']);
             $this->cards[$cardRow['id']] = $car;
@@ -138,6 +141,17 @@ class Player {
         if($this->point>2){
             return true;
         }
+    }
+    
+    public function moveLostCard($wonUserId){
+        
+        $getWonCard = $this->db->fetch('select * from card_card where user_id = '.$this->id.' order by rand() limit 1');
+        echo "move";
+        $row = $this->db->execute('update card_card set user_id = '.$wonUserId.' where id = '.$getWonCard['id'].' limit 1');
+        
+        $wonCard = new Car($getWonCard['car_model_id'],$getWonCard['id']);
+        
+        return $wonCard;
     }
     
 }

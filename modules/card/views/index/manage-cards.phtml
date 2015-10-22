@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="/css/cards.css" />
+<link rel="stylesheet" href="/plugins/bxslider/jquery.bxslider.css" />
+<script src="/plugins/bxslider/jquery.bxslider.js"></script>
+<link rel="stylesheet" type="text/css" href="/plugins/jNotify/jNotify.jquery.css" media="screen" />
+<script type="text/javascript" src="/plugins/jNotify/jNotify.jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#manageCards').bxSlider({
+            slideWidth: 160,
+            minSlides: 4,
+            maxSlides: 4,
+            moveSlides: 1
+        });
+        
+        
+        $('#manageCards div.playerCard').on('click',function(){
+            var element = $(this);
+            var id = $(this).attr('data-rel');
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "/card/lock-card",
+                data:{id: id},
+                success: function(data) {
+                   if(data.msg=='locked'){
+                       element.prepend('<img src="/images/layout/lock.png" class="cardLock" />');
+                   }
+                   
+                   if(data.msg=='unlocked'){
+                       element.find('.cardLock').remove();
+                   }
+                   if(data.error){
+                    jError(
+                        'Sorry, you have reached maximum amount of locked cards.',
+                        {
+                          autoHide : true,
+                          TimeShown : 500,
+                          HorizontalPosition : 'center',
+                        }
+                    );
+                   }
+                },
+                error: function() {
+                   
+                }
+            }); 
+        });
+    });
+</script>
+<div class="playerCards" id="manageCards">
+    <?php foreach($cards as $card): ?>
+<div class="playerCard" data-rel="<?= $card['id']; ?>">
+    <?php if($card['locked']){ ?>
+    <img src="/images/layout/lock.png" class="cardLock" />
+    <?php } ?>
+<table>
+    <tr>
+        <th colspan="2">
+            
+            <img src="/media/cars/<?= $card['Model']['photo']; ?>" />
+            <strong><?= $card['Model']['name']; ?></strong>
+        </th>
+    </tr>
+    <tr>
+        <td>Acceleration</td>
+        <td><?= $card['Model']['acceleration']; ?></td>
+    </tr>
+    <tr>
+        <td>V-max</td>
+        <td><?= $card['Model']['max_speed']; ?></td>
+    </tr>
+    <tr>
+        <td>Capacity</td>
+        <td><?= $card['Model']['capacity']; ?></td>
+    </tr>
+    <tr>
+        <td>Horsepower</td>
+        <td><?= $card['Model']['horsepower']; ?></td>
+    </tr>
+</table>
+</div>
+<?php endforeach; ?>
+</div>
