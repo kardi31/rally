@@ -153,22 +153,25 @@
 .user_message{color: #88B6E0;}
 
 .cardUserListWrapper {
-    width: 200px;
+    width: 20%;
     background: #CCCCCC;
     color:#333;
     text-align:center;
     float:left;
-    margin-left:10px;
-    font: 12px 'lucida grande',tahoma,verdana,arial,sans-serif;
+}
+.cardUserBoxWrapper h1{
+    padding:10px;
+}
+.cardUserListWrapper h4{
+    height:30px;
+    margin:0px;
 }
 .cardTableListWrapper {
-    width: 700px;
-    background: #CCCCCC;
+    width: 80%;
+    background: #868686;
     color:#333;
     text-align:center;
     float:left;
-    margin-left:10px;
-    font: 12px 'lucida grande',tahoma,verdana,arial,sans-serif;
 }
 .gameInformation{
     background:#212121;
@@ -186,28 +189,104 @@
     font-size:15px;
     display:block;
 }
+
 .cardUserListWrapper #cardUserList {
     background: #FFFFFF;
-    min-height: 150px;
+    height:100%;
     overflow: auto;
     padding: 10px;
     border: 1px solid #999999;
+    text-align:left;
+}
+.cardUserListWrapper #cardUserList ul{
+    padding-left:20px;
+    padding-right:20px;
+    list-style: none;
+}
+.cardUserListWrapper #cardUserList ul li span{
+    float:right;
 }
 .cardTableListWrapper #cardTableList {
-    background: #FFFFFF;
+    background: rgba(255,255,255,.7);
     min-height: 150px;
     overflow: auto;
     padding: 10px;
+    width:100%;
     border: 1px solid #999999;
 }
+
+.cardUserHeader{
+    background:#868686;
+    
+    width: 100%;
+    height: 50px;
+}
+.cardUserHeader:after{
+    clear:both;
+    display:block;
+    content:" ";
+}
+.cardUserHeader button{
+    float:right;
+    margin-top:5px;
+    margin-right:5px;
+}
+
 .cardTableWrapper{
     display:none;
 }
 
-.cardTableBox{
-    width:25%;
+.cardTablePlayers{
+    margin-top:10px;
+}
+
+.cardTablePlayers div:first-of-type{
     float:left;
-    border:1px solid black;
+    margin-left:5px;
+}
+
+.cardTablePlayers div:nth-of-type(2){
+    float:right;
+    margin-right:5px;
+}
+.cardTableBox{
+    position:relative;
+}
+.cardTableBox .cardTableNo{
+    position:absolute;
+    font-size:18px;
+    z-index:10000;
+    top:0px;
+    right:0px;
+    background:#322f32;
+    color:#fff;
+    padding:5px;
+}
+
+.cardTablePlayers:after{
+    clear:both;
+    display:block;
+    content:" ";
+}
+
+.cardTableBox{
+        width: 24%;
+    float: left;
+    border: 3px solid #3276b1;
+    margin: 1% 0.5%;
+    margin-left: 1px;
+}
+.cardTableBox .joinSingleTable{
+    border-top-left-radius: 0px;
+    border-top-right-radius:0px;
+    background:#357EBD;
+}
+.cardTableBox .joinSingleTable:hover{
+    border-color:#357ebd;
+}
+.cardTableBox img{
+    width:55px;
+    margin-top:-10px;
 }
 .startGame{
     background: #0000ff;

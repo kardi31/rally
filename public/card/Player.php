@@ -40,6 +40,13 @@ class Player {
         return $this->timer;
     }
     
+    public function getMilisecondsFromTime($time){
+        $explode = explode(':',$time);
+        $mins = (int)$explode[0];
+        $secs = (int)$explode[1];
+        return ($mins*60+$secs)*1000;
+    } 
+    
     public function getId(){
         return $this->id;
     }
@@ -82,6 +89,10 @@ class Player {
     
     public function getPoints(){
         return $this->point;
+    }
+    
+    public function setPoints($points){
+        $this->point = $points;
     }
     
     public function refreshPoints(){

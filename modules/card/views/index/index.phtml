@@ -1,7 +1,5 @@
 <script src="/js/flip.js"></script>
 <link rel="stylesheet" href="/css/cards.css" />
-<a id="stop" href="javascript:void(0)" style="width:200px;height:50px;display:block;">Stop</a>
-
 
 <script language="javascript" type="text/javascript">
     $(document).ready(function () {
@@ -60,13 +58,21 @@
             // so opponent cards are hidden
             if (type == 'getTableForPlayer')
             {
+            
+                if (typeof (msg.clearInterval) !== 'undefined' ) {
+                    for (var i = 1; i < 99999; i++) {
+                        window.clearInterval(i);
+                    }
+                  }
                 console.log('getTableForPlayer');
                 var msg2 = {
                     type: 'getPlayerTable',
                     userid: '<?= $authenticatedUser['id']; ?>'
                 };
+                console.log('msg2');
+                console.log(msg2);
                 websocket.send(JSON.stringify(msg2));
-                
+                  
                 // if second user clicked start button, show timer
                 if(typeof (msg.started_user) !== 'undefined' && msg.started_user != user_id){
                     var timerValue = 10;
@@ -83,8 +89,78 @@
             
             
             if(type == 'toggleTimer'){
-                if(typeof (msg.on_move) !== 'undefined'&&msg.on_move.who != player_on_move&&typeof (msg.no_move_clock) == 'undefined'){
-                    console.log('toogleTimer-in');
+            
+                if (((typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)||(typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id))) {
+                    if(typeof (msg.on_move) !== 'undefined'&&typeof (msg.no_move_clock) == 'undefined'){
+                        console.log('toogleTimer-in');
+                        console.log(msg.on_move);
+                        if(msg.on_move.whoShort == 1)
+                        {
+                            divEq = 0;
+                            var secondEq = 2;
+                        }
+                        if(msg.on_move.whoShort == 2)
+                        {
+                            divEq = 2;
+                            var secondEq = 0;
+                        }
+                        var toggleElement = $('.playerList div:eq('+divEq+') span');
+
+                        var secondElement = $('.playerList div:eq('+secondEq+') span');
+                        window.setTimeout(function(){
+                            player_on_move = msg.on_move.who;
+                            var countdown = 2 * 60 * 1000;
+                            if(typeof(msg.on_move.ms) !== 'undefined'){
+                                console.log(msg.on_move.ms);
+                                var countdown = msg.on_move.ms;
+                            }
+                            var interval = setInterval(function() {
+                                countdown -= 1000;
+                                var min = Math.floor(countdown / (60 * 1000));
+                                var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
+                                toggleElement.html(min + " : " + sec);
+                                
+                                console.log(countdown);
+                                if(countdown<1000){
+                                    var msgExpired = {
+                                        type: 'timeExpiredFull',
+                                        expired: msg.on_move.whoShort,
+                                        userid: '<?= $authenticatedUser['id']; ?>'
+                                    };
+                                    websocket.send(JSON.stringify(msgExpired));
+                                    
+                                    
+                                    window.clearInterval(interval);
+                                    console.log('done');
+                                }
+                            }, 1000);
+                        },500);
+                    }
+                }
+            }
+            
+            if(type == 'getLeftTimer'){
+            console.log('getLeftTimer');
+                if(typeof (msg.user_id) !== 'undefined'&&msg.user_id == user_id){
+                    var leftElement = $('.playerLeft span');
+                    if(typeof(leftElement.html())!=='undefined'){
+                        console.log('getLeftTimerIn');
+                        var msgLeftTimer = {
+                            type: 'setLeftTimer',
+                            timer: leftElement.html(),
+                            userid: '<?= $authenticatedUser['id']; ?>'
+                        };
+                        websocket.send(JSON.stringify(msgLeftTimer));
+                    }
+                }
+                
+            }
+            
+            if(type == 'getTimer'){
+            console.log('getTimer');
+                if(typeof (msg.on_move) !== 'undefined'&&msg.on_move.who != player_on_move&&typeof (msg.no_move_clock) == 'undefined'&&msg.on_move.who == user_id){
+                    
+            console.log('getTimer - in');
                     if(msg.on_move.whoShort == 1)
                     {
                         divEq = 0;
@@ -96,24 +172,42 @@
                         var secondEq = 0;
                     }
                     var toggleElement = $('.playerList div:eq('+divEq+') span');
-                    
                     var secondElement = $('.playerList div:eq('+secondEq+') span');
-                    window.setTimeout(function(){
-                        player_on_move = msg.on_move.who;
-                        var countdown = 2 * 60 * 1000;
-                        if(typeof(msg.on_move.ms) !== 'undefined'){
-                            console.log(msg.on_move.ms);
-                            var countdown = msg.on_move.ms;
-                        }
-                        var interval = setInterval(function() {
-                            countdown -= 1000;
-                            var min = Math.floor(countdown / (60 * 1000));
-                            var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
-                            toggleElement.html(min + " : " + sec);
-                        }, 1000);
-                    },500);
+                    console.log(msg.on_move);
+                    console.log(toggleElement.html());
+                    console.log(secondElement.html());
+                    var msgTimer = {
+                        type: 'setTimer',
+                        timer: toggleElement.html(),
+                        userid: '<?= $authenticatedUser['id']; ?>'
+                    };
+                    websocket.send(JSON.stringify(msgTimer));
                 }
                 
+            }
+            
+            if (type == 'playerLeft')
+            {
+                console.log('playerLeft')
+                console.log(msg);
+                if (((typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)||(typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id))) {
+                
+                    for (var i = 1; i < 99999; i++) {
+                        window.clearInterval(i);
+                    }
+                                        
+                    var toggleElement = $('.playerList div:eq(0) span');
+                    var toggleElement2 = $('.playerList div:eq(2) span');
+                    console.log('174');
+                    var msgTimer = {
+                        type: 'setRunAwayTimer',
+                        timerPlayer1: toggleElement.html(),
+                        timerPlayer2: toggleElement2.html(),
+                        userid: '<?= $authenticatedUser['id']; ?>'
+                    };
+                    websocket.send(JSON.stringify(msgTimer));
+//                    var secondElement = $('.playerList div:eq('+secondEq+') span');
+                }
             }
             
             // if player won and table is finished
@@ -144,9 +238,10 @@
             {
                 console.log('showTablePlayer');
                 var message = msg.message;
+                console.log(msg);
                 // flip just my cards, not opponent cards
                 if ((typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id)||(typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)) {
-
+                    
                     var tableid = msg.tableid;
                     window.location.hash = tableid;
                     if(msg.user_id == user_id){
@@ -210,6 +305,8 @@
                                         userid: '<?= $authenticatedUser['id']; ?>'
                                     };
                                     websocket.send(JSON.stringify(msg5));
+                                    console.log('msg5');
+                                    console.log(msg5);
                                     elementPlayer1.remove();
                                     elementPlayer2.remove();
 //                                });
@@ -231,6 +328,7 @@
                                         refreshPoints: true,
                                         userid: '<?= $authenticatedUser['id']; ?>'
                                     };
+                                    console.log('msg6');
                                     console.log(msg6);
                                     websocket.send(JSON.stringify(msg6));
 //                                    $('.playerCards div.playerCard.flipIt').animate({
@@ -256,6 +354,25 @@
 //                if(gameInformation.hasClass('startsGame')){
 //                    var playerInfo = $(this).attr('data-rel');
 //                }
+
+                if (typeof (msg.leftTimer) !== 'undefined'){
+                    var leftElement = $('.playerLeft span');
+                    var countdown2 = 30 * 1000;
+                    var interval = setInterval(function() {
+                        countdown2 -= 1000;
+                        var min = Math.floor(countdown2 / (60 * 1000));
+                        var sec = Math.floor((countdown2 - (min * 60 * 1000)) / 1000);  //correct
+                        leftElement.html(min + " : " + sec);
+                        console.log(countdown2);
+                        if(countdown2<1000){
+                            var msgExpired = {
+                                type: 'timeExpired',
+                                userid: '<?= $authenticatedUser['id']; ?>'
+                            };
+                            websocket.send(JSON.stringify(msgExpired));
+                        }
+                    }, 1000);
+                }
             }
 
             // if you join table - show table
@@ -410,7 +527,223 @@
     });
 </script>
 
+<style>
+    .tableName{
+        background:red;
+        padding:10px;
+        text-align:center;
+    }
+    
+    .closeTable{
+        float:right;
+    }
+    
+    .playerList > div:first-of-type{
+        background:#fff;
+        color:#333;
+    }
+    
+    .playerList > div{
+        padding:5px;
+    }
+    
+    .playerList > div:nth-of-type(2){
+        background:#0000ff;
+        color:#fff;
+    }
+    
+    .playerList > div:nth-of-type(2) div{
+        color:#000;
+    }
+    
+    .playerList div div{
+        background:#868686;
+        width:20px;
+        float:right;
+        margin-right:10px;
+        text-align:center;
+        font-size:16px;
+    }
+    
+    
+    .playerList div span{
+        background:#868686;
+        width:40px;
+        float:right;
+        margin-right:10px;
+        text-align:center;
+        font-size:16px;
+        display:block;
+    }
+    
+    .selectedCard{
+        background:blue;
+    }
+    .currentPlayingSkill,.currentPlayingSkill td{
+        background:red;
+    }
+    .cardTableWrapper{
+        height:700px;
+        width:1020px;
+    }
+    #cardTable{
+        width:802px;
+        float:left;
+        height:700px;
+        position:relative;
+    }
+    #cardTableInfo{
+        width:210px;
+        clear: right;
+        float: right;
+    }
+    .playerCards{
+        height:177px;
+        width:100%;
+        border:1px solid grey;
+    }
+    .playerCards th{
+        position:relative;
+    }
+    .playerCards th strong{
+        z-index:10000;
+        position:absolute;
+        bottom:0px;left:0px;
+        background:rgba(0,0,0,0.6);
+        width:100%;
+        padding:5px 0px 5px 5px;
+        font-size:12px;
+    }
+    .playerCards td{
+
+        font-size:12px;
+    }
+    .playerCards th{
+        background:#504f4f;
+    }
+    .playerCards img{
+        max-width:100%;
+    }
+    .playerCards div{
+        width:160px;
+        float:left;
+        height:175px;
+    }
+    .playerCards div.playerCard{
+        background:#000;
+    }
+    .playCard{
+        width:160px;
+        border:1px solid red;
+        height:175px;
+        margin:0 auto;
+    }
+    .playField{
+        height:350px;
+        background: #686868;
+    }
+    .chat_wrapper {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+        background: #CCCCCC;
+        border: 1px solid #999999;
+        float:left;
+        padding: 10px;
+        font: 12px 'lucida grande',tahoma,verdana,arial,sans-serif;
+    }
+    .chat_wrapper .message_box {
+        background: #FFFFFF;
+        height: 150px;
+        overflow: auto;
+        padding: 10px;
+        border: 1px solid #999999;
+    }
+    .chat_wrapper .panel input{
+        padding: 2px 2px 2px 5px;
+    }
+    .system_msg{color: #BDBDBD;font-style: italic;}
+    .joined{color: #ff0000;font-style: italic;}
+    .user_name{font-weight:bold;}
+    .user_message{color: #88B6E0;}
+
+    .gameInformation{
+        background:#212121;
+        display: inline-block;
+        padding: .2em .6em .3em;
+        font-weight: bold;
+        color: #ffffff;
+        text-align: center;
+        vertical-align: baseline;
+        width:25%;
+        font-size:20px;
+        margin-top:10%;
+    }
+    .gameInformation span{
+        font-size:15px;
+        display:block;
+    }
+    
+    .cardTableWrapper{
+        display:none;
+    }
+
+    .startGame{
+        background: #0000ff;
+        border: none;
+        box-shadow: none;
+        color: #fff;
+        padding: 10px;
+        margin: 0 auto;
+        display: block;
+        top: 125px;
+        position: relative;
+        font-size: 25px;
+    }
+    .playerLeft span{
+        display:block;
+    }
+    .cardUserBoxWrapper h1{
+        background:#322f32;
+        margin:0px;
+        text-align:center;
+    }
+</style>
 <span class="cardUserBoxWrapper">
+    <h1>FastRally Card Game </h1>
+    <div class="cardUserHeader">
+        
+        <button class="btn myBtn" id="join-table"><i class="fa fa-plus"></i> Create new table</button>
+    </div>
+    <div class="cardTableListWrapper">
+        <div class="message_box" id="cardTableList">
+            <?php for($i=0;$i<15;$i++){ ?>
+            <div class="cardTableBox">
+                
+                <button class="joinSingleTable btn btn-primary" rel="1">Join table</button>
+                <div class="cardTablePlayers">
+                    <div class="cardTablePlayer">kk33</div>
+                        
+                    <div class="cardTablePlayer">johndoe</div>
+                </div>
+                <img src="/images/table.png" />
+                <div class="cardTableNo">#1</div>
+            </div>
+            <?php } ?>
+</div>
+    </div>
+
+    <div class="cardUserListWrapper">
+        <div class="message_box" id="cardUserList"> 
+            <ul>
+                <li>kk33 <span>#1</span></li>
+                <li>k33 <span>#1</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</span>
+<!--<span class="cardUserBoxWrapper">
     <div class="cardTableListWrapper">
         <button id="join-table">Create new table</button>
         <div class="message_box" id="cardTableList">
@@ -422,7 +755,7 @@
         <div class="message_box" id="cardUserList"></div>
     </div>
     <div class="clearfix"></div>
-</span>
+</span>-->
 <div class="cardTableWrapper" ></div>
 <!--<div class="cardTableWrapper" style="display: block;">
    <div id="cardTable">

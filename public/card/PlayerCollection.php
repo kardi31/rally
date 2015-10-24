@@ -15,19 +15,24 @@ class PlayerCollection {
     }
     
     public function addPlayer($userid,$username,$cards) {
+        echo "addPlayer - ".count($this->items)." \r\n";
         $player = new Player($userid,$username,$cards);
         $this->items[$userid] = $player;
+        echo "addPlayer - done - ".count($this->items)." \r\n";
         return $player;
     }
 
     public function removePlayer($userid,$tables) {
         if(isset($this->items[$userid])){
             $player = $this->items[$userid];
-            if($player->getTable()){
-                $tables->removeTable($player->getTable());
-            }
+//            if($player->getTable()){
+//                $tables->removeTable($player->getTable());
+//            }
             unset($this->items[$userid]);
+            if($player->getTable())
+                return $player->getTable();
         }
+        echo "removePlayer - ".count($this->items)." \r\n";
     }
     
     public function getPlayer($key) {
