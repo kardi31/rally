@@ -43,12 +43,19 @@ class PlayerCollection {
     }
     
     public function getJoinedPlayers(){
-        $joinedPlayers = " ";
+        
+        $dom = new DOMDocument();
+            
+        $joinedPlayers = $dom->createElement('ul');
         foreach($this->items as $player):
-            $joinedPlayers .= $player->getUsername()."<br />";
+            $li = $dom->createElement('li',$player->getUsername());
+            $span = $dom->createElement('span',$player->getTable());
+            
+            $li->appendChild($span);
+            $joinedPlayers->appendChild($li);
         endforeach;
         
-        return $joinedPlayers;
+        return $joinedPlayers->saveHTML();
     }
     
 }
