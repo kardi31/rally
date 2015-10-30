@@ -331,7 +331,7 @@ class Table {
         $playField = $dom->createElement('div');
         $playField->setAttribute('class', 'playField');
         if(!$this->isFinished()&&$this->isStarted()){
-            echo "not finished + started <br />";
+            echo "not finished + started \r\n";
             if($playerLeft = $this->isTableBeenLeft()){
 
                 $playerLeftBtn = $dom->createElement('button',$this->{$playerLeft}->getUsername()." has left the table.");
@@ -363,7 +363,7 @@ class Table {
             }
         }
         elseif(!$this->isStarted()){
-            echo "not started <br />";
+            echo "not started  \r\n";
             $startGameBtn = $dom->createElement('button','Start the game');
 //            $roundInfo = $dom->createElement('span',$this->{$this->isFinished()}->getUsername()." has won the game");
             $startGameBtn->setAttribute('class', 'startGame startGameNow');
@@ -372,8 +372,8 @@ class Table {
             $playField->appendChild($startGameBtn);
         }
         else{
-            echo "__________________________________ <br />";
-            echo "inside <br />";
+            echo "__________________________________  \r\n";
+            echo "inside  \r\n";
             
             $player1Cards->setAttribute('class','playerCards done');
             $player2Cards->setAttribute('class','playerCards done');
@@ -391,7 +391,7 @@ class Table {
             
             
             if($this->card_won){
-                echo "inside2 <br />";
+                echo "inside2  \r\n";
                 $cardWon = $this->card_won;
                 $wonCardElement = $this->createPlayerCardTable($cardWon,$dom);
                 

@@ -330,7 +330,9 @@ while (true) {
                                     }
                                     $passedParameters['tableid'] = $tableid;
 
+                                    echo "++++++getPlayerTable++++\r\n";
                                     if($table->isFinished()){
+                                    echo "finished\r\n";
                                         $passedParameters['type'] = 'playerWon';
                                     }
 
@@ -347,8 +349,8 @@ while (true) {
                                     $passedParameters['message'] = $availableTables;
                                     $response_text = mask(json_encode($passedParameters));
                                     send_message($response_text); //send data
-                                    
-                                    if($table->isStarted()&&!$table->isFinished()&&!$table->isTableBeenLeft()&&$onMove = $table->whoseNextMove()){
+                                    //&&!$table->isFinished()
+                                    if($table->isStarted()&&!$table->isTableBeenLeft()&&$onMove = $table->whoseNextMove()){
                                         $moveParameters = array('type' => 'toggleTimer');
                                                                                 
                                         $moveParameters = array_merge($moveParameters,$userOnTableIds);
@@ -356,8 +358,15 @@ while (true) {
                                         $moveParameters['on_move'] = $onMove;
                                         $response_text = mask(json_encode($moveParameters));
                                         send_message($response_text);
+                                        
+                                        
+                                        
                                     }
-                                    
+                                    if($table->isFinished()){
+                                            $move2Parameters = array('type' => 'stopAllClocks');
+                                            $response_text = mask(json_encode($move2Parameters));
+                                            send_message($response_text);
+                                        }
 
                                 }
                             }
