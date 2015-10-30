@@ -54,8 +54,9 @@ class PlayerCollection {
             $li->appendChild($span);
             $joinedPlayers->appendChild($li);
         endforeach;
+        $dom->appendChild($joinedPlayers);
         
-        return $joinedPlayers->saveHTML();
+        return $dom->saveHTML();
     }
     
 }

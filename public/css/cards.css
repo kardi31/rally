@@ -20,6 +20,7 @@
 
 .playerList > div{
     padding:5px;
+    padding-left:10px;
 }
 
 .playerList > div:nth-of-type(2){
@@ -58,22 +59,22 @@
     background:red;
 }
 .cardTableWrapper{
-    height:700px;
+    height:665px;
     width:1020px;
 }
 #cardTable{
-    width:802px;
+    width:728px;
     float:left;
-    height:700px;
+    height:660px;
     position:relative;
 }
 #cardTableInfo{
-    width:210px;
+    width:292px;
     clear: right;
     float: right;
 }
 .playerCards{
-    height:177px;
+    height:167px;
     width:100%;
     border:1px solid grey;
 }
@@ -100,22 +101,22 @@
     max-width:100%;
 }
 .playerCards div,.wonCardWrapper{
-    width:160px;
+    width:145px;
+    float:left;
+    height:165px;
+}
+.wonCardPreWrapper{
+    width:145px;
     float:left;
     height:175px;
 }
 .wonCardPreWrapper{
-    width:160px;
-    float:left;
-    height:195px;
-}
-.wonCardPreWrapper{
     position:absolute;
     top:250px;
-    left:375px;
+    left:290px;
 }
 .playerCards div.playerCard,.wonCardWrapper{
-    background:#000;
+    background:#333;
 }
 .playCard{
     width:160px;
@@ -124,7 +125,7 @@
     margin:0 auto;
 }
 .playField{
-    height:350px;
+    height:330px;
     background: #686868;
 }
 .chat_wrapper {

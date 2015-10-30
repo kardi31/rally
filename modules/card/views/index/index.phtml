@@ -22,16 +22,6 @@
 //            websocket.send(JSON.stringify(msg));
         };
 
-        // create tables
-        $('#join-table').click(function () {
-            var msg = {
-                type: 'tableJoined',
-                userid: '<?= $authenticatedUser['id']; ?>'
-            };
-            //convert and send data to server
-            websocket.send(JSON.stringify(msg));
-        });
-
 
 
 
@@ -73,18 +63,6 @@
                 console.log(msg2);
                 websocket.send(JSON.stringify(msg2));
                   
-                // if second user clicked start button, show timer
-                if(typeof (msg.started_user) !== 'undefined' && msg.started_user != user_id){
-                    var timerValue = 10;
-                    var interval = setInterval(function() {
-                        
-                        $('.startGame').html('Start the game <br />' + timerValue);
-                        timerValue--;
-                        if(timerValue<0){
-                            clearInterval(interval);
-                        }
-                    }, 1000);
-                }
             }
             
             
@@ -107,6 +85,13 @@
                         var toggleElement = $('.playerList div:eq('+divEq+') span');
 
                         var secondElement = $('.playerList div:eq('+secondEq+') span');
+                        
+                        // clear second player interval
+                        for (var i = 1; i < 9999; i++) {
+                            window.clearInterval(i);
+                        }
+                        
+                        console.log('this is on move by player ----------- ' + msg.on_move.whoShort);
                         window.setTimeout(function(){
                             player_on_move = msg.on_move.who;
                             var countdown = 2 * 60 * 1000;
@@ -120,7 +105,7 @@
                                 var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
                                 toggleElement.html(min + " : " + sec);
                                 
-                                console.log(countdown);
+                                console.log('timeer1' + countdown);
                                 if(countdown<1000){
                                     var msgExpired = {
                                         type: 'timeExpiredFull',
@@ -263,8 +248,8 @@
                 elementPlayer1.before( "<div></div>" );
                 elementPlayer1.css({"position": "absolute"});
                 elementPlayer1.animate({
-                        top: 175,
-                        left: 320
+                        top: 167,
+                        left: 290
                     },function(){
                         $(this).flip(true);
                 });
@@ -272,8 +257,8 @@
                 elementPlayer2.before( "<div></div>" );
                 elementPlayer2.css({"position": "absolute","top":525});
                 elementPlayer2.animate({
-                    top: 350,
-                    left: 320     
+                    top: 332,
+                    left: 290     
                 },function(){
                     $(this).flip(true);
                 });
@@ -286,16 +271,10 @@
                         if(msg.wonPlayer=='player1'){
                             elementPlayer1.css({'z-index':10});
                             elementPlayer2.animate({
-                                top: 175,
-                                left: 325,
+                                top: 167,
+                                left: 290,
                                 duration: 5000
                             },function(){
-//                                $('.playerCards div.playerCard.flipIt').animate({
-//                                    top:0,
-//                                    left:0,
-//                                    duration: 2000
-//                                },function(){
-//                                    
 //                                    // unset variable for clock, so it can move on
                                     player_on_move = false;
 //                                    // when animation finished, refresh table
@@ -305,8 +284,6 @@
                                         userid: '<?= $authenticatedUser['id']; ?>'
                                     };
                                     websocket.send(JSON.stringify(msg5));
-                                    console.log('msg5');
-                                    console.log(msg5);
                                     elementPlayer1.remove();
                                     elementPlayer2.remove();
 //                                });
@@ -316,8 +293,8 @@
                         
                             elementPlayer2.css({'z-index':10});
                             elementPlayer1.animate({
-                                top: 350,
-                                left: 320,
+                                top: 332,
+                                left: 290,
                                 duration: 5000
                             },function(){
                             
@@ -328,24 +305,35 @@
                                         refreshPoints: true,
                                         userid: '<?= $authenticatedUser['id']; ?>'
                                     };
-                                    console.log('msg6');
-                                    console.log(msg6);
                                     websocket.send(JSON.stringify(msg6));
-//                                    $('.playerCards div.playerCard.flipIt').animate({
-//                                        top:525,
-//                                        left:0,
-//                                        duration: 2000
-//                                    },function(){
-//                                  
-//                                    elementPlayer1.remove();
-//                                    elementPlayer2.remove();
+                            });
+                        }
+                        if(msg.wonPlayer=='draw'){
+                            elementPlayer1.css({'z-index':10});
+                            elementPlayer2.animate({
+                                top: 250,
+                                left: 290,
+                                duration: 5000
+                            },function(){
+//                                    
+//                                    // unset variable for clock, so it can move on
+                                    player_on_move = false;
+//                                    // when animation finished, refresh table
+                                    var msg5 = {
+                                        type: 'getPlayerTable',
+                                        refreshPoints: true,
+                                        userid: '<?= $authenticatedUser['id']; ?>'
+                                    };
+                                    websocket.send(JSON.stringify(msg5));
+                                    elementPlayer1.remove();
+                                    elementPlayer2.remove();
 //                                });
                             });
                         }
                     },3000);
-                }
+                }   
 //                
-                }
+             }
 //                $("#stop").click(function(){
 //                    $('.playerCards div.playerCard.flipIt').stop();
 //                });
@@ -373,6 +361,32 @@
                         }
                     }, 1000);
                 }
+                
+                if(typeof (msg.remove_start_timer) !== 'undefined' && msg.remove_start_timer){
+                    
+                    for (var i = 1; i < 10; i++) {
+                        window.clearInterval(i);
+                    }
+                }
+                
+                // if second user clicked start button, show timer
+//                if(typeof (msg.started_user) !== 'undefined' && msg.started_user !== 'false' && msg.started_user){
+//                    var timerValue = 10;
+//                    
+//                    var interval = setInterval(function() {
+//                        $('.startGame').html('Start the game <br />' + timerValue);
+//                        timerValue--;
+//                        if(timerValue<0){
+//                            clearInterval(interval);
+//                        }
+//                    }, 1000);
+//                    
+//                       
+//                }
+//                if(msg.started_user==user_id){
+//                    console.log('in');
+//                    $('.startGame').removeClass('startGameNow');
+//                }
             }
 
             // if you join table - show table
@@ -404,53 +418,27 @@
                 $('#cardUserList').html(message);
             }
 
-
-            /*
-             *  Buttons which appear later in game
-             */
-
-
-            
-
-
-            // when you want to start the game
-            $('.startGame').click(function () {
-                var msg = {
-                    type: 'startTable',
-                    userid: '<?= $authenticatedUser['id']; ?>'
-                };
-                websocket.send(JSON.stringify(msg));
-                console.log('clickedStart');
-                for (var i = 1; i < 99999; i++) {
-                    window.clearInterval(i);
-                    window.clearTimeout(i);
+            if(type == 'showStartTimer'){
+                
+                if ((typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id)||(typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)) {
+//                if(typeof (msg.started_user) !== 'undefined' && msg.started_user !== 'false' && msg.started_user){
+                    var timerValue = 10;
+                    
+                    var interval = setInterval(function() {
+                        $('.startGame').html('Start the game <br />' + timerValue);
+                        timerValue--;
+                        if(timerValue<0){
+                            clearInterval(interval);
+                        }
+                    }, 1000);
+//                    
+//                       
                 }
-            });
-
-            // when you join existing table
-            $('.joinSingleTable').click(function () {
-                var tableid = $(this).attr('rel');
-                var msg = {
-                    type: 'existTableJoined',
-                    tableid: tableid,
-                    userid: '<?= $authenticatedUser['id']; ?>'
-                };
-                websocket.send(JSON.stringify(msg));
-            });
-
-            // quit ur table
-            $('.closeTable').click(function () {
-                var tableid = $(this).attr('rel');
-                var msg = {
-                    type: 'closeTable',
-                    tableid: tableid,
-                    userid: '<?= $authenticatedUser['id']; ?>'
-                };
-                websocket.send(JSON.stringify(msg));
-                // remove hastag from the end
-                history.pushState("", document.title, window.location.pathname);
-            });
-
+//                if(msg.started_user==user_id){
+//                    console.log('in');
+//                    $('.startGame').removeClass('startGameNow');
+//                }
+            }
             
 //        $('.playerCards > div.playerCard').flip({
 //            trigger: 'manual'
@@ -524,192 +512,74 @@
                     websocket.send(JSON.stringify(msg));
                 }
             });
+            
+             // when you want to start the game
+            $('.cardTableWrapper').delegate('.startGameNow','click',function () {
+                var msg = {
+                    type: 'startTable',
+                    userid: '<?= $authenticatedUser['id']; ?>'
+                };
+                websocket.send(JSON.stringify(msg));
+            });
+
+            // when you join existing table
+            
+            $('.cardTableListWrapper').delegate('.joinSingleTable','click',function () {
+                var tableid = $(this).attr('rel');
+                var msg = {
+                    type: 'existTableJoined',
+                    tableid: tableid,
+                    userid: '<?= $authenticatedUser['id']; ?>'
+                };
+                websocket.send(JSON.stringify(msg));
+            });
+
+            // quit ur table
+            
+            $('.cardTableWrapper').delegate('.closeTable','click',function () {
+                var tableid = $(this).attr('rel');
+                var msg = {
+                    type: 'closeTable',
+                    tableid: tableid,
+                    userid: '<?= $authenticatedUser['id']; ?>'
+                };
+                websocket.send(JSON.stringify(msg));
+                // remove hastag from the end
+                history.pushState("", document.title, window.location.pathname);
+            });
+            
+            
+        // create tables
+        $('.cardUserHeader').delegate('#join-table','click',function () {
+            var msg = {
+                type: 'tableJoined',
+                userid: '<?= $authenticatedUser['id']; ?>'
+            };
+            //convert and send data to server
+            websocket.send(JSON.stringify(msg));
+        });
+
     });
 </script>
 
-<style>
-    .tableName{
-        background:red;
-        padding:10px;
-        text-align:center;
-    }
-    
-    .closeTable{
-        float:right;
-    }
-    
-    .playerList > div:first-of-type{
-        background:#fff;
-        color:#333;
-    }
-    
-    .playerList > div{
-        padding:5px;
-    }
-    
-    .playerList > div:nth-of-type(2){
-        background:#0000ff;
-        color:#fff;
-    }
-    
-    .playerList > div:nth-of-type(2) div{
-        color:#000;
-    }
-    
-    .playerList div div{
-        background:#868686;
-        width:20px;
-        float:right;
-        margin-right:10px;
-        text-align:center;
-        font-size:16px;
-    }
-    
-    
-    .playerList div span{
-        background:#868686;
-        width:40px;
-        float:right;
-        margin-right:10px;
-        text-align:center;
-        font-size:16px;
-        display:block;
-    }
-    
-    .selectedCard{
-        background:blue;
-    }
-    .currentPlayingSkill,.currentPlayingSkill td{
-        background:red;
-    }
-    .cardTableWrapper{
-        height:700px;
-        width:1020px;
-    }
-    #cardTable{
-        width:802px;
-        float:left;
-        height:700px;
-        position:relative;
-    }
-    #cardTableInfo{
-        width:210px;
-        clear: right;
-        float: right;
-    }
-    .playerCards{
-        height:177px;
-        width:100%;
-        border:1px solid grey;
-    }
-    .playerCards th{
-        position:relative;
-    }
-    .playerCards th strong{
-        z-index:10000;
-        position:absolute;
-        bottom:0px;left:0px;
-        background:rgba(0,0,0,0.6);
-        width:100%;
-        padding:5px 0px 5px 5px;
-        font-size:12px;
-    }
-    .playerCards td{
-
-        font-size:12px;
-    }
-    .playerCards th{
-        background:#504f4f;
-    }
-    .playerCards img{
-        max-width:100%;
-    }
-    .playerCards div{
-        width:160px;
-        float:left;
-        height:175px;
-    }
-    .playerCards div.playerCard{
-        background:#000;
-    }
-    .playCard{
-        width:160px;
-        border:1px solid red;
-        height:175px;
-        margin:0 auto;
-    }
-    .playField{
-        height:350px;
-        background: #686868;
-    }
-    .chat_wrapper {
-        width: 700px;
-        margin-right: auto;
-        margin-left: auto;
-        background: #CCCCCC;
-        border: 1px solid #999999;
-        float:left;
-        padding: 10px;
-        font: 12px 'lucida grande',tahoma,verdana,arial,sans-serif;
-    }
-    .chat_wrapper .message_box {
-        background: #FFFFFF;
-        height: 150px;
-        overflow: auto;
-        padding: 10px;
-        border: 1px solid #999999;
-    }
-    .chat_wrapper .panel input{
-        padding: 2px 2px 2px 5px;
-    }
-    .system_msg{color: #BDBDBD;font-style: italic;}
-    .joined{color: #ff0000;font-style: italic;}
-    .user_name{font-weight:bold;}
-    .user_message{color: #88B6E0;}
-
-    .gameInformation{
-        background:#212121;
-        display: inline-block;
-        padding: .2em .6em .3em;
-        font-weight: bold;
-        color: #ffffff;
-        text-align: center;
-        vertical-align: baseline;
-        width:25%;
-        font-size:20px;
-        margin-top:10%;
-    }
-    .gameInformation span{
-        font-size:15px;
-        display:block;
-    }
-    
-    .cardTableWrapper{
-        display:none;
-    }
-
-    .startGame{
-        background: #0000ff;
-        border: none;
-        box-shadow: none;
-        color: #fff;
-        padding: 10px;
-        margin: 0 auto;
-        display: block;
-        top: 125px;
-        position: relative;
-        font-size: 25px;
-    }
-    .playerLeft span{
-        display:block;
-    }
-    .cardUserBoxWrapper h1{
-        background:#322f32;
-        margin:0px;
-        text-align:center;
-    }
-</style>
 <span class="cardUserBoxWrapper">
+    <h1>FastRally Card Game </h1>
+    <div class="cardUserHeader">
+        
+        <button class="btn myBtn" id="join-table"><i class="fa fa-plus"></i> Create new table</button>
+    </div>
+    <div class="cardTableListWrapper">
+        <div class="message_box" id="cardTableList">
+        </div>
+    </div>
+
+    <div class="cardUserListWrapper">
+        <div class="message_box" id="cardUserList"> 
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</span>
+<!--<span class="cardUserBoxWrapper">
     <h1>FastRally Card Game </h1>
     <div class="cardUserHeader">
         
@@ -740,19 +610,6 @@
                 <li>k33 <span>#1</span></li>
             </ul>
         </div>
-    </div>
-    <div class="clearfix"></div>
-</span>
-<!--<span class="cardUserBoxWrapper">
-    <div class="cardTableListWrapper">
-        <button id="join-table">Create new table</button>
-        <div class="message_box" id="cardTableList">
-        </div>
-    </div>
-
-    <div class="cardUserListWrapper">
-        <h4>User list</h4>
-        <div class="message_box" id="cardUserList"></div>
     </div>
     <div class="clearfix"></div>
 </span>-->

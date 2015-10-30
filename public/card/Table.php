@@ -75,7 +75,7 @@ class Table {
     public function setStartingPlayer(){
 //        $playerNo = rand(1,2);
        
-        $playerNo = 1;
+        $playerNo = 2;
         $this->started_moves[0][] = 'player'.$playerNo;
     }
     
@@ -331,6 +331,7 @@ class Table {
         $playField = $dom->createElement('div');
         $playField->setAttribute('class', 'playField');
         if(!$this->isFinished()&&$this->isStarted()){
+            echo "not finished + started <br />";
             if($playerLeft = $this->isTableBeenLeft()){
 
                 $playerLeftBtn = $dom->createElement('button',$this->{$playerLeft}->getUsername()." has left the table.");
@@ -362,14 +363,18 @@ class Table {
             }
         }
         elseif(!$this->isStarted()){
+            echo "not started <br />";
             $startGameBtn = $dom->createElement('button','Start the game');
 //            $roundInfo = $dom->createElement('span',$this->{$this->isFinished()}->getUsername()." has won the game");
-            $startGameBtn->setAttribute('class', 'startGame');
+            $startGameBtn->setAttribute('class', 'startGame startGameNow');
             
 //            $whoWon->appendChild($roundInfo);
             $playField->appendChild($startGameBtn);
         }
         else{
+            echo "__________________________________ <br />";
+            echo "inside <br />";
+            
             $player1Cards->setAttribute('class','playerCards done');
             $player2Cards->setAttribute('class','playerCards done');
             
@@ -386,6 +391,7 @@ class Table {
             
             
             if($this->card_won){
+                echo "inside2 <br />";
                 $cardWon = $this->card_won;
                 $wonCardElement = $this->createPlayerCardTable($cardWon,$dom);
                 
@@ -632,6 +638,15 @@ class Table {
                 $this->started_moves[$round][] = 'player2';
                 $this->player2->addPointToAdd();
             }
+            // skillcard1 = skillcard2
+            else{
+                $this->moves['won'][$round-1] = 'draw';
+                if(isset($this->started_moves[$round-1][0])){
+                    $this->started_moves[$round][] = $this->started_moves[$round-1][0];
+                }
+                $this->player1->addPointToAdd();
+                $this->player2->addPointToAdd();
+            }
         }
         else{
             if($skillCard1<$skillCard2){
@@ -644,8 +659,20 @@ class Table {
                 $this->started_moves[$round][] = 'player2';
                 $this->player2->addPointToAdd();
             }
+            
+            // skillcard1 = skillcard2
+            else{
+                $this->moves['won'][$round-1] = 'draw';
+                if(isset($this->started_moves[$round-1][0])){
+                    $this->started_moves[$round][] = $this->started_moves[$round-1][0];
+                }
+                $this->player1->addPointToAdd();
+                $this->player2->addPointToAdd();
+            }
         }
     }
+    
+    
     
     public function swipeCardsToWonPlayer(){
         $round = $this->round;
@@ -734,6 +761,22 @@ class Table {
                 unset($this->moves['wantStart'][1]);
             }
         }
+    }
+    
+    public function whoStarted(){
+        if(isset($this->moves['wantStart'][0])){
+            return $this->moves['wantStart'][0];
+        }
+        
+        return false;
+    }
+    
+    public function isOnePlayerStarted(){
+        if(isset($this->moves['wantStart'][0])&&!isset($this->moves['wantStart'][1])){
+            return true;
+        }
+        
+        return false;
     }
     
     public function getOtherPlayer($player){

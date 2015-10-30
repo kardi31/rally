@@ -269,20 +269,40 @@ while (true) {
                             elseif($tst_msg->type=="startTable"){
                                 
                                 $player = $players->getPlayer($tst_msg->userid);
-                                echo "starttable -zle \r\n";
+                                echo "starttable";
                                 if(isset($userSockets[$player->getId()])&&$userSockets[$player->getId()]==$changed_socket){
-                                    echo "starttable - dobrze \r\n";
                                     $table = $tables->getTable($player->getTable());
-                                    $table->startTableByPlayer($player);
-                                    $passedParameters = array('type'=>'getTableForPlayer');
+                                    
+                                    if($table->hasBothPlayers()){
+                                        $table->startTableByPlayer($player);
+                                        
+                                        var_dump($table->isOnePlayerStarted());
+                                        if($table->isOnePlayerStarted()){
+                                            $passedParameters = array('type'=>'showStartTimer');
+                                            $userOnTableIds = $table->getPlayerIds();
+                                            
+                                            $passedParameters = array_merge($passedParameters,$userOnTableIds);
+                                            $passedParameters['started_user'] = $player->getId(); 
+                                            
+                                            $response_text = mask(json_encode($passedParameters));
+                                            send_message($response_text);
+                                        }
+                                        elseif($table->isStarted()){
+                                        
+                                            $passedParameters = array('type'=>'getTableForPlayer');
 
-                                    $userOnTableIds = $table->getPlayerIds();
-                                    $passedParameters = array_merge($passedParameters,$userOnTableIds);
-                                    if(!$table->isStarted()){
-                                        $passedParameters['started_user'] = $player->getId(); 
+                                            $userOnTableIds = $table->getPlayerIds();
+                                            $passedParameters = array_merge($passedParameters,$userOnTableIds);
+                                            
+                                            $passedParameters['remove_start_timer'] = true; 
+    //                                        if(!$table->isStarted()){
+    //                                            $passedParameters['started_user'] = $player->getId(); 
+    //                                        }
+                                            $response_text = mask(json_encode($passedParameters));
+                                            send_message($response_text); //send data
+                                        
+                                        }
                                     }
-                                    $response_text = mask(json_encode($passedParameters));
-                                    send_message($response_text); //send data
                                 }
                             }
                             // Get table just for this player
@@ -303,7 +323,7 @@ while (true) {
                                         
                                     }
                                     if(isset($userOnTableIds['user_id'])){
-                                    $passedParameters['showTable'] = $table->showTable($userOnTableIds['user_id'],$refreshPoints);
+                                        $passedParameters['showTable'] = $table->showTable($userOnTableIds['user_id'],$refreshPoints);
                                     }
                                     if(isset($userOnTableIds['user_id2'])){
                                         $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2'],$refreshPoints);
@@ -317,6 +337,11 @@ while (true) {
                                     
                                     if($table->isTableBeenLeft()){
                                         $passedParameters['leftTimer'] = true;
+                                    }
+                                    
+                                    
+                                    if(!$table->isStarted()){
+                                        $passedParameters['started_user'] = $table->whoStarted(); 
                                     }
                                     
                                     $passedParameters['message'] = $availableTables;
@@ -553,7 +578,7 @@ function perform_handshaking($receved_header,$client_conn, $host, $port)
 
 function refreshPlayerList($players){
     $message = $players->getJoinedPlayers();
-
+    var_dump($message);
     $response_text = mask(json_encode(array('type'=>'joined', 'message'=>$message)));
     send_message($response_text); 
 }

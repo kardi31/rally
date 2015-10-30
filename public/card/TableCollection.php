@@ -80,23 +80,32 @@ class TableCollection {
             $cardTableBox = $dom->createElement('div');
             $cardTableBox->setAttribute('class', 'cardTableBox');
 
-            $cardTableNo = $dom->createElement('div','Table '.$tableId);
+            $cardTableNo = $dom->createElement('div','#'.$tableId);
             $cardTableNo->setAttribute('class', 'cardTableNo');
             
             
             $cardTablePlayers = $dom->createElement('div');
             $cardTablePlayers->setAttribute('class', 'cardTablePlayers');
             
-            $cardTableBox->appendChild($cardTableNo);
-            $cardTableBox->appendChild($cardTablePlayers);
+            $tableImg = $dom->createElement('img');
+            $tableImg->setAttribute('src', '/images/table.png');
             
-            $table->getPlayersInfo($dom,$cardTablePlayers);
+            
+            $cardTableBox->appendChild($cardTableNo);
+            
             
             
             $joinSingleTable = $dom->createElement('button','Join table');
             $joinSingleTable->setAttribute('class', 'joinSingleTable btn btn-primary');
             $joinSingleTable->setAttribute('rel', $tableId);
             $cardTableBox->appendChild($joinSingleTable);
+            
+            $cardTableBox->appendChild($cardTablePlayers);
+            $cardTableBox->appendChild($tableImg);
+            
+            $table->getPlayersInfo($dom,$cardTablePlayers);
+            
+            
             
             $dom->appendChild($cardTableBox);
             
