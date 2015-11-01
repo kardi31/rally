@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Description of Table
- *
- * @author Tomasz
- */
 class Table {
     
     protected $player1;
@@ -19,7 +14,6 @@ class Table {
     protected $current_skill_playing;
     protected $skillOrder = array('acceleration','max_speed','capacity','horsepower');
     protected $round = 1;
-    protected $old_skill_playing_id = false;
     protected $is_started = false;
     
     protected $started_moves = array();
@@ -31,6 +25,31 @@ class Table {
 
     protected $players_left_table = array();
     protected $player_won = false;
+    
+    
+    protected function resetPartiallyTable(){
+        $this->players_left_table = array();
+        $this->player_won = false;
+        $this->started_moves = array();
+        $this->finished_moves = array();
+        $this->moves = array(
+            'player1' => array(),
+            'player2' => array(),
+            'won' => array(),
+            'wantStart' => array()
+        );
+        $this->round = 1;
+//        $this->is_started = false;
+        unset($this->current_skill_playing);
+    }
+    
+    protected function resetPartiallyTable2(){
+        
+        $this->card_won = false;
+        $this->is_finished = false;
+        $this->player1->resetPlayerInfo();
+        $this->player2->resetPlayerInfo();
+    }
     
     public function __construct($player,$id){
         $this->player1 = $player;
@@ -69,13 +88,13 @@ class Table {
     
     public function addPlayer($player){
         $this->player2 = $player;
-        $this->setStartingPlayer();
+//        $this->setStartingPlayer();
     }
     
     public function setStartingPlayer(){
 //        $playerNo = rand(1,2);
        
-        $playerNo = 2;
+        $playerNo = 1;
         $this->started_moves[0][] = 'player'.$playerNo;
     }
     
@@ -331,7 +350,6 @@ class Table {
         $playField = $dom->createElement('div');
         $playField->setAttribute('class', 'playField');
         if(!$this->isFinished()&&$this->isStarted()){
-            echo "not finished + started \r\n";
             if($playerLeft = $this->isTableBeenLeft()){
 
                 $playerLeftBtn = $dom->createElement('button',$this->{$playerLeft}->getUsername()." has left the table.");
@@ -363,7 +381,6 @@ class Table {
             }
         }
         elseif(!$this->isStarted()){
-            echo "not started  \r\n";
             $startGameBtn = $dom->createElement('button','Start the game');
 //            $roundInfo = $dom->createElement('span',$this->{$this->isFinished()}->getUsername()." has won the game");
             $startGameBtn->setAttribute('class', 'startGame startGameNow');
@@ -372,9 +389,6 @@ class Table {
             $playField->appendChild($startGameBtn);
         }
         else{
-            echo "__________________________________  \r\n";
-            echo "inside  \r\n";
-            
             $player1Cards->setAttribute('class','playerCards done');
             $player2Cards->setAttribute('class','playerCards done');
             
@@ -391,7 +405,6 @@ class Table {
             
             
             if($this->card_won){
-                echo "inside2  \r\n";
                 $cardWon = $this->card_won;
                 $wonCardElement = $this->createPlayerCardTable($cardWon,$dom);
                 
@@ -402,15 +415,23 @@ class Table {
                 $wonCardPreWrapper->setAttribute('class', 'wonCardPreWrapper');
                 
                 
-                $strongCardWon = $dom->createElement('strong',$this->{$this->isFinished()}->getUsername()." has won this card.");
                 
                 $wonCardWrapper->appendChild($wonCardElement);
                 $wonCardPreWrapper->appendChild($wonCardWrapper);
+                
+                 $this->resetPartiallyTable();
             }
             
             
             $playField->appendChild($whoWon);
             $playField->appendChild($wonCardPreWrapper);
+            
+            $startGameBtn = $dom->createElement('button','Start the game');
+            $startGameBtn->setAttribute('class', 'startGame startGameNow');
+            
+            $playField->appendChild($startGameBtn);
+            
+            
         }
         
         $cardTable->appendChild($player1Cards);
@@ -498,31 +519,6 @@ class Table {
     public function getId(){
         return $this->id;
     }
-    
-//     <table>
-//                    <tr>
-//                        <th colspan="2">
-//                            <img src="/media/cars/opel_viva.jpg" alt="Opel Viva GT" class="">
-//                            <strong>Suzuki Swift Sport</strong>
-//                        </th>
-//                    </tr>
-//                    <tr>
-//                        <td>Acceleration</td>
-//                        <td>3.5</td>
-//                    </tr>
-//                    <tr>
-//                        <td>v-max</td>
-//                        <td>210</td>
-//                    </tr>
-//                    <tr>
-//                        <td>Capacity</td>
-//                        <td>1598</td>
-//                    </tr>
-//                    <tr>
-//                        <td>Horsepower</td>
-//                        <td>208</td>
-//                    </tr>
-//                </table>
     
     public function createPlayerCardTable($card,$dom,$whichPlayer = false){
         $table = $dom->createElement('table');
@@ -754,8 +750,12 @@ class Table {
         elseif($player==$this->player2){
             array_push($this->moves['wantStart'],'player2');
         }
+        echo "start_table_by_player \r\n";
         if(isset($this->moves['wantStart'][0])&&isset($this->moves['wantStart'][1])){
             if(in_array('player1',$this->moves['wantStart'])&&in_array('player2',$this->moves['wantStart'])){
+                $this->setStartingPlayer();
+                $this->resetPartiallyTable2();
+                var_dump('thisfinished - '.$this->is_finished."\r\n");
                 $this->is_started = true;
                 unset($this->moves['wantStart'][0]);
                 unset($this->moves['wantStart'][1]);
@@ -804,6 +804,8 @@ class Table {
     public function whoseNextMove(){
         
         $round = $this->round;
+        echo "round - ".$this->round;
+        var_dump($this->started_moves);
         // 1 ruch w danej kolejce
         if(isset($this->started_moves[$round-1])&&count($this->started_moves[$round-1])==1&&!isset($this->finished_moves[$round-1]))
         {
@@ -867,7 +869,6 @@ class Table {
                 $player = $this->player2;
             }
             
-            echo "dobrze";
             // current timer
             $playerTimer = $player->getTimer(true);
             
@@ -889,7 +890,8 @@ class Table {
             
             unset($this->players_left_table[$player->getId()]);
         }
-        echo "zle";
     }
+    
+    
     
 }

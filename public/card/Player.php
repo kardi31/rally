@@ -102,6 +102,13 @@ class Player {
         }
     }
     
+    public function resetPlayerInfo(){
+        $this->pointToAdd = false;
+        $this->point = 0;
+        
+        $this->timer = '2:00';
+    }
+    
     public function getCard($orderNo){
         $keys = array_keys($this->cards);
         if(isset($this->cards[$keys[$orderNo-1]]))
@@ -157,8 +164,8 @@ class Player {
     public function moveLostCard($wonUserId){
         
         $getWonCard = $this->db->fetch('select * from card_card where user_id = '.$this->id.' order by rand() limit 1');
-        echo "move";
-        $row = $this->db->execute('update card_card set user_id = '.$wonUserId.' where id = '.$getWonCard['id'].' limit 1');
+
+//        $row = $this->db->execute('update card_card set user_id = '.$wonUserId.' where id = '.$getWonCard['id'].' limit 1');
         
         $wonCard = new Car($getWonCard['car_model_id'],$getWonCard['id']);
         

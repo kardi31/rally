@@ -73,7 +73,6 @@ while (true) {
                         if(is_object($tst_msg)){
                             // joined the game
                             if($tst_msg->type=="joined"){
-                                echo "joined - ".$tst_msg->userid."\r\n";
                                 if(!$player = $players->getPlayer($tst_msg->userid)){
                                     $player = $players->addPlayer($tst_msg->userid,$tst_msg->username,json_decode($tst_msg->cards,true));
                                 }
@@ -112,7 +111,6 @@ while (true) {
                                 refreshPlayerList($players);
                             }
                             elseif($tst_msg->type=="setLeftTimer"){
-                                echo "setLeftTimer\r\n";
                                 
                                 $player = $players->getPlayer($tst_msg->userid);
                                 if($player->getTable()){
@@ -125,7 +123,6 @@ while (true) {
                                     
 //                                    $table->setPlayerBackOnTable($player);
                                     $passedParameters['tableid'] = $tableId;
-                                    echo "clearInterval \r\n";
                                     $passedParameters['clearInterval'] = true;
                                     
                                     $userOnTableIds = $table->getPlayerIds();
@@ -232,7 +229,6 @@ while (true) {
                             
                             // Second player quit the table and his player left timer expired
                             elseif($tst_msg->type=="timeExpired"){
-                                echo "timeExpired";
                                 $player = $players->getPlayer($tst_msg->userid);
                                 $table = $tables->getTable($player->getTable());
                                 
@@ -248,7 +244,6 @@ while (true) {
                                 send_message($response_text); //send data
                             }
                             elseif($tst_msg->type=="timeExpiredFull"){
-                                echo "timeExpiredFull";
                                 $player = $players->getPlayer($tst_msg->userid);
                                 $table = $tables->getTable($player->getTable());
                                 
@@ -269,7 +264,6 @@ while (true) {
                             elseif($tst_msg->type=="startTable"){
                                 
                                 $player = $players->getPlayer($tst_msg->userid);
-                                echo "starttable";
                                 if(isset($userSockets[$player->getId()])&&$userSockets[$player->getId()]==$changed_socket){
                                     $table = $tables->getTable($player->getTable());
                                     
@@ -330,9 +324,7 @@ while (true) {
                                     }
                                     $passedParameters['tableid'] = $tableid;
 
-                                    echo "++++++getPlayerTable++++\r\n";
                                     if($table->isFinished()){
-                                    echo "finished\r\n";
                                         $passedParameters['type'] = 'playerWon';
                                     }
 
@@ -350,6 +342,7 @@ while (true) {
                                     $response_text = mask(json_encode($passedParameters));
                                     send_message($response_text); //send data
                                     //&&!$table->isFinished()
+                                    
                                     if($table->isStarted()&&!$table->isTableBeenLeft()&&$onMove = $table->whoseNextMove()){
                                         $moveParameters = array('type' => 'toggleTimer');
                                                                                 
@@ -375,7 +368,7 @@ while (true) {
                                 $player = $players->getPlayer($tst_msg->userid);
                                 
                                 if(isset($userSockets[$player->getId()])&&$userSockets[$player->getId()]==$changed_socket){
-                                    echo "cardClicked";
+                                 
                                     $tableId = $player->getTable();
                                     $table = $tables->getTable($tableId);
 
@@ -484,7 +477,6 @@ while (true) {
                         if($player = $players->getPlayer($userId)){
                             $tableId = $player->getTable();
                             $table = $tables->getTable($tableId);
-                            echo $player->getUsername();
                             $table->setPlayerLeftTable($player);
                             
                             $infoArray = array('type'=>'playerLeft', 'message'=>'userLeft');
