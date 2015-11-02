@@ -39,7 +39,6 @@ class Table {
             'wantStart' => array()
         );
         $this->round = 1;
-//        $this->is_started = false;
         unset($this->current_skill_playing);
     }
     
@@ -51,6 +50,23 @@ class Table {
         $this->player2->resetPlayerInfo();
     }
     
+    protected function resetTableNoPlayers(){
+        $this->players_left_table = array();
+        $this->player_won = false;
+        $this->started_moves = array();
+        $this->finished_moves = array();
+        $this->moves = array(
+            'player1' => array(),
+            'player2' => array(),
+            'won' => array(),
+            'wantStart' => array()
+        );
+        $this->round = 1;
+        unset($this->current_skill_playing);
+        
+        $this->card_won = false;
+        $this->is_finished = false;
+    }
     public function __construct($player,$id){
         $this->player1 = $player;
         $this->id = $id;
@@ -506,12 +522,7 @@ class Table {
         }
         
         if(isset($this->player2)){
-            if(empty($playerIds)){
-                $playerIds['user_id'] = $this->player2->getId();
-            }
-            else{
-                $playerIds['user_id2'] = $this->player2->getId();
-            }
+            $playerIds['user_id2'] = $this->player2->getId();
         }
         return $playerIds;
     }
@@ -755,7 +766,6 @@ class Table {
             if(in_array('player1',$this->moves['wantStart'])&&in_array('player2',$this->moves['wantStart'])){
                 $this->setStartingPlayer();
                 $this->resetPartiallyTable2();
-                var_dump('thisfinished - '.$this->is_finished."\r\n");
                 $this->is_started = true;
                 unset($this->moves['wantStart'][0]);
                 unset($this->moves['wantStart'][1]);
@@ -780,10 +790,10 @@ class Table {
     }
     
     public function getOtherPlayer($player){
-        if($player==$this->player1){
+        if(isset($this->player1)&&$player==$this->player1){
             return $this->player2;
         }
-        elseif($player==$this->player2){
+        elseif(isset($this->player2)&&$player==$this->player2){
             return $this->player1;
         }
         
@@ -804,8 +814,6 @@ class Table {
     public function whoseNextMove(){
         
         $round = $this->round;
-        echo "round - ".$this->round;
-        var_dump($this->started_moves);
         // 1 ruch w danej kolejce
         if(isset($this->started_moves[$round-1])&&count($this->started_moves[$round-1])==1&&!isset($this->finished_moves[$round-1]))
         {
@@ -883,13 +891,25 @@ class Table {
             
             $min = floor($newPlayerTimer / (60 * 1000));
             $sec = floor(($newPlayerTimer - ($min * 60 * 1000)) / 1000);  //correct
-            var_dump($min." : ".$sec);
+           
 //            var_dump($timer);
             $player->setTimer($min." : ".$sec);
             
             
             unset($this->players_left_table[$player->getId()]);
         }
+    }
+    
+    public function kickPlayer($player){
+        if($this->player1==$player){
+            unset($this->player1);
+            
+        }
+        elseif($this->player2==$player){
+            unset($this->player2);
+        }
+        $this->resetTableNoPlayers();
+        $player->removeTable();
     }
     
     

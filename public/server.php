@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('card/Player.php');
 require_once('card/PlayerCollection.php');
 require_once('card/TableCollection.php');
@@ -43,13 +44,9 @@ while (true) {
 		$response = mask(json_encode(array('type'=>'system', 'message'=>$ip.' connected'))); //prepare json data
 		send_message($response); //notify all users about new connection
 		
-		//make room for new socket
-		$found_socket = array_search($socket, $changed);
-		unset($changed[$found_socket]);
                 
-                // request username and id
-                $response_text = mask(json_encode(array('type'=>'requestData')));
-                send_message($response_text); //send data
+		$found_socket = array_search($socket, $changed);
+                
                 
                 // get list of all players
                 $message = $players->getJoinedPlayers();
@@ -61,8 +58,10 @@ while (true) {
                 $response_text = mask(json_encode(array('type'=>'joinedTable', 'message'=>$availableTables)));
                 send_message($response_text);
                 
+                
+		//make room for new socket
+		unset($changed[$found_socket]);
 	}
-	
 	//loop through all connected sockets
 	foreach ($changed as $changed_socket) {
 		//check for any incomming data
@@ -71,29 +70,17 @@ while (true) {
 			$received_text = unmask($buf); //unmask data
 			$tst_msg = json_decode($received_text); //json decode 
                         if(is_object($tst_msg)){
+                            echo " type ---------- ".$tst_msg->type."\r\n";
                             // joined the game
                             if($tst_msg->type=="joined"){
+                                
                                 if(!$player = $players->getPlayer($tst_msg->userid)){
                                     $player = $players->addPlayer($tst_msg->userid,$tst_msg->username,json_decode($tst_msg->cards,true));
                                 }
                                 $found_socket = array_search($changed_socket, $clients);
                                 $userSockets[$tst_msg->userid] = $clients[$found_socket];
                                 
-                                if($tableId = $player->getTable()){
-                                    
-                                    
-//                                    $getTimerParameters = array('type' => 'getTimer');
-//                                    $getTimerParameters['user_id'] = $tst_msg->userid;
-//                                    
-//                                    
-//                                    if($table->isStarted()&&!$table->isFinished()&&$onMove = $table->whoseNextMove()){
-//                                        $getTimerParameters['on_move'] = $onMove;
-//                                    }
-//                                    
-//                                    $timer_response_text = mask(json_encode($getTimerParameters));
-//                                    send_message($timer_response_text);
-                                    
-                                    
+                                if($tableId = $player->getTable()){                              
                                      $getLeftTimerParameters = array('type' => 'getLeftTimer');
                                     
                                     $secondPlayer = $table->getOtherPlayer($player);
@@ -102,8 +89,17 @@ while (true) {
                                     
                                         $timer_response_text = mask(json_encode($getLeftTimerParameters));
                                         send_message($timer_response_text);
+                                        
                                     }
                                    
+                                    $newParams = array();
+                                    $newParams['type'] = 'getTableJustForPlayer';
+                                    $newParams['user_id'] = $player->getId();
+                                    
+                                    
+                                    
+                                    $response_text2 = mask(json_encode($newParams));
+                                    send_message($response_text2);
                                     
                                     
                                 }
@@ -168,26 +164,6 @@ while (true) {
                                     send_message($response_text);
                                 
                             }
-    //                        elseif($tst_msg->type=='refreshed'){
-    //                            
-    //                            echo "refreshed\r\n";
-    //                            if($player = $players->getPlayer($tst_msg->userid)){
-    //                                if($player->getTable()){
-    //                                    $tableId = $player->getTable();
-    //                                    $table = $tables->getTable($tableId);
-    //
-    //                                    $passedParameters = array('type'=>'joinedTable');
-    //                                    $passedParameters['tableid'] = $tableId;
-    //                                    $passedParameters['showTable'] = $table->showTable($tst_msg->userid);
-    //                                    $userOnTableIds = $table->getPlayerIds();
-    //                                    $passedParameters = array_merge($passedParameters,$userOnTableIds);
-    //
-    //                                    $response_text = mask(json_encode($passedParameters));
-    //                                    send_message($response_text); //send data
-    //
-    //                                }
-    //                            }
-    //                        }
                             // New table created
                             elseif($tst_msg->type=="tableJoined"){
 
@@ -262,7 +238,7 @@ while (true) {
                                 send_message($response_text); //send data
                             }
                             elseif($tst_msg->type=="startTable"){
-                                
+                                echo "Start table - ".$tst_msg->userid."\r\n";
                                 $player = $players->getPlayer($tst_msg->userid);
                                 if(isset($userSockets[$player->getId()])&&$userSockets[$player->getId()]==$changed_socket){
                                     $table = $tables->getTable($player->getTable());
@@ -270,16 +246,22 @@ while (true) {
                                     if($table->hasBothPlayers()){
                                         $table->startTableByPlayer($player);
                                         
-                                        var_dump($table->isOnePlayerStarted());
                                         if($table->isOnePlayerStarted()){
                                             $passedParameters = array('type'=>'showStartTimer');
+                                            echo "showStartTimer \r\n";
                                             $userOnTableIds = $table->getPlayerIds();
                                             
                                             $passedParameters = array_merge($passedParameters,$userOnTableIds);
                                             $passedParameters['started_user'] = $player->getId(); 
                                             
                                             $response_text = mask(json_encode($passedParameters));
-                                            send_message($response_text);
+                                            
+                                            send_to_other_player_on_table($table,$player,$response_text,$userSockets);
+                                            
+                                            // show timer but not let player click it
+                                            $passedParameters2 = array('type' => 'showStartTimerNotForClick');
+                                            $response_text2 = mask(json_encode($passedParameters2));
+                                            send_to_me($player,$response_text2,$userSockets);
                                         }
                                         elseif($table->isStarted()){
                                         
@@ -360,6 +342,46 @@ while (true) {
                                             $response_text = mask(json_encode($move2Parameters));
                                             send_message($response_text);
                                         }
+
+                                }
+                            }
+                            elseif($tst_msg->type=="playerNotStartedTable"){
+                                $player = $players->getPlayer($tst_msg->userid);
+                                if($tableid = $player->getTable()){
+                                
+                                    $table = $tables->getTable($tableid);
+                                    
+                                    $otherPlayer = $table->getOtherPlayer($player);
+                                    $table->kickPlayer($player);
+                                    
+                                    
+
+                                    $passedParameters = array('type'=>'showTablePlayer');
+                                    
+                                    $userOnTableIds = $table->getPlayerIds();
+                                    
+                                    $passedParameters['tableid'] = $tableid;
+                                    if(isset($userOnTableIds['user_id'])){
+                                        $passedParameters['showTable'] = $table->showTable($userOnTableIds['user_id']);
+                                    }
+                                    if(isset($userOnTableIds['user_id2'])){
+                                        $passedParameters['showTable2'] = $table->showTable($userOnTableIds['user_id2']);
+                                    }
+
+                                    
+                                    $passedParameters = array_merge($passedParameters,$userOnTableIds);
+                                    $response_text = mask(json_encode($passedParameters));
+                                    
+                                    // send to other player but no 2nd player object on table anymore
+                                    // since we kicked one guy
+                                    send_to_me($otherPlayer,$response_text,$userSockets);
+
+                                    
+                                    // show timer but not let player click it
+                                    $passedParameters2 = array('type' => 'kickMeFromTable');
+                                    $response_text2 = mask(json_encode($passedParameters2));
+                                    send_to_me($player,$response_text2,$userSockets);
+                                    
 
                                 }
                             }
@@ -513,6 +535,31 @@ function send_message($msg)
 	return true;
 }
 
+function send_to_me($player,$msg,$userSockets)
+{        
+        if($player){
+            if(isset($userSockets[$player->getId()])&&$foundSocket = $userSockets[$player->getId()]){
+                echo "send to me ------- \r\n";
+                @socket_write($foundSocket,$msg,strlen($msg));
+                return true;
+            }
+        }
+        return false;
+}
+
+function send_to_other_player_on_table($table,$player,$msg,$userSockets)
+{        
+        $secondPlayer = $table->getOtherPlayer($player);
+        if($secondPlayer){
+            if(isset($userSockets[$secondPlayer->getId()])&&$foundSocket = $userSockets[$secondPlayer->getId()]){
+                echo "send to other player ------- \r\n";
+                @socket_write($foundSocket,$msg,strlen($msg));
+                return true;
+            }
+        }
+        return false;
+}
+
 
 //Unmask incoming framed message
 function unmask($text) {
@@ -579,10 +626,11 @@ function perform_handshaking($receved_header,$client_conn, $host, $port)
 
 function refreshPlayerList($players){
     $message = $players->getJoinedPlayers();
-    var_dump($message);
     $response_text = mask(json_encode(array('type'=>'joined', 'message'=>$message)));
     send_message($response_text); 
 }
+
+
 
 function refreshTableList($tables,$parameters = false){
     if(!$parameters){

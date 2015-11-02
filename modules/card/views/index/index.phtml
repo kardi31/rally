@@ -11,6 +11,7 @@
         var user_id = '<?= $authenticatedUser['id']; ?>';
         var player_on_move;
         
+        
         websocket.onopen = function (ev) { // connection is open 
 //            setInterval(function () {
 //                if (websocket.bufferedAmount == 0)
@@ -22,6 +23,13 @@
 //            };
 //            //convert and send data to server
 //            websocket.send(JSON.stringify(msg));
+            
+            websocket.send(JSON.stringify({
+                cards: '<?= $userCards; ?>',
+                username: '<?= $authenticatedUser['username']; ?>',
+                userid: '<?= $authenticatedUser['id']; ?>',
+                type: 'joined'
+            }));
         };
 
 var key = 0;
@@ -32,17 +40,21 @@ var key = 0;
             var msg = JSON.parse(ev.data); //PHP sends Json data
             var type = msg.type; //message type
 
-            // request all needed data on first connection
-            if (type == 'requestData') {
-                console.log('requestData');
-                var params = {
-                    type: 'joined',
-                    cards: '<?= $userCards; ?>',
-                    username: '<?= $authenticatedUser['username']; ?>',
-                    userid: '<?= $authenticatedUser['id']; ?>'
-                }
-                websocket.send(JSON.stringify(params));
+            if (type == 'helloMessage') {
+                alert('Hello');
             }
+
+            // request all needed data on first connection
+//            if (type == 'requestData') {
+//                console.log('requestData');
+//                var params = {
+//                    type: 'joined',
+//                    cards: '<?= $userCards; ?>',
+//                    username: '<?= $authenticatedUser['username']; ?>',
+//                    userid: '<?= $authenticatedUser['id']; ?>'
+//                }
+//                websocket.send(JSON.stringify(params));
+//            }
             
             
             // when player on table
@@ -66,6 +78,30 @@ var key = 0;
                 websocket.send(JSON.stringify(msg2));
                   
             }
+            
+            if (type == 'getTableJustForPlayer')
+            {
+            
+                if (typeof (msg.clearInterval) !== 'undefined' ) {
+                    for (var i = 1; i < 99999; i++) {
+                        window.clearInterval(i);
+                    }
+                  }
+//                console.log('getTableForPlayer');
+                if (typeof (msg.user_id) !== 'undefined' && user_id == msg.user_id ) {
+                    console.log('getTableJustForPlayer');
+                    var msg2 = {
+                        type: 'getPlayerTable',
+                        userid: '<?= $authenticatedUser['id']; ?>'
+                    };
+    //                console.log('msg2');
+    //                console.log(msg2);
+                    websocket.send(JSON.stringify(msg2));
+                }
+                  
+            }
+            
+            
             
             
             if(type == 'toggleTimer'){
@@ -232,14 +268,13 @@ var key = 0;
                 var message = msg.message;
                 console.log(msg);
                 // flip just my cards, not opponent cards
-                if ((typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id)||(typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)) {
                     console.log('inside-----');
                     var tableid = msg.tableid;
                     window.location.hash = tableid;
-                    if(msg.user_id == user_id){
+                    if(typeof (msg.user_id) !== 'undefined'&&msg.user_id == user_id){
                         $('.cardTableWrapper').html(msg.showTable);
                     }
-                    if(msg.user_id2 == user_id){
+                    if(typeof (msg.user_id2) !== 'undefined'&&msg.user_id2 == user_id){
                         $('.cardTableWrapper').html(msg.showTable2);
                     }
                     $('.playerCards div.playerCard.flipIt').flip({
@@ -346,7 +381,6 @@ var key = 0;
                     },3000);
                 }   
 //                
-             }
 //                $("#stop").click(function(){
 //                    $('.playerCards div.playerCard.flipIt').stop();
 //                });
@@ -431,27 +465,50 @@ var key = 0;
                 $('#cardUserList').html(message);
             }
 
-            if(type == 'showStartTimer'){
+            if(type == 'kickMeFromTable'){
                 
-                if ((typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id)||(typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)) {
-//                if(typeof (msg.started_user) !== 'undefined' && msg.started_user !== 'false' && msg.started_user){
+                $('.cardUserBoxWrapper').show();
+                $('.cardTableWrapper').hide();
+                
+                history.pushState("", document.title, window.location.pathname);
+            }
+            if(type == 'showStartTimer'){
+                console.log('showStartTimer');
                     var timerValue = 10;
                     
                     var interval = setInterval(function() {
                         $('.startGame').html('Start the game <br />' + timerValue);
                         timerValue--;
                         if(timerValue<0){
+                            
+                            var msg = {
+                                type: 'playerNotStartedTable',
+                                userid: user_id
+                            };
+                            websocket.send(JSON.stringify(msg));
+                            
                             clearInterval(interval);
                         }
                     }, 1000);
-//                    
-//                       
-                }
-//                if(msg.started_user==user_id){
-//                    console.log('in');
-//                    $('.startGame').removeClass('startGameNow');
-//                }
             }
+            
+            if(type == 'showStartTimerNotForClick'){
+                console.log('showStartTimerNotForClick');
+                
+                    var timerValue2 = 10;
+                    console.log('innn');
+                    $('.startGame').removeClass('.startGameNow');
+                    $('.startGame').attr('disabled','disabled');
+                    var interval2 = setInterval(function() {
+                        $('.startGame').html('Start the game <br />' + timerValue2);
+                        timerValue2--;
+                        if(timerValue2<0){
+                            clearInterval(interval2);
+                        }
+                    }, 1000);
+                    
+            }
+            
             
 //        $('.playerCards > div.playerCard').flip({
 //            trigger: 'manual'
