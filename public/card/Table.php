@@ -103,7 +103,12 @@ class Table {
     }
     
     public function addPlayer($player){
-        $this->player2 = $player;
+        if(isset($this->player1)){
+            $this->player2 = $player;
+        }
+        else{
+            $this->player1 = $player;
+        }
 //        $this->setStartingPlayer();
     }
     
@@ -214,58 +219,6 @@ class Table {
     
     public function showTable($user_id = null,$refreshPoints = false){
         $this->whoseNextMove();
-/*    <div class="message_box" id="cardTable">
-        <div class="player1Cards playerCards">
-            <div id="player1card1">
-                <table>
-                    <tr>
-                        <th colspan="2">
-                            <img src="/media/cars/opel_viva.jpg" alt="Opel Viva GT" class="">
-                            <strong>Suzuki Swift Sport</strong>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>Acceleration</td>
-                        <td>3.5</td>
-                    </tr>
-                    <tr>
-                        <td>v-max</td>
-                        <td>210</td>
-                    </tr>
-                    <tr>
-                        <td>Capacity</td>
-                        <td>1598</td>
-                    </tr>
-                    <tr>
-                        <td>Horsepower</td>
-                        <td>208</td>
-                    </tr>
-                </table>
-            </div>
-            <div id="player1Card2">Card2</div>
-            <div id="player1Card3">Card3</div>
-            <div id="player1Card4">Card4</div>
-            <div id="player1Card5">Card5</div>
-        </div>
-        <div class="playField"></div>
-        <div class="player2Cards playerCards">
-            <div id="player2Card1">Card1</div>
-            <div id="player2Card2">Card2</div>
-            <div id="player2Card3">Card3</div>
-            <div id="player2Card4">Card4</div>
-            <div id="player2Card5">Card5</div>
-        </div>
-    </div>
-    <div class="message_box" id="cardTableInfo">
-        
-        <button type="button" class="closeTable" rel="1">X</button>
-        <div class="playerList">
-            <div>kk33</div>
-            <div>kardi3</div>
-        </div>
-    </div>
- * 
- */
         if($refreshPoints){
             $this->refreshPoints();
         }
@@ -480,8 +433,11 @@ class Table {
             
             $player1->appendChild($player1Timer);
             $player1->appendChild($player1Points);
-            $playerList->appendChild($player1);
         }
+        else{
+            $player1 = $dom->createElement('div','&nbsp;');
+        }
+        $playerList->appendChild($player1);
         
         if(isset($this->player2)){
             $player2Cards->setAttribute('data-id', $this->player2->getId());
@@ -495,9 +451,13 @@ class Table {
             $player2->appendChild($player2Timer);
             $player2->appendChild($player2Points);
             
-            $playerList->appendChild($player2);
+        }
+        else{
+            $player2 = $dom->createElement('div','&nbsp;');
         }
         
+        $playerList->appendChild($player2);
+            
         $cardTableInfo->appendChild($closeTable);
         if(isset($tableId)){
             $tableIdBox = $dom->createElement('div','Table '.$tableId);
@@ -832,6 +792,7 @@ class Table {
         if(isset($nextMove)){
             $result = array('who' => $nextMove,'whoShort' => substr($nextMove,6));
             $result['ms'] = $this->{$nextMove}->getTimer(true);
+            $result['user_id'] = $this->{$nextMove}->getId();
             return $result;
         }
         

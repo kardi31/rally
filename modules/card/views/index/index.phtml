@@ -1,8 +1,5 @@
 <script src="/js/flip.js"></script>
 <link rel="stylesheet" href="/css/cards.css" />
-<div class="stop">
-<button id ="stopAnim">Pause</button>
-</div>
 <script language="javascript" type="text/javascript">
     $(document).ready(function () {
         //create a new WebSocket object.
@@ -13,16 +10,6 @@
         
         
         websocket.onopen = function (ev) { // connection is open 
-//            setInterval(function () {
-//                if (websocket.bufferedAmount == 0)
-//                    websocket.send("Keep alive from client");
-//            }, 30000);
-//             var msg = {
-//                type: 'refreshed',
-//                userid: '<?= $authenticatedUser['id']; ?>'
-//            };
-//            //convert and send data to server
-//            websocket.send(JSON.stringify(msg));
             
             websocket.send(JSON.stringify({
                 cards: '<?= $userCards; ?>',
@@ -32,7 +19,6 @@
             }));
         };
 
-var key = 0;
 
 
         //#### Message received from server
@@ -40,9 +26,6 @@ var key = 0;
             var msg = JSON.parse(ev.data); //PHP sends Json data
             var type = msg.type; //message type
 
-            if (type == 'helloMessage') {
-                alert('Hello');
-            }
 
             // request all needed data on first connection
 //            if (type == 'requestData') {
@@ -106,7 +89,6 @@ var key = 0;
             
             if(type == 'toggleTimer'){
             
-                if (((typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)||(typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id))) {
                     if(typeof (msg.on_move) !== 'undefined'&&typeof (msg.no_move_clock) == 'undefined'){
 //                        console.log('toogleTimer-in');
 //                        console.log(msg.on_move);
@@ -129,12 +111,10 @@ var key = 0;
                             window.clearInterval(i);
                         }
                         
-                        console.log('this is on move by player ----------- ' + msg.on_move.whoShort);
                         window.setTimeout(function(){
                             player_on_move = msg.on_move.who;
                             var countdown = 2 * 60 * 1000;
                             if(typeof(msg.on_move.ms) !== 'undefined'){
-//                                console.log(msg.on_move.ms);
                                 var countdown = msg.on_move.ms;
                             }
                             var interval = setInterval(function() {
@@ -142,6 +122,12 @@ var key = 0;
                                 var min = Math.floor(countdown / (60 * 1000));
                                 var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
                                 toggleElement.html(min + " : " + sec);
+                                var msgExpired = {
+                                    type: 'updateTimer',
+                                    userid: msg.on_move.user_id,
+                                    timer: min + " : " + sec
+                                };
+                                websocket.send(JSON.stringify(msgExpired));
                                 
 //                                console.log('timeer1' + countdown);
                                 if(countdown<1000){
@@ -159,7 +145,6 @@ var key = 0;
                             }, 1000);
                         },500);
                     }
-                }
             }
             
             if(type == 'getLeftTimer'){
@@ -180,10 +165,8 @@ var key = 0;
             }
             
             if(type == 'getTimer'){
-            console.log('getTimer');
                 if(typeof (msg.on_move) !== 'undefined'&&msg.on_move.who != player_on_move&&typeof (msg.no_move_clock) == 'undefined'&&msg.on_move.who == user_id){
                     
-            console.log('getTimer - in');
                     if(msg.on_move.whoShort == 1)
                     {
                         divEq = 0;
@@ -206,13 +189,10 @@ var key = 0;
                     };
                     websocket.send(JSON.stringify(msgTimer));
                 }
-                
             }
             
             if (type == 'playerLeft')
             {
-                console.log('playerLeft')
-                console.log(msg);
                 if (((typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)||(typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id))) {
                 
                     for (var i = 1; i < 99999; i++) {
@@ -473,7 +453,6 @@ var key = 0;
                 history.pushState("", document.title, window.location.pathname);
             }
             if(type == 'showStartTimer'){
-                console.log('showStartTimer');
                     var timerValue = 10;
                     
                     var interval = setInterval(function() {
@@ -500,7 +479,7 @@ var key = 0;
                     $('.startGame').removeClass('.startGameNow');
                     $('.startGame').attr('disabled','disabled');
                     var interval2 = setInterval(function() {
-                        $('.startGame').html('Start the game <br />' + timerValue2);
+                        $('.startGame').html(timerValue2);
                         timerValue2--;
                         if(timerValue2<0){
                             clearInterval(interval2);
@@ -508,22 +487,6 @@ var key = 0;
                     }, 1000);
                     
             }
-            
-            
-//        $('.playerCards > div.playerCard').flip({
-//            trigger: 'manual'
-//          });
-//          $('.playerCards > div.playerCard').on('click',function(){
-//              var element = $(this);
-//              element.before( "<div></div>" );
-//              element.css({"position": "absolute"});
-//              element.animate({
-//                top: 175,
-//                left: 320     
-//              },function(){
-//                $(this).flip(true);
-//              });
-//          });
 
             if (window.location.href.indexOf("#") > -1) {
                 $('.cardUserBoxWrapper').hide();
@@ -542,7 +505,6 @@ var key = 0;
             $('#message_box').append("<div class=\"system_error\">Error Occurred - " + ev.data + "</div>");
         };
         websocket.onclose = function (ev) {
-
             var msg = {
                 type: 'userLeft',
                 userid: '<?= $authenticatedUser['id']; ?>'
@@ -571,7 +533,6 @@ var key = 0;
                 var toggleElement = $('.playerList div:eq('+divEq+') span');
                 
                 if (cardUserId == user_id) {
-                    key++;
                     var msg = {
                         type: 'cardClicked',
                         cardNo: cardNo,
@@ -633,7 +594,8 @@ var key = 0;
             //convert and send data to server
             websocket.send(JSON.stringify(msg));
         });
-
+        
+    
     });
 </script>
 

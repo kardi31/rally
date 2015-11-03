@@ -313,3 +313,11 @@
 #manageCards div.playerCard{
     cursor:pointer;
 }
+
+.playerCard table tr:not(:first-of-type) td{
+    cursor:pointer;
+}
+
+.playerCard table tr:not(:first-of-type):hover td{
+    background:rebeccapurple;
+}
