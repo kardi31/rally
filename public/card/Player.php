@@ -12,6 +12,7 @@ class Player {
     protected $name;
     protected $table;
     protected $cards;
+    protected $rank;
     protected $notDoneCards;
     protected $point = 0;
     protected $timer = '2:00';
@@ -19,15 +20,13 @@ class Player {
     // we must wait until animation is finished to add a point to user
     protected $pointToAdd = false;
     
-    public function __construct($id,$name,$cards){
+    public function __construct($id,$name){
         $this->id = $id;
         $this->name = $name;
         $this->db = new Db();
-        foreach($cards as $cardRow){
-            $car = new Car($cardRow['car_model_id'],$cardRow['id']);
-            $this->cards[$cardRow['id']] = $car;
-            $this->notDoneCards[$cardRow['id']] = $car;
-        }
+        
+        $this->setPlayerCards();
+        $this->setPlayerRank();
     }
     
     public function getTimer($miliseconds = false){
@@ -163,13 +162,53 @@ class Player {
     
     public function moveLostCard($wonUserId){
         
-        $getWonCard = $this->db->fetch('select * from card_card where user_id = '.$this->id.' order by rand() limit 1');
-
-//        $row = $this->db->execute('update card_card set user_id = '.$wonUserId.' where id = '.$getWonCard['id'].' limit 1');
+//        $getWonCard = $this->db->fetch('select * from card_card where user_id = '.$this->id.' order by rand() limit 1');
+        $getWonCard = $this->db->fetch('select * from card_card where user_id = '.$this->id.' order by id limit 1');
+        echo 'select * from card_card where user_id = '.$this->id.' order by id limit 1';
+        $row = $this->db->execute('update card_card set user_id = '.$wonUserId.' where id = '.$getWonCard['id'].' limit 1');
         
         $wonCard = new Car($getWonCard['car_model_id'],$getWonCard['id']);
+        var_dump($getWonCard['id']);
         
         return $wonCard;
+    }
+    
+    public function setPlayerCards(){
+        $playerCards = $this->db->fetchAll('select * from card_card where user_id = '.$this->id.' and locked = 0 order by id limit 5');
+        
+        unset($this->cards);
+        unset($this->notDoneCards);
+        
+        foreach($playerCards as $cardRow){
+            $car = new Car($cardRow['car_model_id'],$cardRow['id']);
+            $this->cards[$cardRow['id']] = $car;
+            $this->notDoneCards[$cardRow['id']] = $car;
+        }
+                
+        if(count($playerCards)<5){
+            return false;
+        }
+    }
+    
+    public function setPlayerRank(){
+        $rank = $this->db->fetch('select card_rank from user_user where id = '.$this->id);
+        if($rank){
+            $this->setRank($rank['card_rank']);
+        }
+        
+    }
+    
+    public function setRank($rank){
+        $this->rank = $rank;
+    }
+    
+    public function updateRank($rank){
+        $this->setRank($rank);
+        $this->db->execute('update user_user set card_rank = '.$rank.' where id = '.$this->id.' limit 1');
+    }
+    
+    public function getRank(){
+        return $this->rank;
     }
     
 }

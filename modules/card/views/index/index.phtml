@@ -12,7 +12,6 @@
         websocket.onopen = function (ev) { // connection is open 
             
             websocket.send(JSON.stringify({
-                cards: '<?= $userCards; ?>',
                 username: '<?= $authenticatedUser['username']; ?>',
                 userid: '<?= $authenticatedUser['id']; ?>',
                 type: 'joined'
@@ -122,12 +121,16 @@
                                 var min = Math.floor(countdown / (60 * 1000));
                                 var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
                                 toggleElement.html(min + " : " + sec);
-                                var msgExpired = {
-                                    type: 'updateTimer',
-                                    userid: msg.on_move.user_id,
-                                    timer: min + " : " + sec
-                                };
-                                websocket.send(JSON.stringify(msgExpired));
+                                console.log(countdown);
+                                
+                                if(user_id==msg.on_move.user_id){
+                                    var msgExpired = {
+                                        type: 'updateTimer',
+                                        userid: msg.on_move.user_id,
+                                        timer: min + " : " + sec
+                                    };
+                                    websocket.send(JSON.stringify(msgExpired));
+                                }
                                 
 //                                console.log('timeer1' + countdown);
                                 if(countdown<1000){
@@ -226,6 +229,7 @@
                     window.clearInterval(i);
                 }
                 console.log('playerWon');
+                console.log(msg);
                 if (typeof (msg.user_id) !== 'undefined' && msg.user_id == user_id) {
                     var tableid = msg.tableid;
                     window.location.hash = tableid;
@@ -378,7 +382,6 @@
                         var min = Math.floor(countdown2 / (60 * 1000));
                         var sec = Math.floor((countdown2 - (min * 60 * 1000)) / 1000);  //correct
                         leftElement.html(min + " : " + sec);
-                        console.log(countdown2);
                         if(countdown2<1000){
                             var msgExpired = {
                                 type: 'timeExpired',

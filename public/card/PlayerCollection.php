@@ -14,11 +14,11 @@ class PlayerCollection {
         $this->db = new PDO('mysql:host=localhost;dbname=ral;charset=utf8', 'root', '');
     }
     
-    public function addPlayer($userid,$username,$cards) {
-        echo "addPlayer - ".count($this->items)." \r\n";
-        $player = new Player($userid,$username,$cards);
+    public function addPlayer($userid,$username) {
+        if(!$player = new Player($userid,$username)){
+            return false;
+        }
         $this->items[$userid] = $player;
-        echo "addPlayer - done - ".count($this->items)." \r\n";
         return $player;
     }
 

@@ -54,6 +54,9 @@ User:
     hide_details:
       type: boolean
       default: 1
+    card_rank:
+      type: integer(11)
+      default: 1000
 PremiumLog:
   tableName: user_premium_log
   actAs: 

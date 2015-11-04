@@ -319,6 +319,7 @@ class Table {
         $playField = $dom->createElement('div');
         $playField->setAttribute('class', 'playField');
         if(!$this->isFinished()&&$this->isStarted()){
+            echo "++++++started and not finished++++++\r\n";
             if($playerLeft = $this->isTableBeenLeft()){
 
                 $playerLeftBtn = $dom->createElement('button',$this->{$playerLeft}->getUsername()." has left the table.");
@@ -350,6 +351,7 @@ class Table {
             }
         }
         elseif(!$this->isStarted()){
+            echo "++++++notstarted++++++\r\n";
             $startGameBtn = $dom->createElement('button','Start the game');
 //            $roundInfo = $dom->createElement('span',$this->{$this->isFinished()}->getUsername()." has won the game");
             $startGameBtn->setAttribute('class', 'startGame startGameNow');
@@ -358,6 +360,7 @@ class Table {
             $playField->appendChild($startGameBtn);
         }
         else{
+            echo "++++++other++++++\r\n";
             $player1Cards->setAttribute('class','playerCards done');
             $player2Cards->setAttribute('class','playerCards done');
             
@@ -374,6 +377,7 @@ class Table {
             
             
             if($this->card_won){
+                echo "@@@@@@thisisinise@@@@@\r\n";
                 $cardWon = $this->card_won;
                 $wonCardElement = $this->createPlayerCardTable($cardWon,$dom);
                 
@@ -425,7 +429,7 @@ class Table {
         
         if(isset($this->player1)){
             $player1Cards->setAttribute('data-id', $this->player1->getId());
-            $player1 = $dom->createElement('div',$this->player1->getUsername());
+            $player1 = $dom->createElement('div',$this->player1->getUsername()." - ".$this->player1->getRank());
             
             $player1Points = $dom->createElement('div',$this->player1->getPoints());
             
@@ -441,7 +445,7 @@ class Table {
         
         if(isset($this->player2)){
             $player2Cards->setAttribute('data-id', $this->player2->getId());
-            $player2 = $dom->createElement('div',$this->player2->getUsername());
+            $player2 = $dom->createElement('div',$this->player2->getUsername()." - ".$this->player2->getRank());
             
             
             $player2Points = $dom->createElement('div',$this->player2->getPoints());
@@ -683,21 +687,26 @@ class Table {
     }
     
     public function isFinished(){
+        
         if($this->is_finished)
             return $this->is_finished;
         
         if(isset($this->player1)&&isset($this->player2)){
+            
+        echo "player1 has won ".$this->player1->hasWon()."\r\n";
             if($this->player1->hasWon()){
-                $wonCard = $this->player1->moveLostCard($this->player2->getId());
+                $wonCard = $this->player2->moveLostCard($this->player1->getId());
                 $this->card_won = $wonCard;
                 $this->setFinished('player1');
+                return 'player1';
             }
 //        if($this->player_won){
 //            return $this->player_won;
 //        }
+        echo "player2 has won ".$this->player2->hasWon()."\r\n";
             if($this->player2->hasWon())
             {
-                $wonCard = $this->player2->moveLostCard($this->player1->getId());
+                $wonCard = $this->player1->moveLostCard($this->player2->getId());
                 $this->card_won = $wonCard;
                 $this->setFinished('player2');
                 return 'player2';
@@ -873,6 +882,31 @@ class Table {
         $player->removeTable();
     }
     
+    public function refreshPlayerCards(){
+        if(isset($this->player1)){
+            $this->player1->setPlayerCards();
+        }
+
+        if(isset($this->player2)){
+            $this->player2->setPlayerCards();
+        }
+    }
     
+    public function refreshPlayerRanks(){
+        $player1OldRank = $this->player1->getRank();
+        $player2OldRank = $this->player2->getRank();
+        
+        if($this->player1->hasWon()){
+            $player1NewRank = $player1OldRank+ceil($player2OldRank*0.01);
+            $player2NewRank = $player2OldRank-ceil($player1OldRank*0.01);
+        }
+        else{
+            $player1NewRank = $player1OldRank-ceil($player2OldRank*0.01);
+            $player2NewRank = $player2OldRank+ceil($player1OldRank*0.01);
+        }
+        
+        $this->player1->updateRank($player1NewRank);
+        $this->player2->updateRank($player2NewRank);
+    }
     
 }

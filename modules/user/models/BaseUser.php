@@ -25,6 +25,7 @@
  * @property string $register_hostname
  * @property string $country
  * @property boolean $hide_details
+ * @property integer $card_rank
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -115,6 +116,11 @@ abstract class User_Model_Doctrine_BaseUser extends Doctrine_Record
         $this->hasColumn('hide_details', 'boolean', null, array(
              'type' => 'boolean',
              'default' => 1,
+             ));
+        $this->hasColumn('card_rank', 'integer', 11, array(
+             'type' => 'integer',
+             'default' => 1000,
+             'length' => '11',
              ));
 
         $this->option('type', 'MyISAM');

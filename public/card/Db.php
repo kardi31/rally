@@ -20,10 +20,16 @@ class Db {
     }
     
     
-    public function fetch($sql){
+    public function fetch($sql,$fetch = PDO::FETCH_ASSOC){
         $data = $this->pdo->prepare($sql);
         $data->execute();
-        return $data->fetch();
+        return $data->fetch($fetch);
+    }
+    
+    public function fetchAll($sql,$fetch = PDO::FETCH_ASSOC){
+        $data = $this->pdo->prepare($sql);
+        $data->execute();
+        return $data->fetchAll($fetch);
     }
     
     public function execute($sql){
