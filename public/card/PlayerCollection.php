@@ -49,9 +49,13 @@ class PlayerCollection {
         $joinedPlayers = $dom->createElement('ul');
         foreach($this->items as $player):
             $li = $dom->createElement('li',$player->getUsername());
-            $span = $dom->createElement('span',$player->getTable());
+            $spanRank = $dom->createElement('span',$player->getRank());
+            $spanRank->setAttribute('class', 'rank');
+            $span = $dom->createElement('span',($player->getTable()?'#'.$player->getTable():''));
+            $span->setAttribute('class', 'tableId');
             
             $li->appendChild($span);
+            $li->appendChild($spanRank);
             $joinedPlayers->appendChild($li);
         endforeach;
         $dom->appendChild($joinedPlayers);

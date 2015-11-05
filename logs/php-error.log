@@ -7,3 +7,7 @@ Stack trace:
 #4 C:\xampp\htdocs\ral\modules\card\services\Card.php(40): Doctrine_Query_Abstract->execute(Array, 3)
 #5 C:\xampp\htdocs\ral\modules\card\controllers\IndexController.php(77): CardService->getFullUserCards('37', 3)
 #6 C:\xampp\htdocs\ral\library\TK\Controller.php(45): Card_Index->manageCar in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[05-Nov-2015 13:52:36 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[05-Nov-2015 13:52:39 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[05-Nov-2015 15:04:54 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[05-Nov-2015 15:05:36 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164

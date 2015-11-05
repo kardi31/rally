@@ -352,12 +352,18 @@ class Table {
         }
         elseif(!$this->isStarted()){
             echo "++++++notstarted++++++\r\n";
-            $startGameBtn = $dom->createElement('button','Start the game');
-//            $roundInfo = $dom->createElement('span',$this->{$this->isFinished()}->getUsername()." has won the game");
-            $startGameBtn->setAttribute('class', 'startGame startGameNow');
-            
-//            $whoWon->appendChild($roundInfo);
-            $playField->appendChild($startGameBtn);
+            if(!$notEnough = $this->notEnoughCardsForPlayers()){
+                $startGameBtn = $dom->createElement('button','Start the game');
+                $startGameBtn->setAttribute('class', 'startGame startGameNow');
+
+                $playField->appendChild($startGameBtn);
+            }
+            else{
+                $notEnoughCardsInfo = $dom->createElement('div',$notEnough->getUsername()." has not enough cards to play");
+                $notEnoughCardsInfo->setAttribute('class', 'notEnoughCardsInfo');
+
+                $playField->appendChild($notEnoughCardsInfo);
+            }
         }
         else{
             echo "++++++other++++++\r\n";
@@ -399,10 +405,18 @@ class Table {
             $playField->appendChild($whoWon);
             $playField->appendChild($wonCardPreWrapper);
             
-            $startGameBtn = $dom->createElement('button','Start the game');
-            $startGameBtn->setAttribute('class', 'startGame startGameNow');
-            
-            $playField->appendChild($startGameBtn);
+            if(!$notEnough = $this->notEnoughCardsForPlayers()){
+                $startGameBtn = $dom->createElement('button','Start the game');
+                $startGameBtn->setAttribute('class', 'startGame startGameNow');
+
+                $playField->appendChild($startGameBtn);
+            }
+            else{
+                $notEnoughCardsInfo = $dom->createElement('div',$notEnough->getUsername()." has not enough cards to play");
+                $notEnoughCardsInfo->setAttribute('class', 'notEnoughCardsInfo');
+
+                $playField->appendChild($notEnoughCardsInfo);
+            }
             
             
         }
@@ -429,12 +443,18 @@ class Table {
         
         if(isset($this->player1)){
             $player1Cards->setAttribute('data-id', $this->player1->getId());
-            $player1 = $dom->createElement('div',$this->player1->getUsername()." - ".$this->player1->getRank());
+            $player1 = $dom->createElement('div',$this->player1->getUsername());
             
             $player1Points = $dom->createElement('div',$this->player1->getPoints());
+            $player1Points->setAttribute('class', 'playerPoints');
+            
+            $player1Rank = $dom->createElement('div',$this->player1->getRank());
+            $player1Rank->setAttribute('class', 'playerRank');
             
             $player1Timer = $dom->createElement('span',$this->player1->getTimer());
+            $player1Timer->setAttribute('class','playerTimer');
             
+            $player1->appendChild($player1Rank);
             $player1->appendChild($player1Timer);
             $player1->appendChild($player1Points);
         }
@@ -445,13 +465,19 @@ class Table {
         
         if(isset($this->player2)){
             $player2Cards->setAttribute('data-id', $this->player2->getId());
-            $player2 = $dom->createElement('div',$this->player2->getUsername()." - ".$this->player2->getRank());
+            $player2 = $dom->createElement('div',$this->player2->getUsername());
             
             
             $player2Points = $dom->createElement('div',$this->player2->getPoints());
+            $player2Points->setAttribute('class', 'playerPoints');
+            
+            $player2Rank = $dom->createElement('div',$this->player2->getRank());
+            $player2Rank->setAttribute('class', 'playerRank');
             
             $player2Timer = $dom->createElement('span',$this->player2->getTimer());
+            $player2Timer->setAttribute('class','playerTimer');
             
+            $player2->appendChild($player2Rank);
             $player2->appendChild($player2Timer);
             $player2->appendChild($player2Points);
             
@@ -890,23 +916,69 @@ class Table {
         if(isset($this->player2)){
             $this->player2->setPlayerCards();
         }
+        
+        return true;
     }
     
     public function refreshPlayerRanks(){
         $player1OldRank = $this->player1->getRank();
         $player2OldRank = $this->player2->getRank();
+        $offset = 15;
+        
         
         if($this->player1->hasWon()){
-            $player1NewRank = $player1OldRank+ceil($player2OldRank*0.01);
-            $player2NewRank = $player2OldRank-ceil($player1OldRank*0.01);
+            
+            $player1NewRank = $player1OldRank + $offset + ceil(($player2OldRank-1000)/$offset);
+            $player2NewRank = $player2OldRank - $offset + ceil(($player1OldRank-1000)/$offset);
         }
         else{
-            $player1NewRank = $player1OldRank-ceil($player2OldRank*0.01);
-            $player2NewRank = $player2OldRank+ceil($player1OldRank*0.01);
+            $player1NewRank = $player1OldRank - $offset + ceil(($player2OldRank-1000)/$offset);
+            $player2NewRank = $player2OldRank + $offset + ceil(($player1OldRank-1000)/$offset);
         }
         
         $this->player1->updateRank($player1NewRank);
         $this->player2->updateRank($player2NewRank);
     }
     
+    public function resetTableForNewGame(){
+        $this->players_left_table = array();
+        $this->player_won = false;
+        $this->started_moves = array();
+        $this->finished_moves = array();
+        $this->moves = array(
+            'player1' => array(),
+            'player2' => array(),
+            'won' => array(),
+            'wantStart' => array()
+        );
+        $this->round = 1;
+        unset($this->current_skill_playing);
+        $this->card_won = false;
+        $this->is_finished = false;
+        $this->is_started = false;
+        if(isset($this->player1)){
+            $this->player1->resetPlayerInfo();
+        }
+        if(isset($this->player2)){
+            $this->player2->resetPlayerInfo();
+        }
+    }
+    
+    public function notEnoughCardsForPlayers(){
+        
+        if(isset($this->player1)){
+            $result1 = $this->player1->hasEnoughCards();
+            if(!$result1){
+                return $this->player1;
+            }
+        }
+        if(isset($this->player2)){
+            $result2 = $this->player2->hasEnoughCards();
+            if(!$result2){
+                return $this->player2;
+            }
+        }
+        
+        return false;
+    }
 }

@@ -25,38 +25,20 @@
             var msg = JSON.parse(ev.data); //PHP sends Json data
             var type = msg.type; //message type
 
-
-            // request all needed data on first connection
-//            if (type == 'requestData') {
-//                console.log('requestData');
-//                var params = {
-//                    type: 'joined',
-//                    cards: '<?= $userCards; ?>',
-//                    username: '<?= $authenticatedUser['username']; ?>',
-//                    userid: '<?= $authenticatedUser['id']; ?>'
-//                }
-//                websocket.send(JSON.stringify(params));
-//            }
-            
-            
             // when player on table
             // request display table for player
             // so opponent cards are hidden
             if (type == 'getTableForPlayer')
             {
-            
                 if (typeof (msg.clearInterval) !== 'undefined' ) {
                     for (var i = 1; i < 99999; i++) {
                         window.clearInterval(i);
                     }
                   }
-//                console.log('getTableForPlayer');
                 var msg2 = {
                     type: 'getPlayerTable',
                     userid: '<?= $authenticatedUser['id']; ?>'
                 };
-//                console.log('msg2');
-//                console.log(msg2);
                 websocket.send(JSON.stringify(msg2));
                   
             }
@@ -68,94 +50,81 @@
                     for (var i = 1; i < 99999; i++) {
                         window.clearInterval(i);
                     }
-                  }
-//                console.log('getTableForPlayer');
+                }
                 if (typeof (msg.user_id) !== 'undefined' && user_id == msg.user_id ) {
                     console.log('getTableJustForPlayer');
                     var msg2 = {
                         type: 'getPlayerTable',
                         userid: '<?= $authenticatedUser['id']; ?>'
                     };
-    //                console.log('msg2');
-    //                console.log(msg2);
                     websocket.send(JSON.stringify(msg2));
                 }
                   
             }
             
-            
-            
-            
             if(type == 'toggleTimer'){
             
-                    if(typeof (msg.on_move) !== 'undefined'&&typeof (msg.no_move_clock) == 'undefined'){
-//                        console.log('toogleTimer-in');
-//                        console.log(msg.on_move);
-                        if(msg.on_move.whoShort == 1)
-                        {
-                            divEq = 0;
-                            var secondEq = 2;
-                        }
-                        if(msg.on_move.whoShort == 2)
-                        {
-                            divEq = 2;
-                            var secondEq = 0;
-                        }
-                        var toggleElement = $('.playerList div:eq('+divEq+') span');
-
-                        var secondElement = $('.playerList div:eq('+secondEq+') span');
-                        
-                        // clear second player interval
-                        for (var i = 1; i < 9999; i++) {
-                            window.clearInterval(i);
-                        }
-                        
-                        window.setTimeout(function(){
-                            player_on_move = msg.on_move.who;
-                            var countdown = 2 * 60 * 1000;
-                            if(typeof(msg.on_move.ms) !== 'undefined'){
-                                var countdown = msg.on_move.ms;
-                            }
-                            var interval = setInterval(function() {
-                                countdown -= 1000;
-                                var min = Math.floor(countdown / (60 * 1000));
-                                var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
-                                toggleElement.html(min + " : " + sec);
-                                console.log(countdown);
-                                
-                                if(user_id==msg.on_move.user_id){
-                                    var msgExpired = {
-                                        type: 'updateTimer',
-                                        userid: msg.on_move.user_id,
-                                        timer: min + " : " + sec
-                                    };
-                                    websocket.send(JSON.stringify(msgExpired));
-                                }
-                                
-//                                console.log('timeer1' + countdown);
-                                if(countdown<1000){
-                                    var msgExpired = {
-                                        type: 'timeExpiredFull',
-                                        expired: msg.on_move.whoShort,
-                                        userid: '<?= $authenticatedUser['id']; ?>'
-                                    };
-                                    websocket.send(JSON.stringify(msgExpired));
-                                    
-                                    
-                                    window.clearInterval(interval);
-//                                    console.log('done');
-                                }
-                            }, 1000);
-                        },500);
+                if(typeof (msg.on_move) !== 'undefined'&&typeof (msg.no_move_clock) == 'undefined'){
+                    if(msg.on_move.whoShort == 1)
+                    {
+                        divEq = 0;
+                        var secondEq = 1;
                     }
+                    if(msg.on_move.whoShort == 2)
+                    {
+                        divEq = 1;
+                        var secondEq = 0;
+                    }
+                    var toggleElement = $('.playerList span.playerTimer:eq('+divEq+')');
+
+
+                    // clear second player interval
+                    for (var i = 1; i < 9999; i++) {
+                        window.clearInterval(i);
+                    }
+
+                    window.setTimeout(function(){
+                        player_on_move = msg.on_move.who;
+                        var countdown = 2 * 60 * 1000;
+                        if(typeof(msg.on_move.ms) !== 'undefined'){
+                            var countdown = msg.on_move.ms;
+                        }
+                        var interval = setInterval(function() {
+                            countdown -= 1000;
+                            var min = Math.floor(countdown / (60 * 1000));
+                            var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
+                            toggleElement.html(min + " : " + sec);
+
+                            if(user_id==msg.on_move.user_id){
+                                var msgExpired = {
+                                    type: 'updateTimer',
+                                    userid: msg.on_move.user_id,
+                                    timer: min + " : " + sec
+                                };
+                                websocket.send(JSON.stringify(msgExpired));
+                            }
+
+                            if(countdown<1000){
+                                var msgExpired = {
+                                    type: 'timeExpiredFull',
+                                    expired: msg.on_move.whoShort,
+                                    userid: '<?= $authenticatedUser['id']; ?>'
+                                };
+                                websocket.send(JSON.stringify(msgExpired));
+
+
+                                window.clearInterval(interval);
+//                                    console.log('done');
+                            }
+                        }, 1000);
+                    },500);
+                }
             }
             
             if(type == 'getLeftTimer'){
-            console.log('getLeftTimer');
                 if(typeof (msg.user_id) !== 'undefined'&&msg.user_id == user_id){
                     var leftElement = $('.playerLeft span');
                     if(typeof(leftElement.html())!=='undefined'){
-                        console.log('getLeftTimerIn');
                         var msgLeftTimer = {
                             type: 'setLeftTimer',
                             timer: leftElement.html(),
@@ -173,18 +142,14 @@
                     if(msg.on_move.whoShort == 1)
                     {
                         divEq = 0;
-                        var secondEq = 2;
+                        var secondEq = 1;
                     }
                     if(msg.on_move.whoShort == 2)
                     {
-                        divEq = 2;
+                        divEq = 1;
                         var secondEq = 0;
                     }
-                    var toggleElement = $('.playerList div:eq('+divEq+') span');
-                    var secondElement = $('.playerList div:eq('+secondEq+') span');
-                    console.log(msg.on_move);
-                    console.log(toggleElement.html());
-                    console.log(secondElement.html());
+                    var toggleElement = $('.playerList span.playerTimer:eq('+divEq+')');
                     var msgTimer = {
                         type: 'setTimer',
                         timer: toggleElement.html(),
@@ -202,9 +167,8 @@
                         window.clearInterval(i);
                     }
                                         
-                    var toggleElement = $('.playerList div:eq(0) span');
-                    var toggleElement2 = $('.playerList div:eq(2) span');
-                    console.log('174');
+                    var toggleElement = $('.playerList span.playerTimer:eq(0)');
+                    var toggleElement2 = $('.playerList span.playerTimer:eq(1)');
                     var msgTimer = {
                         type: 'setRunAwayTimer',
                         timerPlayer1: toggleElement.html(),
@@ -212,7 +176,6 @@
                         userid: '<?= $authenticatedUser['id']; ?>'
                     };
                     websocket.send(JSON.stringify(msgTimer));
-//                    var secondElement = $('.playerList div:eq('+secondEq+') span');
                 }
             }
             if (type == 'stopAllClocks')
@@ -248,11 +211,8 @@
             // so opponent cards are hidden
             if (type == 'showTablePlayer')
             {
-                console.log('showTablePlayer');
                 var message = msg.message;
-                console.log(msg);
                 // flip just my cards, not opponent cards
-                    console.log('inside-----');
                     var tableid = msg.tableid;
                     window.location.hash = tableid;
                     if(typeof (msg.user_id) !== 'undefined'&&msg.user_id == user_id){
@@ -277,7 +237,6 @@
                         top: 167,
                         left: 290
                     },function(){
-                    console.log('animate-player1');
                         $(this).flip(true);
                 });
                 var elementPlayer2 = $('.playerCards.player2Cards div.playerCard.flipIt');
@@ -287,7 +246,6 @@
                     top: 332,
                     left: 290     
                 },function(){
-                    console.log('animate-player2');
                     $(this).flip(true);
                 });
                 // player who won this round
@@ -530,11 +488,11 @@
                 }
                 if(parentPlayerCards.hasClass('player2Cards')){
                     var playerNo = 2;
-                    var divEq = 2;
+                    var divEq = 1;
                 }
                 
-                var toggleElement = $('.playerList div:eq('+divEq+') span');
-                
+                var toggleElement = $('.playerList span.playerTimer:eq('+divEq+')');
+                console.log(toggleElement);
                 if (cardUserId == user_id) {
                     var msg = {
                         type: 'cardClicked',

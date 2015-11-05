@@ -255,19 +255,20 @@ while (true) {
                                     $table = $tables->getTable($player->getTable());
                                     
                                     if($table->hasBothPlayers()){
-                                        $table->startTableByPlayer($player);
                                         
+                                        $table->startTableByPlayer($player);
+
                                         if($table->isOnePlayerStarted()){
                                             $passedParameters = array('type'=>'showStartTimer');
                                             $userOnTableIds = $table->getPlayerIds();
-                                            
+
                                             $passedParameters = array_merge($passedParameters,$userOnTableIds);
                                             $passedParameters['started_user'] = $player->getId(); 
-                                            
+
                                             $response_text = mask(json_encode($passedParameters));
-                                            
+
                                             send_to_other_player_on_table($table,$player,$response_text);
-                                            
+
                                             // show timer but not let player click it
                                             $passedParameters2 = array('type' => 'showStartTimerNotForClick');
                                             $response_text2 = mask(json_encode($passedParameters2));
@@ -277,7 +278,7 @@ while (true) {
                                             showTableForPlayer($table, $player,true,true);
                                             $otherPlayer = $table->getOtherPlayer($player);
                                             showTableForPlayer($table, $otherPlayer,true);
-                                        
+
                                         }
                                     }
                                 }
@@ -453,11 +454,13 @@ while (true) {
                             }
                             // Close table
                             elseif($tst_msg->type=="closeTable"){
-//                                echo "closeTable\r\n";
+                                
                                 $player = $players->getPlayer($tst_msg->userid);
                                 $otherPlayer = $table->getOtherPlayer($player);
+                                
                                 $table = $tables->getTable($tst_msg->tableid);
 
+                                $table->resetTableForNewGame();
                                 $tables->closeTable($player,$table);
 
                                 $passedParameters = array('type'=>'joinedTable');
@@ -470,7 +473,7 @@ while (true) {
                                 
                                 // if there's another player on table
                                 if($otherPlayer){
-                                    showTableForPlayer($table, $otherPlayer,false,true);
+                                    showTableForPlayer($table, $otherPlayer,false,true,true);
                                 }
 
                             }
@@ -685,6 +688,7 @@ function showTableForPlayer($table,$player,$toggleTimer = false,$removeStartTime
 //
 //    }
 
+    
     if($removeStartTimer){
         $passedParameters['remove_start_timer'] = true; 
     }

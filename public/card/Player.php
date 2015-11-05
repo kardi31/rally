@@ -110,7 +110,7 @@ class Player {
     
     public function getCard($orderNo){
         $keys = array_keys($this->cards);
-        if(isset($this->cards[$keys[$orderNo-1]]))
+        if(isset($keys[$orderNo-1])&&isset($this->cards[$keys[$orderNo-1]]))
             return $this->cards[$keys[$orderNo-1]];
         
         return false;
@@ -211,4 +211,11 @@ class Player {
         return $this->rank;
     }
     
+    public function hasEnoughCards(){
+        var_dump(count($this->cards));
+        if(count($this->cards)<5){
+            return false;
+        }
+        return true;
+    }
 }

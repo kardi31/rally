@@ -28,17 +28,30 @@
     color:#fff;
 }
 
-.playerList > div:nth-of-type(2) div{
-    color:#000;
+.notEnoughCardsInfo{
+        background: red;
+    display: inline-block;
+    padding: 6px;
+    float: right;
+    margin-top: 10%;
 }
 
-.playerList div div{
+
+.playerList div div.playerPoints{
     background:#868686;
     width:20px;
     float:right;
     margin-right:10px;
     text-align:center;
     font-size:16px;
+}
+
+.playerList div div.playerRank{
+    display: inline-block;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 10px;
+    vertical-align: top;
 }
 
 
@@ -195,17 +208,27 @@
     background: #FFFFFF;
     height:100%;
     overflow: auto;
+    font-size:12px;
     padding: 10px;
     border: 1px solid #999999;
     text-align:left;
 }
 .cardUserListWrapper #cardUserList ul{
-    padding-left:20px;
-    padding-right:20px;
+    padding-left:0px;
+    padding-right:0px;
     list-style: none;
 }
-.cardUserListWrapper #cardUserList ul li span{
+.cardUserListWrapper #cardUserList ul li span.tableId{
     float:right;
+    width:15%;
+    display:block;
+    min-height:5px;
+    text-align:right;
+    
+}
+.cardUserListWrapper #cardUserList ul li span.rank{
+    float:right;
+    width:20%;
 }
 .cardTableListWrapper #cardTableList {
     background: rgba(255,255,255,.7);
