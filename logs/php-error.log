@@ -11,3 +11,7 @@ Stack trace:
 [05-Nov-2015 13:52:39 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
 [05-Nov-2015 15:04:54 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
 [05-Nov-2015 15:05:36 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[06-Nov-2015 15:30:40 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[06-Nov-2015 15:30:45 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[06-Nov-2015 16:47:38 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[06-Nov-2015 16:54:10 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164

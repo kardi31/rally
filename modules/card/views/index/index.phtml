@@ -28,6 +28,7 @@
             // when player on table
             // request display table for player
             // so opponent cards are hidden
+            console.log(type);
             if (type == 'getTableForPlayer')
             {
                 if (typeof (msg.clearInterval) !== 'undefined' ) {
@@ -211,7 +212,7 @@
             // so opponent cards are hidden
             if (type == 'showTablePlayer')
             {
-                var message = msg.message;
+                    var message = msg.message;
                 // flip just my cards, not opponent cards
                     var tableid = msg.tableid;
                     window.location.hash = tableid;
@@ -334,18 +335,19 @@
 
                 if (typeof (msg.leftTimer) !== 'undefined'){
                     var leftElement = $('.playerLeft span');
-                    var countdown2 = 30 * 1000;
+                    var countdown2 = 5 * 1000;
                     var interval = setInterval(function() {
                         countdown2 -= 1000;
                         var min = Math.floor(countdown2 / (60 * 1000));
                         var sec = Math.floor((countdown2 - (min * 60 * 1000)) / 1000);  //correct
                         leftElement.html(min + " : " + sec);
-                        if(countdown2<1000){
+                        if(countdown2<0){
                             var msgExpired = {
                                 type: 'timeExpired',
                                 userid: '<?= $authenticatedUser['id']; ?>'
                             };
                             websocket.send(JSON.stringify(msgExpired));
+                            window.clearInterval(interval);
                         }
                     }, 1000);
                 }
@@ -377,8 +379,7 @@
 //                }
             }
 
-            // if you join table - show table
-            if (type == 'joinedTable')
+            if (type == 'refreshTables')
             {
                 
                 var message = msg.message;
@@ -391,6 +392,20 @@
                 }
                 $('#cardTableList').html(message);
             }
+            
+            // if you join table - show table
+            if (type == 'joinedTable')
+            {
+                
+                var message = msg.message;
+                if (typeof (msg.tableid) !== 'undefined' && typeof (msg.user_id) !== 'undefined') {
+                    if (msg.user_id == user_id || (typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id)) {
+                        var tableid = msg.tableid;
+                        window.location.hash = tableid;
+                        $('.cardTableWrapper').html(msg.showTable);
+                    }
+                }
+            }
             // user left table
             if (type == 'userLeft')
             {
@@ -399,7 +414,7 @@
             }
             // join the game,
             // ur name is displayed on player list
-            if (type == 'joined')
+            if (type == 'refreshPlayers')
             {
 
                 var message = msg.message;
@@ -433,10 +448,8 @@
             }
             
             if(type == 'showStartTimerNotForClick'){
-                console.log('showStartTimerNotForClick');
                 
                     var timerValue2 = 10;
-                    console.log('innn');
                     $('.startGame').removeClass('.startGameNow');
                     $('.startGame').attr('disabled','disabled');
                     var interval2 = setInterval(function() {

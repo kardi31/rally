@@ -2143,3 +2143,7 @@ margin-right: auto;
     .supportWrapper label{
         font-weight: normal;
     }
+    
+    .frontPageTabs{
+        background:#0099cc; font-size: 13px;border:0px;
+    }

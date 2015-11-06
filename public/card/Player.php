@@ -164,11 +164,9 @@ class Player {
         
 //        $getWonCard = $this->db->fetch('select * from card_card where user_id = '.$this->id.' order by rand() limit 1');
         $getWonCard = $this->db->fetch('select * from card_card where user_id = '.$this->id.' order by id limit 1');
-        echo 'select * from card_card where user_id = '.$this->id.' order by id limit 1';
         $row = $this->db->execute('update card_card set user_id = '.$wonUserId.' where id = '.$getWonCard['id'].' limit 1');
         
         $wonCard = new Car($getWonCard['car_model_id'],$getWonCard['id']);
-        var_dump($getWonCard['id']);
         
         return $wonCard;
     }
@@ -212,7 +210,6 @@ class Player {
     }
     
     public function hasEnoughCards(){
-        var_dump(count($this->cards));
         if(count($this->cards)<5){
             return false;
         }

@@ -24,12 +24,10 @@ class Table {
     
 
     protected $players_left_table = array();
-    protected $player_won = false;
     
     
-    protected function resetPartiallyTable(){
+    public function resetPartiallyTable(){
         $this->players_left_table = array();
-        $this->player_won = false;
         $this->started_moves = array();
         $this->finished_moves = array();
         $this->moves = array(
@@ -43,7 +41,6 @@ class Table {
     }
     
     protected function resetPartiallyTable2(){
-        
         $this->card_won = false;
         $this->is_finished = false;
         $this->player1->resetPlayerInfo();
@@ -52,7 +49,6 @@ class Table {
     
     protected function resetTableNoPlayers(){
         $this->players_left_table = array();
-        $this->player_won = false;
         $this->started_moves = array();
         $this->finished_moves = array();
         $this->moves = array(
@@ -319,7 +315,7 @@ class Table {
         $playField = $dom->createElement('div');
         $playField->setAttribute('class', 'playField');
         if(!$this->isFinished()&&$this->isStarted()){
-            echo "++++++started and not finished++++++\r\n";
+            echo "--------not finished and started \r\n";
             if($playerLeft = $this->isTableBeenLeft()){
 
                 $playerLeftBtn = $dom->createElement('button',$this->{$playerLeft}->getUsername()." has left the table.");
@@ -351,7 +347,7 @@ class Table {
             }
         }
         elseif(!$this->isStarted()){
-            echo "++++++notstarted++++++\r\n";
+            echo "--------not started \r\n";
             if(!$notEnough = $this->notEnoughCardsForPlayers()){
                 $startGameBtn = $dom->createElement('button','Start the game');
                 $startGameBtn->setAttribute('class', 'startGame startGameNow');
@@ -366,7 +362,8 @@ class Table {
             }
         }
         else{
-            echo "++++++other++++++\r\n";
+            
+            echo "--------good \r\n";
             $player1Cards->setAttribute('class','playerCards done');
             $player2Cards->setAttribute('class','playerCards done');
             
@@ -383,7 +380,6 @@ class Table {
             
             
             if($this->card_won){
-                echo "@@@@@@thisisinise@@@@@\r\n";
                 $cardWon = $this->card_won;
                 $wonCardElement = $this->createPlayerCardTable($cardWon,$dom);
                 
@@ -704,12 +700,7 @@ class Table {
     }
     
     public function setPlayerWon($player){
-        if($player==$this->player1){
-            $this->player_won = 'player1';
-        }
-        elseif($player==$this->player2){
-            $this->player_won = 'player2';
-        }
+        $player->setPoints(3);
     }
     
     public function isFinished(){
@@ -719,7 +710,6 @@ class Table {
         
         if(isset($this->player1)&&isset($this->player2)){
             
-        echo "player1 has won ".$this->player1->hasWon()."\r\n";
             if($this->player1->hasWon()){
                 $wonCard = $this->player2->moveLostCard($this->player1->getId());
                 $this->card_won = $wonCard;
@@ -729,7 +719,6 @@ class Table {
 //        if($this->player_won){
 //            return $this->player_won;
 //        }
-        echo "player2 has won ".$this->player2->hasWon()."\r\n";
             if($this->player2->hasWon())
             {
                 $wonCard = $this->player1->moveLostCard($this->player2->getId());
@@ -756,7 +745,6 @@ class Table {
         elseif($player==$this->player2){
             array_push($this->moves['wantStart'],'player2');
         }
-        echo "start_table_by_player \r\n";
         if(isset($this->moves['wantStart'][0])&&isset($this->moves['wantStart'][1])){
             if(in_array('player1',$this->moves['wantStart'])&&in_array('player2',$this->moves['wantStart'])){
                 $this->setStartingPlayer();
@@ -905,6 +893,17 @@ class Table {
             unset($this->player2);
         }
         $this->resetTableNoPlayers();
+        $player->removeTable();
+    }
+    
+    public function kickPlayerNoReset($player){
+        if($this->player1==$player){
+            unset($this->player1);
+            
+        }
+        elseif($this->player2==$player){
+            unset($this->player2);
+        }
         $player->removeTable();
     }
     
