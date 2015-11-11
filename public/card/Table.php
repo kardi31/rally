@@ -512,7 +512,16 @@ class Table {
         $smallBoxesMenu = $dom->createElement('ul');
         
         $smallBoxesMenuItem = $dom->createElement('li','User list');
+        $smallBoxesMenuItem->setAttribute('data-rel','userList');
+        if((isset($_COOKIE['smallBoxes'])&&$_COOKIE['smallBoxes']=='userList')||!isset($_COOKIE['smallBoxes'])){
+            $smallBoxesMenuItem->setAttribute('class','active');
+        }
+        
         $smallBoxesMenuItem2 = $dom->createElement('li','On table');
+        $smallBoxesMenuItem2->setAttribute('data-rel','onTableList');
+        if(isset($_COOKIE['onTableList'])&&$_COOKIE['smallBoxes']=='onTableList'){
+            $smallBoxesMenuItem2->setAttribute('class','active');
+        }
         
         $smallBoxesMenu->appendChild($smallBoxesMenuItem);
         $smallBoxesMenu->appendChild($smallBoxesMenuItem2);
@@ -523,12 +532,20 @@ class Table {
         $smallBoxesUserList = $dom->createElement('div');
         $smallBoxesUserList->setAttribute('class', 'userList');
         
+        var_dump($_COOKIE);
+        if((isset($_COOKIE['smallBoxes'])&&$_COOKIE['smallBoxes']=='userList')||!isset($_COOKIE['smallBoxes'])){
+            $smallBoxesUserList->setAttribute('style','display:block');
+        }
+        
         $joinedPlayers = $dom->importNode(PlayerCollection::getInstance()->getJoinedPlayersTable(true),true);
         $smallBoxesUserList->appendChild($joinedPlayers);
         
         $smallBoxesOnTable = $dom->createElement('div');
         $smallBoxesOnTable->setAttribute('class', 'onTableList');
         
+        if(isset($_COOKIE['onTableList'])&&$_COOKIE['smallBoxes']=='onTableList'){
+            $smallBoxesOnTable->setAttribute('style','display:block');
+        }
         // on table
         
         $onTable = $dom->importNode($this->getPlayersOnTable($user_id),true);
@@ -1075,7 +1092,7 @@ class Table {
             $spanRank = $dom->createElement('span',$this->player1->getRank());
             $spanRank->setAttribute('class', 'rank');
             if($user_id==$this->admin_id&&$this->player1->getId()!=$user_id){
-                $a = $dom->createElement('a','X');
+                $a = $dom->createElement('button','X');
                 $a->setAttribute('class', 'kickPlayerFromTable');
                 $a->setAttribute('data-rel', $this->player1->getId());
             $li->appendChild($a);
@@ -1090,7 +1107,7 @@ class Table {
             $spanRank->setAttribute('class', 'rank');
             
             if($user_id==$this->admin_id&&$this->player2->getId()!=$user_id){
-                $a = $dom->createElement('a','X');
+                $a = $dom->createElement('button','X');
                 $a->setAttribute('class', 'kickPlayerFromTable');
                 $a->setAttribute('data-rel', $this->player2->getId());
             $li->appendChild($a);
@@ -1100,6 +1117,13 @@ class Table {
         }
         
         return $playersOnTable;
+    }
+    
+    public function isPlayerAdmin($player){
+        if($player->getId()==$this->admin_id){
+            return true;
+        }
+        return false;
     }
     
 }

@@ -524,6 +524,33 @@ while (true) {
                                     
                                 }
                             }
+                            elseif($tst_msg->type=="kickPlayerFromTable"){
+                                if($tst_msg->userid&&$GLOBALS['userSockets'][$tst_msg->userid]==$changed_socket){
+                                    if($player = $players->getPlayer($tst_msg->userid)){
+                                        if($tableid = $player->getTable()){
+                                            $table = $tables->getTable($tableid);
+                                            
+                                            if($table->isPlayerAdmin($player)&&!($table->isStarted()&&!$table->isFinished())){
+                                                
+                                                $otherPlayer = $table->getOtherPlayer($player);
+                                                
+                                                $table->kickPlayer($otherPlayer);
+                                                
+                                                refreshTableList($tables);
+                                                refreshPlayerList($players);
+                                                showTableForPlayer($table, $player);
+                                                
+                                                
+                                                $passedParameters = array('type'=>'kickMeFromTable');
+                                                $response_text = mask(json_encode($passedParameters));
+                                                send_to_me($otherPlayer,$response_text);
+                                            }
+                                        }
+                                    }
+                                    
+                                    
+                                }
+                            }
                             elseif($tst_msg->type=="userLeft"){
                                 
                                 $getTimerParameters = array('type' => 'getTimer');

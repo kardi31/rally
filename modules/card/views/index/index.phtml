@@ -1,4 +1,5 @@
 <script src="/js/flip.js"></script>
+<script src="/js/jquery.cookie.js"></script>
 <link rel="stylesheet" href="/css/cards.css" />
 <script language="javascript" type="text/javascript">
     $(document).ready(function () {
@@ -396,6 +397,21 @@
 //                    console.log('in');
 //                    $('.startGame').removeClass('startGameNow');
 //                }
+
+                if(typeof ($.cookie('smallBoxes') === 'undefined')){
+                    
+                    
+                    var divRel = $.cookie('smallBoxes');
+                    var menuItem = $('[data-rel="'+divRel+'"]');
+                    var element = $('.'+divRel);
+                    
+                    $('.smallBoxes > ul li').removeClass('active');
+                    menuItem.addClass('active');
+            
+                    $('.smallBoxes div').hide();
+                    element.show();
+
+                }
             }
 
             if (type == 'refreshTables')
@@ -601,6 +617,20 @@
                 history.pushState("", document.title, window.location.pathname);
             });
             
+            
+            // kick player from table
+            
+            $('.cardTableWrapper').delegate('.kickPlayerFromTable','click',function () {
+//                var kickuserid = $(this).attr('data-rel');
+                var msg = {
+                    type: 'kickPlayerFromTable',
+//                    kickuserid: kickuserid,
+                    userid: '<?= $authenticatedUser['id']; ?>'
+                };
+                websocket.send(JSON.stringify(msg));
+                // remove hastag from the end
+            });
+            
             // invite other player
             
             $('.cardTableWrapper').delegate('.inviteToTable','click',function () {
@@ -624,6 +654,23 @@
             websocket.send(JSON.stringify(msg));
         });
         
+        //smallBoxes 
+        
+        $('.cardTableWrapper').delegate('.smallBoxes > ul li','click',function () {
+            var divRel = $(this).attr('data-rel');
+            var menuItem = $(this);
+            var element = $('.'+divRel);
+            
+            $('.smallBoxes > ul li').removeClass('active');
+            menuItem.addClass('active');
+            
+            $('.smallBoxes div').hide();
+            element.show();
+            
+            $.cookie("smallBoxes", divRel, {expires : 1,path    : '/'});
+        });
+        
+    
     
     });
 </script>

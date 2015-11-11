@@ -389,6 +389,44 @@
     cursor:pointer;
 }
 
+.smallBoxes .onTableList ul{
+    list-style-type:none;
+    padding-left:10px;
+    padding-right:10px;
+}
+.smallBoxes .onTableList{
+    padding-top:10px;
+    background:#322f32;
+}
+.smallBoxes > ul li{
+        background: #fff;
+    color: #504f4f;
+    padding: 5px;
+    display: inline-block;
+    border-right:1px solid #0000ff;
+    cursor:pointer;
+}
+
+.smallBoxes > ul li.active{
+    background:#0000ff;
+    color:#fff;
+}
+
+.onTableList .rank{
+        display: inline-block;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 10px;
+    vertical-align: top;
+}
+
+.onTableList button{
+    float:right;
+    cursor:pointer;
+        max-height: 100%;
+    font-size: 10px;
+}
+
 .listTableMsg span{
     float:left;
     background: #212112;
@@ -424,4 +462,8 @@
     text-align: center;
     padding: 5px !important;
     white-space: normal;
+}
+
+.smallBoxes div{
+    display:none;
 }
