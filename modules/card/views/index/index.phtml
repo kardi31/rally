@@ -84,44 +84,63 @@
                         window.clearInterval(i);
                     }
 
-                    window.setTimeout(function(){
-                        player_on_move = msg.on_move.who;
-                        var countdown = 2 * 60 * 1000;
-                        if(typeof(msg.on_move.ms) !== 'undefined'){
-                            var countdown = msg.on_move.ms;
-                        }
-                        var interval = setInterval(function() {
-                            countdown -= 1000;
-                            var min = Math.floor(countdown / (60 * 1000));
-                            var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
-                            toggleElement.html(min + " : " + sec);
-
-                            if(user_id==msg.on_move.user_id){
-                                var msgExpired = {
-                                    type: 'updateTimer',
-                                    userid: msg.on_move.user_id,
-                                    timer: min + " : " + sec
-                                };
-                                websocket.send(JSON.stringify(msgExpired));
+                    if(user_id==msg.on_move.user_id){
+                        window.setTimeout(function(){
+                            player_on_move = msg.on_move.who;
+                            var countdown = 2 * 60 * 1000;
+                            if(typeof(msg.on_move.ms) !== 'undefined'){
+                                var countdown = msg.on_move.ms;
                             }
+                            var interval = setInterval(function() {
+                                countdown -= 1000;
+                                var min = Math.floor(countdown / (60 * 1000));
+                                var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
+                                toggleElement.html(min + " : " + sec);
 
-                            if(countdown<1000){
-                                var msgExpired = {
-                                    type: 'timeExpiredFull',
-                                    expired: msg.on_move.whoShort,
-                                    userid: '<?= $authenticatedUser['id']; ?>'
-                                };
-                                websocket.send(JSON.stringify(msgExpired));
+                                    var msgExpired = {
+                                        type: 'updateTimer',
+                                        userid: msg.on_move.user_id,
+                                        timer: min + " : " + sec
+                                    };
+                                    websocket.send(JSON.stringify(msgExpired));
 
 
-                                window.clearInterval(interval);
-//                                    console.log('done');
-                            }
-                        }, 1000);
-                    },500);
+    console.log(countdown);
+                                if(countdown<1000){
+                                    var msgExpired = {
+                                        type: 'timeExpiredFull',
+                                        expired: msg.on_move.whoShort,
+                                        userid: '<?= $authenticatedUser['id']; ?>'
+                                    };
+                                    websocket.send(JSON.stringify(msgExpired));
+
+
+                                    window.clearInterval(interval);
+    //                                    console.log('done');
+                                }
+                            }, 1000);
+                        },500);
+                    }
                 }
             }
+            if(type == 'showToggleTimer'){
             
+                if(typeof (msg.on_move) !== 'undefined'&&typeof (msg.no_move_clock) == 'undefined'){
+                    if(msg.on_move.whoShort == 1)
+                    {
+                        divEq = 0;
+                        var secondEq = 1;
+                    }
+                    if(msg.on_move.whoShort == 2)
+                    {
+                        divEq = 1;
+                        var secondEq = 0;
+                    }
+                    var toggleElement = $('.playerList span.playerTimer:eq('+divEq+')');
+                    toggleElement.html(msg.timer);
+
+                }
+            }
             if(type == 'getLeftTimer'){
                 if(typeof (msg.user_id) !== 'undefined'&&msg.user_id == user_id){
                     var leftElement = $('.playerLeft span');
@@ -419,6 +438,7 @@
 
                 var message = msg.message;
                 $('#cardUserList').html(message);
+                $('.userList').html(msg.messageTable);
             }
 
             if(type == 'kickMeFromTable'){
@@ -427,6 +447,11 @@
                 $('.cardTableWrapper').hide();
                 
                 history.pushState("", document.title, window.location.pathname);
+            }
+            if(type == 'inviteUserToTable'){
+                var inviteText = msg.inviteText;
+                $('.listTableMsg').append(inviteText);
+                
             }
             if(type == 'showStartTimer'){
                     var timerValue = 10;
@@ -543,6 +568,24 @@
                 };
                 websocket.send(JSON.stringify(msg));
             });
+            
+             // close invitation
+            
+            $('.cardUserBoxWrapper').delegate('.closeInvitation','click',function () {
+                console.log($(this).parent());
+                $(this).parent().remove();
+            });
+            
+            // join table from invite
+            $('.cardUserBoxWrapper').delegate('.cardUserHeader .joinSingleTable','click',function () {
+                var tableid = $(this).attr('data-table');
+                var msg = {
+                    type: 'existTableJoined',
+                    tableid: tableid,
+                    userid: '<?= $authenticatedUser['id']; ?>'
+                };
+                websocket.send(JSON.stringify(msg));
+            });
 
             // quit ur table
             
@@ -556,6 +599,18 @@
                 websocket.send(JSON.stringify(msg));
                 // remove hastag from the end
                 history.pushState("", document.title, window.location.pathname);
+            });
+            
+            // invite other player
+            
+            $('.cardTableWrapper').delegate('.inviteToTable','click',function () {
+                var invitedUser = $(this).attr('data-rel');
+                var msg = {
+                    type: 'inviteToTable',
+                    invitedUser: invitedUser,
+                    userid: '<?= $authenticatedUser['id']; ?>'
+                };
+                websocket.send(JSON.stringify(msg));
             });
             
             
@@ -576,7 +631,7 @@
 <span class="cardUserBoxWrapper">
     <h1>FastRally Card Game </h1>
     <div class="cardUserHeader">
-        
+        <span class="listTableMsg"></span>
         <button class="btn myBtn" id="join-table"><i class="fa fa-plus"></i> Create new table</button>
     </div>
     <div class="cardTableListWrapper">

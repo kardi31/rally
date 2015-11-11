@@ -22,7 +22,7 @@ socket_listen($socket);
 //create & add listning socket to the list
 $clients = array($socket);
 $GLOBALS['userSockets'] = array();
-$players = new PlayerCollection();
+$players = PlayerCollection::getInstance();
 $tables = new TableCollection();
 
 //start endless loop, so that our script doesn't stop
@@ -93,6 +93,8 @@ while (true) {
                                              $getLeftTimerParameters = array('type' => 'getLeftTimer');
                                              
                                             $table = $tables->getTable($tableId);
+                                             showTableForPlayer($table, $player);
+                                             
                                             $secondPlayer = $table->getOtherPlayer($player);
                                             if($secondPlayer){
                                                 $getLeftTimerParameters['user_id'] = $secondPlayer->getId();
@@ -394,6 +396,24 @@ while (true) {
 
                                 }
                             }
+                            //
+                            elseif($tst_msg->type=="inviteToTable"){
+                                $player = $players->getPlayer($tst_msg->userid);
+                                if(isset($GLOBALS['userSockets'][$player->getId()])&&$GLOBALS['userSockets'][$player->getId()]==$changed_socket){
+                                    
+                                    $table = $tables->getTable($player->getTable());
+
+                                    $otherPlayer = $players->getPlayer($tst_msg->invitedUser);
+                                    if(!$table->isAlreadyInvited($player->getUsername())){
+                                        $table->addInvitedPlayer($player->getUsername());
+
+                                        $passedParameters = array('type'=>'inviteUserToTable');
+                                        $passedParameters['inviteText'] = $table->getInviteText($player);
+                                        $response_text = mask(json_encode($passedParameters));
+                                        send_to_me($otherPlayer,$response_text);
+                                    }
+                                }
+                            }
                             // Card clicked
                             elseif($tst_msg->type=="cardClicked"){
                                 $player = $players->getPlayer($tst_msg->userid);
@@ -459,7 +479,10 @@ while (true) {
                                 
                                 $player = $players->getPlayer($tst_msg->userid);
                                 $table = $tables->getTable($tst_msg->tableid);
+                                    var_dump('close-start');
                                 if(!($table->isStarted()&&!$table->isFinished())){
+                                    
+                                    var_dump('close-ok');
                                     $otherPlayer = $table->getOtherPlayer($player);
 
 
@@ -470,14 +493,14 @@ while (true) {
 
                                     $availableTables = $tables->getAllTables();
                                     $passedParameters['message'] = $availableTables;
-                                    refreshTableList($tables,$passedParameters);
-
-                                    refreshPlayerList($players);
 
                                     // if there's another player on table
                                     if($otherPlayer){
                                         showTableForPlayer($table, $otherPlayer,false,true,true);
                                     }
+                                    refreshTableList($tables);
+
+                                    refreshPlayerList($players);
                                 }
 
                             }
@@ -485,7 +508,20 @@ while (true) {
                                 if($tst_msg->userid&&$GLOBALS['userSockets'][$tst_msg->userid]==$changed_socket){
                                     if($player = $players->getPlayer($tst_msg->userid)){
                                         $player->setTimer($tst_msg->timer);
+                                        
+                                        $table = $tables->getTable($player->getTable());
+                                        
+                                        $moveParameters = array('type'=>'showToggleTimer');
+                                        $onMove = $table->whoseNextMove();
+                                        $userOnTableIds = $table->getPlayerIds();
+                                        $moveParameters = array_merge($moveParameters,$userOnTableIds);
+                                        $moveParameters['timer'] = $tst_msg->timer;
+                                        $moveParameters['on_move'] = $onMove;
+                                        $response_text3 = mask(json_encode($moveParameters));
+                                        send_to_other_player_on_table($table, $player, $response_text3);
                                     }
+                                    
+                                    
                                 }
                             }
                             elseif($tst_msg->type=="userLeft"){
@@ -658,7 +694,8 @@ function perform_handshaking($receved_header,$client_conn, $host, $port)
 
 function refreshPlayerList($players){
     $message = $players->getJoinedPlayers();
-    $response_text = mask(json_encode(array('type'=>'refreshPlayers', 'message'=>$message)));
+    $messageTable = $players->getJoinedPlayersTable();
+    $response_text = mask(json_encode(array('type'=>'refreshPlayers', 'message'=>$message,'messageTable' => $messageTable)));
     send_message($response_text); 
 }
 

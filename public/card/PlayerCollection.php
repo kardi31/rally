@@ -10,8 +10,17 @@ class PlayerCollection {
     private $db ;
     private $items = array();
 
+    public static $instance;
+    
     public function __construct() {
         $this->db = new PDO('mysql:host=localhost;dbname=ral;charset=utf8', 'root', '');
+    }
+    
+     public static function getInstance() {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+        return self::$instance;
     }
     
     public function addPlayer($userid,$username) {
@@ -42,7 +51,7 @@ class PlayerCollection {
         return false;
     }
     
-    public function getJoinedPlayers(){
+    public function getJoinedPlayers($domOutput = false){
         
         $dom = new DOMDocument();
             
@@ -58,9 +67,47 @@ class PlayerCollection {
             $li->appendChild($spanRank);
             $joinedPlayers->appendChild($li);
         endforeach;
+        
+        if($domOutput)
+            return $joinedPlayers;
+        
         $dom->appendChild($joinedPlayers);
         
         return $dom->saveHTML();
     }
     
+    public function getJoinedPlayersTable($domOutput = false){
+        
+        $dom = new DOMDocument();
+            
+        $joinedPlayers = $dom->createElement('ul');
+        foreach($this->items as $player):
+            $li = $dom->createElement('li',$player->getUsername());
+            $spanRank = $dom->createElement('span',$player->getRank());
+            $spanRank->setAttribute('class', 'rank');
+            
+            if(!$player->getTable()){
+                $a = $dom->createElement('a','Invite to table');
+                $a->setAttribute('class', 'inviteToTable');
+                $a->setAttribute('data-rel', $player->getId());
+            }
+            else{
+                $a = $dom->createElement('a','#'.$player->getTable());
+                $a->setAttribute('class', 'alreadyOnTable');
+                
+            }
+            
+            $li->appendChild($a);
+            $li->appendChild($spanRank);
+            $joinedPlayers->appendChild($li);
+        endforeach;
+        
+        if($domOutput)
+            return $joinedPlayers;
+        
+        
+        $dom->appendChild($joinedPlayers);
+        
+        return $dom->saveHTML();
+    }
 }

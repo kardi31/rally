@@ -243,7 +243,7 @@
     background:#868686;
     
     width: 100%;
-    height: 50px;
+    min-height: 50px;
 }
 .cardUserHeader:after{
     clear:both;
@@ -342,5 +342,86 @@
 }
 
 .playerCard table tr:not(:first-of-type):hover td{
-    background:rebeccapurple;
+    /*background:rebeccapurple;*/
+    background:purple;
+}
+
+.smallBoxes{
+    margin-top:100px;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.smallBoxes > ul{
+    list-style-type:none;
+    padding-left:0px;
+    border-bottom:1px solid #0000ff;
+    margin-bottom:0px;
+}
+
+.smallBoxes .userList ul{
+    list-style-type:none;
+    padding-left:10px;
+    padding-right:10px;
+}
+.smallBoxes .userList{
+    padding-top:10px;
+    background:#322f32;
+}
+.smallBoxes > ul li{
+        background: #fff;
+    color: #504f4f;
+    padding: 5px;
+    display: inline-block;
+    border-right:1px solid #0000ff;
+}
+
+.userList .rank{
+        display: inline-block;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 10px;
+    vertical-align: top;
+}
+
+.userList .inviteToTable,.userList .alreadyOnTable{
+    float:right;
+    cursor:pointer;
+}
+
+.listTableMsg span{
+    float:left;
+    background: #212112;
+    padding: 7px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.listTableMsg span.invitedToTable{
+    position:relative;
+    padding-right:20px;
+}
+
+.listTableMsg span.invitedToTable .closeInvitation{
+    position:absolute;
+    top:0px;
+    right:0px;
+    margin:0px;
+    padding:0px 5px;
+}
+
+.listTableMsg a{
+    background: #00a651;
+    border-radius: 0px;
+    color: #fff;
+    font-size: 14px;
+    margin: 0 auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: auto;
+    cursor:pointer;
+    display: inline-block;
+    text-align: center;
+    padding: 5px !important;
+    white-space: normal;
 }

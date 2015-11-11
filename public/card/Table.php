@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__."/PlayerCollection.php");
 
 class Table {
     
@@ -24,6 +25,9 @@ class Table {
     
 
     protected $players_left_table = array();
+    protected $invited_users = array();
+    
+    protected $admin_id;
     
     
     public function resetPartiallyTable(){
@@ -37,6 +41,7 @@ class Table {
             'wantStart' => array()
         );
         $this->round = 1;
+        $this->invited_users = array();
         unset($this->current_skill_playing);
     }
     
@@ -66,6 +71,7 @@ class Table {
     public function __construct($player,$id){
         $this->player1 = $player;
         $this->id = $id;
+        $this->admin_id = $player->getId();
     }
     
     private function isGameJustStarted(){
@@ -140,10 +146,13 @@ class Table {
     }
     
     public function removePlayer($player){
+        var_dump('remove-player');
         if($this->player1==$player){
+        var_dump('remove-player1');
             unset($this->player1);
         }
         elseif($this->player2==$player){
+        var_dump('remove-player2');
             unset($this->player2);
         }
     }
@@ -434,6 +443,8 @@ class Table {
         $closeTable->setAttribute('class', 'closeTable');
         $closeTable->setAttribute('rel', $tableId);
         
+        // player list start
+        
         $playerList = $dom->createElement('div');
         $playerList->setAttribute('class', 'playerList');
         
@@ -492,6 +503,41 @@ class Table {
         }
         
         $cardTableInfo->appendChild($playerList);
+        
+        // small boxes to the right
+        
+        $smallBoxes = $dom->createElement('div');
+        $smallBoxes->setAttribute('class', 'smallBoxes');
+        
+        $smallBoxesMenu = $dom->createElement('ul');
+        
+        $smallBoxesMenuItem = $dom->createElement('li','User list');
+        $smallBoxesMenuItem2 = $dom->createElement('li','On table');
+        
+        $smallBoxesMenu->appendChild($smallBoxesMenuItem);
+        $smallBoxesMenu->appendChild($smallBoxesMenuItem2);
+        $smallBoxes->appendChild($smallBoxesMenu);
+        
+        // user list
+        
+        $smallBoxesUserList = $dom->createElement('div');
+        $smallBoxesUserList->setAttribute('class', 'userList');
+        
+        $joinedPlayers = $dom->importNode(PlayerCollection::getInstance()->getJoinedPlayersTable(true),true);
+        $smallBoxesUserList->appendChild($joinedPlayers);
+        
+        $smallBoxesOnTable = $dom->createElement('div');
+        $smallBoxesOnTable->setAttribute('class', 'onTableList');
+        
+        // on table
+        
+        $onTable = $dom->importNode($this->getPlayersOnTable($user_id),true);
+        $smallBoxesOnTable->appendChild($onTable);
+        
+        $smallBoxes->appendChild($smallBoxesUserList);
+        $smallBoxes->appendChild($smallBoxesOnTable);
+        
+        $cardTableInfo->appendChild($smallBoxes);
         
         $dom->appendChild($cardTable);
         $dom->appendChild($cardTableInfo);
@@ -980,4 +1026,80 @@ class Table {
         
         return false;
     }
+    
+    public function getInviteText($player){
+        
+        $dom = new DOMDocument();
+        
+        $inviteText = $dom->createElement('span',$player->getUsername()." invites you to table ".$this->id);
+        $inviteText->setAttribute('class', 'invitedToTable');
+        
+        $inviteLink = $dom->createElement('a','Join table');
+        $inviteLink->setAttribute('href', 'javascript:void(0)');
+        $inviteLink->setAttribute('class', 'joinSingleTable');
+        
+        
+        $closeTable = $dom->createElement('button','X');
+        $closeTable->setAttribute('class', 'closeInvitation');
+        
+        $inviteLink->setAttribute('data-table', $this->id);
+        
+        $inviteText->appendChild($inviteLink);
+        $inviteText->appendChild($closeTable);
+        
+        $dom->appendChild($inviteText);
+        
+        return $dom->saveHTML();
+    }
+    
+    public function addInvitedPlayer($username){
+        array_push($this->invited_users,$username);
+    }
+    
+    public function isAlreadyInvited($username){
+        if(in_array($username,$this->invited_users)){
+            return true;
+        }
+        
+        return false;
+    }
+    
+    public function getPlayersOnTable($user_id){
+        
+        $dom = new DOMDocument();
+        
+        $playersOnTable = $dom->createElement('ul');
+        
+        if(isset($this->player1)){
+            $li = $dom->createElement('li',$this->player1->getUsername());
+            $spanRank = $dom->createElement('span',$this->player1->getRank());
+            $spanRank->setAttribute('class', 'rank');
+            if($user_id==$this->admin_id&&$this->player1->getId()!=$user_id){
+                $a = $dom->createElement('a','X');
+                $a->setAttribute('class', 'kickPlayerFromTable');
+                $a->setAttribute('data-rel', $this->player1->getId());
+            $li->appendChild($a);
+            }
+            $li->appendChild($spanRank);
+            $playersOnTable->appendChild($li);
+        }
+        
+        if(isset($this->player2)){
+            $li = $dom->createElement('li',$this->player2->getUsername());
+            $spanRank = $dom->createElement('span',$this->player2->getRank());
+            $spanRank->setAttribute('class', 'rank');
+            
+            if($user_id==$this->admin_id&&$this->player2->getId()!=$user_id){
+                $a = $dom->createElement('a','X');
+                $a->setAttribute('class', 'kickPlayerFromTable');
+                $a->setAttribute('data-rel', $this->player2->getId());
+            $li->appendChild($a);
+            }
+            $li->appendChild($spanRank);
+            $playersOnTable->appendChild($li);
+        }
+        
+        return $playersOnTable;
+    }
+    
 }
