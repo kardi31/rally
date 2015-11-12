@@ -532,7 +532,6 @@ class Table {
         $smallBoxesUserList = $dom->createElement('div');
         $smallBoxesUserList->setAttribute('class', 'userList');
         
-        var_dump($_COOKIE);
         if((isset($_COOKIE['smallBoxes'])&&$_COOKIE['smallBoxes']=='userList')||!isset($_COOKIE['smallBoxes'])){
             $smallBoxesUserList->setAttribute('style','display:block');
         }

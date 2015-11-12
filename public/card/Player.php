@@ -155,7 +155,7 @@ class Player {
     }
     
     public function hasWon(){
-        if($this->point>0){
+        if($this->point>2){
             return true;
         }
     }
