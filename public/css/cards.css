@@ -24,7 +24,7 @@
 }
 
 .playerList > div:nth-of-type(2){
-    background:#0000ff;
+    background:rgba(18,51,212,0.90);
     color:#fff;
 }
 
@@ -34,6 +34,10 @@
     padding: 6px;
     float: right;
     margin-top: 10%;
+}
+
+#menu{
+    margin-bottom:10px;
 }
 
 
@@ -313,7 +317,7 @@
     margin-top:-10px;
 }
 .startGame{
-    background: #0000ff;
+    background: rgba(18,51,212,0.90);
     border: none;
     box-shadow: none;
     color: #fff;
@@ -355,7 +359,7 @@
 .smallBoxes > ul{
     list-style-type:none;
     padding-left:0px;
-    border-bottom:1px solid #0000ff;
+    border-bottom:1px solid rgba(18,51,212,0.90);
     margin-bottom:0px;
 }
 
@@ -373,7 +377,7 @@
     color: #504f4f;
     padding: 5px;
     display: inline-block;
-    border-right:1px solid #0000ff;
+    border-right:1px solid rgba(18,51,212,0.90);
 }
 
 .userList .rank{
@@ -403,12 +407,12 @@
     color: #504f4f;
     padding: 5px;
     display: inline-block;
-    border-right:1px solid #0000ff;
+    border-right:1px solid rgba(18,51,212,0.90);
     cursor:pointer;
 }
 
 .smallBoxes > ul li.active{
-    background:#0000ff;
+    background:rgba(18,51,212,0.90);
     color:#fff;
 }
 

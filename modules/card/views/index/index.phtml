@@ -494,7 +494,7 @@
                     $('.startGame').removeClass('.startGameNow');
                     $('.startGame').attr('disabled','disabled');
                     var interval2 = setInterval(function() {
-                        $('.startGame').html(timerValue2);
+                        $('.startGame').html("Waiting for other player to start <br />" + timerValue2);
                         timerValue2--;
                         if(timerValue2<0){
                             clearInterval(interval2);
