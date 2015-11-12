@@ -40,6 +40,25 @@ class CardService extends Service{
         return $q->execute(array(),$hydrationMode);
     }
     
+    
+    public function getLockedUserCards($user_id,$hydrationMode = Doctrine_Core::HYDRATE_ARRAY){
+        $q = $this->cardTable->createQuery('c');
+        $q->leftJoin('c.Model cm');
+        $q->addSelect('c.*,cm.*');
+        $q->addWhere('c.locked = 1');
+        $q->addWhere('c.user_id = ?',$user_id);
+        return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function getUnlockedUserCards($user_id,$hydrationMode = Doctrine_Core::HYDRATE_ARRAY){
+        $q = $this->cardTable->createQuery('c');
+        $q->leftJoin('c.Model cm');
+        $q->addSelect('c.*,cm.*');
+        $q->addWhere('c.locked = 0');
+        $q->addWhere('c.user_id = ?',$user_id);
+        return $q->execute(array(),$hydrationMode);
+    }
+    
     public function countLockedCards($user_id){
         $q = $this->cardTable->createQuery('c');
         $q->addSelect('c.*');

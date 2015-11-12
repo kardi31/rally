@@ -355,7 +355,7 @@
 
                 if (typeof (msg.leftTimer) !== 'undefined'){
                     var leftElement = $('.playerLeft span');
-                    var countdown2 = 5 * 1000;
+                    var countdown2 = 30 * 1000;
                     var interval = setInterval(function() {
                         countdown2 -= 1000;
                         var min = Math.floor(countdown2 / (60 * 1000));
@@ -398,9 +398,9 @@
 //                    $('.startGame').removeClass('startGameNow');
 //                }
 
-                if(typeof ($.cookie('smallBoxes') === 'undefined')){
+                if(typeof ($.cookie('smallBoxes')) != 'undefined'){
                     
-                    
+                    console.log($.cookie('smallBoxes'));
                     var divRel = $.cookie('smallBoxes');
                     var menuItem = $('[data-rel="'+divRel+'"]');
                     var element = $('.'+divRel);
@@ -412,6 +412,7 @@
                     element.show();
 
                 }
+                
             }
 
             if (type == 'refreshTables')

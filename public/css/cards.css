@@ -95,10 +95,10 @@
     width:100%;
     border:1px solid grey;
 }
-.playerCards th,.wonCardWrapper th{
+.playerCards th,.wonCardWrapper th,.lockedCards  .playerCard th{
     position:relative;
 }
-.playerCards th strong,.wonCardWrapper th strong{
+.playerCards th strong,.wonCardWrapper th strong,.lockedCards th strong{
     z-index:10000;
     position:absolute;
     bottom:0px;left:0px;
@@ -107,15 +107,26 @@
     padding:5px 0px 5px 5px;
     font-size:12px;
 }
-.playerCards td,.wonCardWrapper td{
+.playerCards tr,.wonCardWrapper tr,.lockedCards tr{
+    
+    max-width:100%;
+}
+.playerCards td,.wonCardWrapper td,.lockedCards td{
 
     font-size:12px;
+    max-width:100%;
 }
-.playerCards th,.wonCardWrapper th{
+.playerCards th,.wonCardWrapper th,.lockedCards th{
     background:#504f4f;
+    max-width:100%;
+}
+.playerCard table{
+    table-layout: fixed;
 }
 .playerCards img,.wonCardWrapper img{
     max-width:100%;
+    width:100%;
+    display:block;
 }
 .playerCards div,.wonCardWrapper{
     width:145px;
@@ -132,7 +143,7 @@
     top:190px;
     left:290px;
 }
-.playerCards div.playerCard,.wonCardWrapper{
+.playerCards div.playerCard,.wonCardWrapper,.lockedCards div.playerCard{
     background:#333;
 }
 .playCard{
@@ -346,8 +357,11 @@
 }
 
 .playerCard table tr:not(:first-of-type):hover td{
-    /*background:rebeccapurple;*/
     background:purple;
+}
+
+#manageCards .playerCard table tr:not(:first-of-type):hover td{
+    background:none;
 }
 
 .smallBoxes{
@@ -470,4 +484,10 @@
 
 .smallBoxes div{
     display:none;
+}
+
+.cardTableBox button:disabled{
+        background: transparent;
+    border-color: transparent;
+    color: transparent;
 }

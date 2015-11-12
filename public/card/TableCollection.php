@@ -95,9 +95,16 @@ class TableCollection {
             
             
             
-            $joinSingleTable = $dom->createElement('button','Join table');
-            $joinSingleTable->setAttribute('class', 'joinSingleTable btn btn-primary');
-            $joinSingleTable->setAttribute('rel', $tableId);
+            if(!$table->hasBothPlayers()){
+                $joinSingleTable = $dom->createElement('button','Join table');
+                $joinSingleTable->setAttribute('class', 'joinSingleTable btn btn-primary');
+                $joinSingleTable->setAttribute('rel', $tableId);
+            }
+            else{
+                $joinSingleTable = $dom->createElement('button','Full');
+                $joinSingleTable->setAttribute('class', 'btn btn-primary');
+                $joinSingleTable->setAttribute('disabled','disabled');
+            }
             $cardTableBox->appendChild($joinSingleTable);
             
             $cardTableBox->appendChild($cardTablePlayers);

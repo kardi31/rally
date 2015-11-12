@@ -94,7 +94,6 @@ class PlayerCollection {
             else{
                 $a = $dom->createElement('a','#'.$player->getTable());
                 $a->setAttribute('class', 'alreadyOnTable');
-                
             }
             
             $li->appendChild($a);

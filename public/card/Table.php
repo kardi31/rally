@@ -146,13 +146,10 @@ class Table {
     }
     
     public function removePlayer($player){
-        var_dump('remove-player');
         if($this->player1==$player){
-        var_dump('remove-player1');
             unset($this->player1);
         }
         elseif($this->player2==$player){
-        var_dump('remove-player2');
             unset($this->player2);
         }
     }
@@ -513,18 +510,13 @@ class Table {
         
         $smallBoxesMenuItem = $dom->createElement('li','User list');
         $smallBoxesMenuItem->setAttribute('data-rel','userList');
-        if((isset($_COOKIE['smallBoxes'])&&$_COOKIE['smallBoxes']=='userList')||!isset($_COOKIE['smallBoxes'])){
-            $smallBoxesMenuItem->setAttribute('class','active');
-        }
         
         $smallBoxesMenuItem2 = $dom->createElement('li','On table');
         $smallBoxesMenuItem2->setAttribute('data-rel','onTableList');
-        if(isset($_COOKIE['onTableList'])&&$_COOKIE['smallBoxes']=='onTableList'){
-            $smallBoxesMenuItem2->setAttribute('class','active');
-        }
+        $smallBoxesMenuItem2->setAttribute('class','active');
         
-        $smallBoxesMenu->appendChild($smallBoxesMenuItem);
         $smallBoxesMenu->appendChild($smallBoxesMenuItem2);
+        $smallBoxesMenu->appendChild($smallBoxesMenuItem);
         $smallBoxes->appendChild($smallBoxesMenu);
         
         // user list
@@ -532,19 +524,13 @@ class Table {
         $smallBoxesUserList = $dom->createElement('div');
         $smallBoxesUserList->setAttribute('class', 'userList');
         
-        if((isset($_COOKIE['smallBoxes'])&&$_COOKIE['smallBoxes']=='userList')||!isset($_COOKIE['smallBoxes'])){
-            $smallBoxesUserList->setAttribute('style','display:block');
-        }
-        
         $joinedPlayers = $dom->importNode(PlayerCollection::getInstance()->getJoinedPlayersTable(true),true);
         $smallBoxesUserList->appendChild($joinedPlayers);
         
         $smallBoxesOnTable = $dom->createElement('div');
         $smallBoxesOnTable->setAttribute('class', 'onTableList');
+        $smallBoxesOnTable->setAttribute('style','display:block');
         
-        if(isset($_COOKIE['onTableList'])&&$_COOKIE['smallBoxes']=='onTableList'){
-            $smallBoxesOnTable->setAttribute('style','display:block');
-        }
         // on table
         
         $onTable = $dom->importNode($this->getPlayersOnTable($user_id),true);
@@ -1073,6 +1059,9 @@ class Table {
     }
     
     public function isAlreadyInvited($username){
+        var_dump($this->invited_users);
+        var_dump($username);
+        var_dump(in_array($username,$this->invited_users));
         if(in_array($username,$this->invited_users)){
             return true;
         }
@@ -1123,6 +1112,10 @@ class Table {
             return true;
         }
         return false;
+    }
+    
+    public function setPlayerAdmin($player){
+        $this->admin_id = $player->getId();
     }
     
 }

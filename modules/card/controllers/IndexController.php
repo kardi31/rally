@@ -74,8 +74,10 @@ class Card_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
         
         $cardService = parent::getService('card','card');
-        $cards = $cardService->getFullUserCards($user['id'],Doctrine_Core::HYDRATE_ARRAY);
-	$this->view->assign('cards',$cards);
+        $unlockedCards = $cardService->getUnlockedUserCards($user['id'],Doctrine_Core::HYDRATE_ARRAY);
+        $lockedCards = $cardService->getLockedUserCards($user['id'],Doctrine_Core::HYDRATE_ARRAY);
+	$this->view->assign('lockedCards',$lockedCards);
+	$this->view->assign('unlockedCards',$unlockedCards);
     }
     
     public function lockCard(){

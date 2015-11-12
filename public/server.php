@@ -198,19 +198,21 @@ while (true) {
                                 if(isset($GLOBALS['userSockets'][$player->getId()])&&$GLOBALS['userSockets'][$player->getId()]==$changed_socket){
                                     $table = $tables->getTable($tst_msg->tableid);
 
+                                    if(!$table->hasBothPlayers()){
 
-                                    if(!$player->getTable()){
-                                        $tables->addPlayerToTable($player,$table);
+                                        if(!$player->getTable()){
+                                            $tables->addPlayerToTable($player,$table);
+                                        }
+
+                                        $response_text = mask(json_encode($passedParameters));
+
+                                        showTableForPlayer($table, $player);
+                                        $otherPlayer = $table->getOtherPlayer($player);
+                                        showTableForPlayer($table, $otherPlayer);
+
+                                        refreshPlayerList($players);
+                                        refreshTableList($tables);
                                     }
-
-                                    $response_text = mask(json_encode($passedParameters));
-                                    
-                                    showTableForPlayer($table, $player);
-                                    $otherPlayer = $table->getOtherPlayer($player);
-                                    showTableForPlayer($table, $otherPlayer);
-                                    
-                                    refreshPlayerList($players);
-                                    refreshTableList($tables);
                                 }
                                 
                             }
@@ -403,14 +405,16 @@ while (true) {
                                     
                                     $table = $tables->getTable($player->getTable());
 
-                                    $otherPlayer = $players->getPlayer($tst_msg->invitedUser);
-                                    if(!$table->isAlreadyInvited($player->getUsername())){
-                                        $table->addInvitedPlayer($player->getUsername());
+                                    if(!$table->hasBothPlayers()&&$table->isPlayerAdmin($player)){
+                                        $otherPlayer = $players->getPlayer($tst_msg->invitedUser);
+                                        if(!$table->isAlreadyInvited($otherPlayer->getUsername())){
+                                            $table->addInvitedPlayer($otherPlayer->getUsername());
 
-                                        $passedParameters = array('type'=>'inviteUserToTable');
-                                        $passedParameters['inviteText'] = $table->getInviteText($player);
-                                        $response_text = mask(json_encode($passedParameters));
-                                        send_to_me($otherPlayer,$response_text);
+                                            $passedParameters = array('type'=>'inviteUserToTable');
+                                            $passedParameters['inviteText'] = $table->getInviteText($player);
+                                            $response_text = mask(json_encode($passedParameters));
+                                            send_to_me($otherPlayer,$response_text);
+                                        }
                                     }
                                 }
                             }
@@ -496,6 +500,7 @@ while (true) {
 
                                     // if there's another player on table
                                     if($otherPlayer){
+                                        $table->$this->admin_id($otherPlayer);
                                         showTableForPlayer($table, $otherPlayer,false,true,true);
                                     }
                                     refreshTableList($tables);
@@ -575,7 +580,7 @@ while (true) {
 		if ($buf === false) { // check disconnected client
 			// remove client for $clients array
 			$found_socket = array_search($changed_socket, $clients);
-                        
+                        var_dump('remove-client');
                         $userId = array_search($changed_socket,$GLOBALS['userSockets']);
 //                        $tableId = $players->removePlayer($userId,$tables);
                         if($player = $players->getPlayer($userId)){
@@ -583,25 +588,34 @@ while (true) {
                                 
                                 $table = $tables->getTable($tableId);
                                 
-                                if($table->isStarted()){
+                                if($table->hasBothPlayers()){
+                                    if($table->isStarted()){
 
-                                    $table->setPlayerLeftTable($player);
+                                        $table->setPlayerLeftTable($player);
 
-                                    $infoArray = array('type'=>'playerLeft', 'message'=>'userLeft');
-                                    $userOnTableIds = $table->getPlayerIds();
-                                    $infoArray = array_merge($infoArray,$userOnTableIds);
+                                        $infoArray = array('type'=>'playerLeft', 'message'=>'userLeft');
+                                        $userOnTableIds = $table->getPlayerIds();
+                                        $infoArray = array_merge($infoArray,$userOnTableIds);
 
-                                    // send to other player info that rival has left the table
+                                        // send to other player info that rival has left the table
 
-                                    $response_text = mask(json_encode($infoArray));
-                                    send_to_other_player_on_table($table,$player,$response_text); 
+                                        $response_text = mask(json_encode($infoArray));
+                                        send_to_other_player_on_table($table,$player,$response_text); 
+                                    }
+                                    else{
+                                        $otherPlayer = $table->getOtherPlayer($player);
+                                        $tables->closeTable($player,$table);
+    //                                    var_dump($otherPlayer);
+                                        showTableForPlayer($table, $otherPlayer,false,true);
+                                    }
                                 }
                                 else{
-                                    $otherPlayer = $table->getOtherPlayer($player);
-                                    $tables->closeTable($player,$table);
-//                                    var_dump($otherPlayer);
-                                    showTableForPlayer($table, $otherPlayer,false,true);
+                                    $players->removePlayer($player->getId(),$tables);
+                                    
                                 }
+                            }
+                            else{
+                                $players->removePlayer($player->getId(),$tables);
                             }
                         }
                         refreshPlayerList($players);
