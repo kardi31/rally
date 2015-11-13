@@ -11,14 +11,15 @@
             <file>file:/C:/xampp/htdocs/ral/public/card/TableCollection.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/car/services/Car.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/car/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/public/css/cards.css</file>
             <file>file:/C:/xampp/htdocs/ral/public/card/PlayerCollection.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/css/cards.css</file>
             <file>file:/C:/xampp/htdocs/ral/public/card/Table.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/test/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/card/views/index/index.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/TestController.php</file>
             <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/menu.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/public/server.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-cars.phtml</file>
         </group>
     </open-files>
 </project-private>
