@@ -16,9 +16,7 @@
 <link href="/plugins/bxslider/jquery.bxslider.css" rel="stylesheet" />
 
 <?php $team = $authenticatedUser['Team']; ?>
-<div class="mainUserBox myCarsBox">
-    <h4 class="boxHeader"><?= $this->translate('Garage'); ?></h4>
-    <?php 
+<?php 
         if(isset($_GET['msg'])){
             if($_GET['msg']=="car on market"){
                 $this->showError($this->translate("This car is already on market"));
@@ -51,8 +49,14 @@
             elseif($_GET['msg']=="car scrapped"){
                 $this->showSuccess($this->translate("Car has successfully been scrapped."));
             }
+            elseif($_GET['msg']=="transformed"){
+                $this->showSuccess($this->translate("You have transformed your playing cards into ".$_GET['car']));
+            }
         }
     ?>
+<div class="mainUserBox myCarsBox">
+    <h4 class="boxHeader"><?= $this->translate('Garage'); ?></h4>
+    
     <div class="myCars peopleList carList col-md-12">
         
         <ul class="bxslider carSlider">

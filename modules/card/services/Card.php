@@ -66,6 +66,53 @@ class CardService extends Service{
         $q->addWhere('c.locked = 1');
         return $q->count();
     }
+    
+    public function getLockedUserCardsSameType($user_id,$hydrationMode = Doctrine_Core::HYDRATE_ARRAY){
+        $q = $this->cardTable->createQuery('c');
+        $q->leftJoin('c.Model cm');
+        $q->addSelect('c.*,cm.*');
+        $q->addWhere('c.locked = 1');
+        $q->addWhere('c.user_id = ?',$user_id);
+        $q->groupBy('cm.id');
+        $q->having('count(cm.id) > 6');
+        return $q->fetchOne(array(),$hydrationMode);
+    }
+    
+    public function checkLockedUserCardsSameType($user_id,$model_id,$hydrationMode = Doctrine_Core::HYDRATE_ARRAY){
+        $q = $this->cardTable->createQuery('c');
+        $q->leftJoin('c.Model cm');
+        $q->addSelect('c.*,cm.*');
+        $q->addWhere('c.locked = 1');
+        $q->addWhere('c.user_id = ?',$user_id);
+        $q->addWhere('cm.id = ?',$model_id);
+        $q->groupBy('cm.id');
+        $q->having('count(cm.id) > 6');
+        return $q->fetchOne(array(),$hydrationMode);
+    }
+    
+    public function getCardsToTransform($user_id,$model_id,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->cardTable->createQuery('c');
+        $q->leftJoin('c.Model cm');
+        $q->addSelect('c.*,cm.*');
+        $q->addWhere('c.locked = 1');
+        $q->addWhere('c.user_id = ?',$user_id);
+        $q->addWhere('cm.id = ?',$model_id);
+        $q->limit(7);
+        return $q->execute(array(),$hydrationMode);
+    }
+    
+    public function createRandomCards($user_id,$amount = 7){
+        $models = CarService::getInstance()->getRandomModelIds($amount);
+        foreach($models as $model){
+            $cardArray = array();
+            $cardArray['user_id'] = $user_id;
+            $cardArray['car_model_id'] = $model['id'];
+            $cardArray['locked'] = 0;
+            $card = $this->cardTable->getRecord();
+            $card->fromArray($cardArray);
+            $card->save();
+        }
+    }
 }
     
 ?>

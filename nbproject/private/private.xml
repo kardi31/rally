@@ -3,12 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ral/public/server.php</file>
-            <file>file:/C:/xampp/htdocs/ral/public/card/Table.php</file>
-            <file>file:/C:/xampp/htdocs/ral/public/card/PlayerCollection.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/card/views/index/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/public/plugins/bxslider/jquery.bxslider.css</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/card/services/Card.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/card/views/index/manage-cards.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/manual.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/card/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/public/card/TableCollection.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/services/Car.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/public/css/cards.css</file>
+            <file>file:/C:/xampp/htdocs/ral/public/card/PlayerCollection.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public/card/Table.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/test/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/card/views/index/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/TestController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/menu.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/public/server.php</file>
         </group>
     </open-files>
 </project-private>

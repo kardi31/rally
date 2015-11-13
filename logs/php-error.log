@@ -45,3 +45,85 @@ Stack trace:
 [12-Nov-2015 17:21:11 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
 [12-Nov-2015 17:40:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
 [12-Nov-2015 17:40:34 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::idnex() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 11:44:20 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[13-Nov-2015 13:55:47 Europe/Berlin] PHP Fatal error:  Call to a member function isGoldMember() on boolean in C:\xampp\htdocs\ral\modules\card\controllers\IndexController.php on line 104
+[13-Nov-2015 13:56:02 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[13-Nov-2015 14:22:18 Europe/Berlin] PHP Fatal error:  Cannot redeclare CardService::getLockedUserCards() in C:\xampp\htdocs\ral\modules\card\services\Card.php on line 70
+[13-Nov-2015 14:22:19 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 14:24:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 14:24:59 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 14:28:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:54:04 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[13-Nov-2015 16:54:17 Europe/Berlin] PHP Fatal error:  Class 'Cards_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[13-Nov-2015 16:54:17 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:55:16 Europe/Berlin] PHP Fatal error:  Class 'Cards_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[13-Nov-2015 16:55:16 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:55:30 Europe/Berlin] PHP Fatal error:  Class 'Cards_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[13-Nov-2015 16:55:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:55:37 Europe/Berlin] PHP Fatal error:  Class 'Cards_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[13-Nov-2015 16:55:37 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:55:41 Europe/Berlin] PHP Fatal error:  Class 'Cards_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[13-Nov-2015 16:55:41 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:55:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:55:57 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:56:01 Europe/Berlin] PHP Warning:  Missing argument 2 for CarService::createNewTeamCar(), called in C:\xampp\htdocs\ral\modules\card\controllers\IndexController.php on line 101 and defined in C:\xampp\htdocs\ral\modules\car\services\Car.php on line 203
+[13-Nov-2015 16:56:01 Europe/Berlin] PHP Notice:  Undefined variable: team_id in C:\xampp\htdocs\ral\modules\car\services\Car.php on line 214
+[13-Nov-2015 16:56:01 Europe/Berlin] PHP Fatal error:  Call to undefined method CarService::getRandomModels() in C:\xampp\htdocs\ral\modules\card\services\Card.php on line 105
+[13-Nov-2015 16:56:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:56:36 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/card/views/index/transform-cards.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[13-Nov-2015 16:56:36 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/card/views/index/transform-cards.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[13-Nov-2015 16:56:36 Europe/Berlin] PHP Fatal error:  Class 'Cards_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[13-Nov-2015 16:56:37 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:56:44 Europe/Berlin] PHP Fatal error:  Class 'Cards_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[13-Nov-2015 16:56:45 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:56:49 Europe/Berlin] PHP Fatal error:  Class 'Cards_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[13-Nov-2015 16:56:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:56:51 Europe/Berlin] PHP Fatal error:  Class 'Cards_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[13-Nov-2015 16:56:51 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:57:14 Europe/Berlin] PHP Fatal error:  Class 'Cards_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[13-Nov-2015 16:57:14 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:58:22 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'Couldn't find class Team_Model_Doctrine_Team' in C:\xampp\htdocs\ral\library\Doctrine\Table.php:299
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Table.php(256): Doctrine_Table->initDefinition()
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1124): Doctrine_Table->__construct('Team_Model_Doct...', Object(Doctrine_Connection_Mysql), true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(278): Doctrine_Connection->getTable('Team_Model_Doct...')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(404): Doctrine_Relation_Parser->getImpl('Team_Model_Doct...')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(207): Doctrine_Relation_Parser->completeDefinition(Array)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Team', true)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1379): Doctrine_Table->getRelation('Team')
+#7 C:\xampp\htdocs\ral\library\Doctrine\Record.php(135 in C:\xampp\htdocs\ral\library\Doctrine\Table.php on line 299
+[13-Nov-2015 16:58:23 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 16:59:12 Europe/Berlin] PHP Fatal error:  Call to undefined method CarService::getRandomModels() in C:\xampp\htdocs\ral\modules\card\services\Card.php on line 105
+[13-Nov-2015 16:59:13 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 17:00:09 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/card/views/index/transform-cards.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[13-Nov-2015 17:00:09 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/card/views/index/transform-cards.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[13-Nov-2015 17:00:37 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/card/views/index/transform-cards.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[13-Nov-2015 17:00:37 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/card/views/index/transform-cards.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[13-Nov-2015 17:00:50 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 17:00:57 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 17:01:00 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 17:01:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[13-Nov-2015 17:22:56 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/card/views/index/transform-cards.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[13-Nov-2015 17:22:56 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/card/views/index/transform-cards.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[13-Nov-2015 17:23:06 Europe/Berlin] PHP Warning:  Missing argument 1 for CardService::getCard(), called in C:\xampp\htdocs\ral\modules\card\controllers\IndexController.php on line 130 and defined in C:\xampp\htdocs\ral\modules\card\services\Card.php on line 20
+[13-Nov-2015 17:23:06 Europe/Berlin] PHP Notice:  Undefined variable: id in C:\xampp\htdocs\ral\modules\card\services\Card.php on line 21
+[13-Nov-2015 17:23:06 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? AND (c.deleted_at IS NULL)) LIMIT 1' at line 1. Failing Query: "SELECT c.id AS c__id, c.user_id AS c__user_id, c.car_model_id AS c__car_model_id, c.locked AS c__locked, c.created_at AS c__created_at, c.updated_at AS c__updated_at, c.deleted_at AS c__deleted_at FROM card_card c WHERE (c.id = ? AND (c.deleted_at IS NULL)) LIMIT 1"' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1025): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Mysql), 'SELECT c.id AS ...')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(983): Doctrine_Connection->execute('SELECT c.id AS ...', Array)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstrac in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[13-Nov-2015 17:23:25 Europe/Berlin] PHP Warning:  Missing argument 1 for CardService::getCard(), called in C:\xampp\htdocs\ral\modules\card\controllers\IndexController.php on line 130 and defined in C:\xampp\htdocs\ral\modules\card\services\Card.php on line 20
+[13-Nov-2015 17:23:25 Europe/Berlin] PHP Notice:  Undefined variable: id in C:\xampp\htdocs\ral\modules\card\services\Card.php on line 21
+[13-Nov-2015 17:23:25 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? AND (c.deleted_at IS NULL)) LIMIT 1' at line 1. Failing Query: "SELECT c.id AS c__id, c.user_id AS c__user_id, c.car_model_id AS c__car_model_id, c.locked AS c__locked, c.created_at AS c__created_at, c.updated_at AS c__updated_at, c.deleted_at AS c__deleted_at FROM card_card c WHERE (c.id = ? AND (c.deleted_at IS NULL)) LIMIT 1"' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1025): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Mysql), 'SELECT c.id AS ...')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(983): Doctrine_Connection->execute('SELECT c.id AS ...', Array)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstrac in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[13-Nov-2015 17:23:34 Europe/Berlin] PHP Warning:  Missing argument 1 for CardService::getCard(), called in C:\xampp\htdocs\ral\modules\card\controllers\IndexController.php on line 130 and defined in C:\xampp\htdocs\ral\modules\card\services\Card.php on line 20
+[13-Nov-2015 17:23:34 Europe/Berlin] PHP Notice:  Undefined variable: id in C:\xampp\htdocs\ral\modules\card\services\Card.php on line 21
+[13-Nov-2015 17:23:34 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? AND (c.deleted_at IS NULL)) LIMIT 1' at line 1. Failing Query: "SELECT c.id AS c__id, c.user_id AS c__user_id, c.car_model_id AS c__car_model_id, c.locked AS c__locked, c.created_at AS c__created_at, c.updated_at AS c__updated_at, c.deleted_at AS c__deleted_at FROM card_card c WHERE (c.id = ? AND (c.deleted_at IS NULL)) LIMIT 1"' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1025): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Mysql), 'SELECT c.id AS ...')
+#1 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(983): Doctrine_Connection->execute('SELECT c.id AS ...', Array)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstrac in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[13-Nov-2015 17:24:00 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45

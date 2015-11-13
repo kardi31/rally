@@ -491,3 +491,9 @@
     border-color: transparent;
     color: transparent;
 }
+
+.transformPlayCards{
+    margin:0 auto;
+    margin-top:50px;
+    display:block;
+}

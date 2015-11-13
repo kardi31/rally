@@ -15,10 +15,11 @@
         });
         
         
-        $('.manageCardBox div.playerCard button.lockTheCard').on('click',function(){
+        $('.manageCardBox div.playerCard').delegate('button.lockTheCard','click',function(){
             var element = $(this).parent();
             var id = $(this).attr('data-rel');
             var btn = $(this);
+            var td = element.parent();
             $.ajax({
                 type: "POST",
                 dataType: "json",
@@ -30,12 +31,16 @@
                        btn.html('<i class="fa fa-unlock"></i> Unlock the card');
                        btn.removeClass('btn-warning');
                        btn.addClass('btn-danger');
-                       element.appendTo('.lockedCards td:empty:eq(0)');
+                       console.log($('.lockedCards td.lockedCardCol:empty'));
+                       console.log($('.lockedCards td.lockedCardCol'));
+                       element.appendTo('.lockedCards td.lockedCardCol:empty:eq(0)');
+                        slider.reloadSlider();
                    }
                    
                    if(data.msg=='unlocked'){
                        $('#manageCards').prepend(element);
                        element.find('.cardLock').remove();
+                       td.empty();
                        btn.html('<i class="fa fa-lock"></i> Lock the card');
                        btn.addClass('btn-warning');
                        btn.removeClass('btn-danger');
@@ -59,7 +64,13 @@
         });
     });
 </script>
-
+<?php 
+    if(isset($_GET['msg'])){
+        if($_GET['msg']=="not enough locked"){
+            $this->showError($this->translate("You need 7 locked cards of the same type to transform."));
+        }
+    }
+?>
 <div class="mainUserBox">
     <h4 class="boxHeader"><?= $this->translate('Manage cards'); ?></h4>
     <div class='staticWrapper'>
@@ -132,7 +143,7 @@
                     if(isset($lockedCards[$i])){
                         $card = $lockedCards[$i];
                         ?>
-                <td>
+                <td class="lockedCardCol">
                         <div class="playerCard" data-rel="<?= $card['id']; ?>">
                             <?php if($card['locked']){ ?>
                             <img src="/images/layout/lock.png" class="cardLock" />
@@ -168,7 +179,7 @@
                         <?php 
                         }
                         else{
-                            echo "<td></td>";
+                            echo "<td class='lockedCardCol'></td>";
                         }
                 endfor; ?>
                 
@@ -180,7 +191,7 @@
                         $card = $lockedCards[$i];
                         
                         ?>
-                <td>
+                <td class="lockedCardCol">
                         <div class="playerCard" data-rel="<?= $card['id']; ?>">
                             <?php if($card['locked']){ ?>
                             <img src="/images/layout/lock.png" class="cardLock" />
@@ -216,10 +227,20 @@
                         <?php 
                         }
                         else{
-                            echo "<td></td>";
+                            echo "<td class='lockedCardCol'></td>";
                         }
                 endfor; ?>
             </tr>
         </table>
+        
+        <?php if($lockedSameType){ ?>
+            <a href="/card/transform-cards/<?= $lockedSameType['Model']['id']; ?>" class="btn myBtn transformPlayCards">    
+            Turn your play cards into <?= $lockedSameType['Model']['name']; ?>
+            </a>
+        <?php
+        }
+        ?>
     </div>
 </div>
+
+

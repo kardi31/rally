@@ -78,6 +78,44 @@ class Card_Index extends Controller{
         $lockedCards = $cardService->getLockedUserCards($user['id'],Doctrine_Core::HYDRATE_ARRAY);
 	$this->view->assign('lockedCards',$lockedCards);
 	$this->view->assign('unlockedCards',$unlockedCards);
+        
+        $lockedSameType = $cardService->getLockedUserCardsSameType($user['id'],Doctrine_Core::HYDRATE_ARRAY);
+	$this->view->assign('lockedSameType',$lockedSameType);
+    }
+    
+    public function transformCards(){
+        Service::loadModels('card', 'card');
+        Service::loadModels('car', 'car');
+        Service::loadModels('user', 'user');
+        Service::loadModels('team', 'team');
+	
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        
+        $cardService = parent::getService('card','card');
+        
+        $carService = parent::getService('car','car');
+        
+        $lockedSameType = $cardService->checkLockedUserCardsSameType($user['id'],$GLOBALS['urlParams'][1],Doctrine_Core::HYDRATE_ARRAY);
+        
+        if($lockedSameType){
+            
+            $carService->createNewTeamCar($lockedSameType['Model']['id'],$user['Team']['id']);
+            
+            $cardsToTransform = $cardService->getCardsToTransform($user['id'],$lockedSameType['Model']['id']);
+            foreach($cardsToTransform as $card):
+                $card->delete();
+            endforeach;
+//            
+            $cardService->createRandomCards($user['id'],7);
+            
+            
+            TK_Helper::redirect('/account/my-cars?msg=transformed&&car='.urlencode($lockedSameType['Model']['name']));
+            
+        }
+        else{
+            TK_Helper::redirect('/card/manage-cards?msg=not+enough+locked');
+        }
     }
     
     public function lockCard(){
@@ -85,40 +123,45 @@ class Card_Index extends Controller{
         Service::loadModels('car', 'car');
         Service::loadModels('user', 'user');
 	
-        $view= $this->view;
-        $view->setNoRender();
-        
-        $result = array();
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
+        
+        $view= $this->view;
+        $view->setNoRender();
         
         $cardService = parent::getService('card','card');
         $card = $cardService->getCard($_POST['id']);
         
-        if($card->get('locked')){
-            $card->set('locked',0);
-            $result['msg'] = 'unlocked';
-        }
-        else{
-            $countLockedCards = $cardService->countLockedCards($user['id']);
-            if($user->isGoldMember()){
-                if($countLockedCards>9){
-                    $result['error'] = 'Too many locked cards';
-                }
+        if($card->get('user_id')==$user['id']){
+            if($card->get('locked')){
+                $card->set('locked',0);
+                $result['msg'] = 'unlocked';
             }
             else{
-                if($countLockedCards>4){
-                    $result['error'] = 'Too many locked cards';
+                $countLockedCards = $cardService->countLockedCards($user['id']);
+                if($user->isGoldMember()){
+                    if($countLockedCards>9){
+                        $result['error'] = 'Too many locked cards';
+                    }
+                }
+                else{
+                    if($countLockedCards>7){
+                        $result['error'] = 'Too many locked cards';
+                    }
+                }
+                if(!isset($result['error'])){
+                        $result['msg'] = 'locked';
+                        $card->set('locked',1);
                 }
             }
-            if(!isset($result['error'])){
-                    $result['msg'] = 'locked';
-                    $card->set('locked',1);
-            }
+            $card->save();
+
+            echo json_encode($result);
         }
-        $card->save();
         
-        echo json_encode($result);
+        
+        
+        
         
     }
     

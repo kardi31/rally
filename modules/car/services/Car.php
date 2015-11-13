@@ -394,5 +394,13 @@ class CarService extends Service{
         $car->set('on_market',0);
         $car->save();
     }
+    
+    public function getRandomModelIds($amount,$hydrationMode = Doctrine_Core::HYDRATE_ARRAY){
+        $q = $this->carModelTable->createQuery('cm');
+        $q->select('cm.id');
+        $q->orderBy('rand()');
+	$q->limit($amount);
+        return $q->execute(array(),$hydrationMode);
+    }
 }
 ?>
