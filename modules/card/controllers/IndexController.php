@@ -165,5 +165,64 @@ class Card_Index extends Controller{
         
     }
     
+    public function buyCards(){
+        Service::loadModels('card', 'card');
+        Service::loadModels('car', 'car');
+        Service::loadModels('user', 'user');
+
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+
+        $cardService = parent::getService('card','card');
+        $unlockedCards = $cardService->getUnlockedUserCards($user['id'],Doctrine_Core::HYDRATE_ARRAY);
+        $lockedCards = $cardService->getLockedUserCards($user['id'],Doctrine_Core::HYDRATE_ARRAY);
+        $this->view->assign('lockedCards',$lockedCards);
+        $this->view->assign('unlockedCards',$unlockedCards);
+
+        $lockedSameType = $cardService->getLockedUserCardsSameType($user['id'],Doctrine_Core::HYDRATE_ARRAY);
+        $this->view->assign('lockedSameType',$lockedSameType);
+    }
+    
+    public function buyPackage(){
+        if(isset($GLOBALS['urlParams'][1])){
+            Service::loadModels('user', 'user');
+
+            $userService = parent::getService('user','user');
+            $user = $userService->getAuthenticatedUser();
+            $amount = (int)$GLOBALS['urlParams'][1];
+            $cardService = parent::getService('card','card');
+            parent::getService('car','car');
+            
+            if($user['gold_member']){
+                $cardPrice = $cardService->checkCardPrice($amount,true);
+            }
+            else{
+                $cardPrice = $cardService->checkCardPrice($amount);
+            }
+            
+            if(!$cardPrice){
+                TK_Helper::redirect('/card/buy-cards/?msg=wrong+package');
+                exit;
+            }
+
+            if(!$userService->checkUserPremium($user['id'],$cardPrice)){
+                TK_Helper::redirect('/card/buy-cards/?msg=not+enough+premium');
+                exit;
+            }
+            else{
+
+                $package = $cardService->buyPackage($user['id'],$amount);
+
+                $userService->removePremium($user,$cardPrice,'Bought package of '.$amount.' playing cards.');
+                                 
+                TK_Helper::redirect('/card/manage-cards/?msg=cards+added&&package='.$package->get('id'));
+                exit;
+            }
+            
+        }
+        
+        TK_Helper::redirect('/card/buy-cards/?msg=wrong+page');
+        exit;
+    }
 }
 ?>

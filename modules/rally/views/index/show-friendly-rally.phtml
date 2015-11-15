@@ -195,7 +195,53 @@ $startDate2 = clone $startDate;
 
                 <?php endif; ?>
             </div>
-            <div class="sign-up-rally">
+            <div class=
+            <div class='goldCoinBox'>
+                <h4><?= $this->translate('Join friendly rally'); ?></h4>
+                <?php if(!$authenticatedUser['gold_member']): ?>
+                    <div class="balance">
+                        Balance: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
+                    </div>
+                     Cost:  
+                     <?php if($authenticatedUser['gold_member']){
+                         echo 5;
+                     }
+                     else{
+                         echo 10;
+                     }
+                     ?>
+                     <img class="coin" src="/images/layout/coin.png" />
+               <?php else: ?>
+                    <?= $this->translate('You are a');?> <img src="/images/layout/gc_small.png" /> <?= $this->translate('member. You are allowed to join 3 friendly rallies every 30 days.');?>
+                    <?php 
+                    if($recentUserFriendlies['cnt']>=3){
+                       $oldestFriendly = new DateTime($recentUserFriendlies['created_at']);
+                       $oldestFriendly->add(new DateInterval('P30D'));
+                       echo "<br/>".$this->translate('You have to wait until')."<strong>".$oldestFriendly->format('d/m/Y H:i')."</strong> ".$this->translate('to join another free friendly rally.'); 
+
+                       ?>
+                    <br />
+                    <div class="balanceWrapper">
+                        <div class="balance">
+                            <?= $this->translate('Balance');?>: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
+                        </div>
+                         <?= $this->translate('Cost'); ?>:  
+                         <?php if($authenticatedUser['gold_member']){
+                            echo 5;
+                        }
+                        else{
+                            echo 10;
+                        }
+                        ?>
+                         <img class="coin" src="/images/layout/coin.png" />
+                         <div class="clearfix"></div>
+                    </div>
+                    <?php
+                    }
+                    ;?>
+
+                <?php endif; ?>
+            </div>"sign-up-rally">
 
                 <div class='formSubmitWrapper'>
                     <?php echo $joinForm->getElement('submit')->renderElement(); ?>

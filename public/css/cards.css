@@ -497,3 +497,22 @@
     margin-top:50px;
     display:block;
 }
+.buyCardCol{
+    text-align:center;
+    margin-bottom: 20px;
+}
+.buyCardCol .goldCoinBox{
+    width:145px;
+    margin:10px auto;
+    display:block;
+}
+
+.buyCardCol .cardBack{
+    display:block;
+    margin:0 auto;
+    margin-bottom:10px;
+}
+
+.buyCardBox > div{
+    margin-top:10px;
+}

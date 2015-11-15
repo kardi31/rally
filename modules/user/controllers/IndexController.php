@@ -142,6 +142,10 @@ class User_Index extends Controller{
             $user->set('register_hostname',$hostname);
             $user->set('active',1);
             $user->save();
+            
+            
+            $cardService = parent::getService('user','user');
+            $cardService->createRandomCards($user['id'],7);
             $mailService->sendMail($user['email'],'Your FastRally account is now active',$mailService::prepareConfirmActivationMail($user->get('username')));
                 
             $message = "User has been activated";

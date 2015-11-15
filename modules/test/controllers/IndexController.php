@@ -74,7 +74,6 @@ class Test_Index extends Controller{
             endforeach;
         endforeach;
         die('finish');
-        var_dump($randomRally->toArray());exit;
         
     }
     

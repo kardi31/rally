@@ -1,0 +1,143 @@
+<link rel="stylesheet" href="/css/cards.css" />
+<link rel="stylesheet" href="/plugins/bxslider/jquery.bxslider.css" />
+<script src="/plugins/bxslider/jquery.bxslider.js"></script>
+<link rel="stylesheet" type="text/css" href="/plugins/jNotify/jNotify.jquery.css" media="screen" />
+<script type="text/javascript" src="/plugins/jNotify/jNotify.jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var slider = $('#manageCards').bxSlider({
+            slideWidth: 145,
+            slideHeight:190,
+            minSlides: 4,
+            maxSlides: 4,
+            moveSlides: 1,
+            pager:false
+        });
+        
+        
+        $('.manageCardBox div.playerCard').delegate('button.lockTheCard','click',function(){
+            var element = $(this).parent();
+            var id = $(this).attr('data-rel');
+            var btn = $(this);
+            var td = element.parent();
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "/card/lock-card",
+                data:{id: id},
+                success: function(data) {
+                   if(data.msg=='locked'){
+                       element.prepend('<img src="/images/layout/lock.png" class="cardLock" />');
+                       btn.html('<i class="fa fa-unlock"></i> Unlock the card');
+                       btn.removeClass('btn-warning');
+                       btn.addClass('btn-danger');
+                       console.log($('.lockedCards td.lockedCardCol:empty'));
+                       console.log($('.lockedCards td.lockedCardCol'));
+                       element.appendTo('.lockedCards td.lockedCardCol:empty:eq(0)');
+                        slider.reloadSlider();
+                   }
+                   
+                   if(data.msg=='unlocked'){
+                       $('#manageCards').prepend(element);
+                       element.find('.cardLock').remove();
+                       td.empty();
+                       btn.html('<i class="fa fa-lock"></i> Lock the card');
+                       btn.addClass('btn-warning');
+                       btn.removeClass('btn-danger');
+                        slider.reloadSlider();
+                   }
+                   if(data.error){
+                    jError(
+                        'Sorry, you have reached maximum amount of locked cards.',
+                        {
+                          autoHide : true,
+                          TimeShown : 500,
+                          HorizontalPosition : 'center',
+                        }
+                    );
+                   }
+                },
+                error: function() {
+                   
+                }
+            }); 
+        });
+    });
+</script>
+<?php 
+    if(isset($_GET['msg'])){
+        if($_GET['msg']=="not enough locked"){
+            $this->showError($this->translate("You need 7 locked cards of the same type to transform."));
+        }
+    }
+?>
+<div class="mainUserBox">
+    <h4 class="boxHeader"><?= $this->translate('Manage cards'); ?></h4>
+    <div class='staticWrapper'>
+        Below you can see your play card list. Collect 7 cards of the same type and transform it into rally car. To help you achieving this, you are allowed to lock 7 cards. <br /> <br />
+        
+            <div class='goldCoinBox buyCardBox'>
+                <div class="pull-right">
+                    <div class="balance">
+                        Balance: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
+                    </div>
+                </div>
+                <h4><?= $this->translate('Buy playing cards'); ?></h4>
+                
+            </div>
+        
+            
+        <div class="col-md-4 buyCardCol">
+            <div class='goldCoinBox'>
+              1 card - 
+              
+            <?php if(!$authenticatedUser['gold_member']): ?>
+              15
+              <?php else: ?>
+              10
+              <?php endif; ?>
+              
+              <img class="coin" src="/images/layout/coin.png" />
+            </div>
+            <img src="/images/card_back.png" class="cardBack" alt="Playing card back" />
+            
+            <a class="btn myBtn" href="/card/buy-package/1">Buy</a>
+        </div>
+        
+        <div class="col-md-4 buyCardCol">
+            <div class='goldCoinBox'>
+              3 cards -
+            <?php if(!$authenticatedUser['gold_member']): ?>
+              37
+              <?php else: ?>
+              27
+              <?php endif; ?>
+                <img class="coin" src="/images/layout/coin.png" />
+            </div>
+            <img src="/images/card_back.png" class="cardBack" alt="Playing card back" />
+            
+            <a class="btn myBtn" href="/card/buy-package/3">Buy</a>
+        </div>
+        
+        <div class="col-md-4 buyCardCol">
+            <div class='goldCoinBox'>
+              5 cards -  
+              
+            <?php if(!$authenticatedUser['gold_member']): ?>
+              55
+              <?php else: ?>
+              45
+              <?php endif; ?>
+              <img class="coin" src="/images/layout/coin.png" />
+            </div>
+            <img src="/images/card_back.png" class="cardBack" alt="Playing card back" />
+            
+            <a class="btn myBtn" href="/card/buy-package/5">Buy</a>
+            <!--</div>-->
+        </div>
+        
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+

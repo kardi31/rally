@@ -3,8 +3,21 @@
 class CardService extends Service{
     
     protected $cardTable;
+    protected $packageTable;
     private static $instance = NULL;
 
+    protected $goldCardPrices = array(
+        1 => 10,
+        3 => 27,
+        5 => 45
+    );
+    
+    protected $cardPrices = array(
+        1 => 10,
+        3 => 27,
+        5 => 45
+    );
+    
     static public function getInstance()
     {
        if (self::$instance === NULL)
@@ -14,6 +27,7 @@ class CardService extends Service{
     
     public function __construct(){
         $this->cardTable = parent::getTable('card','card');
+        $this->packageTable = parent::getTable('card','package');
     }
     
     
@@ -103,6 +117,7 @@ class CardService extends Service{
     
     public function createRandomCards($user_id,$amount = 7){
         $models = CarService::getInstance()->getRandomModelIds($amount);
+        $modelIds = array();
         foreach($models as $model){
             $cardArray = array();
             $cardArray['user_id'] = $user_id;
@@ -111,7 +126,41 @@ class CardService extends Service{
             $card = $this->cardTable->getRecord();
             $card->fromArray($cardArray);
             $card->save();
+            $modelIds[] = $cardArray['car_model_id'];
         }
+        return $modelIds;
+    }
+    
+    public function checkCardPrice($amount,$gold = false){
+        if($gold){
+            $prices = $this->goldCardPrices;
+        }
+        else{
+            $prices = $this->cardPrices;
+        }
+        
+        if(in_array($amount,array_keys($prices))){
+            return $prices[$amount];
+        }
+        
+        return false;
+        
+    }
+    
+    public function buyPackage($user_id,$amount){
+        
+        $modelIds = $this->createRandomCards($user_id,$amount);
+        
+        $packageRow = $this->packageTable->getRecord();
+        
+        $packageData['model_ids'] = implode(',',$modelIds);
+        $packageData['user_id'] = $user_id;
+        $packageData['amount'] = $amount;
+        
+        $packageRow->fromArray($packageData);
+        $packageRow->save();
+        
+        return $packageRow;
     }
 }
     

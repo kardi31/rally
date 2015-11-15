@@ -127,3 +127,116 @@ Stack trace:
 #1 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(983): Doctrine_Connection->execute('SELECT c.id AS ...', Array)
 #2 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstrac in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
 [13-Nov-2015 17:24:00 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:16:15 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::createRandomCards() in C:\xampp\htdocs\ral\modules\user\controllers\TestController.php on line 99
+[14-Nov-2015 13:16:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:20:34 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:20:51 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:20:59 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:21:09 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::createRandomCards() in C:\xampp\htdocs\ral\modules\user\controllers\TestController.php on line 98
+[14-Nov-2015 13:21:09 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:21:17 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:21:24 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::createRandomCards() in C:\xampp\htdocs\ral\modules\user\controllers\TestController.php on line 98
+[14-Nov-2015 13:21:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:21:37 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::createRandomCards() in C:\xampp\htdocs\ral\modules\user\controllers\TestController.php on line 98
+[14-Nov-2015 13:21:42 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::createRandomCards() in C:\xampp\htdocs\ral\modules\user\controllers\TestController.php on line 98
+[14-Nov-2015 13:21:42 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:21:44 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::createRandomCards() in C:\xampp\htdocs\ral\modules\user\controllers\TestController.php on line 98
+[14-Nov-2015 13:21:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:21:52 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::createRandomCards() in C:\xampp\htdocs\ral\modules\user\controllers\TestController.php on line 98
+[14-Nov-2015 13:21:52 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:21:59 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::createRandomCards() in C:\xampp\htdocs\ral\modules\user\controllers\TestController.php on line 98
+[14-Nov-2015 13:21:59 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:22:14 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:22:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:22:26 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:22:26 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:22:47 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:22:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:22:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:02 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:07 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:07 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:13 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:14 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:20 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:20 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:42 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:43 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:43 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:45 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:45 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:45 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:46 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:46 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:46 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:47 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:23:47 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:24:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 13:24:25 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[14-Nov-2015 16:46:16 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[14-Nov-2015 16:46:42 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[14-Nov-2015 21:32:07 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[14-Nov-2015 21:34:14 Europe/Berlin] PHP Fatal error:  Class 'CarService' not found in C:\xampp\htdocs\ral\modules\card\services\Card.php on line 117
+[14-Nov-2015 21:34:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 21:34:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 21:35:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 21:36:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 21:36:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 21:36:51 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 21:37:00 Europe/Berlin] PHP Fatal error:  Class 'CarService' not found in C:\xampp\htdocs\ral\modules\card\services\Card.php on line 117
+[14-Nov-2015 21:37:21 Europe/Berlin] PHP Fatal error:  Class 'CarService' not found in C:\xampp\htdocs\ral\modules\card\services\Card.php on line 117
+[14-Nov-2015 21:37:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 21:39:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::manage_cards() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[14-Nov-2015 21:39:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[15-Nov-2015 17:10:56 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'You must pass a valid path to a directory containing Doctrine models' in C:\xampp\htdocs\ral\library\Doctrine\Core.php:643
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\TK\Service.php(61): Doctrine_Core::loadModels('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\ral\modules\card\services\Card.php(30): Service->getTable('package', 'card')
+#2 C:\xampp\htdocs\ral\modules\card\services\Card.php(24): CardService->__construct()
+#3 C:\xampp\htdocs\ral\library\TK\Controller.php(108): CardService::getInstance()
+#4 C:\xampp\htdocs\ral\modules\card\controllers\IndexController.php(20): Controller->getService('card', 'card')
+#5 C:\xampp\htdocs\ral\library\TK\Controller.php(45): Card_Index->index()
+#6 C:\xampp\htdocs\ral\modules\card\controllers\IndexController.php(13): Controller->_render(Object(Card_Index), 'index')
+#7 C:\xampp\htdocs\ral\public\index.php(29): Card_Index->render('index')
+#8 {main}
+  thrown in C:\xampp\htdocs\ral\library\Doctrine\Core.php on line 643
+[15-Nov-2015 17:10:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[15-Nov-2015 17:11:19 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'Couldn't find class Card_Model_Doctrine_Package' in C:\xampp\htdocs\ral\library\Doctrine\Table.php:299
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Table.php(256): Doctrine_Table->initDefinition()
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1124): Doctrine_Table->__construct('Card_Model_Doct...', Object(Doctrine_Connection_Mysql), true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Core.php(1147): Doctrine_Connection->getTable('Card_Model_Doct...')
+#3 C:\xampp\htdocs\ral\library\TK\Service.php(63): Doctrine_Core::getTable('Card_Model_Doct...')
+#4 C:\xampp\htdocs\ral\modules\card\services\Card.php(30): Service->getTable('card', 'package')
+#5 C:\xampp\htdocs\ral\modules\card\services\Card.php(24): CardService->__construct()
+#6 C:\xampp\htdocs\ral\library\TK\Controller.php(108): CardService::getInstance()
+#7 C:\xampp\htdocs\ral\modules\card\controllers\IndexController.php(20): Controller->getService('card', 'card')
+#8 C:\xampp\htdocs\ral\library\ in C:\xampp\htdocs\ral\library\Doctrine\Table.php on line 299
+[15-Nov-2015 17:11:19 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[15-Nov-2015 17:12:03 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[15-Nov-2015 17:12:12 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ral.card_package' doesn't exist' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection\Statement.php(269): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Statement))
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1042): Doctrine_Connection_Statement->execute(Array)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(687): Doctrine_Connection->exec('INSERT INTO car...', Array)
+#3 C:\xampp\htdocs\ral\library\Doctrine\Connection\UnitOfWork.php(647): Doctrine_Connection->insert(Object(Card_Model_Doctrine_PackageTable), Array)
+#4 C:\xampp\htdocs\ral\library\Doctrine\Connection\UnitOfWork.php(571): Doctrine_Connection_UnitOfWork->processSingleInsert(Object(Card_Model_Doctrine_Package))
+#5 C:\xampp\htdocs\ral\library\Doctrine\Connection\UnitOfWork.php(81): Doctrine_Conn in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[15-Nov-2015 17:12:12 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[15-Nov-2015 17:12:42 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::manage_cards() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[15-Nov-2015 17:12:42 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[15-Nov-2015 17:52:39 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::contact() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[15-Nov-2015 17:52:39 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[15-Nov-2015 17:52:53 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164

@@ -19,3 +19,19 @@ Card:
     locked:
       type: boolean
       default: 0
+Package:
+  tableName: card_package
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+  columns:
+    id:
+      primary: true
+      autoincrement: true
+      type: integer(4)
+    user_id:
+      type: integer(4)
+    amount:
+      type: integer(4)
+    model_ids:
+      type: string(255)

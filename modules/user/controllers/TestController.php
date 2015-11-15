@@ -77,7 +77,6 @@ class User_Test extends Controller{
             $team = $teamService->createRandomTeam($data,$user);
 	    $league = $leagueService->appendTeamToLeague($team['id']);
 	    $league_level = $league['League']['league_level'];
-	    
 	    $team->set('league_name',$league['league_name']);
 	    $team->save();
 	    
@@ -85,6 +84,7 @@ class User_Test extends Controller{
             
 	    $car = $carService->createNewTeamCar($carModel,$team['id']);
             $driver = $peopleService->createRandomDriver($league_level,$team['id']);
+	    
             $pilot = $peopleService->createRandomPilot($league_level,$team['id']);
             
             $driver->set('team_id',$team['id']);
@@ -95,6 +95,8 @@ class User_Test extends Controller{
             $car->save();
             
            
+            $cardService = parent::getService('card','card');
+            $cardService->createRandomCards($user['id'],7);
             $teamService->addTeamMoney($team['id'],50000,8,'Initial FastRally bonus'); 
             
             $user->set('active',1);
