@@ -402,5 +402,12 @@ class CarService extends Service{
 	$q->limit($amount);
         return $q->execute(array(),$hydrationMode);
     }
+    
+    public function getMultipleCarModels($modelIds,$hydrationMode = Doctrine_Core::HYDRATE_ARRAY){
+        $q = $this->carModelTable->createQuery('cm');
+        $q->select('cm.*');
+        $q->where('cm.id in ('.$modelIds.')');
+        return $q->execute(array(),$hydrationMode);
+    }
 }
 ?>

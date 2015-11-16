@@ -240,3 +240,13 @@ Stack trace:
 [15-Nov-2015 17:52:39 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::contact() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
 [15-Nov-2015 17:52:39 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
 [15-Nov-2015 17:52:53 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[16-Nov-2015 08:58:00 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[16-Nov-2015 09:11:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 09:11:19 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 09:11:37 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 09:11:44 Europe/Berlin] PHP Notice:  Undefined index: car_model_ids in C:\xampp\htdocs\ral\modules\card\controllers\IndexController.php on line 89
+[16-Nov-2015 09:11:44 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Connection_Mysql_Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '))' at line 1. Failing Query: "SELECT c.id AS c__id, c.name AS c__name, c.capacity AS c__capacity, c.horsepower AS c__horsepower, c.max_speed AS c__max_speed, c.acceleration AS c__acceleration, c.wheel_drive AS c__wheel_drive, c.league AS c__league, c.price AS c__price, c.real_value AS c__real_value, c.on_market AS c__on_market, c.photo AS c__photo, c.unique AS c__unique, c.created_at AS c__created_at, c.updated_at AS c__updated_at FROM car_car_models c WHERE (c.id in ())"' in C:\xampp\htdocs\ral\library\Doctrine\Connection.php:1082
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1025): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Mysql), 'SELECT c.id AS ...')
+#1 C:\xampp\htdocs\ral\library\ in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
+[16-Nov-2015 09:11:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45

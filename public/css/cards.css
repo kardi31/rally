@@ -516,3 +516,13 @@
 .buyCardBox > div{
     margin-top:10px;
 }
+
+#boughtPackageCards{
+    border:0px;
+    text-align:center;
+    margin-bottom:10px;
+}
+#boughtPackageCards div.playerCard{
+    float:none;
+    display:inline-block;
+}

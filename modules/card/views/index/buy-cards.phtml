@@ -69,6 +69,12 @@
         if($_GET['msg']=="not enough locked"){
             $this->showError($this->translate("You need 7 locked cards of the same type to transform."));
         }
+        elseif($_GET['msg']=="wrong package"){
+            echo $this->showError($this->translate("This package is not available."));
+        }
+        elseif($_GET['msg']=="not enough premium"){
+            echo $this->showError($this->translate("Sorry,you don't have enough premium.")." <a href='/account/premium'>".$this->translate('Buy more premium')."</a>");
+        }
     }
 ?>
 <div class="mainUserBox">

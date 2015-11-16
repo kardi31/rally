@@ -162,6 +162,16 @@ class CardService extends Service{
         
         return $packageRow;
     }
+    
+    
+    public function getPackage($id,$user_id,$hydrationMode = Doctrine_Core::HYDRATE_ARRAY){
+        $q = $this->packageTable->createQuery('p');
+        $q->addSelect('p.*');
+        $q->addWhere('p.id = ?',$id);
+        $q->addWhere('p.user_id = ?',$user_id);
+        return $q->fetchOne(array(),$hydrationMode);
+    
+    }
 }
     
 ?>

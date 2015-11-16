@@ -67,13 +67,49 @@
 <?php 
     if(isset($_GET['msg'])){
         if($_GET['msg']=="not enough locked"){
-            $this->showError($this->translate("You need 7 locked cards of the same type to transform."));
+            echo $this->showError($this->translate("You need 7 locked cards of the same type to transform."));
         }
     }
 ?>
 <div class="mainUserBox">
     <h4 class="boxHeader"><?= $this->translate('Manage cards'); ?></h4>
     <div class='staticWrapper'>
+        <?php if(isset($boughtPackageCars)): ?>
+        <?= $this->showSuccess('You have bought playing cards package. Your new card(s) are listed below.'); ?>
+        <div class="playerCards manageCardBox" id="boughtPackageCards">
+            <?php foreach($boughtPackageCars as $boughtModel): ?>
+                <div class="playerCard">
+                <table>
+                    <tr>
+                        <th colspan="2">
+
+                            <img src="/media/cars/<?= $boughtModel['photo']; ?>" />
+                            <strong><?= $boughtModel['name']; ?></strong>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Acceleration</td>
+                        <td><?= $boughtModel['acceleration']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>V-max</td>
+                        <td><?= $boughtModel['max_speed']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Capacity</td>
+                        <td><?= $boughtModel['capacity']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Horsepower</td>
+                        <td><?= $boughtModel['horsepower']; ?></td>
+                    </tr>
+                </table>
+            </div>
+            <?php endforeach; ?>
+        </div>
+            
+        
+        <?php endif; ?>
         Below you can see your play card list. Collect 7 cards of the same type and transform it into rally car. To help you achieving this, you are allowed to lock 7 cards. <br /> <br />
         <div class="playerCards manageCardBox" id="manageCards">
             <?php foreach($unlockedCards as $card): ?>

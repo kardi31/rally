@@ -72,6 +72,7 @@ class Card_Index extends Controller{
         
         $userService = parent::getService('user','user');
         $user = $userService->getAuthenticatedUser();
+        $carService = parent::getService('car','car');
         
         $cardService = parent::getService('card','card');
         $unlockedCards = $cardService->getUnlockedUserCards($user['id'],Doctrine_Core::HYDRATE_ARRAY);
@@ -81,6 +82,14 @@ class Card_Index extends Controller{
         
         $lockedSameType = $cardService->getLockedUserCardsSameType($user['id'],Doctrine_Core::HYDRATE_ARRAY);
 	$this->view->assign('lockedSameType',$lockedSameType);
+        
+        if(isset($_GET['package'])){
+            $package = $cardService->getPackage((int)$_GET['package'],$user['id']);
+            if($package){
+                $boughtPackageCars = $carService->getMultipleCarModels($package['model_ids']);
+                $this->view->assign('boughtPackageCars',$boughtPackageCars);
+            }
+        }
     }
     
     public function transformCards(){
@@ -93,8 +102,8 @@ class Card_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
         
         $cardService = parent::getService('card','card');
-        
         $carService = parent::getService('car','car');
+        
         
         $lockedSameType = $cardService->checkLockedUserCardsSameType($user['id'],$GLOBALS['urlParams'][1],Doctrine_Core::HYDRATE_ARRAY);
         
@@ -174,6 +183,7 @@ class Card_Index extends Controller{
         $user = $userService->getAuthenticatedUser();
 
         $cardService = parent::getService('card','card');
+        $carService =  parent::getService('car','car');
         $unlockedCards = $cardService->getUnlockedUserCards($user['id'],Doctrine_Core::HYDRATE_ARRAY);
         $lockedCards = $cardService->getLockedUserCards($user['id'],Doctrine_Core::HYDRATE_ARRAY);
         $this->view->assign('lockedCards',$lockedCards);
@@ -181,6 +191,8 @@ class Card_Index extends Controller{
 
         $lockedSameType = $cardService->getLockedUserCardsSameType($user['id'],Doctrine_Core::HYDRATE_ARRAY);
         $this->view->assign('lockedSameType',$lockedSameType);
+        
+        
     }
     
     public function buyPackage(){
@@ -201,12 +213,12 @@ class Card_Index extends Controller{
             }
             
             if(!$cardPrice){
-                TK_Helper::redirect('/card/buy-cards/?msg=wrong+package');
+                TK_Helper::redirect('/card/buy-cards?msg=wrong+package');
                 exit;
             }
 
             if(!$userService->checkUserPremium($user['id'],$cardPrice)){
-                TK_Helper::redirect('/card/buy-cards/?msg=not+enough+premium');
+                TK_Helper::redirect('/card/buy-cards?msg=not+enough+premium');
                 exit;
             }
             else{
@@ -215,7 +227,7 @@ class Card_Index extends Controller{
 
                 $userService->removePremium($user,$cardPrice,'Bought package of '.$amount.' playing cards.');
                                  
-                TK_Helper::redirect('/card/manage-cards/?msg=cards+added&&package='.$package->get('id'));
+                TK_Helper::redirect('/card/manage-cards?msg=cards+added&&package='.$package->get('id'));
                 exit;
             }
             
