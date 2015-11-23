@@ -143,7 +143,7 @@ class Cron_Admin extends Controller{
         
         $leagues = $leagueService->getAllActiveLeagues();
         foreach($leagues as $league):
-            $league_name = floatval($league['league_name']);
+            $league_name = $league['league_name'];
             $rallyService->createRalliesForLeague($league_name,$seasonInfo['season_start']);
         endforeach;
         echo "create rallies for league good";
@@ -465,11 +465,7 @@ class Cron_Admin extends Controller{
     // do this every 15 min 
     
     public function calculateRallyResult(){
-<<<<<<< HEAD
-
-=======
        
->>>>>>> 13c86b6f3b257eac63503fa8d199967915472a2c
         ini_set('max_execution_time', 300);
         Service::loadModels('people', 'people');
         Service::loadModels('car', 'car');
@@ -574,7 +570,8 @@ class Cron_Admin extends Controller{
         endforeach;
         echo "pp";exit;
     }
-    
+    // start season on monday morning
+    // finish on monday morning
     public function startSeason(){
         ini_set('max_execution_time',300000);
         $rallyDataService = parent::getService('rally','rallyData');

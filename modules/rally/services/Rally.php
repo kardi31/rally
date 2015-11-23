@@ -71,7 +71,7 @@ class RallyService extends Service{
         $q->leftJoin('r.Crews c');
         $q->addSelect('r.*,c.*');
 	$q->addWhere('r.date > NOW()');
-	$q->orderBy('r.date');
+	$q->orderBy('r.date','r.level ASC');
         if(!$league){
             $q->addWhere('r.league_rally != 1');
         }
@@ -1111,7 +1111,13 @@ class RallyService extends Service{
         unset($dataArray['Surfaces']);
         unset($dataArray['id']);
         $rallyDay = strtotime($season_start." + ".($dataArray['week']-1)." weeks  + ".($dataRally['day']-1)." days");
-        $dataArray['date'] = date('Y-m-d',$rallyDay)." 09:00:00";
+        
+        $randomHours = rand(8,14);
+        if($randomHours == 8 || $randomHours == 9){
+            $randomHours = "0".$randomHours;
+        }
+        $randomMins = $this->minsArray[array_rand($this->minsArray)];
+        $dataArray['date'] = date('Y-m-d',$rallyDay)." ".$randomHours.":".$randomMins.":00";
         $dataArray['league'] = $league;
         if($dataArray['league']!=1){
             $dataArray['slug'] = TK_Text::createSlug($dataArray['name']." - level ".$league);

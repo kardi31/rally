@@ -1,1 +1,9 @@
-<?php include(BASE_PATH."/modules/index/views/manual/".$subpage.".phtml"); ?>
+<?php 
+
+        if(!isset($_COOKIE['lang'])||$_COOKIE['lang']=='gb'){
+            include(BASE_PATH."/modules/index/views/manual/".$subpage.".phtml");
+        }
+        else{
+            include(BASE_PATH."/modules/index/views/manual-pl/".$subpage.".phtml");
+        }
+?>

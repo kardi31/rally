@@ -7,7 +7,7 @@ class NameChange extends Form{
         $name->addClass('form-control');
         $name->addFilter('trim');
         $name->addValidator('stringLength',array('min' => 4,'max' => 30));
-        $submit = $this->createElement('submit','submit',array(),'Change');
+        $submit = $this->createElement('submit','submit',array(),View::getInstance()->translate('Change'));
         $submit->addClass('btn btn-primary');
     }
 }

@@ -26,7 +26,7 @@ class TK_Helper{
                 $result .= '<a class="trainingChange" title="This skill is currently trained by your player" href="#">In progress</a>';
             }
             else{
-                $result .= '<a class="trainingChange" title="Set this skill to be trained by your player" href="/people/set-active-training-skill/'.$person['id'].'/'.$skill.'/">Improve</a>';
+                $result .= '<a class="trainingChange" title="Set this skill to be trained by your player" href="/people/set-active-training-skill/'.$person['id'].'/'.$skill.'/">'.View::getInstance()->translate('Improve').'</a>';
             }
         }
         return $result;
@@ -154,13 +154,16 @@ class TK_Helper{
                                 '.TK_Helper::displayPeopleSkillsOnList($person, 'talent',$showTraining).'
                             </td>
                         </tr>
-                        <tr>
+                        
+                    </table>';
+        /*
+         * <tr>
                             <td>'.$view->translate('Form').'</td>
                             <td>
                                 '.TK_Helper::displayPeopleSkillsOnList($person, 'form',$showTraining).'
                             </td>
                         </tr>
-                    </table>';
+         */
         else: 
             $html = '
         <table>
@@ -195,13 +198,16 @@ class TK_Helper{
                     '.TK_Helper::displayPeopleSkillsOnList($person, 'talent',$showTraining).'
                 </td>
             </tr>
-            <tr>
+            
+        </table>';
+        /*
+         * <tr>
                 <td>'.$view->translate('Form').'</td>
                 <td>
                     '.TK_Helper::displayPeopleSkillsOnList($person, 'form',$showTraining).'
                 </td>
             </tr>
-        </table>';
+         */
         endif; 
         return $html;
     }

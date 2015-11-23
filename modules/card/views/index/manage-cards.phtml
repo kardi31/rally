@@ -30,9 +30,7 @@
                        element.prepend('<img src="/images/layout/lock.png" class="cardLock" />');
                        btn.html('<i class="fa fa-unlock"></i> Unlock the card');
                        btn.removeClass('btn-warning');
-                       btn.addClass('btn-danger');
-                       console.log($('.lockedCards td.lockedCardCol:empty'));
-                       console.log($('.lockedCards td.lockedCardCol'));
+                       btn.addClass('btn-success');
                        element.appendTo('.lockedCards td.lockedCardCol:empty:eq(0)');
                         slider.reloadSlider();
                    }
@@ -43,9 +41,23 @@
                        td.empty();
                        btn.html('<i class="fa fa-lock"></i> Lock the card');
                        btn.addClass('btn-warning');
-                       btn.removeClass('btn-danger');
+                       btn.removeClass('btn-success');
                         slider.reloadSlider();
                    }
+                   
+                   if(typeof(data.transform)!='undefined'){
+                       //lockedCards
+                       var id = data.transform.cm_id;
+                       var name = data.transform.cm_name;
+                       if(!$('.transformPlayCards').length){
+                            var transformButton = '<a href="/card/transform-cards/'+id+'" class="btn myBtn transformPlayCards">Turn your play cards into '+name+'</a>';
+                            $('.lockedCards').after(transformButton);
+                       }
+                   }
+                   else{
+                       $('.transformPlayCards').remove();
+                   }
+                   
                    if(data.error){
                     jError(
                         'Sorry, you have reached maximum amount of locked cards.',
@@ -62,12 +74,23 @@
                 }
             }); 
         });
+        
+        $('.manageCardBox div.playerCard').delegate('a.deleteCard','click',function(){
+            var name = $(this).attr('data-name');
+            
+            if(!confirm('Are you sure you want to delete '+name+' card? This decision is irreversible.')){ 
+                return false 
+            }
+        });
     });
 </script>
 <?php 
     if(isset($_GET['msg'])){
         if($_GET['msg']=="not enough locked"){
             echo $this->showError($this->translate("You need 7 locked cards of the same type to transform."));
+        }
+        elseif($_GET['msg']=="card deleted"){
+            echo $this->showSuccess($this->translate("Card was successfully deleted."));
         }
     }
 ?>
@@ -143,36 +166,11 @@
                     </tr>
                 </table>
                 <button class="lockTheCard btn btn-warning label" data-rel="<?= $card['id']; ?>"><i class="fa fa-lock"></i> Lock the card</button>
+                <a href="/card/delete-card/<?= $card['id'];?>" data-name="<?= $card['Model']['name']; ?>" class="deleteCard btn btn-danger label"><i class="fa fa-trash-o"></i> Delete card</a>
             </div>
             <?php endforeach; ?>
         </div>
-
-        <style>
-            .lockedCards .lockedCardRow > td{
-                width:145px;
-                height:175px;
-                border:1px solid black;
-            }
-            .lockedCards{
-                margin:0 auto;
-            }
-            .lockedCards .lockedCardRow .playerCard{
-                position:relative;
-            }
-            .lockedCards .lockedCardRow .playerCard tr img{
-                    max-width: 100%;
-            width: auto;
-            display: block;
-            }
-            .lockTheCard{
-                margin:0 auto;
-                margin-top:10px;
-            }
-
-            .bx-wrapper, .bx-viewport {
-                height: 220px !important; //provide height of slider
-            }
-        </style>
+        <br />
         <table class="lockedCards manageCardBox">
             <tr class="lockedCardRow">
                 <?php for($i=0;$i<4;$i++): 
@@ -209,7 +207,8 @@
                                     <td><?= $card['Model']['horsepower']; ?></td>
                                 </tr>
                             </table>
-                            <button class="lockTheCard label btn btn-danger" data-rel="<?= $card['id']; ?>"><i class="fa fa-unlock"></i> Unlock the card</button>
+                            <button class="lockTheCard label btn btn-success" data-rel="<?= $card['id']; ?>"><i class="fa fa-unlock"></i> Unlock the card</button>
+                <a href="/card/delete-card/<?= $card['id'];?>" data-name="<?= $card['Model']['name']; ?>" class="deleteCard btn btn-danger label"><i class="fa fa-trash-o"></i> Delete card</a>
                         </div>
                 </td>
                         <?php 
@@ -257,7 +256,8 @@
                                     <td><?= $card['Model']['horsepower']; ?></td>
                                 </tr>
                             </table>
-                            <button class="lockTheCard  label btn btn-danger" data-rel="<?= $card['id']; ?>"><i class="fa fa-unlock"></i> Unlock the card</button>
+                            <button class="lockTheCard  label btn btn-success" data-rel="<?= $card['id']; ?>"><i class="fa fa-unlock"></i> Unlock the card</button>
+                <a href="/card/delete-card/<?= $card['id'];?>" data-name="<?= $card['Model']['name']; ?>" class="deleteCard btn btn-danger label"><i class="fa fa-trash-o"></i> Delete card</a>
                         </div>
                 </td>
                         <?php 

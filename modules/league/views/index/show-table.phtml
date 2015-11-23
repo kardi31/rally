@@ -6,10 +6,10 @@
                 $leagueExpl = explode('.',$league);
                 $leagueLevel = $leagueExpl[0];
                 if($leagueLevel!=1){
-                    echo $this->translate('Top 2 teams are promoted to league ').($leagueLevel-1);
+                    echo $this->translate('Top 2 teams are promoted to league')." ".($leagueLevel-1);
                 }
                 else{
-                    echo $this->translate('Last 6 teams are downgraded to league ').($leagueLevel+1);
+                    echo $this->translate('Last 6 teams are downgraded to league')." ".($leagueLevel+1);
                 }
             ?>
        </div>

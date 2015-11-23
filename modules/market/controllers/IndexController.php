@@ -225,7 +225,7 @@ class Market_Index extends Controller{
         $this->view->assign('form',$form);
         
         $league_level = (int)$user['Team']['league_name'];
-        $freeAgencyPrice = (6-$league_level)*10000;
+        $freeAgencyPrice = (7-$league_level)*5000;
         
         if($form->isSubmit()){
             if($form->isValid()){                

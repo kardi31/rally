@@ -84,7 +84,7 @@
                 </a>
                     
                     <br />
-                <a class="scrapCar" onclick="if(!confirm('Are you sure you want to scrap this car? \r\n This will cost you 1% of car value')){return false;}" href="/car/scrap-car/<?= $car['id']; ?>" title="Scrap your car. This will cost you 1% of its value">
+                <a class="scrapCar" onclick="if(!confirm('<?= $this->translate('Are you sure you want to scrap this car? \r\n This will cost you 1% of car value'); ?>')){return false;}" href="/car/scrap-car/<?= $car['id']; ?>" title="Scrap your car. This will cost you 1% of its value">
                     <i class="fa fa-trash-o"></i> <?= $this->translate('Scrap this car');?> 
                 </a>
             </div>

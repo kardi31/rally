@@ -79,7 +79,7 @@ class Forum_Index extends Controller{
                     exit;
                 }
                 
-		$forumService->addThread($values,$category['id'],$user);
+		$forumService->addThread($values,$category,$user);
 		
 		TK_Helper::redirect('/forum/show-category/'.$category['slug']);
 		

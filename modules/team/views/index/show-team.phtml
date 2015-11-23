@@ -24,7 +24,7 @@
         <table>
             <tr>
                 <td>
-                    <strong>Team: </strong><?php echo $team['name']; ?>
+                    <strong><?= $this->translate('Team'); ?>: </strong><?php echo $team['name']; ?>
                     <?php 
                     if($authenticatedUser&&$authenticatedUser['id']==$team['User']['id']){ 
                     ?> 
@@ -35,7 +35,7 @@
                 </td>
             </tr>
             <tr>
-                <td><strong>Owner: </strong>
+                <td><strong><?= $this->translate('Owner'); ?>: </strong>
                     <?php
                     if(!$team['User']['hide_details']&&(strlen($team['User']['first_name'])||strlen($team['User']['last_name']))){
                         echo $team['User']['first_name']." ".$team['User']['last_name'];
@@ -48,17 +48,17 @@
                 </td>
             </tr>
             <tr>
-                <td><strong>Country: </strong>
+                <td><strong><?= $this->translate('Country'); ?>: </strong>
                     <?php if(strlen($team['User']['country'])){ ?>
                         <img class="countryFlag" src="/images/flags/<?= strtolower($team['User']['country']);?>.png" />
                     <?php } else { ?>
-                        Unknown
+                        <?= $this->translate('Unknown'); ?>
                     <?php } ?>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <strong>Rank: </strong>
+                    <strong><?= $this->translate('Rank'); ?>: </strong>
                     <?php 
                     if($team['this_week_rank']>0){
                         echo $team['this_week_rank'];
@@ -77,12 +77,12 @@
                 </td>
             </tr>
             <tr>
-                <td><strong>League: </strong><?php echo $team['league_name']; ?></td>
+                <td><strong><?= $this->translate('League'); ?>: </strong><?php echo $team['league_name']; ?></td>
             </tr>
 
         </table>
         <div>
-            <h3 class="h4">Rally awards</h3>
+            <h3 class="h4"><?= $this->translate('Rally awards'); ?></h3>
             
             <?php 
                 $awardsCount = count($awards);

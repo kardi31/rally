@@ -165,13 +165,40 @@ class Card_Index extends Controller{
             }
             $card->save();
 
-            echo json_encode($result);
+            
+            $lockedSameType = $cardService->checkLockedUserCardsSameType($user['id'],false,Doctrine_Core::HYDRATE_SCALAR);
+            if($lockedSameType)
+                $result['transform'] = $lockedSameType;
+            
+            echo json_encode($result,true);
         }
         
         
         
         
         
+    }
+    
+    public function deleteCard(){
+        Service::loadModels('card', 'card');
+        Service::loadModels('car', 'car');
+        Service::loadModels('user', 'user');
+	
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        
+        
+        $cardService = parent::getService('card','card');
+        $card = $cardService->getCard($GLOBALS['urlParams'][1]);
+        
+        if($card->get('user_id')==$user['id']){
+            $card->delete();
+            TK_Helper::redirect('/card/manage-cards?msg=card+deleted');
+            exit;
+        }
+        
+        TK_Helper::redirect('/card/manage-cards');
+        exit;
     }
     
     public function buyCards(){
@@ -235,6 +262,20 @@ class Card_Index extends Controller{
         
         TK_Helper::redirect('/card/buy-cards/?msg=wrong+page');
         exit;
+    }
+    
+    public function topList(){
+        $this->getLayout()->setLayout('page');
+        
+        Service::loadModels('team', 'team');
+	
+        $userService = parent::getService('user','user');
+        
+        
+        $topList = $userService->getTopCardList();
+        
+        $this->view->assign('topList',$topList);
+        
     }
 }
 ?>

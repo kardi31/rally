@@ -77,6 +77,49 @@ class Test_Index extends Controller{
         
     }
     
+    public function singleRallyTest(){
+        ini_set('max_execution_time', 700);
+        Service::loadModels('user', 'user');
+        require_once(BASE_PATH."/modules/rally/controllers/TestController.php");
+        $trainingService = parent::getService('people','training');
+//        $rallyContr = new Rally_Test();
+//        $rallyContr->showRally();
+        Service::loadModels('team', 'team');
+        Service::loadModels('car', 'car');
+        $teamService = parent::getService('team','team');
+        $rallyService = parent::getService('rally','rally');
+        
+        $risks = array_keys(Rally_Model_Doctrine_Rally::getFormRisks());
+               
+        $randomTeams = $teamService->selectRandomTeams(null,Doctrine_Core::HYDRATE_ARRAY);
+        $randomRally = $rallyService->getRally($GLOBALS['urlParams'][1],'slug');
+            $teamKey = 0;
+            foreach($randomTeams as $randomTeam):
+                $teamKey++;
+                if($randomRally['league_rally']&&$randomRally['league']!=$randomTeam['league_name']){
+                    continue;
+                }
+                
+                if((int)$randomTeam['league_name']!=(int)$randomRally['league']){
+                    continue;
+                }
+                
+                $values=array();
+                foreach($randomTeam['Players'] as $player):
+                    if($player['job']=='driver')
+                        $values['driver_id'] = $player['id'];
+                    else
+                        $values['pilot_id'] = $player['id'];
+                endforeach;
+                $values['car_id'] = $randomTeam['Cars'][0]['id'];
+                $values['risk'] = $risks[array_rand($risks)];
+//                var_dump($values);exit;
+                $rallyService->saveRallyCrew($values,$randomRally,$randomTeam);
+            endforeach;
+        die('finish');
+        
+    }
+    
     public function rallyFriendlyTest(){
         Service::loadModels('user', 'user');
         require_once(BASE_PATH."/modules/rally/controllers/TestController.php");

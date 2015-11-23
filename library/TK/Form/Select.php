@@ -137,18 +137,19 @@ class Select extends Element {
     }
     
     public function validateElement(){
-        if(!parent::isSubmit())
+        if(!parent::isSubmit()||!isset($_POST[parent::getName()]))
             return "";
         
         $var = $_POST[parent::getName()];
         if($this->validateSelect){
             $response = Validator::validateSelect($var,array_keys($this->multiOptions[parent::getName()]));
         }
-        if($response['result']){
+        
+        if(isset($response)&&$response['result']){
             parent::validateElement();
         }
         else{
-            if(is_array($response)&&array_key_exists('result',$response)&&$response['result']==false):
+            if(isset($response)&&is_array($response)&&array_key_exists('result',$response)&&$response['result']==false):
                 $this->valid = false;
                 $view = View::getInstance();
                 return $view->showShortError($view->translate($response['errorMessage']));

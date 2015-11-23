@@ -15,7 +15,6 @@ $keys = array_keys($_GET);
         endfor;
         $GLOBALS['urlParams'] = $urlParams; 
 }
-
         if(!isset($module))
             $module = "index";
 

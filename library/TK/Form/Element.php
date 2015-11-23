@@ -21,6 +21,7 @@ class Element{
 	 protected $options;
 	 protected $classes;
 	 protected $params;
+	 protected $no_populate;
 	 protected $validators;
 	 protected $filters = array();
 
@@ -226,6 +227,9 @@ class Element{
     }
     
     public function getMethodVariable($variableName){
+        if($this->no_populate)
+            return '';
+        
         if(!$this->isSubmit()){
             if(isset($this->value)&&strlen($this->value)){
                 return $this->value;
@@ -364,8 +368,9 @@ class Element{
                 $this->validators[$name] = $options;
         }
         else{
-            if(!$options)
+            if(!$options){
                 $this->validators = array($name);
+            }
             else
                 $this->validators[$name] = $options;
         }
@@ -419,6 +424,10 @@ class Element{
     
     public function setName($name){
         $this->name = $name;
+    }
+    
+    public function setNoPopulate(){
+        $this->no_populate = true;
     }
     
     public function getName(){

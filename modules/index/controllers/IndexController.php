@@ -275,6 +275,10 @@ class Index_Index extends Controller{
     public function manual(){
         $this->getLayout()->setLayout('page');
         
+        if(isset($_COOKIE['lang'])&&$_COOKIE['lang']=='pl'){
+            
+            $this->setDifView('index', 'manualpl');
+        }
     }
     
     public function topWorldList(){

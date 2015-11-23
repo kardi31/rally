@@ -12,11 +12,11 @@
         <table class='table'>
             <thead>
                 <tr>
-                    <td>Name</td>
-                    <td>Date</td>
-                    <td>Time</td>
-                    <td>Participants</td>                
-                    <td>Additional info</td>
+                    <td><?= $this->translate('Name'); ?></td>
+                    <td><?= $this->translate('Date'); ?></td>
+                    <td><?= $this->translate('Hour'); ?></td>
+                    <td><?= $this->translate('Participants'); ?></td>                
+                    <td><?= $this->translate('Additional info'); ?></td>
 
                 </tr>
             </thead>
@@ -38,15 +38,15 @@
                         </td>
                         <td>
                             <?php if($rally['finished']){ ?>
-                                <span class="label label-primary">Rally finished</span>
+                                <span class="label label-primary"><?= $this->translate('Rally finished'); ?></span>
                             <?php } ?>
                                 
                             <?php if($rally['Friendly']['invite_only']){ ?>
-                                <span class="label label-danger">Private</span>
+                                <span class="label label-danger"><?= $this->translate('Private'); ?></span>
                             <?php } ?>
                                 
                             <?php if(!$rally['Friendly']['invite_only']){ ?>
-                                <span class="label label-success">Public</span>
+                                <span class="label label-success"><?= $this->translate('Public'); ?></span>
                             <?php } ?>
                             <?php if((is_array($myInvitations)&&in_array($rally['id'],$myInvitations))){
                                 echo "<span class='label label-warning'>".$this->translate('Invited')."</span>"; 

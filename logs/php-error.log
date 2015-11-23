@@ -250,3 +250,215 @@ Stack trace:
 #0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1025): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Mysql), 'SELECT c.id AS ...')
 #1 C:\xampp\htdocs\ral\library\ in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
 [16-Nov-2015 09:11:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 12:37:51 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[16-Nov-2015 12:44:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 12:45:19 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 12:46:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 12:47:12 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 12:47:30 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 12:47:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 12:47:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 12:48:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 12:48:19 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 12:50:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 12:51:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 12:56:16 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[16-Nov-2015 12:57:25 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 12:57:34 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 12:57:57 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 13:03:36 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[16-Nov-2015 13:07:48 Europe/Berlin] PHP Fatal error:  Call to undefined method Card_Index::deleteCard() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 13:07:48 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 13:07:48 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[16-Nov-2015 13:25:11 Europe/Berlin] PHP Notice:  Undefined offset: 1 in C:\xampp\htdocs\ral\modules\card\controllers\IndexController.php on line 169
+[16-Nov-2015 13:25:34 Europe/Berlin] PHP Notice:  Undefined offset: 1 in C:\xampp\htdocs\ral\modules\card\controllers\IndexController.php on line 169
+[16-Nov-2015 13:26:14 Europe/Berlin] PHP Notice:  Undefined offset: 1 in C:\xampp\htdocs\ral\modules\card\controllers\IndexController.php on line 169
+[16-Nov-2015 17:39:36 Europe/Berlin] PHP Notice:  Undefined variable: ref in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 38
+[16-Nov-2015 17:39:36 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[16-Nov-2015 17:42:01 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[16-Nov-2015 17:42:36 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 164
+[16-Nov-2015 17:42:47 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:43:49 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:44:56 Europe/Berlin] PHP Fatal error:  Call to a member function renderElement() on null in C:\xampp\htdocs\ral\modules\index\views\index\index.phtml on line 47
+[16-Nov-2015 17:45:01 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:45:18 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:46:06 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:46:15 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:49:12 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:49:12 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:50:34 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:50:34 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:52:33 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:52:33 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:52:56 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:52:56 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:53:29 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:53:29 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:53:34 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:53:34 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:53:42 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:53:42 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:53:52 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:53:52 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:53:58 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:53:58 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:54:05 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[16-Nov-2015 17:54:05 Europe/Berlin] PHP Warning:  in_array() expects parameter 2 to be array, string given in C:\xampp\htdocs\ral\library\TK\Form\Element.php on line 165
+[18-Nov-2015 12:46:13 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: No such rally
+
+  thrown in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 362
+[18-Nov-2015 12:48:13 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 147
+[18-Nov-2015 12:48:13 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 151
+[18-Nov-2015 12:48:13 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 147
+[18-Nov-2015 12:48:13 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 151
+[18-Nov-2015 12:48:13 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 147
+[18-Nov-2015 12:48:13 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 151
+[18-Nov-2015 12:49:00 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 147
+[18-Nov-2015 12:49:00 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 151
+[18-Nov-2015 12:49:00 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 147
+[18-Nov-2015 12:49:00 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 151
+[18-Nov-2015 12:49:00 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 147
+[18-Nov-2015 12:49:00 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 151
+[18-Nov-2015 12:50:12 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 152
+[18-Nov-2015 12:50:12 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 152
+[18-Nov-2015 12:50:12 Europe/Berlin] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 152
+[18-Nov-2015 12:50:48 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 426
+[18-Nov-2015 12:50:48 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 426
+[18-Nov-2015 12:51:22 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[18-Nov-2015 12:51:22 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[18-Nov-2015 12:51:40 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[18-Nov-2015 12:51:40 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[18-Nov-2015 12:51:51 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[18-Nov-2015 12:51:51 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 380
+[18-Nov-2015 12:51:53 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/rally/views/index/reject-invite.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[18-Nov-2015 12:51:53 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/rally/views/index/reject-invite.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[18-Nov-2015 12:52:49 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 385
+[18-Nov-2015 12:52:49 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 385
+[18-Nov-2015 12:52:57 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 385
+[18-Nov-2015 12:52:57 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 385
+[18-Nov-2015 12:52:57 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 385
+[18-Nov-2015 12:52:57 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 385
+[18-Nov-2015 12:53:21 Europe/Berlin] PHP Notice:  Undefined variable: rallyResults in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 387
+[18-Nov-2015 12:53:21 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\ral\modules\rally\views\index\show-friendly-rally.phtml on line 387
+[18-Nov-2015 12:56:11 Europe/Berlin] PHP Notice:  Undefined index: driver_id in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 143
+[18-Nov-2015 12:56:11 Europe/Berlin] PHP Notice:  Undefined index: pilot_id in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 143
+[18-Nov-2015 12:56:11 Europe/Berlin] PHP Notice:  Undefined index: car_id in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 143
+[18-Nov-2015 12:57:06 Europe/Berlin] PHP Notice:  Undefined index: driver_id in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 143
+[18-Nov-2015 12:57:06 Europe/Berlin] PHP Notice:  Undefined index: pilot_id in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 143
+[18-Nov-2015 12:57:06 Europe/Berlin] PHP Notice:  Undefined index: car_id in C:\xampp\htdocs\ral\library\TK\Form\Select.php on line 143
+[18-Nov-2015 13:57:33 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to UserService::quickAuthenticate() must be an instance of User_Model_Doctrine_User, boolean given, called in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 256 and defined in C:\xampp\htdocs\ral\modules\user\services\User.php on line 41
+[18-Nov-2015 13:57:41 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to UserService::quickAuthenticate() must be an instance of User_Model_Doctrine_User, boolean given, called in C:\xampp\htdocs\ral\modules\user\controllers\IndexController.php on line 256 and defined in C:\xampp\htdocs\ral\modules\user\services\User.php on line 41
+[19-Nov-2015 11:54:30 Europe/Berlin] PHP Fatal error:  Call to undefined method UserService::getTopCardList() in C:\xampp\htdocs\ral\modules\card\controllers\IndexController.php on line 275
+[19-Nov-2015 11:54:30 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[19-Nov-2015 11:54:42 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'Couldn't find class u' in C:\xampp\htdocs\ral\library\Doctrine\Table.php:299
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Table.php(256): Doctrine_Table->initDefinition()
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1124): Doctrine_Table->__construct('u', Object(Doctrine_Connection_Mysql), true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1967): Doctrine_Connection->getTable('u')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1764): Doctrine_Query->loadRoot('u', 'u')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Query\Orderby.php(80): Doctrine_Query->load('u')
+#5 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.php(2084): Doctrine_Query_Orderby->parse('u.card_rank')
+#6 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1189): Doctrine_Query_Abstract->_processDqlQueryPart('orderby', Array)
+#7 C:\xampp\htdocs\ral\library\Doctrine\Query.php(1155): Doctrine_Query->buildSqlQuery(false)
+#8 C:\xampp\htdocs\ral\library\Doctrine\Query\Abstract.p in C:\xampp\htdocs\ral\library\Doctrine\Table.php on line 299
+[19-Nov-2015 11:54:42 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[19-Nov-2015 11:54:48 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/card/views/index/top-list.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[19-Nov-2015 11:54:48 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/card/views/index/top-list.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[19-Nov-2015 11:54:55 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Doctrine_Exception' with message 'Couldn't find class Team_Model_Doctrine_Team' in C:\xampp\htdocs\ral\library\Doctrine\Table.php:299
+Stack trace:
+#0 C:\xampp\htdocs\ral\library\Doctrine\Table.php(256): Doctrine_Table->initDefinition()
+#1 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1124): Doctrine_Table->__construct('Team_Model_Doct...', Object(Doctrine_Connection_Mysql), true)
+#2 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(278): Doctrine_Connection->getTable('Team_Model_Doct...')
+#3 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(404): Doctrine_Relation_Parser->getImpl('Team_Model_Doct...')
+#4 C:\xampp\htdocs\ral\library\Doctrine\Relation\Parser.php(207): Doctrine_Relation_Parser->completeDefinition(Array)
+#5 C:\xampp\htdocs\ral\library\Doctrine\Table.php(1001): Doctrine_Relation_Parser->getRelation('Team', true)
+#6 C:\xampp\htdocs\ral\library\Doctrine\Record.php(1379): Doctrine_Table->getRelation('Team')
+#7 C:\xampp\htdocs\ral\library\Doctrine\Record.php(135 in C:\xampp\htdocs\ral\library\Doctrine\Table.php on line 299
+[19-Nov-2015 11:54:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:05 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 11:55:06 Europe/Berlin] PHP Notice:  Undefined variable: team in C:\xampp\htdocs\ral\modules\card\views\index\top-list.phtml on line 18
+[19-Nov-2015 13:02:31 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Team already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 343 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[19-Nov-2015 13:02:32 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Team already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 343 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[19-Nov-2015 13:02:32 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[19-Nov-2015 13:19:53 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Sorry. You can't scrap a car which is signed up for rally. already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 75 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[19-Nov-2015 13:19:53 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Sorry. You can't scrap a car which is signed up for rally. already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 75 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[19-Nov-2015 13:19:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[19-Nov-2015 13:37:09 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Public already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 330 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[19-Nov-2015 13:37:09 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Public already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 330 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[19-Nov-2015 13:37:09 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[19-Nov-2015 13:44:05 Europe/Berlin] PHP Parse error:  syntax error, unexpected '(', expecting ')' in C:\xampp\htdocs\ral\modules\rally\models\Rally.php on line 18
+[19-Nov-2015 13:44:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[19-Nov-2015 14:01:14 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Friendly rallies already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 375 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[19-Nov-2015 14:01:14 Europe/Berlin] PHP Warning:  DOMDocument::load(): xmlParseEntityRef: no name in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 378 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[19-Nov-2015 14:01:15 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Friendly rallies already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 375 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[19-Nov-2015 14:01:15 Europe/Berlin] PHP Warning:  DOMDocument::load(): xmlParseEntityRef: no name in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 378 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[19-Nov-2015 14:01:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[19-Nov-2015 14:01:22 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Friendly rallies already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 375 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[19-Nov-2015 14:01:23 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Friendly rallies already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 375 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[19-Nov-2015 14:01:23 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[19-Nov-2015 14:02:34 Europe/Berlin] PHP Warning:  DOMDocument::load(): xmlParseEntityRef: no name in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 375 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[19-Nov-2015 14:02:35 Europe/Berlin] PHP Warning:  DOMDocument::load(): xmlParseEntityRef: no name in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 375 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[19-Nov-2015 14:02:35 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[19-Nov-2015 17:49:52 Europe/Berlin] PHP Warning:  include(C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml): failed to open stream: No such file or directory in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[19-Nov-2015 17:49:52 Europe/Berlin] PHP Warning:  include(): Failed opening 'C:\xampp\htdocs\ral\public/..//modules/forum/views/index/add-favourite-forum.phtml' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\ral\library\TK\View.php on line 47
+[20-Nov-2015 17:59:59 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Page not exists
+
+  thrown in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 332

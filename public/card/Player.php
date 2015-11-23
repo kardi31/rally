@@ -163,7 +163,7 @@ class Player {
     public function moveLostCard($wonUserId){
         
 //        $getWonCard = $this->db->fetch('select * from card_card where user_id = '.$this->id.' order by rand() limit 1');
-        $getWonCard = $this->db->fetch('select * from card_card where user_id = '.$this->id.' order by id limit 1');
+        $getWonCard = $this->db->fetch('select * from card_card where user_id = '.$this->id.' and locked = 0 order by rand() limit 1');
         $row = $this->db->execute('update card_card set user_id = '.$wonUserId.' where id = '.$getWonCard['id'].' limit 1');
         
         $wonCard = new Car($getWonCard['car_model_id'],$getWonCard['id']);
@@ -172,7 +172,7 @@ class Player {
     }
     
     public function setPlayerCards(){
-        $playerCards = $this->db->fetchAll('select * from card_card where user_id = '.$this->id.' and locked = 0 order by id limit 5');
+        $playerCards = $this->db->fetchAll('select * from card_card where user_id = '.$this->id.' and locked = 0 order by rand() limit 5');
         
         unset($this->cards);
         unset($this->notDoneCards);

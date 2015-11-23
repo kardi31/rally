@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 DEFINE('BASE_PATH',realpath(__DIR__)."/../");
 include(BASE_PATH.'/library/TK/AdminRouter.php');
@@ -24,6 +23,5 @@ ini_set("error_log", BASE_PATH."/logs/php-error.log");
  $contName = ucfirst($module)."_Admin";
  $controller = new $contName();
  $controller->render($action);
- 
- 
+
 ?>  
