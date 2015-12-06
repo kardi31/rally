@@ -57,7 +57,12 @@ class Team_Index extends Controller{
         else{
             $this->getLayout()->setLayout('page');
         }
-        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle($team['name'].' - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle($team['name'].' - FastRally');
+        }
     }
     
     public function changeName(){
@@ -149,6 +154,14 @@ class Team_Index extends Controller{
 	$this->view->assign('nextDateChange',$nextDateChange);
 	$this->view->assign('team',$team);
 	$this->view->assign('form',$form);
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Zmień nazwe zespołu - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Change team name - FastRally');
+        }
+        
     }
     
     public function cancelSponsorship(){
@@ -191,11 +204,26 @@ class Team_Index extends Controller{
             }
             $this->view->assign('country',$country);
             
+            if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+                $this->view->setHeadTitle($country.' - najlepsi menedżerowie - FastRally');
+            }
+            else{
+                $this->view->setHeadTitle('Top '.$country.' managers - FastRally');
+            }
+            
         }
         else{
             $countries = $teamService->getActiveCountries(Doctrine_Core::HYDRATE_SCALAR);
             $this->view->assign('countries',$countries);
+            
+            if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+                $this->view->setHeadTitle('Ranking narodowy - FastRally');
+            }
+            else{
+                $this->view->setHeadTitle('National ranking - FastRally');
+            }
         }
+        
         
     }
     

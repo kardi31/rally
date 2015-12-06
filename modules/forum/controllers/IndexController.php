@@ -50,6 +50,10 @@ class Forum_Index extends Controller{
         
 	$this->view->assign('favouriteCategories',$favouriteCategories);
 	$this->view->assign('categories',$categories);
+        
+        
+            $this->view->setHeadTitle('Forum - FastRally');
+        
     }
     
     public function showCategory(){
@@ -90,6 +94,10 @@ class Forum_Index extends Controller{
 	$this->view->assign('form',$form);
 	$this->view->assign('category',$category);
 	$this->view->assign('threads',$threads);
+        
+        
+            $this->view->setHeadTitle($category['name'].' - Forum - FastRally');
+        
     }
     
     public function showThread(){
@@ -132,6 +140,9 @@ class Forum_Index extends Controller{
 	$this->view->assign('form',$form);
 	$this->view->assign('posts',$posts);
 	$this->view->assign('thread',$thread);
+        
+        
+            $this->view->setHeadTitle($thread['title'].' - Forum - FastRally');
     }
     
     public function editThread(){

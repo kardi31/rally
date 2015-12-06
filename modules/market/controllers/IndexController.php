@@ -42,6 +42,14 @@ class Market_Index extends Controller{
         
         $this->view->assign('user',$user);
         $this->view->assign('marketOffers',$marketOffers);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Rynek zawodników - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Players market - FastRally');
+        }
     }
     
     public function bidPlayer(){
@@ -127,6 +135,14 @@ class Market_Index extends Controller{
         
         
         $this->view->assign('offer',$offer);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle($offer['Player']['firstname']." ".$offer['Player']['lastname'].' na rynku transferowym - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle($offer['Player']['firstname']." ".$offer['Player']['lastname'].' on transfer market - FastRally');
+        }
     }
     
     
@@ -177,6 +193,14 @@ class Market_Index extends Controller{
         
         $this->view->assign('user',$user);
         $this->view->assign('marketOffers',$offers);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Monitor zawodników na rynku transferowym - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Player monitor on transfer market - FastRally');
+        }
     }
     
     
@@ -204,6 +228,14 @@ class Market_Index extends Controller{
         $this->view->assign('carsForSale',$carsForSale);
         $this->view->assign('user',$user);
         $this->getLayout()->setLayout('page');
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Dealer samochodowy - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Car dealer - FastRally');
+        }
     }
     
     
@@ -259,6 +291,14 @@ class Market_Index extends Controller{
         
         $this->getLayout()->setLayout('page');
         $this->view->assign('freeAgencyPrice',$freeAgencyPrice);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Wolni zawodnicy - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Free agency - FastRally');
+        }
     }
     
     public function buyCar(){
@@ -318,6 +358,14 @@ class Market_Index extends Controller{
         
         $this->view->assign('user',$user);
         $this->view->assign('marketOffers',$marketOffers);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Rynek samochodowy - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Car market - FastRally');
+        }
     }
     
     public function bidCar(){
@@ -403,6 +451,14 @@ class Market_Index extends Controller{
         $this->view->assign('offer',$offer);
         $this->view->assign('user',$user);
         $this->view->assign('form',$form);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle($offer['Car']['name'].' na rynku transferowym - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle($offer['Car']['name'].' on car market - FastRally');
+        }
     }
     
     public function myCars(){
@@ -451,6 +507,14 @@ class Market_Index extends Controller{
         
         $this->view->assign('user',$user);
         $this->view->assign('marketOffers',$marketOffers);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Monitor samochodów na rynku transferowym - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Car monitor - FastRally');
+        }
     }
     
     public function showMyPlayerOffers(){

@@ -160,6 +160,10 @@ class Rally_Index extends Controller{
         $this->view->assign('rallyPrizes',$rallyPrizes);
         $this->view->assign('prizePool',$prizePool);
         $this->view->assign('crewCounter',$crewCounter);
+        
+        
+            $this->view->setHeadTitle($rally['name'].' - FastRally');
+        
     }
     
     public function listRally(){
@@ -184,6 +188,14 @@ class Rally_Index extends Controller{
         
         $this->view->assign('rallies',$rallies);
         $this->view->assign('futureTeamRallies',$futureTeamRallies);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Lista rajdów - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Rally list - FastRally');
+        }
     }
     
 //    public function myLeagueRallies(){
@@ -214,6 +226,14 @@ class Rally_Index extends Controller{
 
         $this->view->assign('rallies',$rallies);
         $this->view->assign('futureTeamRallies',$futureTeamRallies);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Moje rajdy - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('My rallies - FastRally');
+        }
     }
     
     public function listFriendlyRally(){
@@ -321,6 +341,14 @@ class Rally_Index extends Controller{
         
         $this->view->assign('recentUserFriendlies',$recentUserFriendlies);
         $this->view->assign('form',$form);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Stwórz rajd towarzyski - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Create friendly rally - FastRally');
+        }
         
     }
     
@@ -526,6 +554,14 @@ class Rally_Index extends Controller{
         $this->view->assign('crewCounter',$crewCounter);
         $this->view->assign('recentUserFriendlies',$recentUserFriendlies);
         
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle($rally['name'].' - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle($rally['name'].' - FastRally');
+        }
     }
     
     public function checkAvailability(){
@@ -644,6 +680,14 @@ class Rally_Index extends Controller{
         $this->view->assign('rally',$rally);
         $this->view->assign('rallyResults',$rallyResults);
         $this->view->assign('rallyStagesResults',$rallyStagesResults);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle($rally['name'].' - wyniki - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle($rally['name'].' - results - FastRally');
+        }
     }
     
     

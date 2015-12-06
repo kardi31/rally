@@ -187,6 +187,14 @@ class Car_Index extends Controller{
 	$this->view->assign('nextDateChange',$nextDateChange);
 	$this->view->assign('car',$car);
 	$this->view->assign('form',$form);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Zmień nazwe samochodu - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Change car name - FastRally');
+        }
     }
     
     public function scrapCar(){
@@ -243,6 +251,13 @@ class Car_Index extends Controller{
             TK_Helper::redirect('/account/my-cars?msg=car+scrapped');
         }
         
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Zezłomuj samochód - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Scrap car - FastRally');
+        }
     }
 }
 ?>

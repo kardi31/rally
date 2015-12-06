@@ -34,6 +34,16 @@ class League_Index extends Controller{
 	$this->view->assign('leagueTable',$leagueTable);
 	$this->view->assign('leagueResults',$leagueResults);
 	$this->view->assign('league',$league);
+        
+        
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Liga '.$league.' - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('League '.$league.' - FastRally');
+        }
     }
     
     
