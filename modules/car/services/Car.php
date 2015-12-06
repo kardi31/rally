@@ -92,7 +92,7 @@ class CarService extends Service{
     }
     
     public function getFreeCars(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
-	$busyCars = $this->getBusyCars($team, $date,Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+	$busyCars = $this->getBusyCars($team, $date,Doctrine_Core::HYDRATE_SINGLE_SCALAR,true);
         $q = $this->carTable->createQuery('c');
 	$q->select('c.id,c.name');
 	$q->leftJoin('c.Team t');
@@ -115,12 +115,17 @@ class CarService extends Service{
 	return $q->fetchOne(array(),Doctrine_Core::HYDRATE_RECORD);
     }
     
-    public function getBusyCars(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+    public function getBusyCars(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD,$notFriendly = false){
 	$q = $this->carTable->createQuery('c');
 	$q->select('c.id,c.name');
 	$q->leftJoin('c.Team t');
 	$q->leftJoin('c.CarRallies cr');
 	$q->leftJoin('cr.Rally r');
+        
+        if($notFriendly){
+            $q->addWhere("r.friendly = 0");
+        }
+        
 	$q->addWhere('t.id = ?',$team['id']);
 	$q->addWhere('r.date like ?',substr($date,0,10)."%");
 	return $q->execute(array(),$hydrationMode);

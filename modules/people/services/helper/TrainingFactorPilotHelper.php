@@ -60,7 +60,6 @@
         if(array_sum($values)-$skillSum>=0.3){
             while(array_sum($values)-$skillSum>=0.3){
                 $randomColumn = rand(0,$skillCounter-1);
-                echo (array_sum($values)-$skillSum)." - 1<br />";
                 if($values[$randomColumn] >= 0.6){
                     $values[$randomColumn] -= 0.1;
                 }

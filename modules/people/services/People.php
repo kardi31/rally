@@ -55,7 +55,7 @@ class PeopleService extends Service{
     }
     
     public function getFreeDrivers(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
-        $busyDrivers = $this->getTeamBusyDrivers($team,$date,Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        $busyDrivers = $this->getTeamBusyDrivers($team,$date,Doctrine_Core::HYDRATE_SINGLE_SCALAR,true);
 	$q = $this->peopleTable->createQuery('p');
 	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name,dr.*,r.*');
 	$q->leftJoin('p.Team t');
@@ -68,13 +68,16 @@ class PeopleService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
-    public function getTeamBusyDrivers(Team_Model_Doctrine_Team $team,$date,$hydrationMode){
+    public function getTeamBusyDrivers(Team_Model_Doctrine_Team $team,$date,$hydrationMode,$notFriendly = false){
         $q = $this->peopleTable->createQuery('p');
 	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name,dr.*,r.*');
 	$q->leftJoin('p.Team t');
 	$q->leftJoin('p.DriverRallies dr');
 	$q->leftJoin('dr.Rally r');
         $q->addWhere("p.job like 'driver'");
+        if($notFriendly){
+            $q->addWhere("r.friendly = 0");
+        }
 	$q->addWhere('t.id = ?',$team['id']);
 	$q->addWhere('r.date like ?',substr($date,0,10)."%");
 	return $q->execute(array(),$hydrationMode);
@@ -157,7 +160,7 @@ class PeopleService extends Service{
     }
     
     public function getFreePilots(Team_Model_Doctrine_Team $team,$date,$hydrationMode = Doctrine_Core::HYDRATE_RECORD){
-        $busyDrivers = $this->getTeamBusyPilots($team,$date,Doctrine_Core::HYDRATE_SINGLE_SCALAR);
+        $busyDrivers = $this->getTeamBusyPilots($team,$date,Doctrine_Core::HYDRATE_SINGLE_SCALAR,true);
 	$q = $this->peopleTable->createQuery('p');
 	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name,dr.*,r.*');
 	$q->leftJoin('p.Team t');
@@ -170,12 +173,16 @@ class PeopleService extends Service{
 	return $q->execute(array(),$hydrationMode);
     }
     
-    public function getTeamBusyPilots(Team_Model_Doctrine_Team $team,$date,$hydrationMode){
+    public function getTeamBusyPilots(Team_Model_Doctrine_Team $team,$date,$hydrationMode,$notFriendly = false){
         $q = $this->peopleTable->createQuery('p');
 	$q->select('p.id,CONCAT(p.last_name," ",p.first_name) as name');
 	$q->leftJoin('p.Team t');
 	$q->leftJoin('p.PilotRallies dr');
 	$q->leftJoin('dr.Rally r');
+        
+        if($notFriendly){
+            $q->addWhere("r.friendly = 0");
+        }
         $q->addWhere("p.job like 'pilot'");
 	$q->addWhere('t.id = ?',$team['id']);
 	$q->addWhere('r.date like ?',substr($date,0,10)."%");

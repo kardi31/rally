@@ -1,0 +1,32 @@
+<div class="mainUserBox">
+    <h4 class="boxHeader"><?= $this->translate('Top card players list'); ?></h4>
+    <div class='staticWrapper'>
+        <table class="table rankingList">
+            <tr>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Manager</th>
+                <th>Country</th>
+                <th>Rank</th>
+            </tr>
+        <?php foreach($topList as $key => $user){ 
+            echo "<tr>";
+            echo "<td>".($key+1)."</td>";
+            echo "<td>".$user['Team']['name']." </td><td>".$user['username']."</td>";
+            
+            echo "<td>";
+             if(strlen($user['country'])){ ?>
+                        <img class="countryFlag" src="/images/flags/<?= strtolower($user['country']);?>.png" />
+                    <?php } else { ?>
+                        Unknown
+                    <?php } 
+            echo "</td>";
+            echo "<td>";
+                echo $user['card_rank'];
+            echo "</td>";
+            echo "</tr>";
+        }
+        ?>
+        </table>
+    </div>
+</div>

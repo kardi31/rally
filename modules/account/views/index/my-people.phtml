@@ -19,7 +19,7 @@
     
     <div class="myPeople peopleList driverList col-md-12">
         <ul>
-            <li>Drivers</li>
+            <li><?= $this->translate('Drivers'); ?></li>
             <?php foreach($teamPeople['Drivers'] as $key => $person): ?>
             <li data-rel="<?= $person['id']; ?>" <?php echo ($key==0)?'class="active"':'';?>><?php echo $person['last_name']." ".$person['first_name']; ?></li>
             <?php endforeach; ?>
@@ -91,7 +91,7 @@
     </div>
     <div class="myPeople peopleList pilotList col-md-12">
         <ul>
-            <li>Pilots</li>
+            <li><?= $this->translate('Pilots'); ?></li>
             <?php foreach($teamPeople['Pilots'] as $key => $person): ?>
             <li data-rel="<?= $person['id']; ?>" <?php echo ($key==0)?'class="active"':'';?>><?php echo $person['last_name']." ".$person['first_name']; ?></li>
             <?php endforeach; ?>

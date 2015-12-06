@@ -1,0 +1,528 @@
+/* 
+    Created on : 2015-10-20, 13:21:08
+    Author     : Tomasz
+*/
+
+ .tableName{
+    background:red;
+    padding:10px;
+    text-align:center;
+}
+
+.closeTable{
+    float:right;
+}
+
+.playerList > div:first-of-type{
+    background:#fff;
+    color:#333;
+}
+
+.playerList > div{
+    padding:5px;
+    padding-left:10px;
+}
+
+.playerList > div:nth-of-type(2){
+    background:rgba(18,51,212,0.90);
+    color:#fff;
+}
+
+.notEnoughCardsInfo{
+        background: red;
+    display: inline-block;
+    padding: 6px;
+    float: right;
+    margin-top: 10%;
+}
+
+#menu{
+    margin-bottom:10px;
+}
+
+
+.playerList div div.playerPoints{
+    background:#868686;
+    width:20px;
+    float:right;
+    margin-right:10px;
+    text-align:center;
+    font-size:16px;
+}
+
+.playerList div div.playerRank{
+    display: inline-block;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 10px;
+    vertical-align: top;
+}
+
+
+.playerList div span{
+    background:#868686;
+    width:40px;
+    float:right;
+    margin-right:10px;
+    text-align:center;
+    font-size:16px;
+    display:block;
+}
+
+.selectedCard{
+    background:blue;
+}
+.currentPlayingSkill,.currentPlayingSkill td{
+    background:red;
+}
+.cardTableWrapper{
+    height:665px;
+    width:1020px;
+}
+#cardTable{
+    width:728px;
+    float:left;
+    height:660px;
+    position:relative;
+}
+#cardTableInfo{
+    width:292px;
+    clear: right;
+    float: right;
+}
+.playerCards{
+    height:167px;
+    width:100%;
+    border:1px solid grey;
+}
+.playerCards th,.wonCardWrapper th,.lockedCards  .playerCard th{
+    position:relative;
+}
+.playerCards th strong,.wonCardWrapper th strong,.lockedCards th strong{
+    z-index:10000;
+    position:absolute;
+    bottom:0px;left:0px;
+    background:rgba(0,0,0,0.6);
+    width:100%;
+    padding:5px 0px 5px 5px;
+    font-size:12px;
+}
+.playerCards tr,.wonCardWrapper tr,.lockedCards tr{
+    
+    max-width:100%;
+}
+.playerCards td,.wonCardWrapper td,.lockedCards td{
+
+    font-size:12px;
+    max-width:100%;
+}
+.playerCards th,.wonCardWrapper th,.lockedCards th{
+    background:#504f4f;
+    max-width:100%;
+}
+.playerCard table{
+    table-layout: fixed;
+}
+.playerCards img,.wonCardWrapper img{
+    max-width:100%;
+    width:100%;
+    display:block;
+}
+.playerCards div,.wonCardWrapper{
+    width:145px;
+    float:left;
+    height:165px;
+}
+.wonCardPreWrapper{
+    width:145px;
+    float:left;
+    height:175px;
+}
+.wonCardPreWrapper{
+    position:absolute;
+    top:190px;
+    left:290px;
+}
+.playerCards div.playerCard,.wonCardWrapper,.lockedCards div.playerCard{
+    background:#333;
+}
+.playCard{
+    width:160px;
+    border:1px solid red;
+    height:175px;
+    margin:0 auto;
+}
+.playField{
+    height:330px;
+    background: #686868;
+}
+.chat_wrapper {
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #CCCCCC;
+    border: 1px solid #999999;
+    float:left;
+    padding: 10px;
+    font: 12px 'lucida grande',tahoma,verdana,arial,sans-serif;
+}
+.chat_wrapper .message_box {
+    background: #FFFFFF;
+    height: 150px;
+    overflow: auto;
+    padding: 10px;
+    border: 1px solid #999999;
+}
+.chat_wrapper .panel input{
+    padding: 2px 2px 2px 5px;
+}
+.system_msg{color: #BDBDBD;font-style: italic;}
+.joined{color: #ff0000;font-style: italic;}
+.user_name{font-weight:bold;}
+.user_message{color: #88B6E0;}
+
+.cardUserListWrapper {
+    width: 20%;
+    background: #CCCCCC;
+    color:#333;
+    text-align:center;
+    float:left;
+}
+.cardUserBoxWrapper h1{
+    padding:10px;
+}
+.cardUserListWrapper h4{
+    height:30px;
+    margin:0px;
+}
+.cardTableListWrapper {
+    width: 80%;
+    background: #868686;
+    color:#333;
+    text-align:center;
+    float:left;
+}
+.gameInformation{
+    background:#212121;
+    display: inline-block;
+    padding: .2em .6em .3em;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    vertical-align: baseline;
+    width:25%;
+    font-size:20px;
+    margin-top:10%;
+}
+.gameInformation span{
+    font-size:15px;
+    display:block;
+}
+
+.cardUserListWrapper #cardUserList {
+    background: #FFFFFF;
+    height:100%;
+    overflow: auto;
+    font-size:12px;
+    padding: 10px;
+    border: 1px solid #999999;
+    text-align:left;
+}
+.cardUserListWrapper #cardUserList ul{
+    padding-left:0px;
+    padding-right:0px;
+    list-style: none;
+}
+.cardUserListWrapper #cardUserList ul li span.tableId{
+    float:right;
+    width:15%;
+    display:block;
+    min-height:5px;
+    text-align:right;
+    
+}
+.cardUserListWrapper #cardUserList ul li span.rank{
+    float:right;
+    width:20%;
+}
+.cardTableListWrapper #cardTableList {
+    background: rgba(255,255,255,.7);
+    min-height: 150px;
+    overflow: auto;
+    padding: 10px;
+    width:100%;
+    border: 1px solid #999999;
+}
+
+.cardUserHeader{
+    background:#868686;
+    
+    width: 100%;
+    min-height: 50px;
+}
+.cardUserHeader:after{
+    clear:both;
+    display:block;
+    content:" ";
+}
+.cardUserHeader button{
+    float:right;
+    margin-top:5px;
+    margin-right:5px;
+}
+
+.cardTableWrapper{
+    display:none;
+}
+
+.cardTablePlayers{
+    margin-top:10px;
+}
+
+.cardTablePlayers div:first-of-type{
+    float:left;
+    margin-left:5px;
+}
+
+.cardTablePlayers div:nth-of-type(2){
+    float:right;
+    margin-right:5px;
+}
+.cardTableBox{
+    position:relative;
+}
+.cardTableBox .cardTableNo{
+    position:absolute;
+    font-size:18px;
+    z-index:10000;
+    top:0px;
+    right:0px;
+    background:#322f32;
+    color:#fff;
+    padding:5px;
+}
+
+.cardTablePlayers:after{
+    clear:both;
+    display:block;
+    content:" ";
+}
+
+.cardTableBox{
+        width: 24%;
+    float: left;
+    border: 3px solid #3276b1;
+    margin: 1% 0.5%;
+    margin-left: 1px;
+}
+.cardTableBox .joinSingleTable{
+    border-top-left-radius: 0px;
+    border-top-right-radius:0px;
+    background:#357EBD;
+}
+.cardTableBox .joinSingleTable:hover{
+    border-color:#357ebd;
+}
+.cardTableBox img{
+    width:55px;
+    margin-top:-10px;
+}
+.startGame{
+    background: rgba(18,51,212,0.90);
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    padding: 10px;
+    margin: 0 auto;
+    display: block;
+    top: 125px;
+    position: relative;
+    font-size: 25px;
+}
+.cardLock{
+    position: absolute;
+    top: 0px;
+    background: rgba(255,255,255,0.75);
+    right: 0px;
+    padding: 5px;
+    z-index: 100000;
+}
+
+#manageCards div.playerCard{
+    cursor:pointer;
+}
+
+.playerCard table tr:not(:first-of-type) td{
+    cursor:pointer;
+}
+
+.playerCard table tr:not(:first-of-type):hover td{
+    background:purple;
+}
+
+#manageCards .playerCard table tr:not(:first-of-type):hover td{
+    background:none;
+}
+
+.smallBoxes{
+    margin-top:100px;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.smallBoxes > ul{
+    list-style-type:none;
+    padding-left:0px;
+    border-bottom:1px solid rgba(18,51,212,0.90);
+    margin-bottom:0px;
+}
+
+.smallBoxes .userList ul{
+    list-style-type:none;
+    padding-left:10px;
+    padding-right:10px;
+}
+.smallBoxes .userList{
+    padding-top:10px;
+    background:#322f32;
+}
+.smallBoxes > ul li{
+        background: #fff;
+    color: #504f4f;
+    padding: 5px;
+    display: inline-block;
+    border-right:1px solid rgba(18,51,212,0.90);
+}
+
+.userList .rank{
+        display: inline-block;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 10px;
+    vertical-align: top;
+}
+
+.userList .inviteToTable,.userList .alreadyOnTable{
+    float:right;
+    cursor:pointer;
+}
+
+.smallBoxes .onTableList ul{
+    list-style-type:none;
+    padding-left:10px;
+    padding-right:10px;
+}
+.smallBoxes .onTableList{
+    padding-top:10px;
+    background:#322f32;
+}
+.smallBoxes > ul li{
+        background: #fff;
+    color: #504f4f;
+    padding: 5px;
+    display: inline-block;
+    border-right:1px solid rgba(18,51,212,0.90);
+    cursor:pointer;
+}
+
+.smallBoxes > ul li.active{
+    background:rgba(18,51,212,0.90);
+    color:#fff;
+}
+
+.onTableList .rank{
+        display: inline-block;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 10px;
+    vertical-align: top;
+}
+
+.onTableList button{
+    float:right;
+    cursor:pointer;
+        max-height: 100%;
+    font-size: 10px;
+}
+
+.listTableMsg span{
+    float:left;
+    background: #212112;
+    padding: 7px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.listTableMsg span.invitedToTable{
+    position:relative;
+    padding-right:20px;
+}
+
+.listTableMsg span.invitedToTable .closeInvitation{
+    position:absolute;
+    top:0px;
+    right:0px;
+    margin:0px;
+    padding:0px 5px;
+}
+
+.listTableMsg a{
+    background: #00a651;
+    border-radius: 0px;
+    color: #fff;
+    font-size: 14px;
+    margin: 0 auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: auto;
+    cursor:pointer;
+    display: inline-block;
+    text-align: center;
+    padding: 5px !important;
+    white-space: normal;
+}
+
+.smallBoxes div{
+    display:none;
+}
+
+.cardTableBox button:disabled{
+        background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+.transformPlayCards{
+    margin:0 auto;
+    margin-top:50px;
+    display:block;
+}
+.buyCardCol{
+    text-align:center;
+    margin-bottom: 20px;
+}
+.buyCardCol .goldCoinBox{
+    width:145px;
+    margin:10px auto;
+    display:block;
+}
+
+.buyCardCol .cardBack{
+    display:block;
+    margin:0 auto;
+    margin-bottom:10px;
+}
+
+.buyCardBox > div{
+    margin-top:10px;
+}
+
+#boughtPackageCards{
+    border:0px;
+    text-align:center;
+    margin-bottom:10px;
+}
+#boughtPackageCards div.playerCard{
+    float:none;
+    display:inline-block;
+}

@@ -13,7 +13,7 @@
             <ul>
                 <?php foreach($favouriteCategories as $favourite): ?>
                     <li>
-                        <a href="/forum/show-category/<?= $favourite['Category']['slug']; ?>" class="bold"><?php echo $favourite['Category']['name']; ?></a>
+                        <a href="/forum/show-category/<?= $favourite['Category']['slug']; ?>" class="bold"><?php echo $this->translate($favourite['Category']['name']); ?></a>
                         <?php $thread = $lastThreads[$favourite['category_id']];
                         if(!$thread) continue;
                         if(isset($thread['Thread'])){

@@ -259,5 +259,12 @@ class UserService extends Service{
         return $q->execute(array(),Doctrine_Core::HYDRATE_ARRAY);
     }
     
+    
+    public function getTopCardList($hydrationMode = Doctrine_Core::HYDRATE_RECORD){
+        $q = $this->userTable->createQuery('u');
+        $q->orderBy('u.card_rank DESC');
+        $q->limit(100);
+	return $q->execute(array(),$hydrationMode);
+    }
 }
 ?>

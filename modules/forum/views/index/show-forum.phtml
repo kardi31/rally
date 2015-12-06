@@ -15,7 +15,7 @@
     <?php foreach($categories as $category): ?>
         <tr>
             <td>
-                <a href="/forum/show-category/<?php echo $category['slug']; ?>"><?php echo $category['name']; ?></a>
+                <a href="/forum/show-category/<?php echo $category['slug']; ?>"><?php echo $this->translate($category['name']); ?></a>
             </td>
             
             <td>

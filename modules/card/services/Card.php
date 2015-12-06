@@ -92,13 +92,15 @@ class CardService extends Service{
         return $q->fetchOne(array(),$hydrationMode);
     }
     
-    public function checkLockedUserCardsSameType($user_id,$model_id,$hydrationMode = Doctrine_Core::HYDRATE_ARRAY){
+    public function checkLockedUserCardsSameType($user_id,$model_id = false,$hydrationMode = Doctrine_Core::HYDRATE_ARRAY){
         $q = $this->cardTable->createQuery('c');
         $q->leftJoin('c.Model cm');
         $q->addSelect('c.*,cm.*');
         $q->addWhere('c.locked = 1');
         $q->addWhere('c.user_id = ?',$user_id);
-        $q->addWhere('cm.id = ?',$model_id);
+        if($model_id){
+            $q->addWhere('cm.id = ?',$model_id);
+        }
         $q->groupBy('cm.id');
         $q->having('count(cm.id) > 6');
         return $q->fetchOne(array(),$hydrationMode);
@@ -172,6 +174,9 @@ class CardService extends Service{
         return $q->fetchOne(array(),$hydrationMode);
     
     }
+    
+    
+    
 }
     
 ?>

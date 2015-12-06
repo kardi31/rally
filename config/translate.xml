@@ -51,6 +51,48 @@
     <word id="Message box">
         <pl>Wiadomości</pl>
     </word>
+    <word id="Card game">
+        <pl>Gra karty</pl>
+    </word>
+    <word id="Home">
+        <pl>Strona główna</pl>
+    </word>
+    <word id="Owner">
+        <pl>Właściciel</pl>
+    </word>
+    <word id="Country">
+        <pl>Kraj</pl>
+    </word>
+    <word id="Unknown">
+        <pl>Nieznany</pl>
+    </word>
+    <word id="Are you sure you want to scrap this car? \r\n This will cost you 1% of car value">
+        <pl>Czy na pewno chcesz zezłomować ten samochód? \r\n Koszt złomowania wynosi 1% wartości samochodu.</pl>
+    </word>
+    <word id="Sorry. You can't scrap a car which is signed up for rally.">
+        <pl>Nie możesz zezłomować auta,które jest zapisane do rajdu.</pl>
+    </word>
+    <word id="Rank">
+        <pl>Ranking</pl>
+    </word>
+    <word id="Improve">
+        <pl>Trenuj</pl>
+    </word>
+    <word id="SELL">
+        <pl>SPRZEDAJ</pl>
+    </word>
+    <word id="Scrap this car">
+        <pl>Zezłomuj samochód</pl>
+    </word>
+    <word id="Pilots">
+        <pl>Piloci</pl>
+    </word>
+    <word id="Drivers">
+        <pl>Kierowcy</pl>
+    </word>
+    <word id="Rally awards">
+        <pl>Nagrody rajdowe</pl>
+    </word>
     <word id="Friends">
         <pl>Znajomi</pl>
     </word>
@@ -69,8 +111,14 @@
     <word id="Account">
         <pl>Moje konto</pl>
     </word>
+    <word id="Balance">
+        <pl>Stan konta</pl>
+    </word>
     <word id="People">
         <pl>Moi ludzie</pl>
+    </word>
+    <word id="REGISTRATION">
+        <pl>REJESTRACJA</pl>
     </word>
     <word id="Training report">
         <pl>Raport z treningu</pl>
@@ -262,8 +310,142 @@
     <word id="Public">
         <pl>Publiczny</pl>
     </word>
+    <word id="Name">
+        <pl>Nazwa</pl>
+    </word>
+    
+    <word id="Level">
+        <pl>Poziom</pl>
+    </word>
+    
+    <word id="Friendly">
+        <pl>Towarzyski</pl>
+    </word>
+    <word id="Second">
+        <pl>Drugi</pl>
+    </word>
+    <word id="Third">
+        <pl>Trzeci</pl>
+    </word>
+    <word id="Submit">
+        <pl>Zatwierdź</pl>
+    </word>
+    <word id="Additional info">
+        <pl>Dotakowe informacje</pl>
+    </word>
+    <word id="Top 2 teams are promoted to league">
+        <pl>2 najlepsze drużyny awansują do ligi </pl>
+    </word>
+    <word id="Last 6 teams are downgraded to league">
+        <pl>Ostatnie 6 drużyn spada do ligi</pl>
+    </word>
+    <word id="Participants">
+        <pl>Uczestnicy</pl>
+    </word>
+    <word id="Player monitor">
+        <pl>Monitor zawodników</pl>
+    </word>
+    <word id="Car monitor">
+        <pl>Monitor samochodów</pl>
+    </word>
+    <word id="Free agency">
+        <pl>Wolni zawodnicy</pl>
+    </word>
+    <word id="Top world list">
+        <pl>Ranking menedżerów</pl>
+    </word>
+    <word id="National ranking">
+        <pl>Ranking krajowy</pl>
+    </word>
+    <word id="Choose a driver">
+        <pl>Wybierz kierowce</pl>
+    </word>
+    <word id="Get free agent">
+        <pl>Zatrudnij</pl>
+    </word>
+    <word id="Categories">
+        <pl>Kategorie</pl>
+    </word>
+    <word id="Last entry">
+        <pl>Ostatni wpis</pl>
+    </word>
+    <word id="General talk">
+        <pl>Ogólne rozmowy</pl>
+    </word>
+    <word id="Question and answers">
+        <pl>Pytania i odpowiedzi</pl>
+    </word>
+    <word id="Suggestions">
+        <pl>Propozycje i sugestie</pl>
+    </word>
+    <word id="Choose a pilot">
+        <pl>Wybierz pilota</pl>
+    </word>
+    <word id="This operation will cost you">
+        <pl>Koszt tej operacji wynosi</pl>
+    </word>
+    <word id="Select free agent you wanted to hire">
+        <pl>Wybierz rodzaj zatrudnianego zawodnika</pl>
+    </word>
+    <word id="In this section you have a chance to hire a free agent driver or pilot. The level of acquired player is random. You can get league 1 driver for very low cost, but you can highly overpay league 5 driver.">
+        <pl>W tej sekcji możesz zatrudnić wolnego pilota lub kierowcę. Poziom zatrudnionego zawodnika jest losowy. Możesz dostać bardzo tanio kierowce z 1 ligi ale możesz też znacząco przepłacić kierowce z ligi 5. </pl>
+    </word>
+    <word id="Manage cards">
+        <pl>Zarządzaj kartami</pl>
+    </word>
+    <word id="Buy cards">
+        <pl>Kup karty</pl>
+    </word>
+    <word id="Top list">
+        <pl>Najlepsi gracze</pl>
+    </word>
+    <word id="Play">
+        <pl>Graj</pl>
+    </word>
+    <word id="Search user">
+        <pl>Znajdź gracza</pl>
+    </word>
+    <word id="Hour">
+        <pl>Godzina</pl>
+    </word>
+    <word id="Big risk">
+        <pl>Duże ryzyko</pl>
+    </word>
+    <word id="Very big risk">
+        <pl>Bardzo duże ryzyko</pl>
+    </word>
+    <word id="Select driver">
+        <pl>Wybierz kierowce</pl>
+    </word>
+    <word id="Select pilot">
+        <pl>Wybierz pilota</pl>
+    </word>
+    <word id="Select car">
+        <pl>Wybierz auto</pl>
+    </word>
+    <word id="Normal risk">
+        <pl>Normalne ryzyko</pl>
+    </word>
+    <word id="Very small risk">
+        <pl>Bardzo niskie ryzyko</pl>
+    </word>
+    <word id="Small risk">
+        <pl>Niskie ryzyko</pl>
+    </word>
     <word id="Change car name">
         <pl>Zmień nazwe samochodu</pl>
+    </word>
+    <word id="member. You are allowed to create 3 friendly rallies every 30 days.">
+        <pl>. Możesz utworzyć 3 darmowe rajdy towarzyskie w ciągu 30 dni.</pl>
+    </word>
+    <word id="Please note">
+        <pl>Uwaga! </pl>
+    </word>
+    <word id="to create a friendly rally you need to have free driver,pilot and car. One crew is allowed to drive only one friendly rally/day. If you don't have free crew on that date, please choose another date of rally.">
+        <pl>Aby stworzyć rajd towarzyski musisz posiadać wolnego kierowce, pilota i samochód. Jedna załoga może przejechać tylko 1 rajd towarzyski w ciągu dnia. Jeżeli nie masz wolnej załogi w tym terminie, wybierz inną date rajdu.</pl>
+    </word>
+    <word id="You are a">
+        <pl>Jesteś członkiem pakietu </pl>
     </word>
     <word id="You are allowed to change name of your car every 30 days.">
         <pl>Możesz zmienić nazwę samochodu raz na 30 dni.</pl>
@@ -279,6 +461,30 @@
     </word>
     <word id="You can change car name on">
         <pl>Możesz zmienić nazwę samochodu dnia</pl>
+    </word>
+    <word id="Change">
+        <pl>Zmień</pl>
+    </word>
+    <word id="Amount">
+        <pl>Ilość</pl>
+    </word>
+    <word id="Type">
+        <pl>Typ</pl>
+    </word>
+    <word id="Detailed type">
+        <pl>Szczegółowy typ</pl>
+    </word>
+    <word id="Date">
+        <pl>Data</pl>
+    </word>
+    <word id="Description">
+        <pl>Opis</pl>
+    </word>
+    <word id="Sponsors donate your team every week with $5000. Every sponsor provides the same amount of money.">
+        <pl>Sponsorzy dokładają do kasy twojego zespołu $5000 co tydzień. Każdy sponsor dostarcza taką samą ilość pieniędzy.</pl>
+    </word>
+    <word id="My training report">
+        <pl>Mój raport z treningu</pl>
     </word>
     <word id="New name">
         <pl>Nowa nazwa</pl>
@@ -690,5 +896,50 @@
     </word>
     <word id="Other incomes">
         <pl>Pozostałe przychody</pl>
+    </word>
+    <word id="My account">
+        <pl>Moje konto</pl>
+    </word>
+    <word id="Logout">
+        <pl>Wyloguj</pl>
+    </word>
+    <word id="more">
+        <pl>więcej</pl>
+    </word>
+    <word id="Thread">
+        <pl>Temat</pl>
+    </word>
+    <word id="Responses">
+        <pl>Odpowiedzi</pl>
+    </word>
+    <word id="Author">
+        <pl>Autor</pl>
+    </word>
+    <word id="Select active country to see its national ranking list.">
+        <pl>Wybierz flagę aktywnego kraju aby zobaczyć ranking narodowy.</pl>
+    </word>
+    <word id="Search Users">
+        <pl>Szukaj graczy</pl>
+    </word>
+    <word id="Search">
+        <pl>Szukaj</pl>
+    </word>
+    <word id="Enter user name">
+        <pl>Podaj szukaną nazwe użytkownika</pl>
+    </word>
+    <word id="Premium prices">
+        <pl>Ceny pakietu premium</pl>
+    </word>
+    <word id="Select amount">
+        <pl>Wybierz ilość</pl>
+    </word>
+    <word id="Choose payment option">
+        <pl>Wybierz sposób płatności</pl>
+    </word>
+    <word id="premium points">
+        <pl>punktów premium</pl>
+    </word>
+    <word id="Buy premium">
+        <pl>Kup punkty premium</pl>
     </word>
 </root>

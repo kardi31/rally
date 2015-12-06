@@ -23,13 +23,14 @@ class CreateFriendly extends Form{
         $date->addParam('readonly');
         $date->addParam('class','form_advance_datetime');
         $date->addValidator('notEmpty');
+        $date->setNoPopulate();
         
         $invite_only = $this->createElement('radio','invite_only',array(),'Tylko dla przyjaciół');
         $invite_only->addMultiOption(1,'Private');
         $invite_only->addMultiOption(0,'Public');
         $invite_only->addParam('required');
         
-        $submit = $this->createElement('submit','submit',array(),'Submit');
+        $submit = $this->createElement('submit','submit',array(),View::getInstance()->translate('Submit'));
         $submit->addClass('btn myBtn');
         
     }

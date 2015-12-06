@@ -337,7 +337,11 @@ $startDate2 = clone $startDate;
                             echo $result['total_time'];
                         }
                         else{
-                            echo $this->translate("Accident on stage no")." ".$result['stage_out_number'];
+                            echo $this->translate("Accident on stage");
+                            
+                            if(strlen($result['stage_out_number'])){
+                                echo " no ".$result['stage_out_number'];
+                            }
                         }
                         ?>
                     </td>

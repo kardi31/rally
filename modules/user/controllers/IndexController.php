@@ -35,9 +35,11 @@ class User_Index extends Controller{
             }
         }
         $form = $this->getForm('user','register');
-        if(isset($ref)&$ref==true){
-            $form->getElement('email')->setValue($invite['email']);
-            $form->getElement('invite')->setValue($invite['id']);
+        if(isset($ref)){
+            if($ref==true){
+                $form->getElement('email')->setValue($invite['email']);
+                $form->getElement('invite')->setValue($invite['id']);
+            }
         }
         if($form->isSubmit()){
             if($form->isValid()){
@@ -144,7 +146,7 @@ class User_Index extends Controller{
             $user->save();
             
             
-            $cardService = parent::getService('user','user');
+            $cardService = parent::getService('card','card');
             $cardService->createRandomCards($user['id'],7);
             $mailService->sendMail($user['email'],'Your FastRally account is now active',$mailService::prepareConfirmActivationMail($user->get('username')));
                 
@@ -168,6 +170,10 @@ class User_Index extends Controller{
         $form = $this->getForm('user','register');
         $loginForm = $this->getForm('user','login');
 
+        $user = $userService->getAuthenticatedUser();
+        if($user)
+            TK_Helper::redirect('/account/my-account');
+        
         if($loginForm->isSubmit()){
             if($loginForm->isValid()){
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
@@ -528,7 +534,7 @@ class User_Index extends Controller{
         $userService = parent::getService('user','user');
         $messageService = parent::getService('user','message');
         if(!$user = $userService->getUser($GLOBALS['urlParams'][1],'id',Doctrine_Core::HYDRATE_RECORD)){
-            throw new TK_Exception('No such thread',404);
+            throw new TK_Exception('No such user',404);
         }
         
         $authenticatedUser = $userService->getAuthenticatedUser();
@@ -547,7 +553,7 @@ class User_Index extends Controller{
                 
 //                // user can add a post once every 30 seconds
                 if(!$messageService->checkLastUserMessage($authenticatedUser['id'],$user['id'])){
-                    TK_Helper::redirect('/user/show-message-box/'.$user['Team']['id'].'?msg=too+fast');
+                    TK_Helper::redirect('/user/show-message-box/'.$user['id'].'?msg=too+fast');
                     exit;
                 }
                 

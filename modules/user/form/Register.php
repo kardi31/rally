@@ -15,7 +15,7 @@ class Register extends Form{
         $password2 = $this->createElement('password','password2',array('validators' => array('match' => array('elem' => 'password'))),'Powtórz hasło');
         $password2->addClass('textInput textInput2');
         $password2->addParam('required');
-        $email = $this->createElement('text','email',array('validators' => 'email'),'Adres email');
+        $email = $this->createElement('text','email',array('validators' => array('email')),'Adres email');
         $email->addClass('textInput textInput2');
         $email->addFilter('trim');
         $email->addFilter('lower');

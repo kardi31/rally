@@ -77,7 +77,7 @@ class MarketService extends Service{
         $q = $this->carOfferTable->createQuery('o');
         $q->innerJoin('o.Bids b');
         $q->addWhere('o.highest_bid > 0 and o.active = 1');
-        $q->addWhere('o.car_moved = 0');
+        $q->addWhere('o.notified = 0');
         $q->addWhere('o.finish_date < NOW()');
         $q->orderBy('b.value DESC');
         return $q->execute(array(),$hydrationMode);

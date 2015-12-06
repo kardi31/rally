@@ -8,6 +8,9 @@ class View{
     public $render = 1;
     private static $instance = NULL;
     private static $doc;
+    private $headTitle;
+    private $metaDescription;
+    private $metaKeywords;
     
     public function __construct() {
 	
@@ -100,8 +103,13 @@ class View{
     }
     
     public function translate($string,$trItem = 0){
-        if(isset($_COOKIE['lang'])){
-            $lang = $_COOKIE['lang'];
+        if(isset($_COOKIE['lang'])||isset($GLOBALS['urlParams']['lang'])){
+            if(isset($GLOBALS['urlParams']['lang'])){
+                $lang = $GLOBALS['urlParams']['lang'];
+            }
+            else{
+                $lang = $_COOKIE['lang'];
+            }
             try{
                 $elem = self::$doc->getElementById($string);
                 if($elem){
@@ -125,6 +133,12 @@ class View{
         }
     }
     
+    public function headTitle(){
+        return $this->headTitle;
+    }
     
+    public function setHeadTitle($title){
+        $this->headTitle = $title;
+    }
     
 }

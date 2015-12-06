@@ -3,12 +3,12 @@
     <table class='table'>
         <thead>
             <tr>
-                <td>Name</td>
-                <td>Date</td>
-                <td>Time</td>
-                <td>Level</td>
-                <td>Participants</td>                
-                <td>Additional info</td>
+                <td><?= $this->translate('Name'); ?></td>
+                <td><?= $this->translate('Date'); ?></td>
+                <td><?= $this->translate('Hour'); ?></td>
+                <td><?= $this->translate('Level'); ?></td>
+                <td><?= $this->translate('Participants'); ?></td>                
+                <td><?= $this->translate('Additional info'); ?></td>
 
             </tr>
         </thead>
@@ -44,18 +44,18 @@
                     </td>
                     <td>
                         <?php if($rally['league_rally']){ ?>
-                            <span class="label label-warning">League</span>
+                        <span class="label label-warning"><?= $this->translate('League'); ?></span>
                         <?php } ?>
                             
                         <?php if($rally['friendly']){ ?>
-                            <span class="label label-success">Friendly</span>
+                        <span class="label label-success"><?= $this->translate('Friendly'); ?></span>
                         <?php } ?>
                         <?php if($rally['finished']==1){ ?>
-                            <span class="label label-primary">Rally finished</span>
+                        <span class="label label-primary"><?= $this->translate('Rally finished'); ?></span>
                         <?php } ?>
 
                         <?php if($rally['big_awards']==1): ?>
-                            <img src="/images/b_letter_small.gif" alt="Big awards" title="Big awards" />
+                            <img src="/images/b_letter_small.gif" alt="<?= $this->translate('Big awards'); ?>" title="<?= $this->translate('Big awards'); ?>" />
                         <?php endif; ?>
 
                         <?php if((is_array($futureTeamRallies)&&in_array($rally['id'],$futureTeamRallies))||$rally['id']==$futureTeamRallies){

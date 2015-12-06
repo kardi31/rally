@@ -9,9 +9,9 @@ if(isset($_GET['msg'])){
 <div class="mainUserBox myCarsBox">
     <h4 class="boxHeader"><?= $this->translate('Free agency'); ?></h4>
     <div class="myPeople peopleList driverList col-md-12">
-        In this section you have a chance to hire a free agent driver or pilot. The level of acquired player is random. You can get league 1 driver for very low cost, but you can highly overpay league 5 driver.
+        <?= $this->translate('In this section you have a chance to hire a free agent driver or pilot. The level of acquired player is random. You can get league 1 driver for very low cost, but you can highly overpay league 5 driver.'); ?>
         <br />
-        This operation will cost you $<?= $freeAgencyPrice; ?>. 
+        <?= $this->translate('This operation will cost you');?> $<?= $freeAgencyPrice; ?>. 
         <br /><br />
         <div class="carCard carDealer mb20 clearfix pt20">
             <div class="col-md-12">

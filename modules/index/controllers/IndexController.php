@@ -41,6 +41,16 @@ class Index_Index extends Controller{
         $loginForm = $this->getForm('user','login');
         $this->view->assign('loginForm',$loginForm);
         
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            
+            $this->setDifView('index', 'manualpl');
+            $this->view->setHeadTitle('Poradnik - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Manual - FastRally');
+        }
+        
         $form = $this->getForm('user','forgotPassword');
         $this->view->assign('form',$form);
         if($form->isSubmit()){
@@ -108,6 +118,14 @@ class Index_Index extends Controller{
         
         $user = $userService->getAuthenticatedUser();
         
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            
+            $this->view->setHeadTitle('FastRally - Menedżer rajdów samochodowych');
+        }
+        else{
+            $this->view->setHeadTitle('FastRally - Online Rally Manager');
+        }
+        
         if($user)
             TK_Helper::redirect('/account/my-account');
 
@@ -130,6 +148,15 @@ class Index_Index extends Controller{
             $this->getLayout()->setLayout('page');
         }
         
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            
+            $this->setDifView('index', 'faq-pl');
+            
+            $this->view->setHeadTitle('Zasady - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Rules - FastRally');
+        }
     }
     public function faq(){
         $userService = parent::getService('user','user');
@@ -142,10 +169,41 @@ class Index_Index extends Controller{
             $this->getLayout()->setLayout('page');
         }
         
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            
+            $this->setDifView('index', 'faq-pl');
+            
+            $this->view->setHeadTitle('Najczęściej zadawane pytania - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Frequently Asked Questions - FastRally');
+        }
+        
     }
     
     public function privacyPolicy(){
         $this->getLayout()->setLayout('page');
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        if(!$user){
+            $this->getLayout()->setLayout('nolog');
+        }
+        else{
+            $this->getLayout()->setLayout('page');
+        }
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            
+            $this->setDifView('index', 'faq-pl');
+            
+            $this->view->setHeadTitle('Polityka prywatności - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Privacy Policy - FastRally');
+        }
         
     }
     public function support(){
@@ -183,6 +241,8 @@ class Index_Index extends Controller{
             }
         }
         
+        
+        $this->view->setHeadTitle('Support - FastRally');
         $this->getLayout()->setLayout('page');
         
     }
@@ -227,6 +287,8 @@ class Index_Index extends Controller{
                 $this->view->assign('users',$users);
             }
         }
+        
+            $this->view->setHeadTitle('Search users - FastRally');
     }
     
     public function setLang(){
@@ -275,6 +337,23 @@ class Index_Index extends Controller{
     public function manual(){
         $this->getLayout()->setLayout('page');
         
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            
+            $this->setDifView('index', 'manualpl');
+            $this->view->setHeadTitle('Poradnik - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Manual - FastRally');
+        }
+        
+        $userService = parent::getService('user','user');
+        $user = $userService->getAuthenticatedUser();
+        if(!$user){
+            $this->getLayout()->setLayout('nolog');
+        }
+        else{
+            $this->getLayout()->setLayout('page');
+        }
     }
     
     public function topWorldList(){
@@ -289,6 +368,13 @@ class Index_Index extends Controller{
         
         $this->view->assign('topList',$topList);
         
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            
+            $this->view->setHeadTitle('Ranking najlepszych menedżerów - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Best managers ranking - FastRally');
+        }
     }
     
 }

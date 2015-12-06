@@ -24,7 +24,10 @@ class Cron_Admin extends Controller{
      * 1. calculateWeeklyCosts - calculate and remove player salaries,car upkeep + add sponsor money
      */
     
+    protected $dom;
+    
     public function __construct(){
+        $this->dom = new DomDocument();
         parent::__construct();
     }
     
@@ -143,7 +146,7 @@ class Cron_Admin extends Controller{
         
         $leagues = $leagueService->getAllActiveLeagues();
         foreach($leagues as $league):
-            $league_name = floatval($league['league_name']);
+            $league_name = $league['league_name'];
             $rallyService->createRalliesForLeague($league_name,$seasonInfo['season_start']);
         endforeach;
         echo "create rallies for league good";
@@ -465,11 +468,7 @@ class Cron_Admin extends Controller{
     // do this every 15 min 
     
     public function calculateRallyResult(){
-<<<<<<< HEAD
-
-=======
        
->>>>>>> 13c86b6f3b257eac63503fa8d199967915472a2c
         ini_set('max_execution_time', 300);
         Service::loadModels('people', 'people');
         Service::loadModels('car', 'car');
@@ -574,7 +573,8 @@ class Cron_Admin extends Controller{
         endforeach;
         echo "pp";exit;
     }
-    
+    // start season on monday morning
+    // finish on monday morning
     public function startSeason(){
         ini_set('max_execution_time',300000);
         $rallyDataService = parent::getService('rally','rallyData');
@@ -626,6 +626,54 @@ class Cron_Admin extends Controller{
     }
    
     
+    // create sitemap
+    
+    public function createSitemap(){
+        header("Content-Type: text/plain");
+        $doc->preserveWhiteSpace = TRUE;
+        $this->dom->formatOutput = true;
+        
+        $urlset = $this->dom->createElement('urlset');
+        $urlset->setAttribute('xmlns','http://www.sitemaps.org/schemas/sitemap/0.9');
+        $urlset->setAttribute('xmlns:xsi','http://www.w3.org/2001/XMLSchema-instance');
+        $urlset->setAttribute('xsi:schemaLocation','http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd');
+        
+        
+        $this->addUrl($urlset,'http://fastrally.eu/');
+        $this->addUrl($urlset,'http://fastrally.eu/rules');
+        $this->addUrl($urlset,'http://fastrally.eu/privacy-policy');
+        $this->addUrl($urlset,'http://fastrally.eu/manual');
+        $this->addUrl($urlset,'http://fastrally.eu/faq');
+        $this->addUrl($urlset,'http://fastrally.eu/privacy-policy?lang=pl');
+        $this->addUrl($urlset,'http://fastrally.eu/manual?lang=pl');
+        $this->addUrl($urlset,'http://fastrally.eu/faq?lang=pl');
+        $this->addUrl($urlset,'http://fastrally.eu/?lang=pl');
+        
+        $teamService = $this->getService('team', 'team');
+        $rallyService = $this->getService('rally', 'rally');
+        $teams = $teamService->getAllTeams();
+        
+        foreach($teams as $team):
+            $this->addUrl($urlset,'http://fastrally.eu/team/show-team/'.$team['id']);
+        endforeach;
+        
+        
+        $this->dom->appendChild($urlset);
+        
+        $this->dom->save(BASE_PATH."/public_html/sitemap.xml");
+       
+        exit;
+    }
+    
+    protected function addUrl($urlset,$url){
+        $urlElem = $this->dom->createElement('url');
+        
+        $urlLoc = $this->dom->createElement('loc',$url);
+        
+        $urlElem->appendChild($urlLoc);
+        
+        $urlset->appendChild($urlElem);
+    }
     
 }
 ?>

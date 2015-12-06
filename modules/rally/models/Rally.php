@@ -39,7 +39,12 @@ class Rally_Model_Doctrine_Rally extends Rally_Model_Doctrine_BaseRally
     );
     
     public static function getRisks(){
-	return self::$risks;
+        $risks = self::$risks;
+        foreach(self::$risks as $key => $risk){
+            $risks[$key] = View::getInstance()->translate($risk);
+        }
+        
+	return $risks;
     }
     
     public static function getRiskValues(){
@@ -50,7 +55,12 @@ class Rally_Model_Doctrine_Rally extends Rally_Model_Doctrine_BaseRally
     // so the people won't find out how we calculate the results of the race
     // we use text value as both keys and values
     public static function getFormRisks(){
-	return self::$risks;
+        $risks = self::$risks;
+        foreach(self::$risks as $key => $risk){
+            $risks[$key] = View::getInstance()->translate($risk);
+        }
+        
+	return $risks;
     }
     
     public static function getAccidentRisks(){

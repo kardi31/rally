@@ -1,0 +1,35 @@
+<div class="mainUserBox">
+    <h4 class="boxHeader"><?= $this->translate('Finances - Instrukcja FastRally'); ?></h4>
+    <div class='staticWrapper'>
+        <div class='col-md-9'>
+            Na tej stronie widzisz wszystkie rajdy poza rajdami towarzyskimi (które znajdują się w sekcji 2.3).
+            Przy każdym rajdzie możesz zobaczyć następujące informacje: <br />
+            - nazwa rajdu<br />
+            - data rajdu <br />
+            - godzina startu rajdu <br />
+            - ilość zapisanych załóg <br />
+            - dodatkowe informacje o rajdzie <br /><br />
+            
+            Na drogach FastRally możesz ścigać się w różnych typach rajdów : <br />
+            <br />
+            1. Zwykły rajd - odbywa się od poniedziałku do soboty. <br /><br />
+            2. Rajd towarzyski - stworzony przez graczy dla graczy. <br /> Może być prywatny (<span class="label label-danger">Prywatny</span>)
+            - menedżerowie mogą dołączyć do niego tylko przez zaproszenie twórcy rajdu, albo  
+            publiczny (<span class="label label-success">Publiczny</span>) - otwarty do zapisu przez wszystkich. <br /><br />
+            3. Rajd ligowy (<span class="label label-warning">Liga</span>) - odbywa się w niedziele, każda liga ma swój własny rajd ligowy. 
+            Podczas tych rajdów drużyny ścigają się nie tylko o pieniądze za wygraną, ale także o punkty do tabeli ligowej. Każdy sezon składa się z 12 rajdów. 
+            Po sezonie najlepsze 2 drużyny awansują do wyższej ligi a ostatnie 6 zespołów spada do niższej ligi <br /><br />
+            4. Big rally <img src="/images/b_letter_small.gif" alt="Big awards" title="Big awards" /> - te rajdy odbywają się raz na dany okres czasu.
+            Gracze mają w nich szanse wygrać unikalne nagrody - niepowtarzalne samochody, oraz punkty premium.
+           <br /> <br />
+           W polu z dodatkowymi informacjami pojawią się także 2 inne flagi : <span class='label label-info'>Uczestniczysz</span> - który oznacza rajdy do których juz dołączyłeś, oraz
+           <span class="label label-primary">Rajd zakończony</span>, który pokazuje zakończone rajdy.
+           <br />
+           
+        </div>
+        <div class='col-md-3'>
+            <?php include(BASE_PATH."/modules/index/views/manual-pl/manual-menu.phtml"); ?>
+        </div>
+        <div class='clearfix'></div>
+    </div>
+</div>

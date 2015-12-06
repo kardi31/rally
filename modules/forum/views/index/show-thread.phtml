@@ -8,7 +8,7 @@
     
     <div class="boxHeader">
         <h4><?php echo $thread['title']; ?></h4>
-        <small><a href="/forum/show-forum">Forum</a> / <a href="/forum/show-category/<?php echo $thread['Category']['slug']; ?>"><?php echo $thread['Category']['name']; ?></a></small>
+        <small><a href="/forum/show-forum">Forum</a> / <a href="/forum/show-category/<?php echo $thread['Category']['slug']; ?>"><?php echo $this->translate($thread['Category']['name']); ?></a></small>
         
     </div> 
     <div class='staticWrapper showForum'>

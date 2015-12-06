@@ -7,8 +7,8 @@ class FreeAgent extends Form{
         $job->addClass('form-control');
         $job->addParam('required');
         $job->addMultiOptions(array(
-            'driver' => 'Choose a driver',
-            'pilot' => 'Choose a pilot'
+            'driver' => View::getInstance()->translate('Choose a driver'),
+            'pilot' => View::getInstance()->translate('Choose a pilot')
             
             ));
         

@@ -28,6 +28,14 @@ class Account_Index extends Controller{
         $this->view->assign('user',$user);
         $this->getLayout()->setLayout('layout');
         
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Moje konto - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('My account - FastRally');
+        }
+        
     }
     
     public function tactics(){
@@ -99,6 +107,15 @@ class Account_Index extends Controller{
         $trainingService = parent::getService('people','training');
         $results = $trainingService->getLastWeekTrainingResults($user['Team']['id']);
         $this->view->assign('results',$results);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            
+            $this->view->setHeadTitle('Raport z treningu - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Training report - FastRally');
+        }
     }
     
     public function myFinances(){
@@ -119,6 +136,14 @@ class Account_Index extends Controller{
         $this->view->assign('financialReportSimple',$financialReportSimple);
         $this->view->assign('financialReportSimpleLastWeek',$financialReportSimpleLastWeek);
         $this->view->assign('financialReportAdvanced',$financialReportAdvanced);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Moje finanse - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('My finances - FastRally');
+        }
         
         $this->getLayout()->setLayout('page');
     }
@@ -148,6 +173,10 @@ class Account_Index extends Controller{
         }
         $this->view->assign('user',$user);
         $this->view->assign('sponsors',$sponsors);
+        
+        
+            $this->view->setHeadTitle('Sponsor - FastRally');
+        
     }
     
     public function myPeople(){
@@ -167,6 +196,14 @@ class Account_Index extends Controller{
         
         $teamPeople = $peopleService->getTeamPeopleByRole($user['Team']['id'],Doctrine_Core::HYDRATE_ARRAY);
         $this->view->assign('teamPeople',$teamPeople);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Moi ludzie - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('My people - FastRally');
+        }
     }
     
     public function myCars(){
@@ -233,6 +270,14 @@ class Account_Index extends Controller{
 	
 	$this->view->assign('cars',$cars);
 	$this->view->assign('form',$form);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Garaż - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Garage - FastRally');
+        }
 //	$this->view->assign('formCar1',$formCar1);
     }
     
@@ -280,6 +325,7 @@ class Account_Index extends Controller{
 	$this->view->assign('rateRow',$rateRow);
         
 
+        $this->view->setHeadTitle('Premium - FastRally');
         
     }
     
@@ -314,17 +360,37 @@ class Account_Index extends Controller{
         }
 	
 	$this->view->assign('form',$form);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Pakiet Gold - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Gold Membership - FastRally');
+        }
     }
     
     
     public function manual(){
         $this->getLayout()->setLayout('page');
         
+        
         $subpage = $GLOBALS['urlParams'][1];
-        if(!file_exists(BASE_PATH."/modules/index/views/manual/".$subpage.".phtml")){
-            throw new TK_Exception('Page not exists',404);
-            exit;
+        if(!isset($_COOKIE['lang'])||$_COOKIE['lang']=='gb'){
+            if(!file_exists(BASE_PATH."/modules/index/views/manual/".$subpage.".phtml")){
+                throw new TK_Exception('Page not exists',404);
+                exit;
+            }
         }
+        else{
+            if(!file_exists(BASE_PATH."/modules/index/views/manual-pl/".$subpage.".phtml")){
+                throw new TK_Exception('Page not exists',404);
+                exit;
+            }
+        }
+        $title = TK_Text::unslug($subpage);
+        
+        $this->view->setHeadTitle($title." - Manual - FastRally");
         
         $this->view->assign('subpage',$subpage);
     }

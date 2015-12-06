@@ -250,3 +250,64 @@ Stack trace:
 #0 C:\xampp\htdocs\ral\library\Doctrine\Connection.php(1025): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Mysql), 'SELECT c.id AS ...')
 #1 C:\xampp\htdocs\ral\library\ in C:\xampp\htdocs\ral\library\Doctrine\Connection.php on line 1082
 [16-Nov-2015 09:11:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[21-Nov-2015 15:26:30 Europe/Berlin] PHP Fatal error:  Class 'Set-lang_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[21-Nov-2015 15:26:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[21-Nov-2015 15:26:35 Europe/Berlin] PHP Notice:  Undefined index: HTTP_REFERER in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 241
+[21-Nov-2015 15:26:36 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[21-Nov-2015 15:26:37 Europe/Berlin] PHP Fatal error:  Class 'Set-lang_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[21-Nov-2015 15:26:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[24-Nov-2015 09:15:42 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[24-Nov-2015 09:16:08 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[24-Nov-2015 09:16:13 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[24-Nov-2015 09:17:59 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[24-Nov-2015 09:18:30 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[24-Nov-2015 09:19:37 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[05-Dec-2015 19:30:23 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:30:46 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:30:52 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:31:11 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:32:32 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:32:33 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:32:34 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:32:34 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:32:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:32:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:32:45 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:33:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:33:28 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:33:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:35:17 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:35:18 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:35:34 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:35:35 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:35:35 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:36:43 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:36:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:36:59 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:37:00 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:38:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:39:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:40:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:41:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:41:52 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:42:10 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:42:19 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:42:51 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 19:43:02 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 20:06:03 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[05-Dec-2015 20:07:05 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 20:12:28 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::lang() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 20:12:28 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 20:16:25 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 20:16:25 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 20:17:16 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 20:17:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 20:17:35 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 20:17:35 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 20:18:27 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[05-Dec-2015 20:42:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 20:42:29 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[05-Dec-2015 20:43:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 45
+[06-Dec-2015 17:18:15 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 54
+[06-Dec-2015 17:18:16 Europe/Berlin] PHP Notice:  Undefined index: error-codes in C:\xampp\htdocs\ral\library\TK\Form\Recaptcha.php on line 59
+[06-Dec-2015 17:18:19 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public_html\index.php on line 28
