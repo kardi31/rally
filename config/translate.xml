@@ -744,26 +744,14 @@
     <word id="user">
         <pl>gracz</pl>
     </word>
-    <word id="Buy">
-        <pl>Kup pakiet</pl>
-    </word>
-    <word id="Buy package">
-        <pl>Kup pakiet</pl>
-    </word>
-    <word id="Manual">
-        <pl>Instrukcja</pl>
-    </word>
-    <word id="Package">
-        <pl> </pl>
-    </word>
     <word id="Joining friendly rally">
         <pl>Dołączanie do rajdów towarzyskich</pl>
     </word>
     <word id="Creating friendly rally">
         <pl>Tworzenie rajdów towarzyskich</pl>
     </word>
-    <word id="3 rallies every month for free. Every next costs 5">
-        <pl>3 rajdy każdego miesiąca za darmo. Każdy następny kosztuje 5</pl>
+    <word id="2 rallies every month for free. Every next costs 5">
+        <pl>2 rajdy każdego miesiąca za darmo. Każdy następny kosztuje 5</pl>
     </word>
     <word id="Invite your friends and check who is the fastest or create a public rally and challenge random players.">
         <pl>Stwórz prywatny rajd,zaproś znajomych i sprawdź kto z was jest najszybszy. Stwórz publiczny rajd i zmierz się z zawodnikami z całego świata.</pl>
@@ -953,5 +941,67 @@
     </word>
     <word id="Buy premium">
         <pl>Kup punkty premium</pl>
+    </word>
+    <word id="Edit details">
+        <pl>Edytuj dane</pl>
+    </word>
+    <word id="Change password">
+        <pl>Zmień hasło</pl>
+    </word>
+    <word id="Change email">
+        <pl>Zmień adres email</pl>
+    </word>
+    
+    <word id="Delete account">
+        <pl>Usuń konto</pl>
+    </word>
+    <word id="First name">
+        <pl>Imię</pl>
+    </word>
+    <word id="Last name">
+        <pl>Nazwisko</pl>
+    </word>
+    <word id="Hide my details">
+        <pl>Ukryj moje dane</pl>
+    </word>
+    <word id="You are allowed to use country of your residence or origin.">
+        <pl>Możesz użyć swojego kraju pochodzenia bądź zamieszkania.</pl>
+    </word>
+    <word id="In case of any doubt FastRally Team may request proofs or your residence or origin.">
+        <pl>W razie wątpliwości zespół FastRally może poprosić o dowody.</pl>
+    </word>
+    <word id="Bear in mind that">
+        <pl>Pamiętaj, że</pl>
+    </word>
+    <word id="you are not allowed to use false country.">
+        <pl>nie wolno używać fikcyjnego kraju.</pl>
+    </word>
+    <word id="to climb up the ranking.">
+        <pl>aby awansować w rankingu narodowym.</pl>
+    </word>
+
+    <word id="You are not allowed to change country. If you chose your country by mistake, contact support@fastrally.eu">
+        <pl>Nie możesz zmieniać swojego kraju. Jeżeli pomylisz się wybierając kraj, napisz na support@fastrally.eu</pl>
+    </word>
+    <word id="Type in your old password">
+        <pl>Podaj stare hasło</pl>
+    </word>
+    <word id="Repeat new password">
+        <pl>Powtórz nowe hasło</pl>
+    </word>
+    <word id="New password">
+        <pl>Nowe hasło</pl>
+    </word>
+    <word id="Change details">
+        <pl>Zmień dane</pl>
+    </word>
+    <word id="Current email address">
+        <pl>Obecny adres email</pl>
+    </word>
+    <word id="Repeat new email address">
+        <pl>Powtórz adres email</pl>
+    </word>
+    <word id="New email address">
+        <pl>Nowy adres email</pl>
     </word>
 </root>

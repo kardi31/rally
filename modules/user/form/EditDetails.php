@@ -12,7 +12,7 @@ class EditDetails extends Form{
         $country->addMultiOptions(TK_Helper::getCountries());
         $submit = $this->createElement('submit','submit');
         $submit->addClass('btn myBtn');
-        $submit->setLabel('Change details');
+        $submit->setLabel(View::getInstance()->translate('Change details'));
     }
 }
 

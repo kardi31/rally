@@ -238,7 +238,7 @@ label[for="rememberMe"],.topToolbarBottom a{
 */
 
 .mainContent{
-    background:url('/images/layout/car_background.jpg');
+    background:url('/images/layout/car_background3.jpg');
     background-size:100% 100%;
     display:block;
     min-height:730px;
@@ -374,7 +374,7 @@ footer{
 
 .mainContent.mainUserContent{
     border-radius:0px;
-    background:url('/images/layout/ground_background.jpg') repeat-y;
+    background:url('/images/layout/ground_background3.jpg') repeat-y;
     /*background-size:100;*/
 }
 
@@ -717,6 +717,8 @@ footer{
 .myAccountBtns a{
     padding:10px 5px;
     border:1px solid #212121;
+    box-shadow: 2px 2px#212121;
+    margin-right: 15px;
 }
 
 .myAccountBtns a:hover{
@@ -1314,8 +1316,8 @@ footer{
     }
     
     .showcase td{
-        width:60px;
-        height:60px;
+        width:70px;
+        height:70px;
         background:#4d4d4d;
         border:10px solid #959595;
         border-collapse: collapse;
@@ -1325,6 +1327,8 @@ footer{
     }
     .showcase td.light{
         background:url('/images/layout/light.png');
+        background-repeat: no-repeat;
+        background-position: bottom center;
     }
     .showcase div:nth-of-type(1),.showcase div:nth-of-type(2),.showcase div:nth-of-type(3),.showcase div:nth-of-type(4){
         border-bottom:0px;

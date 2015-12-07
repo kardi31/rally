@@ -40,10 +40,10 @@
                 </div>
             </div>
             <div>
-                You are allowed to use country of your residence or origin. <br />Bear in mind that <strong> you are not allowed to use false country </strong> to climb up the ranking. <br />
-                In case of any doubt FastRally Team may request proofs or your residence or origin. <br />
+                <?php echo $this->translate('You are allowed to use country of your residence or origin.');?> <br /><?php echo $this->translate('Bear in mind that');?><strong> <?php echo $this->translate('you are not allowed to use false country.');?></strong> <?php echo $this->translate('to climb up the ranking.');?> <br />
+                <?php echo $this->translate('In case of any doubt FastRally Team may request proofs or your residence or origin.');?> <br />
                 <br />
-                You are not allowed to change country. If you chose your country by mistake, contact support@fastrally.eu . <br /><br />
+                <?php echo $this->translate('You are not allowed to change country. If you chose your country by mistake, contact support@fastrally.eu');?> <br /><br />
             </div>
                     <?php echo $form->getElement('submit')->renderElement(); ?>
         </form>

@@ -3,17 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/ral/public/css/custom.css</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/my-account.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/edit-details.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/ChangeEmail.php</file>
             <file>file:/C:/xampp/htdocs/ral/config/translate.xml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/gold-membership.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/manual.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/manual.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/account/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/manualpl.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/views/manual/manual-menu.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/views/manual-pl/car-dealer.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/views/manual-pl/manual-menu.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/views/manual-pl/homepage.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/change-password.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/ChangePassword.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/form/EditDetails.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/change-email.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-people.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-account.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-cars.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/views/index/show-team.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Text.php</file>
         </group>
     </open-files>
 </project-private>

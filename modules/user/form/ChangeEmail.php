@@ -18,7 +18,7 @@ class ChangeEmail extends Form{
         $oldEmail->addParam('value','');
         $submit = $this->createElement('submit','submit');
         $submit->addClass('btn myBtn');
-        $submit->setLabel('Change email');
+        $submit->setLabel(View::getInstance()->translate('Change email'));
     }
 }
 

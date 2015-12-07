@@ -18,7 +18,7 @@ class ChangePassword extends Form{
        
         $submit = $this->createElement('submit','submit',array(),'Submit');
         $submit->addClass('btn myBtn');
-        $submit->setLabel('Change password');
+        $submit->setLabel(View::getInstance()->translate('Change password'));
     }
 }
 

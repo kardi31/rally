@@ -462,3 +462,33 @@ Stack trace:
 [20-Nov-2015 17:59:59 Europe/Berlin] PHP Fatal error:  Uncaught TK_Exception: [404]: Page not exists
 
   thrown in C:\xampp\htdocs\ral\modules\account\controllers\IndexController.php on line 332
+[23-Nov-2015 12:57:03 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Change password already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 952 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 12:57:04 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Change password already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 952 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 12:57:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[23-Nov-2015 13:05:15 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Bear in mind already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 979 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:05:16 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Bear in mind already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 979 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:05:16 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[23-Nov-2015 13:22:06 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Current email address already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 1001 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:22:06 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Current email address already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 1004 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:22:06 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Current email address already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 1007 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:22:07 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Current email address already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 1001 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:22:07 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Current email address already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 1004 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:22:07 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Current email address already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 1007 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:22:07 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[23-Nov-2015 13:23:04 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Current email address already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 1007 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:23:05 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Current email address already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 1007 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:23:05 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[23-Nov-2015 13:23:09 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Current email address already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 1007 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:23:09 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Current email address already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 1007 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:23:09 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[23-Nov-2015 13:23:10 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Current email address already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 1007 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:23:10 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[23-Nov-2015 13:23:12 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Current email address already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 1007 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:23:12 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[23-Nov-2015 13:23:12 Europe/Berlin] PHP Warning:  DOMDocument::load(): ID Current email address already defined in file:///C:/xampp/htdocs/ral/public/..//config/translate.xml, line: 1007 in C:\xampp\htdocs\ral\library\TK\View.php on line 16
+[23-Nov-2015 13:23:12 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[23-Nov-2015 13:29:14 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[23-Nov-2015 13:46:25 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[23-Nov-2015 15:26:38 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[23-Nov-2015 15:26:40 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[23-Nov-2015 17:39:25 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
