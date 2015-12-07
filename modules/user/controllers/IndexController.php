@@ -89,6 +89,14 @@ class User_Index extends Controller{
             }
         }
         $this->view->assign('form',$form);
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Rejestracja - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Register - FastRally');
+        }
     }
     
     public function activate(){
@@ -267,6 +275,12 @@ class User_Index extends Controller{
         
         $this->view->assign('form',$form);
         
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Aktywuj konto - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Activate account - FastRally');
+        }
     }
     
     public function logout(){
@@ -336,6 +350,7 @@ class User_Index extends Controller{
         $notificationService->addNotification('You have been invited to friend list by '.$user['username'],2,$id,$invite['id']);
         
         TK_Helper::redirect($_SERVER['HTTP_REFERER']);
+        
     }
     
     
@@ -484,6 +499,15 @@ class User_Index extends Controller{
         }
         $this->view->assign('userAcceptedInvites',$userAcceptedInvites);
         $this->view->assign('userInvites',$userInvites);
+        
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Zaproś znajomego - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Invite friend - FastRally');
+        }
     }
     
     public function mailTemplate(){
@@ -569,6 +593,15 @@ class User_Index extends Controller{
 	$this->view->assign('user',$user);
 	$this->view->assign('messages',$messages);
 	$this->view->assign('form',$form);
+        
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Lista wiadomości - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Message box - FastRally');
+        }
     }
     
     public function myAccount(){
@@ -624,6 +657,15 @@ class User_Index extends Controller{
         }
         
         $this->getLayout()->setLayout('page');
+        
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Zmień hasło - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Change password - FastRally');
+        }
     }
     
     public function changeEmail(){
@@ -680,6 +722,15 @@ class User_Index extends Controller{
         }
         
         $this->getLayout()->setLayout('page');
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Zmień email - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Change email - FastRally');
+        }
+        
     }
     
     public function editDetails(){
@@ -717,6 +768,15 @@ class User_Index extends Controller{
         }
         
         $this->getLayout()->setLayout('page');
+        
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Zmień dane - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Change details - FastRally');
+        }
     }
 }
 ?>

@@ -1,0 +1,2149 @@
+  /*
+  
+@green #5cb85c
+@red #d9534f
+@blue #5bc0de
+  
+    0. Global elements
+    1. Main Page
+     1.1 Header
+     1.2 Content
+     1.3 Footer
+   2. Main user page
+    2.1 Header
+    2.2 Menu
+    2.3 User box
+    2.4 Calendar box
+    2.5 Reklama 1 
+    2.6 Forum box
+    2.7 Last newses
+    2.8 Transfer box
+    2.9 Gold box
+    2.10 Notification box
+    2.11 User message box
+    2.12 My account
+  3. Office
+    3.1 My cars page + Sell
+    3.2 Sponsor
+    3.3 Show rally
+    3.4 Rally result
+    3.5 My finances
+    3.6 My people
+    3.7 My team
+    3.8 User message
+  4. Rallies
+    4.1 List rally
+    4.2 Friendly rallies
+    4.3 Show friendly
+    4.4 LEague table
+  5. Market
+    5.1 People market
+    5.2 Car market
+    5.3 Car dealer
+  6. Community
+    6.1 Show forum
+    6.2 Show category
+    6.3 Show thread
+    6.4 Search users
+    6.5 Top ranking list
+  7. Premium
+    7.1 My premium
+    7.2 Gold membership
+    7.3 Invite to game
+  8. Static pages
+*/
+/*
+0. Global elements
+
+*/
+
+.gwEmpty{
+    opacity:0.4;
+}
+
+.lightgreen{
+    background: #5cb85c;
+}
+
+.lightred{
+    background: #d9534f;
+}
+
+tr.lightgreen{
+    background: #5cb85c;
+}
+
+tr.lightred td{
+    background: #d9534f;
+}
+.btn:hover{
+    outline:none;
+}
+
+a:hover{
+    color:#f3f3f3;
+}
+.btn{
+    font-family: 'Lato' !important;
+}
+input.textInput.textInput2{
+}
+input.textInput{
+    background:#a1a1a1;
+    border:0px;
+    color:#000;
+    padding:2px;
+    font-size:18px;
+    text-align:left;
+    padding-left:10px;
+    width:130px;
+}
+input.textInput:focus::-webkit-input-placeholder 
+{
+    color: transparent;
+}
+input.textInput::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #000;
+}
+input.textInput:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #000;
+   opacity:  1;
+}
+input.textInput::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #000;
+   opacity:  1;
+}
+input.textInput:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #000;
+}
+a,a:hover,a:focus{
+    color:#f3f3f3;
+}
+
+select:disabled{
+    cursor: not-allowed;
+}
+
+table tr td{
+    font-size:14px;
+}
+
+.modal{
+    color:#000;
+}
+
+    .flagSelect{
+        float:right;
+    }
+    .flagSelect ul{
+        padding:0px;
+        list-style-type:none;
+        margin-bottom:0px;
+    }
+    .flagSelect li{
+        display:none;
+        margin-bottom:5px;
+    }
+    .flagSelect li img{
+        margin-right:5px;
+    }
+    .flagSelect li.selected{
+        display:inline-block;
+    }
+    .flagSelect li:not(.selected){
+        position:absolute;
+    }
+    .flagSelect li.selected img{
+        margin-top:5px;
+    }
+    .flagSelect li:not(.selected){
+        position:absolute;
+    }
+    .flagSelect a,.flagSelect a:active,.flagSelect a:focus,.flagSelect a:hover{
+        text-decoration:none;
+    }
+    .bold{
+        font-weight:bold;
+    }
+
+/*
+1.1 MAIN HEADER
+*/
+
+
+html,body{
+    background:#333;
+    padding:0px;
+    margin:0px;
+    /*background:#333;*/
+}
+body{
+    font-family: 'Lato';
+    color:#f3f3f3;
+}
+header{
+     background: #333;
+    display:block;
+    min-height:110px;
+}
+.mainContainer{
+    width:1024px;
+    margin:0 auto;
+}
+.g-recaptcha{
+    margin-top:10px;
+}
+.logo{
+    margin-top:28px;
+    margin-left:40px;
+    float:left;
+}
+.topToolbar{
+    float:right;
+    margin-right:40px;
+    margin-top:28px;
+}
+.logIn{
+    background: #00a651;
+    border-radius:0px;
+    color:#fff;
+    font-size:18px;
+    width:120px;
+    padding: 0px 10px;
+    margin-top: -4px;
+}
+
+#rememberMe{
+    margin-top: 0px;
+    vertical-align: middle;
+}
+label[for="rememberMe"],.topToolbarBottom a{
+    font-weight:normal;
+    font-size:12px;
+}
+.topToolbarBottom a{
+    margin-left:70px;
+    font-size:12px;
+}
+.flagSelect,.topToolbar button,.topToolbar input[type="text"]:not(:first-of-type){
+    margin-left:20px;
+}
+    
+.topToolbarBottom{
+    /*margin-top:8px;*/
+}
+
+/*
+1.2 MAIN PAGE CONTENT
+*/
+
+.mainContent{
+    background:url('/images/layout/car_background.jpg');
+    background-size:100% 100%;
+    display:block;
+    min-height:730px;
+    padding-bottom:50px;
+    /*border-radius:20px;*/
+}
+.mainPageBox{
+    background:rgba(34, 33, 33, 0.85);
+    margin-top:22px;
+    padding:40px 42px;
+}
+.mainPageBox h2{
+    margin-top:0px;
+    text-align:center;
+    font-size:24px;
+    margin-bottom:40px;
+}
+.leftMainPageBox img{
+    width: 300px;
+  margin-top: 20px;
+  margin-bottom:20px;
+}
+.leftMainPageBox ul{
+    margin-top:15px;
+}
+.leftMainPageBox{
+    margin-left:40px;
+}
+.rightMainPageBox{
+    margin-right:40px;
+}
+.rightMainPageBox label{
+    max-width:220px;
+    margin-top:15px;
+    display:block;
+}
+.rightMainPageBox label:first-of-type{
+    margin-top:0px;
+}
+.rightMainPageBox input:not([type="checkbox"]){
+    display:block;
+    width:220px;
+    margin-bottom:5px;
+}
+.rightMainPageBox .acceptRules #acceptRules{
+    margin:0px;
+    vertical-align:middle;
+}
+.rightMainPageBox .acceptRules label{
+    display:inline;
+}
+.rightMainPageBox .acceptRules{
+    margin-bottom:20px;
+    display:block;
+}
+
+.rightMainPageBox button{
+    margin:0 auto;
+    display:block;
+      width: auto;
+  padding: 5px 35px;
+}
+
+/* 
+1.3 Footer
+*/
+
+footer{
+    background:#333;
+    padding:23px 100px;
+    
+}
+.copyright{
+    color:#919090;
+    float:left;
+}
+.footerMenu{
+    float:right;
+}
+
+.footerMenu ul{
+    display:inline;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.footerMenu ul li{
+    display:inline-block;
+}
+
+.footerMenu ul li a{
+    display:block;
+    padding:0px 5px;
+}
+
+
+.footerMenu .social_icon_link{
+    width:19px;
+    height:19px;
+    text-align:center;
+    display: inline-block;
+    margin-top:-5px;
+}
+
+.footerMenu .social_icon_link i{
+    width:15px;
+    height:15px;
+    text-align:center;
+}
+
+.footerMenu a.fb{
+    background:#3b5998;
+    margin-right:7px;
+    margin-left:25px;
+}
+
+.footerMenu a.twitter{
+    background:#00aced;
+}
+
+/*  
+    2.1 Header
+*/
+
+.userLogin{
+    font-size:18px;
+}
+
+.userLogin img.userImg{
+    margin-right:10px;
+}
+
+.mainContent.mainUserContent{
+    border-radius:0px;
+    background:url('/images/layout/ground_background.jpg') repeat-y;
+    /*background-size:100;*/
+}
+
+.logOutBox{
+    display:block;
+    font-size:12px;
+    margin-left:50px;  
+    float: right;
+    clear: right;
+    text-align:right;
+}
+.myAccount,.logOut{
+    /*display:block;*/
+    font-size:12px;
+    margin-right:15px;
+    /*margin-left:50px;*/  
+    /*float: right;*/
+}
+
+/* 
+    2.2 Menu
+*/
+
+#tMenu{display:table;margin:0;padding:0;list-style:none;}
+#tMenu li{display:table-cell;background-color:#322f32;margin:0;list-style:none;border-right:3px solid #242424;}
+#tMenu li a{
+    padding: 10px 28px;
+  display: block;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+#tMenu li a:hover{background-color:#3a3a3a; text-decoration:none;color:#FFCC00;}
+#tMenu li:hover>a{background-color:#3a3a3a}
+#tMenu li ul{display:none;position:absolute;z-index:9999;padding:0;margin:0;list-style:none;width:160px !important; 
+}
+/*#tMenu li:first-of-type ul{display:block !important;}*/
+#tMenu li ul li{background-color:#f3f3f3;display:block;max-width:200px;border-bottom:1px solid #484548;padding:0px;list-style:none;position:relative;vertical-align: top;}
+#tMenu li ul li a{font-size:11px;color:#322f32;text-transform:none;display:block;padding:7px 17px;border-top:1px solid transparent;border-bottom:1px solid transparent;font-size:14px;}
+#tMenu li ul li a.isParent{background-color:#3a3a3a}
+#tMenu li ul li a:hover{background-color:#514c52;border-top:1px solid #322f32;border-bottom:1px solid #322f32}
+#tMenu{
+    border-left:2px solid #8e8e8e;
+    box-shadow: 0px -10px 10px -8px #4f4f4f;
+    margin:0 auto;
+    border-bottom: 3px solid #0d0d0d;
+    border-right: 3px solid #0d0d0d;
+}
+#menu{
+    margin-bottom: 45px;
+}
+#menu:after{
+    clear:both;
+    display:block;
+    content: " ";
+}
+
+/*
+    2.3 User box 
+*/
+
+.mainUserBox{
+    background:#504f4f;
+    padding-left:0px;
+    padding-bottom:5px;
+    margin-bottom:25px;
+    position:relative;
+    
+}
+
+.boxFriends{
+    height:195px;
+}
+.subboxFriends{
+    height:120px;
+    overflow-y:scroll;
+    padding-left:20px;
+}
+.boxFriends li{
+    margin-bottom:10px;
+}
+.boxFriends li img{
+    margin-left:7px;
+    margin-top:-1px;
+    /*margin-right:7px;*/
+}
+.boxFriends li.active i{
+    /*background: green;*/
+}
+.boxFriends ul{
+    list-style:none;
+    padding-left:0px;
+}
+.boxFriends li i{
+    color: #aeaeae;
+    margin-left:7px;
+}
+
+.mainUserBox h4.boxHeader{
+    background:#212121;
+    font-size:25px;
+    line-height:25px;
+    padding:15px 20px;
+    margin-top:0px;
+}
+
+/* 
+    2.4 Calendar box
+*/
+
+.boxCalendar{
+    position:relative;
+    /*height:200px;*/
+    background:none;
+}
+
+.boxCalendar h4{
+    margin-bottom:0px;
+}
+
+/*
+2.5 Reklama 1 
+*/
+
+.reklama1{
+    margin-bottom:25px;
+}
+
+/*
+2.6 Box forum
+*/
+
+.boxForum ul{
+    padding-left:0px;
+    list-style-type:none;
+}
+
+.boxForum li{
+    margin-left:10px;
+    margin-bottom:10px;
+}
+
+.boxForum li span{
+    margin-left:2px;
+    display:block;
+    line-height:22px;
+}
+
+.boxForum li span i{
+    margin-right:10px;
+}
+
+/*
+   2.7 Last newses
+*/
+
+.lastNewses{
+    background:#504f4f;
+}
+
+.newsItem{
+    padding:10px;
+    margin-bottom:20px;
+}
+
+.newsTitle{
+    margin-bottom:10px;
+    font-size:16px;
+}
+
+.newsDate{
+    font-size:12px;
+    line-height:16px;
+    float:right;
+}
+
+/* 
+    2.8 Transfer box 
+*/
+
+.boxTransfer{
+    background:#222;
+    padding-bottom:10px;
+}
+
+.boxTransfer h4{
+    margin-bottom:0px;
+}
+
+.boxTransfer i{
+    margin-right:10px;
+}
+
+.boxTransfer i.fa-clock-o{
+    margin-right:13px;
+}
+
+.transferTeam{
+    display:inline-block;
+    font-style:italic;
+}
+
+.boxTransfer a{
+    font-weight: bold;
+    display:block;
+    /*padding-left:25px;*/
+}
+
+.myBtn{
+      background: #00a651;
+  border-radius: 0px;
+  color: #fff;
+  font-size: 18px;
+    margin:0 auto;
+    width: auto;
+    display:inline-block;
+  height: auto;
+  text-align:center;
+  padding:5px !important;
+  white-space: normal;
+    
+}
+
+.seeAllTransfer{
+    margin:0 auto;
+      width: auto;
+  height: auto;
+  max-width:120px;
+  text-align:center;
+  padding:5px !important;
+  white-space: normal;
+}
+
+.boxTransfer .item{
+    margin-bottom:15px;
+    background:#504f4f;
+    padding:5px;
+    padding-left:15px;
+}
+
+/*.boxTransfer .item:nth-of-type(3){
+    margin-bottom:10px;
+}*/
+
+/*
+    2.9 Gold overlay
+*/
+.goldOverlay{
+    position:absolute;
+    top:0px;
+    left:0px;
+    opacity:0.7;
+    width:100%;
+    height:100%;
+    background:#000;
+}
+
+.goldOverlay a{
+    float:right;
+    margin-right:10px;
+    margin-top:10px;
+}
+
+.goldOverlay a img{
+    height:30px;
+    opacity:1;
+}
+
+/*
+    2.10 Notification box
+*/
+.boxNotification{
+    max-height:250px;
+}
+.boxNotificationInner{
+    overflow-y: auto;
+    padding:20px;
+    padding-top:0px;
+    max-height:175px;
+}
+.boxNotificationInner div{
+    border-bottom: 1px solid #E3E3E3;
+    padding-bottom:5px;
+    padding-top:5px;
+}
+.boxNotificationInner div:last-of-type{
+    border:0px;
+}
+.boxNotificationInner div span{
+    font-size:11px;
+    display:block;
+}
+.boxNotificationInner div:after{
+    display:block;
+    clear:both;
+    content:" ";
+}
+
+/*
+    2.11 User message box
+*/
+
+.messageBoxContent{
+    max-width:550px;
+    word-wrap: break-word;
+}
+
+/*
+    2.12 User account
+
+*/
+
+.myAccountBtns a{
+    padding:10px 5px;
+    border:1px solid #212121;
+}
+
+.myAccountBtns a:hover{
+    color:#868686;
+}
+
+/*
+    3.1 My cars + sell
+*/
+
+
+.carCard{
+        /*border-radius:6px;*/
+        /*border:6px solid #fff;*/
+        /*background:#cad3e4;*/
+        /*margin-bottom:20px;*/
+        /*color:#7774a9;*/
+        position:relative;
+    }
+    
+/*    .carCard strong{
+        display:block;
+        background:#f4e973;
+        padding-top:10px;
+        padding-left:20px;
+        font-size:18px;
+        padding-bottom:10px;
+    }*/
+    
+    .carCardPhoto{
+        height:220px;
+        width:340px;
+        float:right;
+        margin-bottom:25px;
+    }
+    
+    .carCard table{
+       width:95%;
+    }
+    
+    .carCard table td{
+        
+        /*color:#7774a9;*/
+        padding:5px 20px;
+    }
+    
+    .carParameters{
+        
+    }
+    
+    .btn2{
+        border:3px solid #504f4f;
+        padding:5px 10px;
+        display:block;
+    }
+    
+    .carBtn a.scrapCar{
+        margin-left:15px;
+        display: inline-block;
+        text-align: center;
+        margin-top:20px;
+    }
+    
+    .carParametersWrapper{
+        clear:right;
+        float:right;
+    }
+    
+    .carSlider li{
+        height:330px;
+    }
+    
+    .carCard ul{
+        padding-left:25px;
+        margin-top:10px;
+        margin-bottom:20px;
+    }
+    .marketTeamName{
+        margin-top:10px;
+    }
+    .carBtn{
+        margin-top:30px;
+        margin-bottom:10px;
+        text-align:left;
+    }
+    .carBtn a{
+        display:inline-block;
+        margin:0px 10px;
+    }
+    .pr0{
+        padding-right:0px;
+    }
+    .pl0{
+        padding-left:0px;
+    }
+    
+    .pt20{
+        padding-top:20px;
+    }
+    
+     #sellCar label,#sellPlayer label{
+        width:200px;
+        float:left;
+        margin-bottom:20px;
+    }
+    #sellCar input,#sellPlayer input{
+        width:150px;
+    }
+    #sellCar select,#sellPlayer select{
+        width:150px;
+    }
+    #sellCar label:before,#sellPlayer label:before{
+        clear:both;
+        display:block;
+        content: " ";
+    }
+    #sellCar .formSubmitWrapper,#sellPlayer .formSubmitWrapper{
+        float:left;
+    }
+    
+    .notifyInfo{
+        color:#333;
+    }
+    
+    .notifyInfo2{
+        color:#f3f3f3;
+    }
+    
+    
+/*
+    3.2. Sponsor list
+*/
+
+.sponsor{
+    border:1px solid #504f4f;
+    position:relative;
+    border-radius:6px;
+    cursor: pointer;
+    height:250px;
+    background: #504f4f;
+    margin-bottom:20px;
+}
+
+.sponsor.active{
+    background:#cad3e4;
+    color:black;
+}
+
+.sponsor img{
+    width:180px;
+    margin-bottom:20px;
+}
+
+.sponsor h5{
+    font-size:24px;
+    /*text-align:center;*/
+    padding:10px 0px;
+    padding-left:20px;
+}
+
+.sponsor div span{
+    margin-left:15px;
+    display:block;
+}
+
+.sponsorListInfo{
+    padding-left:20px;
+    margin-bottom:20px;
+}
+
+/* 
+3.3 show rally
+*/
+
+.rallyStages{
+        padding-left:0px;
+        list-style:none;
+        column-count: 3;
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+    }
+    .RallyStages li{
+        display: inline-block;
+    }
+    .rallyList table td .label{
+        margin: 0 auto;
+        display: block;
+    }
+    .rallyList table td .label:not(:first-of-type){
+        margin-top: 5px;
+    }
+    .rallyList tr td:first-of-type{
+        padding-left:10px;
+    }
+    .rallyList tbody tr:nth-child(even) td{
+        background:#868686;
+    }
+    .rallyList tbody tr:nth-child(odd) td{
+        background:#686868;
+    }
+    .rallyList .table{
+        width:auto;
+    }
+    .rallyList .finished,.rallyList .finished a:not(.label){
+        color:#999;
+    }
+    .showRallyBox{
+        width:80%;
+        margin-top:0px;
+        float:left;
+    }
+    .showRallyBox table.rallyStages{
+        width:100%;
+    }
+    .showRallyBox table.rallyStages td{
+        /*width:50%;*/
+        padding:5px;
+        background:#868686;
+    }
+    
+    .showRallyBox > div.rallyInfo{
+        background:#686868;
+        padding:10px;
+        
+    }
+    div.rallyInfo table td{
+        width:50%;
+    }
+    div.rallyInfo table{
+        width:100%;
+    }
+    .rallyButtons{
+        width:20%;
+        float:right;
+    }
+    
+    .rallyButtons ul{
+        padding-left:0px;
+        list-style:none;
+        
+    }
+    .priceCar{
+        height:200px;
+    }
+   
+    table.rallyCrews{
+        width:100%;
+        background:#868686;
+    }
+    
+    table.rallyCrews td{
+        padding:5px 10px;
+    }
+    
+    table.rallyCrews thead td{
+        background:#504f4f;
+    }
+    
+    .showAccordion a:hover,.showAccordion a:visited{
+        color:#f3f3f3;
+    }
+    .rallyButtons a{
+        display:block;
+        padding:10px 10px;
+        background:url('/images/layout/menu-bg.png');
+        padding-left:35px;
+        background-size:100% 100%;
+    }
+    
+    .rallyButtons a.active{
+        background:url('/images/layout/menu-bg-active.png');
+        background-size:100%;
+        border-left:2px solid white;
+        color:#fff;
+    }
+    
+    .showRallyBox{
+        padding:20px;
+        position: relative;
+        display:none;
+    }
+    
+    .showRallyBox.active{
+        display:block;
+    }
+    .showRallyWrapper{
+        background:none;
+    }
+    
+    .showRallyWrapper h4{
+        margin-bottom:0px;
+    }
+    
+    .showRallyWrapper h3{
+        margin-top:0px;
+        margin-bottom:20px;
+    }
+    .stageList{
+        background:#686868;
+    }
+    .stageListInfo div{
+        padding-top:5px;
+        padding-bottom: 5px;
+    }
+    .sign-up-rally{
+        text-align:center;
+        width:300px;
+        margin:0 auto;
+    }
+    .sign-up-rally label{
+        text-align:left;
+    }
+    
+    .stageRow.inactive div{
+        color:#c4c4c4;
+    }
+    .stageRow:not(:last-of-type){
+        border-bottom:1px solid #868686;
+    }
+    
+    .sign-up-rally .formElemWrapper select{
+        width:60%;
+    }
+    .sign-up-rally .formElemWrapper{
+        margin:15px 0px;
+    }
+    .sign-up-rally .formElemWrapper .col-md-3{
+        padding-left:0px;
+    }
+/*    #crews td{
+        padding:5px
+    }*/
+    
+    .prizeCar{
+        max-width:110px;
+    }
+    
+    .prizeTable{
+        background:#686868;
+        width:100%;
+    }
+    .prizeTable td{
+        padding:5px;
+        border-bottom:1px solid #868686;
+    }
+    .prizeTable td:first-of-type{
+        width:50px;
+    }
+    
+/*
+    3.4 Rally result
+*/
+.rallyResultWrapper table tr td,.rallyResultWrapper table tr th{
+    padding:5px 5px;
+    text-align:center;
+}
+
+.rallyResultWrapper table tr:nth-of-type(odd){
+    background:#686868;
+}
+
+.rallyResultWrapper table tr:nth-of-type(even){
+    background:#868686;
+}
+.rallyResultWrapper table{
+    width:100%;
+}
+.rallyResultWrapper table tr td{
+    vertical-align:top;
+}
+.rallyResultWrapper table tr td:first-of-type,.rallyResultWrapper table tr th:first-of-type{
+    /*padding:3px 15px;*/
+    /*padding:20px 0px;*/
+    /*min-width:10px;*/
+    text-align:center;
+}
+
+.rallyResultWrapper .rallyButtons a.disabled{
+    cursor:not-allowed;
+    opacity:0.6;
+}
+
+.rallyResultWrapper .rallyButtons a.disabled:hover{
+    text-decoration: none;
+}
+    
+/*
+    3.5 my finances
+*/
+    .advancedReportIncome,.advancedReportExpense{
+        display:block;
+        width:50%;
+        margin:10px 0px;
+        font-size:14px;
+        text-align:left;
+    }
+    .advancedReportIncome{
+        float:left;
+        clear:left;
+    }
+    .advancedReportExpense{
+        float:right;
+        clear:right;
+    }
+    
+    .accountBalance{
+        font-size:18px;
+    }
+    
+    .myFinances{
+        padding:20px;
+    }
+    
+    .financeSubHeader{
+        font-weight:bold;
+        display:block;
+        margin-top:5px;
+        margin-bottom: 5px;
+    }
+    
+    .myFinances h5{
+        border-bottom:1px solid #fff;
+        padding:5px 0px;
+        font-size:16px;
+    }
+    
+    .incomeBox{
+        height:150px;
+    }
+    
+    .expenseBox .financeSubHeader{
+        background:#d9534f;
+        text-align:center;
+    }
+    .incomeBox .financeSubHeader{
+        background:#5cb85c;
+        text-align:center;
+    }
+    .expenseBox{
+        height:150px;
+    }
+    
+    .advancedFinanceReport{
+        background:#868686;
+        padding:20px;
+        padding-top:5px;
+        margin-top:20px;
+    }
+    .advancedReportIncome,.advancedReportExpense{
+        line-height:20px;
+        white-space:normal;
+    }
+    
+    .advancedReportIncome i,.advancedReportExpense i{
+        margin-right:10px;
+    }
+    .noGoldAvancedReport{
+        position:relative;
+    }
+    .noGoldAvancedReport h5{
+        padding:20px;
+    }
+    
+    /*
+      3.6  My people
+    */
+    
+    .fa-circle-o.fa-circle-empty:before{
+        color:white;
+    }
+    .fa.fa-circle-o {
+        color:green;
+        font-size:14px;
+    }
+    .trainingChange{
+        
+        margin-top:5px;
+        margin-left:10px;
+    }
+    
+    .myPeopleWrapper{
+        background:none;
+    }
+    .peopleCard{
+/*        border-radius: 6px;
+        border: 6px solid #fff;
+        background: #cad3e4;*/
+        margin-bottom: 20px;
+        /*color: #7774a9;*/
+        padding: 10px 0px 15px;
+        /*position: relative;*/
+    }
+    
+    .peopleCard .sellPlayer{
+        padding:0px 20px !important;
+    }
+    
+    .peopleCard strong{
+        display:block;
+        /*background:#f4e973;*/
+        padding-top:10px;
+        padding-left:20px;
+        font-size:18px;
+        padding-bottom:10px;
+    }
+    
+    .peopleCard .peopleRight table tr.active td{
+        background:#8f8f8f;
+    }
+    
+    
+    strong a.offerLink{
+        color: #7774a9;
+        
+    }
+    
+    .peopleList .peopleCard{
+        display:none;
+    }
+    
+    .peopleList ul{
+        list-style-type:none;
+        padding-left:0px;
+        margin-bottom:0px;
+    }
+    
+    .peopleList ul li{
+        display:inline-block;
+        font-size:18px;
+        padding:10px;
+        cursor:pointer;
+    }
+    
+    .peopleList.carList ul li{
+        display:inline-block;
+        font-size:14px;
+        padding:10px;
+        cursor:default;
+    }
+    
+    .peopleList ul li:first-of-type{
+        cursor:initial;
+    }
+    
+    .peopleList ul li.active,.peopleCard.active{
+        background: #686868;
+    }
+    
+    .peopleList .peopleCard:first-of-type{
+        display:block;
+    }
+    
+    .peopleCard table tr td{
+        /*color:#7774a9;*/
+    }
+    
+    .peopleBtn{
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    .peopleBtn a{
+        display:inline-block;
+        /*color:#7774a9;*/
+        /*border:2px solid #7774a9;*/
+    }
+    
+    .peopleLeft table td{
+        padding:5px 10px;
+        padding-left:0px;
+    }
+    .peopleRight table td{
+        padding:5px 10px;
+        padding-right:20px;
+    }
+    .peopleLeft table{
+        margin-bottom:20px;
+    }
+    
+    /*
+        3.7 My team
+    */
+    
+    .inviteFriendWrapper{
+        width:200px;
+        display:inline-block;
+    }
+    .myTeamContent{
+        padding:10px 30px;
+        padding-left:10px;
+    }
+    
+    .showcase td{
+        width:60px;
+        height:60px;
+        background:#4d4d4d;
+        border:10px solid #959595;
+        border-collapse: collapse;
+        text-align:center;
+        position:relative;
+    vertical-align:bottom;
+    }
+    .showcase td.light{
+        background:url('/images/layout/light.png');
+    }
+    .showcase div:nth-of-type(1),.showcase div:nth-of-type(2),.showcase div:nth-of-type(3),.showcase div:nth-of-type(4){
+        border-bottom:0px;
+    }
+    .showcase img{
+        position:absolute;
+        bottom:0;
+        left:0;
+        right:0;
+margin-left: auto;
+margin-right: auto;
+    }
+    .nopad{
+        padding:0px;
+    }
+    .myTeamSponsor{
+        margin-top:30px;
+        text-align:right;
+    }
+    .myTeamSponsor img{
+        width:150px;
+/*        display:block;
+        margin:0 auto;*/
+    }
+    
+    .changeTeamNameBtn{
+        margin-left:20px;
+    }
+    
+    .myTeamContent .col-md-6 td{
+        padding-bottom:10px;
+    }
+    .countryFlag{
+        height:16px;
+        margin-left:10px;
+    }
+    
+    .pb20{
+        padding-bottom:20px;
+    }
+    /*
+        3.8 User message
+    */
+    
+    .mt10{
+        margin-top:10px;
+    }
+    
+    /*
+        4.1 List rallies
+    */
+    
+     .rallyList{
+        min-height:400px;
+    }
+    tr.label-danger-wrapper{
+        margin-top:15px;
+    }
+    td.label.label-danger{
+        border:5px solid transparent;
+        font-size:14px;
+        padding:7px;
+    }
+    
+    .rallyList table{
+        margin-left:20px;
+    }
+    .rallyList td:not(:first-of-type){
+        padding:0px 20px;
+    vertical-align: middle;
+    }
+    .rallyList td.big{
+        padding-right:10px;
+    }
+    .rallyList td.rallyName{
+        padding-left:0px;
+    }
+    
+    .rally-level{
+        
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    }
+    .rally-level1{
+        background:#5cb85c;
+    }
+    
+    .rally-level2{
+        background:#337ab7;
+    }
+    .rally-level3{
+        background:#5bc0de;
+    }
+    .rally-level4{
+        background:#f0ad4e;
+    }
+    .rally-level5{
+        background:#d9534f;
+    }
+    
+    /*
+        4.2 Friendly rallies
+    */
+    
+    .createFriendly{
+        margin-top:0px;
+        margin-bottom:10px;
+        margin-left:20px;
+    }
+    
+    .createFriendlyBox .form-group:after{
+        clear:both;
+        display:block;
+        content: " ";
+    }
+    
+    .createFriendlyBox .radioWrapper{
+        display:block;
+        margin:0 auto;
+        max-width:460px;
+    }
+    
+    .createFriendlyBox .radioWrapper label{
+        vertical-align:top;
+    }
+    
+    .createFriendlyBox .boxHeader{
+        margin-bottom:25px;
+    }
+    
+    .createFriendlyBox input[type="radio"]{
+        margin-left:5px;
+    }
+    
+    
+    .createFriendlyBox .radioElemWrapper{
+        display:block;
+        float:left;
+        margin-right:20px;
+    }
+    
+    .friendlyNote{
+        display:block;
+        margin-left:20px;
+        margin-bottom:20px;
+        font-style:italic;
+    }
+    .friendlyNote strong{
+        font-style:normal;
+    }
+    
+    #crewAddWrapper{
+        padding-left:20px;
+    }
+    #crewAddWrapper label{
+        width:100px;
+    }
+    
+    .goldCoinBox{
+        background:#5cb85c;
+        width:600px;
+        max-width:100%;
+        margin:20px 0px;
+        padding:5px 20px;
+        padding-bottom:10px;
+    }
+    
+    .goldCoinBox.goldCoinBoxInfo{
+        margin-top:0px;
+    }
+    
+    .goldCoinBox h4{
+        margin-bottom:0px;
+        padding-bottom:10px;
+    }
+    
+    .goldCoinBox img.coin{
+        margin-left:5px;
+    }
+    .goldCoinBox .balance{
+        float:right;
+    }
+    .goldCoinBox .balanceWrapper{
+        display:block;
+        margin-top:20px;
+    }
+    
+    /* 
+    4.3 Show friendly
+    */
+    
+    .inviteFriendFriendly{
+        max-width:100%;
+        padding-top:10px;
+    }
+    
+    .inviteFriendFriendly strong{
+        font-size:16px;
+    }
+    
+    .bigLabel{
+        font-size:14px;
+    }
+    
+    /*
+    4.4 League table
+    */
+    
+    .showLeagueTable h4{
+        margin-bottom:0px;
+    }
+    
+    .showLeagueTableWrapper {
+        padding:20px; 
+    }
+    .showLeagueTable table{
+        /*margin-left:20px;*/
+    }
+    .showLeagueTable th{
+        text-align:center;
+        height:70px;
+        position:relative;
+    }
+    .showLeagueTableWrapper tr td{
+        padding:5px 10px;
+    }
+    .thVertical div{
+        position:absolute;
+    }
+    
+    .thVertical{
+        width:40px;
+        font-size:14px;
+        white-space: nowrap;
+        padding:10px 5px;
+        -webkit-transform: rotate(-75deg);
+        -moz-transform: rotate(-75deg);   
+        -o-transform: rotate(-75deg);
+
+    }
+    /*
+    5.1 People market
+    */
+    .cashInfo{
+        display:block;
+        margin-top:5px;
+    }
+    
+    .cashInfo strong{
+        margin-left:5px;
+    }
+    
+    .peopleMarketCard .col-md-5{
+        padding-right:0px;
+    }
+    
+    .peopleMarketCard .col-md-7{
+        padding-left:0px;
+        padding-right:0px;
+    }
+    
+    .peopleMarketRight table td {
+        padding: 5px 5px;
+      }
+      .peopleMarketSmallCard table{
+          width:100%;
+      }
+      
+      .bidPlayer{
+          margin:0px !important;
+          /*padding:0px !important;*/
+          border:0px;
+          display:inline-block;
+      }
+      
+      ul li.bidPlayerWrapper{
+          float:right;
+          padding-top:0px;
+      }
+      
+      .peopleMarketSmallCard{
+          
+        background: #686868;
+        margin-bottom: 20px;
+        padding: 0px 0px 15px;
+        position: relative;
+      }
+      
+      
+      .peopleMarketSmallCard th{
+          padding:0px;
+          padding-bottom:5px;
+          padding-top:5px;
+          font-size:14px;
+          padding-left:20px;
+          font-weight: normal;
+          text-align:left;
+      }
+      
+      .peopleMarketSmallCard td{
+          font-size:12px;
+          text-align:center;
+          font-weight:bold;
+      }
+      
+      .peopleMarketCard strong a.btn{
+          float:right;
+          margin-right:10px;
+          margin-top:-4px;
+      }
+      
+      #bidPlayer input[type="submit"]{
+          float:left;
+      }
+      
+      #bidPlayer label{
+          margin-right:15px;
+      }
+      
+      #bidPlayer input[type="text"]{
+          width:80px;
+      }
+      
+    /*
+    5.2 Car market
+    */
+    .carList .carCard{
+        display:none;
+        padding-top:10px;
+    }
+    .carList ul li{
+        text-align:center;
+    }
+    
+    .bidCar{
+        float:right;
+    }
+    
+/*    .carList ul{
+        width:100000%;
+        overflow: hidden;
+    }*/
+    .carList ul li,.carCard{
+        background: #686868;
+    }
+    
+    .carList .carCard:first-of-type{
+        display:block;
+    }
+    
+    .carMarketList{
+        background:#686868;
+    }
+    .mb20{
+        margin-bottom:20px;
+    }
+    .carMarketList li{
+        width:100%;
+        text-align:center;
+    }
+    .mr0{
+        margin-right:0px;
+        padding-right:0px;
+    }
+    .pt10{
+        padding-top:10px !important;
+    }
+    .carMarketCard .carCardPhoto{
+        max-width:100%;
+        height:auto;
+    }
+    .carCard table td {
+        padding-left:10px;
+        padding-right:5px;
+      }
+      
+      .carMarketCard .carParameters table td:first-of-type{
+          padding:0px;
+      }
+      
+      #bidCar .formSubmitWrapper{
+        float:left;
+    }
+    
+    /*
+    5.3 Car dealer
+    */
+    .carDealer .carParameters{
+        margin-top:10px;
+    }
+    .carBtn a.buyCarDealer{
+        margin:0px;
+        margin-top:40px;
+    }
+    /*
+    6.1 Show forum
+    */
+    
+    .showForum tbody{
+        background:#686868;
+    }
+    
+    .showForum .fa-star.selected{
+        color:yellow;
+    }
+    
+    .showForum tbody td{
+        padding-left:20px;
+    }
+    
+    .showForum thead th{
+        font-size:12px;
+    }
+    
+    /*
+    6.2 Show category
+    */
+    
+    .showForumWrapper .boxHeader{
+        
+        background:#212121;
+        padding:15px 20px;
+        margin-top:0px;
+        padding-top:5px;
+    }
+    .showForumWrapper .boxHeader h4{
+        font-size:25px;
+        line-height:25px;
+        padding-bottom:5px;
+    }
+    
+    
+    .addThreadWrapper{
+            padding-left: 10px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eaeaea;
+    }
+    
+    .addThreadWrapper h5{
+        font-size:16px;
+        margin-top:5px;
+        margin-bottom: 10px;
+    }
+    
+    .addThreadWrapper input{
+        margin-bottom:10px;
+    }
+    
+    .addThreadWrapper textarea{
+        margin-bottom:10px;
+    }
+    
+    
+    /*
+    6.3 Show thread
+    */
+     table.postContent {table-layout:fixed; }
+         table.postContent td {overflow:hidden;}
+    
+         .postContent small{
+             font-size:75%;
+         }
+         
+    /*
+    6.4 Search users
+    */
+    
+    .searchUsersBtn{
+        margin-top:20px;
+        margin-left:10px;
+    }
+    
+    .searchTable td{
+        border-top:0px;
+    }
+    
+    /* 
+    6.5 top world list
+    */
+    .table.rankingList tr,.table.rankingList td,.table.rankingList th{
+        border:0px;
+    }
+    .table.rankingList tbody tr:nth-child(odd) td {
+        background: #686868;
+    }
+    
+    .table.rankingList tbody tr:nth-child(even) td{
+        background:#868686;
+    }
+    
+    /*
+    6.6 national ranking
+    */
+    
+    .countryList img{
+        display:block;
+        margin:0 auto;
+    }
+    .countryList a{
+        margin-top:5px;
+        text-align:center;
+    }
+    
+    /*
+    7.1 My premium
+    */
+    
+    .notGoldCoinBox{
+        background:#d9534f;
+        width:600px;
+        max-width:100%;
+        margin:20px 0px;
+        padding:5px 20px;
+        padding-bottom:10px;
+    }
+    
+    .notGoldCoinBox h4{
+        margin-bottom:0px;
+        padding-bottom:10px;
+    }
+    
+    .notGoldCoinBox img.coin{
+        margin-left:5px;
+    }
+    .notGoldCoinBox .balance{
+        float:right;
+    }
+    .notGoldCoinBox .balanceWrapper{
+        display:block;
+        margin-top:20px;
+    }
+    
+    .addMorePremium hr{
+        margin:0px;
+        margin-top:10px;
+    }
+    
+    .addMorePremium .providerBox{
+        margin-top:30px;
+        margin-bottom:30px;
+    }
+    
+    .providerBox input[type="radio"]{
+        display:none;
+    }
+    
+    .providerBox .radioElemWrapper{
+        margin:10px;
+        display:inline-block;
+        padding:20px;
+    }
+    .providerBox .radioElemWrapper.active{
+        background:gold;
+    }
+    .buyPremiumBox{
+        border:5px solid rgba(231,166,26,1);
+        padding:10px;
+        border-radius:6px;
+        padding-top:20px;
+        padding-bottom:40px;
+    }
+    
+    .buyPremiumBox h2{
+        padding-top:0px;
+        margin-top:0px;
+        font-size:1.5em;
+    }
+    .buyPremiumBox .amountBox .radioWrapper:after,.buyPremiumBox .amountBox .radioWrapper:before{
+        display:block;
+        content: " ";
+        clear:both;
+    }
+     .buyPremiumBox .amountBox .radioWrapper{
+        width:400px;
+        margin-left:50px;
+        display:block;
+    }
+    .buyPremiumBox .amountBox .radioElemWrapper{
+        width:200px;
+        margin-top:10px;
+        margin-right:10px;
+        display:block;
+        float:left;
+        background:#868686;
+        text-align:center;
+        border-radius:6px;
+        cursor:pointer;
+    }
+    .buyPremiumBox .amountBox .radioElemWrapper label{
+        margin-right:10px;
+        font-weight:normal;
+        cursor:pointer;
+    }
+    
+    .buyPremiumBox .amountBox .radioElemWrapper.active{
+        background:#212121;
+    }
+    
+    .buyPremiumBox .providerBox .radioElemWrapper,.buyPremiumBox .providerBox .radioElemWrapper label{
+        cursor:pointer;
+    }
+    
+    .buyPremiumBox .amountBox .radioElemWrapper input{
+        margin-top: 0px;
+        vertical-align: middle;
+        display:none;
+    }
+    .buyPremiumBox .amountBox .radioElemWrapper:nth-of-type(3){
+        clear:left;
+    }
+    .buyPremiumBox .amountBox .radioElemWrapper:nth-of-type(2):after,.buyPremiumBox .amountBox .radioElemWrapper:nth-of-type(3):before{
+        display:block;
+        clear:both;
+        content: " ";
+    }
+    /*
+    7.2 Gold membership
+    */
+    
+    .goldMembershipTable{
+        margin:0 auto;
+        display:block;
+        background:#868686;
+        margin-top:20px;
+    }
+    
+    .goldMembershipTable td{
+        padding:10px;
+        border-bottom:1px solid white;
+        border-right:1px solid white;
+        
+    }
+    
+    .goldMembershipTable td:not(.gmFeatureDesc):nth-child(1){
+        /*background:#212121;*/
+    }
+    
+    .goldMembershipTable tr:nth-of-type(odd) td{
+        background:#686868;
+    }
+    
+    .goldMembershipTable td:nth-child(3){
+        font-weight:bold;
+        color:  gold;
+    }
+    
+    
+    .goldMembershipTable td:nth-child(2){
+        background:#686868;
+    }
+    
+    .goldMembershipTable th{
+        padding:10px;
+        background:#212121;
+        border-right:1px solid white;
+        /*border:3px solid white;*/
+    }
+    
+    .goldMembershipTable .gmFeatureDesc{
+        font-size:12px;
+        padding:15px;
+        font-style:italic;
+    }
+    
+    .red,.red:hover{        
+        color:#d9534f;
+    }
+    
+    .green,.green:hover{
+        color:#5cb85c;
+    }
+    
+    .goldMembershipWrapper{
+        padding:10px;
+        padding-bottom:0px;
+    }
+    
+    
+    
+    
+    .alert-danger a{
+        color:#b94a48;
+        text-decoration: underline;
+    }
+    
+    .buyGoldBox{
+        border:5px solid rgba(231,166,26,1);
+        padding:10px;
+        border-radius:6px;
+        padding-top:20px;
+        padding-bottom:40px;
+        margin-left:15px;
+        margin-right:15px;
+        margin-bottom:15px;
+    }
+    
+    .buyGoldBox h3{
+        margin:0px;
+        padding:0px;
+        font-size:30px;
+    }
+    
+     .buyGoldBox h3 img{
+        height:30px;
+    }
+    
+    .buyGoldBox .form-group{
+        width:400px;
+        padding:10px;
+    }
+    
+    .buyGoldBox .radio input{
+        display:none;
+    }
+    
+    
+    .buyGoldBox .radio{
+        width:200px;
+        margin-top:10px;
+        margin-right:10px;
+        display:block;
+        float:left;
+        background:#868686;
+        text-align:center;
+        border-radius:6px;
+        cursor:pointer;
+        padding:10px 0px;
+    }
+    
+    
+    .buyGoldBox .radio.active{
+        background:#212121;
+    }
+    
+     .buyGoldBox .radioWrapper{
+        width:600px;
+        margin-left:50px;
+        display:block;
+        margin-bottom:20px;
+    }
+    
+     .buyGoldBox .radioWrapper:after{
+        display:block;
+        content:" ";
+        clear:both;
+    }
+    
+    
+    /*
+        7.3 Invite to game
+    */
+    
+    .inviteToGame{
+        margin-top:20px;
+    }
+    
+    .inviteToGame input[type="text"]{
+        width:200px;
+        margin-bottom:10px;
+    }
+    
+    .invitedToGame ol{
+        padding-left:20px;
+        margin-top:10px;
+    }
+    
+    .invitedToGame strong:first-of-type{
+        margin-top:0px;
+    }
+    
+    .invitedToGame strong{
+        text-decoration:underline;
+        margin-top:20px;
+        display:block;
+    }
+    .invitedToGame table{
+        margin-top:10px;
+    }
+    .invitedToGame td{
+        padding:5px 10px;
+    }
+    .invitedToGame th{
+        font-size:14px;
+        padding:5px 10px;
+    }
+    
+    /*
+        8 Static pages
+    */
+    
+    .staticWrapper{
+        padding:20px;
+        padding-top:10px;
+    }
+    
+    .shortAlert{
+        padding:5px 10px;
+        margin-bottom:5px;
+    }
+    
+    .label-warning.bigLabel{
+        margin-top:10px;
+        display:inline-block;
+    }
+    
+    .panel-custom{
+        background:#868686;
+    }
+    
+    .panel-body{
+        background:#504f4f;
+    }
+    
+    ol.manualLinks{
+        padding-left:15px;
+        list-style-type:none;
+        border-left:1px solid #f3f3f3;
+    }
+    
+    .supportWrapper h5{
+        margin:0px;
+        padding:0px;
+        margin-bottom:20px;
+        font-weight:bold;
+    }
+    
+    .supportWrapper select{
+        margin-bottom:20px;
+    }
+    
+    .supportWrapper textarea{
+        min-height:100px;
+    }
+    
+    .supportWrapper input[type="submit"]{
+        margin-top:20px;
+    }
+    
+    .supportWrapper label{
+        font-weight: normal;
+    }
+    
+    .frontPageTabs{
+        background:#0099cc; font-size: 13px;border:0px;
+    }

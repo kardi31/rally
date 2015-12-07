@@ -1,0 +1,17 @@
+User-agent : *
+
+Disallow: /account/
+Disallow: /banner/
+Disallow: /card/
+Disallow: /car/
+Disallow: /cron/
+Disallow: /forum/
+Disallow: /index/
+Disallow: /league/
+Disallow: /market/
+Disallow: /media/
+Disallow: /news/
+Disallow: /order/
+Disallow: /people/
+Disallow: /test/
+Disallow: /forgot-password

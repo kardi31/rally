@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="/plugins/wowslider/engine1/style.css" />
+<link rel="stylesheet" type="text/css" href="/plugins/td/style.css" />
 <div class="mainUserBox">
     <h4 class="boxHeader"><?= $this->translate('My team'); ?></h4> 
     <?php 
@@ -155,21 +155,23 @@
         </div>
         <div class="col-md-6">
             
-            <div id="wowslider-container1">
-                <div class="ws_images">
+            <!--<div id="wowslider-container1">-->
+            <div id="td_box">
+                <div class="td_images">
                     <ul>
                         <?php                         
                             foreach($team['Cars'] as $car):
                                 if(strlen($car['Model']['photo'])){
                                     ?>
-                                    <li><img src="/media/cars/<?= $car['Model']['photo']; ?>" alt="<?= $car['name']; ?>" title="<?= $car['name']; ?>" id="wows1_1"/></li>
+                                    <li><img src="/media/cars/<?= $car['Model']['photo']; ?>" alt="<?= $car['name']; ?>" title="<?= $car['name']; ?>" id="td_gallery_1"/></li><!-- wows1_1 -->
                                     <?php
                                 }
                             endforeach; 
                         ?>
                     </ul>
                 </div>
-                <div class="ws_shadow"></div>
+                <div class="td_bg"></div>
+                <!--<div class="ws_shadow"></div>-->
             </div>
             
             <div class="myTeamSponsor">
@@ -217,14 +219,14 @@
     
 </div>
 
-<script type="text/javascript" src="/plugins/wowslider/engine1/wowslider.js"></script>
-<script type="text/javascript" src="/plugins/wowslider/engine1/script.js"></script>
+<script type="text/javascript" src="/plugins/tdslider/tdslider.js"></script>
+<script type="text/javascript" src="/plugins/tdslider/tdengine.js"></script>
 
 <script>
     $(document).ready(function(){
-        var photo_no = $('.ws_list ul li').length;
+        var photo_no = $('.td_list ul li').length;
         if(photo_no<2){
-            $('.ws_next,.ws_prev').hide();
+            $('.td_next,.td_prev').hide();
         }
     });
     </script>

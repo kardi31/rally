@@ -1,2 +1,2 @@
-nbproject/
-logs/php-error.log
+nbproject/*
+logs/*

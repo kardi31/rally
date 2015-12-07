@@ -361,6 +361,10 @@ class TK_Text{
         endswitch;
     }
     
+    public static function unslug($string){
+        $string = str_replace('-',' ',$string);
+        return ucwords($string);
+    }
 }
 
 /*
