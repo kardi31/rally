@@ -42,9 +42,12 @@ class MailService extends Service{
     }
     
     public static function prepareRegistrationMail($token,$username){
-        $text = "Dear ".$username.",<br /><br />";
+        
+        
+//        $text = "<h1 style='font-size:20px;padding:20px 10px 0px 20px'>Welcome to FastRally </h1>";
+        $text = "Dear ".$username.",<br /><br /> ";
         $text .= "Thank you for your registration in FastRally.<br />";
-        $text .= "To activate your account please click the link below or paste the url in your browser.<br />";
+        $text .= "To activate your account please click the link below<br /> or paste the url in your browser.<br />";
         $text .= "<a style='color:#f3f3f3;' href='http://".$_SERVER['SERVER_NAME']."/user/activate/".$token."'>http://".$_SERVER['SERVER_NAME']."/user/activate/".$token."</a><br />";
         $text .= "Let your journey in world of Fast Rally begin.<br /><br />";
         $text .= "FastRally Team";
@@ -53,8 +56,11 @@ class MailService extends Service{
         $twitterUrl = View::getInstance()->getSetting('twitterUrl');
         
         ob_start();
+        include(BASE_PATH."/modules/user/views/mail/template2.phtml");
+        
         include(BASE_PATH."/modules/user/views/mail/template.phtml");
-        $content = ob_get_contents();
+//        $content = ob_get_contents();
+        echo $content;exit;
         ob_end_clean();
         return $content;
     }

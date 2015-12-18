@@ -34,13 +34,13 @@ if(count($_GET)>0){
             endfor;
             $GLOBALS['urlParams'] = $urlParams; 
         }
-        if(isset($lang)){
-            $GLOBALS['lang'] = $lang;
-        }
-        elseif(isset($_COOKIE['lang'])){
-            $GLOBALS['lang'] = $_COOKIE['lang'];
-        }
         
+}
+if(isset($lang)){
+    $GLOBALS['lang'] = $lang;
+}
+elseif(isset($_COOKIE['lang'])){
+    $GLOBALS['lang'] = $_COOKIE['lang'];
 }
 
 if(!empty($_POST)){

@@ -46,13 +46,13 @@ class User_Index extends Controller{
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
-                if($userService->getUser($values['email'],'email')!==false){
-		    TK_Helper::redirect('/user/register?msg=email+exists');
-                }
-                elseif($userService->getUser($values['username'],'username')!==false){
-		    TK_Helper::redirect('/user/register?msg=username+exists');
-                }
-                else{
+//                if($userService->getUser($values['email'],'email')!==false){
+//		    TK_Helper::redirect('/user/register?msg=email+exists');
+//                }
+//                elseif($userService->getUser($values['username'],'username')!==false){
+//		    TK_Helper::redirect('/user/register?msg=username+exists');
+//                }
+//                else{
                     $values['salt'] = TK_Text::createUniqueToken();
                     $values['token'] = TK_Text::createUniqueToken();
                     $values['password'] = TK_Text::encode($values['password'], $values['salt']);
@@ -80,7 +80,7 @@ class User_Index extends Controller{
                 
 		    TK_Helper::redirect('/user/register-complete');
 		
-		}
+//		}
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
             else{
@@ -243,6 +243,13 @@ class User_Index extends Controller{
         $this->view->assign('loginForm',$loginForm);
         $this->view->assign('form',$form);
         
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Zaloguj się - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Log in - FastRally');
+        }
     }
     
     public function quickLogin(){
@@ -606,6 +613,13 @@ class User_Index extends Controller{
     
     public function myAccount(){
         $this->getLayout()->setLayout('page');
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Moje konto - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('My account - FastRally');
+        }
     }
     
     public function changePassword(){

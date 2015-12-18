@@ -18,7 +18,7 @@ class Support extends Form{
         
         $submit = $this->createElement('submit','submit');
         $submit->addClass('btn myBtn');
-        $submit->setLabel('Send');
+        $submit->setLabel(View::getInstance()->translate('Send'));
     }
 }
 

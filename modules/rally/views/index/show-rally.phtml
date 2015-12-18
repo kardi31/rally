@@ -187,16 +187,16 @@ $startDate2 = clone $startDate;
         endif; ?>
     </div>
     <div class="showRallyBox mainUserBox" id="stages">
-        <h3 class="h4">Stage list</h3>
+         <h3 class="h4"><?= $this->translate('Stage list'); ?></h3>
         <div class='stageListInfo'>
             <div class='col-md-6'>
-                Name
+                <?= $this->translate('Name'); ?>
             </div>
             <div class='col-md-3'>
-                  Length
+                 <?= $this->translate('Length'); ?>
             </div>
             <div class='col-md-3'>
-                Time
+                <?= $this->translate('Time'); ?>
             </div>
         </div>
         <div class='clearfix'></div>
@@ -242,7 +242,7 @@ $startDate2 = clone $startDate;
         
     </div>
     <div class="showRallyBox mainUserBox" id="crews">
-        <h3 class="h4">Signed crews</h3>
+        <h3 class="h4"><?= $this->translate('Signed crews'); ?></h3>
         <table class="rallyCrews">
             <thead>
                 <tr>

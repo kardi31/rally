@@ -55,7 +55,12 @@ class SupportService extends Service{
     }
     
     public function getSupportCategories(){
-        return $this->supportCategories;
+        $supportCategories = array();
+        
+        foreach($this->supportCategories as $key => $value){
+            $supportCategories[$key] = View::getInstance()->translate($value);
+        }
+        return $supportCategories;
     }
 }
     

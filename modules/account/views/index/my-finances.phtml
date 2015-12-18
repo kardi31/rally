@@ -19,7 +19,7 @@
             <br />
             <?php 
             foreach($financialReportSimple['income'] as $simpleReport): 
-                echo $financeTypes[$simpleReport['detailed_type']]." - $".$simpleReport['amount']; ?><br />
+                echo $this->translate($financeTypes[$simpleReport['detailed_type']])." - $".$simpleReport['amount']; ?><br />
 
             <?php endforeach; ?>
         </div>
@@ -27,7 +27,7 @@
             <span class="financeSubHeader"><?= $this->translate('Expenses'); ?></span> <br />
             <?php 
             foreach($financialReportSimple['expense'] as $simpleReport2): 
-                echo $financeTypes[$simpleReport2['detailed_type']]." - $".$simpleReport2['amount']; ?><br />
+                echo $this->translate($financeTypes[$simpleReport2['detailed_type']])." - $".$simpleReport2['amount']; ?><br />
             <?php endforeach; ?>
         </div>
         <div class="clearfix"></div>
@@ -45,7 +45,7 @@
             <span class="financeSubHeader"><?= $this->translate('Expenses'); ?></span> <br />
             <?php 
             foreach($financialReportSimpleLastWeek['expense'] as $simpleReport2): 
-                echo $financeTypes[$simpleReport2['detailed_type']]." - $".$simpleReport2['amount']; ?><br />
+                echo $this->translate($financeTypes[$simpleReport2['detailed_type']])." - $".$simpleReport2['amount']; ?><br />
             <?php endforeach; ?>
         </div>
         <div class="clearfix"></div>

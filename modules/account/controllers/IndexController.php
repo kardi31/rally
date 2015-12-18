@@ -30,10 +30,10 @@ class Account_Index extends Controller{
         
         
         if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
-            $this->view->setHeadTitle('Moje konto - FastRally');
+            $this->view->setHeadTitle('Strona główna - FastRally');
         }
         else{
-            $this->view->setHeadTitle('My account - FastRally');
+            $this->view->setHeadTitle('Homepage - FastRally');
         }
         
     }

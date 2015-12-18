@@ -26,8 +26,8 @@ class CreateFriendly extends Form{
         $date->setNoPopulate();
         
         $invite_only = $this->createElement('radio','invite_only',array(),'Tylko dla przyjaciół');
-        $invite_only->addMultiOption(1,'Private');
-        $invite_only->addMultiOption(0,'Public');
+        $invite_only->addMultiOption(1,View::getInstance()->translate('Private'));
+        $invite_only->addMultiOption(0,View::getInstance()->translate('Public'));
         $invite_only->addParam('required');
         
         $submit = $this->createElement('submit','submit',array(),View::getInstance()->translate('Submit'));

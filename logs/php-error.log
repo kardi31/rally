@@ -1,0 +1,159 @@
+[07-Dec-2015 12:53:45 Europe/Berlin] PHP Parse error:  syntax error, unexpected end of file in C:\xampp\htdocs\ral\views\_header.phtml on line 101
+[07-Dec-2015 12:53:45 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public\index.php on line 28
+[09-Dec-2015 16:28:47 Europe/Berlin] PHP Notice:  Undefined index: lang in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 119
+[09-Dec-2015 16:28:47 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[09-Dec-2015 16:29:41 Europe/Berlin] PHP Notice:  Undefined index: lang in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 119
+[09-Dec-2015 16:29:46 Europe/Berlin] PHP Notice:  Undefined index: lang in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 119
+[09-Dec-2015 16:29:51 Europe/Berlin] PHP Notice:  Undefined index: lang in C:\xampp\htdocs\ral\modules\index\controllers\IndexController.php on line 119
+[09-Dec-2015 16:30:19 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[09-Dec-2015 16:30:57 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[09-Dec-2015 16:30:58 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[09-Dec-2015 16:31:07 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[09-Dec-2015 17:26:47 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public_html\index.php on line 28
+[09-Dec-2015 17:28:19 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public_html\index.php on line 28
+[09-Dec-2015 17:28:26 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public_html\index.php on line 28
+[09-Dec-2015 17:45:09 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public_html\index.php on line 28
+[09-Dec-2015 17:45:09 Europe/Berlin] PHP Fatal error:  Class 'Plugins_Index' not found in C:\xampp\htdocs\ral\public_html\index.php on line 28
+[09-Dec-2015 17:52:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[09-Dec-2015 17:52:34 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[09-Dec-2015 17:52:39 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[09-Dec-2015 17:52:55 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[09-Dec-2015 17:53:07 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[09-Dec-2015 17:53:15 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to RallyService::calculatePartialRallyResult() must be an instance of Rally_Model_Doctrine_Rally, array given, called in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 406 and defined in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 688
+[09-Dec-2015 17:53:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[09-Dec-2015 17:53:18 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to RallyService::calculatePartialRallyResult() must be an instance of Rally_Model_Doctrine_Rally, array given, called in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 406 and defined in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 688
+[09-Dec-2015 17:53:18 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[09-Dec-2015 17:53:21 Europe/Berlin] PHP Catchable fatal error:  Argument 1 passed to RallyService::calculatePartialRallyResult() must be an instance of Rally_Model_Doctrine_Rally, array given, called in C:\xampp\htdocs\ral\modules\rally\controllers\IndexController.php on line 406 and defined in C:\xampp\htdocs\ral\modules\rally\services\Rally.php on line 688
+[09-Dec-2015 17:53:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[09-Dec-2015 17:53:28 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 11:41:24 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\library\Doctrine\Connection\Statement.php on line 257
+[18-Dec-2015 11:41:56 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\library\Doctrine\Connection\Statement.php on line 257
+[18-Dec-2015 11:42:00 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 11:42:00 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 11:48:08 Europe/Berlin] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\ral\library\Doctrine\Connection\Statement.php on line 257
+[18-Dec-2015 13:06:23 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 16:32:21 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public_html\index.php on line 28
+[18-Dec-2015 17:06:26 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:06:31 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:06:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:08:56 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:09:17 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:10:40 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:11:01 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:11:23 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:11:49 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:12:02 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:12:07 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:12:10 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:12:47 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:13:09 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:13:26 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:13:47 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:14:00 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:14:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:16:19 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:16:40 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:17:26 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:17:47 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:18:50 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:18:57 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:19:11 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:19:15 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:19:19 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:19:49 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:20:10 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:20:11 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:20:20 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:20:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:23:01 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:23:22 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:23:46 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:24:07 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:24:29 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:25:01 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:25:17 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:25:23 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:25:37 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:25:39 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:25:54 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:25:59 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:26:02 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:26:16 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:27:43 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:27:44 Europe/Berlin] PHP Fatal error:  Class 'Images_Index' not found in C:\xampp\htdocs\ral\public_html\index.php on line 28
+[18-Dec-2015 17:27:55 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:28:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:30:00 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:30:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:31:19 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:31:40 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:31:57 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:32:19 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:32:49 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:32:55 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:33:10 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:33:17 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:33:39 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:33:53 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:34:14 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:37:39 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:38:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:38:55 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:39:16 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:51:21 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:52:35 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:52:56 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:57:02 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:57:06 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:57:23 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:57:47 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:58:08 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:58:11 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:58:33 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 17:58:40 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:58:54 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 17:59:02 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:00:45 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 18:01:07 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:01:12 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 18:01:27 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 18:01:33 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:01:46 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 18:01:49 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:03:02 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 18:03:19 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 62
+[18-Dec-2015 18:03:23 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:04:22 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:04:43 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:04:53 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:05:03 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:05:13 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:05:15 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:05:18 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:05:24 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:05:55 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:06:16 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:06:42 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:07:04 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:07:45 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:08:06 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:08:28 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:08:46 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:08:50 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:10:09 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:10:14 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:10:30 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:10:32 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:10:36 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:10:44 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:10:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:11:05 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:11:27 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:13:03 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:13:25 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:15:50 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:16:12 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:16:31 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:16:33 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49
+[18-Dec-2015 18:16:39 Europe/Berlin] PHP Notice:  Undefined variable: content in C:\xampp\htdocs\ral\modules\user\services\Mail.php on line 63
+[18-Dec-2015 18:16:53 Europe/Berlin] PHP Fatal error:  Call to undefined method Index_Index::favicon_ico() in C:\xampp\htdocs\ral\library\TK\Controller.php on line 49

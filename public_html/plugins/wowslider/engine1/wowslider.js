@@ -15,7 +15,7 @@ jQuery.fn.wowSlider = function(am) {
     window.ws_basic = function(k, c, f) {
         var a0 = aI(this);
         this.go = function(a1) {
-            f.find(".td_images").css("transform", "translate3d(0,0,0)").stop(true).animate({
+            f.find(".ws_list").css("transform", "translate3d(0,0,0)").stop(true).animate({
                 left: (a1 ? -a1 + "00%" : (/Safari/.test(navigator.userAgent) ? "0%" : 0))
             }, k.duration, "easeInOutExpo", function() {
                 a0.trigger("effectEnd")

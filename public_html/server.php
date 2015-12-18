@@ -518,11 +518,15 @@ while (true) {
                                         
                                         $moveParameters = array('type'=>'showToggleTimer');
                                         $onMove = $table->whoseNextMove();
+                                        
+                                        
+                                        
                                         $userOnTableIds = $table->getPlayerIds();
                                         $moveParameters = array_merge($moveParameters,$userOnTableIds);
                                         $moveParameters['timer'] = $tst_msg->timer;
                                         $moveParameters['on_move'] = $onMove;
                                         $response_text3 = mask(json_encode($moveParameters));
+//                                        send_to_me($player,$response_text3);
                                         send_to_other_player_on_table($table, $player, $response_text3);
                                     }
                                     

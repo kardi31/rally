@@ -4,7 +4,7 @@
 <script language="javascript" type="text/javascript">
     $(document).ready(function () {
         //create a new WebSocket object.
-        var wsUri = "ws://ral.localhost:9000/server.php";
+        var wsUri = "ws://188.116.32.114:9000/server.php";
         websocket = new WebSocket(wsUri);
         var user_id = '<?= $authenticatedUser['id']; ?>';
         var player_on_move;
@@ -29,7 +29,11 @@
             // when player on table
             // request display table for player
             // so opponent cards are hidden
-            console.log(type);
+            
+            
+            if(type!='showToggleTimer'){
+                console.log(type);
+            }
             if (type == 'getTableForPlayer')
             {
                 if (typeof (msg.clearInterval) !== 'undefined' ) {
@@ -86,6 +90,7 @@
                     }
 
                     if(user_id==msg.on_move.user_id){
+                        console.log(user_id + 'Toggle timer');
                         window.setTimeout(function(){
                             player_on_move = msg.on_move.who;
                             var countdown = 2 * 60 * 1000;
@@ -106,7 +111,6 @@
                                     websocket.send(JSON.stringify(msgExpired));
 
 
-    console.log(countdown);
                                 if(countdown<1000){
                                     var msgExpired = {
                                         type: 'timeExpiredFull',
@@ -218,12 +222,17 @@
                     var tableid = msg.tableid;
                     window.location.hash = tableid;
                     $('.cardTableWrapper').html(msg.showTable);
+                    
+                    $('.cardUserBoxWrapper').hide();
+                    $('.cardTableWrapper').show();
                 }
                 
                 if (typeof (msg.user_id2) !== 'undefined' && msg.user_id2 == user_id) {
                     var tableid = msg.tableid;
                     window.location.hash = tableid;
                     $('.cardTableWrapper').html(msg.showTable2);
+                    $('.cardUserBoxWrapper').hide();
+                    $('.cardTableWrapper').show();
                 }
             }
 
@@ -246,7 +255,14 @@
                        trigger: 'manual'
                     });
                     
-                    
+//                       if (window.location.href.indexOf("#") > -1) {
+                $('.cardUserBoxWrapper').hide();
+                $('.cardTableWrapper').show();
+//            }
+//            else {
+//                $('.cardUserBoxWrapper').show();
+//                $('.cardTableWrapper').hide();
+//            }
                 
   
                 // move cards to middle of table
@@ -504,21 +520,25 @@
                     
             }
 
-            if (window.location.href.indexOf("#") > -1) {
-                $('.cardUserBoxWrapper').hide();
-                $('.cardTableWrapper').show();
-            }
-            else {
-                $('.cardUserBoxWrapper').show();
-                $('.cardTableWrapper').hide();
-            }
+//            if (window.location.href.indexOf("#") > -1) {
+//                $('.cardUserBoxWrapper').hide();
+//                $('.cardTableWrapper').show();
+//            }
+//            else {
+//                $('.cardUserBoxWrapper').show();
+//                $('.cardTableWrapper').hide();
+//            }
 
             $('#message').val(''); //reset text
 
         };
 
         websocket.onerror = function (ev) {
-            $('#message_box').append("<div class=\"system_error\">Error Occurred - " + ev.data + "</div>");
+            var msg = {
+                type: 'userLeft',
+                userid: '<?= $authenticatedUser['id']; ?>'
+            };
+            websocket.send(JSON.stringify(msg));
         };
         websocket.onclose = function (ev) {
             var msg = {
@@ -527,7 +547,15 @@
             };
             websocket.send(JSON.stringify(msg));
         };
-        
+         window.onbeforeunload = function () {
+            var msg = {
+                type: 'firefoxUserLeft',
+                userid: '<?= $authenticatedUser['id']; ?>'
+            };
+            websocket.send(JSON.stringify(msg));
+        };
+        websocket.close = function (ev) {
+        };
         $('.cardTableWrapper').delegate('.playerCards:not(.done) div table tr:not(:first-of-type)','click',function () {
                 var skillNo = $(this).index();
                 var parentPlayerCards = $(this).parents('.playerCards');
@@ -616,6 +644,9 @@
                 websocket.send(JSON.stringify(msg));
                 // remove hastag from the end
                 history.pushState("", document.title, window.location.pathname);
+                  
+                $('.cardUserBoxWrapper').show();
+                $('.cardTableWrapper').hide();
             });
             
             
@@ -653,6 +684,14 @@
             };
             //convert and send data to server
             websocket.send(JSON.stringify(msg));
+//            if (window.location.href.indexOf("#") > -1) {
+                $('.cardUserBoxWrapper').hide();
+                $('.cardTableWrapper').show();
+//            }
+//            else {
+//                $('.cardUserBoxWrapper').show();
+//                $('.cardTableWrapper').hide();
+//            }
         });
         
         //smallBoxes 

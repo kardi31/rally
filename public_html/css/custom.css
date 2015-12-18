@@ -257,15 +257,26 @@ label[for="rememberMe"],.topToolbarBottom a{
     margin-bottom:40px;
 }
 .leftMainPageBox img{
-    width: 300px;
-  margin-top: 20px;
-  margin-bottom:20px;
+    /*width: 300px;*/
+    width:250px;
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+.leftMainPageBox img:first-of-type{
+    margin-right:10px;
+    width:200px;
+    float:left;
+    margin-bottom:50px;
+}
+#fastRallyCardsImg{
+    float:right;
 }
 .leftMainPageBox ul{
     margin-top:15px;
 }
 .leftMainPageBox{
     margin-left:40px;
+    padding:20px;
 }
 .rightMainPageBox{
     margin-right:40px;
@@ -682,6 +693,37 @@ footer{
     max-width:550px;
     word-wrap: break-word;
 }
+
+/*
+    2.11 User message box
+*/
+    .messageIcons{
+        text-align:center;
+        margin-bottom:10px;
+            background: #212121;
+            padding:10px 0px;
+    }
+    .messageIconWrapper{
+        display:inline-block;
+        text-align:center;
+        margin:0px 5px;
+    }
+    .messageIconWrapper{
+        font-size:16px;
+    }
+    .mainPageNotification{
+        display:none;
+    }
+    .messageIconWrapper.active i{
+        color:yellow;
+    }
+    .premiumIconWrapper{
+        font-size:12px;
+    }
+.messageBoxWrapper .threadContent{
+    padding:10px;
+}
+
 
 /*
     2.12 User account

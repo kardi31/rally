@@ -69,9 +69,9 @@ class Rally_Index extends Controller{
 
                     if($rally['level']<=(int)$user['Team']['league_name']){
                         $form = $this->getForm('rally','JoinRally');
-                        $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
-                        $form->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
-                        $form->getElement('car_id')->addMultiOptions($freeCars,'Select car');
+                        $form->getElement('driver_id')->addMultiOptions($freeDrivers,View::getInstance()->translate('Select driver'));
+                        $form->getElement('pilot_id')->addMultiOptions($freePilots,View::getInstance()->translate('Select pilot'));
+                        $form->getElement('car_id')->addMultiOptions($freeCars,View::getInstance()->translate('Select car'));
                         $this->view->assign('form',$form);
 
                         if($form->isSubmit()){
@@ -98,9 +98,9 @@ class Rally_Index extends Controller{
                         $freePilots = $peopleService->getFreePilotsBig($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
                         $freeCars = $carService->getFreeCarsBig($user['Team'],$rally['date'],Doctrine_Core::HYDRATE_ARRAY);
                         $form = $this->getForm('rally','JoinRally');
-                        $form->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
-                        $form->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
-                        $form->getElement('car_id')->addMultiOptions($freeCars,'Select car');
+                        $form->getElement('driver_id')->addMultiOptions($freeDrivers,View::getInstance()->translate('Select driver'));
+                        $form->getElement('pilot_id')->addMultiOptions($freePilots,View::getInstance()->translate('Select pilot'));
+                        $form->getElement('car_id')->addMultiOptions($freeCars,View::getInstance()->translate('Select car'));
                         $this->view->assign('form',$form);
                     if($form->isSubmit()){
                         if($form->isValid()){
@@ -255,6 +255,13 @@ class Rally_Index extends Controller{
         $this->view->assign('myInvitations',$myInvitations);
         $this->view->assign('rallies',$rallies);
         $this->view->assign('futureTeamRallies',$futureTeamRallies);
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Rajdy towarzyskie - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Friendly rallies - FastRally');
+        }
     }
     
     public function myFriendlyRallies(){
@@ -475,9 +482,9 @@ class Rally_Index extends Controller{
             $freeCars = $carService->getFreeCarsFriendly($user['Team'],$friendly['Rally']['date'],Doctrine_Core::HYDRATE_ARRAY);
             
             $joinForm = $this->getForm('rally','JoinRally');
-        $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
-        $joinForm->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
-        $joinForm->getElement('car_id')->addMultiOptions($freeCars,'Select car');
+        $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,View::getInstance()->translate('Select driver'));
+        $joinForm->getElement('pilot_id')->addMultiOptions($freePilots,View::getInstance()->translate('Select pilot'));
+        $joinForm->getElement('car_id')->addMultiOptions($freeCars,View::getInstance()->translate('Select car'));
             $this->view->assign('joinForm',$joinForm);
             
             if($joinForm->isSubmit()){
@@ -602,9 +609,9 @@ class Rally_Index extends Controller{
         
         
         $joinForm = $this->getForm('rally','JoinRally');
-        $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,'Select driver');
-        $joinForm->getElement('pilot_id')->addMultiOptions($freePilots,'Select pilot');
-        $joinForm->getElement('car_id')->addMultiOptions($freeCars,'Select car');
+        $joinForm->getElement('driver_id')->addMultiOptions($freeDrivers,View::getInstance()->translate('Select driver'));
+        $joinForm->getElement('pilot_id')->addMultiOptions($freePilots,View::getInstance()->translate('Select pilot'));
+        $joinForm->getElement('car_id')->addMultiOptions($freeCars,View::getInstance()->translate('Select car'));
         $joinForm->getElement('driver_id')->setNoValidateSelect();
         $joinForm->getElement('pilot_id')->setNoValidateSelect();
         $joinForm->getElement('car_id')->setNoValidateSelect();

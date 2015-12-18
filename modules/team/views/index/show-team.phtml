@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="/plugins/td/style.css" />
+<link rel="stylesheet" type="text/css" href="/plugins/wowslider/engine1/style.css" />
 <div class="mainUserBox">
     <h4 class="boxHeader"><?= $this->translate('My team'); ?></h4> 
     <?php 
@@ -62,12 +62,14 @@
                     <?php 
                     if($team['this_week_rank']>0){
                         echo $team['this_week_rank'];
-                        if($team['this_week_rank']>$team['last_week_rank']){ 
+                        if($team['this_week_rank']<$team['last_week_rank']){ 
                         ?> 
-                            <img src="/images/layout/top.png" />
+                            <img src="/images/layout/bottom.png" alt="Ranking down" />
+                        <?php } elseif($team['this_week_rank']==$team['last_week_rank']) { ?>
+
                         <?php } else { ?>
 
-                            <img src="/images/layout/bottom.png" />
+                            <img src="/images/layout/top.png" alt="Ranking up" />
                         <?php } 
                     }
                     else{
@@ -155,23 +157,21 @@
         </div>
         <div class="col-md-6">
             
-            <!--<div id="wowslider-container1">-->
-            <div id="td_box">
-                <div class="td_images">
+            <div id="wowslider-container1">
+                <div class="ws_images">
                     <ul>
                         <?php                         
                             foreach($team['Cars'] as $car):
                                 if(strlen($car['Model']['photo'])){
                                     ?>
-                                    <li><img src="/media/cars/<?= $car['Model']['photo']; ?>" alt="<?= $car['name']; ?>" title="<?= $car['name']; ?>" id="td_gallery_1"/></li><!-- wows1_1 -->
+                                    <li><img src="/media/cars/<?= $car['Model']['photo']; ?>" alt="<?= $car['name']; ?>" title="<?= $car['name']; ?>" id="wows1_1"/></li>
                                     <?php
                                 }
                             endforeach; 
                         ?>
                     </ul>
                 </div>
-                <div class="td_bg"></div>
-                <!--<div class="ws_shadow"></div>-->
+                <div class="ws_shadow"></div>
             </div>
             
             <div class="myTeamSponsor">
@@ -200,16 +200,16 @@
                 else{
 
                     if($friendInvited=="invited"){
-                        echo '<br />This user has already been invited to your friend list.';
+                        echo '<br />'.$this->translate('This user has already been invited to your friend list.');
                     }
                     else{
-                        echo '<br />This user is in your friend list';
+                        echo '<br />'.$this->translate('This user is in your friend list');
                     }
 
                 } 
                 ?>
             </div>
-                <a class="btn myBtn" href="/user/show-message-box/<?= $team['User']['id']; ?>#sendMessage"><i class="fa fa-envelope-o"></i> Message user</a>
+                <a class="btn myBtn" href="/user/show-message-box/<?= $team['User']['id']; ?>#sendMessage"><i class="fa fa-envelope-o"></i><?= $this->translate('Message user'); ?></a>
             <?php
             }
             ?>
@@ -219,14 +219,14 @@
     
 </div>
 
-<script type="text/javascript" src="/plugins/tdslider/tdslider.js"></script>
-<script type="text/javascript" src="/plugins/tdslider/tdengine.js"></script>
+<script type="text/javascript" src="/plugins/wowslider/engine1/wowslider.js"></script>
+<script type="text/javascript" src="/plugins/wowslider/engine1/script.js"></script>
 
 <script>
     $(document).ready(function(){
-        var photo_no = $('.td_list ul li').length;
+        var photo_no = $('.ws_list ul li').length;
         if(photo_no<2){
-            $('.td_next,.td_prev').hide();
+            $('.ws_next,.ws_prev').hide();
         }
     });
     </script>

@@ -26,7 +26,7 @@ class TeamService extends Service{
         2 => 'Sponsor cash',
         3 => 'Transfer income',
         4 => 'Player salaries',
-        5 => 'Car upkeep',
+        5 => 'Cars upkeep',
         6 => 'Transfer expense',
         7 => 'Car purchase',
         8 => 'Other incomes',

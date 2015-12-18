@@ -44,11 +44,10 @@ class Index_Index extends Controller{
         
         if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
             
-            $this->setDifView('index', 'manualpl');
-            $this->view->setHeadTitle('Poradnik - FastRally');
+            $this->view->setHeadTitle('Przypomnij hasło - FastRally');
         }
         else{
-            $this->view->setHeadTitle('Manual - FastRally');
+            $this->view->setHeadTitle('Forgot password - FastRally');
         }
         
         $form = $this->getForm('user','forgotPassword');
@@ -149,9 +148,6 @@ class Index_Index extends Controller{
         }
         
         if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
-            
-            $this->setDifView('index', 'faq-pl');
-            
             $this->view->setHeadTitle('Zasady - FastRally');
         }
         else{
@@ -196,9 +192,6 @@ class Index_Index extends Controller{
         
         
         if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
-            
-            $this->setDifView('index', 'faq-pl');
-            
             $this->view->setHeadTitle('Polityka prywatności - FastRally');
         }
         else{
@@ -288,7 +281,13 @@ class Index_Index extends Controller{
             }
         }
         
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            
+            $this->view->setHeadTitle('Szukaj graczy - FastRally');
+        }
+        else{
             $this->view->setHeadTitle('Search users - FastRally');
+        }
     }
     
     public function setLang(){

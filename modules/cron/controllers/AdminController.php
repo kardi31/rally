@@ -661,7 +661,7 @@ class Cron_Admin extends Controller{
         $this->dom->appendChild($urlset);
         
         $this->dom->save(BASE_PATH."/public_html/sitemap.xml");
-       
+       echo "done";
         exit;
     }
     

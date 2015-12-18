@@ -73,7 +73,8 @@
     background:blue;
 }
 .currentPlayingSkill,.currentPlayingSkill td{
-    background:red;
+    background:#f1da36;
+    color:black;
 }
 .cardTableWrapper{
     height:665px;
@@ -358,6 +359,7 @@
 
 .playerCard table tr:not(:first-of-type):hover td{
     background:purple;
+    color:#fff;
 }
 
 #manageCards .playerCard table tr:not(:first-of-type):hover td{
@@ -525,4 +527,34 @@
 #boughtPackageCards div.playerCard{
     float:none;
     display:inline-block;
+}
+
+.deleteCard{
+    display:inline-block;
+    margin-top:5px;
+}
+
+.lockedCards .lockedCardRow > td{
+    width:145px;
+    height:175px;
+    border:1px solid black;
+}
+.lockedCards{
+    margin:0 auto;
+}
+.lockedCards .lockedCardRow .playerCard{
+    position:relative;
+}
+.lockedCards .lockedCardRow .playerCard tr img{
+    max-width: 100%;
+    width: 100%;
+    display: block;
+}
+.lockTheCard{
+    margin:0 auto;
+    margin-top:10px;
+}
+
+.bx-wrapper, .bx-viewport {
+    height: 220px !important;
 }

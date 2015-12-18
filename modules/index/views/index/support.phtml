@@ -11,11 +11,11 @@
     <h4 class="boxHeader"><?= $this->translate('Support'); ?></h4>
     <div class='staticWrapper'>
         <div class="supportWrapper">
-            <h5>Please fill in the contact form to get our support.</h5>
+            <h5><?= $this->translate('Please fill in the contact form to get our support.'); ?></h5>
             <form method="POST">
-                <label>Choose support category</label>
+                <label><?= $this->translate('Choose support category'); ?></label>
                 <?php echo $form->getElement('section')->renderElement(); ?>
-                <label>Please provide a clear description of your issue</label>
+                <label><?= $this->translate('Please provide a clear description of your issue'); ?></label>
                 <?php echo $form->getElement('content')->renderElement(); ?>
                 <?php // echo $form->getElement('active')->renderElement(); ?>
                 <?php echo $form->getElement('submit')->renderElement(); ?>

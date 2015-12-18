@@ -372,6 +372,21 @@
     <word id="General talk">
         <pl>Ogólne rozmowy</pl>
     </word>
+    <word id="General query">
+        <pl>Ogólne</pl>
+    </word>
+    <word id="Payments">
+        <pl>Płatności</pl>
+    </word>
+    <word id="Report cheater">
+        <pl>Zgłoś oszusta</pl>
+    </word>
+    <word id="Report bug">
+        <pl>Zgłoś błąd w grze</pl>
+    </word>
+    <word id="Send">
+        <pl>Wyślij</pl>
+    </word>
     <word id="Question and answers">
         <pl>Pytania i odpowiedzi</pl>
     </word>
@@ -549,6 +564,9 @@
     <word id="Signed crews">
         <pl>Zapisane załogi</pl>
     </word>
+    <word id="Rally date">
+        <pl>Data rajdu</pl>
+    </word>
     <word id="Race start">
         <pl>Start rajdu</pl>
     </word>
@@ -723,6 +741,12 @@
     <word id="Submit request">
         <pl>Dokonaj zakupu</pl>
     </word>
+    <word id="Enter your username">
+        <pl>Podaj login</pl>
+    </word>
+    <word id="Enter your email address">
+        <pl>Podaj swój email</pl>
+    </word>
     <word id="Submit bid">
         <pl>Złóż oferte</pl>
     </word>
@@ -759,8 +783,23 @@
     <word id="Join friendly rally, give yourself a chance to beat other drivers and earn additional game cash.">
         <pl>Dołącz do prywatnego rajdu, daj sobie szanse na zmierzenie się z innymi kierowcami i zarobienie dodatkowych monet.</pl>
     </word>
+    <word id="Join friendly rally">
+        <pl>Dołącz do prywatnego rajdu.</pl>
+    </word>
     <word id="Detailed financial report">
         <pl>Szczegółowy raport finansowy</pl>
+    </word>
+    <word id="Message user">
+        <pl>Wyślij wiadomość</pl>
+    </word>
+    <word id="message box">
+        <pl>- skrzynka odbiorcza</pl>
+    </word>
+    <word id="Reply">
+        <pl>odpowiedz</pl>
+    </word>
+    <word id="This user is in your friend list">
+        <pl>Użytkownik jest już na Twojej liście znajomych</pl>
     </word>
     <word id="Don't know where this cash cames from? No problem. In our detailed report you can see exact source of every income and expense.">
         <pl>Nie wiesz skąd na Twoim koncie znalazły się te pieniądze? Żaden problem. Skorzystaj ze szczegółowego raportu finansowego i bądź na bieżąco z każdym przychodem i wydatkiem z Twojego konta.</pl>
@@ -785,6 +824,24 @@
     </word>
     <word id="days">
         <pl>dni</pl>
+    </word>
+    <word id="Stage list">
+        <pl>Lista odcinków</pl>
+    </word>
+    <word id="Team name">
+        <pl>Nazwa drużyny</pl>
+    </word>
+    <word id="Please fill in the contact form to get our support.">
+        <pl>Wypełnij formularz kontaktowy aby otrzymać nasze wsparcie.</pl>
+    </word>
+    <word id="Choose support category">
+        <pl>Wybierz kategorie</pl>
+    </word>
+    <word id="Please provide a clear description of your issue">
+        <pl>Podaj szczegółowy opis zgłaszanej sprawy</pl>
+    </word>
+    <word id="Username">
+        <pl>Nazwa użytkownika</pl>
     </word>
     <word id="This email is already registered in Fast Rally">
         <pl>Ten email jest już zarejestrowany w Fast Rally</pl>
@@ -812,6 +869,12 @@
     </word>
     <word id="Send invitation">
         <pl>Wyślij zaproszenie</pl>
+    </word>
+    <word id="Send message to">
+        <pl>Wyślij wiadomość do </pl>
+    </word>
+    <word id="Send message">
+        <pl>Wyślij wiadomość</pl>
     </word>
     <word id="Enter user email address">
         <pl>Podaj zapraszany adres email</pl>
@@ -1003,5 +1066,35 @@
     </word>
     <word id="New email address">
         <pl>Nowy adres email</pl>
+    </word>
+    <word id="REMIND MY PASSWORD">
+        <pl>PRZYPOMNIJ MOJE HASŁO</pl>
+    </word>
+    <word id="SEND REMINDER">
+        <pl>WYŚLIJ</pl>
+    </word>
+    <word id="Change team name">
+        <pl>Zmień nazwe drużyny</pl>
+    </word>
+    <word id="You are allowed to change your team name every 90 days.">
+        <pl>Możesz zmienić nazwę drużyny raz w ciągu 90 dni.</pl>
+    </word>
+    <word id="Garage">
+        <pl>Garaż</pl>
+    </word>
+    <word id="Player salaries">
+        <pl>Pensje zawodników</pl>
+    </word>
+    <word id="Cars upkeep">
+        <pl>Utrzymanie samochodów</pl>
+    </word>
+    <word id="FastRally world gives you opportunity to become the manager of your very own rally team. Hire drivers and pilots, buy cars and race with others. Compete with managers all around the world, win trophies,collect unique cars and become a FastRally legend.">
+        <pl>Świat FastRally daje możliwość, aby zostać menedżerem swojego własnego zespołu rajdowego. Zatrudnij kierowców i pilotów, kupuj samochody i ścigaj się w rajdach. Rywalizuj z menedżerami z całego świata, wygrywaj nagrody, zbieraj unikalne samochody i zostań legendą FastRally.</pl>
+    </word>
+    <word id="Want to win new cars faster? Try our FastRally card game. Get to the tables, win playing cards and turn them to cars. Climb up in card rankings and represent your country in national rankings.">
+        <pl>Chcesz zdobywać nowe samochody szybciej? Wypróbuj Karty FastRally. Usiądź do stołu, wygrywaj karty i przekształcaj je w samochody wyścigowe. Wspinaj się na szczyt rankingu i reprezentuj swój kraj w rankingach narodowych.  </pl>
+    </word>
+    <word id="Do not hesitate! Register and join the unique and mysterious world of FastRally.">
+        <pl>Nie czekaj! Zarejestruj się i dołącz do wyjątkowego świata FastRally już dziś!</pl>
     </word>
 </root>

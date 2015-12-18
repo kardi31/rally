@@ -138,7 +138,7 @@ $startDate2 = clone $startDate;
         <div class="clearfix mb20"></div>
         <form method="POST">
             <div class="sign-up-rally">
-                <h3>Sign up</h3>
+                <h3><?= $this->translate('Sign up'); ?></h3>
                     <div class='formElemWrapper'>
                         <label for='driver_id' class="col-md-3 control-label" type='text'><?= $this->translate('Driver'); ?></label>
                         <?php echo $joinForm->getElement('driver_id')->renderElement(); ?>
@@ -215,16 +215,16 @@ $startDate2 = clone $startDate;
 <?php } ?>
     </div>
     <div class="showRallyBox mainUserBox" id="stages">
-        <h3 class="h4">Stage list</h3>
+        <h3 class="h4"><?= $this->translate('Stage list'); ?></h3>
         <div class='stageListInfo'>
             <div class='col-md-6'>
-                Name
+                <?= $this->translate('Name'); ?>
             </div>
             <div class='col-md-3'>
-                  Length
+                 <?= $this->translate('Length'); ?>
             </div>
             <div class='col-md-3'>
-                Time
+                <?= $this->translate('Time'); ?>
             </div>
         </div>
         <div class='clearfix'></div>
@@ -271,7 +271,7 @@ $startDate2 = clone $startDate;
     </div>
     <?php if(!$rally['finished']){ ?>
         <div class="showRallyBox mainUserBox" id="invited">
-        <h3 class="h4">Invited crews</h3>
+        <h3 class="h4"><?= $this->translate('Invited crews'); ?></h3>
             <?php
 
             if(!$friendly['invite_only']){
@@ -301,7 +301,7 @@ $startDate2 = clone $startDate;
         </div>
     <?php } ?>
     <div class="showRallyBox mainUserBox" id="crews">
-        <h3 class="h4">Signed crews</h3>
+        <h3 class="h4"><?= $this->translate('Signed crews'); ?></h3>
         <table class="rallyCrews">
             <thead>
                 <tr>
@@ -382,7 +382,7 @@ $startDate2 = clone $startDate;
         </table>
         <?php } ?>
         
-        <h3 class="h4">Overall results</h3>
+        <h3 class="h4"><?= $this->translate('Overall results'); ?></h3>
         <table class="mb20">
             <?php foreach($rallyResults as $result): ?>
                 <tr>
@@ -411,16 +411,16 @@ $startDate2 = clone $startDate;
                 </tr>
             <?php endforeach; ?>
         </table>
-        <h3 class="h4">Stage results</h3>
+        <h3 class="h4"><?= $this->translate('Stage results'); ?></h3>
         <div class='stageListInfo'>
             <div class='col-md-6'>
-                Name
+                <?= $this->translate('Name'); ?>
             </div>
             <div class='col-md-3'>
-                  Length
+                  <?= $this->translate('Length'); ?>
             </div>
             <div class='col-md-3'>
-                Time
+                <?= $this->translate('Time'); ?>
             </div>
         </div>
         <div class='clearfix'></div>
