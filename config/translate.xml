@@ -114,6 +114,23 @@
     <word id="Balance">
         <pl>Stan konta</pl>
     </word>
+    
+    <word id="Buy">
+        <pl>Kup</pl>
+    </word>
+    <word id="card">
+        <pl>karta</pl>
+    </word>
+    <word id="cards">
+        <pl>karty</pl>
+    </word>
+    
+    <word id="Top card players list">
+        <pl>Najlepsi gracze w karty</pl>
+    </word>
+    <word id="Buy playing cards">
+        <pl>Kup karty do gry</pl>
+    </word>
     <word id="People">
         <pl>Moi ludzie</pl>
     </word>
@@ -294,6 +311,15 @@
     </word>
     <word id="acceleration">
         <pl>przyspieszenie</pl>
+    </word>
+    <word id="Unlock the card">
+        <pl>Odblokuj karte</pl>
+    </word>
+    <word id="Lock the card">
+        <pl>zablokuj karte</pl>
+    </word>
+    <word id="Delete card">
+        <pl>Usuń karte</pl>
     </word>
     <word id="Sell car">
         <pl>Sprzedaj auto</pl>
@@ -1096,5 +1122,111 @@
     </word>
     <word id="Do not hesitate! Register and join the unique and mysterious world of FastRally.">
         <pl>Nie czekaj! Zarejestruj się i dołącz do wyjątkowego świata FastRally już dziś!</pl>
+    </word>
+    <word id="Your FastRally registration">
+        <pl>Twoja rejestracja w FastRally</pl>
+    </word>
+    <word id="Dear">
+        <pl>Witaj</pl>
+    </word>
+    <word id="Thank you for your registration in FastRally.">
+        <pl>Dziękujemy za rejestracje w FastRally.</pl>
+    </word>
+    <word id="To activate your account please click the link below">
+        <pl>Aby aktywować konto, kliknij w poniższy link</pl>
+    </word>
+    <word id="or paste the url in your browser.">
+        <pl>lub wklej go w pasek adresu przeglądarki.</pl>
+    </word>
+    <word id="Let your journey in world of Fast Rally begin.">
+        <pl>Niech Twoja podróż przez fascynujący świat FastRally się rozpocznie.</pl>
+    </word>
+    <word id="FastRally Team">
+        <pl>Zespół FastRally</pl>
+    </word>
+    <word id="Kind regards">
+        <pl>Pozdrawiamy</pl>
+    </word>
+    <word id="Log in with the link below and compete with other drivers on FastRally routes.">
+        <pl>Zaloguj się używając poniższego linku i rywalizuj z innymi kierowcami z całego świata.</pl>
+    </word>
+    <word id="You can now fully enjoy the world of FastRally.">
+        <pl>Możesz teraz w pełni korzystać z możliwości jakie daje świat FastRally.</pl>
+    </word>
+    <word id="Congratulations! Your account in FastRally is now active">
+        <pl>Gratulacje! Twoje konto w FastRally jest już aktywne.</pl>
+    </word>
+    <word id="Hello">
+        <pl>Witaj</pl>
+    </word>
+    <word id="Your friend">
+        <pl>Twój znajomy</pl>
+    </word>
+    <word id="has invited you to play FastRally">
+        <pl>zaprosił Cię do gry w FastRally</pl>
+    </word>
+    <word id="Join FastRally today, manage your very own rally team and show your friend who is a better manager.">
+        <pl>Dołącz do FastRally już dzisiaj, zarządzaj swoim własnym zespołem rajdowym i pokaż swojemu znajomemu kto jest lepszym menedżerem.</pl>
+    </word>
+    <word id="You requested new password to your FastRally account.">
+        <pl>Poprosiłeś o nowe hasło do swojego konta w FastRally.</pl>
+    </word>
+    <word id="To receive new password click the link below.">
+        <pl>Aby otrzymać nowe hasło, kliknij w poniższy link.</pl>
+    </word>
+    <word id="If you did not request new password, please ignore this email.">
+        <pl>Jeżeli nie prosiłeś o nowe hasło, zignoruj tego maila.</pl>
+    </word>
+    <word id="Your new password to your FastRally account is">
+        <pl>Twoje nowe hasło do FastRally to </pl>
+    </word>
+    <word id="You can now">
+        <pl>Możesz teraz</pl>
+    </word>
+    <word id="log in">
+        <pl>zalogować się</pl>
+    </word>
+    <word id="using your new password.">
+        <pl>używając nowego hasła.</pl>
+    </word>
+    
+    <word id="Please change your password immidately after log in">
+        <pl>Pamiętaj aby zmienić swoje hasło natychmiast po zalogowaniu</pl>
+    </word>
+    <word id="FastRally Card Game">
+        <pl>Karty FastRally</pl>
+    </word>
+    <word id="Create new table">
+        <pl>Utwórz nowy stół</pl>
+    </word>
+    <word id="ABOUT">
+        <pl>O GRZE</pl>
+    </word>
+    <word id="Below you can see your play card list. Collect 7 cards of the same type and transform it into rally car. To help you achieving this, you are allowed to lock 7 cards. Locked cards cannot be played with and they are protected from being lost.">
+        <pl>Poniżej możesz zobaczyć liste swoich kart do gry. Zbierz 7 takich samych kart i przekształć je w samochód rajdowy. Aby pomóc Ci w osiągnięciu celu, możesz zabezpieczyć 7 swoich kart. Zabezpieczonymi kartami nie można grać, przez co chronisz je przed utratą w wypadku porażki. </pl>
+    </word>
+    <word id="Turn your play cards into">
+        <pl>Przekształć swoje karty w </pl>
+    </word>
+    <word id="CONGRATULATIONS">
+        <pl>GRATULACJE</pl>
+    </word>
+    <word id="Your account has been activated. You can now log in and enjoy the features of FastRally.">
+        <pl>Twoje konto zostało aktywowane. Możesz teraz zalogować się i cieszyć się wszystkimi możliwościami FastRally.</pl>
+    </word>
+    <word id="THANK YOU">
+        <pl>DZIĘKUJEMY</pl>
+    </word>
+    <word id="You have successfully created your account in FastRally.">
+        <pl>Stworzyłeś konto w FastRally.</pl>
+    </word>
+    <word id="To activate your account and enjoy the world of FastRally please click a link which we send you to your email.">
+        <pl>Aby aktywować swoje konto i cieszyć się wszystkimi możliwościami świata FastRally, kliknij w link, który otrzymałeś na swojego maila.</pl>
+    </word>
+    <word id="If you did not receive an email from us, please send us an email at activate@fastrally.eu with your login.">
+        <pl>Jeżeli nie otrzymałeś maila, wyślij do nas wiadomość na activate@fastrally.eu ze swoim loginem.</pl>
+    </word>
+    <word id="Your FastRally account is now active">
+        <pl>Twoje konto FastRally jest już aktywne</pl>
     </word>
 </root>

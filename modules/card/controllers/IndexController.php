@@ -26,6 +26,13 @@ class Card_Index extends Controller{
         $userCards = json_encode($cardService->getUserCards($user['id']));
         $this->view->assign('userCards',$userCards);
         
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Karty - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Card Game - FastRally');
+        }
     }
     
     static public function getInstance()
@@ -89,6 +96,14 @@ class Card_Index extends Controller{
                 $boughtPackageCars = $carService->getMultipleCarModels($package['model_ids']);
                 $this->view->assign('boughtPackageCars',$boughtPackageCars);
             }
+        }
+        
+        
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Zarządzaj kartami - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Manage cards - FastRally');
         }
     }
     
@@ -220,6 +235,13 @@ class Card_Index extends Controller{
         $this->view->assign('lockedSameType',$lockedSameType);
         
         
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Kup karty - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Buy cards - FastRally');
+        }
+        
     }
     
     public function buyPackage(){
@@ -276,6 +298,12 @@ class Card_Index extends Controller{
         
         $this->view->assign('topList',$topList);
         
+        if(isset($GLOBALS['lang'])&&$GLOBALS['lang']=='pl'){
+            $this->view->setHeadTitle('Najlepsi gracze - Karty - FastRally');
+        }
+        else{
+            $this->view->setHeadTitle('Top players - Cards - FastRally');
+        }
     }
 }
 ?>

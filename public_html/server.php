@@ -225,9 +225,12 @@ while (true) {
                                     $table = $tables->getTable($player->getTable());
                                     $table->setPlayerWon($player);
                                     
+                                    $table->refreshPlayerRanks();
+                                    
                                     $secondPlayer = $table->getOtherPlayer($player);
                                     var_dump($table->isFinished());
                                     $table->kickPlayerNoReset($secondPlayer);
+                                    
                                     $players->removePlayer($secondPlayer->getId(),$tables);
                                     
                                     $table->resetPartiallyTable();

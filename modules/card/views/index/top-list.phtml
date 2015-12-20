@@ -3,11 +3,11 @@
     <div class='staticWrapper'>
         <table class="table rankingList">
             <tr>
-                <th>Position</th>
-                <th>Team</th>
-                <th>Manager</th>
-                <th>Country</th>
-                <th>Rank</th>
+                <th><?= $this->translate('Position'); ?></th>
+                <th><?= $this->translate('Team'); ?></th>
+                <th><?= $this->translate('Manager'); ?></th>
+                <th><?= $this->translate('Country'); ?></th>
+                <th><?= $this->translate('Rank'); ?></th>
             </tr>
         <?php foreach($topList as $key => $user){ 
             echo "<tr>";
@@ -18,7 +18,7 @@
              if(strlen($user['country'])){ ?>
                         <img class="countryFlag" src="/images/flags/<?= strtolower($user['country']);?>.png" />
                     <?php } else { ?>
-                        Unknown
+                        <?= $this->translate('Unknown'); ?>
                     <?php } 
             echo "</td>";
             echo "<td>";

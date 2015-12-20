@@ -76,7 +76,7 @@ class User_Index extends Controller{
                     
                     $userService->saveUserFromArray($values,false);
                     
-                    $mailService->sendMail($values['email'],'Your FastRally registration',$mailService::prepareRegistrationMail($values['token'],$values['username']));
+                    $mailService->sendMail($values['email'],View::getInstance()->translate('Your FastRally registration'),$mailService::prepareRegistrationMail($values['token'],$values['username']));
                 
 		    TK_Helper::redirect('/user/register-complete');
 		
@@ -156,7 +156,7 @@ class User_Index extends Controller{
             
             $cardService = parent::getService('card','card');
             $cardService->createRandomCards($user['id'],7);
-            $mailService->sendMail($user['email'],'Your FastRally account is now active',$mailService::prepareConfirmActivationMail($user->get('username')));
+            $mailService->sendMail($user['email'],View::getInstance('Your FastRally account is now active'),$mailService::prepareConfirmActivationMail($user->get('username')));
                 
             $message = "User has been activated";
             }

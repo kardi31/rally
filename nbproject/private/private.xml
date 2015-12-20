@@ -3,40 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Message.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-rally.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/form/Support.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/account/views/index/my-finances.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/account/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/team/services/Team.php</file>
-            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Element.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/forgot-password.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/create-friendly-rally.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/show-message-box.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/layout/layout.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/team/views/index/change-name.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/library/TK/db.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/public_html/server.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/index.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/form/CreateFriendly.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/models/Rally.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/form/ForgotPassword.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/form/JoinRally.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/team/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/search-users.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/user/services/Support.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/rally/views/index/show-friendly-rally.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/public_html/card/Table.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/card/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/people/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_header_nolog.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/faq.phtml</file>
             <file>file:/C:/xampp/htdocs/ral/config/translate.xml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/support.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/cron/controllers/AdminController.php</file>
-            <file>file:/C:/xampp/htdocs/ral/public_html/css/cards.css</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/team/views/index/show-team.phtml</file>
-            <file>file:/C:/xampp/htdocs/ral/library/TK/Form/Select.php</file>
-            <file>file:/C:/xampp/htdocs/ral/modules/card/views/index/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/Helper.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/init.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/index/activate.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/index/views/index/faq-pl.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_header_main.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/rally/controllers/IndexController.php</file>
             <file>file:/C:/xampp/htdocs/ral/library/TK/Router.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/views/mail/template-pl.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/services/Mail.php</file>
+            <file>file:/C:/xampp/htdocs/ral/public_html/server.php</file>
+            <file>file:/C:/xampp/htdocs/ral/views/_header.phtml</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/league/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/library/TK/View.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/car/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/services/Market.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/models/Offer.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/user/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/market/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/cron/controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/forum/controllers/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ral/modules/team/services/Team.php</file>
         </group>
     </open-files>
 </project-private>

@@ -78,14 +78,15 @@
     }
 ?>
 <div class="mainUserBox">
-    <h4 class="boxHeader"><?= $this->translate('Manage cards'); ?></h4>
+    <h4 class="boxHeader"><?= $this->translate('Buy cards'); ?></h4>
     <div class='staticWrapper'>
-        Below you can see your play card list. Collect 7 cards of the same type and transform it into rally car. To help you achieving this, you are allowed to lock 7 cards. <br /> <br />
+        <?php // $this->translate('Below you can see your play card list. Collect 7 cards of the same type and transform it into rally car. To help you achieving this, you are allowed to lock 7 cards.');?>
+        <!--<br /> <br />-->
         
             <div class='goldCoinBox buyCardBox'>
                 <div class="pull-right">
                     <div class="balance">
-                        Balance: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
+                        <?= $this->translate('Balance'); ?>: <?= (int)$authenticatedUser['premium']; ?><img class="coin" src="/images/layout/coin.png" /> <br />
                     </div>
                 </div>
                 <h4><?= $this->translate('Buy playing cards'); ?></h4>
@@ -95,7 +96,7 @@
             
         <div class="col-md-4 buyCardCol">
             <div class='goldCoinBox'>
-              1 card - 
+              1 <?= $this->translate('card');?> - 
               
             <?php if(!$authenticatedUser['gold_member']): ?>
               15
@@ -107,12 +108,12 @@
             </div>
             <img src="/images/card_back.png" class="cardBack" alt="Playing card back" />
             
-            <a class="btn myBtn" href="/card/buy-package/1">Buy</a>
+            <a class="btn myBtn" href="/card/buy-package/1"><?= $this->translate('Buy'); ?></a>
         </div>
         
         <div class="col-md-4 buyCardCol">
             <div class='goldCoinBox'>
-              3 cards -
+              3 <?= $this->translate('cards');?> -
             <?php if(!$authenticatedUser['gold_member']): ?>
               37
               <?php else: ?>
@@ -122,12 +123,12 @@
             </div>
             <img src="/images/card_back.png" class="cardBack" alt="Playing card back" />
             
-            <a class="btn myBtn" href="/card/buy-package/3">Buy</a>
+            <a class="btn myBtn" href="/card/buy-package/3"><?= $this->translate('Buy'); ?></a>
         </div>
         
         <div class="col-md-4 buyCardCol">
             <div class='goldCoinBox'>
-              5 cards -  
+              5 <?= $this->translate('cards');?> -  
               
             <?php if(!$authenticatedUser['gold_member']): ?>
               55
@@ -138,7 +139,7 @@
             </div>
             <img src="/images/card_back.png" class="cardBack" alt="Playing card back" />
             
-            <a class="btn myBtn" href="/card/buy-package/5">Buy</a>
+            <a class="btn myBtn" href="/card/buy-package/5"><?= $this->translate('Buy'); ?></a>
             <!--</div>-->
         </div>
         

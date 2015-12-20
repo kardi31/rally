@@ -251,6 +251,7 @@
     min-height: 150px;
     overflow: auto;
     padding: 10px;
+    height:100%;
     width:100%;
     border: 1px solid #999999;
 }
@@ -557,4 +558,18 @@
 
 .bx-wrapper, .bx-viewport {
     height: 220px !important;
+}
+
+button.playerLeft{
+    
+    background: rgba(217, 83, 79, 0.9);
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    padding: 10px;
+    margin: 0 auto;
+    display: block;
+    top: 125px;
+    position: relative;
+    font-size: 25px;
 }

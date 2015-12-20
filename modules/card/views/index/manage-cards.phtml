@@ -28,7 +28,7 @@
                 success: function(data) {
                    if(data.msg=='locked'){
                        element.prepend('<img src="/images/layout/lock.png" class="cardLock" />');
-                       btn.html('<i class="fa fa-unlock"></i> Unlock the card');
+                       btn.html('<i class="fa fa-unlock"></i> <?= $this->translate('Unlock the card'); ?> ');
                        btn.removeClass('btn-warning');
                        btn.addClass('btn-success');
                        element.appendTo('.lockedCards td.lockedCardCol:empty:eq(0)');
@@ -39,7 +39,7 @@
                        $('#manageCards').prepend(element);
                        element.find('.cardLock').remove();
                        td.empty();
-                       btn.html('<i class="fa fa-lock"></i> Lock the card');
+                       btn.html('<i class="fa fa-lock"></i> <?= $this->translate('Lock the card'); ?>');
                        btn.addClass('btn-warning');
                        btn.removeClass('btn-success');
                         slider.reloadSlider();
@@ -50,7 +50,7 @@
                        var id = data.transform.cm_id;
                        var name = data.transform.cm_name;
                        if(!$('.transformPlayCards').length){
-                            var transformButton = '<a href="/card/transform-cards/'+id+'" class="btn myBtn transformPlayCards">Turn your play cards into '+name+'</a>';
+                            var transformButton = '<a href="/card/transform-cards/'+id+'" class="btn myBtn transformPlayCards"><?= $this->translate('Turn your play cards into') ?> '+name+'</a>';
                             $('.lockedCards').after(transformButton);
                        }
                    }
@@ -111,19 +111,19 @@
                         </th>
                     </tr>
                     <tr>
-                        <td>Acceleration</td>
+                        <td><?= $this->translate('acceleration'); ?></td>
                         <td><?= $boughtModel['acceleration']; ?></td>
                     </tr>
                     <tr>
-                        <td>V-max</td>
+                        <td><?= $this->translate('v-max'); ?></td>
                         <td><?= $boughtModel['max_speed']; ?></td>
                     </tr>
                     <tr>
-                        <td>Capacity</td>
+                        <td><?= $this->translate('capacity'); ?></td>
                         <td><?= $boughtModel['capacity']; ?></td>
                     </tr>
                     <tr>
-                        <td>Horsepower</td>
+                        <td><?= $this->translate('horsepower'); ?></td>
                         <td><?= $boughtModel['horsepower']; ?></td>
                     </tr>
                 </table>
@@ -133,7 +133,7 @@
             
         
         <?php endif; ?>
-        Below you can see your play card list. Collect 7 cards of the same type and transform it into rally car. To help you achieving this, you are allowed to lock 7 cards. <br /> <br />
+       <?= $this->translate('Below you can see your play card list. Collect 7 cards of the same type and transform it into rally car. To help you achieving this, you are allowed to lock 7 cards. Locked cards cannot be played with and they are protected from being lost.'); ?> <br /> <br />
         <div class="playerCards manageCardBox" id="manageCards">
             <?php foreach($unlockedCards as $card): ?>
                 <div class="playerCard" data-rel="<?= $card['id']; ?>">
@@ -149,24 +149,24 @@
                         </th>
                     </tr>
                     <tr>
-                        <td>Acceleration</td>
+                        <td><?= $this->translate('acceleration'); ?></td>
                         <td><?= $card['Model']['acceleration']; ?></td>
                     </tr>
                     <tr>
-                        <td>V-max</td>
+                        <td><?= $this->translate('v-max'); ?></td>
                         <td><?= $card['Model']['max_speed']; ?></td>
                     </tr>
                     <tr>
-                        <td>Capacity</td>
+                        <td><?= $this->translate('capacity'); ?></td>
                         <td><?= $card['Model']['capacity']; ?></td>
                     </tr>
                     <tr>
-                        <td>Horsepower</td>
+                        <td><?= $this->translate('horsepower'); ?></td>
                         <td><?= $card['Model']['horsepower']; ?></td>
                     </tr>
                 </table>
-                <button class="lockTheCard btn btn-warning label" data-rel="<?= $card['id']; ?>"><i class="fa fa-lock"></i> Lock the card</button>
-                <a href="/card/delete-card/<?= $card['id'];?>" data-name="<?= $card['Model']['name']; ?>" class="deleteCard btn btn-danger label"><i class="fa fa-trash-o"></i> Delete card</a>
+                <button class="lockTheCard btn btn-warning label" data-rel="<?= $card['id']; ?>"><i class="fa fa-lock"></i> <?= $this->translate('Lock the card'); ?></button>
+                <a href="/card/delete-card/<?= $card['id'];?>" data-name="<?= $card['Model']['name']; ?>" class="deleteCard btn btn-danger label"><i class="fa fa-trash-o"></i> <?= $this->translate('Delete card'); ?></a>
             </div>
             <?php endforeach; ?>
         </div>
@@ -191,24 +191,24 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <td>Acceleration</td>
+                                    <td><?= $this->translate('acceleration'); ?></td>
                                     <td><?= $card['Model']['acceleration']; ?></td>
                                 </tr>
                                 <tr>
-                                    <td>V-max</td>
+                                    <td><?= $this->translate('v-max'); ?></td>
                                     <td><?= $card['Model']['max_speed']; ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Capacity</td>
+                                    <td><?= $this->translate('capacity'); ?></td>
                                     <td><?= $card['Model']['capacity']; ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Horsepower</td>
+                                    <td><?= $this->translate('horsepower'); ?></td>
                                     <td><?= $card['Model']['horsepower']; ?></td>
                                 </tr>
                             </table>
-                            <button class="lockTheCard label btn btn-success" data-rel="<?= $card['id']; ?>"><i class="fa fa-unlock"></i> Unlock the card</button>
-                <a href="/card/delete-card/<?= $card['id'];?>" data-name="<?= $card['Model']['name']; ?>" class="deleteCard btn btn-danger label"><i class="fa fa-trash-o"></i> Delete card</a>
+                            <button class="lockTheCard label btn btn-success" data-rel="<?= $card['id']; ?>"><i class="fa fa-unlock"></i> <?= $this->translate('Unlock the card'); ?></button>
+                <a href="/card/delete-card/<?= $card['id'];?>" data-name="<?= $card['Model']['name']; ?>" class="deleteCard btn btn-danger label"><i class="fa fa-trash-o"></i> <?= $this->translate('Delete card'); ?></a>
                         </div>
                 </td>
                         <?php 
@@ -240,24 +240,24 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <td>Acceleration</td>
+                                    <td><?= $this->translate('acceleration'); ?></td>
                                     <td><?= $card['Model']['acceleration']; ?></td>
                                 </tr>
                                 <tr>
-                                    <td>V-max</td>
+                                    <td><?= $this->translate('v-max'); ?></td>
                                     <td><?= $card['Model']['max_speed']; ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Capacity</td>
+                                    <td><?= $this->translate('capacity'); ?></td>
                                     <td><?= $card['Model']['capacity']; ?></td>
                                 </tr>
                                 <tr>
-                                    <td>Horsepower</td>
+                                    <td><?= $this->translate('horsepower'); ?></td>
                                     <td><?= $card['Model']['horsepower']; ?></td>
                                 </tr>
                             </table>
-                            <button class="lockTheCard  label btn btn-success" data-rel="<?= $card['id']; ?>"><i class="fa fa-unlock"></i> Unlock the card</button>
-                <a href="/card/delete-card/<?= $card['id'];?>" data-name="<?= $card['Model']['name']; ?>" class="deleteCard btn btn-danger label"><i class="fa fa-trash-o"></i> Delete card</a>
+                            <button class="lockTheCard  label btn btn-success" data-rel="<?= $card['id']; ?>"><i class="fa fa-unlock"></i> <?= $this->translate('Unlock the card'); ?></button>
+                <a href="/card/delete-card/<?= $card['id'];?>" data-name="<?= $card['Model']['name']; ?>" class="deleteCard btn btn-danger label"><i class="fa fa-trash-o"></i> <?= $this->translate('Delete card'); ?></a>
                         </div>
                 </td>
                         <?php 
@@ -271,7 +271,7 @@
         
         <?php if($lockedSameType){ ?>
             <a href="/card/transform-cards/<?= $lockedSameType['Model']['id']; ?>" class="btn myBtn transformPlayCards">    
-            Turn your play cards into <?= $lockedSameType['Model']['name']; ?>
+            <?= $this->translate('Turn your play cards into'); ?> <?= $lockedSameType['Model']['name']; ?>
             </a>
         <?php
         }
