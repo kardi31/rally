@@ -46,13 +46,13 @@ class User_Index extends Controller{
                 Doctrine_Manager::getInstance()->getCurrentConnection()->beginTransaction();
                 
                 $values = $_POST;
-//                if($userService->getUser($values['email'],'email')!==false){
-//		    TK_Helper::redirect('/user/register?msg=email+exists');
-//                }
-//                elseif($userService->getUser($values['username'],'username')!==false){
-//		    TK_Helper::redirect('/user/register?msg=username+exists');
-//                }
-//                else{
+                if($userService->getUser($values['email'],'email')!==false){
+		    TK_Helper::redirect('/user/register?msg=email+exists');
+                }
+                elseif($userService->getUser($values['username'],'username')!==false){
+		    TK_Helper::redirect('/user/register?msg=username+exists');
+                }
+                else{
                     $values['salt'] = TK_Text::createUniqueToken();
                     $values['token'] = TK_Text::createUniqueToken();
                     $values['password'] = TK_Text::encode($values['password'], $values['salt']);
@@ -80,7 +80,7 @@ class User_Index extends Controller{
                 
 		    TK_Helper::redirect('/user/register-complete');
 		
-//		}
+		}
                 Doctrine_Manager::getInstance()->getCurrentConnection()->commit();
             }
             else{
